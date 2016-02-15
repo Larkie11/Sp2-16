@@ -16,6 +16,13 @@ using std::string;
 
 class SP2 : public Scene
 {
+	enum MENU
+	{
+		STARTGAME = 0,
+		OPTIONS,
+		QUIT,
+		MAX,
+	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_TRIANGLE_1 = 0,
@@ -185,8 +192,16 @@ private:
 	unsigned m_colorBuffer[NUM_GEOMETRY];
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
+	void UpdateMenu();
 	//Camera camera;
 	Camera3 camera;
+	Color colorA;
+	Color colorB;
+	Color colorC;
+
+	bool Red1 = false;
+	bool Red2 = false;
+	bool Red3 = false;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -202,6 +217,9 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderMuseum();
+	void RenderMenu();
+	bool Menu = true;
+	MENU choose;
 
 	bool door;
 	float doorright = 0;

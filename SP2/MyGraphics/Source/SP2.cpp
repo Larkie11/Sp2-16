@@ -9,6 +9,9 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include <sstream>
+#include <iostream>
+using std::cout;
+using std::endl;
 
 
 SP2::SP2()
@@ -19,6 +22,7 @@ SP2::~SP2()
 }
 void SP2::Init()
 {
+	choose = STARTGAME;
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -465,9 +469,78 @@ static float LSPEED = 10.f;
 static bool Lighting9 = true;
 static int dialogue = 0;
 
+void SP2::UpdateMenu()
+{
+	if (choose == STARTGAME)
+	{
+		Red1 = true;
+		if (Application::IsKeyPressed(VK_RETURN))
+		{
+			Menu = false;
+		}
+	}
+	else
+	{
+		Red1 = false;
+	}
+	if (choose == OPTIONS)
+	{
+		Red2 = true;
+		if (Application::IsKeyPressed(VK_RETURN))
+		{
+			Menu = false;
+		}
+	}
+	else
+	{
+		Red2 = false;
+	}
+	if (choose == QUIT)
+	{
+		Red3 = true;
+		if (Application::IsKeyPressed(VK_RETURN))
+		{
+			Exit();
+		}
+	}
+	else
+	{
+		Red3 = false;
+	}
+	
+	if (choose < MAX-1)
+	{
+		if (Application::IsKeyPressed(VK_DOWN))
+		{
+			choose = static_cast<MENU>(choose + 1);
+			cout << choose << endl;
+			while (Application::IsKeyPressed(VK_DOWN))
+			{
+				choose = choose;
+			}
+		}
+	}
+	if (choose >STARTGAME)
+	{
+		if (Application::IsKeyPressed(VK_UP))
+		{
+			choose = static_cast<MENU>(choose - 1);
+			cout << choose << endl;
+			while (Application::IsKeyPressed(VK_UP))
+			{
+				choose = choose;
+			}
+		}
+	}
+}
+
 void SP2::Update(double dt)
 {
-	camera.Update(dt);
+	if (Menu == false)
+	{
+		camera.Update(dt);
+	}
+	UpdateMenu();
 	
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -755,6 +828,14 @@ void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+void SP2::RenderMenu()
+{
+	if (Menu == true)
+	{
+
+	}
+}
+
 void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1264,10 +1345,35 @@ void SP2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], "Move near to objects to see interaction", Color(1, 0, 1), 1.7, 2, 17);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Interactions: Door,NPC,Vending machine,Coke", Color(1, 0, 1), 1.7, 2, 16);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Different things happens based on your choice", Color(1, 0, 1), 1.7, 2, 14);
-
-
 	}
 
+	if (Menu)
+	{
+		if (Red1 == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(0, 1, 0) , 1.7, 5, 21);
+		}
+		if (Red2 == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(0,1,0), 1.7, 5, 20);
+		}
+		if (Red3 == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 19);
+		}
+		if (Red1)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(1,0,0), 1.7, 5, 21);
+		}
+		if (Red2)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(1, 0, 0), 1.7, 5, 20);
+		}
+		if (Red3)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 19);
+		}
+	}
 
 	modelStack.PushMatrix();
 	//scale, translate, rotate
