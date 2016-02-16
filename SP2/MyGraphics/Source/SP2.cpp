@@ -1267,6 +1267,22 @@ void SP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
+	if (Input == "Game")
+	{
+		modelStack.PushMatrix();
+		modelStack.Scale(30, 30, 30);
+		modelStack.Translate(0, -1, 0);
+		RenderMesh(meshList[GEO_MOONBALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Scale(30, 30, 30);
+		modelStack.Translate(0, -0.15, 0);
+		modelStack.Rotate(180, 0, 1, 0);
+		RenderMesh(meshList[GEO_PYRAMID], true);
+		modelStack.PopMatrix();
+	}
+
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
@@ -1436,21 +1452,7 @@ void SP2::Render()
 
 	modelStack.PopMatrix();
 
-	if (Input == "Game")
-	{
-		modelStack.PushMatrix();
-		modelStack.Scale(30, 30, 30);
-		modelStack.Translate(0, -1, 0);
-		RenderMesh(meshList[GEO_MOONBALL], true);
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-		modelStack.Scale(30, 30, 30);
-		modelStack.Translate(0, -0.15, 0);
-		modelStack.Rotate(180, 0, 1, 0);
-		RenderMesh(meshList[GEO_PYRAMID], true);
-		modelStack.PopMatrix();
-	}
+	
 
 }
 void SP2::Exit()
