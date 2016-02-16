@@ -85,6 +85,8 @@ class SP2 : public Scene
 		GEO_BROAD,
 		GEO_COKE,
 		GEO_BULLET,
+		GEO_MOONBALL,
+		GEO_PYRAMID,
 		NUM_GEOMETRY,
 	};
 

@@ -279,7 +279,7 @@ void SP2::Init()
 	glUniform1i(m_parameters[U_NUMLIGHTS],6);
 
 	//Initialize camera settings
-	camera.Init(Vector3(-3, 0, 70), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(-300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1,10);
@@ -415,6 +415,12 @@ void SP2::Init()
 
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
+
+	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pyramid4.obj");
+	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//pyramid.tga");
+
+	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
+	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//m_front.tga");
 
 	meshList[GEO_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//Missile.obj");
 	meshList[GEO_BULLET]->textureID = LoadTGA("Image//coke.tga");
@@ -1110,7 +1116,7 @@ void SP2::Render()
 	std::ostringstream fpsOSS;
 	if (Input == "Game")
 	{
-		fpsOSS << "pos y : " << bullet.b_Count;
+		fpsOSS << "AMMO : " << bullet.b_Count;
 	}
 	string Fps = fpsOSS.str();
 
@@ -1414,6 +1420,23 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], Coke, Color(1, 1, 0), 2, 8, 1);
 
 	modelStack.PopMatrix();
+
+	if (Input == "Game")
+	{
+		modelStack.PushMatrix();
+		modelStack.Scale(30, 30, 30);
+		modelStack.Translate(0, -1, 0);
+		RenderMesh(meshList[GEO_MOONBALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Scale(30, 30, 30);
+		modelStack.Translate(0, -0.15, 0);
+		modelStack.Rotate(180, 0, 1, 0);
+		RenderMesh(meshList[GEO_PYRAMID], true);
+		modelStack.PopMatrix();
+	}
+
 }
 void SP2::Exit()
 {
