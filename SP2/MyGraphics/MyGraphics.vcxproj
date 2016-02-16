@@ -89,6 +89,7 @@
     <None Include="Shader\Text.fragmentshader" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Bullet.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
@@ -103,6 +104,7 @@
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Bullet.h" />
     <ClInclude Include="Source\Camera3.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera.h" />
