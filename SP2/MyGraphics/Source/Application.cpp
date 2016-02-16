@@ -11,19 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Scene1.h"
-#include "Scene2.h"
-#include "Scene3.h"
-#include "Assignment2.h"
-#include "SceneLight.h"
-#include "Lab5b.h"
-#include "Scenelight2.h"
-#include "SceneTexture.h"
-#include "SceneSkybox.h"
-#include "SceneModel.h"
-#include "SceneText.h"
 #include "SP2.h"
-#include "Assignment3.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
