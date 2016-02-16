@@ -18,10 +18,17 @@ class SP2 : public Scene
 {
 	enum MENU
 	{
-		STARTGAME = 0,
+		MENU1 = 0,
+		STARTGAME,
 		OPTIONS,
 		QUIT,
 		MAX,
+	};
+	enum OPTION
+	{
+		O_SETTING,
+		O_QUIT,
+		O_MAX,
 	};
 	enum GEOMETRY_TYPE
 	{
@@ -198,10 +205,15 @@ private:
 	Color colorA;
 	Color colorB;
 	Color colorC;
+	string Input;
+	string color;
 
 	bool Red1 = false;
 	bool Red2 = false;
 	bool Red3 = false;
+	bool Red4 = false;
+	bool Red5 = false;
+	bool renderMenu = false;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -219,18 +231,17 @@ private:
 	void RenderMuseum();
 	void RenderMenu();
 	bool Menu = true;
+	bool exitGame = false;
+	bool Options = false;
 	MENU choose;
+	OPTION c_option;
 
 	bool door;
-	float doorright = 0;
-	float doorleft = -2.7;
 	float textdir=0;
 	float open;
 	float night = 0;
-	bool santa = false;
 	float deltaTime;
 	bool change = false;
-	float treex = 0;
 	std::vector <std::string> data;
 	float key1 = 0;
 	float coca =0;

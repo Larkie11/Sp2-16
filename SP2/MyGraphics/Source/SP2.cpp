@@ -13,7 +13,6 @@
 using std::cout;
 using std::endl;
 
-
 SP2::SP2()
 {
 }
@@ -23,6 +22,8 @@ SP2::~SP2()
 void SP2::Init()
 {
 	choose = STARTGAME;
+	c_option = O_SETTING;
+	Input = "Menu";
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -471,64 +472,108 @@ static int dialogue = 0;
 
 void SP2::UpdateMenu()
 {
-	if (choose == STARTGAME)
+	if (Input == "Menu")
 	{
-		Red1 = true;
-		if (Application::IsKeyPressed(VK_RETURN))
+		switch (choose)
 		{
-			Menu = false;
-		}
-	}
-	else
-	{
-		Red1 = false;
-	}
-	if (choose == OPTIONS)
-	{
-		Red2 = true;
-		if (Application::IsKeyPressed(VK_RETURN))
-		{
-			Menu = false;
-		}
-	}
-	else
-	{
-		Red2 = false;
-	}
-	if (choose == QUIT)
-	{
-		Red3 = true;
-		if (Application::IsKeyPressed(VK_RETURN))
-		{
-			Exit();
-		}
-	}
-	else
-	{
-		Red3 = false;
-	}
-	
-	if (choose < MAX-1)
-	{
-		if (Application::IsKeyPressed(VK_DOWN))
-		{
-			choose = static_cast<MENU>(choose + 1);
-			cout << choose << endl;
-			while (Application::IsKeyPressed(VK_DOWN))
+		case STARTGAME:
+			color = "Red1";
+			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				choose = choose;
+				Input = "Game";
+			}
+			break;
+		case OPTIONS:
+			color = "Red2";
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				Input = "Options";
+				c_option = O_SETTING;
+				while (Application::IsKeyPressed(VK_RETURN))
+				{
+					Input = "Options";
+					c_option = O_SETTING;
+				}
+			}
+			break;
+		case QUIT:
+			color = "Red3";
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				Exit();
+			}
+			break;
+		}
+		if (choose < MAX - 1)
+		{
+			if (Application::IsKeyPressed(VK_DOWN))
+			{
+				choose = static_cast<MENU>(choose + 1);
+				cout << choose << endl;
+				while (Application::IsKeyPressed(VK_DOWN))
+				{
+					choose = choose;
+				}
+			}
+		}
+		if (choose > STARTGAME)
+		{
+			if (Application::IsKeyPressed(VK_UP))
+			{
+				choose = static_cast<MENU>(choose - 1);
+				cout << choose << endl;
+				while (Application::IsKeyPressed(VK_UP))
+				{
+					choose = choose;
+				}
 			}
 		}
 	}
-	if (choose >STARTGAME)
+	else if (Input == "Options")
 	{
-		if (Application::IsKeyPressed(VK_UP))
+		switch (c_option)
 		{
-			choose = static_cast<MENU>(choose - 1);
-			cout << choose << endl;
-			while (Application::IsKeyPressed(VK_UP))
+		case O_SETTING:
+			Red4 = true;
+			Red5 = false;
+			break;
+		case O_QUIT:
+			Red4 = false;
+			Red5 = true;
+			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				choose = choose;
+				Input = "Menu";
+				choose = STARTGAME;
+				while (Application::IsKeyPressed(VK_RETURN))
+				{
+					Input = "Menu";
+					choose = STARTGAME;
+				}
+			}
+			break;
+		}
+		if (c_option < O_MAX - 1)
+		{
+			if (Application::IsKeyPressed(VK_DOWN))
+			{
+				c_option = static_cast<OPTION>(c_option + 1);
+				cout << c_option << endl;
+				while (Application::IsKeyPressed(VK_DOWN))
+				{
+					c_option = c_option;
+				}
+			}
+		}
+		if (c_option > O_SETTING)
+		{
+			if (Application::IsKeyPressed(VK_UP))
+			{
+				c_option = static_cast<OPTION>(c_option - 1);
+				cout << c_option << endl;
+				while (Application::IsKeyPressed(VK_UP))
+				{
+					c_option = c_option;
+				}
 			}
 		}
 	}
@@ -536,11 +581,10 @@ void SP2::UpdateMenu()
 
 void SP2::Update(double dt)
 {
-	if (Menu == false)
+	if (Input == "Game")
 	{
 		camera.Update(dt);
 	}
-	UpdateMenu();
 	
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -600,71 +644,12 @@ void SP2::Update(double dt)
 		
 	}
 
-	//opening door
-	if (camera.position.x <260 && camera.position.x > 230 && camera.position.z < 60 && camera.position.z > -30)
-	{
-		door = true;
-		if (key1 == 1)
-		{
-			dialogueDoor = 12;
-			if (Application::IsKeyPressed('E'))
-			{
-				if (doorright < 2.5)
-				{
-					camera.door = false;
-					doorright += (float)(10 * dt);
-				}
-			}
-		}
-	}
+	
 
-	else
-	{
-		door = false;
-		camera.door = true;
-
-		if (doorright > 0)
-		{
-			doorright -= (float)(10 * dt);
-		}
-
-		if (key1 == 0)
-		{
-			dialogueDoor = 11;
-		}
-	}
-	//talking to santa
-	if (camera.position.x > -18 && camera.position.x < 10 && camera.position.z > -42 && camera.position.z < -20)
-	{
-		santa = true;
-		if (key1 == 0)
-		{
-			if (Application::IsKeyPressed('Y'))
-			{
-				key1 = 1;
-				dialogue = 1;
-			}
-			if (Application::IsKeyPressed('N'))
-			{
-				dialogue = 2;
-			}
-		}
-	}
-	else
-	{
-		santa = false;
-		if (key1 == 1)
-		{
-			dialogue = 3;
-		}
-	else if (key1 == 0)
-		{
-			dialogue = 0;
-		}
-	}
 
 	deltaTime = (1.0 / dt);
 
+	UpdateMenu();
 
 	if (camera.position.x > 10 && camera.position.x < 40 && camera.position.z > -42 && camera.position.z < -20)
 	{
@@ -828,13 +813,7 @@ void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
-void SP2::RenderMenu()
-{
-	if (Menu == true)
-	{
 
-	}
-}
 
 void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -908,6 +887,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 
 	glEnable(GL_DEPTH_TEST);
 }
+
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
@@ -1121,7 +1101,10 @@ void SP2::Render()
 	string dialogueS = diaS.str();
 
 	std::ostringstream fpsOSS;
-	fpsOSS << "FPS: " << deltaTime;
+	if (Input == "Game")
+	{
+		fpsOSS << "FPS: " << deltaTime;
+	}
 	string Fps = fpsOSS.str();
 
 	std::ostringstream keyOSS;
@@ -1315,11 +1298,6 @@ void SP2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], dialogueD, Color(1, 1, 0), 2, 6, 10);
 	}
 
-	if (santa)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], dialoguedata, Color(1, 1, 0), 2, 6, 10);
-	}
-
 	if (showV)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], dialogueV, Color(1, 1, 0), 2, 6, 10);
@@ -1347,31 +1325,53 @@ void SP2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], "Different things happens based on your choice", Color(1, 0, 1), 1.7, 2, 14);
 	}
 
-	if (Menu)
+	if (Input == "Menu")
 	{
-		if (Red1 == false)
+		if (color == "Red1")
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(0, 1, 0) , 1.7, 5, 21);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(1, 0, 0), 1.7, 5, 21);
 		}
-		if (Red2 == false)
+		else
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(0,1,0), 1.7, 5, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(0, 1, 0), 1.7, 5, 21);
+
 		}
-		if (Red3 == false)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 19);
-		}
-		if (Red1)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(1,0,0), 1.7, 5, 21);
-		}
-		if (Red2)
+		if (color == "Red2")
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(1, 0, 0), 1.7, 5, 20);
 		}
-		if (Red3)
+		else
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(0, 1, 0), 1.7, 5, 20);
+
+		}
+		if (color == "Red3")
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 19);
+		}
+		else
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 19);
+
+		}
+	}
+	if (Input == "Options")
+	{
+		if (Red4)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(1, 0, 0), 1.7, 5, 19);
+		}
+		if (Red4==false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(0, 1, 0), 1.7, 5, 19);
+		}
+		if (Red5)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 18);
+		}
+		if (Red5==false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 18);
 		}
 	}
 
