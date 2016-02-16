@@ -303,12 +303,8 @@ void SP2::Init()
 	meshList[GEO_BROAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_BROAD]->material.kShininess = 1.f;
 
-	meshList[GEO_PATH] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 10, 0.5,10);
-	meshList[GEO_PATH]->textureID = LoadTGA("Image//path.tga");
-	meshList[GEO_PATH]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
-	meshList[GEO_PATH]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
-	meshList[GEO_PATH]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
-	meshList[GEO_PATH]->material.kShininess = 1.f;
+	meshList[GEO_PATH] = MeshBuilder::GenerateOBJ("land", "OBJ//Quad.obj");
+	meshList[GEO_PATH]->textureID = LoadTGA("Image//tile.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
@@ -353,7 +349,7 @@ void SP2::Init()
 	meshList[GEO_MFLY]->textureID = LoadTGA("Image//Fly.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
-	meshList[GEO_TEXT]->textureID = LoadTGA("Image//GungsuhChe.tga");
+	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
 	GLuint wood = LoadTGA("Image//book.tga");
 	GLuint textID = LoadTGA("Image//Chair.tga");
@@ -545,12 +541,10 @@ void SP2::UpdateMenu()
 		switch (c_option)
 		{
 		case O_SETTING:
-			Red4 = true;
-			Red5 = false;
+			color = "Red4";
 			break;
 		case O_QUIT:
-			Red4 = false;
-			Red5 = true;
+			color = "Red5";
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				Input = "Menu";
@@ -899,6 +893,23 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 	modelStack.PopMatrix();
 
 	glEnable(GL_DEPTH_TEST);
+}
+void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y)
+{
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(size, size, size);
+	modelStack.Translate(x, y, 0);
+	RenderMesh(mesh, false);
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 static float SBSCALE1 = 1000.f;
@@ -1286,10 +1297,7 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 1, 0);
 
-	
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
@@ -1305,6 +1313,13 @@ void SP2::Render()
 	modelStack.Scale(1000, 1, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 1, 0);
+	modelStack.Rotate(90, 1, 0, 0);
+	if (Input != "Game")
+	{
+		RenderQuadOnScreen(meshList[GEO_PATH], 50, 1, 1);
+	}
 
 	if (door)
 	{
@@ -1370,19 +1385,19 @@ void SP2::Render()
 	}
 	if (Input == "Options")
 	{
-		if (Red4)
+		if (color == "Red4")
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(1, 0, 0), 1.7, 5, 19);
 		}
-		if (Red4==false)
+		else
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(0, 1, 0), 1.7, 5, 19);
 		}
-		if (Red5)
+		if (color == "Red5")
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 18);
 		}
-		if (Red5==false)
+		else
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 18);
 		}
