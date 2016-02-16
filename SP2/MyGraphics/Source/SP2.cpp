@@ -415,6 +415,12 @@ void SP2::Init()
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
 
+	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pyramid2.obj");
+	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//pyramid.tga");
+
+	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
+	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//moontarga.tga");
+
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
@@ -1126,9 +1132,9 @@ void SP2::Render()
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-	
+
 	modelStack.LoadIdentity();
-//new code
+	//new code
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1276,13 +1282,14 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 
-	
+
 	//Move skybox
 	modelStack.PushMatrix();
+
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
 	RenderSkybox();
 	modelStack.PopMatrix();
-	
+
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
@@ -1316,13 +1323,27 @@ void SP2::Render()
 
 	if (showInstructions)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Up,down,left,right to shift character view" , Color(1, 0, 0), 1.7, 2, 21);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Up,down,left,right to shift character view", Color(1, 0, 0), 1.7, 2, 21);
 		RenderTextOnScreen(meshList[GEO_TEXT], "W, A, S, D to move", Color(1, 0, 0), 1.7, 2, 20);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Z/X to on/off light", Color(1, 0, 0), 1.7, 2, 19);
 
 		RenderTextOnScreen(meshList[GEO_TEXT], "Move near to objects to see interaction", Color(1, 0, 1), 1.7, 2, 17);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Interactions: Door,NPC,Vending machine,Coke", Color(1, 0, 1), 1.7, 2, 16);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Different things happens based on your choice", Color(1, 0, 1), 1.7, 2, 14);
+	}
+
+	if (Input == "Game")
+	{
+		modelStack.PushMatrix();
+		modelStack.Scale(50, 50, 50);
+		modelStack.Translate(0, 5, 0);
+		RenderMesh(meshList[GEO_MOONBALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Scale(50, 50, 50);
+		RenderMesh(meshList[GEO_PYRAMID], true);
+		modelStack.PopMatrix();
 	}
 
 	if (Input == "Menu")
@@ -1361,7 +1382,7 @@ void SP2::Render()
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(1, 0, 0), 1.7, 5, 19);
 		}
-		if (Red4==false)
+		if (Red4 == false)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(0, 1, 0), 1.7, 5, 19);
 		}
@@ -1369,7 +1390,7 @@ void SP2::Render()
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 18);
 		}
-		if (Red5==false)
+		if (Red5 == false)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 18);
 		}
@@ -1391,10 +1412,10 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 2, 1, 29);
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 2, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 2, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Key, Color(1, 1, 0),2,1,1);
+	RenderTextOnScreen(meshList[GEO_TEXT], Key, Color(1, 1, 0), 2, 1, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], Coke, Color(1, 1, 0), 2, 8, 1);
 
-	modelStack.PopMatrix();
+	
 }
 void SP2::Exit()
 {
