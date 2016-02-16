@@ -16,21 +16,21 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	maxCameraX = 49.99f;
 	cameraSpeed = 150.f;
-	maxX = 275;
-	minX = -300;
-	maxZ = 275;
-	minZ = -300;
+	maxX = 348;
+	minX = -320;
+	maxZ = 430;
+	minZ = -220;
 
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
-	Vector3 view = (target - position).Normalized();
+	view = (target - position).Normalized();
 	Vector3 right = view.Cross(up);
 	right.y = 0;
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
 
-	//Default camera rotation4
-	cameraRotate = Vector3(0, -270, 0);
+	//Default camera rotation
+	cameraRotate = Vector3(0, -180, 0);
 
 }
 
@@ -58,15 +58,6 @@ void Camera3::Update(double dt)
 	{
 		cameraRotate.x += (float)(100 * dt);
 	}
-	if (Application::IsKeyPressed('N'))
-	{
-		position.y-=1 ;
-	}
-	if (Application::IsKeyPressed('M'))
-	{
-		position.y += 1;
-	}
-
 
 	//Bounds checking based on maximum and minimum
 	if (position.x > maxX)
@@ -126,7 +117,7 @@ void Camera3::Update(double dt)
 	//Changing target
 	target = Vector3(sin(DegreeToRadian(cameraRotate.y))*cos(DegreeToRadian(cameraRotate.x)) + this->position.x, -sin(DegreeToRadian(cameraRotate.x)) + this->position.y,
 		cos(DegreeToRadian(cameraRotate.y))*cos(DegreeToRadian(cameraRotate.x)) + this->position.z);
-	Vector3 view = (target - position).Normalized();
+	view = (target - position).Normalized();
 	Vector3 right = view.Cross(defaultUp);
 	right.y = 0;
 	up = right.Cross(view);

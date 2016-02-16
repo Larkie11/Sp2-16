@@ -17,6 +17,7 @@ public:
 	Vector3 defaultTarget;
 	Vector3 defaultUp;
 	Vector3 cameraRotate;
+	Vector3 view;
 
 	Camera3();
 	~Camera3();

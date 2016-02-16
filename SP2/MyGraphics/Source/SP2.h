@@ -8,6 +8,7 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Material.h"
+#include "Bullet.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -83,8 +84,7 @@ class SP2 : public Scene
 		GEO_BUILDING1,
 		GEO_BROAD,
 		GEO_COKE,
-		GEO_PYRAMID,
-		GEO_MOONBALL,
+		GEO_BULLET,
 		NUM_GEOMETRY,
 	};
 
@@ -262,6 +262,8 @@ private:
 	float rotateCokeX=150;
 	float cokeX=0;
 	float cokeZ=0;
+
+	Bullet bullet;
 
 };
 #endif
