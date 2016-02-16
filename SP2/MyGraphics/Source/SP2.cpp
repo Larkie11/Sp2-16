@@ -278,7 +278,7 @@ void SP2::Init()
 	glUniform1i(m_parameters[U_NUMLIGHTS],6);
 
 	//Initialize camera settings
-	camera.Init(Vector3(-3, 0, 70), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(-300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1,10);
@@ -415,7 +415,7 @@ void SP2::Init()
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
 
-	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pyramid2.obj");
+	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pyramid4.obj");
 	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//pyramid.tga");
 
 	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
@@ -894,7 +894,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 	glEnable(GL_DEPTH_TEST);
 }
 
-static float SBSCALE1 = 1000.f;
+static float SBSCALE1 = 1500;
 void SP2::RenderSkybox()
 {
 	if (night == 0)
@@ -1287,8 +1287,8 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	//x z very high
 	int boxdistance =0;
-	if (camera.position.x > 200||camera.position.z>200)
-		boxdistance = -200;
+	/*if (camera.position.x > 200||camera.position.z>200)
+		boxdistance = -500;*/
 	
 	modelStack.Translate(boxdistance + camera.position.x, 0, boxdistance - 90 + camera.position.z + 50);
 	RenderSkybox();
@@ -1300,7 +1300,7 @@ void SP2::Render()
 	//scale, translate, rotate
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(1000, 1, 1000);
+	modelStack.Scale(2000, 1, 2000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
@@ -1339,13 +1339,15 @@ void SP2::Render()
 	if (Input == "Game")
 	{
 		modelStack.PushMatrix();
-		modelStack.Scale(50, 50, 50);
-		modelStack.Translate(0, 5, 0);
+		modelStack.Scale(30, 30, 30);
+		modelStack.Translate(0, -1, 0);
 		RenderMesh(meshList[GEO_MOONBALL], true);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Scale(50, 50, 50);
+		modelStack.Scale(30, 30, 30);
+		modelStack.Translate(0, -0.15, 0);
+		modelStack.Rotate(180, 0, 1, 0);
 		RenderMesh(meshList[GEO_PYRAMID], true);
 		modelStack.PopMatrix();
 	}
