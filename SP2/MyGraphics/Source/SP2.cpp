@@ -1285,8 +1285,12 @@ void SP2::Render()
 
 	//Move skybox
 	modelStack.PushMatrix();
-
-	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
+	//x z very high
+	int boxdistance =0;
+	if (camera.position.x > 200||camera.position.z>200)
+		boxdistance = -200;
+	
+	modelStack.Translate(boxdistance + camera.position.x, 0, boxdistance - 90 + camera.position.z + 50);
 	RenderSkybox();
 	modelStack.PopMatrix();
 
