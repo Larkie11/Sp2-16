@@ -247,6 +247,7 @@ private:
 	float deltaTime;
 
 	Bullet bullet;
+	void userInput(int user);
 
 	Enemy enemy[10];
 	void Enemy_Rendering();

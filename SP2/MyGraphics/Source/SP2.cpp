@@ -44,8 +44,8 @@ void SP2::Init()
 	//m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Blending.fragmentshader");
 	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
-	m_parameters[U_MVP] = glGetUniformLocation(m_programID,"MVP");
-	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID,"MV");
+	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
+	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
 	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
 	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
 	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
@@ -126,7 +126,7 @@ void SP2::Init()
 
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
-	
+
 	// Get a handle for our "colorTexture" uniform
 	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
 	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
@@ -274,27 +274,27 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT5_COSINNER], light[5].cosInner);
 	glUniform1f(m_parameters[U_LIGHT5_EXPONENT], light[5].exponent);
 
-	glUniform1i(m_parameters[U_NUMLIGHTS],6);
+	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
 
 	//Initialize camera settings
 	camera.Init(Vector3(-300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
-	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1,10);
+	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//Tile.tga");
 	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;
 
-	meshList[GEO_FLOOR] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1),1.015,1,10);
+	meshList[GEO_FLOOR] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 1.015, 1, 10);
 	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//Tile2.tga");
 	meshList[GEO_FLOOR]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_FLOOR]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_FLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_FLOOR]->material.kShininess = 1.f;
 
-	meshList[GEO_BROAD] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 30, 7,10);
+	meshList[GEO_BROAD] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 30, 7, 10);
 	meshList[GEO_BROAD]->textureID = LoadTGA("Image//tile3.tga");
 	meshList[GEO_BROAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_BROAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
@@ -302,7 +302,7 @@ void SP2::Init()
 	meshList[GEO_BROAD]->material.kShininess = 1.f;
 
 	meshList[GEO_PATH] = MeshBuilder::GenerateOBJ("land", "OBJ//Quad.obj");
-	meshList[GEO_PATH]->textureID = LoadTGA("Image//tile.tga");
+	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
@@ -321,7 +321,7 @@ void SP2::Init()
 
 	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1, 1);
 	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//m_bottom.tga");
-		
+
 	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//d_front.tga");
 
@@ -425,35 +425,10 @@ void SP2::Init()
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
-
-	string no1 = "I found a key, do you want it? Y/N"; //0
-	string no2 = "Here you go!";	                   //1
-	string no3 = "Oh, ok then..";                      //2
-	string no4 = "I gave you the key already";         //3
-
-	string no5 = "Pick the can of coke up? Y/N";       //4
-	string no6 = "Picked up can of coke";              //5
-	string no7 = "You did not pick up the coke";       //6
-
-	string no8 = "Out of drinks";                      //7
-	string no9 = "Return can of coke? Y/N";            //8
-	string no10 = "Returned can of coke";              //9
-	string no11 = "You did not return the coke";       //10
-	
-	string no12 = "You need a key first, hint: Santa"; //11
-	string no13 = "Press E";                           //12
-
-	string no14 = "Hi! I'm here to help! Press Y!";    //13
-	string no15 = "Keep pressing Y to continue!";       //14
-	string no16 = "W,A,S,D to move!";                 //15
-	string no17 = "Up,down,left,right to change view!";//16
-	string no18 = "Hold V to see all the instructions!";//17	
 }
-
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
 static int dialogue = 0;
-
 void SP2::UpdateMenu()
 {
 	if (Input == "Menu")
@@ -466,6 +441,7 @@ void SP2::UpdateMenu()
 			{
 				Input = "Game";
 			}
+			userInput(0);
 			break;
 		case OPTIONS:
 			color = "Red2";
@@ -479,6 +455,7 @@ void SP2::UpdateMenu()
 					c_option = O_SETTING;
 				}
 			}
+			userInput(0);
 			break;
 		case QUIT:
 			color = "Red3";
@@ -486,31 +463,8 @@ void SP2::UpdateMenu()
 			{
 				Exit();
 			}
+			userInput(0);
 			break;
-		}
-		if (choose < MAX - 1)
-		{
-			if (Application::IsKeyPressed(VK_DOWN))
-			{
-				choose = static_cast<MENU>(choose + 1);
-				cout << choose << endl;
-				while (Application::IsKeyPressed(VK_DOWN))
-				{
-					choose = choose;
-				}
-			}
-		}
-		if (choose > STARTGAME)
-		{
-			if (Application::IsKeyPressed(VK_UP))
-			{
-				choose = static_cast<MENU>(choose - 1);
-				cout << choose << endl;
-				while (Application::IsKeyPressed(VK_UP))
-				{
-					choose = choose;
-				}
-			}
 		}
 	}
 	else if (Input == "Options")
@@ -519,6 +473,7 @@ void SP2::UpdateMenu()
 		{
 		case O_SETTING:
 			color = "Red4";
+			userInput(1);
 			break;
 		case O_QUIT:
 			color = "Red5";
@@ -532,18 +487,44 @@ void SP2::UpdateMenu()
 					choose = STARTGAME;
 				}
 			}
+			userInput(1);
 			break;
 		}
+	}
+}
+void SP2::userInput(int user)
+{
+	if (user == 0)
+	{
+		if (choose < MAX - 1)
+		{
+			if (Application::IsKeyPressed(VK_DOWN))
+			{
+				choose = static_cast<MENU>(choose + 1);
+				cout << choose << endl;
+			}
+		}
+		if (choose > STARTGAME)
+		{
+			if (Application::IsKeyPressed(VK_UP))
+			{
+				choose = static_cast<MENU>(choose - 1);
+				cout << choose << endl;
+			}
+		}
+		while (Application::IsKeyPressed(VK_UP) || Application::IsKeyPressed(VK_DOWN))
+		{
+			choose = choose;
+		}
+	}
+	if (user == 1)
+	{
 		if (c_option < O_MAX - 1)
 		{
 			if (Application::IsKeyPressed(VK_DOWN))
 			{
 				c_option = static_cast<OPTION>(c_option + 1);
 				cout << c_option << endl;
-				while (Application::IsKeyPressed(VK_DOWN))
-				{
-					c_option = c_option;
-				}
 			}
 		}
 		if (c_option > O_SETTING)
@@ -552,15 +533,14 @@ void SP2::UpdateMenu()
 			{
 				c_option = static_cast<OPTION>(c_option - 1);
 				cout << c_option << endl;
-				while (Application::IsKeyPressed(VK_UP))
-				{
-					c_option = c_option;
-				}
 			}
+		}
+		while (Application::IsKeyPressed(VK_DOWN) || Application::IsKeyPressed(VK_UP))
+		{
+			c_option = c_option;
 		}
 	}
 }
-
 void SP2::Update(double dt)
 {
 	if (Input == "Game")
@@ -577,45 +557,6 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-
-	if (Application::IsKeyPressed('5'))
-	{
-		light[0].type = Light::LIGHT_POINT;
-		glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-
-		light[1].type = Light::LIGHT_POINT;
-		glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
-	}
-	if (Application::IsKeyPressed('6'))
-	{
-		//light[0].type = Light::LIGHT_SPOT;
-		//glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-
-		light[1].type = Light::LIGHT_SPOT;
-		glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
-	}
-	if (Application::IsKeyPressed('7'))
-	{
-		//light[0].type =Light::LIGHT_DIRECTIONAL;
-		//glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-
-		light[1].type = Light::LIGHT_DIRECTIONAL;
-		glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
-	}
-		
-	if (Application::IsKeyPressed('I'))
-		light[4].position.z -= (float)(LSPEED * dt);
-	if (Application::IsKeyPressed('K'))
-		light[4].position.z += (float)(LSPEED * dt);
-	if (Application::IsKeyPressed('J'))
-		light[4].position.x -= (float)(LSPEED * dt);
-	if (Application::IsKeyPressed('L'))
-		light[4].position.x += (float)(LSPEED * dt);
-	if (Application::IsKeyPressed('O'))
-		light[4].position.y -= (float)(LSPEED * dt);
-	if (Application::IsKeyPressed('P'))
-		light[4].position.y += (float)(LSPEED * dt);
-
 	if (Application::IsKeyPressed('Z'))
 	{
 		Lighting9 = false;
@@ -640,7 +581,6 @@ void SP2::Update(double dt)
 
 	UpdateMenu();
 }
-
 void SP2::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -654,7 +594,6 @@ void SP2::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
-
 void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -695,8 +634,6 @@ void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
-
-
 void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -723,7 +660,6 @@ void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
-
 void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -786,7 +722,6 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y)
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
@@ -1128,6 +1063,7 @@ void SP2::Render()
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
+	modelStack.Scale(3, 3, 3);
 	RenderSkybox();
 	modelStack.PopMatrix();
 	
@@ -1145,7 +1081,7 @@ void SP2::Render()
 	modelStack.Rotate(90, 1, 0, 0);
 	if (Input != "Game")
 	{
-		RenderQuadOnScreen(meshList[GEO_PATH], 50, 1, 1);
+		RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.6, 5);
 	}
 
 	
@@ -1277,7 +1213,6 @@ void SP2::Enemy_Rendering()
 	}
 	Enemy_Shooting();
 }
-
 void SP2::Enemy_Shooting()
 {
 	for (int i = 0; i < 10; i++)
