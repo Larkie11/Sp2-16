@@ -652,7 +652,11 @@ void SP2::Update(double dt)
 	//Shooting button
 	if (Application::IsKeyPressed('G'))
 		bullet.Shoot(dt, camera);
-
+	//Bullet movement
+	if (bullet.shotFired)
+	{
+		bullet.position += bullet.velocity * dt;
+	}
 
 	deltaTime = (1.0 / dt);
 

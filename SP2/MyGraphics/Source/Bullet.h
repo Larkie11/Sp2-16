@@ -14,7 +14,7 @@ class Bullet
 		float b_Angel;
 		int b_Count;
 		bool enableShooting;
-
+		bool shotFired;
 		void Shoot(double dt, Camera3 camera);
 
 		Bullet();
