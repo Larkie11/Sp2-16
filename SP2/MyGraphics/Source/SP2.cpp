@@ -412,8 +412,8 @@ void SP2::Init()
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
 
-	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pyramid4.obj");
-	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//pyramid.tga");
+	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pryramidobj.obj");
+	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//sand_2.tga");
 
 	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
 	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//m_front.tga");
@@ -1127,13 +1127,17 @@ void SP2::Render()
 	std::ostringstream diaS;
 	diaS << data[dialogueSteve];
 	string dialogueS = diaS.str();
-
+	std::ostringstream ammoOSS;
 	std::ostringstream fpsOSS;
 	if (Input == "Game")
 	{
-		fpsOSS << "AMMO : " << bullet.b_Count;
+		fpsOSS << "FPS : " << deltaTime;
+	
+	
+		ammoOSS << "AMMO : " << bullet.b_Count;
 	}
 	string Fps = fpsOSS.str();
+	string ammo = ammoOSS.str();
 
 	std::ostringstream keyOSS;
 	keyOSS << "Key: " << key1;
@@ -1446,13 +1450,16 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_BULLET], true);
 		modelStack.PopMatrix();
 	}
-
-	RenderTextOnScreen(meshList[GEO_TEXT], "Hold V for instructions", Color(1, 1, 0), 2, 1, 4);
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 2, 1, 29);
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 2, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 2, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Key, Color(1, 1, 0),2,1,1);
-	RenderTextOnScreen(meshList[GEO_TEXT], Coke, Color(1, 1, 0), 2, 8, 1);
+	var.resize(16);
+	var1.resize(16);
+	Fps.resize(11);
+	//RenderTextOnScreen(meshList[GEO_TEXT], "Hold V for instructions", Color(1, 1, 0), 2, 1, 4);
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
+	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
+//	RenderTextOnScreen(meshList[GEO_TEXT], Key, Color(1, 1, 0),2,1,1);
+	//RenderTextOnScreen(meshList[GEO_TEXT], Coke, Color(1, 1, 0), 2, 8, 1);
 
 	modelStack.PopMatrix();
 
