@@ -22,6 +22,7 @@ SP2::~SP2()
 }
 void SP2::Init()
 {
+	srand(time(NULL));
 	choose = STARTGAME;
 	c_option = O_SETTING;
 	Input = "Menu";
@@ -588,6 +589,7 @@ void SP2::Update(double dt)
 {
 	if (Input == "Game")
 	{
+		Enemy_Updating(dt);
 		camera.Update(dt);
 	}
 	
@@ -1277,6 +1279,11 @@ void SP2::Render()
 
 	if (Input == "Game")
 	{
+
+		modelStack.PushMatrix();
+		Enemy_Rendering();
+		modelStack.PopMatrix();
+
 		modelStack.PushMatrix();
 		modelStack.Scale(30, 30, 30);
 		modelStack.Translate(0, -1, 0);
@@ -1470,4 +1477,37 @@ void SP2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
+}
+void SP2::Enemy_Updating(float dt)
+{
+	Position P = { camera.position.x, camera.position.y, camera.position.z };
+	for (int i = 0; i < 10; i++)
+	{
+		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 10 * dt);
+	}
+}
+void SP2::Enemy_Rendering()
+{
+	for (int i = 0; i < 10; i++)
+	{
+		Position A = enemy[i].Return_Position(enemy[i]);
+		modelStack.PushMatrix();
+		modelStack.Translate(A.x, -20, A.z);
+		modelStack.Scale(30, 30, 30);
+		RenderMesh(meshList[GEO_COKE], true);
+		modelStack.PopMatrix();
+
+		for (int j = 0; j < 10; j++)
+		{
+			if (enemy[i].Bullet[j].fired == true)
+			{
+				Position B = enemy[i].Return_Bullet_Position(j, enemy[i]);
+				modelStack.PushMatrix();
+				modelStack.Translate(B.x, 0, B.z);
+				modelStack.Scale(1, 1, 1);
+				RenderMesh(meshList[GEO_COKE], true);
+				modelStack.PopMatrix();
+			}
+		}
+	}
 }

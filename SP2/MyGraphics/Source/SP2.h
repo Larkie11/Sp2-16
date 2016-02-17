@@ -9,6 +9,7 @@
 #include "Light.h"
 #include "Material.h"
 #include "Bullet.h"
+#include "Enemy.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -262,6 +263,10 @@ private:
 	float cokeZ=0;
 
 	Bullet bullet;
+
+	Enemy enemy[10];
+	void Enemy_Rendering();
+	void Enemy_Updating(float dt);
 
 };
 #endif
