@@ -13,7 +13,12 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::vector;
 using std::string;
 
 class SP2 : public Scene
@@ -206,12 +211,7 @@ private:
 	unsigned m_parameters[U_TOTAL];
 	void UpdateMenu();
 	//Camera camera;
-	Camera3 camera;
-	Color colorA;
-	Color colorB;
-	Color colorC;
-	string Input;
-	string color;
+	
 
 	bool renderMenu = false;
 
@@ -229,38 +229,22 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y);
-	void RenderMuseum();
 	void RenderMenu();
+	void Dialogue(string filename);
 	bool Menu = true;
 	bool exitGame = false;
 	bool Options = false;
 	MENU choose;
 	OPTION c_option;
+	Camera3 camera;
+	Color colorA;
+	Color colorB;
+	Color colorC;
+	string Input;
+	string color;
+	vector<string>my_arr;
 
-	bool door;
-	float textdir=0;
-	float open;
-	float night = 0;
 	float deltaTime;
-	bool change = false;
-	std::vector <std::string> data;
-	float key1 = 0;
-	float coca =0;
-	bool cokeFollow = false;
-	float cokeY = -7;
-	bool showInstructions = false;
-	bool returned = false;
-	bool showC = false;
-	bool showV = false;
-	bool showS = false;
-	float dialogueVending;
-	float dialogueDoor;
-	float dialogueCoke;
-	float dialogueSteve = 13;
-	float rotateCokeY=0;
-	float rotateCokeX=150;
-	float cokeX=0;
-	float cokeZ=0;
 
 	Bullet bullet;
 

@@ -9,10 +9,6 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include <sstream>
-#include <iostream>
-
-using std::cout;
-using std::endl;
 
 SP2::SP2()
 {
@@ -26,6 +22,7 @@ void SP2::Init()
 	choose = STARTGAME;
 	c_option = O_SETTING;
 	Input = "Menu";
+	Dialogue("Text//Dialogue1.txt");
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -429,7 +426,6 @@ void SP2::Init()
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 
-	door = false;
 	string no1 = "I found a key, do you want it? Y/N"; //0
 	string no2 = "Here you go!";	                   //1
 	string no3 = "Oh, ok then..";                      //2
@@ -451,27 +447,7 @@ void SP2::Init()
 	string no15 = "Keep pressing Y to continue!";       //14
 	string no16 = "W,A,S,D to move!";                 //15
 	string no17 = "Up,down,left,right to change view!";//16
-	string no18 = "Hold V to see all the instructions!";//17
-
-	data.push_back(no1);
-	data.push_back(no2);
-	data.push_back(no3);
-	data.push_back(no4);
-	data.push_back(no5);
-	data.push_back(no6);
-	data.push_back(no7);
-	data.push_back(no8);
-	data.push_back(no9);
-	data.push_back(no10);
-	data.push_back(no11);
-	data.push_back(no12);
-	data.push_back(no13);
-	data.push_back(no14);
-	data.push_back(no15);
-	data.push_back(no16);
-	data.push_back(no17);	
-	data.push_back(no18);
-	night = true;
+	string no18 = "Hold V to see all the instructions!";//17	
 }
 
 static float LSPEED = 10.f;
@@ -663,129 +639,22 @@ void SP2::Update(double dt)
 	deltaTime = (1.0 / dt);
 
 	UpdateMenu();
-
-	if (camera.position.x > 10 && camera.position.x < 40 && camera.position.z > -42 && camera.position.z < -20)
-	{
-		showS = true;
-		if (showS)
-		{
-			if (Application::IsKeyPressed('Y'))
-			{
-				if (dialogueSteve < data.size()-1)
-				{
-					++dialogueSteve;
-				}
-				while (Application::IsKeyPressed('Y'))
-				{
-					dialogueSteve = dialogueSteve;
-				}
-			}
-		}
-	}
-
-	else
-	{
-		showS = false;
-		dialogueSteve = 13;
-	}
-
-	if (Application::IsKeyPressed('R'))
-	{
-		key1 = 0;
-		night = 1;
-		coca = 0;
-		returned = false;
-		cokeY = 2.5;
-		Lighting9 = true;
-	}
-
-	if (camera.position.z > -30 && camera.position.z <0 && camera.position.x > 150 && camera.position.x < 190)
-	{
-		showV = true;
-		if (coca == 1)
-		{
-			if (Application::IsKeyPressed('Y'))
-			{
-				dialogueVending = 9;
-				coca = 0;
-				returned = true;
-				cokeY = -30;
-			}
-			if (Application::IsKeyPressed('N'))
-			{
-				dialogueVending = 10;
-			}
-		}
-	}
-	
-	else
-	{
-		showV = false;
-		//didnt return can of coke
-		if (coca == 1)
-		{
-			dialogueVending = 8;
-		}
-
-		else if (coca == 0 && returned == false)
-		{
-			dialogueVending = 7;
-		}
-		else if (returned)
-		{
-			dialogueVending = 9;
-		}
-	}
-
-	if (coca == 1)
-	{
-		cokeX = camera.position.x;
-		cokeY = camera.position.y;
-		if (Application::IsKeyPressed(VK_LEFT))
-		{
-			rotateCokeY +=(float)(100*dt);
-		}
-		if (Application::IsKeyPressed(VK_RIGHT))
-		{
-			rotateCokeY -= (float)(100 * dt);
-		}
-	}
-
-	//table
-	if (camera.position.z < -100 && camera.position.z >-180 && camera.position.x > 290 && camera.position.x < 340)
-	{
-		showC = true;
-			if (Application::IsKeyPressed('Y'))
-			{
-				dialogueCoke = 5;
-				coca = 1;
-				cokeFollow = true;
-			}
-
-			if (Application::IsKeyPressed('N'))
-			{
-				dialogueCoke = 6;
-			}
-	}
-	else
-	{
-		showC = false;
-		if (cokeY == -7)
-		{
-			dialogueCoke = 4;
-		}
-	}
-	if (Application::IsKeyPressed('V'))
-	{
-		showInstructions = true;
-	}
-	else
-	{
-		showInstructions = false;
-	}
-	cokeX += camera.position.x + 0.1;
-	cokeZ += camera.position.z + 0.1;
 }
+
+void SP2::Dialogue(string filename)
+{
+	ifstream myfile(filename.c_str());
+	string line;
+	string new_line;
+
+	while (std::getline(myfile, line))
+	{
+		new_line = line + "\n";
+		cout << new_line;
+		my_arr.push_back(new_line);
+	}
+}
+
 void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -921,67 +790,63 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y)
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
-	if (night == 0)
-	{
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -20, -398);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Rotate(180, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_FRONT], false);
-		modelStack.PopMatrix();
+		//modelStack.PushMatrix();
+		////to do: transformation code here
+		//modelStack.Translate(0, -20, -398);
+		//modelStack.Rotate(90, 1, 0, 0);
+		//modelStack.Rotate(180, 0, 0, 1);
+		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+		//RenderMesh(meshList[GEO_FRONT], false);
+		//modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, 0, -0.9);
-		modelStack.Translate(0, -20, 600);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BACK], false);
-		modelStack.PopMatrix();
+		//modelStack.PushMatrix();
+		////to do: transformation code here
+		//modelStack.Translate(0, 0, -0.9);
+		//modelStack.Translate(0, -20, 600);
+		//modelStack.Rotate(90, 1, 0, 0);
+		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+		//RenderMesh(meshList[GEO_BACK], false);
+		//modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(5, 0, 0);
-		modelStack.Translate(-500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(-180, 1, 0, 0);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_LEFT], false);
-		modelStack.PopMatrix();
+		//modelStack.PushMatrix();
+		////to do: transformation code here
+		//modelStack.Translate(5, 0, 0);
+		//modelStack.Translate(-500, -20, 100);
+		//modelStack.Rotate(-90, 0, 0, 1);
+		//modelStack.Rotate(-180, 1, 0, 0);
+		//modelStack.Rotate(90, 0, 1, 0);
+		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+		//RenderMesh(meshList[GEO_LEFT], false);
+		//modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here	
-		modelStack.Translate(-5, 0, 0);
-		modelStack.Translate(500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_RIGHT], false);
-		modelStack.PopMatrix();
+		//modelStack.PushMatrix();
+		////to do: transformation code here	
+		//modelStack.Translate(-5, 0, 0);
+		//modelStack.Translate(500, -20, 100);
+		//modelStack.Rotate(-90, 0, 0, 1);
+		//modelStack.Rotate(90, 0, 1, 0);
+		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+		//RenderMesh(meshList[GEO_RIGHT], false);
+		//modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -500, 100);
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BOTTOM], false);
-		modelStack.PopMatrix();
+		//modelStack.PushMatrix();
+		////to do: transformation code here
+		//modelStack.Translate(0, -500, 100);
+		//modelStack.Rotate(180, 1, 0, 0);
+		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+		//RenderMesh(meshList[GEO_BOTTOM], false);
+		//modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -11, 0);
-		modelStack.Translate(0, 490, 100);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(360, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_TOP], false);
-		modelStack.PopMatrix();
-	}
-	if (night == 1)
-	{
+		//modelStack.PushMatrix();
+		////to do: transformation code here
+		//modelStack.Translate(0, -11, 0);
+		//modelStack.Translate(0, 490, 100);
+		//modelStack.Rotate(90, 0, 1, 0);
+		//modelStack.Rotate(360, 0, 0, 1);
+		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+		//RenderMesh(meshList[GEO_TOP], false);
+		//modelStack.PopMatrix();
+	
 		modelStack.PushMatrix();
 		//to do: transformation code here
 		modelStack.Translate(0, -20, -398);
@@ -1038,67 +903,6 @@ void SP2::RenderSkybox()
 		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
 		RenderMesh(meshList[GEO_TOP1], false);
 		modelStack.PopMatrix();
-	}
-}
-
-void SP2::RenderMuseum()
-{
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, -20, -398);
-	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.Rotate(180, 0, 0, 1);
-	modelStack.Scale(700, 700, 700);
-	RenderMesh(meshList[GEO_FRONT], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, 0, -0.9);
-	modelStack.Translate(0, -20, 600);
-	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.Scale(700, 700, 700);
-	RenderMesh(meshList[GEO_BACK], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(5, 0, 0);
-	modelStack.Translate(-500, -20, 100);
-	modelStack.Rotate(-90, 0, 0, 1);
-	modelStack.Rotate(-180, 1, 0, 0);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(700, 700, 700);
-	RenderMesh(meshList[GEO_LEFT], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here	
-	modelStack.Translate(-5, 0, 0);
-	modelStack.Translate(500, -20, 100);
-	modelStack.Rotate(-90, 0, 0, 1);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(700, 700, 700);
-	RenderMesh(meshList[GEO_RIGHT], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, -500, 100);
-	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(700, 700, 700);
-	RenderMesh(meshList[GEO_BOTTOM], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, -11, 0);
-	modelStack.Translate(0, 490, 100);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Rotate(360, 0, 0, 1);
-	modelStack.Scale(700, 700, 700);
-	RenderMesh(meshList[GEO_TOP], true);
-	modelStack.PopMatrix();
 }
 void SP2::Render()
 {
@@ -1110,7 +914,7 @@ void SP2::Render()
 	oss1 << "Camera Z: " << camera.position.z;
 	string var1 = oss1.str();
 
-	std::ostringstream dia;
+	/*std::ostringstream dia;
 	dia << data[dialogue];
 	string dialoguedata = dia.str();
 
@@ -1128,7 +932,7 @@ void SP2::Render()
 
 	std::ostringstream diaS;
 	diaS << data[dialogueSteve];
-	string dialogueS = diaS.str();
+	string dialogueS = diaS.str();*/
 	std::ostringstream ammoOSS;
 	std::ostringstream fpsOSS;
 	if (Input == "Game")
@@ -1140,14 +944,6 @@ void SP2::Render()
 	}
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
-
-	std::ostringstream keyOSS;
-	keyOSS << "Key: " << key1;
-	string Key = keyOSS.str();
-
-	std::ostringstream cokeOSS;
-	cokeOSS << "Coke: " << coca;
-	string Coke = cokeOSS.str();
 
 
 	// Render VBO here
@@ -1352,38 +1148,7 @@ void SP2::Render()
 		RenderQuadOnScreen(meshList[GEO_PATH], 50, 1, 1);
 	}
 
-	if (door)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], dialogueD, Color(1, 1, 0), 2, 6, 10);
-	}
-
-	if (showV)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], dialogueV, Color(1, 1, 0), 2, 6, 10);
-	}
-
-	if (showC)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], dialogueC, Color(1, 1, 0), 2, 6, 10);
-	}
-
-	if (showS)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], dialogueS, Color(1, 1, 0), 2, 6, 10);
-	}
-
-
-	if (showInstructions)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Up,down,left,right to shift character view" , Color(1, 0, 0), 1.7, 2, 21);
-		RenderTextOnScreen(meshList[GEO_TEXT], "W, A, S, D to move", Color(1, 0, 0), 1.7, 2, 20);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Z/X to on/off light", Color(1, 0, 0), 1.7, 2, 19);
-
-		RenderTextOnScreen(meshList[GEO_TEXT], "Move near to objects to see interaction", Color(1, 0, 1), 1.7, 2, 17);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Interactions: Door,NPC,Vending machine,Coke", Color(1, 0, 1), 1.7, 2, 16);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Different things happens based on your choice", Color(1, 0, 1), 1.7, 2, 14);
-	}
-
+	
 	if (Input == "Menu")
 	{
 		if (color == "Red1")
