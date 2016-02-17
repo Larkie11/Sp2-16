@@ -67,7 +67,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.y = Target.SpawnPoint.y + 20 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = Target.SpawnPoint.z + 20 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == assassination)
@@ -79,7 +79,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.y = Camera.y + 10 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = Camera.z + 10 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == explore)
@@ -91,7 +91,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.y = Target.Ground.y + 20 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = Target.Ground.z + 20 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 	}
@@ -106,7 +106,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 				{
 					if (Target.Bullet[i].fired == false)
 					{
-						Position A = (Camera.x + rand() % (i+1), Camera.y + rand() % (i+1), Camera.z + rand() % (i+1));
+						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
 						Target.Bullet[i] = ShootBullet(i, Target, A);
 					}
 				}
@@ -126,7 +126,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 				{
 					if (Target.Bullet[i].fired == false)
 					{
-						Position A = (Camera.x + rand() % (i+1), Camera.y + rand() % (i+1), Camera.z + rand() % (i+1));
+						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
 						Target.Bullet[i] = ShootBullet(i, Target, A);
 					}
 				}
@@ -153,7 +153,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 				{
 					if (Target.Bullet[i].fired == false)
 					{
-						Position A = (Camera.x + rand() % (i+1), Camera.y + rand() % (i+1), Camera.z + rand() % (i+1));
+						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
 						Target.Bullet[i] = ShootBullet(i, Target, A);
 					}
 				}
@@ -169,7 +169,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 				{
 					if (Target.Bullet[i].fired == false)
 					{
-						Position A = (Camera.x + rand() % (i+1), Camera.y + rand() % (i+1), Camera.z + rand() % (i+1));
+						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
 						Target.Bullet[i] = ShootBullet(i, Target, A);
 					}
 				}
@@ -185,7 +185,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 				{
 					if (Target.Bullet[i].fired == false)
 					{
-						Position A = (Camera.x + rand() % (i+1), Camera.y + rand() % (i+1), Camera.z + rand() % (i+1));
+						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
 						Target.Bullet[i] = ShootBullet(i, Target, A);
 					}
 				}
