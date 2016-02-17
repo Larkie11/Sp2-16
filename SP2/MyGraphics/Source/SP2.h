@@ -251,6 +251,6 @@ private:
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
-
+	void Enemy_Shooting();
 };
 #endif

@@ -8,6 +8,7 @@ Bullet::Bullet()
 	enableShooting = true;
 	shotFired = false;
 	b_delay = b_coolDown = 0.4;
+	position = { -1000, -1000, -1000 };
 }
 
 Bullet::~Bullet()

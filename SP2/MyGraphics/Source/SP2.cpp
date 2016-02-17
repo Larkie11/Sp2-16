@@ -1248,7 +1248,7 @@ void SP2::Enemy_Updating(float dt)
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 10; i++)
 	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 10 * dt);
+		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt);
 	}
 }
 void SP2::Enemy_Rendering()
@@ -1273,6 +1273,21 @@ void SP2::Enemy_Rendering()
 				RenderMesh(meshList[GEO_COKE], true);
 				modelStack.PopMatrix();
 			}
+		}
+	}
+	Enemy_Shooting();
+}
+
+void SP2::Enemy_Shooting()
+{
+	for (int i = 0; i < 10; i++)
+	{
+		Position A = enemy[i].Return_Position(enemy[i]);
+		float range = sqrt(((bullet.position.x - A.x)*(bullet.position.x - A.x)) + ((bullet.position.z - A.z)*(bullet.position.z - A.z)));
+		if (range < 50)
+		{
+			enemy[i] = enemy[i].DamageReceived(enemy[i],20);
+			cout << "You hitted Enemy " << i << endl;
 		}
 	}
 }
