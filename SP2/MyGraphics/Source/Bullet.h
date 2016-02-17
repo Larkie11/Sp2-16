@@ -12,6 +12,8 @@ class Bullet
 
 		float b_Speed;
 		float b_Angel;
+		float b_delay;
+		float b_coolDown;
 		int b_Count;
 		bool enableShooting;
 		bool shotFired;
