@@ -7,7 +7,7 @@ Enemy::Enemy()
 	HP = 100;
 	position = Ground = SpawnPoint = { 0, 0, 0 };
 	MeleeDamage = rand() % 20;
-	Current_modetype = 0;
+	Current_modetype = rand() % 3;
 }
 
 
@@ -63,27 +63,35 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.SpawnPoint.x + 10 * cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = Target.SpawnPoint.x + 20 * cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.y = Target.SpawnPoint.y + 10 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.y = Target.SpawnPoint.y + 20 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == assassination)
 		{
-			Target_To_Move_To = Camera;
+			int Angle = rand() % 360;
+			if (Angle != 90 && Angle != 270)
+			{
+				Target_To_Move_To.x = Camera.x + 10 * cos(Math::DegreeToRadian(Angle));
+			}
+			if (Angle != 0 && Angle != 180)
+			{
+				Target_To_Move_To.y = Camera.y + 10 * sin(Math::DegreeToRadian(Angle));
+			}
 		}
 		else if (mode == explore)
 		{
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.Ground.x + 10 * cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = Target.Ground.x + 20 * cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.y = Target.Ground.y + 10 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.y = Target.Ground.y + 20 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 	}
