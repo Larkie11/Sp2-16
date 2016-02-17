@@ -3,12 +3,19 @@
 
 Bullet::Bullet()
 {
-	b_Speed = 30;
+	b_Speed = 100; //was 500
 	b_Count = 10;
+	b1_Spawn = false;
+	b2_Spawn = false;
 	enableShooting = true;
+	b_Switcher = true;
 	shotFired = false;
-	b_delay = b_coolDown = 0.4;
-	position = { -1000, -1000, -1000 };
+
+	// set the position out of scene 1st
+	b1_position = { 0, -100, 0 };
+	b2_position = { 0, -100, 0 };
+
+	b_delay = b_coolDown = 0.8;
 }
 
 Bullet::~Bullet()
@@ -25,14 +32,30 @@ void Bullet::Shoot(double dt, Camera3 camera)
 			//delay setting
 			if (b_delay == b_coolDown)
 			{
+				//switching which bullet to travel
 				shotFired = true;
 				velocity = camera.view * b_Speed;
-				position = camera.position;
 				b_Angel = camera.cameraRotate.y;
-				position += velocity * dt;
+
+				if (!b1_Spawn)
+				{
+					b1_Spawn = true;
+					b2_Spawn = false;
+					b1_position = camera.position;
+					b1_position += velocity * dt;
+				}
+				else
+				{
+					b1_Spawn = false;
+					b2_Spawn = true;
+					b2_position = camera.position;
+					b2_position += velocity * dt;
+
+				}
+
 				b_Count--;
 			}
-			b_delay-=dt;
+			b_delay -= dt;
 			if (b_delay < 0)
 				b_delay = b_coolDown;
 		}
@@ -41,5 +64,11 @@ void Bullet::Shoot(double dt, Camera3 camera)
 			enableShooting = false;
 		}
 	}
-	
+	else
+	{
+		//Ammo reloaded
+		if (b_Count == 10)
+			enableShooting = true;
+	}
+
 }

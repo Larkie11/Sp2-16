@@ -419,6 +419,10 @@ void SP2::Init()
 	meshList[GEO_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//Missile.obj");
 	meshList[GEO_BULLET]->textureID = LoadTGA("Image//coke.tga");
 
+	meshList[GEO_BULLET2] = MeshBuilder::GenerateOBJ("bullet2", "OBJ//Missile.obj");
+	meshList[GEO_BULLET2]->textureID = LoadTGA("Image//sand_2.tga");
+
+
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -568,15 +572,20 @@ void SP2::Update(double dt)
 		
 	}
 
+
 	//Shooting button
+	if (Application::IsKeyPressed('H'))
+		bullet.b_Count = 10;
+
 	if (Application::IsKeyPressed('G'))
 		bullet.Shoot(dt, camera);
+
 	//Bullet movement
 	if (bullet.shotFired)
 	{
-		bullet.position += bullet.velocity * dt;
+		bullet.b1_position += bullet.velocity * dt;
+		bullet.b2_position += bullet.velocity * dt;
 	}
-
 	deltaTime = (1.0 / dt);
 
 	UpdateMenu();
@@ -1147,17 +1156,25 @@ void SP2::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	if (bullet.enableShooting)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(bullet.position.x, bullet.position.y, bullet.position.z);
-		modelStack.Rotate(-90, 0, 1, 0);
-		modelStack.Rotate(bullet.b_Angel, 0, 1, 0);
+	modelStack.PushMatrix();
+	modelStack.Translate(bullet.b1_position.x, bullet.b1_position.y, bullet.b1_position.z);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Rotate(bullet.b_Angel, 0, 1, 0);
 
-		modelStack.Scale(0.3, 0.3, 0.3);
-		RenderMesh(meshList[GEO_BULLET], true);
-		modelStack.PopMatrix();
-	}
+	modelStack.Scale(0.3, 0.3, 0.3);
+	RenderMesh(meshList[GEO_BULLET], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(bullet.b2_position.x, bullet.b2_position.y, bullet.b2_position.z);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Rotate(bullet.b_Angel, 0, 1, 0);
+
+
+	modelStack.Scale(0.3, 0.3, 0.3);
+	RenderMesh(meshList[GEO_BULLET2], true);
+	modelStack.PopMatrix();
+
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);
@@ -1218,7 +1235,7 @@ void SP2::Enemy_Shooting()
 	for (int i = 0; i < 10; i++)
 	{
 		Position A = enemy[i].Return_Position(enemy[i]);
-		float range = sqrt(((bullet.position.x - A.x)*(bullet.position.x - A.x)) + ((bullet.position.z - A.z)*(bullet.position.z - A.z)));
+		float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
 		if (range < 50)
 		{
 			enemy[i] = enemy[i].DamageReceived(enemy[i],20);
