@@ -10,6 +10,7 @@
 #include "Material.h"
 #include "Bullet.h"
 #include "Enemy.h"
+#include "Objects.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -251,12 +252,17 @@ private:
 	float deltaTime;
 
 	Bullet bullet;
+	Objects objects;
+
 	void userInput(int user);
 
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 	void Enemy_Shooting();
+
+	void ObjectsHolding(Mesh*mesh, float size);
+	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
 
 	char Map[20][20];
 
