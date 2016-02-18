@@ -30,6 +30,8 @@ void SP2::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
+	Object_Reading();
+	JumpTime = 0;
 	choose = STARTGAME;
 	c_option = O_SETTING;
 	Input = "Menu";
@@ -569,6 +571,7 @@ void SP2::Update(double dt)
 	if (Input == "Game")
 	{
 		Enemy_Updating(dt);
+		Object_Updating(dt);
 		Character_Movement(dt);
 		//camera.Update(dt);
 	}
@@ -1050,6 +1053,10 @@ void SP2::Render()
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
+		Object_Rendering();
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
 		modelStack.Scale(30, 30, 30);
 		modelStack.Translate(0, -1, 0);
 		RenderMesh(meshList[GEO_MOONBALL], true);
@@ -1327,7 +1334,6 @@ void SP2::Map_Rendering()
 
 	modelStack.PopMatrix();
 	camera.position.y = -10;
-	cout << Collision_Detection(VtoP(camera.position)) << endl;
 }
 
 bool SP2::Collision_Detection(Position Character)
@@ -1335,6 +1341,23 @@ bool SP2::Collision_Detection(Position Character)
 	bool check = true;
 	int X = 10 + (Character.x / Size);
 	int Z = 10 + (Character.z / Size);
+	if (X < 24 && X > 19)
+	{
+		X = 19;
+	}
+	if (Z < 24 && Z > 19)
+	{
+		Z = 19;
+	}
+	if (X > -4 && X < 0)
+	{
+		X = 0;
+	}
+	if (Z > -4 && Z < 0)
+	{
+		Z = 0;
+	}
+	cout << X << " / " <<Z<< endl;
 	if (X > -1 && X < 20 && Z > -1 && Z < 20)
 	{
 		if (Map[X][Z] != char(' '))
@@ -1403,42 +1426,75 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
+		else
+		{
+			Test = camera.position;
+		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-	}
-	if (Collision_Detection(VtoP(Test)))
-	{
-		camera.position = Test;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
 	}
 
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
+		else
+		{
+			Test = camera.position;
+		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-	}
-	if (Collision_Detection(VtoP(Test)))
-	{
-		camera.position = Test;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
 	}
 
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
+		else
+		{
+			Test = camera.position;
+		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-	}
-	if (Collision_Detection(VtoP(Test)))
-	{
-		camera.position = Test;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
 	}
 
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
+		else
+		{
+			Test = camera.position;
+		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+		if (Collision_Detection(VtoP(Test)))
+		{
+			camera.position = Test;
+		}
 	}
-	if (Collision_Detection(VtoP(Test)))
-	{
-		camera.position = Test;
-	}
+
 
 	//Only allow rotating to look 90 degrees up and 90 degrees down
 	if (camera.cameraRotate.x > camera.maxCameraX)

@@ -286,6 +286,6 @@ private:
 	void Object_Reading();
 	void Object_Rendering();
 	void Object_Updating(float dt);
-
+	float JumpTime;
 };
 #endif
