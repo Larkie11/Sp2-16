@@ -94,6 +94,9 @@ class SP2 : public Scene
 		GEO_BULLET2,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
+		GEO_PYRAMIDNEW,
+		GEO_PYRAMIDWALL,
+		GEO_PYRAMIDPILLAR,
 		NUM_GEOMETRY,
 	};
 
@@ -254,5 +257,12 @@ private:
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 	void Enemy_Shooting();
+
+	char Map[20][20];
+
+	void Map_Reading();
+	void Map_Rendering();
+	bool Collision_Detection(Position Character);
+	void Character_Movement(float dt);
 };
 #endif

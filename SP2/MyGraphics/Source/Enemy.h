@@ -3,15 +3,6 @@
 
 #include "Vertex.h"
 
-class Acid
-{
-public:
-	Acid(){ position = { 0, 0, 0 }; direction = { 0, 0, 0 }; AcidDamage = 0; fired = false; };
-	Position position;
-	Position direction;
-	float AcidDamage;
-	bool fired;
-};
 
 class Enemy
 {
@@ -41,18 +32,15 @@ class Enemy
 
 	Enemy mode_Action(Enemy Target,Position Camera);
 	int mode_Change(Enemy Target);
-	int Return_HP(Enemy Target);
-	Acid ShootBullet(int bullet, Enemy Target, Position Camera);
 	Position Movement(Position Current, Position Target,float Speed);
 
 public:
 	Enemy();
 	~Enemy();
-	Acid Bullet[10];
+	int Return_HP(Enemy Target);
 	Enemy Enemy_movement(Enemy Target, Position Camera, float dt);
 	Enemy DamageReceived(Enemy Target, int Damage);
 	Position Return_Position(Enemy Target);
-	Position Return_Bullet_Position(int bullet, Enemy Target);
 };
 
 #endif

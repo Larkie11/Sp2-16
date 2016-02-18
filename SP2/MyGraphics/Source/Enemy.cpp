@@ -40,13 +40,6 @@ Enemy Enemy::DamageReceived(Enemy Target, int Damage)
 	{
 		Target.HP = 100;
 		Target.position = Target.Ground = Target.SpawnPoint = { 0, 0, 0 };
-		for (int i = 0; i < 10; i++)
-		{
-			Target.Bullet[i].position = { 0, 0, 0 }; 
-			Target.Bullet[i].direction = { 0, 0, 0 };
-			Target.Bullet[i].AcidDamage = 0;
-			Target.Bullet[i].fired = false;
-		}
 	}
 	Target.Current_modetype = mode_Change(Target);
 	return Target;
@@ -102,14 +95,6 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
 			if (Range > 10)
 			{
-				for (int i = 0; i < 10; i++)
-				{
-					if (Target.Bullet[i].fired == false)
-					{
-						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
-						Target.Bullet[i] = ShootBullet(i, Target, A);
-					}
-				}
 			}
 			else
 			{
@@ -122,14 +107,6 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
 			if (Range > 10)
 			{
-				for (int i = 0; i < 10; i++)
-				{
-					if (Target.Bullet[i].fired == false)
-					{
-						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
-						Target.Bullet[i] = ShootBullet(i, Target, A);
-					}
-				}
 			}
 			else
 			{
@@ -149,14 +126,6 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
 			if (Range > 5)
 			{
-				for (int i = 0; i < 10; i++)
-				{
-					if (Target.Bullet[i].fired == false)
-					{
-						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
-						Target.Bullet[i] = ShootBullet(i, Target, A);
-					}
-				}
 			}
 			Target_To_Move_To = Camera;
 		}
@@ -165,14 +134,6 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
 			if (Range > 2)
 			{
-				for (int i = 0; i < 10; i++)
-				{
-					if (Target.Bullet[i].fired == false)
-					{
-						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
-						Target.Bullet[i] = ShootBullet(i, Target, A);
-					}
-				}
 			}
 			Target_To_Move_To = Camera;
 		}
@@ -181,14 +142,6 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
 			if (Range > 20)
 			{
-				for (int i = 0; i < 10; i++)
-				{
-					if (Target.Bullet[i].fired == false)
-					{
-						Position A = (Camera.x + rand() % (i+1), Camera.z + rand() % (i+1), Camera.z + rand() % (i+1));
-						Target.Bullet[i] = ShootBullet(i, Target, A);
-					}
-				}
 			}
 			Target_To_Move_To = Camera;
 		}
@@ -202,24 +155,10 @@ Position Enemy::Return_Position(Enemy Target)
 	return Target.position;
 }
 
-Position Enemy::Return_Bullet_Position(int bullet, Enemy Target)
-{
-	return Target.Bullet[bullet].position;
-}
 
 int Enemy::Return_HP(Enemy Target)
 {
 	return Target.HP;
-}
-
-Acid Enemy::ShootBullet(int Bullet, Enemy Target, Position Camera)
-{
-	Acid Bullets = Target.Bullet[Bullet];
-	Bullets.position = Target.position;
-	Bullets.direction = Camera;
-	Bullets.AcidDamage = 20;
-	Bullets.fired = true;
-	return Bullets;
 }
 
 Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt)
@@ -237,21 +176,6 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt)
 	else if (Target.Current_modetype == charge || Target.Current_modetype == Surprise_attack)
 	{
 		speed = 1 * dt;
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		if (Target.Bullet[i].fired == true && Target.Bullet[i].position.x == Target.Bullet[i].direction.x && Target.Bullet[i].position.y == Target.Bullet[i].direction.y)
-		{
-			Target.Bullet[i].fired = false;
-			Target.Bullet[i].direction = { 0, 0, 0 };
-			Target.Bullet[i].position = { 0, 0, 0 };
-			Target.Bullet[i].AcidDamage = 0;
-			std::cout << "Shot" << std::endl;
-		}
-		else if (Target.Bullet[i].fired == true)
-		{
-			Target.Bullet[i].position = Movement(Bullet[i].position,Bullet[i].direction, 1);
-		}
 	}
 	Target.position = Movement(Target.position, Target.Ground, speed);
 	return Target;

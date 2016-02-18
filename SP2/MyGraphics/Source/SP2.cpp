@@ -10,6 +10,16 @@
 #include "LoadTGA.h"
 #include <sstream>
 
+Position VtoP(Vector3 V)
+{
+	Position P = { V.x, V.y, V.z };
+	return P;
+}
+Vector3 PtoV(Position V)
+{
+	Vector3 P = { V.x, V.y, V.z };
+	return P;
+}
 SP2::SP2()
 {
 }
@@ -19,6 +29,7 @@ SP2::~SP2()
 void SP2::Init()
 {
 	srand(time(NULL));
+	Map_Reading();
 	choose = STARTGAME;
 	c_option = O_SETTING;
 	Input = "Menu";
@@ -423,6 +434,14 @@ void SP2::Init()
 	meshList[GEO_BULLET2]->textureID = LoadTGA("Image//sand_2.tga");
 
 
+	meshList[GEO_PYRAMIDNEW] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidNew.obj");
+	meshList[GEO_PYRAMIDNEW]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PYRAMIDWALL] = MeshBuilder::GenerateOBJ("Walls", "OBJ/Wall.obj");
+	meshList[GEO_PYRAMIDWALL]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
+	meshList[GEO_PYRAMIDPILLAR]->textureID = LoadTGA("Image//sand_2.tga");
+
+
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -550,7 +569,8 @@ void SP2::Update(double dt)
 	if (Input == "Game")
 	{
 		Enemy_Updating(dt);
-		camera.Update(dt);
+		Character_Movement(dt);
+		//camera.Update(dt);
 	}
 	
 	if (Application::IsKeyPressed('1')) //enable back face culling
@@ -1025,16 +1045,13 @@ void SP2::Render()
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Scale(30, 30, 30);
-		modelStack.Translate(0, -1, 0);
-		RenderMesh(meshList[GEO_MOONBALL], true);
+		Map_Rendering();
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
 		modelStack.Scale(30, 30, 30);
-		modelStack.Translate(0, -0.15, 0);
-		modelStack.Rotate(180, 0, 1, 0);
-		RenderMesh(meshList[GEO_PYRAMID], true);
+		modelStack.Translate(0, -1, 0);
+		RenderMesh(meshList[GEO_MOONBALL], true);
 		modelStack.PopMatrix();
 	}
 
@@ -1214,32 +1231,227 @@ void SP2::Enemy_Rendering()
 		modelStack.Scale(30, 30, 30);
 		RenderMesh(meshList[GEO_COKE], true);
 		modelStack.PopMatrix();
-
-		for (int j = 0; j < 10; j++)
-		{
-			if (enemy[i].Bullet[j].fired == true)
-			{
-				Position B = enemy[i].Return_Bullet_Position(j, enemy[i]);
-				modelStack.PushMatrix();
-				modelStack.Translate(B.x, 0, B.z);
-				modelStack.Scale(1, 1, 1);
-				RenderMesh(meshList[GEO_COKE], true);
-				modelStack.PopMatrix();
-			}
-		}
 	}
 	Enemy_Shooting();
 }
 void SP2::Enemy_Shooting()
 {
-	for (int i = 0; i < 10; i++)
+	if (bullet.b1_position.y > 0)
 	{
-		Position A = enemy[i].Return_Position(enemy[i]);
-		float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
-		if (range < 50)
+		for (int i = 0; i < 10; i++)
 		{
-			enemy[i] = enemy[i].DamageReceived(enemy[i],20);
-			cout << "You hitted Enemy " << i << endl;
+			Position A = enemy[i].Return_Position(enemy[i]);
+			float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
+			if (range < 50)
+			{
+				enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
+				cout << "You hitted Enemy " << i << endl;
+			}
 		}
 	}
+	if (bullet.b2_position.y > 0)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Position A = enemy[i].Return_Position(enemy[i]);
+			float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
+			if (range < 50)
+			{
+				enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
+				cout << "You hitted Enemy " << i << endl;
+			}
+		}
+	}
+}
+
+void SP2::Map_Reading()
+{
+	string line;
+	ifstream myfile("Map//Map1.txt");
+	if (myfile.is_open())
+	{
+		for (int i = 0; i < 20; i++)
+		{
+			getline(myfile, line);
+			for (int j = 0; j < 20; j++)
+			{
+				Map[i][j] = line.at(j);
+			}
+		}
+		myfile.close();
+	}
+	else cout << "Unable to read Map!!" << endl;
+}
+
+float Size = 10;
+void SP2::Map_Rendering()
+{
+	modelStack.PushMatrix();
+
+	modelStack.Translate(0, -20, 0);
+
+	modelStack.PushMatrix();
+	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
+	RenderMesh(meshList[GEO_PYRAMIDNEW], true);
+	modelStack.PushMatrix();
+	modelStack.Scale(Size, (2 / (2.5*Size)), Size);
+	RenderMesh(meshList[GEO_PYRAMIDWALL], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	//Start Point
+	modelStack.Translate(-Size * 10, 10, -Size * 10);
+	for (int i = 0; i < 20; i++)
+	{
+		for (int j = 0; j < 20; j++)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(Size*i, 0, Size*j);
+			modelStack.Scale(Size, Size, Size);
+			if (Map[i][j] == char('0'))
+			{
+				RenderMesh(meshList[GEO_PYRAMIDPILLAR], true);
+			}
+			else if (Map[i][j] == char('1'))
+			{
+				RenderMesh(meshList[GEO_PYRAMIDWALL], true);
+			}
+			modelStack.PopMatrix();
+		}
+
+	}
+
+	modelStack.PopMatrix();
+	camera.position.y = -10;
+	cout << Collision_Detection(VtoP(camera.position)) << endl;
+}
+
+bool SP2::Collision_Detection(Position Character)
+{
+	bool check = true;
+	int X = 10 + (Character.x / Size);
+	int Z = 10 + (Character.z / Size);
+	if (X > -1 && X < 20 && Z > -1 && Z < 20)
+	{
+		if (Map[X][Z] != char(' '))
+		{
+			check = false;
+		}
+
+	}
+	return check;
+}
+
+void SP2::Character_Movement(float dt)
+{
+
+	if (Application::IsKeyPressed('R'))
+	{
+		camera.Reset();
+	}
+
+	//Changing view (target)
+	if (Application::IsKeyPressed(VK_LEFT))
+	{
+		camera.cameraRotate.y += (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed(VK_RIGHT))
+	{
+		camera.cameraRotate.y -= (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed(VK_UP))
+	{
+		camera.cameraRotate.x -= (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed(VK_DOWN))
+	{
+		camera.cameraRotate.x += (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed('N'))
+	{
+		camera.position.y -= 1;
+	}
+	if (Application::IsKeyPressed('M'))
+	{
+		camera.position.y += 1;
+	}
+
+	//Bounds checking based on maximum and minimum
+	if (camera.position.x > camera.maxX)
+	{
+		camera.position.x = camera.maxX;
+	}
+	if (camera.position.x < camera.minX)
+	{
+		camera.position.x = camera.minX;
+	}
+	if (camera.position.z > camera.maxZ)
+	{
+		camera.position.z = camera.maxZ;
+	}
+	if (camera.position.z < camera.minZ)
+	{
+		camera.position.z = camera.minZ;
+	}
+
+	//Moving the camera
+	Vector3 Test = camera.position;
+	if (Application::IsKeyPressed('W'))
+	{
+		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
+		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
+	}
+	if (Collision_Detection(VtoP(Test)))
+	{
+		camera.position = Test;
+	}
+
+	if (Application::IsKeyPressed('S'))
+	{
+		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+	}
+	if (Collision_Detection(VtoP(Test)))
+	{
+		camera.position = Test;
+	}
+
+	if (Application::IsKeyPressed('A'))
+	{
+		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+	}
+	if (Collision_Detection(VtoP(Test)))
+	{
+		camera.position = Test;
+	}
+
+	if (Application::IsKeyPressed('D'))
+	{
+		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+	}
+	if (Collision_Detection(VtoP(Test)))
+	{
+		camera.position = Test;
+	}
+
+	//Only allow rotating to look 90 degrees up and 90 degrees down
+	if (camera.cameraRotate.x > camera.maxCameraX)
+	{
+		camera.cameraRotate.x = camera.maxCameraX;
+	}
+
+	else if (camera.cameraRotate.x < -camera.maxCameraX)
+	{
+		camera.cameraRotate.x = -camera.maxCameraX;
+	}
+
+	//Changing target
+	camera.target = Vector3(sin(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.x, -sin(DegreeToRadian(camera.cameraRotate.x)) + camera.position.y,
+		cos(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.z);
+	camera.view = (camera.target - camera.position).Normalized();
+	Vector3 right = camera.view.Cross(camera.defaultUp);
+	right.y = 0;
+	camera.up = right.Cross(camera.view);
 }
