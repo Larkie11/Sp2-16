@@ -13,6 +13,8 @@ public:
 	void Run();
 	void Exit();
 	static bool IsKeyPressed(unsigned short key);
+	float height;
+	float width;
 
 private:
 
