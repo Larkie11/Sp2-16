@@ -233,7 +233,7 @@ private:
 	void RenderSkybox();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y);
+	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate);
 	void RenderMenu();
 	void Dialogue(string filename);
 	bool Menu = true;

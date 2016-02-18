@@ -312,7 +312,7 @@ void SP2::Init()
 	meshList[GEO_BROAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_BROAD]->material.kShininess = 1.f;
 
-	meshList[GEO_PATH] = MeshBuilder::GenerateOBJ("land", "OBJ//Quad.obj");
+	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
@@ -770,7 +770,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 
 	glEnable(GL_DEPTH_TEST);
 }
-void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y)
+void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
@@ -782,6 +782,7 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y)
 	modelStack.LoadIdentity(); //Reset modelStack
 	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, 0);
+	modelStack.Rotate(rotate, 1, 0, 0);
 	RenderMesh(mesh, false);
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
@@ -1143,8 +1144,10 @@ void SP2::Render()
 	modelStack.Rotate(90, 1, 0, 0);
 	if (Input != "Game")
 	{
-		RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.6, 5);
+		RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.7, 5, 90);
 	}
+	RenderQuadOnScreen(meshList[GEO_COKE], 2, 5, 5, 0);
+
 
 	
 	if (Input == "Menu")
