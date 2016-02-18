@@ -609,42 +609,6 @@ void SP2::Update(double dt)
 	deltaTime = (1.0 / dt);
 
 	UpdateMenu();
-	if (Application::IsKeyPressed('E'))
-	{
-		objects.CheckDistance(objects.COKE, camera);
-
-
-		objects.CheckDistance(objects.VENDINGMACHINE, camera);
-
-
-	}
-
-	if (Application::IsKeyPressed(VK_LEFT))
-	{
-		objects.followy += (float)(100 * dt);
-	}
-
-	if (Application::IsKeyPressed(VK_RIGHT))
-	{
-		objects.followy -= (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_UP))
-	{
-		objects.followx += (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_DOWN))
-	{
-		objects.followx -= (float)(100 * dt);
-	}
-	if (objects.followx > camera.maxCameraX)
-	{
-		objects.followx = 49.99;
-
-	}
-	if (objects.followx < -camera.maxCameraX)
-	{
-		objects.followx = -49.99;
-	}
 }
 void SP2::Dialogue(string filename)
 {
@@ -1244,33 +1208,8 @@ void SP2::Render()
 
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
 
 
-	if (objects.pickupcoke == true)
-	{
-		ObjectsHolding(meshList[GEO_COKE], 0.1);
-
-
-	}
-	else
-	{
-		RenderObjects(meshList[GEO_COKE], 5, 10, 0, 5);
-
-	}
-
-	if (objects.pickupvending == true)
-	{
-
-		ObjectsHolding(meshList[GEO_VENDING], 0.1);
-
-	}
-	else
-	{
-
-		RenderObjects(meshList[GEO_VENDING], 5, 1, 0, 15);
-	}
-	modelStack.PopMatrix();
 
 }
 void SP2::Exit()
@@ -1521,23 +1460,6 @@ void SP2::Character_Movement(float dt)
 	camera.up = right.Cross(camera.view);
 }
 
-void SP2::ObjectsHolding(Mesh*mesh, float size)
-{
-
-	modelStack.PushMatrix();
-
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(objects.followy, 0, 1, 0);
-	modelStack.Rotate(objects.followx, 0, 0, 1);
-
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0.9, -0.12, -0.3);
-	modelStack.Scale(size, size, size);
-	RenderMesh(mesh, true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-}
 
 void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 {
@@ -1551,3 +1473,75 @@ void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 	modelStack.PopMatrix();
 }
 
+
+void SP2::Object_Reading()
+{
+	for (int i = 0; i < Num_Object; i++)
+	{
+		object[i].ItemType = Items::VENDINGMACHINE;
+		object[i].position.Set(i * 10, 0, i * 10);
+	}
+	object_on_hand.ItemType = Items::None;
+	object_on_hand.position.Set(camera.target.x * 1, -10, camera.target.z * 1);
+	T_object_Num = -1;
+}
+
+void SP2::Object_Rendering()
+{
+	modelStack.PushMatrix();
+	modelStack.Scale(10, 10, 10);
+	for (int i = 0; i < Num_Object; i++)
+	{
+		if (object[i].ItemType == Items::VENDINGMACHINE)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);
+			RenderMesh(meshList[GEO_COKE], true);
+			modelStack.PopMatrix();
+		}
+	}
+	if (object_on_hand.ItemType == Items::VENDINGMACHINE)
+	{
+		modelStack.PushMatrix();
+		modelStack.Scale(10, 10, 10);
+		modelStack.Translate(object_on_hand.position.x, object_on_hand.position.y, object_on_hand.position.z);
+		RenderMesh(meshList[GEO_COKE], true);
+		modelStack.PopMatrix();
+	}
+	modelStack.PopMatrix();
+}
+
+void SP2::Object_Updating(float dt)
+{
+	if (Application::IsKeyPressed('E') && object_on_hand.ItemType != Items::None)
+	{
+		object[T_object_Num].ItemType = object_on_hand.ItemType;
+		object[T_object_Num].position = object_on_hand.position;
+		object_on_hand.ItemType = Items::None;
+		T_object_Num = -1;
+
+	}
+	else if (Application::IsKeyPressed('E'))
+	{
+		int Pointer = 0;
+		float Range = sqrt(((camera.position.x - object[0].position.x)*(camera.position.x - object[0].position.x)) + ((camera.position.x - object[0].position.z)*(camera.position.x - object[0].position.z)));
+		for (int i = 1; i < Num_Object; i++)
+		{
+			float T_Range = sqrt(((camera.position.x - object[i].position.x)*(camera.position.x - object[i].position.x)) + ((camera.position.x - object[i].position.z)*(camera.position.x - object[i].position.z)));
+			if (T_Range < Range)
+			{
+				Range = T_Range;
+				Pointer = i;
+			}
+		}
+		if (Range <= 20)
+		{
+			object_on_hand.ItemType = object[Pointer].ItemType;
+			T_object_Num = Pointer;
+			object[Pointer].ItemType = Items::None;
+			object[Pointer].position.Set(-1000, -1000, -1000);
+		}
+
+	}
+	object_on_hand.position.Set(camera.target.x * 1, -10, camera.target.z * 1);
+}

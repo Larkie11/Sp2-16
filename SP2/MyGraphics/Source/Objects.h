@@ -8,6 +8,7 @@
 class Objects
 {
 public:
+	int ItemType;
 	Vector3 position;
 	enum OBJECTS
 	{
@@ -17,24 +18,6 @@ public:
 	
 	Objects();
 	~Objects();
-	bool pickupcoke = false;
-	bool pickupvending = false;
-
-
-	float measuere;
-
-	float followx = 0;
-	float followy = 0;
-
-
-	void CheckDistance(Vector3 objects, Camera3 camera);
-
-	
-private:
-	Vector3 cameravector;
-	
-
-	// calculating self and objects place
 	
 };
 

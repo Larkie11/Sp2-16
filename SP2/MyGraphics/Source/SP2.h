@@ -196,6 +196,15 @@ class SP2 : public Scene
 		U_TOTAL,
 	};
 
+
+	enum Items
+	{
+		None = -1,
+		COKE,
+		VENDINGMACHINE,
+		Num_Object,
+	};
+
 public:
 	SP2();
 	~SP2();
@@ -270,5 +279,13 @@ private:
 	void Map_Rendering();
 	bool Collision_Detection(Position Character);
 	void Character_Movement(float dt);
+
+	Objects object[Num_Object];
+	Objects object_on_hand;
+	int T_object_Num;
+	void Object_Reading();
+	void Object_Rendering();
+	void Object_Updating(float dt);
+
 };
 #endif
