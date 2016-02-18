@@ -38,6 +38,15 @@ class SP2 : public Scene
 		O_QUIT,
 		O_MAX,
 	};
+	enum SHOP_OPTION
+	{
+		S_YES,
+		S_NO,
+		S_BUY,
+		S_SELL,
+		S_BACK,
+		S_MAX,
+	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_TRIANGLE_1 = 0,
@@ -235,6 +244,7 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
+	string shopInput;
 
 	Light light[8]; //shader max 8 lights
 
@@ -291,5 +301,7 @@ private:
 	void Object_Rendering();
 	void Object_Updating(float dt);
 	float JumpTime;
+	float PressTime;
+	SHOP_OPTION s_option;
 };
 #endif

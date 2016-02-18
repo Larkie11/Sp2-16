@@ -36,11 +36,11 @@ void SP2::Init()
 	c_option = O_SETTING;
 	Input = "Menu";
 	Dialogue("Text//Dialogue1.txt");
+	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
 	b_Ammo = 30;
 	startCoolDdown = false;
-
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -519,61 +519,112 @@ void SP2::UpdateMenu()
 }
 void SP2::userInput(int user)
 {
+	
 	if (user == 0)
 	{
 		if (choose < MAX - 1)
 		{
-			if (Application::IsKeyPressed(VK_DOWN))
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				PressTime = deltaTime / 10;
 				choose = static_cast<MENU>(choose + 1);
 				cout << choose << endl;
 			}
 		}
 		if (choose > STARTGAME)
 		{
-			if (Application::IsKeyPressed(VK_UP))
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				PressTime = deltaTime / 10;
 				choose = static_cast<MENU>(choose - 1);
 				cout << choose << endl;
 			}
 		}
-		while (Application::IsKeyPressed(VK_UP) || Application::IsKeyPressed(VK_DOWN))
-		{
-			choose = choose;
-		}
+
 	}
 	if (user == 1)
 	{
 		if (c_option < O_MAX - 1)
 		{
-			if (Application::IsKeyPressed(VK_DOWN))
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				PressTime = deltaTime / 10;
 				c_option = static_cast<OPTION>(c_option + 1);
 				cout << c_option << endl;
 			}
 		}
 		if (c_option > O_SETTING)
 		{
-			if (Application::IsKeyPressed(VK_UP))
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				PressTime = deltaTime / 10;
 				c_option = static_cast<OPTION>(c_option - 1);
 				cout << c_option << endl;
 			}
-		}
-		while (Application::IsKeyPressed(VK_DOWN) || Application::IsKeyPressed(VK_UP))
-		{
-			c_option = c_option;
 		}
 	}
 }
 void SP2::Update(double dt)
 {
+	if (PressTime > 0)
+	{
+		PressTime -= 1;
+	}
+	else
+	{
+		PressTime = 0;
+	}
 	if (Input == "Game")
 	{
 		Enemy_Updating(dt);
 		Object_Updating(dt);
 		Character_Movement(dt);
 		//camera.Update(dt);
+	}
+
+	if (shopInput == "Shop")
+	{
+		switch (s_option)
+		{
+		case S_YES:
+			cout << "Yes";
+			break;
+		case S_NO:
+			cout << "No";
+			break;
+		case S_BUY:
+			cout << "Buy";
+			break;
+		case S_SELL:
+			cout << "Sell";
+			break;
+		case S_BACK:
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				shopInput = "NoShop";
+				s_option = S_YES;
+				cout << "Byebye" << endl;
+			}
+			break;
+		}
+		if (s_option > S_YES)
+		{
+			if (Application::IsKeyPressed('K') && PressTime == 0)
+			{
+				PressTime = deltaTime / 10;
+				s_option = static_cast<SHOP_OPTION>(s_option - 1);
+				cout << s_option;
+			}
+		}
+		if (s_option < S_MAX - 1)
+		{
+			if (Application::IsKeyPressed('J') && PressTime == 0)
+			{
+				PressTime = deltaTime / 10;
+				s_option = static_cast<SHOP_OPTION>(s_option + 1);
+				cout << s_option;
+			}
+		}
 	}
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
@@ -598,6 +649,7 @@ void SP2::Update(double dt)
 	if (Application::IsKeyPressed('H'))
 	{
 		b_Ammo = 30;
+		shopInput = "Shop";
 	}
 
 	if (Application::IsKeyPressed('G'))
@@ -786,8 +838,6 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
-		
-	
 		modelStack.PushMatrix();
 		//to do: transformation code here
 		modelStack.Translate(0, -20, -398);
@@ -878,11 +928,9 @@ void SP2::Render()
 	std::ostringstream fpsOSS;
 	if (Input == "Game")
 	{
-		fpsOSS << "FPS : " << deltaTime;
-	
-	
 		ammoOSS << "AMMO : " << b_Ammo;
 	}
+	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
 
@@ -1092,7 +1140,10 @@ void SP2::Render()
 	}
 	RenderQuadOnScreen(meshList[GEO_COKE], 2, 5, 5, 0);
 
-
+	if (shopInput == "Shop")
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "HELLO", Color(1, 1, 1), 1.7, 5, 21);
+	}
 	
 	if (Input == "Menu")
 	{

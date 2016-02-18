@@ -1,3 +1,6 @@
-Hello
-Byebye 
-Thank you
+Hello, Do you want to buy something?
+Yes
+No
+Buy
+Sell
+Back
