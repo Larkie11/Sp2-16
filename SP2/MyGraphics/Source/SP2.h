@@ -258,6 +258,7 @@ private:
 	vector<string>my_arr;
 	vector<Bullet*>bullet_arr;
 	double b_coolDown;
+	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
 

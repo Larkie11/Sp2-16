@@ -37,7 +37,7 @@ void SP2::Init()
 	Input = "Menu";
 	Dialogue("Text//Dialogue1.txt");
 	// Init VBO here
-	b_coolDown = 0.8;
+	b_coolDown = b_coolDownLimit = 0.08;
 	b_Ammo = 30;
 	startCoolDdown = false;
 
@@ -605,7 +605,7 @@ void SP2::Update(double dt)
 		if (b_Ammo > 0)
 		{
 			startCoolDdown = true;
-			if (b_coolDown == 0.8)
+			if (b_coolDown == b_coolDownLimit)
 			{
 				b_Ammo--;
 				bullet_arr.push_back(new Bullet(camera));
@@ -617,7 +617,7 @@ void SP2::Update(double dt)
 		b_coolDown -= dt;
 		if (b_coolDown < 0)
 		{
-			b_coolDown = 0.8;
+			b_coolDown = b_coolDownLimit;
 			startCoolDdown = false;
 		}
 	}
@@ -786,62 +786,7 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
-		//modelStack.PushMatrix();
-		////to do: transformation code here
-		//modelStack.Translate(0, -20, -398);
-		//modelStack.Rotate(90, 1, 0, 0);
-		//modelStack.Rotate(180, 0, 0, 1);
-		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		//RenderMesh(meshList[GEO_FRONT], false);
-		//modelStack.PopMatrix();
-
-		//modelStack.PushMatrix();
-		////to do: transformation code here
-		//modelStack.Translate(0, 0, -0.9);
-		//modelStack.Translate(0, -20, 600);
-		//modelStack.Rotate(90, 1, 0, 0);
-		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		//RenderMesh(meshList[GEO_BACK], false);
-		//modelStack.PopMatrix();
-
-		//modelStack.PushMatrix();
-		////to do: transformation code here
-		//modelStack.Translate(5, 0, 0);
-		//modelStack.Translate(-500, -20, 100);
-		//modelStack.Rotate(-90, 0, 0, 1);
-		//modelStack.Rotate(-180, 1, 0, 0);
-		//modelStack.Rotate(90, 0, 1, 0);
-		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		//RenderMesh(meshList[GEO_LEFT], false);
-		//modelStack.PopMatrix();
-
-		//modelStack.PushMatrix();
-		////to do: transformation code here	
-		//modelStack.Translate(-5, 0, 0);
-		//modelStack.Translate(500, -20, 100);
-		//modelStack.Rotate(-90, 0, 0, 1);
-		//modelStack.Rotate(90, 0, 1, 0);
-		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		//RenderMesh(meshList[GEO_RIGHT], false);
-		//modelStack.PopMatrix();
-
-		//modelStack.PushMatrix();
-		////to do: transformation code here
-		//modelStack.Translate(0, -500, 100);
-		//modelStack.Rotate(180, 1, 0, 0);
-		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		//RenderMesh(meshList[GEO_BOTTOM], false);
-		//modelStack.PopMatrix();
-
-		//modelStack.PushMatrix();
-		////to do: transformation code here
-		//modelStack.Translate(0, -11, 0);
-		//modelStack.Translate(0, 490, 100);
-		//modelStack.Rotate(90, 0, 1, 0);
-		//modelStack.Rotate(360, 0, 0, 1);
-		//modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		//RenderMesh(meshList[GEO_TOP], false);
-		//modelStack.PopMatrix();
+		
 	
 		modelStack.PushMatrix();
 		//to do: transformation code here
