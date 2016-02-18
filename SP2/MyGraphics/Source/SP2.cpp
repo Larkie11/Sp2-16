@@ -30,6 +30,10 @@ void SP2::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
+	gold = 100;
+	icon = 31.6;
+	icon2 = 19;
+	menuIcon = 116;
 	Object_Reading();
 	JumpTime = 0;
 	choose = STARTGAME;
@@ -311,13 +315,6 @@ void SP2::Init()
 	meshList[GEO_FLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_FLOOR]->material.kShininess = 1.f;
 
-	meshList[GEO_BROAD] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 30, 7, 10);
-	meshList[GEO_BROAD]->textureID = LoadTGA("Image//tile3.tga");
-	meshList[GEO_BROAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
-	meshList[GEO_BROAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
-	meshList[GEO_BROAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
-	meshList[GEO_BROAD]->material.kShininess = 1.f;
-
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
@@ -357,12 +354,6 @@ void SP2::Init()
 	meshList[GEO_BOTTOM1] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1, 1);
 	meshList[GEO_BOTTOM1]->textureID = LoadTGA("Image//d_bottom.tga");
 
-	meshList[GEO_MLAND] = MeshBuilder::GenerateOBJ("land", "OBJ//Land.obj");
-	meshList[GEO_MLAND]->textureID = LoadTGA("Image//Land.tga");
-
-	meshList[GEO_MFLY] = MeshBuilder::GenerateOBJ("fly", "OBJ//Fly.obj");
-	meshList[GEO_MFLY]->textureID = LoadTGA("Image//Fly.tga");
-
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
@@ -375,54 +366,13 @@ void SP2::Init()
 	meshList[GEO_OUTER]->textureID = LoadTGA("Image//Outside.tga");
 
 	GLuint santa = LoadTGA("Image//Santa.tga");
-	meshList[GEO_SANTA] = MeshBuilder::GenerateOBJ("Wall", "OBJ//Char.obj");
-	meshList[GEO_SANTA]->textureID = santa;
-
-	meshList[GEO_SANTAR] = MeshBuilder::GenerateOBJ("Wall", "OBJ//CharR.obj");
-	meshList[GEO_SANTAR]->textureID = santa;
-
-	meshList[GEO_SANTAL] = MeshBuilder::GenerateOBJ("Wall", "OBJ//CharL.obj");
-	meshList[GEO_SANTAL]->textureID = santa;
-
-	meshList[GEO_SANTALEG] = MeshBuilder::GenerateOBJ("Wall", "OBJ//CharLeg.obj");
-	meshList[GEO_SANTALEG]->textureID = santa;
-
-	GLuint steve = LoadTGA("Image//Steve.tga");
-	meshList[GEO_STEVE] = MeshBuilder::GenerateOBJ("Wall", "OBJ//Char.obj");
-	meshList[GEO_STEVE]->textureID = steve;
-
-	meshList[GEO_STEVER] = MeshBuilder::GenerateOBJ("Wall", "OBJ//CharR.obj");
-	meshList[GEO_STEVER]->textureID = steve;
-
-	meshList[GEO_STEVEL] = MeshBuilder::GenerateOBJ("Wall", "OBJ//CharL.obj");
-	meshList[GEO_STEVEL]->textureID = steve;
-
-	meshList[GEO_STEVELEG] = MeshBuilder::GenerateOBJ("Wall", "OBJ//CharLeg.obj");
-	meshList[GEO_STEVELEG]->textureID = steve;
-
-	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Wall", "OBJ//Door.obj");
-	meshList[GEO_DOOR]->textureID = LoadTGA("Image//Door.tga");
-
-	meshList[GEO_LAMP] = MeshBuilder::GenerateOBJ("Lamp", "OBJ//Lamp.obj");
-	meshList[GEO_LAMP]->textureID = textID;
-
-	meshList[GEO_SHELVES] = MeshBuilder::GenerateOBJ("Shelves", "OBJ//shelves.obj");
-	meshList[GEO_SHELVES]->textureID = wood;
-
-	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Shelves", "OBJ//table.obj");
-	meshList[GEO_TABLE]->textureID = wood;
+	
 
 	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
 	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
 
-	meshList[GEO_TREE] = MeshBuilder::GenerateOBJ("Tree", "OBJ//Tree.obj");
-	meshList[GEO_TREE]->textureID = wood;
-
 	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
 	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
-
-	meshList[GEO_BUILDING1] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
-	meshList[GEO_BUILDING1]->textureID = LoadTGA("Image//b2.tga");
 
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
@@ -443,6 +393,9 @@ void SP2::Init()
 	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
 	meshList[GEO_PYRAMIDPILLAR]->textureID = LoadTGA("Image//sand_2.tga");
 
+	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
+	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
+
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -452,8 +405,6 @@ void SP2::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-static int dialogue = 0;
-
 void SP2::UpdateMenu()
 {
 	if (Input == "Menu")
@@ -462,6 +413,7 @@ void SP2::UpdateMenu()
 		{
 		case STARTGAME:
 			color = "Red1";
+			menuIcon = 116;
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				Input = "Game";
@@ -476,6 +428,7 @@ void SP2::UpdateMenu()
 				c_option = O_SETTING;
 				while (Application::IsKeyPressed(VK_RETURN))
 				{
+					menuIcon = 105;
 					Input = "Options";
 					c_option = O_SETTING;
 				}
@@ -519,13 +472,13 @@ void SP2::UpdateMenu()
 }
 void SP2::userInput(int user)
 {
-	
 	if (user == 0)
 	{
 		if (choose < MAX - 1)
 		{
 			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				menuIcon -= 6;
 				PressTime = deltaTime / 10;
 				choose = static_cast<MENU>(choose + 1);
 				cout << choose << endl;
@@ -535,6 +488,7 @@ void SP2::userInput(int user)
 		{
 			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				menuIcon += 6;
 				PressTime = deltaTime / 10;
 				choose = static_cast<MENU>(choose - 1);
 				cout << choose << endl;
@@ -548,6 +502,7 @@ void SP2::userInput(int user)
 		{
 			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				menuIcon -= 6;
 				PressTime = deltaTime / 10;
 				c_option = static_cast<OPTION>(c_option + 1);
 				cout << c_option << endl;
@@ -557,6 +512,7 @@ void SP2::userInput(int user)
 		{
 			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				menuIcon += 6;
 				PressTime = deltaTime / 10;
 				c_option = static_cast<OPTION>(c_option - 1);
 				cout << c_option << endl;
@@ -587,22 +543,29 @@ void SP2::Update(double dt)
 		switch (s_option)
 		{
 		case S_YES:
-			cout << "Yes";
+			//cout << "Yes";
 			break;
 		case S_NO:
-			cout << "No";
+			//cout << "No";
 			break;
 		case S_BUY:
-			cout << "Buy";
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 10;
+				shopInput = "Buy";
+				s_buy = SB_AMMO;
+			}
 			break;
 		case S_SELL:
-			cout << "Sell";
+			//cout << "Sell";
 			break;
 		case S_BACK:
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				shopInput = "NoShop";
+				shopInput = "Back";
 				s_option = S_YES;
+				icon = 31.6;
+				icon2 = 19;
 				cout << "Byebye" << endl;
 			}
 			break;
@@ -611,21 +574,80 @@ void SP2::Update(double dt)
 		{
 			if (Application::IsKeyPressed('K') && PressTime == 0)
 			{
-				PressTime = deltaTime / 10;
+				PressTime = deltaTime / 7;
 				s_option = static_cast<SHOP_OPTION>(s_option - 1);
 				cout << s_option;
+				icon += 1.6;
+				icon2 += 1;
 			}
 		}
 		if (s_option < S_MAX - 1)
 		{
 			if (Application::IsKeyPressed('J') && PressTime == 0)
 			{
-				PressTime = deltaTime / 10;
+				PressTime = deltaTime / 7;
 				s_option = static_cast<SHOP_OPTION>(s_option + 1);
 				cout << s_option;
+				icon -= 1.6;
+				icon2 -= 1;
 			}
 		}
 	}
+	if (shopInput == "Buy")
+	{
+		switch (s_buy)
+		{
+		case SB_AMMO:
+			if (Application::IsKeyPressed(VK_RETURN)&& PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				if (gold > 19)
+				{
+					gold -= 20;
+					b_Ammo++;
+				}
+				else
+				{
+					b_gold = true;
+				}
+			}
+			break;
+		case SB_BOMB:
+			break;
+		case SB_BACK:
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				shopInput = "Shop";
+				s_option = S_YES;
+				icon = 31.6;
+				icon2 = 19;
+			}
+			break;
+		}
+		if (s_buy > SB_AMMO)
+		{
+			if (Application::IsKeyPressed('K') && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				s_buy = static_cast<SHOP_BUY>(s_buy - 1);
+				cout << s_buy;
+				icon += 1.6;
+				icon2 += 1;
+			}
+		}
+		if (s_buy < SB_MAX - 1)
+		{
+			if (Application::IsKeyPressed('J') && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				s_buy = static_cast<SHOP_BUY>(s_buy + 1);
+				cout << s_buy;
+				icon -= 1.6;
+				icon2 -= 1;
+			}
+		}
+	}
+	rotateCoke += (float)(100 * dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -649,7 +671,10 @@ void SP2::Update(double dt)
 	if (Application::IsKeyPressed('H'))
 	{
 		b_Ammo = 30;
-		shopInput = "Shop";
+		if (shopInput != "Buy" && Input == "Game")
+		{
+			shopInput = "Shop";
+		}
 	}
 
 	if (Application::IsKeyPressed('G'))
@@ -697,7 +722,6 @@ void SP2::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
 	string line;
-	string new_line;
 
 	while (std::getline(myfile, line))
 	{
@@ -817,7 +841,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 
 	glEnable(GL_DEPTH_TEST);
 }
-void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate)
+void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
@@ -828,8 +852,8 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 	modelStack.PushMatrix();
 	modelStack.LoadIdentity(); //Reset modelStack
 	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, 0);
-	modelStack.Rotate(rotate, 1, 0, 0);
+	modelStack.Translate(x, y, z);
+	modelStack.Rotate(rotate, rx, ry, rz);
 	RenderMesh(mesh, false);
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
@@ -905,34 +929,18 @@ void SP2::Render()
 	oss1 << "Camera Z: " << camera.position.z;
 	string var1 = oss1.str();
 
-	/*std::ostringstream dia;
-	dia << data[dialogue];
-	string dialoguedata = dia.str();
-
-	std::ostringstream diaV;
-	diaV << data[dialogueVending];
-	string dialogueV = diaV.str();
-
-	std::ostringstream diaD;
-	diaD << data[dialogueDoor];
-	string dialogueD = diaD.str();
-
-	std::ostringstream diaC;
-	diaC << data[dialogueCoke];
-	string dialogueC = diaC.str();
-
-	std::ostringstream diaS;
-	diaS << data[dialogueSteve];
-	string dialogueS = diaS.str();*/
 	std::ostringstream ammoOSS;
+	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
 	if (Input == "Game")
 	{
 		ammoOSS << "AMMO : " << b_Ammo;
+		goldOSS << "Gold: " << gold;
 	}
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
+	string s_gold = goldOSS.str();
 
 
 	// Render VBO here
@@ -947,7 +955,7 @@ void SP2::Render()
 		);
 	
 	modelStack.LoadIdentity();
-//new code
+
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1064,7 +1072,6 @@ void SP2::Render()
 
 	if (Input == "Game")
 	{
-
 		modelStack.PushMatrix();
 		Enemy_Rendering();
 		modelStack.PopMatrix();
@@ -1136,15 +1143,35 @@ void SP2::Render()
 	modelStack.Rotate(90, 1, 0, 0);
 	if (Input != "Game")
 	{
-		RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.7, 5, 90);
-	}
-	RenderQuadOnScreen(meshList[GEO_COKE], 2, 5, 5, 0);
+		RenderQuadOnScreen(meshList[GEO_STAR], 0.3, 20, menuIcon, rotateCoke, 0, 1, 0,2);
 
+		RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.7, 5, 90, 1, 0, 0,0);
+	}
 	if (shopInput == "Shop")
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "HELLO", Color(1, 1, 1), 1.7, 5, 21);
+		int j = 21;
+		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+		for (int arr = 0; arr < my_arr.size() - 3; ++arr)
+		{
+			--j;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
+		}
 	}
-	
+	if (shopInput == "Buy")
+	{
+		int j = 18;
+		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
+		for (int arr = 6; arr < my_arr.size(); ++arr)
+		{
+			--j;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
+		}
+		if (b_gold)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 1, 1), 1.7, 10, 20);
+		}
+	}
 	if (Input == "Menu")
 	{
 		if (color == "Red1")
@@ -1163,7 +1190,6 @@ void SP2::Render()
 		else
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(0, 1, 0), 1.7, 5, 20);
-
 		}
 		if (color == "Red3")
 		{
@@ -1206,7 +1232,6 @@ void SP2::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
-
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
@@ -1218,23 +1243,15 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_BULLET], true);
 		modelStack.PopMatrix();
 	}
-
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);
-	//RenderTextOnScreen(meshList[GEO_TEXT], "Hold V for instructions", Color(1, 1, 0), 2, 1, 4);
 	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 45, 39);
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-//	RenderTextOnScreen(meshList[GEO_TEXT], Key, Color(1, 1, 0),2,1,1);
-	//RenderTextOnScreen(meshList[GEO_TEXT], Coke, Color(1, 1, 0), 2, 8, 1);
-
 	modelStack.PopMatrix();
-
-
-
-
 }
 void SP2::Exit()
 {

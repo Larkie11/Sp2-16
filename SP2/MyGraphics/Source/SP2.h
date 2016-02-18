@@ -47,6 +47,13 @@ class SP2 : public Scene
 		S_BACK,
 		S_MAX,
 	};
+	enum SHOP_BUY
+	{
+		SB_AMMO,
+		SB_BOMB,
+		SB_BACK,
+		SB_MAX,
+	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_TRIANGLE_1 = 0,
@@ -67,38 +74,15 @@ class SP2 : public Scene
 		GEO_BOTTOM1,
 		GEO_FRONT1,
 		GEO_BACK1,
-		GEO_MCHAIR,
-		GEO_MDART,
-		GEO_MDARTBOARD,
-		GEO_MDOORMAN,
-		GEO_MSHOE,
-		GEO_MWINEBOTTLE,
-		GEO_MLAND,
-		GEO_MFLY,
-		GEO_MHOLDER,
+		GEO_STAR,
 		GEO_TEXT,
 		GEO_WALL,
 		GEO_OUTER,
 		GEO_FLOOR,
 		GEO_PATH,
 		GEO_BENCH,
-		GEO_DOOR,
-		GEO_LAMP,
-		GEO_SANTA,
-		GEO_SANTAL,
-		GEO_SANTAR,
-		GEO_SANTALEG,
-		GEO_STEVE,
-		GEO_STEVEL,
-		GEO_STEVER,
-		GEO_STEVELEG,
-		GEO_SHELVES,
-		GEO_TABLE,
 		GEO_VENDING,
-		GEO_TREE,
 		GEO_BUILDING,
-		GEO_BUILDING1,
-		GEO_BROAD,
 		GEO_COKE,
 		GEO_BULLET,
 		GEO_MOONBALL,
@@ -251,12 +235,13 @@ private:
 	void RenderSkybox();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate);
+	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
 	void RenderMenu();
 	void Dialogue(string filename);
 	bool Menu = true;
 	bool exitGame = false;
 	bool Options = false;
+	string new_line;
 	MENU choose;
 	OPTION c_option;
 	Camera3 camera;
@@ -271,7 +256,6 @@ private:
 	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
-
 
 	float deltaTime;
 	Bullet bullet;
@@ -294,6 +278,11 @@ private:
 	bool Collision_Detection(Position Character);
 	void Character_Movement(float dt);
 
+	float icon;
+	float icon2;
+	float rotateCoke;
+	float menuIcon;
+	
 	Objects object[Num_Object];
 	Objects object_on_hand;
 	int T_object_Num;
@@ -303,5 +292,8 @@ private:
 	float JumpTime;
 	float PressTime;
 	SHOP_OPTION s_option;
+	int gold;
+	bool b_gold;
+	SHOP_BUY s_buy;
 };
 #endif
