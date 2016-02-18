@@ -8,25 +8,19 @@ class Bullet
 {
 public:
 	//b1 = bullet 1 in the scene, b2 = bullet 2 in the scene
-	Vector3 b1_position;
-	Vector3 b2_position;
-	Vector3 velocity;
+	Vector3 position;
+	Vector3 direction;
 
 	float b_Speed;
-	float b_Angel;
-	float b_delay;
-	float b_coolDown;
-	int b_Count;
-	bool enableShooting;
-	bool shotFired;
-	bool b1_Spawn;
-	bool b2_Spawn;
+	float b_Angle;
+	float b_distanceTravel = 0;
+	float b_distanceLimit;
 
-	//True = bullet 1 move, False = bullet 2 move
-	bool b_Switcher;
-	void Shoot(double dt, Camera3 camera);
+	bool destoryBullet; 
+	bool Update(double dt);
 
 	Bullet();
+	Bullet(Camera3 camera);
 	~Bullet();
 };
 

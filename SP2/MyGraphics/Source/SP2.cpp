@@ -37,6 +37,10 @@ void SP2::Init()
 	Input = "Menu";
 	Dialogue("Text//Dialogue1.txt");
 	// Init VBO here
+	b_coolDown = 0.8;
+	b_Ammo = 30;
+	startCoolDdown = false;
+
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -432,17 +436,12 @@ void SP2::Init()
 	meshList[GEO_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//Missile.obj");
 	meshList[GEO_BULLET]->textureID = LoadTGA("Image//coke.tga");
 
-	meshList[GEO_BULLET2] = MeshBuilder::GenerateOBJ("bullet2", "OBJ//Missile.obj");
-	meshList[GEO_BULLET2]->textureID = LoadTGA("Image//sand_2.tga");
-
-
 	meshList[GEO_PYRAMIDNEW] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidNew.obj");
 	meshList[GEO_PYRAMIDNEW]->textureID = LoadTGA("Image//sand_2.tga");
 	meshList[GEO_PYRAMIDWALL] = MeshBuilder::GenerateOBJ("Walls", "OBJ/Wall.obj");
 	meshList[GEO_PYRAMIDWALL]->textureID = LoadTGA("Image//sand_2.tga");
 	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
 	meshList[GEO_PYRAMIDPILLAR]->textureID = LoadTGA("Image//sand_2.tga");
-
 
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
@@ -454,6 +453,7 @@ void SP2::Init()
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
 static int dialogue = 0;
+
 void SP2::UpdateMenu()
 {
 	if (Input == "Menu")
@@ -575,7 +575,7 @@ void SP2::Update(double dt)
 		Character_Movement(dt);
 		//camera.Update(dt);
 	}
-	
+
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
 	if (Application::IsKeyPressed('2')) //disable back face culling
@@ -592,23 +592,51 @@ void SP2::Update(double dt)
 	else if (Application::IsKeyPressed('X'))
 	{
 		Lighting9 = true;
-		
+
 	}
 
-
-	//Shooting button
 	if (Application::IsKeyPressed('H'))
-		bullet.b_Count = 10;
+	{
+		b_Ammo = 30;
+	}
 
 	if (Application::IsKeyPressed('G'))
-		bullet.Shoot(dt, camera);
-
-	//Bullet movement
-	if (bullet.shotFired)
 	{
-		bullet.b1_position += bullet.velocity * dt;
-		bullet.b2_position += bullet.velocity * dt;
+		if (b_Ammo > 0)
+		{
+			startCoolDdown = true;
+			if (b_coolDown == 0.8)
+			{
+				b_Ammo--;
+				bullet_arr.push_back(new Bullet(camera));
+			}
+		}
 	}
+	if (startCoolDdown)
+	{
+		b_coolDown -= dt;
+		if (b_coolDown < 0)
+		{
+			b_coolDown = 0.8;
+			startCoolDdown = false;
+		}
+	}
+
+	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
+	{
+
+		//if destory bullet = true 
+		if ((*iter)->Update(dt))
+		{
+			iter = bullet_arr.erase(iter);
+		}
+		else
+		{
+			iter++;
+		}
+
+	}
+
 	deltaTime = (1.0 / dt);
 
 	UpdateMenu();
@@ -908,7 +936,7 @@ void SP2::Render()
 		fpsOSS << "FPS : " << deltaTime;
 	
 	
-		ammoOSS << "AMMO : " << bullet.b_Count;
+		ammoOSS << "AMMO : " << b_Ammo;
 	}
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -1183,24 +1211,17 @@ void SP2::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(bullet.b1_position.x, bullet.b1_position.y, bullet.b1_position.z);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Rotate(bullet.b_Angel, 0, 1, 0);
+	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate((*iter)->position.x,(*iter)->position.y,(*iter)->position.z);
+		modelStack.Rotate(-90, 0, 1, 0);
+		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
 
-	modelStack.Scale(0.3, 0.3, 0.3);
-	RenderMesh(meshList[GEO_BULLET], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(bullet.b2_position.x, bullet.b2_position.y, bullet.b2_position.z);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Rotate(bullet.b_Angel, 0, 1, 0);
-
-
-	modelStack.Scale(0.3, 0.3, 0.3);
-	RenderMesh(meshList[GEO_BULLET2], true);
-	modelStack.PopMatrix();
+		modelStack.Scale(0.3, 0.3, 0.3);
+		RenderMesh(meshList[GEO_BULLET], true);
+		modelStack.PopMatrix();
+	}
 
 	var.resize(16);
 	var1.resize(16);
@@ -1247,32 +1268,32 @@ void SP2::Enemy_Rendering()
 }
 void SP2::Enemy_Shooting()
 {
-	if (bullet.b1_position.y > 0)
-	{
-		for (int i = 0; i < 10; i++)
-		{
-			Position A = enemy[i].Return_Position(enemy[i]);
-			float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
-			if (range < 50)
-			{
-				enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
-				cout << "You hitted Enemy " << i << endl;
-			}
-		}
-	}
-	if (bullet.b2_position.y > 0)
-	{
-		for (int i = 0; i < 10; i++)
-		{
-			Position A = enemy[i].Return_Position(enemy[i]);
-			float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
-			if (range < 50)
-			{
-				enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
-				cout << "You hitted Enemy " << i << endl;
-			}
-		}
-	}
+	//if (bullet.b1_position.y > 0)
+	//{
+	//	for (int i = 0; i < 10; i++)
+	//	{
+	//		Position A = enemy[i].Return_Position(enemy[i]);
+	//		float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
+	//		if (range < 50)
+	//		{
+	//			enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
+	//			cout << "You hitted Enemy " << i << endl;
+	//		}
+	//	}
+	//}
+	//if (bullet.b2_position.y > 0)
+	//{
+	//	for (int i = 0; i < 10; i++)
+	//	{
+	//		Position A = enemy[i].Return_Position(enemy[i]);
+	//		float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
+	//		if (range < 50)
+	//		{
+	//			enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
+	//			cout << "You hitted Enemy " << i << endl;
+	//		}
+	//	}
+	//}
 }
 
 void SP2::Map_Reading()
@@ -1457,6 +1478,15 @@ void SP2::Character_Movement(float dt)
 		{
 			camera.position = Test;
 		}
+
+		//Position A = enemy[i].Return_Position(enemy[i]);
+		//float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
+		//if (range < 50)
+		//{
+		//	enemy[i] = enemy[i].DamageReceived(enemy[i],20);
+		//	cout << "You hitted Enemy " << i << endl;
+		//}
+
 	}
 
 	if (Application::IsKeyPressed('A'))

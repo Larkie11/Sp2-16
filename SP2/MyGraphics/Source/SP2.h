@@ -92,7 +92,6 @@ class SP2 : public Scene
 		GEO_BROAD,
 		GEO_COKE,
 		GEO_BULLET,
-		GEO_BULLET2,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -257,9 +256,13 @@ private:
 	string Input;
 	string color;
 	vector<string>my_arr;
+	vector<Bullet*>bullet_arr;
+	double b_coolDown;
+	bool startCoolDdown;
+	int b_Ammo;
+
 
 	float deltaTime;
-
 	Bullet bullet;
 	Objects objects;
 
