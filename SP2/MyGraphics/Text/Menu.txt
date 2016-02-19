@@ -1,0 +1,5 @@
+Start
+Options
+Quit
+Settings
+Back

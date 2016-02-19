@@ -23,11 +23,14 @@ void SceneMenu::Init()
 	icon = 31.6;
 	icon2 = 19;
 	menuIcon = 116;
-
+	colorBlue = (0.4, 0.8, 0.8);
+	colorNormal = (0.1, 0.2, 0);
+	
 	choose = menushop.STARTGAME;
 	c_option = menushop.O_SETTING;
 	Input = "Menu";
-	Dialogue("Text//Dialogue1.txt");
+
+	Dialogue("Text//Menu.txt");
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -77,7 +80,6 @@ void SceneMenu::Init()
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-
 	//Enable blending
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -107,7 +109,7 @@ void SceneMenu::Init()
 	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 	
-	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
+	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
 	//Initialize camera settings
 	camera.Init(Vector3(-300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -133,22 +135,8 @@ void SceneMenu::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
-	GLuint wood = LoadTGA("Image//book.tga");
-	GLuint textID = LoadTGA("Image//Chair.tga");
-	meshList[GEO_BENCH] = MeshBuilder::GenerateOBJ("bench", "OBJ//Bench.obj");
-	meshList[GEO_BENCH]->textureID = wood;
-
 	GLuint santa = LoadTGA("Image//Santa.tga");
 	
-
-	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
-	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
-
-	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
-	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
-
-	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
-	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
 
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
@@ -161,6 +149,17 @@ void SceneMenu::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
+void SceneMenu::setColor(int which, string color)
+{
+	if (color == "colorBlue")
+	{
+		colorA[which].Set(colorBlue.r, colorBlue.g, colorBlue.b);
+	}
+	if (color == "colorNormal")
+	{
+		colorA[which].Set(colorNormal.r, colorNormal.g, colorNormal.b);
+	}
+}
 void SceneMenu::UpdateMenu()
 {
 	if (Input == "Menu")
@@ -168,17 +167,22 @@ void SceneMenu::UpdateMenu()
 		switch (choose)
 		{
 		case MenuShop::STARTGAME:
-			color = "Red1";
+			setColor(0,"colorBlue");
+			setColor(1, "colorNormal");
+			setColor(2, "colorNormal");
 			menuIcon = 116;
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
+				my_arr[0] = "Loading Game";
 				SharedData::GetInstance()->stateCheck = true;
 				SharedData::GetInstance()->gameState = SharedData::GAME;
 			}
 			userInput(0);
 			break;
 		case MenuShop::OPTIONS:
-			color = "Red2";
+			setColor(0, "colorNormal");
+			setColor(1, "colorBlue");
+			setColor(2, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				menuIcon = 105;
@@ -188,7 +192,9 @@ void SceneMenu::UpdateMenu()
 			userInput(0);
 			break;
 		case MenuShop::QUIT:
-			color = "Red3";
+			setColor(0, "colorNormal");
+			setColor(1, "colorNormal");
+			setColor(2, "colorBlue");
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				SharedData::GetInstance()->gameState = SharedData::QUIT;
@@ -202,11 +208,13 @@ void SceneMenu::UpdateMenu()
 			switch (c_option)
 			{
 			case MenuShop::O_SETTING:
-				color = "Red4";
+				setColor(3, "colorBlue");
+				setColor(4, "colorNormal");
 				userInput(1);
 				break;
 			case MenuShop::O_QUIT:
-				color = "Red5";
+				setColor(3, "colorNormal");
+				setColor(4, "colorBlue");
 				if (Application::IsKeyPressed(VK_RETURN))
 				{
 					Input = "Menu";
@@ -547,34 +555,6 @@ void SceneMenu::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-	/*if (Input == "Game")
-	{
-		modelStack.PushMatrix();
-		Enemy_Rendering();
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-		Map_Rendering();
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-		Object_Rendering();
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-		modelStack.Scale(30, 30, 30);
-		modelStack.Translate(0, -1, 0);
-		RenderMesh(meshList[GEO_MOONBALL], true);
-		modelStack.PopMatrix();
-	}*/
-
-	////Move skybox
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
-	//modelStack.Scale(3, 3, 3);
-	//RenderSkybox();
-	//modelStack.PopMatrix();
-	
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
@@ -591,78 +571,23 @@ void SceneMenu::Render()
 	RenderQuadOnScreen(meshList[GEO_STAR], 0.3, 20, menuIcon, rotateCoke, 0, 1, 0,2);
 
 	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.7, menu_pos, 90, 1, 0, 0,0);
-	
-	/*if (menushop.shopInput == "Shop")
-	{
-		int j = 21;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
-		for (int arr = 0; arr < my_arr.size() - 3; ++arr)
-		{
-			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
-		}
-	}
-	if (menushop.shopInput == "Buy")
-	{
-		int j = 18;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		for (int arr = 6; arr < my_arr.size(); ++arr)
-		{
-			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
-		}
-		if (b_gold)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 1, 1), 1.7, 10, 20);
-		}
-	}*/
+
 	if (Input == "Menu")
 	{
-		if (color == "Red1")
+		int j = 22;
+		for (int i = 0; i < my_arr.size()-2; ++i)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(1, 0, 0), 1.7, 5, 21);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(0, 1, 0), 1.7, 5, 21);
-
-		}
-		if (color == "Red2")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(1, 0, 0), 1.7, 5, 20);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(0, 1, 0), 1.7, 5, 20);
-		}
-		if (color == "Red3")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 19);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 19);
-
+			j--;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 1.7, 5, j);
 		}
 	}
 	if (Input == "Options")
 	{
-		if (color == "Red4")
+		int j = 20;
+		for (int i = 3; i < my_arr.size(); ++i)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(1, 0, 0), 1.7, 5, 19);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(0, 1, 0), 1.7, 5, 19);
-		}
-		if (color == "Red5")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 18);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 18);
+			j--;			
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 1.7, 5, j);
 		}
 	}
 

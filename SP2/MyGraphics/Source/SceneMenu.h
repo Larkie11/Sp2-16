@@ -21,7 +21,6 @@ using std::vector;
 
 class SceneMenu : public Scene
 {
-	
 	enum GEOMETRY_TYPE
 	{
 		GEO_REF_AXES = 0,
@@ -126,9 +125,12 @@ private:
 
 	Application app;
 	Camera3 camera;
-	Color colorA;
-	Color colorB;
-	Color colorC;
+	void setColor(int which, string color);
+
+	Color colorA[5];
+	Color colorBlue;
+	Color colorNormal;
+
 	string Input;
 	string color;
 	vector<string>my_arr;
@@ -141,5 +143,6 @@ private:
 	float icon2;
 	float rotateCoke;
 	float menuIcon;
+	MenuShop menuShop;
 };
 #endif
