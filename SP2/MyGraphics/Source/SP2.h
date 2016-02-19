@@ -262,6 +262,7 @@ private:
 	Color colorC;
 	string Input;
 	string color;
+	string shop = "";
 	vector<string>my_arr;
 	vector<Bullet*>bullet_arr;
 	double b_coolDown;

@@ -8,6 +8,7 @@
 #include "MeshBuilder.h"
 #include "Utility.h"
 #include "LoadTGA.h"
+#include "SharedData.h"
 #include <sstream>
 
 Position VtoP(Vector3 V)
@@ -43,7 +44,6 @@ void SP2::Init()
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
-	b_Ammo = 30;
 	startCoolDdown = false;
 
 	// Set background color to dark blue
@@ -163,9 +163,9 @@ void SP2::Init()
 	glUseProgram(m_programID);
 
 	light[0].type = Light::LIGHT_POINT;
-	light[0].position.Set(250, 55, -90);
+	light[0].position.Set(0, 100, 0);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 4;
+	light[0].power = 2;
 	light[0].kC = 5.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -381,7 +381,7 @@ void SP2::Init()
 	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//sand_2.tga");
 
 	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
-	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//m_front.tga");
+	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//moon.tga");
 
 	meshList[GEO_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//Missile.obj");
 	meshList[GEO_BULLET]->textureID = LoadTGA("Image//coke.tga");
@@ -553,6 +553,12 @@ void SP2::Update(double dt)
 	Character_Movement(dt);
 	//camera.Update(dt);
 
+	if (Application::IsKeyPressed('O'))
+	{
+		shop = "Loading Shop";
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SHOP;
+	}
 	if (shopInput == "Shop")
 	{
 		switch (s_option)
@@ -566,7 +572,7 @@ void SP2::Update(double dt)
 		case S_BUY:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				PressTime = deltaTime / 10;
+				PressTime = deltaTime / 5;
 				shopInput = "Buy";
 				s_buy = SB_AMMO;
 			}
@@ -619,7 +625,7 @@ void SP2::Update(double dt)
 				if (gold > 19)
 				{
 					gold -= 20;
-					b_Ammo++;
+					SharedData::GetInstance()->bullet++;
 				}
 				else
 				{
@@ -684,7 +690,7 @@ void SP2::Update(double dt)
 	}
 	if (Application::IsKeyPressed('H'))
 	{
-		b_Ammo = 30;
+		SharedData::GetInstance()->bullet = 30;
 		if (shopInput != "Buy")
 		{
 			shopInput = "Shop";
@@ -692,12 +698,12 @@ void SP2::Update(double dt)
 	}
 	if (Application::IsKeyPressed('G'))
 	{
-		if (b_Ammo > 0)
+		if (SharedData::GetInstance()->bullet > 0)
 		{
 			startCoolDdown = true;
 			if (b_coolDown == b_coolDownLimit)
 			{
-				b_Ammo--;
+				SharedData::GetInstance()->bullet--;
 				bullet_arr.push_back(new Bullet(camera));
 			}
 		}
@@ -944,7 +950,7 @@ void SP2::Render()
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
 	
-		ammoOSS << "AMMO : " << b_Ammo;
+	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet;
 		goldOSS << "Gold: " << gold;
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
@@ -1175,6 +1181,7 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
+	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.7, 5, 20);
 	if (shopInput == "Shop")
 	{
 		int j = 21;
@@ -1281,7 +1288,7 @@ void SP2::Map_Rendering()
 {
 	modelStack.PushMatrix();
 
-	modelStack.Translate(0, -20, 0);
+	modelStack.Translate(0, -21, 0);
 
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);

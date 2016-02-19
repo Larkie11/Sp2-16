@@ -8,20 +8,24 @@ public:
 	{
 		MENU,
 		GAME,
+		SHOP,
 		QUIT,
 		MAX,
 	};
 	GAMESTATE gameState;
+
 	static SharedData* GetInstance()
 	{
 		static SharedData data;
 		return &data;
 	}
 	bool stateCheck = false;
+	int bullet;
 private:
 	SharedData()
 	{
 		gameState = MENU;
+		bullet = 30;
 	}
 	~SharedData()
 	{

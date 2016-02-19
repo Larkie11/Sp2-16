@@ -103,6 +103,7 @@
     <ClCompile Include="Source\Objects.cpp" />
     <ClCompile Include="Source\SceneMenu.cpp" />
     <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\Shop.cpp" />
     <ClCompile Include="Source\SP2.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
@@ -123,6 +124,8 @@
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\SceneMenu.h" />
     <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\SharedData.h" />
+    <ClInclude Include="Source\Shop.h" />
     <ClInclude Include="Source\SP2.h" />
     <ClInclude Include="Source\Utility.h" />
   </ItemGroup>

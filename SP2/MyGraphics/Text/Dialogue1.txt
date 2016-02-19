@@ -1,9 +1,7 @@
 Hello, Do you want to buy something?
-Yes
-No
 Buy
 Sell
-Back
-Ammo - 50G
-Bomb - 20G
+Going back to land
+Ammo - 20G
+Bomb - 50G
 Back
