@@ -225,39 +225,51 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[10], int I)
 {
 	bool check = true;
-	bool Enemy_Check = false;
+	bool Inside_Scene = true;
 
 	int X = 10 + (Character.x / Size);
 	int Z = 10 + (Character.z / Size);
-
-	for (int i = 0; i < 10; i++)
+	if (X < 25 && X > 19)
 	{
-		if (Character.x == enemy[i].position.x && Character.z == enemy[i].position.z)
-		{
-			Enemy_Check = true;
-		}
+		X = 19;
+		Inside_Scene = false;
 	}
-	if (!Enemy_Check)
+	if (Z < 25 && Z > 19)
 	{
-		if (X < 25 && X > 19)
-		{
-			X = 19;
-		}
-		if (Z < 25 && Z > 19)
-		{
-			Z = 19;
-		}
-		if (X > -5 && X < 0)
-		{
-			X = 0;
-		}
-		if (Z > -5 && Z < 0)
-		{
-			Z = 0;
-		}
+		Z = 19;
+		Inside_Scene = false;
+	}
+	if (X > -5 && X < 0)
+	{
+		X = 0;
+		Inside_Scene = false;
+	}
+	if (Z > -5 && Z < 0)
+	{
+		Z = 0;
+		Inside_Scene = false;
 	}
 	if (X > -1 && X < 20 && Z > -1 && Z < 20)
 	{
+		if (Inside_Scene)
+		{
+			if (X < 2)
+			{
+				X = 0;
+			}
+			if (Z < 2)
+			{
+				X = 0;
+			}
+			if (X > 17)
+			{
+				X = 19;
+			}
+			if (Z > 17)
+			{
+				Z = 19;
+			}
+		}
 		if (char(Map[X][Z]) != char(' '))
 		{
 			check = false;
@@ -287,7 +299,7 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I, float Si
 			{
 				Z_distance = Z_distance * -1;
 			}
-			if (X_distance < Size / 2 && Z_distance < Size / 2)
+			if (X_distance < Size && Z_distance < Size)
 			{
 				check = false;
 			}
