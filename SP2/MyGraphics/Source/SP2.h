@@ -198,6 +198,9 @@ class SP2 : public Scene
 	};
 
 public:
+
+	char Map[20][20];
+	float Size = 10;
 	SP2();
 	~SP2();
 
@@ -262,20 +265,16 @@ private:
 	Objects objects;
 
 	void userInput(int user);
-
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
-	void Enemy_Shooting();
 
 	void ObjectsHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
 
-	char Map[20][20];
 
 	void Map_Reading();
 	void Map_Rendering();
-	bool Collision_Detection(Position Character);
 	void Character_Movement(float dt);
 
 	float icon;

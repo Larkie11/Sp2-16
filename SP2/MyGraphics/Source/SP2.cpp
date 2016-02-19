@@ -1073,7 +1073,7 @@ void SP2::Render()
 	if (Input == "Game")
 	{
 		modelStack.PushMatrix();
-		//Enemy_Rendering();
+		Enemy_Rendering();
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
@@ -1263,7 +1263,7 @@ void SP2::Enemy_Updating(float dt)
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 10; i++)
 	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt);
+		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy,i);
 	}
 }
 void SP2::Enemy_Rendering()
@@ -1277,36 +1277,6 @@ void SP2::Enemy_Rendering()
 		RenderMesh(meshList[GEO_COKE], true);
 		modelStack.PopMatrix();
 	}
-	Enemy_Shooting();
-}
-void SP2::Enemy_Shooting()
-{
-	//if (bullet.b1_position.y > 0)
-	//{
-	//	for (int i = 0; i < 10; i++)
-	//	{
-	//		Position A = enemy[i].Return_Position(enemy[i]);
-	//		float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
-	//		if (range < 50)
-	//		{
-	//			enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
-	//			cout << "You hitted Enemy " << i << endl;
-	//		}
-	//	}
-	//}
-	//if (bullet.b2_position.y > 0)
-	//{
-	//	for (int i = 0; i < 10; i++)
-	//	{
-	//		Position A = enemy[i].Return_Position(enemy[i]);
-	//		float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
-	//		if (range < 50)
-	//		{
-	//			enemy[i] = enemy[i].DamageReceived(enemy[i], 20);
-	//			cout << "You hitted Enemy " << i << endl;
-	//		}
-	//	}
-	//}
 }
 
 void SP2::Map_Reading()
@@ -1328,7 +1298,6 @@ void SP2::Map_Reading()
 	else cout << "Unable to read Map!!" << endl;
 }
 
-float Size = 10;
 void SP2::Map_Rendering()
 {
 	modelStack.PushMatrix();
@@ -1370,37 +1339,6 @@ void SP2::Map_Rendering()
 	camera.position.y = -10;
 }
 
-bool SP2::Collision_Detection(Position Character)
-{
-	bool check = true;
-	int X = 10 + (Character.x / Size);
-	int Z = 10 + (Character.z / Size);
-	if (X < 24 && X > 19)
-	{
-		X = 19;
-	}
-	if (Z < 24 && Z > 19)
-	{
-		Z = 19;
-	}
-	if (X > -4 && X < 0)
-	{
-		X = 0;
-	}
-	if (Z > -4 && Z < 0)
-	{
-		Z = 0;
-	}
-	if (X > -1 && X < 20 && Z > -1 && Z < 20)
-	{
-		if (Map[X][Z] != char(' '))
-		{
-			check = false;
-		}
-
-	}
-	return check;
-}
 
 void SP2::Character_Movement(float dt)
 {
@@ -1459,7 +1397,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1468,7 +1406,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1477,7 +1415,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1486,25 +1424,17 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
-
-		//Position A = enemy[i].Return_Position(enemy[i]);
-		//float range = sqrt(((bullet.b1_position.x - A.x)*(bullet.b1_position.x - A.x)) + ((bullet.b1_position.z - A.z)*(bullet.b1_position.z - A.z)));
-		//if (range < 50)
-		//{
-		//	enemy[i] = enemy[i].DamageReceived(enemy[i],20);
-		//	cout << "You hitted Enemy " << i << endl;
-		//}
 
 	}
 
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1513,7 +1443,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1522,7 +1452,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1531,7 +1461,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (Collision_Detection(VtoP(Test)))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1576,7 +1506,7 @@ void SP2::Object_Reading()
 {
 	for (int i = 0; i < Num_Object; i++)
 	{
-		object[i].ItemType = Items::VENDINGMACHINE;
+		object[i].ItemType = Items::COKE;
 		object[i].position.Set(i * 10, 0, i * 10);
 	}
 	object_on_hand.ItemType = Items::None;
@@ -1685,5 +1615,4 @@ void SP2::Object_Updating(float dt)
 	{
 		object_on_hand.position.z = 0;
 	}
-	cout << object_on_hand.position.x << " / " << object_on_hand.position.y << " / " << object_on_hand.position.z << endl;
 }
