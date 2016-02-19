@@ -3,7 +3,7 @@
 
 //Include GLEW
 #include <GL/glew.h>
-
+#include "SharedData.h"
 //Include GLFW
 #include <GLFW/glfw3.h>
 
@@ -12,6 +12,7 @@
 #include <stdlib.h>
 
 #include "SP2.h"
+#include "SceneMenu.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -61,7 +62,6 @@ void Application::Init()
 		exit(EXIT_FAILURE);
 	}
 
-
 	//Set the GLFW window creation hints - these are optional
 	glfwWindowHint(GLFW_SAMPLES, 4); //Request 4x antialiasing
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); //Request a specific OpenGL version
@@ -107,11 +107,10 @@ void Application::Init()
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new SP2;
+	Scene *scene = new SceneMenu;	
 	scene->Init();
-
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
-	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
+	while (!glfwWindowShouldClose(m_window) && SharedData::GetInstance()->gameState!= SharedData::QUIT && !IsKeyPressed(VK_ESCAPE))
 	{
 		scene->Update(m_timer.getElapsedTime());
 		scene->Render();
@@ -119,11 +118,29 @@ void Application::Run()
 		glfwSwapBuffers(m_window);
 		//Get and organize events, like keyboard and mouse input, window resizing, etc...
 		glfwPollEvents();
-        m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
+		m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
 
+		if (SharedData::GetInstance()->stateCheck)
+		{
+			delete scene;
+			SharedData::GetInstance()->stateCheck = false;
+
+			switch (SharedData::GetInstance()->gameState)
+			{
+			case SharedData::MENU:
+				scene = new SceneMenu();
+				break;
+			case SharedData::GAME:
+				scene = new SP2();
+				break;
+			}
+			scene->Init();
+		}
 	} //Check if the ESC key had been pressed or if the window had been closed
+	
 	scene->Exit();
 	delete scene;
+	
 }
 
 void Application::Exit()

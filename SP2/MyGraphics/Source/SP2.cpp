@@ -530,13 +530,11 @@ void SP2::Update(double dt)
 	{
 		PressTime = 0;
 	}
-	if (Input == "Game")
-	{
-		Enemy_Updating(dt);
-		Object_Updating(dt);
-		Character_Movement(dt);
-		//camera.Update(dt);
-	}
+	
+	Enemy_Updating(dt);
+	Object_Updating(dt);
+	Character_Movement(dt);
+	//camera.Update(dt);
 
 	if (shopInput == "Shop")
 	{
@@ -667,16 +665,14 @@ void SP2::Update(double dt)
 		Lighting9 = true;
 
 	}
-
 	if (Application::IsKeyPressed('H'))
 	{
 		b_Ammo = 30;
-		if (shopInput != "Buy" && Input == "Game")
+		if (shopInput != "Buy")
 		{
 			shopInput = "Shop";
 		}
 	}
-
 	if (Application::IsKeyPressed('G'))
 	{
 		if (b_Ammo > 0)
@@ -715,8 +711,6 @@ void SP2::Update(double dt)
 	}
 
 	deltaTime = (1.0 / dt);
-
-	UpdateMenu();
 }
 void SP2::Dialogue(string filename)
 {
@@ -932,11 +926,9 @@ void SP2::Render()
 	std::ostringstream ammoOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	if (Input == "Game")
-	{
+	
 		ammoOSS << "AMMO : " << b_Ammo;
 		goldOSS << "Gold: " << gold;
-	}
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -1070,9 +1062,7 @@ void SP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	if (Input == "Game")
-	{
-		modelStack.PushMatrix();
+	modelStack.PushMatrix();
 		Enemy_Rendering();
 		modelStack.PopMatrix();
 
@@ -1089,7 +1079,6 @@ void SP2::Render()
 		modelStack.Translate(0, -1, 0);
 		RenderMesh(meshList[GEO_MOONBALL], true);
 		modelStack.PopMatrix();
-	}
 
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1141,12 +1130,6 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
-	if (Input != "Game")
-	{
-		RenderQuadOnScreen(meshList[GEO_STAR], 0.3, 20, menuIcon, rotateCoke, 0, 1, 0,2);
-
-		RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.7, 5, 90, 1, 0, 0,0);
-	}
 	if (shopInput == "Shop")
 	{
 		int j = 21;
@@ -1172,55 +1155,6 @@ void SP2::Render()
 			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 1, 1), 1.7, 10, 20);
 		}
 	}
-	if (Input == "Menu")
-	{
-		if (color == "Red1")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(1, 0, 0), 1.7, 5, 21);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Start", Color(0, 1, 0), 1.7, 5, 21);
-
-		}
-		if (color == "Red2")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(1, 0, 0), 1.7, 5, 20);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Options", Color(0, 1, 0), 1.7, 5, 20);
-		}
-		if (color == "Red3")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 19);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 19);
-
-		}
-	}
-	if (Input == "Options")
-	{
-		if (color == "Red4")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(1, 0, 0), 1.7, 5, 19);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Settings", Color(0, 1, 0), 1.7, 5, 19);
-		}
-		if (color == "Red5")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(1, 0, 0), 1.7, 5, 18);
-		}
-		else
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Quit", Color(0, 1, 0), 1.7, 5, 18);
-		}
-	}
-
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(-10, 3, -60);
