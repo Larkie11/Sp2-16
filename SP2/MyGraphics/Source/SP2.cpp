@@ -396,6 +396,23 @@ void SP2::Init()
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
 
+	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
+	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//SPACESHIP.tga");
+
+	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
+	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//PLANE.tga");
+
+
+	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("Star", "OBJ//planewing.obj");
+	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//PLANE.tga");
+
+
+	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("Star", "OBJ//planerocket.obj");
+	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//PLANE.tga");
+
+	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
+	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
+
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -1080,6 +1097,34 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_MOONBALL], true);
 		modelStack.PopMatrix();
 
+		modelStack.PushMatrix();
+		modelStack.Scale(35, 35, 35);
+		modelStack.Translate(20, 25, 0);
+		RenderMesh(meshList[GEO_SPACESHIP], true);
+		modelStack.PopMatrix();
+
+
+		modelStack.PushMatrix();
+		modelStack.Scale(5, 5, 5);
+		modelStack.Translate(100, -5, 0);
+		modelStack.Rotate(-90, 0, 1, 0);
+
+		modelStack.PushMatrix();
+		RenderMesh(meshList[GEO_PLANEWING], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		RenderMesh(meshList[GEO_PLANEROCKET], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		RenderMesh(meshList[GEO_PLANEBODY], true);
+		modelStack.PopMatrix();
+
+		modelStack.PopMatrix();
+
+
+
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
@@ -1439,9 +1484,24 @@ void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 void SP2::Object_Reading()
 {
 	for (int i = 0; i < Num_Object; i++)
-	{
-		object[i].ItemType = Items::COKE;
+	{/// this + item below =render out 
+		/*	object[i].ItemType = Items::SPACEBODY;
 		object[i].position.Set(i * 10, 0, i * 10);
+
+		object[i].ItemType = Items::SPACEWING;
+		object[i].position.Set(i * 10, 0, i * 10);*/
+
+		object[i].ItemType = Items::SPACEROCKET;
+		object[i].position.Set(i * 10, 0, i * 10);
+
+		/*	object[i].ItemType = Items::SWORD;
+		object[i].position.Set(i * 10, 0, i * 10);
+
+		object[i].ItemType = Items::GUN;
+		object[i].position.Set(i * 10, 0, i * 10);
+
+		object[i].ItemType = Items::CAMERA;
+		object[i].position.Set(i * 10, 0, i * 10);*/
 	}
 	object_on_hand.ItemType = Items::None;
 	object_on_hand.position.Set(camera.view.x, camera.view.y, camera.view.z);
@@ -1452,43 +1512,46 @@ void SP2::Object_Rendering()
 {
 	modelStack.PushMatrix();
 	//modelStack.Scale(10, 10, 10);
-	for (int i = 0; i < Num_Object; i++)
+	for (int i = 0; i < Num_Object; i++) // 5 num object so its run 5 sets 
 	{
-		if (object[i].ItemType == Items::COKE)
+		if (object[i].ItemType == Items::SPACEROCKET)
 		{
 			modelStack.PushMatrix();
 			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
-			RenderMesh(meshList[GEO_COKE], true);
-			modelStack.PopMatrix();
-		}
-		if (object[i].ItemType == Items::VENDINGMACHINE)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
-			RenderMesh(meshList[GEO_VENDING], true);
+			modelStack.Scale(1, 1, 1);
+			RenderMesh(meshList[GEO_PLANEROCKET], true);
 			modelStack.PopMatrix();
 		}
 
+
+
+
 	}
-	if (object_on_hand.ItemType == Items::COKE)
+	if (object_on_hand.ItemType == Items::SPACEROCKET)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
 		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
 		modelStack.Scale(1, 1, 1);
-		RenderMesh(meshList[GEO_COKE], true);
+
+		RenderMesh(meshList[GEO_PLANEROCKET], true);
 		modelStack.PopMatrix();
 	}
 
-	if (object_on_hand.ItemType == Items::VENDINGMACHINE )
+	if (object_on_hand.ItemType == Items::SPACEWING)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
 		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
 		modelStack.Scale(1, 1, 1);
-		RenderMesh(meshList[GEO_VENDING], true);
+
+		RenderMesh(meshList[GEO_PLANEWING], true);
 		modelStack.PopMatrix();
 	}
+
+
+
+
 	modelStack.PopMatrix();
 }
 

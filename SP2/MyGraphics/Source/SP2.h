@@ -90,6 +90,10 @@ class SP2 : public Scene
 		GEO_PYRAMIDNEW,
 		GEO_PYRAMIDWALL,
 		GEO_PYRAMIDPILLAR,
+		GEO_SPACESHIP,
+		GEO_PLANEBODY,
+		GEO_PLANEWING,
+		GEO_PLANEROCKET,
 		NUM_GEOMETRY,
 	};
 
@@ -192,8 +196,13 @@ class SP2 : public Scene
 	enum Items
 	{
 		None = -1,
-		COKE,
-		VENDINGMACHINE,
+		SPACEBODY,
+		SPACEWING,
+		SPACEROCKET,
+		ENEGRYCELL,
+		SWORD,
+		GUN,
+		CAMERA,
 		Num_Object,
 	};
 
