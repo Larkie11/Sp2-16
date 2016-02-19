@@ -1073,7 +1073,7 @@ void SP2::Render()
 	if (Input == "Game")
 	{
 		modelStack.PushMatrix();
-		Enemy_Rendering();
+		//Enemy_Rendering();
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
@@ -1391,7 +1391,6 @@ bool SP2::Collision_Detection(Position Character)
 	{
 		Z = 0;
 	}
-	cout << X << " / " <<Z<< endl;
 	if (X > -1 && X < 20 && Z > -1 && Z < 20)
 	{
 		if (Map[X][Z] != char(' '))
@@ -1581,30 +1580,49 @@ void SP2::Object_Reading()
 		object[i].position.Set(i * 10, 0, i * 10);
 	}
 	object_on_hand.ItemType = Items::None;
-	object_on_hand.position.Set(camera.target.x * 1, -10, camera.target.z * 1);
+	object_on_hand.position.Set(camera.view.x, camera.view.y, camera.view.z);
 	T_object_Num = -1;
 }
 
 void SP2::Object_Rendering()
 {
 	modelStack.PushMatrix();
-	modelStack.Scale(10, 10, 10);
+	//modelStack.Scale(10, 10, 10);
 	for (int i = 0; i < Num_Object; i++)
 	{
-		if (object[i].ItemType == Items::VENDINGMACHINE)
+		if (object[i].ItemType == Items::COKE)
 		{
 			modelStack.PushMatrix();
-			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);
+			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
 			RenderMesh(meshList[GEO_COKE], true);
 			modelStack.PopMatrix();
 		}
+		if (object[i].ItemType == Items::VENDINGMACHINE)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
+			RenderMesh(meshList[GEO_VENDING], true);
+			modelStack.PopMatrix();
+		}
+
 	}
-	if (object_on_hand.ItemType == Items::VENDINGMACHINE)
+	if (object_on_hand.ItemType == Items::COKE)
 	{
 		modelStack.PushMatrix();
-		modelStack.Scale(10, 10, 10);
-		modelStack.Translate(object_on_hand.position.x, object_on_hand.position.y, object_on_hand.position.z);
+		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
+		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
+		modelStack.Scale(1, 1, 1);
 		RenderMesh(meshList[GEO_COKE], true);
+		modelStack.PopMatrix();
+	}
+
+	if (object_on_hand.ItemType == Items::VENDINGMACHINE )
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
+		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
+		modelStack.Scale(1, 1, 1);
+		RenderMesh(meshList[GEO_VENDING], true);
 		modelStack.PopMatrix();
 	}
 	modelStack.PopMatrix();
@@ -1642,5 +1660,30 @@ void SP2::Object_Updating(float dt)
 		}
 
 	}
-	object_on_hand.position.Set(camera.target.x * 1, -10, camera.target.z * 1);
+	object_on_hand.position.Set(camera.position.x - camera.target.x, camera.position.y - camera.target.y, camera.position.z - camera.target.z);
+	if (object_on_hand.position.x < float(0.0000001) && object_on_hand.position.x> 0)
+	{
+		object_on_hand.position.x = 0;
+	}
+	if (object_on_hand.position.x > -float(0.0000001) && object_on_hand.position.x< 0)
+	{
+		object_on_hand.position.x = 0;
+	}
+	if (object_on_hand.position.y < float(0.0000001) && object_on_hand.position.y> 0)
+	{
+		object_on_hand.position.y = 0;
+	}
+	if (object_on_hand.position.y > -float(0.0000001) && object_on_hand.position.y< 0)
+	{
+		object_on_hand.position.y = 0;
+	}
+	if (object_on_hand.position.z < float(0.0000001) && object_on_hand.position.z> 0)
+	{
+		object_on_hand.position.z = 0;
+	}
+	if (object_on_hand.position.z > -float(0.0000001) && object_on_hand.position.z< 0)
+	{
+		object_on_hand.position.z = 0;
+	}
+	cout << object_on_hand.position.x << " / " << object_on_hand.position.y << " / " << object_on_hand.position.z << endl;
 }
