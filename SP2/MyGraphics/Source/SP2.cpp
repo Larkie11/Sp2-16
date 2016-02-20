@@ -34,12 +34,14 @@ void SP2::Init()
 	Map_Reading();
 	Object_Reading();
 	JumpTime = 0;
+	storyShow = true;
 	negativeDotProduct = true;
 	Dialogue("Text//Dialogue1.txt");
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
 	startCoolDdown = false;
+	storyPosition = 3;
 
 	Nposition = Vector3(127, -21, 0);
 	// Set background color to dark blue
@@ -158,7 +160,7 @@ void SP2::Init()
 	glUseProgram(m_programID);
 
 	light[0].type = Light::LIGHT_POINT;
-	light[0].position.Set(0, 100, 0);
+	light[0].position.Set(0, 0, 0);
 	light[0].color.Set(1, 1, 1);
 	light[0].power = 2;
 	light[0].kC = 5.f;
@@ -181,7 +183,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	light[1].type = Light::LIGHT_SPOT;
-	light[1].position.Set(-300, 37, 185);
+	light[1].position.Set(-300, 37, 0);
 	light[1].color.Set(1, 1, 1);
 	light[1].power = 3;
 	light[1].kC = 5.f;
@@ -225,7 +227,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
 
 	light[3].type = Light::LIGHT_SPOT;
-	light[3].position.Set(300, 37, 185);
+	light[3].position.Set(350, 37,0);
 	light[3].color.Set(1, 1, 1);
 	light[3].power = 3;
 	light[3].kC = 1.f;
@@ -269,7 +271,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT4_EXPONENT], light[4].exponent);
 
 	light[5].type = Light::LIGHT_SPOT;
-	light[5].position.Set(40, 37, -70);
+	light[5].position.Set(0, 0, 0);
 	light[5].color.Set(1, 1, 1);
 	light[5].power = 3;
 	light[5].kC = 1.f;
@@ -362,6 +364,9 @@ void SP2::Init()
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
 
+	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story1", Color(1, 1, 1), 4, 5);
+	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story1.tga");
+
 	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pryramidobj.obj");
 	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//sand_2.tga");
 
@@ -422,6 +427,14 @@ bool SP2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
 }
 void SP2::Update(double dt)
 {	
+	if (coolDownTime > 0)
+	{
+		coolDownTime -= (float)(10 * dt);
+	}
+	else
+	{
+		coolDownTime = 0;
+	}
 	Enemy_Updating(dt);
 	Object_Updating(dt);
 	Character_Movement(dt);
@@ -496,6 +509,35 @@ void SP2::Update(double dt)
 		SharedData::GetInstance()->gameState = SharedData::SHOP;
 	}
 
+	//Check if player presses tab and start to move the story upwards
+	if (storyShow == true && Application::IsKeyPressed(VK_TAB)&&coolDownTime == 0)
+	{
+		coolDownTime = deltaTime/10;
+		if (storyPosition >= 3)
+		{
+			storyDismiss = true;
+			storyShow = false;
+		}
+	}
+	//Check if player presses tab and start to move story downwards
+	if (storyDismiss == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
+	{
+		coolDownTime = deltaTime/10;
+		if (storyPosition <= -3)
+		{
+			storyDismiss = false;
+			storyShow = true;
+		}
+	}
+	if (storyDismiss && storyPosition > -3)
+	{
+		storyPosition -= (float)(3 * dt);
+		
+	}
+	if (storyShow && storyPosition < 3)
+	{
+		storyPosition += (float)(3 * dt);
+	}
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
 	if (Application::IsKeyPressed('2')) //disable back face culling
@@ -981,7 +1023,7 @@ void SP2::Render()
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
-	modelStack.Scale(3, 3, 3);
+	modelStack.Scale(2, 2, 2);
 	RenderSkybox();
 	modelStack.PopMatrix();
 
@@ -1042,6 +1084,8 @@ void SP2::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
 	}
+
+	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 
 	RenderQuadOnScreen(meshList[GEO_BAG], 1, 50, 3, 90, 1, 0, 0, 0);
 }

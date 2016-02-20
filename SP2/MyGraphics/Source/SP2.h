@@ -76,6 +76,7 @@ class SP2 : public Scene
 		GEO_FRONT1,
 		GEO_BACK1,
 		GEO_STAR,
+		GEO_STORY1,
 		GEO_TEXT,
 		GEO_PATH,
 		GEO_VENDING,
@@ -267,6 +268,11 @@ private:
 	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
+	float storyPosition;
+	bool storyDismiss;
+	bool storyShow;
+	float coolDownTime;
+	string story;
 
 	float deltaTime;
 	Bullet bullet;
