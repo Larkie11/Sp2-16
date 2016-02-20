@@ -19,17 +19,16 @@ SceneMenu::~SceneMenu()
 }
 void SceneMenu::Init()
 {
-	srand(time(NULL));
-	icon = 31.6;
-	icon2 = 19;
-	menuIcon = 116;
+	menuIcon = 118;
 	colorBlue = (0.4, 0.8, 0.8);
 	colorNormal = (0.1, 0.2, 0);
-	
+
+	//Sets the enum for option menu and menu scren
 	choose = menushop.STARTGAME;
 	c_option = menushop.O_SETTING;
 	Input = "Menu";
 
+	//Read the menu texts from text file
 	Dialogue("Text//Menu.txt");
 
 	// Set background color to dark blue
@@ -48,7 +47,6 @@ void SceneMenu::Init()
 	glGenVertexArrays(1, &m_vertexArrayID);
 	glBindVertexArray(m_vertexArrayID);
 
-	//m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Blending.fragmentshader");
 	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
 	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
@@ -58,20 +56,6 @@ void SceneMenu::Init()
 	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
 	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
 	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
-	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
-	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
-	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
-	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
-	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
-	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
-	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
-	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
-	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
-	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
-
-	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
-	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
 	// Get a handle for our "colorTexture" uniform
 	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
@@ -86,48 +70,8 @@ void SceneMenu::Init()
 
 	glUseProgram(m_programID);
 
-	light[0].type = Light::LIGHT_POINT;
-	light[0].position.Set(250, 55, -90);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 4;
-	light[0].kC = 5.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-	light[0].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
-	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.f, 1.f, 0.f);
-
-	//Make sure you pass uniform parameters after glUseProgram()
-	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
-	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
-	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
-	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
-	
-	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
-
 	//Initialize camera settings
 	camera.Init(Vector3(-300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
-	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
-	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
-	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
-	meshList[GEO_QUAD]->textureID = LoadTGA("Image//Tile.tga");
-	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
-	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
-	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
-	meshList[GEO_QUAD]->material.kShininess = 1.f;
-
-	meshList[GEO_FLOOR] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 1.015, 1, 10);
-	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//Tile2.tga");
-	meshList[GEO_FLOOR]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
-	meshList[GEO_FLOOR]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
-	meshList[GEO_FLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
-	meshList[GEO_FLOOR]->material.kShininess = 1.f;
 
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
@@ -135,20 +79,14 @@ void SceneMenu::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
-	GLuint santa = LoadTGA("Image//Santa.tga");
-	
-
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
-
-	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
-static float LSPEED = 10.f;
-static bool Lighting9 = true;
+//Sets color for the words
 void SceneMenu::setColor(int which, string color)
 {
 	if (color == "colorBlue")
@@ -159,7 +97,12 @@ void SceneMenu::setColor(int which, string color)
 	{
 		colorA[which].Set(colorNormal.r, colorNormal.g, colorNormal.b);
 	}
+	if (color == "colorSpecial")
+	{
+		colorA[which].Set(0.3, 0.8, 0.4);
+	}
 }
+//Handles all switch cases
 void SceneMenu::UpdateMenu()
 {
 	if (Input == "Menu")
@@ -167,124 +110,267 @@ void SceneMenu::UpdateMenu()
 		switch (choose)
 		{
 		case MenuShop::STARTGAME:
-			setColor(0,"colorBlue");
+			setColor(0, "colorBlue");
 			setColor(1, "colorNormal");
 			setColor(2, "colorNormal");
-			menuIcon = 116;
-			if (Application::IsKeyPressed(VK_RETURN))
+			setColor(3, "colorNormal");
+			menuIcon = 117;
+
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				menushop.PressTime = deltaTime / 2;
 				my_arr[0] = "Loading Game";
 				SharedData::GetInstance()->stateCheck = true;
 				SharedData::GetInstance()->gameState = SharedData::GAME;
 			}
-			userInput(0);
+			userInput();
 			break;
 		case MenuShop::OPTIONS:
 			setColor(0, "colorNormal");
 			setColor(1, "colorBlue");
 			setColor(2, "colorNormal");
+			setColor(3, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				menuIcon = 105;
+				menuIcon = 104;
 				Input = "Options";
 				c_option = MenuShop::O_SETTING;
 			}
-			userInput(0);
+			userInput();
+			break;
+		case MenuShop::CREDITS:
+			setColor(1, "colorNormal");
+			setColor(2, "colorBlue");
+			setColor(3, "colorNormal");
+			
+			setColor(6, "colorSpecial");
+			setColor(7, "colorNormal");
+			setColor(8, "colorNormal");
+			setColor(9, "colorNormal");
+			setColor(10, "colorNormal");
+			setColor(11, "colorBlue");
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
+			{
+				menuIcon = 90;
+				menushop.PressTime = deltaTime / 5;
+				Input = "Credits";
+				c_option = MenuShop::O_CREDIT;
+			}
+			userInput();
 			break;
 		case MenuShop::QUIT:
 			setColor(0, "colorNormal");
 			setColor(1, "colorNormal");
-			setColor(2, "colorBlue");
+			setColor(2, "colorNormal");
+			setColor(3, "colorBlue");
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				SharedData::GetInstance()->gameState = SharedData::QUIT;
 			}
-			userInput(0);
+			userInput();
 			break;
 		}
 	}
-		if (Input == "Options")
-		{
-			switch (c_option)
-			{
-			case MenuShop::O_SETTING:
-				setColor(3, "colorBlue");
-				setColor(4, "colorNormal");
-				userInput(1);
-				break;
-			case MenuShop::O_QUIT:
-				setColor(3, "colorNormal");
-				setColor(4, "colorBlue");
-				if (Application::IsKeyPressed(VK_RETURN))
-				{
-					Input = "Menu";
-					choose = MenuShop::STARTGAME;
-					while (Application::IsKeyPressed(VK_RETURN))
-					{
-						Input = "Menu";
-						choose = menushop.STARTGAME;
-					}
-				}
-				userInput(1);
-				break;
-			}
-		}
-}
-void SceneMenu::userInput(int user)
-{
-	if (user == 0)
+	if (Input == "Options")
 	{
-		if (choose < MenuShop::MAX - 1)
+		switch (c_option)
 		{
-			if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
+		case MenuShop::O_SETTING:
+			setColor(4, "colorBlue");
+			setColor(5, "colorNormal");
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
-				menuIcon -= 6;
-				menushop.PressTime = deltaTime / 10;
-				choose = static_cast<MenuShop::MENU>(choose + 1);
-				cout << choose << endl;
-			}
-		}
-		if (choose > MenuShop::STARTGAME)
-		{
-			if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
-			{
-				menuIcon += 6;
-				menushop.PressTime = deltaTime / 10;
-				choose = static_cast<MenuShop::MENU>(choose - 1);
-				cout << choose << endl;
-			}
-		}
 
+			}
+			userInput();
+			break;
+		case MenuShop::O_QUIT:
+			setColor(4, "colorNormal");
+			setColor(5, "colorBlue");
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
+			{
+				menushop.PressTime = deltaTime / 5;
+				choose = MenuShop::STARTGAME;
+				Input = "Menu";
+			}
+			userInput();
+			break;
+		}
 	}
-	if (user == 1)
+	if (Input == "Credits")
 	{
-		if (c_option < MenuShop::O_MAX - 1)
+		switch (c_option)
+		{
+		case MenuShop::O_CREDIT:
+			setColor(4, "colorBlue");
+			setColor(5, "colorNormal");
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
+			{
+				menushop.PressTime = deltaTime;
+				Input = "Menu";
+				choose = MenuShop::STARTGAME;
+			}
+			break;
+		}
+	}
+}
+//Handles user up and down input
+void SceneMenu::userInput()
+{
+	
+	if (Input == "Menu")
+	{
+		if (px < 210 || px > 540)
+		{
+			if (choose < MenuShop::MAX - 1)
+			{
+				if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
+				{
+					menuIcon -= 6.5;
+					menushop.PressTime = deltaTime / 10;
+					choose = static_cast<MenuShop::MENU>(choose + 1);
+				}
+			}
+			if (choose > MenuShop::STARTGAME)
+			{
+				if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
+				{
+					menuIcon += 6.5;
+					menushop.PressTime = deltaTime / 10;
+					choose = static_cast<MenuShop::MENU>(choose - 1);
+				}
+			}
+		}
+	}
+	if (Input == "Options")
+	{
+		if (c_option < MenuShop::O_MAX - 2)
 		{
 			if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
 			{
-				menuIcon -= 6;
+				menuIcon -= 6.5;
 				menushop.PressTime = deltaTime / 10;
 				c_option = static_cast<MenuShop::OPTION>(c_option + 1);
-				cout << c_option << endl;
 			}
 		}
 		if (c_option > MenuShop::O_SETTING)
 		{
 			if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
 			{
-				menuIcon += 6;
+				menuIcon += 6.5;
 				menushop.PressTime = deltaTime / 10;
 				c_option = static_cast<MenuShop::OPTION>(c_option - 1);
-				cout << c_option << endl;
+			}
+		}
+	}
+}
+//Handles user mouse input
+void SceneMenu::mouseControl()
+{
+	POINT p;
+	if (GetCursorPos(&p))
+	{
+		px = p.x;
+		py = p.y;
+	}
+	if (Input == "Menu")
+	{
+		if (px > 210 && px < 540)
+		{
+			if (py >412 && py < 449)
+			{
+				choose = MenuShop::STARTGAME;
+				menuIcon = 117;
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					my_arr[0] = "Loading Game";
+					SharedData::GetInstance()->stateCheck = true;
+					SharedData::GetInstance()->gameState = SharedData::GAME;
+				}
+			}
+
+			if (py > 450 && py < 485)
+			{
+				menuIcon = 111.5;
+				choose = MenuShop::OPTIONS;
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					menuIcon = 104;
+					Input = "Options";
+					c_option = MenuShop::O_SETTING;
+				}
+			}
+			if (py > 487 && py < 522)
+			{
+				menuIcon = 105;
+				choose = MenuShop::CREDITS;
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					menuIcon = 90;
+					Input = "Credits";
+					c_option = MenuShop::O_CREDIT;
+
+				}
+			}
+			if (py > 523 && py < 556)
+			{
+				menuIcon = 98.5;
+				choose = MenuShop::QUIT;
+				if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
+				{
+					SharedData::GetInstance()->gameState = SharedData::QUIT;
+				}
+			}
+		}
+	}
+
+	if (Input == "Credits")
+	{
+		if (px > 210 && px < 339 && py > 559 && py < 591)
+		{
+			if (Application::IsKeyPressed(VK_LBUTTON))
+			{
+				Input = "Menu";
+				choose = MenuShop::STARTGAME;
+			}
+		}
+	}
+
+
+	if (Input == "Options")
+	{
+		if (px > 210 && px < 582)
+		{
+			if (py > 488 && py < 519)
+			{
+				menuIcon = 104;
+				c_option = MenuShop::O_SETTING;
+			}
+
+			if (py > 520 && py < 555)
+			{
+				menuIcon = 97.5;
+				c_option = MenuShop::O_QUIT;
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					menushop.PressTime = deltaTime / 5;
+					Input = "Menu";
+				}
 			}
 		}
 	}
 }
 void SceneMenu::Update(double dt)
 {
+	POINT p;
+	if (GetCursorPos(&p))
+	{
+		px = p.x;
+		py = p.y;
+	}
 	if (menushop.PressTime > 0)
 	{
-		menushop.PressTime -= 1;
+		menushop.PressTime -= (float)(50 * dt);
 	}
 	else
 	{
@@ -293,75 +379,12 @@ void SceneMenu::Update(double dt)
 
 	rotateCoke += (float)(100 * dt);
 
-	if (Application::IsKeyPressed('1')) //enable back face culling
-		glEnable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('2')) //disable back face culling
-		glDisable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('3'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if (Application::IsKeyPressed('4'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if (Application::IsKeyPressed('Z'))
-	{
-		Lighting9 = false;
-	}
-
-	else if (Application::IsKeyPressed('X'))
-	{
-		Lighting9 = true;
-
-	}
-
-	/*if (Application::IsKeyPressed('H'))
-	{
-		b_Ammo = 30;
-		if (menushop.shopInput != "Buy" && Input == "Game")
-		{
-			menushop.shopInput = "Shop";
-		}
-	}
-
-	if (Application::IsKeyPressed('G'))
-	{
-		if (b_Ammo > 0)
-		{
-			startCoolDdown = true;
-			if (b_coolDown == b_coolDownLimit)
-			{
-				b_Ammo--;
-				bullet_arr.push_back(new Bullet(camera));
-			}
-		}
-	}
-	if (startCoolDdown)
-	{
-		b_coolDown -= dt;
-		if (b_coolDown < 0)
-		{
-			b_coolDown = b_coolDownLimit;
-			startCoolDdown = false;
-		}
-	}*/
-
-	//for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
-	//{
-
-	//	//if destory bullet = true 
-	//	if ((*iter)->Update(dt))
-	//	{
-	//		iter = bullet_arr.erase(iter);
-	//	}
-	//	else
-	//	{
-	//		iter++;
-	//	}
-
-	//}
-
 	deltaTime = (1.0 / dt);
 
 	UpdateMenu();
+	mouseControl();
 }
+//Read from text file
 void SceneMenu::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -382,21 +405,6 @@ void SceneMenu::RenderMesh(Mesh * mesh, bool enableLight)
 	modelView = viewStack.Top() * modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MODELVIEW], 1, GL_FALSE, &modelView.a[0]);
 
-	if (enableLight && Lighting9)
-	{
-		glUniform1i(m_parameters[U_LIGHTENABLED], 1);
-		modelView_inverse_transpose = modelView.GetInverse().GetTranspose();
-		glUniformMatrix4fv(m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE], 1, GL_FALSE, &modelView_inverse_transpose.a[0]);
-		//load material
-		glUniform3fv(m_parameters[U_MATERIAL_AMBIENT], 1, &mesh->material.kAmbient.r);
-		glUniform3fv(m_parameters[U_MATERIAL_DIFFUSE], 1, &mesh->material.kDiffuse.r);
-		glUniform3fv(m_parameters[U_MATERIAL_SPECULAR], 1, &mesh->material.kSpecular.r);
-		glUniform1f(m_parameters[U_MATERIAL_SHININESS], mesh->material.kShininess);
-	}
-	else
-	{
-		glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-	}
 	if (mesh->textureID > 0)
 	{
 		glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
@@ -422,7 +430,6 @@ void SceneMenu::RenderText(Mesh* mesh, std::string text, Color color)
 	glDisable(GL_DEPTH_TEST);
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
@@ -461,7 +468,6 @@ void SceneMenu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
@@ -503,27 +509,18 @@ void SceneMenu::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, flo
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-static float SBSCALE1 = 1000.f;
-
 void SceneMenu::Render()
 {
-	std::ostringstream oss;
-	oss << "Camera X: " << camera.position.x;
-	string var = oss.str();
-
-	std::ostringstream oss1;
-	oss1 << "Camera Z: " << camera.position.z;
-	string var1 = oss1.str();
-
-	std::ostringstream ammoOSS;
-	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
-	string ammo = ammoOSS.str();
-	string s_gold = goldOSS.str();
 
-
+	std::ostringstream mouseXOSS;
+	mouseXOSS << "X : " << px;
+	string mouseX = mouseXOSS.str();
+	std::ostringstream mouseYOSS;
+	mouseYOSS << "Y : " << py;
+	string mouseY = mouseYOSS.str();
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -534,83 +531,44 @@ void SceneMenu::Render()
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-	
+
 	modelStack.LoadIdentity();
+	RenderQuadOnScreen(meshList[GEO_STAR], 0.3, 18, menuIcon, rotateCoke, 0, 1, 0, 2);
 
-	if (light[0].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[0].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(0, -20, 0);
-	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(1000, 1, 1000);
-	RenderMesh(meshList[GEO_QUAD], true);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 1, 0);
-	modelStack.Rotate(90, 1, 0, 0);
-	
-	RenderQuadOnScreen(meshList[GEO_STAR], 0.3, 20, menuIcon, rotateCoke, 0, 1, 0,2);
-
-	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.7, menu_pos, 90, 1, 0, 0,0);
+	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.5, 6, 90, 1, 0, 0, 0);
 
 	if (Input == "Menu")
 	{
-		int j = 22;
-		for (int i = 0; i < my_arr.size()-2; ++i)
+		int j = 19;
+		for (int i = 0; i < my_arr.size() - 8; ++i)
 		{
 			j--;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
 		}
 	}
 	if (Input == "Options")
 	{
-		int j = 20;
-		for (int i = 3; i < my_arr.size(); ++i)
+		int j = 17.9;
+		for (int i = 4; i < my_arr.size() - 6; ++i)
 		{
-			j--;			
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 1.7, 5, j);
+			j--;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
+		}
+	}
+	if (Input == "Credits")
+	{
+		int j = 20;
+		for (int i = 6; i < my_arr.size(); ++i)
+		{
+			j--;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
 		}
 	}
 
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(-10, 3, -60);
-	RenderText(meshList[GEO_TEXT], "", Color(0, 1, 0));
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(25, 0, 0);
-	RenderText(meshList[GEO_TEXT], "", Color(0, 1, 0));
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-	var.resize(16);
-	var1.resize(16);
 	Fps.resize(11);
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 45, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-	modelStack.PopMatrix();
+	RenderTextOnScreen(meshList[GEO_TEXT], mouseX, Color(1, 1, 0), 1.5, 1, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], mouseY, Color(1, 1, 0), 1.5, 1, 3);
 }
 void SceneMenu::Exit()
 {

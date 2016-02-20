@@ -16,6 +16,7 @@ public:
 		MENU1 = 0,
 		STARTGAME,
 		OPTIONS,
+		CREDITS,
 		QUIT,
 		MAX,
 	};
@@ -23,6 +24,7 @@ public:
 	{
 		O_SETTING,
 		O_QUIT,
+		O_CREDIT,
 		O_MAX,
 	};
 	enum SHOP_OPTION

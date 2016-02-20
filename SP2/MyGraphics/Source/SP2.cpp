@@ -422,121 +422,6 @@ void SP2::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-void SP2::UpdateMenu()
-{
-	if (Input == "Menu")
-	{
-		switch (choose)
-		{
-		case STARTGAME:
-			color = "Red1";
-			menuIcon = 116;
-			if (Application::IsKeyPressed(VK_RETURN))
-			{
-				Input = "Game";
-			}
-			userInput(0);
-			break;
-		case OPTIONS:
-			color = "Red2";
-			if (Application::IsKeyPressed(VK_RETURN))
-			{
-				Input = "Options";
-				c_option = O_SETTING;
-				while (Application::IsKeyPressed(VK_RETURN))
-				{
-					menuIcon = 105;
-					Input = "Options";
-					c_option = O_SETTING;
-				}
-			}
-			userInput(0);
-			break;
-		case QUIT:
-			color = "Red3";
-			if (Application::IsKeyPressed(VK_RETURN))
-			{
-				Exit();
-			}
-			userInput(0);
-			break;
-		}
-	}
-	else if (Input == "Options")
-	{
-		switch (c_option)
-		{
-		case O_SETTING:
-			color = "Red4";
-			userInput(1);
-			break;
-		case O_QUIT:
-			color = "Red5";
-			if (Application::IsKeyPressed(VK_RETURN))
-			{
-				Input = "Menu";
-				choose = STARTGAME;
-				while (Application::IsKeyPressed(VK_RETURN))
-				{
-					Input = "Menu";
-					choose = STARTGAME;
-				}
-			}
-			userInput(1);
-			break;
-		}
-	}
-}
-void SP2::userInput(int user)
-{
-	if (user == 0)
-	{
-		if (choose < MAX - 1)
-		{
-			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
-			{
-				menuIcon -= 6;
-				PressTime = deltaTime / 10;
-				choose = static_cast<MENU>(choose + 1);
-				cout << choose << endl;
-			}
-		}
-		if (choose > STARTGAME)
-		{
-			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
-			{
-				menuIcon += 6;
-				PressTime = deltaTime / 10;
-				choose = static_cast<MENU>(choose - 1);
-				cout << choose << endl;
-			}
-		}
-
-	}
-	if (user == 1)
-	{
-		if (c_option < O_MAX - 1)
-		{
-			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
-			{
-				menuIcon -= 6;
-				PressTime = deltaTime / 10;
-				c_option = static_cast<OPTION>(c_option + 1);
-				cout << c_option << endl;
-			}
-		}
-		if (c_option > O_SETTING)
-		{
-			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
-			{
-				menuIcon += 6;
-				PressTime = deltaTime / 10;
-				c_option = static_cast<OPTION>(c_option - 1);
-				cout << c_option << endl;
-			}
-		}
-	}
-}
 void SP2::Update(double dt)
 {
 	if (PressTime > 0)
@@ -558,115 +443,6 @@ void SP2::Update(double dt)
 		shop = "Loading Shop";
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SHOP;
-	}
-	if (shopInput == "Shop")
-	{
-		switch (s_option)
-		{
-		case S_YES:
-			//cout << "Yes";
-			break;
-		case S_NO:
-			//cout << "No";
-			break;
-		case S_BUY:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				shopInput = "Buy";
-				s_buy = SB_AMMO;
-			}
-			break;
-		case S_SELL:
-			//cout << "Sell";
-			break;
-		case S_BACK:
-			if (Application::IsKeyPressed(VK_RETURN))
-			{
-				shopInput = "Back";
-				s_option = S_YES;
-				icon = 31.6;
-				icon2 = 19;
-				cout << "Byebye" << endl;
-			}
-			break;
-		}
-		if (s_option > S_YES)
-		{
-			if (Application::IsKeyPressed('K') && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_option = static_cast<SHOP_OPTION>(s_option - 1);
-				cout << s_option;
-				icon += 1.6;
-				icon2 += 1;
-			}
-		}
-		if (s_option < S_MAX - 1)
-		{
-			if (Application::IsKeyPressed('J') && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_option = static_cast<SHOP_OPTION>(s_option + 1);
-				cout << s_option;
-				icon -= 1.6;
-				icon2 -= 1;
-			}
-		}
-	}
-	if (shopInput == "Buy")
-	{
-		switch (s_buy)
-		{
-		case SB_AMMO:
-			if (Application::IsKeyPressed(VK_RETURN)&& PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				if (gold > 19)
-				{
-					gold -= 20;
-					SharedData::GetInstance()->bullet++;
-				}
-				else
-				{
-					b_gold = true;
-				}
-			}
-			break;
-		case SB_BOMB:
-			break;
-		case SB_BACK:
-			if (Application::IsKeyPressed(VK_RETURN))
-			{
-				shopInput = "Shop";
-				s_option = S_YES;
-				icon = 31.6;
-				icon2 = 19;
-			}
-			break;
-		}
-		if (s_buy > SB_AMMO)
-		{
-			if (Application::IsKeyPressed('K') && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_buy = static_cast<SHOP_BUY>(s_buy - 1);
-				cout << s_buy;
-				icon += 1.6;
-				icon2 += 1;
-			}
-		}
-		if (s_buy < SB_MAX - 1)
-		{
-			if (Application::IsKeyPressed('J') && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_buy = static_cast<SHOP_BUY>(s_buy + 1);
-				cout << s_buy;
-				icon -= 1.6;
-				icon2 -= 1;
-			}
-		}
 	}
 	rotateCoke += (float)(100 * dt);
 
@@ -1098,38 +874,33 @@ void SP2::Render()
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
+		modelStack.Translate(0, -50, 0);
 		modelStack.Scale(30, 30, 30);
-		modelStack.Translate(0, -1, 0);
+
 		RenderMesh(meshList[GEO_MOONBALL], true);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Scale(35, 35, 35);
-		modelStack.Translate(20, 25, 0);
+		modelStack.Translate(0, 200, 0);
+		modelStack.Scale(10, 10, 10);
 		RenderMesh(meshList[GEO_SPACESHIP], true);
 		modelStack.PopMatrix();
 
-
 		modelStack.PushMatrix();
-		modelStack.Scale(5, 5, 5);
-		modelStack.Translate(100, -5, 0);
+		modelStack.Translate(350, -20, 0);
 		modelStack.Rotate(-90, 0, 1, 0);
-
+		modelStack.Scale(5, 5, 5);
 		modelStack.PushMatrix();
 		RenderMesh(meshList[GEO_PLANEWING], true);
 		modelStack.PopMatrix();
-
 		modelStack.PushMatrix();
 		RenderMesh(meshList[GEO_PLANEROCKET], true);
 		modelStack.PopMatrix();
-
 		modelStack.PushMatrix();
 		RenderMesh(meshList[GEO_PLANEBODY], true);
 		modelStack.PopMatrix();
 
 		modelStack.PopMatrix();
-
-
 
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1161,7 +932,6 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
-
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
@@ -1182,31 +952,6 @@ void SP2::Render()
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.7, 5, 20);
-	if (shopInput == "Shop")
-	{
-		int j = 21;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
-		for (int arr = 0; arr < my_arr.size() - 3; ++arr)
-		{
-			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
-		}
-	}
-	if (shopInput == "Buy")
-	{
-		int j = 18;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		for (int arr = 6; arr < my_arr.size(); ++arr)
-		{
-			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
-		}
-		if (b_gold)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 1, 1), 1.7, 10, 20);
-		}
-	}
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(-10, 3, -60);

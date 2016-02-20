@@ -1,5 +1,12 @@
 Start
 Options
+Credit
 Quit
 Settings
+Back
+Our Awesome Team:
+Wei Min
+Heng Soon
+Francis
+Zhan Wei
 Back

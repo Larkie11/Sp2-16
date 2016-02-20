@@ -12,7 +12,15 @@ public:
 		QUIT,
 		MAX,
 	};
+	enum MENUPAGE
+	{
+		STARTGAME,
+		SETTING,
+		CREDIT,
+		M_QUIT
+	};
 	GAMESTATE gameState;
+	MENUPAGE menuState;
 
 	static SharedData* GetInstance()
 	{

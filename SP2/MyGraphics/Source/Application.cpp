@@ -74,7 +74,7 @@ void Application::Init()
 	width = mode->width + 1;
 	height = mode->height + 1;
 
-	m_window = glfwCreateWindow(1024, 768, "SPACE",nullptr, nullptr);
+	m_window = glfwCreateWindow(width, height, "SPACE",glfwGetPrimaryMonitor(), nullptr);
 	glfwSetCursorPos(m_window, width / 2, height / 2);
 
 	//If the window couldn't be created
