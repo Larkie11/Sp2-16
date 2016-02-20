@@ -4,10 +4,10 @@
 #include <string>
 using std::string;
 
+//All the enums for shop/menu states
 class MenuShop
 {
 public:
-	int item;
 	string shopInput;
 	string Input;
 	float PressTime = 0;

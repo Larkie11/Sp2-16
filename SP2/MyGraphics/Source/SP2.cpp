@@ -11,6 +11,7 @@
 #include "SharedData.h"
 #include <sstream>
 
+//This class is to render the first scenario where player has to fix his own spaceship
 Position VtoP(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
@@ -31,20 +32,16 @@ void SP2::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
-	icon = 31.6;
-	icon2 = 19;
-	menuIcon = 116;
 	Object_Reading();
 	JumpTime = 0;
-	choose = STARTGAME;
-	c_option = O_SETTING;
-	Input = "Menu";
+	negativeDotProduct = true;
 	Dialogue("Text//Dialogue1.txt");
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
 	startCoolDdown = false;
 
+	Nposition = Vector3(127, -21, 0);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -142,7 +139,6 @@ void SP2::Init()
 	m_parameters[U_LIGHT5_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[5].cosCutoff");
 	m_parameters[U_LIGHT5_COSINNER] = glGetUniformLocation(m_programID, "lights[5].cosInner");
 	m_parameters[U_LIGHT5_EXPONENT] = glGetUniformLocation(m_programID, "lights[5].exponent");
-
 
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
@@ -307,13 +303,6 @@ void SP2::Init()
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;
 
-	meshList[GEO_FLOOR] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 1.015, 1, 10);
-	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//Tile2.tga");
-	meshList[GEO_FLOOR]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
-	meshList[GEO_FLOOR]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
-	meshList[GEO_FLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
-	meshList[GEO_FLOOR]->material.kShininess = 1.f;
-
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
@@ -358,14 +347,11 @@ void SP2::Init()
 
 	GLuint wood = LoadTGA("Image//book.tga");
 	GLuint textID = LoadTGA("Image//Chair.tga");
-	meshList[GEO_BENCH] = MeshBuilder::GenerateOBJ("bench", "OBJ//Bench.obj");
-	meshList[GEO_BENCH]->textureID = wood;
-
-	meshList[GEO_OUTER] = MeshBuilder::GenerateOBJ("Wall", "OBJ//WallOuter.obj");
-	meshList[GEO_OUTER]->textureID = LoadTGA("Image//Outside.tga");
 
 	GLuint santa = LoadTGA("Image//Santa.tga");
 	
+	meshList[GEO_BAG] = MeshBuilder::GenerateQuad("Bag", Color(1, 1, 1), 5, 5);
+	meshList[GEO_BAG]->textureID = LoadTGA("Image//Bag.tga");
 
 	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
 	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
@@ -387,6 +373,8 @@ void SP2::Init()
 
 	meshList[GEO_PYRAMIDNEW] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidNew.obj");
 	meshList[GEO_PYRAMIDNEW]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PYRAMIDDOOR] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidDoor.obj");
+	meshList[GEO_PYRAMIDDOOR]->textureID = LoadTGA("Image//slabs.tga");
 	meshList[GEO_PYRAMIDWALL] = MeshBuilder::GenerateOBJ("Walls", "OBJ/Wall.obj");
 	meshList[GEO_PYRAMIDWALL]->textureID = LoadTGA("Image//sand_2.tga");
 	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
@@ -401,17 +389,14 @@ void SP2::Init()
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
 	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//PLANE.tga");
 
-
 	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("Star", "OBJ//planewing.obj");
 	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//PLANE.tga");
-
 
 	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("Star", "OBJ//planerocket.obj");
 	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//PLANE.tga");
 
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
-
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -421,29 +406,95 @@ void SP2::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-void SP2::Update(double dt)
+//Check for player and object distance
+//Takes in camera and object vector3
+bool SP2::checkNear(Camera3 camera, Vector3 rhs)
 {
-	if (PressTime > 0)
+	if (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))) <= 25)
 	{
-		PressTime -= 1;
+		return true;
 	}
-	else
-	{
-		PressTime = 0;
-	}
+	return false;
+}
+bool SP2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
+{
 	
+}
+void SP2::Update(double dt)
+{	
 	Enemy_Updating(dt);
 	Object_Updating(dt);
 	Character_Movement(dt);
-	//camera.Update(dt);
+	//cout << camera.view.Dot(Nposition) << endl;
+	//cout << camera.cameraRotate.y << endl;
 
+	//If player is on the outside of the pyramid
+	if (camera.position.x > Nposition.x)
+	{
+		negativeDotProduct = true;
+	}
+	//If player is on the inside of the pyramid
+	if (camera.position.x < Nposition.x)
+	{
+		negativeDotProduct = false;
+	}
+	//This is to check if player is near to the door and facing the door using dot product
+	//Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
+	if (checkNear(camera, Nposition))
+	{
+		//Check if the player is outside the temple and facing door to the inside
+		if (negativeDotProduct == true && camera.view.Dot(Nposition) < 0)
+		{
+			//Show player press e to interact
+			canInteract = true;
+			if (Application::IsKeyPressed('E'))
+			{
+				if (Nposition.y > -50)
+				{
+					Nposition.y -= (float)(100 * dt);
+				}
+			}
+		}
+		//Update player if player turns away
+		else if (negativeDotProduct == true && camera.view.Dot(Nposition) > 0)
+		{
+			canInteract = false;
+		}
+		//Check if player is inside the temple and facing door to the outside
+		if (negativeDotProduct == false && camera.view.Dot(Nposition) > 0)
+		{
+			canInteract = true;
+			if (Application::IsKeyPressed('E'))
+			{
+				if (Nposition.y > -50)
+				{
+					Nposition.y -= (float)(100 * dt);
+				}
+			}
+		}
+		//Update player if player turns away
+		else if (negativeDotProduct == false && camera.view.Dot(Nposition) < 0)
+		{
+			canInteract = false;
+		}
+	}
+	else
+	{
+		//Dont show the press e to interact
+		canInteract = false;
+		//Everytime a player is far, the door will auto close up
+		if (Nposition.y < -22)
+		{
+			Nposition.y += (float)(100 * dt);
+		}
+	}
+	//To open the shop for now
 	if (Application::IsKeyPressed('O'))
 	{
 		shop = "Loading Shop";
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SHOP;
 	}
-	rotateCoke += (float)(100 * dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -457,28 +508,22 @@ void SP2::Update(double dt)
 	{
 		Lighting9 = false;
 	}
-
 	else if (Application::IsKeyPressed('X'))
 	{
 		Lighting9 = true;
-
 	}
 	if (Application::IsKeyPressed('H'))
 	{
-		SharedData::GetInstance()->bullet = 30;
-		if (shopInput != "Buy")
-		{
-			shopInput = "Shop";
-		}
+		SharedData::GetInstance()->bullet.quantity = 30;
 	}
 	if (Application::IsKeyPressed('G'))
 	{
-		if (SharedData::GetInstance()->bullet > 0)
+		if (SharedData::GetInstance()->bullet.quantity > 0)
 		{
 			startCoolDdown = true;
 			if (b_coolDown == b_coolDownLimit)
 			{
-				SharedData::GetInstance()->bullet--;
+				SharedData::GetInstance()->bullet.quantity--;
 				bullet_arr.push_back(new Bullet(camera));
 			}
 		}
@@ -505,11 +550,10 @@ void SP2::Update(double dt)
 		{
 			iter++;
 		}
-
 	}
-
 	deltaTime = (1.0 / dt);
 }
+//Reading from text file
 void SP2::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -633,6 +677,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 
 	glEnable(GL_DEPTH_TEST);
 }
+//Takes in mesh, the size of the mesh, the position, the rotation, and z layering
 void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
@@ -651,6 +696,7 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+//Rendering current skybox
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
@@ -711,6 +757,7 @@ void SP2::RenderSkybox()
 		RenderMesh(meshList[GEO_TOP1], false);
 		modelStack.PopMatrix();
 }
+//Render codes
 void SP2::Render()
 {
 	std::ostringstream oss;
@@ -725,8 +772,8 @@ void SP2::Render()
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
 	
-	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet;
-		goldOSS << "Gold: " << SharedData::GetInstance()->gold;
+	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
+	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -746,6 +793,7 @@ void SP2::Render()
 	
 	modelStack.LoadIdentity();
 
+	//All the light codes
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -885,22 +933,21 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_SPACESHIP], true);
 		modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(350, -20, 0);
-		modelStack.Rotate(-90, 0, 1, 0);
-		modelStack.Scale(5, 5, 5);
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_PLANEWING], true);
-		modelStack.PopMatrix();
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
-		modelStack.PopMatrix();
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_PLANEBODY], true);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(350, -20, 0);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEWING], true);
+	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEROCKET], true);
+	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEBODY], true);
+	modelStack.PopMatrix();
 
-		modelStack.PopMatrix();
-
+	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
@@ -936,6 +983,12 @@ void SP2::Render()
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
 	modelStack.Scale(3, 3, 3);
 	RenderSkybox();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(Nposition.x, Nposition.y, Nposition.z);
+	modelStack.Scale(25, 25, 25);
+	RenderMesh(meshList[GEO_PYRAMIDDOOR], true);
 	modelStack.PopMatrix();
 	
 	modelStack.PushMatrix();
@@ -976,12 +1029,21 @@ void SP2::Render()
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);
+
+	//All element for player inventory
 	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
 	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 45, 39);
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-	modelStack.PopMatrix();
+
+	//Show player if he can interact with item
+	if (canInteract)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
+	}
+
+	RenderQuadOnScreen(meshList[GEO_BAG], 1, 50, 3, 90, 1, 0, 0, 0);
 }
 void SP2::Exit()
 {
@@ -1008,7 +1070,6 @@ void SP2::Enemy_Rendering()
 		modelStack.PopMatrix();
 	}
 }
-
 void SP2::Map_Reading()
 {
 	string line;
@@ -1027,7 +1088,6 @@ void SP2::Map_Reading()
 	}
 	else cout << "Unable to read Map!!" << endl;
 }
-
 void SP2::Map_Rendering()
 {
 	modelStack.PushMatrix();
@@ -1062,9 +1122,7 @@ void SP2::Map_Rendering()
 			}
 			modelStack.PopMatrix();
 		}
-
 	}
-
 	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
@@ -1273,10 +1331,6 @@ void SP2::Object_Rendering()
 			RenderMesh(meshList[GEO_PLANEROCKET], true);
 			modelStack.PopMatrix();
 		}
-
-
-
-
 	}
 	if (object_on_hand.ItemType == Items::SPACEROCKET)
 	{
@@ -1299,10 +1353,6 @@ void SP2::Object_Rendering()
 		RenderMesh(meshList[GEO_PLANEWING], true);
 		modelStack.PopMatrix();
 	}
-
-
-
-
 	modelStack.PopMatrix();
 }
 
@@ -1336,7 +1386,6 @@ void SP2::Object_Updating(float dt)
 			object[Pointer].ItemType = Items::None;
 			object[Pointer].position.Set(-1000, -1000, -1000);
 		}
-
 	}
 	object_on_hand.position.Set(camera.position.x - camera.target.x, camera.position.y - camera.target.y, camera.position.z - camera.target.z);
 	if (object_on_hand.position.x < float(0.0000001) && object_on_hand.position.x> 0)

@@ -11,6 +11,7 @@
 #include "SharedData.h"
 #include <sstream>
 
+//This class is to rendeer the shop scene
 Position VtoPa(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
@@ -515,10 +516,10 @@ void Shop::Update(double dt)
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				if (SharedData::GetInstance()->gold > 19)
+				if (SharedData::GetInstance()->gold.quantity > 19)
 				{
-					SharedData::GetInstance()->gold -= 20;
-					SharedData::GetInstance()->bullet++;
+					SharedData::GetInstance()->gold.quantity -= 20;
+					SharedData::GetInstance()->bullet.quantity++;
 					coolDown = deltaTime;
 					g_gold = true;
 				}
@@ -575,11 +576,11 @@ void Shop::Update(double dt)
 				PressTime = deltaTime / 5;
 				coolDown = deltaTime;
 				gold = 10;
-				if (SharedData::GetInstance()->bullet > 0)
+				if (SharedData::GetInstance()->bullet.quantity > 0)
 				{
 					sell_gold = true;
-					SharedData::GetInstance()->gold += gold;
-					SharedData::GetInstance()->bullet--;
+					SharedData::GetInstance()->gold.quantity += gold;
+					SharedData::GetInstance()->bullet.quantity--;
 				}
 				else
 				{
@@ -594,10 +595,10 @@ void Shop::Update(double dt)
 				PressTime = deltaTime / 5;
 				coolDown = deltaTime;
 				gold = 25;
-				if (SharedData::GetInstance()->bomb > 0)
+				if (SharedData::GetInstance()->bomb.quantity > 0)
 				{
-					SharedData::GetInstance()->gold += gold;
-					SharedData::GetInstance()->bomb--;
+					SharedData::GetInstance()->gold.quantity += gold;
+					SharedData::GetInstance()->bomb.quantity--;
 					sell_gold = true;
 				}
 				else
@@ -613,10 +614,10 @@ void Shop::Update(double dt)
 				PressTime = deltaTime / 5;
 				coolDown = deltaTime;
 				gold = 100;
-				if (SharedData::GetInstance()->egg > 0)
+				if (SharedData::GetInstance()->egg.quantity > 0)
 				{
-					SharedData::GetInstance()->gold += gold;
-					SharedData::GetInstance()->egg--;
+					SharedData::GetInstance()->gold.quantity += gold;
+					SharedData::GetInstance()->egg.quantity--;
 					sell_gold = true;
 				}
 				else
@@ -683,7 +684,7 @@ void Shop::Update(double dt)
 		}
 		if (Application::IsKeyPressed('H'))
 		{
-			SharedData::GetInstance()->bullet += 30;
+			SharedData::GetInstance()->bullet.quantity += 30;
 
 		}
 		deltaTime = (1.0 / dt);
@@ -905,8 +906,8 @@ void Shop::Render()
 	std::ostringstream nomoreOSS;
 	std::ostringstream gainOSS;
 
-	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet;
-	goldOSS << "Gold: " << SharedData::GetInstance()->gold;
+	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
+	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
 	fpsOSS << "FPS : " << deltaTime;
 	nomoreOSS << "You have no " << nomore << " to sell!";
 	gainOSS << "You have gained " << gold << " gold!";

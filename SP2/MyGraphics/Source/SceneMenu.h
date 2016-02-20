@@ -114,6 +114,5 @@ private:
 	float icon2;
 	float rotateCoke;
 	float menuIcon;
-	MenuShop menuShop;
 };
 #endif

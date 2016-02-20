@@ -3,7 +3,14 @@
 
 class SharedData
 {
+//Variables in here can be used by any other classes as long as you include "SharedData.h"
+//How to use: SharedData::GetInstance()->(call whatever that is in the shared data class you want, example: bullet.quantity)
+//Don't know can ask me (Wei Min)
 public:
+	struct INVENTORY
+	{
+		int quantity;
+	};
 	enum GAMESTATE
 	{
 		MENU,
@@ -27,18 +34,22 @@ public:
 		return &data;
 	}
 	bool stateCheck = false;
-	int bullet;
-	int gold;
-	int bomb;
-	int egg;
+	
+	//Items player has share across all scenes
+	INVENTORY bullet;
+	INVENTORY gold;
+	INVENTORY bomb;
+	INVENTORY egg;
+
 private:
 	SharedData()
 	{
+		//Instantiate
 		gameState = MENU;
-		bullet = 30;
-		gold = 100;
-		bomb = 0;
-		egg = 0;
+		bullet.quantity = 30;
+		egg.quantity = 0;
+		bomb.quantity = 0;
+		gold.quantity = 100;
 	}
 	~SharedData()
 	{

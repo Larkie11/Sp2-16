@@ -11,6 +11,7 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Objects.h"
+#include "MyMath.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -76,12 +77,10 @@ class SP2 : public Scene
 		GEO_BACK1,
 		GEO_STAR,
 		GEO_TEXT,
-		GEO_WALL,
-		GEO_OUTER,
-		GEO_FLOOR,
 		GEO_PATH,
-		GEO_BENCH,
 		GEO_VENDING,
+		GEO_BAG,
+		GEO_PYRAMIDDOOR,
 		GEO_BUILDING,
 		GEO_COKE,
 		GEO_BULLET,
@@ -248,23 +247,22 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
-	void RenderMenu();
 	void Dialogue(string filename);
-	bool Menu = true;
-	bool exitGame = false;
-	bool Options = false;
 	string new_line;
-	MENU choose;
-	OPTION c_option;
+	
+	//Check for distance of object
+	bool checkNear(Camera3 camera, Vector3 rhs);
+	bool checkFaceNorth(Camera3 camera, Vector3 rhs, bool north);
+	//Check for player view
+	bool negativeDotProduct;
+	//Show when player can interact with items
+	bool canInteract;
+
 	Camera3 camera;
-	Color colorA;
-	Color colorB;
-	Color colorC;
-	string Input;
-	string color;
-	string shop = "";
+
 	vector<string>my_arr;
 	vector<Bullet*>bullet_arr;
+	Vector3 Nposition;
 	double b_coolDown;
 	double b_coolDownLimit;
 	bool startCoolDdown;
@@ -273,8 +271,8 @@ private:
 	float deltaTime;
 	Bullet bullet;
 	Objects objects;
+	string shop = "";
 
-	void userInput(int user);
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
@@ -282,15 +280,9 @@ private:
 	void ObjectsHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
 
-
 	void Map_Reading();
 	void Map_Rendering();
 	void Character_Movement(float dt);
-
-	float icon;
-	float icon2;
-	float rotateCoke;
-	float menuIcon;
 	
 	Objects object[Num_Object];
 	Objects object_on_hand;
@@ -300,9 +292,6 @@ private:
 	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
-	SHOP_OPTION s_option;
-	int gold;
 	bool b_gold;
-	SHOP_BUY s_buy;
 };
 #endif

@@ -74,7 +74,9 @@ void Application::Init()
 	width = mode->width + 1;
 	height = mode->height + 1;
 
-	m_window = glfwCreateWindow(width, height, "SPACE",glfwGetPrimaryMonitor(), nullptr);
+	//Change glfwGetPrimaryMonitor to null for windowed version, change width and height to your own liking (Example 1080, 768, null, null)
+	//m_window = glfwCreateWindow(width, height, "SPACE",glfwGetPrimaryMonitor(), nullptr);
+	m_window = glfwCreateWindow(1080, 768, "SPACE", NULL, nullptr);
 	glfwSetCursorPos(m_window, width / 2, height / 2);
 
 	//If the window couldn't be created
@@ -110,6 +112,7 @@ void Application::Run()
 	//Main Loop
 	Scene *scene = new SceneMenu;	
 	scene->Init();
+
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && SharedData::GetInstance()->gameState!= SharedData::QUIT && !IsKeyPressed(VK_ESCAPE))
 	{
@@ -121,6 +124,8 @@ void Application::Run()
 		glfwPollEvents();
 		m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
 
+		//To change scene, have to first make stateCheck true
+		//And the set the gameState
 		if (SharedData::GetInstance()->stateCheck)
 		{
 			delete scene;

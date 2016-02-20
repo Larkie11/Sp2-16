@@ -102,7 +102,7 @@ void SceneMenu::setColor(int which, string color)
 		colorA[which].Set(0.3, 0.8, 0.4);
 	}
 }
-//Handles all switch cases
+//Handles all switch cases for menu
 void SceneMenu::UpdateMenu()
 {
 	if (Input == "Menu")
