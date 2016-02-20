@@ -20,7 +20,6 @@ public:
 		M_QUIT
 	};
 	GAMESTATE gameState;
-	MENUPAGE menuState;
 
 	static SharedData* GetInstance()
 	{
@@ -29,11 +28,17 @@ public:
 	}
 	bool stateCheck = false;
 	int bullet;
+	int gold;
+	int bomb;
+	int egg;
 private:
 	SharedData()
 	{
 		gameState = MENU;
 		bullet = 30;
+		gold = 100;
+		bomb = 0;
+		egg = 0;
 	}
 	~SharedData()
 	{

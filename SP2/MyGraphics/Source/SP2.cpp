@@ -31,7 +31,6 @@ void SP2::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
-	gold = 100;
 	icon = 31.6;
 	icon2 = 19;
 	menuIcon = 116;
@@ -727,7 +726,7 @@ void SP2::Render()
 	std::ostringstream fpsOSS;
 	
 	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet;
-		goldOSS << "Gold: " << gold;
+		goldOSS << "Gold: " << SharedData::GetInstance()->gold;
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();

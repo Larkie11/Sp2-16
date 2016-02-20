@@ -31,11 +31,9 @@ void Shop::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
-	gold = 100;
 	shopInput = "Shop";
 	icon = 31.6;
 	icon2 = 19;
-	menuIcon = 116;
 	JumpTime = 0;
 	Input = "Menu";
 	Dialogue("Text//Dialogue1.txt");
@@ -436,6 +434,15 @@ void Shop::Update(double dt)
 		PressTime = 0;
 	}
 
+	if (coolDown > 0)
+	{
+		coolDown -= 1;
+	}
+	else
+	{
+		coolDown = 0;
+	}
+
 	if (Application::IsKeyPressed('E'))
 	{
 		SharedData::GetInstance()->stateCheck = true;
@@ -449,13 +456,22 @@ void Shop::Update(double dt)
 		case S_BUY:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
+				icon = 30;
+				icon2 = 18;
 				PressTime = deltaTime / 5;
-			    shopInput = "Buy";
+				shopInput = "Buy";
 				s_buy = SB_AMMO;
 			}
 			break;
 		case S_SELL:
-			//cout << "Sell";
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				icon = 30;
+				icon2 = 18;
+				shopInput = "Sell";
+				s_sell = SS_AMMO;
+			}
 			break;
 		case S_BACK:
 			if (Application::IsKeyPressed(VK_RETURN))
@@ -499,13 +515,16 @@ void Shop::Update(double dt)
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				if (gold > 19)
+				if (SharedData::GetInstance()->gold > 19)
 				{
-					gold -= 20;
+					SharedData::GetInstance()->gold -= 20;
 					SharedData::GetInstance()->bullet++;
+					coolDown = deltaTime;
+					g_gold = true;
 				}
 				else
 				{
+					coolDown = deltaTime;
 					b_gold = true;
 				}
 			}
@@ -546,69 +565,128 @@ void Shop::Update(double dt)
 			}
 		}
 	}
-	rotateCoke += (float)(100 * dt);
-
-	if (Application::IsKeyPressed('1')) //enable back face culling
-		glEnable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('2')) //disable back face culling
-		glDisable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('3'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if (Application::IsKeyPressed('4'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if (Application::IsKeyPressed('Z'))
+	if (shopInput == "Sell")
 	{
-		Lighting9 = false;
-	}
-
-	else if (Application::IsKeyPressed('X'))
-	{
-		Lighting9 = true;
-
-	}
-	if (Application::IsKeyPressed('H'))
-	{
-		SharedData::GetInstance()->bullet += 30;
-		
-	}
-	if (Application::IsKeyPressed('G'))
-	{
-		if (SharedData::GetInstance()->bullet > 0)
+		switch (s_sell)
 		{
-			startCoolDdown = true;
-			if (b_coolDown == b_coolDownLimit)
+		case SS_AMMO:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				SharedData::GetInstance()->bullet--;
-				bullet_arr.push_back(new Bullet(camera));
+				PressTime = deltaTime / 5;
+				coolDown = deltaTime;
+				gold = 10;
+				if (SharedData::GetInstance()->bullet > 0)
+				{
+					sell_gold = true;
+					SharedData::GetInstance()->gold += gold;
+					SharedData::GetInstance()->bullet--;
+				}
+				else
+				{
+					none = true;
+					nomore = "ammo";
+				}
 			}
+			break;
+		case SS_BOMB:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				coolDown = deltaTime;
+				gold = 25;
+				if (SharedData::GetInstance()->bomb > 0)
+				{
+					SharedData::GetInstance()->gold += gold;
+					SharedData::GetInstance()->bomb--;
+					sell_gold = true;
+				}
+				else
+				{
+					none = true;
+					nomore = "bomb";
+				}
+			}
+			break;
+		case SS_EGG:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				coolDown = deltaTime;
+				gold = 100;
+				if (SharedData::GetInstance()->egg > 0)
+				{
+					SharedData::GetInstance()->gold += gold;
+					SharedData::GetInstance()->egg--;
+					sell_gold = true;
+				}
+				else
+				{
+					none = true;
+					nomore = "egg";
+				}
+			}
+			break;
+		case SS_BACK:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 10;
+				shopInput = "Shop";
+				s_option = S_BUY;
+				icon = 31.6;
+				icon2 = 19;
+			}
+			break;
 		}
-	}
-	if (startCoolDdown)
-	{
-		b_coolDown -= dt;
-		if (b_coolDown < 0)
+				if (s_sell > SS_AMMO)
+				{
+				if (Application::IsKeyPressed('K') && PressTime == 0)
+				{
+				PressTime = deltaTime / 7;
+				s_sell = static_cast<SHOP_SELL>(s_sell - 1);
+				cout << s_sell;
+				icon += 1.6;
+				icon2 += 1;
+				}
+				}
+				if (s_sell < SS_MAX - 1)
+				{
+					if (Application::IsKeyPressed('J') && PressTime == 0)
+					{
+						PressTime = deltaTime / 7;
+						s_sell = static_cast<SHOP_SELL>(s_sell + 1);
+						cout << s_sell;
+						icon -= 1.6;
+						icon2 -= 1;
+					}
+				}
+		}
+
+		rotateCoke += (float)(100 * dt);
+
+		if (Application::IsKeyPressed('1')) //enable back face culling
+			glEnable(GL_CULL_FACE);
+		if (Application::IsKeyPressed('2')) //disable back face culling
+			glDisable(GL_CULL_FACE);
+		if (Application::IsKeyPressed('3'))
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
+		if (Application::IsKeyPressed('4'))
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+		if (Application::IsKeyPressed('Z'))
 		{
-			b_coolDown = b_coolDownLimit;
-			startCoolDdown = false;
+			Lighting9 = false;
 		}
-	}
 
-	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
-	{
-
-		//if destory bullet = true 
-		if ((*iter)->Update(dt))
+		else if (Application::IsKeyPressed('X'))
 		{
-			iter = bullet_arr.erase(iter);
+			Lighting9 = true;
+
 		}
-		else
+		if (Application::IsKeyPressed('H'))
 		{
-			iter++;
+			SharedData::GetInstance()->bullet += 30;
+
 		}
-
-	}
-
-	deltaTime = (1.0 / dt);
+		deltaTime = (1.0 / dt);
 }
 void Shop::Dialogue(string filename)
 {
@@ -824,14 +902,19 @@ void Shop::Render()
 	std::ostringstream ammoOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	
+	std::ostringstream nomoreOSS;
+	std::ostringstream gainOSS;
+
 	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet;
-	goldOSS << "Gold: " << gold;
+	goldOSS << "Gold: " << SharedData::GetInstance()->gold;
 	fpsOSS << "FPS : " << deltaTime;
+	nomoreOSS << "You have no " << nomore << " to sell!";
+	gainOSS << "You have gained " << gold << " gold!";
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
 	string s_gold = goldOSS.str();
-
+	string nmOSS = nomoreOSS.str();
+	string gain = gainOSS.str();
 
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1017,7 +1100,7 @@ void Shop::Render()
 		int j = 21;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
 		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
-		for (int arr = 0; arr < my_arr.size() - 3; ++arr)
+		for (int arr = 0; arr < my_arr.size() - 9; ++arr)
 		{
 			--j;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
@@ -1027,7 +1110,9 @@ void Shop::Render()
 	{
 		int j = 20;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		for (int arr = 4; arr < my_arr.size(); ++arr)
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+
+		for (int arr = 4; arr < my_arr.size()-5; ++arr)
 		{
 			--j;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
@@ -1035,6 +1120,48 @@ void Shop::Render()
 		if (b_gold)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 1, 1), 1.7, 10, 20);
+			if (coolDown == 0)
+			{
+				b_gold = false;
+			}
+		}
+		if (g_gold)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Obtained an ammo", Color(1, 1, 1), 1.7, 10, 21);
+			if (coolDown == 0)
+			{
+				g_gold = false;
+			}
+		}
+	}
+
+	if (shopInput == "Sell")
+	{
+		int j = 20;
+		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+
+		for (int arr = 8; arr < my_arr.size(); ++arr)
+		{
+			--j;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
+		}
+
+		if (none)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 1, 1), 1.7, 10, 20);
+			if (coolDown == 0)
+			{
+				none = false;
+			}
+		}
+		if (sell_gold)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], gain, Color(1, 1, 1), 1.7, 10, 20);
+			if (coolDown == 0)
+			{
+				sell_gold = false;
+			}
 		}
 	}
 	modelStack.PushMatrix();

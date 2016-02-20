@@ -38,6 +38,14 @@ class Shop : public Scene
 		SB_BACK,
 		SB_MAX,
 	};
+	enum SHOP_SELL
+	{
+		SS_AMMO,
+		SS_BOMB,
+		SS_EGG,
+		SS_BACK,
+		SS_MAX,
+	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_TRIANGLE_1 = 0,
@@ -281,8 +289,14 @@ private:
 	float JumpTime;
 	float PressTime;
 	SHOP_OPTION s_option;
-	int gold;
+	SHOP_SELL s_sell;
 	bool b_gold;
+	bool g_gold;
+	string nomore;
+	bool none = false;
+	float coolDown;
+	bool sell_gold;
+	int gold;
 	SHOP_BUY s_buy;
 };
 #endif
