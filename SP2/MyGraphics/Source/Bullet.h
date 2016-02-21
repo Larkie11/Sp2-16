@@ -7,7 +7,7 @@
 class Bullet
 {
 public:
-	//b1 = bullet 1 in the scene, b2 = bullet 2 in the scene
+
 	Vector3 position;
 	Vector3 direction;
 
@@ -15,8 +15,8 @@ public:
 	float b_Angle;
 	float b_distanceTravel = 0;
 	float b_distanceLimit;
-
-	bool destoryBullet; 
+	float b_damage;
+	bool destoryBullet;
 	bool Update(double dt);
 
 	Bullet();

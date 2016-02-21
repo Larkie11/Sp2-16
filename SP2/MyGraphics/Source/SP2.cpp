@@ -428,7 +428,7 @@ bool SP2::checkNear(Camera3 camera, Vector3 rhs)
 }
 bool SP2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
 {
-	
+	return false;
 }
 void SP2::Update(double dt)
 {	
@@ -443,6 +443,7 @@ void SP2::Update(double dt)
 	Enemy_Updating(dt);
 	Object_Updating(dt);
 	Character_Movement(dt);
+	mouse.MouseUpdate(dt, camera);
 	//cout << camera.view.Dot(Nposition) << endl;
 	//cout << camera.cameraRotate.y << endl;
 
@@ -592,7 +593,7 @@ void SP2::Update(double dt)
 	{
 		SharedData::GetInstance()->bullet.quantity = 30;
 	}
-	if (Application::IsKeyPressed('G'))
+	if (Application::IsKeyPressed(VK_LBUTTON))
 	{
 		if (SharedData::GetInstance()->bullet.quantity > 0)
 		{

@@ -15,7 +15,7 @@ Bullet::Bullet(Camera3 camera)
 	b_Angle = camera.cameraRotate.y;
 	b_distanceLimit = 6;
 	b_distanceTravel = 0;
-	destoryBullet = false; 
+	destoryBullet = false;
 }
 
 

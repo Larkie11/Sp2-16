@@ -12,6 +12,7 @@
 #include "Enemy.h"
 #include "Objects.h"
 #include "MyMath.h"
+#include "Mouse.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -311,5 +312,7 @@ private:
 	float JumpTime;
 	float PressTime;
 	bool b_gold;
+
+	Mouse mouse;
 };
 #endif
