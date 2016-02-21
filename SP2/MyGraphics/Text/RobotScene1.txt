@@ -1,0 +1,6 @@
+Wow, a visitor... What would you like to know?
+1.Where am I?
+2.What are you?
+3.How can i get the treasure and leave?
+You are in a scrapyard of robots..
+I was a robot thrown away by the space ship above..

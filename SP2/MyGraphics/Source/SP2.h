@@ -25,6 +25,12 @@ using std::string;
 
 class SP2 : public Scene
 {
+	struct DOT
+	{
+		bool negativeDotProduct;
+		bool canInteract;
+		Vector3 Nposition;
+	};
 	enum MENU
 	{
 		MENU1 = 0,
@@ -85,6 +91,7 @@ class SP2 : public Scene
 		GEO_BUILDING,
 		GEO_COKE,
 		GEO_BULLET,
+		GEO_ROBOT,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -232,6 +239,9 @@ private:
 	
 
 	bool renderMenu = false;
+	//Check distance for interactable items
+	DOT door;
+	DOT robot1;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -256,6 +266,8 @@ private:
 	bool checkFaceNorth(Camera3 camera, Vector3 rhs, bool north);
 	//Check for player view
 	bool negativeDotProduct;
+	string whichRobot = "";
+	int dialogue = -1;
 	//Show when player can interact with items
 	bool canInteract;
 
@@ -263,7 +275,7 @@ private:
 
 	vector<string>my_arr;
 	vector<Bullet*>bullet_arr;
-	Vector3 Nposition;
+	Vector3 RobotPosition1;
 	double b_coolDown;
 	double b_coolDownLimit;
 	bool startCoolDdown;

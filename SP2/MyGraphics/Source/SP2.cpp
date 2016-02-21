@@ -36,14 +36,16 @@ void SP2::Init()
 	JumpTime = 0;
 	storyShow = true;
 	negativeDotProduct = true;
-	Dialogue("Text//Dialogue1.txt");
+	Dialogue("Text//RobotScene1.txt");
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
 	startCoolDdown = false;
 	storyPosition = 3;
 
-	Nposition = Vector3(127, -21, 0);
+	//Position of door
+	door.Nposition = Vector3(127, -21, 0);
+	robot1.Nposition = Vector3(245, -21, -150);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -204,10 +206,10 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
 	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
 
-	light[2].type = Light::LIGHT_SPOT;
-	light[2].position.Set(0, 37, 135);
+	light[2].type = Light::LIGHT_POINT;
+	light[2].position.Set(-60, 100, -300);
 	light[2].color.Set(1, 1, 1);
-	light[2].power = 3;
+	light[2].power = 5;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -295,7 +297,7 @@ void SP2::Init()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
 
 	//Initialize camera settings
-	camera.Init(Vector3(-300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
@@ -357,6 +359,9 @@ void SP2::Init()
 
 	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
 	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
+
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
+	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//R2D2_D.tga");
 
 	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
 	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
@@ -441,65 +446,98 @@ void SP2::Update(double dt)
 	//cout << camera.view.Dot(Nposition) << endl;
 	//cout << camera.cameraRotate.y << endl;
 
+	//cout << camera.view.Dot(robot1.Nposition) << endl;
 	//If player is on the outside of the pyramid
-	if (camera.position.x > Nposition.x)
+	if (camera.position.x > door.Nposition.x)
 	{
-		negativeDotProduct = true;
+		door.negativeDotProduct = true;
 	}
 	//If player is on the inside of the pyramid
-	if (camera.position.x < Nposition.x)
+	if (camera.position.x < door.Nposition.x)
 	{
-		negativeDotProduct = false;
+		door.negativeDotProduct = false;
 	}
 	//This is to check if player is near to the door and facing the door using dot product
 	//Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
-	if (checkNear(camera, Nposition))
+	if (checkNear(camera, door.Nposition))
 	{
 		//Check if the player is outside the temple and facing door to the inside
-		if (negativeDotProduct == true && camera.view.Dot(Nposition) < 0)
+		if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
 		{
 			//Show player press e to interact
-			canInteract = true;
+			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (Nposition.y > -50)
+				if (door.Nposition.y > -50)
 				{
-					Nposition.y -= (float)(100 * dt);
+					door.Nposition.y -= (float)(100 * dt);
 				}
 			}
 		}
 		//Update player if player turns away
-		else if (negativeDotProduct == true && camera.view.Dot(Nposition) > 0)
+		else if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) > 0)
 		{
-			canInteract = false;
+			door.canInteract = false;
 		}
 		//Check if player is inside the temple and facing door to the outside
-		if (negativeDotProduct == false && camera.view.Dot(Nposition) > 0)
+		if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) > 0)
 		{
-			canInteract = true;
+			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (Nposition.y > -50)
+				if (door.Nposition.y > -50)
 				{
-					Nposition.y -= (float)(100 * dt);
+					door.Nposition.y -= (float)(100 * dt);
 				}
 			}
 		}
 		//Update player if player turns away
-		else if (negativeDotProduct == false && camera.view.Dot(Nposition) < 0)
+		else if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) < 0)
 		{
-			canInteract = false;
+			door.canInteract = false;
 		}
 	}
 	else
 	{
 		//Dont show the press e to interact
-		canInteract = false;
+		door.canInteract = false;
 		//Everytime a player is far, the door will auto close up
-		if (Nposition.y < -22)
+		if (door.Nposition.y < -22)
 		{
-			Nposition.y += (float)(100 * dt);
+			door.Nposition.y += (float)(100 * dt);
 		}
+	}
+
+	if (checkNear(camera, robot1.Nposition))
+	{
+		if (camera.view.Dot(robot1.Nposition) > 0)
+		{
+			//Show player press e to interact
+			robot1.canInteract = true;
+			if (Application::IsKeyPressed('E') && coolDownTime == 0)
+			{
+				dialogue = 0;
+				coolDownTime = deltaTime / 5;
+				whichRobot = "robot1";
+			}
+			if (Application::IsKeyPressed('1'))
+			{
+				whichRobot = "robot1.1";
+			}
+			if (Application::IsKeyPressed('2'))
+			{
+				whichRobot = "robot1.2";
+			}
+		}
+		else
+		{
+			robot1.canInteract = false;
+		}
+	}
+	else
+	{
+		robot1.canInteract = false;
+		whichRobot = "";
 	}
 	//To open the shop for now
 	if (Application::IsKeyPressed('O'))
@@ -538,10 +576,6 @@ void SP2::Update(double dt)
 	{
 		storyPosition += (float)(3 * dt);
 	}
-	if (Application::IsKeyPressed('1')) //enable back face culling
-		glEnable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('2')) //disable back face culling
-		glDisable(GL_CULL_FACE);
 	if (Application::IsKeyPressed('3'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if (Application::IsKeyPressed('4'))
@@ -1028,9 +1062,15 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(Nposition.x, Nposition.y, Nposition.z);
+	modelStack.Translate(door.Nposition.x, door.Nposition.y, door.Nposition.z);
 	modelStack.Scale(25, 25, 25);
 	RenderMesh(meshList[GEO_PYRAMIDDOOR], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(robot1.Nposition.x, robot1.Nposition.y, robot1.Nposition.z);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
 	
 	modelStack.PushMatrix();
@@ -1080,10 +1120,31 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
 
 	//Show player if he can interact with item
-	if (canInteract)
+	if (robot1.canInteract||door.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
+		if (whichRobot == "robot1")
+		{
+			int j = 25;
+			for (int i = dialogue; i < my_arr.size()-3; ++i)
+			{
+				j--;
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 5, j);
+			}
+		}
+		if (whichRobot == "robot1.1")
+		{
+			dialogue = 1;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 5, 25);
+		}
+		if (whichRobot == "robot1.2")
+		{
+			dialogue = 2;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 5, 25);
+		}
 	}
+
+	
 
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 
