@@ -1209,7 +1209,7 @@ void Shop::Enemy_Updating(float dt)
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 10; i++)
 	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy,i);
+		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
 }
 void Shop::Enemy_Rendering()
@@ -1338,7 +1338,7 @@ void Shop::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1347,7 +1347,7 @@ void Shop::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1356,7 +1356,7 @@ void Shop::Character_Movement(float dt)
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1365,7 +1365,7 @@ void Shop::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1375,7 +1375,7 @@ void Shop::Character_Movement(float dt)
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1384,7 +1384,7 @@ void Shop::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1393,7 +1393,7 @@ void Shop::Character_Movement(float dt)
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1402,7 +1402,7 @@ void Shop::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}

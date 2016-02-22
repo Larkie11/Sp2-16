@@ -203,6 +203,8 @@ public:
 
 	char Map[20][20];
 	float Size = 10;
+	float Z_Displacement = 0;
+	float X_Displacement = -100;
 	Shop();
 	~Shop();
 
