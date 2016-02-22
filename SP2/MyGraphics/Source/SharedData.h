@@ -15,6 +15,8 @@ public:
 	{
 		MENU,
 		GAME,
+		SCENE2,
+		SCENE3,
 		SHOP,
 		QUIT,
 		MAX,

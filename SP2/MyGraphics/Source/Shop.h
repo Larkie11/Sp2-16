@@ -247,9 +247,9 @@ private:
 	bool Options = false;
 	string new_line;
 	Camera3 camera;
-	Color colorA;
-	Color colorB;
-	Color colorC;
+	
+	Color colorShop[15];
+
 	string Input;
 	string color;
 	vector<string>my_arr;

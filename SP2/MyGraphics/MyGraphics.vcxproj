@@ -100,7 +100,10 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
+    <ClCompile Include="Source\Mouse.cpp" />
     <ClCompile Include="Source\Objects.cpp" />
+    <ClCompile Include="Source\Scene2.cpp" />
+    <ClCompile Include="Source\Scene3.cpp" />
     <ClCompile Include="Source\SceneMenu.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Shop.cpp" />
@@ -121,8 +124,11 @@
     <ClInclude Include="Source\MenuShop.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
+    <ClInclude Include="Source\Mouse.h" />
     <ClInclude Include="Source\Objects.h" />
     <ClInclude Include="Source\Scene.h" />
+    <ClInclude Include="Source\Scene2.h" />
+    <ClInclude Include="Source\Scene3.h" />
     <ClInclude Include="Source\SceneMenu.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\SharedData.h" />

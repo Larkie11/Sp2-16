@@ -12,12 +12,12 @@
 #include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
-Position VtoP(Vector3 V)
+Position VtoP2(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
-Vector3 PtoV(Position V)
+Vector3 PtoV2(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
@@ -567,6 +567,12 @@ void SP2::Update(double dt)
 			storyDismiss = false;
 			storyShow = true;
 		}
+	}
+
+	if (Application::IsKeyPressed('P'))
+	{
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SCENE2;
 	}
 	if (storyDismiss && storyPosition > -3)
 	{
@@ -1171,7 +1177,7 @@ void SP2::Enemy_Rendering()
 		Position A = enemy[i].Return_Position(enemy[i]);
 		modelStack.PushMatrix();
 		modelStack.Translate(A.x, -20, A.z);
-		modelStack.Scale(30, 30, 30);
+		modelStack.Scale(10, 10, 10);
 		RenderMesh(meshList[GEO_COKE], true);
 		modelStack.PopMatrix();
 	}
@@ -1198,7 +1204,7 @@ void SP2::Map_Rendering()
 {
 	modelStack.PushMatrix();
 
-	modelStack.Translate(0, -21, 0);
+	modelStack.Translate(-100, -21, 0);
 
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
@@ -1291,7 +1297,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1300,7 +1306,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1309,7 +1315,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1318,7 +1324,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1328,7 +1334,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1337,7 +1343,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1346,7 +1352,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}
@@ -1355,7 +1361,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy,-1))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy,-1))
 		{
 			camera.position = Test;
 		}

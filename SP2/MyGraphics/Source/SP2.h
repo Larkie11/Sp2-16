@@ -217,7 +217,7 @@ class SP2 : public Scene
 public:
 
 	char Map[20][20];
-	float Size = 10;
+	float Size = 15;
 	SP2();
 	~SP2();
 

@@ -152,7 +152,6 @@ void Shop::Init()
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-
 	//Enable blending
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -403,10 +402,8 @@ void Shop::Init()
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
 	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//PLANE.tga");
 
-
 	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("Star", "OBJ//planewing.obj");
 	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//PLANE.tga");
-
 
 	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("Star", "OBJ//planerocket.obj");
 	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//PLANE.tga");
@@ -455,6 +452,10 @@ void Shop::Update(double dt)
 		switch (s_option)
 		{
 		case S_BUY:
+			colorShop[0].Set(1, 0, 0);
+			colorShop[1].Set(0, 0.8, 0.7);
+			colorShop[2].Set(0, 0.8, 0.7);
+			colorShop[3].Set(0, 0.8, 0.7);
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				icon = 30;
@@ -1099,12 +1100,13 @@ void Shop::Render()
 	if (shopInput == "Shop")
 	{
 		int j = 21;
+		int x = 5;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
 		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
 		for (int arr = 0; arr < my_arr.size() - 9; ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr],colorShop[arr], 1.7, x, j);
 		}
 	}
 	if (shopInput == "Buy")
@@ -1145,7 +1147,7 @@ void Shop::Render()
 		for (int arr = 8; arr < my_arr.size(); ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1,0,0), 1.7, 5, j);
 		}
 
 		if (none)
