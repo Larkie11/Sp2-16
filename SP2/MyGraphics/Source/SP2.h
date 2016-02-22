@@ -32,6 +32,7 @@ class SP2 : public Scene
 		bool canInteract;
 		bool canGoThrough;
 		Vector3 Nposition;
+		string robot;
 	};
 	enum MENU
 	{
@@ -94,6 +95,8 @@ class SP2 : public Scene
 		GEO_COKE,
 		GEO_BULLET,
 		GEO_ROBOT,
+		GEO_ROBOT1,
+		GEO_ROBOT2,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -242,10 +245,14 @@ private:
 	//Camera camera;
 	
 
-	bool renderMenu = false;
 	//Check distance for interactable items
+	//NPC and doors
 	DOT door;
 	DOT robot1;
+	DOT robot2;
+	DOT robot3;
+	int dialoguePlus = 6;
+	void RobotTalk();
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -284,6 +291,8 @@ private:
 	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
+
+	//for story tab
 	float storyPosition;
 	bool storyDismiss;
 	bool storyShow;
@@ -314,7 +323,6 @@ private:
 	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
-	bool b_gold;
 
 	Mouse mouse;
 };

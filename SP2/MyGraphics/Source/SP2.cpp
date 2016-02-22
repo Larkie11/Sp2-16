@@ -47,6 +47,9 @@ void SP2::Init()
 	door.Nposition = Vector3(95, -22, 0);
 	door.canGoThrough = false;
 	robot1.Nposition = Vector3(245, -21, -150);
+	robot2.Nposition = Vector3(245, -21, 150);
+	robot3.Nposition = Vector3(92, -21, 361);
+
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -361,8 +364,11 @@ void SP2::Init()
 	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
 	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
 
-	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2.obj");
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//R2D2_D.tga");
+
+	meshList[GEO_ROBOT1] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
+	meshList[GEO_ROBOT1]->textureID = LoadTGA("Image//R2D2_A.tga");
 
 	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
 	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
@@ -430,6 +436,90 @@ bool SP2::checkNear(Camera3 camera, Vector3 rhs)
 bool SP2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
 {
 	return false;
+}
+
+void SP2::RobotTalk()
+{
+
+	if (checkNear(camera, robot1.Nposition))
+	{
+		if (camera.view.Dot(robot1.Nposition) > 0)
+		{
+			//Show player press e to interact
+			robot1.canInteract = true;
+			if (Application::IsKeyPressed('E') && coolDownTime == 0)
+			{
+				dialogue = 0;
+				coolDownTime = deltaTime / 5;
+				robot1.robot = "robot1";
+
+			}
+			if (robot1.robot == "robot1")
+			{
+				if (Application::IsKeyPressed('1'))
+				{
+					robot1.robot = "robot1.1";
+				}
+				if (Application::IsKeyPressed('2'))
+				{
+					robot1.robot = "robot1.2";
+				}
+			}
+		}
+		else
+		{
+			robot1.canInteract = false;
+		}
+	}
+	else
+	{
+		robot1.canInteract = false;
+		robot1.robot = "";
+	}
+
+	if (checkNear(camera, robot2.Nposition))
+	{
+		robot2.canInteract = true;
+		if (Application::IsKeyPressed('E') && coolDownTime == 0)
+		{
+			coolDownTime = deltaTime / 5;
+			robot2.robot = "robot2";
+		}
+	}
+	else
+	{
+		robot2.canInteract = false;
+		robot2.robot = "";
+	}
+
+	if (checkNear(camera, robot3.Nposition))
+	{
+		if (camera.view.Dot(robot3.Nposition) > 0)
+		{
+			//Show player press e to interact
+			robot3.canInteract = true;
+			if (Application::IsKeyPressed('E') && coolDownTime == 0)
+			{
+				robot3.robot = "robot3";
+				coolDownTime = deltaTime / 10;
+
+				if (dialoguePlus < my_arr.size() - 1)
+				{
+					++dialoguePlus;
+				}
+			}
+		}
+		else
+		{
+			robot3.canInteract = false;
+		}
+	}
+	else
+	{
+		dialoguePlus = 6;
+		robot3.canInteract = false;
+		robot3.robot = "";
+	}
 }
 void SP2::Update(double dt)
 {	
@@ -501,7 +591,6 @@ void SP2::Update(double dt)
 		{
 			door.canInteract = false;
 			door.canGoThrough = false;
-
 		}
 	}
 	else
@@ -517,38 +606,8 @@ void SP2::Update(double dt)
 			door.Nposition.y += (float)(100 * dt);
 		}
 	}
+	RobotTalk();
 
-	if (checkNear(camera, robot1.Nposition))
-	{
-		if (camera.view.Dot(robot1.Nposition) > 0)
-		{
-			//Show player press e to interact
-			robot1.canInteract = true;
-			if (Application::IsKeyPressed('E') && coolDownTime == 0)
-			{
-				dialogue = 0;
-				coolDownTime = deltaTime / 5;
-				whichRobot = "robot1";
-			}
-			if (Application::IsKeyPressed('1'))
-			{
-				whichRobot = "robot1.1";
-			}
-			if (Application::IsKeyPressed('2'))
-			{
-				whichRobot = "robot1.2";
-			}
-		}
-		else
-		{
-			robot1.canInteract = false;
-		}
-	}
-	else
-	{
-		robot1.canInteract = false;
-		whichRobot = "";
-	}
 	//To open the shop for now
 	if (Application::IsKeyPressed('O'))
 	{
@@ -1001,29 +1060,29 @@ void SP2::Render()
 	}
 
 	modelStack.PushMatrix();
-		Enemy_Rendering();
-		modelStack.PopMatrix();
+	Enemy_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		Map_Rendering();
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	Map_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		Object_Rendering();
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	Object_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(-100, 0, 0);
-		modelStack.Scale(30, 30, 30);
+	modelStack.PushMatrix();
+	modelStack.Translate(-100, 0, 0);
+	modelStack.Scale(30, 30, 30);
 
-		RenderMesh(meshList[GEO_MOONBALL], false);
-		modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MOONBALL], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(-100, 230, 0);
-		modelStack.Scale(10, 10, 10);
-		RenderMesh(meshList[GEO_SPACESHIP], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(-100, 230, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_SPACESHIP], false);
+	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(350, -20, 0);
@@ -1088,6 +1147,20 @@ void SP2::Render()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(robot3.Nposition.x, robot3.Nposition.y, robot3.Nposition.z);
+	modelStack.Rotate(150, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_ROBOT], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(robot2.Nposition.x, robot2.Nposition.y, robot2.Nposition.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_ROBOT1], false);
+	modelStack.PopMatrix();
 	
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
@@ -1096,7 +1169,7 @@ void SP2::Render()
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(2000, 1, 2000);
-	RenderMesh(meshList[GEO_QUAD], true);
+	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
@@ -1136,35 +1209,38 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
 
 	//Show player if he can interact with item
-	if (robot1.canInteract||door.canInteract)
+	if (robot1.canInteract||door.canInteract||robot2.canInteract||robot3.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
-		if (whichRobot == "robot1")
+		if (robot1.robot == "robot1")
 		{
 			int j = 25;
-			for (int i = dialogue; i < my_arr.size()-3; ++i)
+			for (int i = dialogue; i < my_arr.size()-7; ++i)
 			{
 				j--;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 5, j);
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
 			}
 		}
-		if (whichRobot == "robot1.1")
+		if (robot1.robot == "robot1.1")
 		{
 			dialogue = 1;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 5, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
 		}
-		if (whichRobot == "robot1.2")
+		if (robot1.robot == "robot1.2")
 		{
 			dialogue = 2;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 5, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (robot2.robot == "robot2")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (robot3.robot == "robot3")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
-
-	
-
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
-
-	RenderQuadOnScreen(meshList[GEO_BAG], 1, 50, 3, 90, 1, 0, 0, 0);
 }
 void SP2::Exit()
 {
@@ -1247,8 +1323,6 @@ void SP2::Map_Rendering()
 	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
-
-
 void SP2::Character_Movement(float dt)
 {
 
@@ -1401,7 +1475,6 @@ void SP2::Character_Movement(float dt)
 		else cout << "Unable to read Map!!" << endl;
 		Map_Reading();
 	}
-
 
 	//Only allow rotating to look 90 degrees up and 90 degrees down
 	if (camera.cameraRotate.x > camera.maxCameraX)

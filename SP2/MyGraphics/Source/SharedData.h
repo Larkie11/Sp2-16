@@ -42,7 +42,6 @@ public:
 	INVENTORY gold;
 	INVENTORY bomb;
 	INVENTORY egg;
-	bool showStory;
 
 private:
 	SharedData()
@@ -53,7 +52,6 @@ private:
 		egg.quantity = 0;
 		bomb.quantity = 0;
 		gold.quantity = 100;
-		showStory = true;
 	}
 	~SharedData()
 	{

@@ -43,8 +43,6 @@ void Shop::Init()
 	b_coolDown = b_coolDownLimit = 0.08;
 	startCoolDdown = false;
 
-	SharedData::GetInstance()->showStory = false;
-
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
