@@ -44,7 +44,7 @@ void SP2::Init()
 	storyPosition = 3;
 
 	//Position of door
-	door.Nposition = Vector3(127, -21, 0);
+	door.Nposition = Vector3(95, -22, 0);
 	robot1.Nposition = Vector3(245, -21, -150);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -206,10 +206,10 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
 	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
 
-	light[2].type = Light::LIGHT_POINT;
-	light[2].position.Set(-60, 100, -300);
+	light[2].type = Light::LIGHT_DIRECTIONAL;
+	light[2].position.Set(0, 1, 0);
 	light[2].color.Set(1, 1, 1);
-	light[2].power = 5;
+	light[2].power = 0.5;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -272,9 +272,9 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT4_COSINNER], light[4].cosInner);
 	glUniform1f(m_parameters[U_LIGHT4_EXPONENT], light[4].exponent);
 
-	light[5].type = Light::LIGHT_SPOT;
-	light[5].position.Set(0, 0, 0);
-	light[5].color.Set(1, 1, 1);
+	light[5].type = Light::LIGHT_POINT;
+	light[5].position.Set(-100, 55, 0);
+	light[5].color.Set(1, 0, 1);
 	light[5].power = 3;
 	light[5].kC = 1.f;
 	light[5].kL = 0.1f;
@@ -469,7 +469,7 @@ void SP2::Update(double dt)
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (door.Nposition.y > -50)
+				if (door.Nposition.y > -60)
 				{
 					door.Nposition.y -= (float)(100 * dt);
 				}
@@ -486,7 +486,7 @@ void SP2::Update(double dt)
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (door.Nposition.y > -50)
+				if (door.Nposition.y > -60)
 				{
 					door.Nposition.y -= (float)(100 * dt);
 				}
@@ -503,7 +503,7 @@ void SP2::Update(double dt)
 		//Dont show the press e to interact
 		door.canInteract = false;
 		//Everytime a player is far, the door will auto close up
-		if (door.Nposition.y < -22)
+		if (door.Nposition.y < -23)
 		{
 			door.Nposition.y += (float)(100 * dt);
 		}
@@ -1004,16 +1004,16 @@ void SP2::Render()
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Translate(0, -50, 0);
+		modelStack.Translate(-100, 0, 0);
 		modelStack.Scale(30, 30, 30);
 
-		RenderMesh(meshList[GEO_MOONBALL], true);
+		RenderMesh(meshList[GEO_MOONBALL], false);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Translate(0, 200, 0);
+		modelStack.Translate(-100, 230, 0);
 		modelStack.Scale(10, 10, 10);
-		RenderMesh(meshList[GEO_SPACESHIP], true);
+		RenderMesh(meshList[GEO_SPACESHIP], false);
 		modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -1070,7 +1070,7 @@ void SP2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(door.Nposition.x, door.Nposition.y, door.Nposition.z);
-	modelStack.Scale(25, 25, 25);
+	modelStack.Scale(37, 37, 37);
 	RenderMesh(meshList[GEO_PYRAMIDDOOR], true);
 	modelStack.PopMatrix();
 
@@ -1086,7 +1086,7 @@ void SP2::Render()
 	//scale, translate, rotate
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(1000, 1, 1000);
+	modelStack.Scale(2000, 1, 2000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 	modelStack.PushMatrix();
@@ -1204,7 +1204,7 @@ void SP2::Map_Rendering()
 {
 	modelStack.PushMatrix();
 
-	modelStack.Translate(-100, -21, 0);
+	modelStack.Translate(-100, -22.5, 0);
 
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);

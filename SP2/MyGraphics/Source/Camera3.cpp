@@ -16,10 +16,10 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	maxCameraX = 49.99f;
 	cameraSpeed = 150.f;
-	maxX = 275;
-	minX = -300;
-	maxZ = 275;
-	minZ = -300;
+	maxX = 500;
+	minX = -500;
+	maxZ = 500;
+	minZ = -500;
 
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
