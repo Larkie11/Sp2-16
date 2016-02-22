@@ -314,6 +314,9 @@ void SP2::Init()
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
+	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 3, 3);
+	meshList[GEO_INVENTORY]->textureID = LoadTGA("Image//Inventory.tga");
+
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
 
@@ -920,14 +923,23 @@ void SP2::Render()
 	string var1 = oss1.str();
 
 	std::ostringstream ammoOSS;
+	std::ostringstream bombOSS;
+	std::ostringstream oreOSS;
+	std::ostringstream eggOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	
+
 	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
 	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
+	bombOSS << SharedData::GetInstance()->bomb.quantity;
+	//oreOSS << SharedData::GetInstance()->ore.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity;
+
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
+	string bomb = bombOSS.str();
+	string egg = eggOSS.str();
 	string s_gold = goldOSS.str();
 
 
@@ -941,7 +953,7 @@ void SP2::Render()
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-	
+
 	modelStack.LoadIdentity();
 
 	//All the light codes
@@ -1161,7 +1173,7 @@ void SP2::Render()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT1], false);
 	modelStack.PopMatrix();
-	
+
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
@@ -1189,7 +1201,7 @@ void SP2::Render()
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate((*iter)->position.x,(*iter)->position.y,(*iter)->position.z);
+		modelStack.Translate((*iter)->position.x, (*iter)->position.y, (*iter)->position.z);
 		modelStack.Rotate(-90, 0, 1, 0);
 		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
 
@@ -1201,21 +1213,14 @@ void SP2::Render()
 	var1.resize(16);
 	Fps.resize(11);
 
-	//All element for player inventory
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 45, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-
 	//Show player if he can interact with item
-	if (robot1.canInteract||door.canInteract||robot2.canInteract||robot3.canInteract)
+	if (robot1.canInteract || door.canInteract || robot2.canInteract || robot3.canInteract)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E", Color(1, 1, 0), 1.5, 5, 5);
 		if (robot1.robot == "robot1")
 		{
 			int j = 25;
-			for (int i = dialogue; i < my_arr.size()-7; ++i)
+			for (int i = dialogue; i < my_arr.size() - 7; ++i)
 			{
 				j--;
 				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
@@ -1241,7 +1246,25 @@ void SP2::Render()
 		}
 	}
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
+
+	int y = 25;
+	for (int i = 0; i < 6; i++)
+	{
+		y -= 3;
+		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, 0);
+	}
+
+	//All element for player inventory
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 30);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 1, 25);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(1, 1, 0), 1.5, 1, 20);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 1, 0), 1.5, 1, 16);
+
+	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
 }
+
 void SP2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
