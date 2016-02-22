@@ -30,6 +30,9 @@ class SceneMenu : public Scene
 		GEO_PATH,
 		GEO_VENDING,
 		GEO_COKE,
+		GEO_PLANEWING,
+		GEO_PLANEROCKET,
+		GEO_PLANEBODY,
 		NUM_GEOMETRY,
 	};
 
@@ -95,7 +98,7 @@ private:
 	Camera3 camera;
 	void setColor(int which, string color);
 
-	Color colorA[12];
+	Color colorA[16];
 	Color colorBlue;
 	Color colorNormal;
 	int px;

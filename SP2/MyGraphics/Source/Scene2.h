@@ -217,7 +217,7 @@ class Scene2 : public Scene
 public:
 
 	char Map[20][20];
-	float Size = 10;
+	float Size = 15;
 	float Z_Displacement = 0;
 	float X_Displacement = -100;
 	Scene2();

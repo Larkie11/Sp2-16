@@ -17,6 +17,7 @@ public:
 		STARTGAME,
 		OPTIONS,
 		CREDITS,
+		HELP,
 		QUIT,
 		MAX,
 	};
@@ -25,6 +26,7 @@ public:
 		O_SETTING,
 		O_QUIT,
 		O_CREDIT,
+		O_HELP,
 		O_MAX,
 	};
 	enum SHOP_OPTION

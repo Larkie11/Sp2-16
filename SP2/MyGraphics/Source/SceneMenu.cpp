@@ -76,6 +76,15 @@ void SceneMenu::Init()
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
+	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("land", "Obj//planewing.obj");
+	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//Plane.tga");
+
+	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("land", "Obj//planebody.obj");
+	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//Plane.tga");
+
+	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("land", "Obj//planerocket.obj");
+	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//Plane.tga");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
@@ -114,8 +123,8 @@ void SceneMenu::UpdateMenu()
 			setColor(1, "colorNormal");
 			setColor(2, "colorNormal");
 			setColor(3, "colorNormal");
+			setColor(4, "colorNormal");
 			menuIcon = 117;
-
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
 				menushop.PressTime = deltaTime / 2;
@@ -130,8 +139,10 @@ void SceneMenu::UpdateMenu()
 			setColor(1, "colorBlue");
 			setColor(2, "colorNormal");
 			setColor(3, "colorNormal");
-			if (Application::IsKeyPressed(VK_RETURN))
+			setColor(4, "colorNormal");
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				menushop.PressTime = deltaTime / 5;
 				menuIcon = 104;
 				Input = "Options";
 				c_option = MenuShop::O_SETTING;
@@ -142,13 +153,13 @@ void SceneMenu::UpdateMenu()
 			setColor(1, "colorNormal");
 			setColor(2, "colorBlue");
 			setColor(3, "colorNormal");
-			
 			setColor(6, "colorSpecial");
 			setColor(7, "colorNormal");
 			setColor(8, "colorNormal");
 			setColor(9, "colorNormal");
 			setColor(10, "colorNormal");
-			setColor(11, "colorBlue");
+			setColor(11, "colorNormal");
+			setColor(12, "colorBlue");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
 				menuIcon = 90;
@@ -158,11 +169,27 @@ void SceneMenu::UpdateMenu()
 			}
 			userInput();
 			break;
-		case MenuShop::QUIT:
+		case MenuShop::HELP:
 			setColor(0, "colorNormal");
 			setColor(1, "colorNormal");
 			setColor(2, "colorNormal");
 			setColor(3, "colorBlue");
+			setColor(4, "colorNormal");
+			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
+			{
+				menushop.PressTime = deltaTime / 5;
+				menuIcon = 90;
+				Input = "Help";
+				c_option = MenuShop::O_HELP;
+			}
+			userInput();
+			break;
+		case MenuShop::QUIT:
+			setColor(0, "colorNormal");
+			setColor(1, "colorNormal");
+			setColor(2, "colorNormal");
+			setColor(3, "colorNormal");
+			setColor(4, "colorBlue");
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				SharedData::GetInstance()->gameState = SharedData::QUIT;
@@ -176,17 +203,19 @@ void SceneMenu::UpdateMenu()
 		switch (c_option)
 		{
 		case MenuShop::O_SETTING:
-			setColor(4, "colorBlue");
-			setColor(5, "colorNormal");
+			setColor(5, "colorBlue");
+			setColor(6, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
-
+					menushop.PressTime = deltaTime / 5;
+					choose = MenuShop::STARTGAME;
+					Input = "Menu";
 			}
 			userInput();
 			break;
 		case MenuShop::O_QUIT:
-			setColor(4, "colorNormal");
-			setColor(5, "colorBlue");
+			setColor(5, "colorNormal");
+			setColor(6, "colorBlue");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
 				menushop.PressTime = deltaTime / 5;
@@ -206,18 +235,33 @@ void SceneMenu::UpdateMenu()
 			setColor(5, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
-				menushop.PressTime = deltaTime;
+				menushop.PressTime = deltaTime / 5;
 				Input = "Menu";
 				choose = MenuShop::STARTGAME;
 			}
 			break;
 		}
 	}
+
+		if (Input == "Help")
+		{
+			switch (c_option)
+			{
+			case MenuShop::O_HELP:
+				if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
+				{
+					menushop.PressTime = deltaTime/5;
+					Input = "Menu";
+					choose = MenuShop::STARTGAME;
+				}
+				break;
+			}
+		}
 }
 //Handles user up and down input
 void SceneMenu::userInput()
 {
-	
+
 	if (Input == "Menu")
 	{
 		if (px < 210 || px > 540)
@@ -242,27 +286,27 @@ void SceneMenu::userInput()
 			}
 		}
 	}
-	if (Input == "Options")
-	{
-		if (c_option < MenuShop::O_MAX - 2)
+		if (Input == "Options")
 		{
-			if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
+			if (c_option < MenuShop::O_MAX - 3)
 			{
-				menuIcon -= 6.5;
-				menushop.PressTime = deltaTime / 10;
-				c_option = static_cast<MenuShop::OPTION>(c_option + 1);
+				if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
+				{
+					menuIcon -= 6.5;
+					menushop.PressTime = deltaTime / 10;
+					c_option = static_cast<MenuShop::OPTION>(c_option + 1);
+				}
+			}
+			if (c_option > MenuShop::O_SETTING)
+			{
+				if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
+				{
+					menuIcon += 6.5;
+					menushop.PressTime = deltaTime / 10;
+					c_option = static_cast<MenuShop::OPTION>(c_option - 1);
+				}
 			}
 		}
-		if (c_option > MenuShop::O_SETTING)
-		{
-			if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
-			{
-				menuIcon += 6.5;
-				menushop.PressTime = deltaTime / 10;
-				c_option = static_cast<MenuShop::OPTION>(c_option - 1);
-			}
-		}
-	}
 }
 //Handles user mouse input
 void SceneMenu::mouseControl()
@@ -315,6 +359,19 @@ void SceneMenu::mouseControl()
 			if (py > 523 && py < 556)
 			{
 				menuIcon = 98.5;
+				choose = MenuShop::HELP;
+				if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
+				{
+					menuIcon = 90;
+					Input = "Help";
+					c_option = MenuShop::O_HELP;
+
+				}
+			}
+
+			if (py > 556 && py < 595)
+			{
+				menuIcon = 92;
 				choose = MenuShop::QUIT;
 				if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
 				{
@@ -328,14 +385,27 @@ void SceneMenu::mouseControl()
 	{
 		if (px > 210 && px < 339 && py > 559 && py < 591)
 		{
-			if (Application::IsKeyPressed(VK_LBUTTON))
+			if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
 			{
+				menushop.PressTime = deltaTime / 5;
 				Input = "Menu";
 				choose = MenuShop::STARTGAME;
 			}
 		}
 	}
 
+	if (Input == "Help")
+	{
+		if (px > 210 && px < 339 && py > 557 && py < 592)
+		{
+			if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
+			{
+				menushop.PressTime = deltaTime / 5;
+				Input = "Menu";
+				choose = MenuShop::STARTGAME;
+			}
+		}
+	}
 
 	if (Input == "Options")
 	{
@@ -535,12 +605,18 @@ void SceneMenu::Render()
 	modelStack.LoadIdentity();
 	RenderQuadOnScreen(meshList[GEO_STAR], 0.3, 18, menuIcon, rotateCoke, 0, 1, 0, 2);
 
-	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.5, 6, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.5, 6, 90, 1, 0, 0, -1);
+
+	modelStack.PushMatrix();
+	/*RenderQuadOnScreen(meshList[GEO_PLANEWING], 1, 50, 30, rotateCoke, 0, 0, 1, 3);
+	RenderQuadOnScreen(meshList[GEO_PLANEROCKET], 1, 50, 30, rotateCoke, 0, 0, 1, 4);
+	RenderQuadOnScreen(meshList[GEO_PLANEBODY], 1, 50, 30, rotateCoke, 0, 0, 1, 3);*/
+	modelStack.PopMatrix();
 
 	if (Input == "Menu")
 	{
 		int j = 19;
-		for (int i = 0; i < my_arr.size() - 8; ++i)
+		for (int i = 0; i < my_arr.size() - 13; ++i)
 		{
 			j--;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
@@ -549,7 +625,7 @@ void SceneMenu::Render()
 	if (Input == "Options")
 	{
 		int j = 17.9;
-		for (int i = 4; i < my_arr.size() - 6; ++i)
+		for (int i = 5; i < my_arr.size() - 11; ++i)
 		{
 			j--;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
@@ -558,7 +634,17 @@ void SceneMenu::Render()
 	if (Input == "Credits")
 	{
 		int j = 20;
-		for (int i = 6; i < my_arr.size(); ++i)
+		for (int i = 7; i < my_arr.size()-5; ++i)
+		{
+			j--;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
+		}
+	}
+
+	if (Input == "Help")
+	{
+		int j = 19;
+		for (int i = 13; i < my_arr.size(); ++i)
 		{
 			j--;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);

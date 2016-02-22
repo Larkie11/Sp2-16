@@ -30,6 +30,7 @@ class SP2 : public Scene
 	{
 		bool negativeDotProduct;
 		bool canInteract;
+		bool canGoThrough;
 		Vector3 Nposition;
 	};
 	enum MENU

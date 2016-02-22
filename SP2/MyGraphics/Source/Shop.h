@@ -50,6 +50,7 @@ class Shop : public Scene
 	{
 		GEO_TRIANGLE_1 = 0,
 		GEO_TRIANGLE_2,
+		GEO_SHOPKEEPER,
 		GEO_REF_AXES,
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
@@ -203,8 +204,6 @@ public:
 
 	char Map[20][20];
 	float Size = 10;
-	float Z_Displacement = 0;
-	float X_Displacement = -100;
 	Shop();
 	~Shop();
 

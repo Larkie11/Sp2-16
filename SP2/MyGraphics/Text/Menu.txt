@@ -1,6 +1,7 @@
 Start
 Options
 Credit
+Help
 Quit
 Settings
 Back
@@ -9,4 +10,9 @@ Wei Min
 Heng Soon
 Francis
 Zhan Wei
+Back
+Movement:
+Up, down, left, right/Mouse control
+Interacting:
+E
 Back

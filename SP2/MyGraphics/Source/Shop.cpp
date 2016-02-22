@@ -43,6 +43,8 @@ void Shop::Init()
 	b_coolDown = b_coolDownLimit = 0.08;
 	startCoolDdown = false;
 
+	SharedData::GetInstance()->showStory = false;
+
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -362,8 +364,8 @@ void Shop::Init()
 	meshList[GEO_BENCH] = MeshBuilder::GenerateOBJ("bench", "OBJ//Bench.obj");
 	meshList[GEO_BENCH]->textureID = wood;
 
-	meshList[GEO_OUTER] = MeshBuilder::GenerateOBJ("Wall", "OBJ//WallOuter.obj");
-	meshList[GEO_OUTER]->textureID = LoadTGA("Image//Outside.tga");
+	meshList[GEO_SHOPKEEPER] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 4, 7);
+	meshList[GEO_SHOPKEEPER]->textureID = LoadTGA("Image//Cp30.tga");
 
 	GLuint santa = LoadTGA("Image//Santa.tga");
 	
@@ -441,6 +443,7 @@ void Shop::Update(double dt)
 		coolDown = 0;
 	}
 
+	//Character_Movement(dt);
 	if (Application::IsKeyPressed('E'))
 	{
 		SharedData::GetInstance()->stateCheck = true;
@@ -1046,6 +1049,7 @@ void Shop::Render()
 	}
 
 	RenderQuadOnScreen(meshList[GEO_SHOP], 6, 6.7, 5, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 7.5, 3.5, 90, 1, 0, 0, 1);
 
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1097,6 +1101,7 @@ void Shop::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
+
 	if (shopInput == "Shop")
 	{
 		int j = 21;
@@ -1197,21 +1202,20 @@ void Shop::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-	modelStack.PopMatrix();
 }
 void Shop::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
 }
-void Shop::Enemy_Updating(float dt)
-{
-	Position P = { camera.position.x, camera.position.y, camera.position.z };
-	for (int i = 0; i < 10; i++)
-	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
-	}
-}
+//void Shop::Enemy_Updating(float dt)
+//{
+//	Position P = { camera.position.x, camera.position.y, camera.position.z };
+//	for (int i = 0; i < 10; i++)
+//	{
+//		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy,i);
+//	}
+//}
 void Shop::Enemy_Rendering()
 {
 	for (int i = 0; i < 10; i++)
@@ -1282,149 +1286,149 @@ void Shop::Map_Rendering()
 	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
-void Shop::Character_Movement(float dt)
-{
-	if (Application::IsKeyPressed('R'))
-	{
-		camera.Reset();
-	}
-
-	//Changing view (target)
-	if (Application::IsKeyPressed(VK_LEFT))
-	{
-		camera.cameraRotate.y += (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_RIGHT))
-	{
-		camera.cameraRotate.y -= (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_UP))
-	{
-		camera.cameraRotate.x -= (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_DOWN))
-	{
-		camera.cameraRotate.x += (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed('N'))
-	{
-		camera.position.y -= 1;
-	}
-	if (Application::IsKeyPressed('M'))
-	{
-		camera.position.y += 1;
-	}
-
-	//Bounds checking based on maximum and minimum
-	if (camera.position.x > camera.maxX)
-	{
-		camera.position.x = camera.maxX;
-	}
-	if (camera.position.x < camera.minX)
-	{
-		camera.position.x = camera.minX;
-	}
-	if (camera.position.z > camera.maxZ)
-	{
-		camera.position.z = camera.maxZ;
-	}
-	if (camera.position.z < camera.minZ)
-	{
-		camera.position.z = camera.minZ;
-	}
-
-	//Moving the camera
-	Vector3 Test = camera.position;
-	if (Application::IsKeyPressed('W'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed('S'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-
-	}
-
-	if (Application::IsKeyPressed('A'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed('D'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-	}
-
-
-	//Only allow rotating to look 90 degrees up and 90 degrees down
-	if (camera.cameraRotate.x > camera.maxCameraX)
-	{
-		camera.cameraRotate.x = camera.maxCameraX;
-	}
-
-	else if (camera.cameraRotate.x < -camera.maxCameraX)
-	{
-		camera.cameraRotate.x = -camera.maxCameraX;
-	}
-
-	//Changing target
-	camera.target = Vector3(sin(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.x, -sin(DegreeToRadian(camera.cameraRotate.x)) + camera.position.y,
-		cos(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.z);
-	camera.view = (camera.target - camera.position).Normalized();
-	Vector3 right = camera.view.Cross(camera.defaultUp);
-	right.y = 0;
-	camera.up = right.Cross(camera.view);
-}
+//void Shop::Character_Movement(float dt)
+//{
+//	if (Application::IsKeyPressed('R'))
+//	{
+//		camera.Reset();
+//	}
+//
+//	//Changing view (target)
+//	if (Application::IsKeyPressed(VK_LEFT))
+//	{
+//		camera.cameraRotate.y += (float)(100 * dt);
+//	}
+//	if (Application::IsKeyPressed(VK_RIGHT))
+//	{
+//		camera.cameraRotate.y -= (float)(100 * dt);
+//	}
+//	if (Application::IsKeyPressed(VK_UP))
+//	{
+//		camera.cameraRotate.x -= (float)(100 * dt);
+//	}
+//	if (Application::IsKeyPressed(VK_DOWN))
+//	{
+//		camera.cameraRotate.x += (float)(100 * dt);
+//	}
+//	if (Application::IsKeyPressed('N'))
+//	{
+//		camera.position.y -= 1;
+//	}
+//	if (Application::IsKeyPressed('M'))
+//	{
+//		camera.position.y += 1;
+//	}
+//
+//	//Bounds checking based on maximum and minimum
+//	if (camera.position.x > camera.maxX)
+//	{
+//		camera.position.x = camera.maxX;
+//	}
+//	if (camera.position.x < camera.minX)
+//	{
+//		camera.position.x = camera.minX;
+//	}
+//	if (camera.position.z > camera.maxZ)
+//	{
+//		camera.position.z = camera.maxZ;
+//	}
+//	if (camera.position.z < camera.minZ)
+//	{
+//		camera.position.z = camera.minZ;
+//	}
+//
+//	//Moving the camera
+//	Vector3 Test = camera.position;
+//	if (Application::IsKeyPressed('W'))
+//	{
+//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1),NULL)
+//		{
+//			camera.position = Test;
+//		}
+//		else
+//		{
+//			Test = camera.position;
+//		}
+//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//	}
+//
+//	if (Application::IsKeyPressed('S'))
+//	{
+//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//		else
+//		{
+//			Test = camera.position;
+//		}
+//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//
+//	}
+//
+//	if (Application::IsKeyPressed('A'))
+//	{
+//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//		else
+//		{
+//			Test = camera.position;
+//		}
+//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//	}
+//
+//	if (Application::IsKeyPressed('D'))
+//	{
+//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//		else
+//		{
+//			Test = camera.position;
+//		}
+//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
+//		{
+//			camera.position = Test;
+//		}
+//	}
+//
+//
+//	//Only allow rotating to look 90 degrees up and 90 degrees down
+//	if (camera.cameraRotate.x > camera.maxCameraX)
+//	{
+//		camera.cameraRotate.x = camera.maxCameraX;
+//	}
+//
+//	else if (camera.cameraRotate.x < -camera.maxCameraX)
+//	{
+//		camera.cameraRotate.x = -camera.maxCameraX;
+//	}
+//
+//	//Changing target
+//	camera.target = Vector3(sin(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.x, -sin(DegreeToRadian(camera.cameraRotate.x)) + camera.position.y,
+//		cos(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.z);
+//	camera.view = (camera.target - camera.position).Normalized();
+//	Vector3 right = camera.view.Cross(camera.defaultUp);
+//	right.y = 0;
+//	camera.up = right.Cross(camera.view);
+//}

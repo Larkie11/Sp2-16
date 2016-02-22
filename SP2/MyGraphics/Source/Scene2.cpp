@@ -12,12 +12,12 @@
 #include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
-Position VtoP(Vector3 V)
+Position VtoP2(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
-Vector3 PtoV(Position V)
+Vector3 PtoV2(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
@@ -44,7 +44,7 @@ void Scene2::Init()
 	storyPosition = 3;
 
 	//Position of door
-	door.Nposition = Vector3(127, -21, 0);
+	door.Nposition = Vector3(95, -22, 0);
 	robot1.Nposition = Vector3(245, -21, -150);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -206,10 +206,10 @@ void Scene2::Init()
 	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
 	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
 
-	light[2].type = Light::LIGHT_POINT;
-	light[2].position.Set(-60, 100, -300);
+	light[2].type = Light::LIGHT_DIRECTIONAL;
+	light[2].position.Set(0, 1, 0);
 	light[2].color.Set(1, 1, 1);
-	light[2].power = 5;
+	light[2].power = 0.5;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -229,7 +229,7 @@ void Scene2::Init()
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
 
 	light[3].type = Light::LIGHT_SPOT;
-	light[3].position.Set(350, 37,0);
+	light[3].position.Set(350, 37, 0);
 	light[3].color.Set(1, 1, 1);
 	light[3].power = 3;
 	light[3].kC = 1.f;
@@ -272,9 +272,9 @@ void Scene2::Init()
 	glUniform1f(m_parameters[U_LIGHT4_COSINNER], light[4].cosInner);
 	glUniform1f(m_parameters[U_LIGHT4_EXPONENT], light[4].exponent);
 
-	light[5].type = Light::LIGHT_SPOT;
-	light[5].position.Set(0, 0, 0);
-	light[5].color.Set(1, 1, 1);
+	light[5].type = Light::LIGHT_POINT;
+	light[5].position.Set(-100, 55, 0);
+	light[5].color.Set(1, 0, 1);
 	light[5].power = 3;
 	light[5].kC = 1.f;
 	light[5].kL = 0.1f;
@@ -353,7 +353,7 @@ void Scene2::Init()
 	GLuint textID = LoadTGA("Image//Chair.tga");
 
 	GLuint santa = LoadTGA("Image//Santa.tga");
-	
+
 	meshList[GEO_BAG] = MeshBuilder::GenerateQuad("Bag", Color(1, 1, 1), 5, 5);
 	meshList[GEO_BAG]->textureID = LoadTGA("Image//Bag.tga");
 
@@ -369,7 +369,7 @@ void Scene2::Init()
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
 	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
 
-	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("Story2", Color(1, 1, 1), 4, 5);
+	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story2", Color(1, 1, 1), 4, 5);
 	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story2.tga");
 
 	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pryramidobj.obj");
@@ -431,7 +431,7 @@ bool Scene2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
 	return false;
 }
 void Scene2::Update(double dt)
-{	
+{
 	if (coolDownTime > 0)
 	{
 		coolDownTime -= (float)(10 * dt);
@@ -469,7 +469,7 @@ void Scene2::Update(double dt)
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (door.Nposition.y > -50)
+				if (door.Nposition.y > -60)
 				{
 					door.Nposition.y -= (float)(100 * dt);
 				}
@@ -486,7 +486,7 @@ void Scene2::Update(double dt)
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (door.Nposition.y > -50)
+				if (door.Nposition.y > -60)
 				{
 					door.Nposition.y -= (float)(100 * dt);
 				}
@@ -496,14 +496,16 @@ void Scene2::Update(double dt)
 		else if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) < 0)
 		{
 			door.canInteract = false;
+
 		}
 	}
 	else
 	{
 		//Dont show the press e to interact
 		door.canInteract = false;
+
 		//Everytime a player is far, the door will auto close up
-		if (door.Nposition.y < -22)
+		if (door.Nposition.y < -23)
 		{
 			door.Nposition.y += (float)(100 * dt);
 		}
@@ -549,9 +551,9 @@ void Scene2::Update(double dt)
 	}
 
 	//Check if player presses tab and start to move the story upwards
-	if (storyShow == true && Application::IsKeyPressed(VK_TAB)&&coolDownTime == 0)
+	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
 	{
-		coolDownTime = deltaTime/10;
+		coolDownTime = deltaTime / 10;
 		if (storyPosition >= 3)
 		{
 			storyDismiss = true;
@@ -561,17 +563,23 @@ void Scene2::Update(double dt)
 	//Check if player presses tab and start to move story downwards
 	if (storyDismiss == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
 	{
-		coolDownTime = deltaTime/10;
+		coolDownTime = deltaTime / 10;
 		if (storyPosition <= -3)
 		{
 			storyDismiss = false;
 			storyShow = true;
 		}
 	}
+
+	if (Application::IsKeyPressed('P'))
+	{
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SCENE2;
+	}
 	if (storyDismiss && storyPosition > -3)
 	{
 		storyPosition -= (float)(3 * dt);
-		
+
 	}
 	if (storyShow && storyPosition < 3)
 	{
@@ -777,62 +785,62 @@ void Scene2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float 
 static float SBSCALE1 = 1000.f;
 void Scene2::RenderSkybox()
 {
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -20, -398);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Rotate(180, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_FRONT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -20, -398);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Rotate(180, 0, 0, 1);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_FRONT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, 0, -0.9);
-		modelStack.Translate(0, -20, 600);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BACK1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, 0, -0.9);
+	modelStack.Translate(0, -20, 600);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_BACK1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(5, 0, 0);
-		modelStack.Translate(-500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(-180, 1, 0, 0);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_LEFT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(5, 0, 0);
+	modelStack.Translate(-500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(-180, 1, 0, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_LEFT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here	
-		modelStack.Translate(-5, 0, 0);
-		modelStack.Translate(500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_RIGHT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here	
+	modelStack.Translate(-5, 0, 0);
+	modelStack.Translate(500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_RIGHT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -500, 100);
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BOTTOM1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -500, 100);
+	modelStack.Rotate(180, 1, 0, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_BOTTOM1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -13, 0);
-		modelStack.Translate(0, 490, 100);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(360, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_TOP1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -13, 0);
+	modelStack.Translate(0, 490, 100);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(360, 0, 0, 1);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_TOP1], false);
+	modelStack.PopMatrix();
 }
 //Render codes
 void Scene2::Render()
@@ -848,7 +856,7 @@ void Scene2::Render()
 	std::ostringstream ammoOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	
+
 	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
 	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
 	fpsOSS << "FPS : " << deltaTime;
@@ -867,7 +875,7 @@ void Scene2::Render()
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-	
+
 	modelStack.LoadIdentity();
 
 	//All the light codes
@@ -986,29 +994,29 @@ void Scene2::Render()
 	}
 
 	modelStack.PushMatrix();
-		Enemy_Rendering();
-		modelStack.PopMatrix();
+	Enemy_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		Map_Rendering();
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	Map_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		Object_Rendering();
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	Object_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(0, -50, 0);
-		modelStack.Scale(30, 30, 30);
+	modelStack.PushMatrix();
+	modelStack.Translate(-100, 0, 0);
+	modelStack.Scale(30, 30, 30);
 
-		RenderMesh(meshList[GEO_MOONBALL], true);
-		modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MOONBALL], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(0, 200, 0);
-		modelStack.Scale(10, 10, 10);
-		RenderMesh(meshList[GEO_SPACESHIP], true);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(-100, 230, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_SPACESHIP], false);
+	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(350, -20, 0);
@@ -1064,7 +1072,7 @@ void Scene2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(door.Nposition.x, door.Nposition.y, door.Nposition.z);
-	modelStack.Scale(25, 25, 25);
+	modelStack.Scale(37, 37, 37);
 	RenderMesh(meshList[GEO_PYRAMIDDOOR], true);
 	modelStack.PopMatrix();
 
@@ -1073,14 +1081,14 @@ void Scene2::Render()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
-	
+
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(1000, 1, 1000);
+	modelStack.Scale(2000, 1, 2000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 	modelStack.PushMatrix();
@@ -1101,7 +1109,7 @@ void Scene2::Render()
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate((*iter)->position.x,(*iter)->position.y,(*iter)->position.z);
+		modelStack.Translate((*iter)->position.x, (*iter)->position.y, (*iter)->position.z);
 		modelStack.Rotate(-90, 0, 1, 0);
 		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
 
@@ -1121,13 +1129,13 @@ void Scene2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
 
 	//Show player if he can interact with item
-	if (robot1.canInteract||door.canInteract)
+	if (robot1.canInteract || door.canInteract)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E", Color(1, 1, 0), 1.5, 5, 5);
 		if (whichRobot == "robot1")
 		{
 			int j = 25;
-			for (int i = dialogue; i < my_arr.size()-3; ++i)
+			for (int i = dialogue; i < my_arr.size() - 3; ++i)
 			{
 				j--;
 				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 5, j);
@@ -1145,7 +1153,7 @@ void Scene2::Render()
 		}
 	}
 
-	
+
 
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 
@@ -1171,7 +1179,7 @@ void Scene2::Enemy_Rendering()
 		Position A = enemy[i].Return_Position(enemy[i]);
 		modelStack.PushMatrix();
 		modelStack.Translate(A.x, -20, A.z);
-		modelStack.Scale(30, 30, 30);
+		modelStack.Scale(10, 10, 10);
 		RenderMesh(meshList[GEO_COKE], true);
 		modelStack.PopMatrix();
 	}
@@ -1198,7 +1206,7 @@ void Scene2::Map_Rendering()
 {
 	modelStack.PushMatrix();
 
-	modelStack.Translate(0, -21, 0);
+	modelStack.Translate(X_Displacement, -22.5, Z_Displacement);
 
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
@@ -1291,7 +1299,7 @@ void Scene2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1300,7 +1308,7 @@ void Scene2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1309,7 +1317,7 @@ void Scene2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1318,7 +1326,7 @@ void Scene2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1328,7 +1336,7 @@ void Scene2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1337,7 +1345,7 @@ void Scene2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1346,7 +1354,7 @@ void Scene2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
@@ -1355,10 +1363,37 @@ void Scene2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
 		{
 			camera.position = Test;
 		}
+	}
+
+	if (Application::IsKeyPressed(VK_SPACE))
+	{
+		Map_Reading();
+		std::ofstream myfile("Map//Map1.txt");
+		if (myfile.is_open())
+		{
+			for (int i = 0; i < 20; i++)
+			{
+				for (int j = 0; j < 20; j++)
+				{
+					if (Map[i][j] != char('D'))
+					{
+						myfile << char(Map[i][j]);
+					}
+					else
+					{
+						myfile << " ";
+					}
+				}
+				myfile << "/n";
+			}
+			myfile.close();
+		}
+		else cout << "Unable to read Map!!" << endl;
+		Map_Reading();
 	}
 
 

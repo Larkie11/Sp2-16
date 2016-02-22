@@ -12,12 +12,12 @@
 #include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
-Position VtoP2(Vector3 V)
+Position VtoP(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
-Vector3 PtoV2(Position V)
+Vector3 PtoV(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
@@ -45,6 +45,7 @@ void SP2::Init()
 
 	//Position of door
 	door.Nposition = Vector3(95, -22, 0);
+	door.canGoThrough = false;
 	robot1.Nposition = Vector3(245, -21, -150);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -471,6 +472,7 @@ void SP2::Update(double dt)
 			{
 				if (door.Nposition.y > -60)
 				{
+					door.canGoThrough = true;
 					door.Nposition.y -= (float)(100 * dt);
 				}
 			}
@@ -479,6 +481,7 @@ void SP2::Update(double dt)
 		else if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) > 0)
 		{
 			door.canInteract = false;
+			door.canGoThrough = false;
 		}
 		//Check if player is inside the temple and facing door to the outside
 		if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) > 0)
@@ -488,6 +491,7 @@ void SP2::Update(double dt)
 			{
 				if (door.Nposition.y > -60)
 				{
+					door.canGoThrough = true;
 					door.Nposition.y -= (float)(100 * dt);
 				}
 			}
@@ -496,15 +500,20 @@ void SP2::Update(double dt)
 		else if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) < 0)
 		{
 			door.canInteract = false;
+			door.canGoThrough = false;
+
 		}
 	}
 	else
 	{
 		//Dont show the press e to interact
 		door.canInteract = false;
+		door.canGoThrough = false;
+
 		//Everytime a player is far, the door will auto close up
 		if (door.Nposition.y < -23)
 		{
+			door.canGoThrough = false;
 			door.Nposition.y += (float)(100 * dt);
 		}
 	}
@@ -1297,7 +1306,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
@@ -1306,7 +1315,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
@@ -1315,7 +1324,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
@@ -1324,17 +1333,16 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
-
 	}
 
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
@@ -1343,7 +1351,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
@@ -1352,7 +1360,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
@@ -1361,7 +1369,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
 		}
