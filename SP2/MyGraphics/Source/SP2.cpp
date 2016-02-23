@@ -40,7 +40,7 @@ void SP2::Init()
 	SharedData::GetInstance()->gameScene = "Scene1";
 	PressTime = 0;
 	// Init VBO here
-	b_coolDown = b_coolDownLimit = 0.08;
+	b_coolDown = b_coolDownLimit = 1;
 	startCoolDdown = false;
 	storyPosition = 3;
 
@@ -50,6 +50,7 @@ void SP2::Init()
 	robot1.Nposition = Vector3(245, -21, -150);
 	robot2.Nposition = Vector3(245, -21, 150);
 	robot3.Nposition = Vector3(92, -21, 361);
+	rawMaterial = Vector3(235, -21, -90);
 
 	spacewing.Nposition = Vector3(0, -21, 100);
 	spacerocket.Nposition = Vector3(-200, -21, 100);
@@ -437,6 +438,12 @@ void SP2::Init()
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("Star", "OBJ//Sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Sword.tga");
 
+	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("Star", "OBJ//rawMaterial.obj");
+	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//RawMaterial.tga");
+
+	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
+	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//explosion1.tga");
+
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
@@ -714,9 +721,8 @@ void SP2::Update(double dt)
 
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
 	{
-
 		//if destory bullet = true 
-		if ((*iter)->Update(dt))
+		if ((*iter)->Update(dt) || (*iter)->CollideWithEnemy(enemy, bullet_arr, detectCollision))
 		{
 			iter = bullet_arr.erase(iter);
 		}
@@ -725,6 +731,28 @@ void SP2::Update(double dt)
 			iter++;
 		}
 	}
+	// MINING COLLISION
+	if (detectCollision.collideByDist(camera.position, rawMaterial) < 50 && Application::IsKeyPressed(VK_LBUTTON))
+	{
+
+		startCoolDdown = true;
+		if (b_coolDown == b_coolDownLimit)
+		{
+			SharedData::GetInstance()->mineral.quantity++;
+			cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+		}
+	}
+
+	if (startCoolDdown)
+	{
+		b_coolDown -= dt;
+		if (b_coolDown < 0)
+		{
+			b_coolDown = b_coolDownLimit;
+			startCoolDdown = false;
+		}
+	}
+
 	deltaTime = (1.0 / dt);
 	modelStack.PushMatrix();
 
@@ -1246,6 +1274,14 @@ void SP2::Render()
 		modelStack.PopMatrix();
 	}
 	
+
+	//Mining rock 
+	modelStack.PushMatrix();
+	modelStack.Translate(rawMaterial.x, rawMaterial.y, rawMaterial.z);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_RAWMATERIAL], true);
+	modelStack.PopMatrix();
+
 	EquipmentHolding(meshList[GEO_GUN], 0.1);
 
 	
@@ -1275,6 +1311,8 @@ void SP2::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
+
+	//Bullet render
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
@@ -1286,6 +1324,8 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_BULLET], true);
 		modelStack.PopMatrix();
 	}
+
+
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);

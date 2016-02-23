@@ -118,6 +118,8 @@ class SP2 : public Scene
 		GEO_PICKAXE,
 		GEO_GUN,
 		GEO_SWORD,
+		GEO_RAWMATERIAL,
+		GEO_EXPLOSION,
 		NUM_GEOMETRY,
 	};
 
@@ -342,5 +344,9 @@ private:
 	float PressTime;
 
 	Mouse mouse;
+	CollisionDetector detectCollision;
+
+	//TEMPO OBJECT FOR TESTING ONLY
+	Vector3 rawMaterial;
 };
 #endif
