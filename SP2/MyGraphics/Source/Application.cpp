@@ -72,13 +72,13 @@ void Application::Init()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); //We don't want the old OpenGL 
 
 	const GLFWvidmode *mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-	width = mode->width + 1;
-	height = mode->height + 1;
+	SharedData::GetInstance()->width = mode->width + 1;
+	SharedData::GetInstance()->height = mode->height + 1;
 
 	//Change glfwGetPrimaryMonitor to null for windowed version, change width and height to your own liking (Example 1080, 768, null, null)
 	//m_window = glfwCreateWindow(width, height, "SPACE",glfwGetPrimaryMonitor(), nullptr);
 	m_window = glfwCreateWindow(1080, 768, "SPACE", NULL, nullptr);
-	glfwSetCursorPos(m_window, width / 2, height / 2);
+	glfwSetCursorPos(m_window, SharedData::GetInstance()->width / 2, SharedData::GetInstance()->height / 2);
 
 	//If the window couldn't be created
 	if (!m_window)

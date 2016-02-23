@@ -501,7 +501,7 @@ void Shop::Update(double dt)
 		}
 		if (s_option > S_BUY)
 		{
-			if (Application::IsKeyPressed('K') && PressTime == 0)
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
 				PressTime = deltaTime / 7;
 				s_option = static_cast<SHOP_OPTION>(s_option - 1);
@@ -512,7 +512,7 @@ void Shop::Update(double dt)
 		}
 		if (s_option < S_MAX - 1)
 		{
-			if (Application::IsKeyPressed('J') && PressTime == 0)
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 7;
 				s_option = static_cast<SHOP_OPTION>(s_option + 1);
@@ -559,7 +559,7 @@ void Shop::Update(double dt)
 		}
 		if (s_buy > SB_AMMO)
 		{
-			if (Application::IsKeyPressed('K') && PressTime == 0)
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
 				PressTime = deltaTime / 7;
 				s_buy = static_cast<SHOP_BUY>(s_buy - 1);
@@ -570,7 +570,7 @@ void Shop::Update(double dt)
 		}
 		if (s_buy < SB_MAX - 1)
 		{
-			if (Application::IsKeyPressed('J') && PressTime == 0)
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 7;
 				s_buy = static_cast<SHOP_BUY>(s_buy + 1);
@@ -654,7 +654,7 @@ void Shop::Update(double dt)
 		}
 				if (s_sell > SS_AMMO)
 				{
-				if (Application::IsKeyPressed('K') && PressTime == 0)
+				if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 				{
 				PressTime = deltaTime / 7;
 				s_sell = static_cast<SHOP_SELL>(s_sell - 1);
@@ -665,7 +665,7 @@ void Shop::Update(double dt)
 				}
 				if (s_sell < SS_MAX - 1)
 				{
-					if (Application::IsKeyPressed('J') && PressTime == 0)
+					if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 					{
 						PressTime = deltaTime / 7;
 						s_sell = static_cast<SHOP_SELL>(s_sell + 1);

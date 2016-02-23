@@ -32,6 +32,7 @@ class SP2 : public Scene
 		bool canInteract;
 		bool canGoThrough;
 		Vector3 Nposition;
+		string robot;
 	};
 	enum MENU
 	{
@@ -71,6 +72,9 @@ class SP2 : public Scene
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
 		GEO_QUAD,
+		GEO_BB8HEAD,
+		GEO_BB8BODY,
+		GEO_CROSSHAIR,
 		GEO_LEFT,
 		GEO_RIGHT,
 		GEO_TOP,
@@ -87,13 +91,21 @@ class SP2 : public Scene
 		GEO_STORY1,
 		GEO_TEXT,
 		GEO_PATH,
+		GEO_AMMOICON,
+		GEO_GOLDICON,
+		GEO_EGGICON,
+		GEO_BOMBICON,
+		GEO_OREICON,
 		GEO_VENDING,
 		GEO_BAG,
 		GEO_PYRAMIDDOOR,
+		GEO_INVENTORY,
 		GEO_BUILDING,
 		GEO_COKE,
 		GEO_BULLET,
 		GEO_ROBOT,
+		GEO_ROBOT1,
+		GEO_ROBOT2,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -193,19 +205,6 @@ class SP2 : public Scene
 		U_LIGHT5_COSINNER,
 		U_LIGHT5_EXPONENT,
 
-		U_LIGHT6_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT6_COLOR,
-		U_LIGHT6_POWER,
-		U_LIGHT6_KC,
-		U_LIGHT6_KL,
-		U_LIGHT6_KQ,
-		U_LIGHT6ENABLED,
-		U_LIGHT6_TYPE,
-		U_LIGHT6_SPOTDIRECTION,
-		U_LIGHT6_COSCUTOFF,
-		U_LIGHT6_COSINNER,
-		U_LIGHT6_EXPONENT,
-
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
@@ -247,18 +246,22 @@ private:
 
 	unsigned m_vertexArrayID;
 	unsigned m_indexBuffer[NUM_GEOMETRY];
-	unsigned m_vertexBuffer[NUM_GEOMETRY]; 
+	unsigned m_vertexBuffer[NUM_GEOMETRY];
 	unsigned m_colorBuffer[NUM_GEOMETRY];
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 	void UpdateMenu();
 	//Camera camera;
-	
 
-	bool renderMenu = false;
+
 	//Check distance for interactable items
+	//NPC and doors
 	DOT door;
 	DOT robot1;
+	DOT robot2;
+	DOT robot3;
+	int dialoguePlus = 6;
+	void RobotTalk();
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -277,7 +280,7 @@ private:
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
 	void Dialogue(string filename);
 	string new_line;
-	
+
 	//Check for distance of object
 	bool checkNear(Camera3 camera, Vector3 rhs);
 	bool checkFaceNorth(Camera3 camera, Vector3 rhs, bool north);
@@ -297,6 +300,8 @@ private:
 	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
+
+	//for story tab
 	float storyPosition;
 	bool storyDismiss;
 	bool storyShow;
@@ -318,8 +323,7 @@ private:
 	void Map_Reading();
 	void Map_Rendering();
 	void Character_Movement(float dt);
-	void TorchLight();
-	
+
 	Objects object[Num_Object];
 	Objects object_on_hand;
 	int T_object_Num;
@@ -328,7 +332,6 @@ private:
 	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
-	bool b_gold;
 
 	Mouse mouse;
 };

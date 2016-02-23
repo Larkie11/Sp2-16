@@ -37,6 +37,7 @@ void SP2::Init()
 	storyShow = true;
 	negativeDotProduct = true;
 	Dialogue("Text//RobotScene1.txt");
+	SharedData::GetInstance()->gameScene = "Scene1";
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
@@ -44,9 +45,12 @@ void SP2::Init()
 	storyPosition = 3;
 
 	//Position of door
-	door.Nposition = Vector3(95, -22, 0);
+	door.Nposition = Vector3(92, -22, 0);
 	door.canGoThrough = false;
 	robot1.Nposition = Vector3(245, -21, -150);
+	robot2.Nposition = Vector3(245, -21, 150);
+	robot3.Nposition = Vector3(92, -21, 361);
+
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -145,18 +149,6 @@ void SP2::Init()
 	m_parameters[U_LIGHT5_COSINNER] = glGetUniformLocation(m_programID, "lights[5].cosInner");
 	m_parameters[U_LIGHT5_EXPONENT] = glGetUniformLocation(m_programID, "lights[5].exponent");
 
-	m_parameters[U_LIGHT6_POSITION] = glGetUniformLocation(m_programID, "lights[6].position_cameraspace");
-	m_parameters[U_LIGHT6_COLOR] = glGetUniformLocation(m_programID, "lights[6].color");
-	m_parameters[U_LIGHT6_POWER] = glGetUniformLocation(m_programID, "lights[6].power");
-	m_parameters[U_LIGHT6_KC] = glGetUniformLocation(m_programID, "lights[6].kC");
-	m_parameters[U_LIGHT6_KL] = glGetUniformLocation(m_programID, "lights[6].kL");
-	m_parameters[U_LIGHT6_KQ] = glGetUniformLocation(m_programID, "lights[6].kQ");
-	m_parameters[U_LIGHT6_TYPE] = glGetUniformLocation(m_programID, "lights[6].type");
-	m_parameters[U_LIGHT6_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[6].spotDirection");
-	m_parameters[U_LIGHT6_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[6].cosCutoff");
-	m_parameters[U_LIGHT6_COSINNER] = glGetUniformLocation(m_programID, "lights[6].cosInner");
-	m_parameters[U_LIGHT6_EXPONENT] = glGetUniformLocation(m_programID, "lights[6].exponent");
-
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
@@ -242,7 +234,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
 
 	light[3].type = Light::LIGHT_SPOT;
-	light[3].position.Set(350, 37,0);
+	light[3].position.Set(350, 37, 0);
 	light[3].color.Set(1, 1, 1);
 	light[3].power = 3;
 	light[3].kC = 1.f;
@@ -307,9 +299,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT5_COSINNER], light[5].cosInner);
 	glUniform1f(m_parameters[U_LIGHT5_EXPONENT], light[5].exponent);
 
-	TorchLight();
-
-	glUniform1i(m_parameters[U_NUMLIGHTS], 7);
+	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
 
 	//Initialize camera settings
 	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -324,6 +314,18 @@ void SP2::Init()
 
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
+
+	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("inventorybar", Color(1, 1, 1), 3, 3);
+	meshList[GEO_INVENTORY]->textureID = LoadTGA("Image//Inventory.tga");
+
+	meshList[GEO_AMMOICON] = MeshBuilder::GenerateQuad("ammoicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//Ammo.tga");
+
+	meshList[GEO_GOLDICON] = MeshBuilder::GenerateQuad("goldicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//Gold.tga");
+
+	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
@@ -346,6 +348,9 @@ void SP2::Init()
 	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//d_front.tga");
 
+	meshList[GEO_CROSSHAIR] = MeshBuilder::GenerateQuad("crosshair", Color(1, 1, 1), 5, 5);
+	meshList[GEO_CROSSHAIR]->textureID = LoadTGA("Image//Crosshair.tga");
+
 	meshList[GEO_BACK1] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1, 1);
 	meshList[GEO_BACK1]->textureID = LoadTGA("Image//d_back.tga");
 
@@ -364,25 +369,20 @@ void SP2::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
-	GLuint wood = LoadTGA("Image//book.tga");
-	GLuint textID = LoadTGA("Image//Chair.tga");
-
-	GLuint santa = LoadTGA("Image//Santa.tga");
-	
 	meshList[GEO_BAG] = MeshBuilder::GenerateQuad("Bag", Color(1, 1, 1), 5, 5);
 	meshList[GEO_BAG]->textureID = LoadTGA("Image//Bag.tga");
 
 	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
 	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
 
-	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2.obj");
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//R2D2_D.tga");
 
-	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
-	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
+	meshList[GEO_ROBOT1] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
+	meshList[GEO_ROBOT1]->textureID = LoadTGA("Image//R2D2_A.tga");
 
-	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
-	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
+	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//BB8.obj");
+	meshList[GEO_COKE]->textureID = LoadTGA("Image//BB8.tga");
 
 	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story1", Color(1, 1, 1), 4, 5);
 	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story1.tga");
@@ -445,8 +445,92 @@ bool SP2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
 {
 	return false;
 }
+
+void SP2::RobotTalk()
+{
+
+	if (checkNear(camera, robot1.Nposition))
+	{
+		if (camera.view.Dot(robot1.Nposition) > 0)
+		{
+			//Show player press e to interact
+			robot1.canInteract = true;
+			if (Application::IsKeyPressed('E') && coolDownTime == 0)
+			{
+				dialogue = 0;
+				coolDownTime = deltaTime / 5;
+				robot1.robot = "robot1";
+
+			}
+			if (robot1.robot == "robot1")
+			{
+				if (Application::IsKeyPressed('1'))
+				{
+					robot1.robot = "robot1.1";
+				}
+				if (Application::IsKeyPressed('2'))
+				{
+					robot1.robot = "robot1.2";
+				}
+			}
+		}
+		else
+		{
+			robot1.canInteract = false;
+		}
+	}
+	else
+	{
+		robot1.canInteract = false;
+		robot1.robot = "";
+	}
+
+	if (checkNear(camera, robot2.Nposition))
+	{
+		robot2.canInteract = true;
+		if (Application::IsKeyPressed('E') && coolDownTime == 0)
+		{
+			coolDownTime = deltaTime / 5;
+			robot2.robot = "robot2";
+		}
+	}
+	else
+	{
+		robot2.canInteract = false;
+		robot2.robot = "";
+	}
+
+	if (checkNear(camera, robot3.Nposition))
+	{
+		if (camera.view.Dot(robot3.Nposition) > 0)
+		{
+			//Show player press e to interact
+			robot3.canInteract = true;
+			if (Application::IsKeyPressed('E') && coolDownTime == 0)
+			{
+				robot3.robot = "robot3";
+				coolDownTime = deltaTime / 10;
+
+				if (dialoguePlus < my_arr.size() - 1)
+				{
+					++dialoguePlus;
+				}
+			}
+		}
+		else
+		{
+			robot3.canInteract = false;
+		}
+	}
+	else
+	{
+		dialoguePlus = 6;
+		robot3.canInteract = false;
+		robot3.robot = "";
+	}
+}
 void SP2::Update(double dt)
-{	
+{
 	if (coolDownTime > 0)
 	{
 		coolDownTime -= (float)(10 * dt);
@@ -484,11 +568,7 @@ void SP2::Update(double dt)
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (door.Nposition.y > -60)
-				{
-					door.canGoThrough = true;
-					door.Nposition.y -= (float)(100 * dt);
-				}
+				door.canGoThrough = true;
 			}
 		}
 		//Update player if player turns away
@@ -503,11 +583,7 @@ void SP2::Update(double dt)
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
-				if (door.Nposition.y > -60)
-				{
-					door.canGoThrough = true;
-					door.Nposition.y -= (float)(100 * dt);
-				}
+				door.canGoThrough = true;
 			}
 		}
 		//Update player if player turns away
@@ -515,7 +591,6 @@ void SP2::Update(double dt)
 		{
 			door.canInteract = false;
 			door.canGoThrough = false;
-
 		}
 	}
 	else
@@ -531,38 +606,17 @@ void SP2::Update(double dt)
 			door.Nposition.y += (float)(100 * dt);
 		}
 	}
+	RobotTalk();
 
-	if (checkNear(camera, robot1.Nposition))
+	if (door.canGoThrough)
 	{
-		if (camera.view.Dot(robot1.Nposition) > 0)
+		if (door.Nposition.y > -60)
 		{
-			//Show player press e to interact
-			robot1.canInteract = true;
-			if (Application::IsKeyPressed('E') && coolDownTime == 0)
-			{
-				dialogue = 0;
-				coolDownTime = deltaTime / 5;
-				whichRobot = "robot1";
-			}
-			if (Application::IsKeyPressed('1'))
-			{
-				whichRobot = "robot1.1";
-			}
-			if (Application::IsKeyPressed('2'))
-			{
-				whichRobot = "robot1.2";
-			}
-		}
-		else
-		{
-			robot1.canInteract = false;
+			door.canGoThrough = true;
+			door.Nposition.y -= (float)(100 * dt);
 		}
 	}
-	else
-	{
-		robot1.canInteract = false;
-		whichRobot = "";
-	}
+
 	//To open the shop for now
 	if (Application::IsKeyPressed('O'))
 	{
@@ -572,9 +626,9 @@ void SP2::Update(double dt)
 	}
 
 	//Check if player presses tab and start to move the story upwards
-	if (storyShow == true && Application::IsKeyPressed(VK_TAB)&&coolDownTime == 0)
+	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
 	{
-		coolDownTime = deltaTime/10;
+		coolDownTime = deltaTime / 10;
 		if (storyPosition >= 3)
 		{
 			storyDismiss = true;
@@ -584,7 +638,7 @@ void SP2::Update(double dt)
 	//Check if player presses tab and start to move story downwards
 	if (storyDismiss == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
 	{
-		coolDownTime = deltaTime/10;
+		coolDownTime = deltaTime / 10;
 		if (storyPosition <= -3)
 		{
 			storyDismiss = false;
@@ -600,7 +654,7 @@ void SP2::Update(double dt)
 	if (storyDismiss && storyPosition > -3)
 	{
 		storyPosition -= (float)(3 * dt);
-		
+
 	}
 	if (storyShow && storyPosition < 3)
 	{
@@ -806,62 +860,62 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -20, -398);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Rotate(180, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_FRONT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -20, -398);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Rotate(180, 0, 0, 1);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_FRONT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, 0, -0.9);
-		modelStack.Translate(0, -20, 600);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BACK1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, 0, -0.9);
+	modelStack.Translate(0, -20, 600);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_BACK1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(5, 0, 0);
-		modelStack.Translate(-500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(-180, 1, 0, 0);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_LEFT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(5, 0, 0);
+	modelStack.Translate(-500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(-180, 1, 0, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_LEFT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here	
-		modelStack.Translate(-5, 0, 0);
-		modelStack.Translate(500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_RIGHT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here	
+	modelStack.Translate(-5, 0, 0);
+	modelStack.Translate(500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_RIGHT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -500, 100);
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BOTTOM1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -500, 100);
+	modelStack.Rotate(180, 1, 0, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_BOTTOM1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -13, 0);
-		modelStack.Translate(0, 490, 100);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(360, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_TOP1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -13, 0);
+	modelStack.Translate(0, 490, 100);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(360, 0, 0, 1);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_TOP1], false);
+	modelStack.PopMatrix();
 }
 //Render codes
 void SP2::Render()
@@ -875,14 +929,23 @@ void SP2::Render()
 	string var1 = oss1.str();
 
 	std::ostringstream ammoOSS;
+	std::ostringstream bombOSS;
+	std::ostringstream oreOSS;
+	std::ostringstream eggOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	
-	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
-	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
+
+	ammoOSS << SharedData::GetInstance()->bullet.quantity;
+	goldOSS << SharedData::GetInstance()->gold.quantity;
+	bombOSS << SharedData::GetInstance()->bomb.quantity;
+	//oreOSS << SharedData::GetInstance()->ore.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity;
+
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
+	string bomb = bombOSS.str();
+	string egg = eggOSS.str();
 	string s_gold = goldOSS.str();
 
 
@@ -896,7 +959,7 @@ void SP2::Render()
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-	
+
 	modelStack.LoadIdentity();
 
 	//All the light codes
@@ -1014,48 +1077,30 @@ void SP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	if (light[6].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[6].position.x, light[6].position.y, light[6].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT6_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[6].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[6].position;
-		glUniform3fv(m_parameters[U_LIGHT6_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[6].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT6_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[6].position;
-		glUniform3fv(m_parameters[U_LIGHT6_POSITION], 1, &lightPosition_cameraspace.x);
-	}
 	modelStack.PushMatrix();
-		Enemy_Rendering();
-		modelStack.PopMatrix();
+	Enemy_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		Map_Rendering();
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	Map_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		Object_Rendering();
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	Object_Rendering();
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(-100, 0, 0);
-		modelStack.Scale(30, 30, 30);
+	modelStack.PushMatrix();
+	modelStack.Translate(-100, 0, 0);
+	modelStack.Scale(30, 30, 30);
 
-		RenderMesh(meshList[GEO_MOONBALL], false);
-		modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MOONBALL], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		modelStack.Translate(-100, 230, 0);
-		modelStack.Scale(10, 10, 10);
-		RenderMesh(meshList[GEO_SPACESHIP], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(-100, 230, 0);
+	modelStack.Scale(10, 10, 10);
+	RenderMesh(meshList[GEO_SPACESHIP], false);
+	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(350, -20, 0);
@@ -1120,7 +1165,21 @@ void SP2::Render()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
-	
+
+	modelStack.PushMatrix();
+	modelStack.Translate(robot3.Nposition.x, robot3.Nposition.y, robot3.Nposition.z);
+	modelStack.Rotate(150, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_ROBOT], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(robot2.Nposition.x, robot2.Nposition.y, robot2.Nposition.z);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_ROBOT1], false);
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
@@ -1128,12 +1187,11 @@ void SP2::Render()
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(2000, 1, 2000);
-	RenderMesh(meshList[GEO_QUAD], true);
+	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
-	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.7, 5, 20);
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(-10, 3, -60);
@@ -1148,7 +1206,7 @@ void SP2::Render()
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate((*iter)->position.x,(*iter)->position.y,(*iter)->position.z);
+		modelStack.Translate((*iter)->position.x, (*iter)->position.y, (*iter)->position.z);
 		modelStack.Rotate(-90, 0, 1, 0);
 		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
 
@@ -1160,44 +1218,68 @@ void SP2::Render()
 	var1.resize(16);
 	Fps.resize(11);
 
-	//All element for player inventory
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 45, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-
 	//Show player if he can interact with item
-	if (robot1.canInteract||door.canInteract)
+	if (robot1.canInteract || door.canInteract || robot2.canInteract || robot3.canInteract)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press E" , Color(1, 1, 0), 1.5, 5, 5);
-		if (whichRobot == "robot1")
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E", Color(1, 1, 0), 1.5, 5, 5);
+		if (robot1.robot == "robot1")
 		{
 			int j = 25;
-			for (int i = dialogue; i < my_arr.size()-3; ++i)
+			for (int i = dialogue; i < my_arr.size() - 7; ++i)
 			{
 				j--;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 5, j);
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
 			}
 		}
-		if (whichRobot == "robot1.1")
+		if (robot1.robot == "robot1.1")
 		{
 			dialogue = 1;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 5, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
 		}
-		if (whichRobot == "robot1.2")
+		if (robot1.robot == "robot1.2")
 		{
 			dialogue = 2;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 5, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (robot2.robot == "robot2")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (robot3.robot == "robot3")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
-
-	
-
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
+	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 3, 3, 5);
 
-	RenderQuadOnScreen(meshList[GEO_BAG], 1, 50, 3, 90, 1, 0, 0, 0);
+	int y = 14;
+
+	modelStack.PushMatrix();
+	for (int i = 0; i < 5; i++)
+	{
+		//RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, 1.3, 18, 90, 1, 0, 0, 0);
+		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, -1);
+		y -= 3;
+	}
+
+	//All element for player inventory
+	RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.7, 19, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_GOLDICON], 1.5, 1.7, 15, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_EGGICON], 1.5, 1.7, 10.8, 90, 1, 0, 0, 0);
+
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0.9, 0.5), 1.5, 1, 17.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0.9, 0.5), 1.5, 1, 13.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 1, 0), 1.5, 1, 5.5);
+
+	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
+
+	RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 }
+
 void SP2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
@@ -1218,7 +1300,7 @@ void SP2::Enemy_Rendering()
 		Position A = enemy[i].Return_Position(enemy[i]);
 		modelStack.PushMatrix();
 		modelStack.Translate(A.x, -20, A.z);
-		modelStack.Scale(10, 10, 10);
+		modelStack.Scale(2, 2, 2);
 		RenderMesh(meshList[GEO_COKE], true);
 		modelStack.PopMatrix();
 	}
@@ -1279,8 +1361,6 @@ void SP2::Map_Rendering()
 	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
-
-
 void SP2::Character_Movement(float dt)
 {
 
@@ -1434,7 +1514,6 @@ void SP2::Character_Movement(float dt)
 		Map_Reading();
 	}
 
-
 	//Only allow rotating to look 90 degrees up and 90 degrees down
 	if (camera.cameraRotate.x > camera.maxCameraX)
 	{
@@ -1453,7 +1532,6 @@ void SP2::Character_Movement(float dt)
 	Vector3 right = camera.view.Cross(camera.defaultUp);
 	right.y = 0;
 	camera.up = right.Cross(camera.view);
-	TorchLight();
 }
 
 
@@ -1499,7 +1577,6 @@ void SP2::Object_Reading()
 
 void SP2::Object_Rendering()
 {
-
 	modelStack.PushMatrix();
 	//modelStack.Scale(10, 10, 10);
 	for (int i = 0; i < Num_Object; i++) // 5 num object so its run 5 sets 
@@ -1593,37 +1670,4 @@ void SP2::Object_Updating(float dt)
 	{
 		object_on_hand.position.z = 0;
 	}
-}
-
-
-void SP2::TorchLight()
-{
-	light[6].type = Light::LIGHT_POINT;
-	light[6].position = VtoP(camera.position);
-	light[6].color.Set(1, 0.8, 0.8);
-	if (Application::IsKeyPressed('Q'))
-	{
-		light[6].power = 10;
-	}
-	else
-	{
-		light[6].power = 0;
-	}
-	light[6].kC = 1.f;
-	light[6].kL = 0.1f;
-	light[6].kQ = 0.001f;
-	light[6].cosCutOff = cos(Math::DegreeToRadian(46));
-	light[6].cosInner = cos(Math::DegreeToRadian(30));
-	light[6].exponent = 3.f;
-	light[6].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT6_TYPE], light[6].type);
-	glUniform3fv(m_parameters[U_LIGHT6_COLOR], 1, &light[6].color.r);
-	glUniform1f(m_parameters[U_LIGHT6_POWER], light[6].power);
-	glUniform1f(m_parameters[U_LIGHT6_KC], light[6].kC);
-	glUniform1f(m_parameters[U_LIGHT6_KL], light[6].kL);
-	glUniform1f(m_parameters[U_LIGHT6_KQ], light[6].kQ);
-	glUniform1f(m_parameters[U_LIGHT6_COSCUTOFF], light[6].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT6_COSINNER], light[6].cosInner);
-	glUniform1f(m_parameters[U_LIGHT6_EXPONENT], light[6].exponent);
 }

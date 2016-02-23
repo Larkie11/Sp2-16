@@ -47,7 +47,8 @@ public:
 	INVENTORY gold;
 	INVENTORY bomb;
 	INVENTORY egg;
-	
+	float width;
+	float height;
 
 	string SoundName[];
 private:
