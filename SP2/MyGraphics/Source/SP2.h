@@ -115,6 +115,9 @@ class SP2 : public Scene
 		GEO_PLANEBODY,
 		GEO_PLANEWING,
 		GEO_PLANEROCKET,
+		GEO_PICKAXE,
+		GEO_GUN,
+		GEO_SWORD,
 		NUM_GEOMETRY,
 	};
 
@@ -319,6 +322,7 @@ private:
 	void Enemy_Updating(float dt);
 
 	void ObjectsHolding(Mesh*mesh, float size);
+	void EquipmentHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
 	float followx = 0;
 	float followy = 0;

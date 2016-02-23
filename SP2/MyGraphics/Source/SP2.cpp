@@ -428,6 +428,15 @@ void SP2::Init()
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
 
+	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Star", "OBJ//pickaxe.obj");
+	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//pickaxeskin.tga");
+
+	meshList[GEO_GUN] = MeshBuilder::GenerateOBJ("Star", "OBJ//M24_R_Low_Poly_Version_obj.obj");
+	meshList[GEO_GUN]->textureID = LoadTGA("Image//M24R_C.tga");
+
+	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("Star", "OBJ//Sword.obj");
+	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Sword.tga");
+
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
@@ -1236,6 +1245,12 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_COKE], false);
 		modelStack.PopMatrix();
 	}
+	
+	EquipmentHolding(meshList[GEO_GUN], 0.1);
+
+	
+	EquipmentHolding(meshList[GEO_SWORD], 0.1);
+	EquipmentHolding(meshList[GEO_PICKAXE], 0.1);
 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
@@ -1330,8 +1345,8 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 1, 0), 1.5, 1, 5.5);
 
-	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
+	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
 	RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
@@ -1662,3 +1677,21 @@ void SP2::ObjectsHolding(Mesh*mesh, float size)
 	modelStack.PopMatrix();
 }
 
+
+void SP2::EquipmentHolding(Mesh*mesh, float size)
+{
+
+	modelStack.PushMatrix();
+
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
+
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0.9, -0.12, 0.3);
+	modelStack.Scale(size, size, size);
+	RenderMesh(mesh, true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}
