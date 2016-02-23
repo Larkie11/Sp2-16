@@ -227,7 +227,9 @@ class SP2 : public Scene
 
 		SPACEWING,
 		SPACEROCKET,
-		ENEGRYCELL,
+
+
+
 		Num_Object,
 	};
 
@@ -267,8 +269,9 @@ private:
 	DOT spacebody;
 	DOT spacewing;
 	DOT spacerocket;
-	DOT cell;
+
 	int dialoguePlus = 6;
+	int parts = 0;
 	void RobotTalk();
 
 
@@ -334,11 +337,11 @@ private:
 
 	bool pickupwing = false;
 	bool pickuprocket = false;
-	bool pickupcell = false;
+	
 
 	bool fixwing = false;
 	bool fixrocket = false;
-	bool fixcell = false;
+	
 
 	void Map_Reading();
 	void Map_Rendering();

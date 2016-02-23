@@ -56,7 +56,8 @@ void SP2::Init()
 	spacebody.Nposition = Vector3(345, -21, 0);
 	spacewing.Nposition = Vector3(0, -21, 100);
 	spacerocket.Nposition = Vector3(-200, -21, 100);
-	cell.Nposition = Vector3(-200, -21, -100);
+	
+
 
 
 	// Set background color to dark blue
@@ -770,23 +771,31 @@ void SP2::Update(double dt)
 	deltaTime = (1.0 / dt);
 	if (Application::IsKeyPressed('E'))
 	{
-		if (detectCollision.collideByDist(camera.position, spacerocket.Nposition) <= 25)
+		if (detectCollision.collideByDist(camera.position, spacerocket.Nposition) <= 25 && coolDownTime==0)
 		{
 			if (camera.view.Dot(spacerocket.Nposition) > 0)
-			{
+			{	
+				coolDownTime = deltaTime / 10;
 				pickuprocket = true;
+				parts++;
+
 			}
 		}
+	
 
-
-		if (detectCollision.collideByDist(camera.position, spacewing.Nposition) <= 25)
+		if (detectCollision.collideByDist(camera.position, spacewing.Nposition) <= 25 && coolDownTime==0)
 		{
 			if (camera.view.Dot(spacewing.Nposition) > 0)
 			{
+				coolDownTime = deltaTime / 10;
 				pickupwing = true;
+				parts++;
 			}
 
 		}
+
+
+
 
 	}
 
@@ -1040,13 +1049,15 @@ void SP2::Render()
 	std::ostringstream eggOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
+	std::ostringstream partscountOSS;
 
 	ammoOSS << SharedData::GetInstance()->bullet.quantity;
 	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
 	eggOSS << SharedData::GetInstance()->egg.quantity;
-
+	
+	partscountOSS << "SpaceShip Parts: " << parts<<"/2";
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -1054,7 +1065,7 @@ void SP2::Render()
 	string egg = eggOSS.str();
 	string ore = oreOSS.str();
 	string s_gold = goldOSS.str();
-
+	string partscount = partscountOSS.str();
 
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1321,20 +1332,8 @@ void SP2::Render()
 			ObjectsHolding(meshList[GEO_PLANEROCKET], 0.05);
 		//hold in the hand
 	}
-	if (pickupcell != true)
-	{
 
 
-		modelStack.PushMatrix();
-		modelStack.Translate(cell.Nposition.x, cell.Nposition.y, cell.Nposition.z);
-		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_COKE], true);
-		modelStack.PopMatrix();
-	}
-	else
-	{
-		ObjectsHolding(meshList[GEO_COKE], 0.05);
-	}
 	//Mining rock 
 	modelStack.PushMatrix();
 	modelStack.Translate(rawMaterial.x, rawMaterial.y, rawMaterial.z);
@@ -1447,6 +1446,8 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0.9, 0.5), 1.5, 1, 5.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0.9, 0.5), 1.5, 1, 1.5);
+
+	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34,39);
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
@@ -1696,33 +1697,6 @@ void SP2::Character_Movement(float dt)
 		{
 			Test = camera.position;
 		}
-	}
-
-	if (Application::IsKeyPressed(VK_SPACE))
-	{
-		Map_Reading();
-		std::ofstream myfile("Map//Map1.txt");
-		if (myfile.is_open())
-		{
-			for (int i = 0; i < 20; i++)
-			{
-				for (int j = 0; j < 20; j++)
-				{
-					if (Map[i][j] != char('D'))
-					{
-						myfile << char(Map[i][j]);
-					}
-					else
-					{
-						myfile << " ";
-					}
-				}
-				myfile << "/n";
-			}
-			myfile.close();
-		}
-		else cout << "Unable to read Map!!" << endl;
-		Map_Reading();
 	}
 
 	//Only allow rotating to look 90 degrees up and 90 degrees down
