@@ -486,6 +486,7 @@ void SP2::RobotTalk()
 	{
 		if (camera.view.Dot(robot1.Nposition) > 0)
 		{
+			interactDia = "Press E to interact and 1 and 2 for choices";
 			//Show player press e to interact
 			robot1.canInteract = true;
 			if (Application::IsKeyPressed('E') && coolDownTime == 0)
@@ -493,7 +494,6 @@ void SP2::RobotTalk()
 				dialogue = 0;
 				coolDownTime = deltaTime / 5;
 				robot1.robot = "robot1";
-
 			}
 			if (robot1.robot == "robot1")
 			{
@@ -520,6 +520,7 @@ void SP2::RobotTalk()
 
 	if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
 	{
+		interactDia = "Press E to interact";
 		robot2.canInteract = true;
 		if (Application::IsKeyPressed('E') && coolDownTime == 0)
 		{
@@ -533,12 +534,14 @@ void SP2::RobotTalk()
 		robot2.robot = "";
 	}
 
-	if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
+	if (detectCollision.collideByDist(camera.position, robot3.Nposition) <= 25)
 	{
 		if (camera.view.Dot(robot3.Nposition) > 0)
 		{
 			//Show player press e to interact
 			robot3.canInteract = true;
+			interactDia = "Press E to interact";
+
 			if (Application::IsKeyPressed('E') && coolDownTime == 0)
 			{
 				robot3.robot = "robot3";
@@ -597,6 +600,7 @@ void SP2::Update(double dt)
 		//Check if the player is outside the temple and facing door to the inside
 		if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
 		{
+			interactDia = "Press E to open the door";
 			//Show player press e to interact
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
@@ -652,12 +656,10 @@ void SP2::Update(double dt)
 		}
 	}
 
-	//To open the shop for now
-	if (Application::IsKeyPressed('O'))
+	if (fixrocket && fixwing)
 	{
-		shop = "Loading Shop";
 		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SHOP;
+		SharedData::GetInstance()->gameState = SharedData::SCENE2;
 	}
 
 	//Check if player presses tab and start to move the story upwards
@@ -681,11 +683,6 @@ void SP2::Update(double dt)
 		}
 	}
 
-	if (Application::IsKeyPressed('P'))
-	{
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SCENE2;
-	}
 	if (storyDismiss && storyPosition > -3)
 	{
 		storyPosition -= (float)(3 * dt);
@@ -695,6 +692,22 @@ void SP2::Update(double dt)
 	{
 		storyPosition += (float)(3 * dt);
 	}
+
+	//Debugging purpose
+	if (Application::IsKeyPressed('P'))
+	{
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SCENE2;
+	}
+
+	//To open the shop for now
+	if (Application::IsKeyPressed('O'))
+	{
+		shop = "Loading Shop";
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SHOP;
+	}
+
 	if (Application::IsKeyPressed('3'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if (Application::IsKeyPressed('4'))
@@ -793,14 +806,7 @@ void SP2::Update(double dt)
 			}
 
 		}
-
-
-
-
 	}
-
-
-
 
 	if (Application::IsKeyPressed('E'))
 	{
@@ -1392,7 +1398,7 @@ void SP2::Render()
 	//Show player if he can interact with item
 	if (robot1.canInteract || door.canInteract || robot2.canInteract || robot3.canInteract)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press E", Color(1, 1, 0), 1.5, 5, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], interactDia, Color(1, 1, 0), 1.5, 7, 20);
 		if (robot1.robot == "robot1")
 		{
 			int j = 25;

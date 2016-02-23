@@ -282,7 +282,8 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
-	string shopInput;
+
+	string interactDia;
 
 	Light light[8]; //shader max 8 lights
 
