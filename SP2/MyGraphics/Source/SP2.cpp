@@ -53,6 +53,7 @@ void SP2::Init()
 	robot3.Nposition = Vector3(92, -21, 361);
 	rawMaterial = Vector3(235, -21, -90);
 
+	spacebody.Nposition = Vector3(345, -21, 0);
 	spacewing.Nposition = Vector3(0, -21, 100);
 	spacerocket.Nposition = Vector3(-200, -21, 100);
 	cell.Nposition = Vector3(-200, -21, -100);
@@ -442,20 +443,25 @@ void SP2::Init()
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
 
-	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Star", "OBJ//pickaxe.obj");
+	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("pickaxe", "OBJ//pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//pickaxeskin.tga");
 
-	meshList[GEO_GUN] = MeshBuilder::GenerateOBJ("Star", "OBJ//M24_R_Low_Poly_Version_obj.obj");
+	meshList[GEO_GUN] = MeshBuilder::GenerateOBJ("gun", "OBJ//M24_R_Low_Poly_Version_obj.obj");
 	meshList[GEO_GUN]->textureID = LoadTGA("Image//M24R_C.tga");
 
-	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("Star", "OBJ//Sword.obj");
+	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//Sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Sword.tga");
 
-	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("Star", "OBJ//rawMaterial.obj");
+	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
 	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//RawMaterial.tga");
 
-	/*meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
-	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//explosion1.tga");*/
+	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
+	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//explosion1.tga");
+
+	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
+	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//bulletskin.tga");
+
+
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -762,38 +768,56 @@ void SP2::Update(double dt)
 	}
 
 	deltaTime = (1.0 / dt);
-	modelStack.PushMatrix();
-
 	if (Application::IsKeyPressed('E'))
 	{
-		if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
+		if (detectCollision.collideByDist(camera.position, spacerocket.Nposition) <= 25)
 		{
 			if (camera.view.Dot(spacerocket.Nposition) > 0)
 			{
-
-
-				pickuprocket = false;
+				pickuprocket = true;
 			}
-
-
-
 		}
 
 
-		if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
+		if (detectCollision.collideByDist(camera.position, spacewing.Nposition) <= 25)
 		{
-			if (camera.view.Dot(spacerocket.Nposition) > 0)
+			if (camera.view.Dot(spacewing.Nposition) > 0)
 			{
-
-
-				pickupwing = false;
+				pickupwing = true;
 			}
 
 		}
 
 	}
 
-	modelStack.PopMatrix();
+
+
+
+	if (Application::IsKeyPressed('E'))
+	{
+		if (pickuprocket == true && detectCollision.collideByDist(camera.position, spacebody.Nposition) <= 25)
+
+		{
+			if (camera.view.Dot(spacebody.Nposition) > 0)
+			{
+				fixrocket = true;
+				pickuprocket = false;
+
+			}
+		}
+	}
+
+	if (Application::IsKeyPressed('E'))
+	{
+		if (pickupwing == true && detectCollision.collideByDist(camera.position, spacebody.Nposition) <= 25)
+		{
+			if (camera.view.Dot(spacebody.Nposition) > 0)
+			{
+				fixwing = true;
+				pickupwing = false;
+			}
+		}
+	}
 }
 //Reading from text file
 void SP2::Dialogue(string filename)
@@ -1189,6 +1213,15 @@ void SP2::Render()
 	modelStack.Scale(5, 5, 5);
 	modelStack.PushMatrix();
 	RenderMesh(meshList[GEO_PLANEBODY], true);
+	if (fixrocket == true)
+	{
+		RenderMesh(meshList[GEO_PLANEROCKET], true);
+	}
+	if (fixwing == true)
+	{
+		RenderMesh(meshList[GEO_PLANEWING], true);
+	}
+
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
@@ -1256,33 +1289,52 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	if (pickupwing != false)
+	if (pickupwing == false && fixwing == false)
 	{
 		modelStack.Translate(spacewing.Nposition.x, spacewing.Nposition.y, spacewing.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_PLANEWING], false);
+		RenderMesh(meshList[GEO_PLANEWING], true);
 		modelStack.PopMatrix();
+		//render main wing inpyramid
 	}
-	else ObjectsHolding(meshList[GEO_PLANEWING], 0.03);
+	else
+	{
+		if (fixwing == false)
+			ObjectsHolding(meshList[GEO_PLANEWING], 0.03);
+		//hold in ur hand 
 
-	if (pickuprocket != false)
+	}
+
+	if (pickuprocket == false && fixrocket == false)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(spacerocket.Nposition.x, spacerocket.Nposition.y, spacerocket.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_PLANEROCKET], false);
+		RenderMesh(meshList[GEO_PLANEROCKET], true);
 		modelStack.PopMatrix();
+		//renders main rocket in pyramid
+
 	}
-	else 	ObjectsHolding(meshList[GEO_PLANEROCKET], 0.05);
-	if (pickupcell = true)
+	else
 	{
+		if (fixrocket == false)
+			ObjectsHolding(meshList[GEO_PLANEROCKET], 0.05);
+		//hold in the hand
+	}
+	if (pickupcell != true)
+	{
+
+
 		modelStack.PushMatrix();
 		modelStack.Translate(cell.Nposition.x, cell.Nposition.y, cell.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_COKE], false);
+		RenderMesh(meshList[GEO_COKE], true);
 		modelStack.PopMatrix();
 	}
-	
+	else
+	{
+		ObjectsHolding(meshList[GEO_COKE], 0.05);
+	}
 	//Mining rock 
 	modelStack.PushMatrix();
 	modelStack.Translate(rawMaterial.x, rawMaterial.y, rawMaterial.z);
@@ -1290,9 +1342,11 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_RAWMATERIAL], true);
 	modelStack.PopMatrix();
 
+
 	EquipmentHolding(meshList[GEO_GUN], 0.1);
 	EquipmentHolding(meshList[GEO_SWORD], 0.1);
 	EquipmentHolding(meshList[GEO_PICKAXE], 0.1);
+
 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
@@ -1327,7 +1381,7 @@ void SP2::Render()
 		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
 
 		modelStack.Scale(0.3, 0.3, 0.3);
-		RenderMesh(meshList[GEO_BULLET], true);
+		RenderMesh(meshList[GEO_BULLETSKIN], false);
 		modelStack.PopMatrix();
 	}
 
@@ -1540,27 +1594,8 @@ void SP2::Character_Movement(float dt)
 	{
 		camera.position.z = camera.minZ;
 	}
-	if (Application::IsKeyPressed(VK_LEFT))
-	{
-		camera.cameraRotate.y += (float)(100 * dt);
-		followy += (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_RIGHT))
-	{
-		camera.cameraRotate.y -= (float)(100 * dt);
-		followy -= (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_UP))
-	{
-		camera.cameraRotate.x -= (float)(100 * dt);
-		followx += (float)(100 * dt);
-	}
-	if (Application::IsKeyPressed(VK_DOWN))
-	{
-		camera.cameraRotate.x += (float)(100 * dt);
-		followx -= (float)(100 * dt);
 
-	}
+
 
 	if (checkNear(camera,door.Nposition) <= 15)
 	{
@@ -1577,6 +1612,12 @@ void SP2::Character_Movement(float dt)
 			}
 		}
 	}
+
+
+	
+
+
+	
 
 	//Moving the camera
 	Vector3 Test = camera.position;

@@ -121,6 +121,7 @@ class SP2 : public Scene
 		GEO_SWORD,
 		GEO_RAWMATERIAL,
 		GEO_EXPLOSION,
+		GEO_BULLETSKIN,
 		NUM_GEOMETRY,
 	};
 
@@ -263,6 +264,7 @@ private:
 	DOT robot1;
 	DOT robot2;
 	DOT robot3;
+	DOT spacebody;
 	DOT spacewing;
 	DOT spacerocket;
 	DOT cell;
@@ -329,9 +331,14 @@ private:
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
 	float followx = 0;
 	float followy = 0;
-	bool pickupwing = true;
-	bool pickuprocket = true;
-	bool pickupcell = true;
+
+	bool pickupwing = false;
+	bool pickuprocket = false;
+	bool pickupcell = false;
+
+	bool fixwing = false;
+	bool fixrocket = false;
+	bool fixcell = false;
 
 	void Map_Reading();
 	void Map_Rendering();
