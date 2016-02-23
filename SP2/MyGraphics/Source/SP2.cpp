@@ -12,12 +12,12 @@
 #include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
-Position VtoP(Vector3 V)
+static Position VtoP(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
-Vector3 PtoV(Position V)
+static Vector3 PtoV(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
@@ -47,6 +47,7 @@ void SP2::Init()
 	//Position of door
 	door.Nposition = Vector3(92, -22, 0);
 	door.canGoThrough = false;
+	door.Collision = true;
 	robot1.Nposition = Vector3(245, -21, -150);
 	robot2.Nposition = Vector3(245, -21, 150);
 	robot3.Nposition = Vector3(92, -21, 361);
@@ -333,6 +334,12 @@ void SP2::Init()
 	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
 	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
 
+	meshList[GEO_OREICON] = MeshBuilder::GenerateQuad("Ore", Color(1, 1, 1), 3, 3);
+	meshList[GEO_OREICON]->textureID = LoadTGA("Image//Ore.tga");
+
+	meshList[GEO_BOMBICON] = MeshBuilder::GenerateQuad("Bomb", Color(1, 1, 1), 3, 3);
+	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//Bomb.tga");
+
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
 
@@ -417,6 +424,12 @@ void SP2::Init()
 	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
 	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//SPACESHIP.tga");
 
+	meshList[GEO_BB8HEAD] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8head.obj");
+	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//BB8head.tga");
+
+	meshList[GEO_BB8BODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8sphere.obj");
+	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//BB8sphere.tga");
+
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
 	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//PLANE.tga");
 
@@ -441,8 +454,8 @@ void SP2::Init()
 	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("Star", "OBJ//rawMaterial.obj");
 	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//RawMaterial.tga");
 
-	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
-	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//explosion1.tga");
+	/*meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
+	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//explosion1.tga");*/
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -454,23 +467,15 @@ static float LSPEED = 10.f;
 static bool Lighting9 = true;
 //Check for player and object distance
 //Takes in camera and object vector3
-bool SP2::checkNear(Camera3 camera, Vector3 rhs)
+float SP2::checkNear(Camera3 camera, Vector3 rhs)
 {
-	if (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))) <= 25)
-	{
-		return true;
-	}
-	return false;
-}
-bool SP2::checkFaceNorth(Camera3 camera, Vector3 rhs, bool north)
-{
-	return false;
-}
+	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
 
+}
 void SP2::RobotTalk()
 {
 
-	if (checkNear(camera, robot1.Nposition))
+	if (detectCollision.collideByDist(camera.position,robot1.Nposition)<= 25)
 	{
 		if (camera.view.Dot(robot1.Nposition) > 0)
 		{
@@ -506,7 +511,7 @@ void SP2::RobotTalk()
 		robot1.robot = "";
 	}
 
-	if (checkNear(camera, robot2.Nposition))
+	if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
 	{
 		robot2.canInteract = true;
 		if (Application::IsKeyPressed('E') && coolDownTime == 0)
@@ -521,7 +526,7 @@ void SP2::RobotTalk()
 		robot2.robot = "";
 	}
 
-	if (checkNear(camera, robot3.Nposition))
+	if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
 	{
 		if (camera.view.Dot(robot3.Nposition) > 0)
 		{
@@ -580,7 +585,7 @@ void SP2::Update(double dt)
 	}
 	//This is to check if player is near to the door and facing the door using dot product
 	//Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
-	if (checkNear(camera, door.Nposition))
+	if (detectCollision.collideByDist(camera.position, door.Nposition) <= 25)
 	{
 		//Check if the player is outside the temple and facing door to the inside
 		if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
@@ -619,6 +624,7 @@ void SP2::Update(double dt)
 		//Dont show the press e to interact
 		door.canInteract = false;
 		door.canGoThrough = false;
+		door.Collision = true;
 
 		//Everytime a player is far, the door will auto close up
 		if (door.Nposition.y < -23)
@@ -631,6 +637,7 @@ void SP2::Update(double dt)
 
 	if (door.canGoThrough)
 	{
+		door.Collision = false;
 		if (door.Nposition.y > -60)
 		{
 			door.canGoThrough = true;
@@ -731,6 +738,7 @@ void SP2::Update(double dt)
 			iter++;
 		}
 	}
+
 	// MINING COLLISION
 	if (detectCollision.collideByDist(camera.position, rawMaterial) < 50 && Application::IsKeyPressed(VK_LBUTTON))
 	{
@@ -758,7 +766,7 @@ void SP2::Update(double dt)
 
 	if (Application::IsKeyPressed('E'))
 	{
-		if (checkNear(camera, spacerocket.Nposition))
+		if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
 		{
 			if (camera.view.Dot(spacerocket.Nposition) > 0)
 			{
@@ -772,7 +780,7 @@ void SP2::Update(double dt)
 		}
 
 
-		if (checkNear(camera, spacewing.Nposition))
+		if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
 		{
 			if (camera.view.Dot(spacerocket.Nposition) > 0)
 			{
@@ -1012,7 +1020,7 @@ void SP2::Render()
 	ammoOSS << SharedData::GetInstance()->bullet.quantity;
 	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
-	//oreOSS << SharedData::GetInstance()->ore.quantity;
+	oreOSS << SharedData::GetInstance()->mineral.quantity;
 	eggOSS << SharedData::GetInstance()->egg.quantity;
 
 	fpsOSS << "FPS : " << deltaTime;
@@ -1020,6 +1028,7 @@ void SP2::Render()
 	string ammo = ammoOSS.str();
 	string bomb = bombOSS.str();
 	string egg = eggOSS.str();
+	string ore = oreOSS.str();
 	string s_gold = goldOSS.str();
 
 
@@ -1274,7 +1283,6 @@ void SP2::Render()
 		modelStack.PopMatrix();
 	}
 	
-
 	//Mining rock 
 	modelStack.PushMatrix();
 	modelStack.Translate(rawMaterial.x, rawMaterial.y, rawMaterial.z);
@@ -1283,8 +1291,6 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	EquipmentHolding(meshList[GEO_GUN], 0.1);
-
-	
 	EquipmentHolding(meshList[GEO_SWORD], 0.1);
 	EquipmentHolding(meshList[GEO_PICKAXE], 0.1);
 
@@ -1379,14 +1385,17 @@ void SP2::Render()
 	RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.7, 19, 90, 1, 0, 0, 0);
 	RenderQuadOnScreen(meshList[GEO_GOLDICON], 1.5, 1.7, 15, 90, 1, 0, 0, 0);
 	RenderQuadOnScreen(meshList[GEO_EGGICON], 1.5, 1.7, 10.8, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_OREICON], 1.5, 1.7, 6.8, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_BOMBICON], 1.5, 1.7, 2.9, 90, 1, 0, 0, 0);
 
 	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0.9, 0.5), 1.5, 1, 17.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0.9, 0.5), 1.5, 1, 13.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 1, 0), 1.5, 1, 5.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0.9, 0.5), 1.5, 1, 5.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0.9, 0.5), 1.5, 1, 1.5);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
+	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
 	RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
@@ -1475,7 +1484,6 @@ void SP2::Map_Rendering()
 }
 void SP2::Character_Movement(float dt)
 {
-
 	if (Application::IsKeyPressed('R'))
 	{
 		camera.Reset();
@@ -1554,16 +1562,22 @@ void SP2::Character_Movement(float dt)
 
 	}
 
-
-	if (followx > camera.maxCameraX)
+	if (checkNear(camera,door.Nposition) <= 15)
 	{
-		followx = 49.99;
+		if (door.Collision)
+		{
+			if (camera.position.x < door.Nposition.x)
+			{
+				camera.position.x = door.Nposition.x - 10;
+			}
 
+			if (camera.position.x > door.Nposition.x)
+			{
+				camera.position.x = door.Nposition.x + 10;
+			}
+		}
 	}
-	if (followx < -camera.maxCameraX)
-	{
-		followx = -49.99;
-	}
+
 	//Moving the camera
 	Vector3 Test = camera.position;
 	if (Application::IsKeyPressed('W'))
@@ -1635,6 +1649,11 @@ void SP2::Character_Movement(float dt)
 		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
 		{
 			camera.position = Test;
+		}
+
+		if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
+		{
+			Test = camera.position;
 		}
 	}
 

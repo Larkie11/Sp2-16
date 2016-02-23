@@ -31,6 +31,7 @@ class SP2 : public Scene
 		bool negativeDotProduct;
 		bool canInteract;
 		bool canGoThrough;
+		bool Collision;
 		Vector3 Nposition;
 		string robot;
 	};
@@ -288,7 +289,7 @@ private:
 	string new_line;
 
 	//Check for distance of object
-	bool checkNear(Camera3 camera, Vector3 rhs);
+	float checkNear(Camera3 camera, Vector3 rhs);
 	bool checkFaceNorth(Camera3 camera, Vector3 rhs, bool north);
 	//Check for player view
 	bool negativeDotProduct;
