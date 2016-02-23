@@ -357,6 +357,10 @@ void Shop::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
+	meshList[GEO_SHOPICON] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 5, 2);
+	meshList[GEO_SHOPICON]->textureID = LoadTGA("Image//speech.tga");
+
+
 	GLuint wood = LoadTGA("Image//book.tga");
 	GLuint textID = LoadTGA("Image//Chair.tga");
 	meshList[GEO_BENCH] = MeshBuilder::GenerateOBJ("bench", "OBJ//Bench.obj");
@@ -479,8 +483,16 @@ void Shop::Update(double dt)
 		case S_BACK:
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				SharedData::GetInstance()->stateCheck = true;
-				SharedData::GetInstance()->gameState = SharedData::GAME;
+				if (SharedData::GetInstance()->gameScene == "Scene1")
+				{
+					SharedData::GetInstance()->stateCheck = true;
+					SharedData::GetInstance()->gameState = SharedData::GAME;
+				}
+				if (SharedData::GetInstance()->gameScene == "Scene2")
+				{
+					SharedData::GetInstance()->stateCheck = true;
+					SharedData::GetInstance()->gameState = SharedData::SCENE2;
+				}
 				icon = 31.6;
 				icon2 = 19;
 				cout << "Byebye" << endl;
@@ -1047,7 +1059,8 @@ void Shop::Render()
 	}
 
 	RenderQuadOnScreen(meshList[GEO_SHOP], 6, 6.7, 5, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 7.5, 3.5, 90, 1, 0, 0, 1);
+	RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 8.2, 3.5, 90, 1, 0, 0, 1);
+	RenderQuadOnScreen(meshList[GEO_SHOPICON], 10, 3.2, 3, 90, 1, 0, 0, 1);
 
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1100,6 +1113,7 @@ void Shop::Render()
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
 
+
 	if (shopInput == "Shop")
 	{
 		int j = 21;
@@ -1109,23 +1123,23 @@ void Shop::Render()
 		for (int arr = 0; arr < my_arr.size() - 9; ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr],colorShop[arr], 1.7, x, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr],Color(0,0,0), 1.7, x, j);
 		}
 	}
 	if (shopInput == "Buy")
 	{
 		int j = 20;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(1, 1, 1), 1.7, 4, icon2);
 
 		for (int arr = 4; arr < my_arr.size()-5; ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1, 1, 1), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 5, j);
 		}
 		if (b_gold)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 1, 1), 1.7, 10, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 0, 0), 1.7, 10, 20);
 			if (coolDown == 0)
 			{
 				b_gold = false;
@@ -1133,7 +1147,7 @@ void Shop::Render()
 		}
 		if (g_gold)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Obtained an ammo", Color(1, 1, 1), 1.7, 10, 21);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Obtained an ammo", Color(1, 0, 0), 1.7, 10, 21);
 			if (coolDown == 0)
 			{
 				g_gold = false;
@@ -1150,12 +1164,12 @@ void Shop::Render()
 		for (int arr = 8; arr < my_arr.size(); ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(1,0,0), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0,0,0), 1.7, 5, j);
 		}
 
 		if (none)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 1, 1), 1.7, 10, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 8, 20);
 			if (coolDown == 0)
 			{
 				none = false;
@@ -1163,7 +1177,7 @@ void Shop::Render()
 		}
 		if (sell_gold)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], gain, Color(1, 1, 1), 1.7, 10, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], gain, Color(1, 0, 0), 1.7, 8, 20);
 			if (coolDown == 0)
 			{
 				sell_gold = false;

@@ -72,6 +72,7 @@ class Shop : public Scene
 		GEO_TEXT,
 		GEO_WALL,
 		GEO_OUTER,
+		GEO_SHOPICON,
 		GEO_FLOOR,
 		GEO_PATH,
 		GEO_BENCH,

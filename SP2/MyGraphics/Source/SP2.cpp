@@ -37,6 +37,7 @@ void SP2::Init()
 	storyShow = true;
 	negativeDotProduct = true;
 	Dialogue("Text//RobotScene1.txt");
+	SharedData::GetInstance()->gameScene = "Scene1";
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
@@ -44,7 +45,7 @@ void SP2::Init()
 	storyPosition = 3;
 
 	//Position of door
-	door.Nposition = Vector3(95, -22, 0);
+	door.Nposition = Vector3(92, -22, 0);
 	door.canGoThrough = false;
 	robot1.Nposition = Vector3(245, -21, -150);
 	robot2.Nposition = Vector3(245, -21, 150);
@@ -314,8 +315,17 @@ void SP2::Init()
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
-	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 3, 3);
+	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("inventorybar", Color(1, 1, 1), 3, 3);
 	meshList[GEO_INVENTORY]->textureID = LoadTGA("Image//Inventory.tga");
+
+	meshList[GEO_AMMOICON] = MeshBuilder::GenerateQuad("ammoicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//Ammo.tga");
+
+	meshList[GEO_GOLDICON] = MeshBuilder::GenerateQuad("goldicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//Gold.tga");
+
+	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
@@ -929,8 +939,8 @@ void SP2::Render()
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
 
-	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
-	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
+	ammoOSS << SharedData::GetInstance()->bullet.quantity;
+	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	//oreOSS << SharedData::GetInstance()->ore.quantity;
 	eggOSS << SharedData::GetInstance()->egg.quantity;
@@ -1246,23 +1256,31 @@ void SP2::Render()
 		}
 	}
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
+	//RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.3, 17, 90, 1, 0, 0, 0);
 
-	int y = 25;
-	for (int i = 0; i < 6; i++)
+	int y = 14;
+	
+	modelStack.PushMatrix();
+	for (int i = 0; i < 5; i++)
 	{
+		//RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, 1.3, 18, 90, 1, 0, 0, 0);
+		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, -1);
 		y -= 3;
-		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, 0);
 	}
 
 	//All element for player inventory
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 30);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 1, 25);
-	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(1, 1, 0), 1.5, 1, 20);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 1, 0), 1.5, 1, 16);
+	RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.7, 19, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_GOLDICON], 1.5, 1.7, 15, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_EGGICON], 1.5, 1.7, 10.8, 90, 1, 0, 0, 0);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0.9, 0.5), 1.5, 1, 17.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0.9, 0.5), 1.5, 1, 13.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 1, 0), 1.5, 1, 5.5);
+
+	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 }
 
 void SP2::Exit()

@@ -8,8 +8,10 @@
 #include "Utility.h"
 #include "SharedData.h"
 #include "LoadTGA.h"
-#include <sstream>
 
+#include <sstream>
+using namespace irrklang;
+#pragma comment(lib, "irrKlang.lib")
 
 SceneMenu::SceneMenu()
 {
@@ -27,6 +29,14 @@ void SceneMenu::Init()
 	choose = menushop.STARTGAME;
 	c_option = menushop.O_SETTING;
 	Input = "Menu";
+
+	//Play 2d music with irrklang
+	//Can play 3d music too
+	/*SharedData::GetInstance()->music = "Music//Music.mp3";
+	SharedData::GetInstance()->engine->play2D(SharedData::GetInstance()->music.c_str());
+	SharedData::GetInstance()->Song = SharedData::GetInstance()->engine->play2D(SharedData::GetInstance()->music.c_str(), true, false, true);
+	SharedData::GetInstance()->Song->setVolume(0.25);*/
+	sound.playMusic("Music//Music.mp3");
 
 	//Read the menu texts from text file
 	Dialogue("Text//Menu.txt");
@@ -660,4 +670,5 @@ void SceneMenu::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
+	sound.engine->stopAllSounds();
 }

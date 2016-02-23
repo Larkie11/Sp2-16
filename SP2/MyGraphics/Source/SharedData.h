@@ -1,5 +1,10 @@
 #ifndef SHARED_DATA_H
 #define SHARED_DATA_H
+#include "irrklang.h"
+#include <string>
+#include <iostream>
+using std::string;
+using std::cout;
 
 class SharedData
 {
@@ -29,20 +34,22 @@ public:
 		M_QUIT
 	};
 	GAMESTATE gameState;
-
+	string gameScene;
 	static SharedData* GetInstance()
 	{
 		static SharedData data;
 		return &data;
 	}
 	bool stateCheck = false;
-	
+	string music;
 	//Items player has share across all scenes
 	INVENTORY bullet;
 	INVENTORY gold;
 	INVENTORY bomb;
 	INVENTORY egg;
+	
 
+	string SoundName[];
 private:
 	SharedData()
 	{
@@ -52,6 +59,7 @@ private:
 		egg.quantity = 0;
 		bomb.quantity = 0;
 		gold.quantity = 100;
+
 	}
 	~SharedData()
 	{

@@ -9,6 +9,7 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include "SharedData.h"
+#include "Sound.h"
 #include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
@@ -30,6 +31,8 @@ Scene2::~Scene2()
 }
 void Scene2::Init()
 {
+	Sound sound;
+	//sound.playMusic("Music//Scene1.mp3");
 	srand(time(NULL));
 	Map_Reading();
 	Object_Reading();
@@ -37,6 +40,7 @@ void Scene2::Init()
 	storyShow = true;
 	negativeDotProduct = true;
 	Dialogue("Text//RobotScene1.txt");
+	SharedData::GetInstance()->gameScene = "Scene2";
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
@@ -44,7 +48,7 @@ void Scene2::Init()
 	storyPosition = 3;
 
 	//Position of door
-	door.Nposition = Vector3(95, -22, 0);
+	door.Nposition = Vector3(90, -22, 0);
 	robot1.Nposition = Vector3(245, -21, -150);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);

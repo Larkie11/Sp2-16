@@ -10,6 +10,8 @@
 #include "Material.h"
 #include "Application.h"
 #include "MenuShop.h"
+#include "Sound.h"
+
 #include <vector>
 #include <iostream>
 #include <fstream>
@@ -97,6 +99,8 @@ private:
 	Application app;
 	Camera3 camera;
 	void setColor(int which, string color);
+
+	Sound sound;
 
 	Color colorA[16];
 	Color colorBlue;
