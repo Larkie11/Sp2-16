@@ -9,7 +9,6 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include "SharedData.h"
-#include "Sound.h"
 #include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
@@ -31,8 +30,6 @@ Scene2::~Scene2()
 }
 void Scene2::Init()
 {
-	Sound sound;
-	//sound.playMusic("Music//Scene1.mp3");
 	srand(time(NULL));
 	Map_Reading();
 	Object_Reading();
@@ -40,7 +37,6 @@ void Scene2::Init()
 	storyShow = true;
 	negativeDotProduct = true;
 	Dialogue("Text//RobotScene1.txt");
-	SharedData::GetInstance()->gameScene = "Scene2";
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
@@ -48,7 +44,7 @@ void Scene2::Init()
 	storyPosition = 3;
 
 	//Position of door
-	door.Nposition = Vector3(90, -22, 0);
+	door.Nposition = Vector3(95, -22, 0);
 	robot1.Nposition = Vector3(245, -21, -150);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -1002,6 +998,10 @@ void Scene2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
+	Plane_Rendering();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
 	Map_Rendering();
 	modelStack.PopMatrix();
 
@@ -1464,41 +1464,6 @@ void Scene2::Object_Reading()
 
 void Scene2::Object_Rendering()
 {
-	modelStack.PushMatrix();
-	//modelStack.Scale(10, 10, 10);
-	for (int i = 0; i < Num_Object; i++) // 5 num object so its run 5 sets 
-	{
-		if (object[i].ItemType == Items::SPACEROCKET)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
-			modelStack.Scale(1, 1, 1);
-			RenderMesh(meshList[GEO_PLANEROCKET], true);
-			modelStack.PopMatrix();
-		}
-	}
-	if (object_on_hand.ItemType == Items::SPACEROCKET)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
-		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
-		modelStack.Scale(1, 1, 1);
-
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
-		modelStack.PopMatrix();
-	}
-
-	if (object_on_hand.ItemType == Items::SPACEWING)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
-		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
-		modelStack.Scale(1, 1, 1);
-
-		RenderMesh(meshList[GEO_PLANEWING], true);
-		modelStack.PopMatrix();
-	}
-	modelStack.PopMatrix();
 }
 
 void Scene2::Object_Updating(float dt)
@@ -1557,4 +1522,48 @@ void Scene2::Object_Updating(float dt)
 	{
 		object_on_hand.position.z = 0;
 	}
+}
+
+
+void Scene2::Plane_Updating(float dt)
+{
+}
+
+void  Scene2::Plane_Rendering()
+{
+	modelStack.PushMatrix();
+	//modelStack.Scale(10, 10, 10);
+	for (int i = 0; i < Num_Object; i++) // 5 num object so its run 5 sets 
+	{
+		if (object[i].ItemType == Items::SPACEROCKET)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
+			modelStack.Scale(1, 1, 1);
+			RenderMesh(meshList[GEO_PLANEROCKET], true);
+			modelStack.PopMatrix();
+		}
+	}
+	if (object_on_hand.ItemType == Items::SPACEROCKET)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
+		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
+		modelStack.Scale(1, 1, 1);
+
+		RenderMesh(meshList[GEO_PLANEROCKET], true);
+		modelStack.PopMatrix();
+	}
+
+	if (object_on_hand.ItemType == Items::SPACEWING)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
+		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
+		modelStack.Scale(1, 1, 1);
+
+		RenderMesh(meshList[GEO_PLANEWING], true);
+		modelStack.PopMatrix();
+	}
+	modelStack.PopMatrix();
 }

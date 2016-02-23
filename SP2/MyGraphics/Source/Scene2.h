@@ -315,6 +315,9 @@ private:
 	float PressTime;
 	bool b_gold;
 
+	void Plane_Updating(float dt);
+	void Plane_Rendering();
+	Position Plane;
 	Mouse mouse;
 };
 #endif

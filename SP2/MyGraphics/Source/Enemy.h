@@ -32,7 +32,7 @@ class Enemy
 	Enemy mode_Action(Enemy Target,Position Camera);
 	int mode_Change(Enemy Target);
 	Position Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[10], float Z_Displacement, float X_Displacement);
-	bool Enemy_Collision(Position Character, Enemy enemy[10], int I, float Size);
+	bool Enemy_Collision(Position Character, Enemy enemy[10], int I);
 
 public:
 	Enemy();

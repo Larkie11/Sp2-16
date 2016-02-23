@@ -32,7 +32,6 @@ class SP2 : public Scene
 		bool canInteract;
 		bool canGoThrough;
 		Vector3 Nposition;
-		string robot;
 	};
 	enum MENU
 	{
@@ -88,21 +87,13 @@ class SP2 : public Scene
 		GEO_STORY1,
 		GEO_TEXT,
 		GEO_PATH,
-		GEO_AMMOICON,
-		GEO_GOLDICON,
-		GEO_EGGICON,
-		GEO_BOMBICON,
-		GEO_OREICON,
 		GEO_VENDING,
 		GEO_BAG,
 		GEO_PYRAMIDDOOR,
-		GEO_INVENTORY,
 		GEO_BUILDING,
 		GEO_COKE,
 		GEO_BULLET,
 		GEO_ROBOT,
-		GEO_ROBOT1,
-		GEO_ROBOT2,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -202,6 +193,19 @@ class SP2 : public Scene
 		U_LIGHT5_COSINNER,
 		U_LIGHT5_EXPONENT,
 
+		U_LIGHT6_POSITION, //copy all the light parts for multiplie light
+		U_LIGHT6_COLOR,
+		U_LIGHT6_POWER,
+		U_LIGHT6_KC,
+		U_LIGHT6_KL,
+		U_LIGHT6_KQ,
+		U_LIGHT6ENABLED,
+		U_LIGHT6_TYPE,
+		U_LIGHT6_SPOTDIRECTION,
+		U_LIGHT6_COSCUTOFF,
+		U_LIGHT6_COSINNER,
+		U_LIGHT6_EXPONENT,
+
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
@@ -251,14 +255,10 @@ private:
 	//Camera camera;
 	
 
+	bool renderMenu = false;
 	//Check distance for interactable items
-	//NPC and doors
 	DOT door;
 	DOT robot1;
-	DOT robot2;
-	DOT robot3;
-	int dialoguePlus = 6;
-	void RobotTalk();
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -297,8 +297,6 @@ private:
 	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
-
-	//for story tab
 	float storyPosition;
 	bool storyDismiss;
 	bool storyShow;
@@ -320,6 +318,7 @@ private:
 	void Map_Reading();
 	void Map_Rendering();
 	void Character_Movement(float dt);
+	void TorchLight();
 	
 	Objects object[Num_Object];
 	Objects object_on_hand;
@@ -329,6 +328,7 @@ private:
 	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
+	bool b_gold;
 
 	Mouse mouse;
 };

@@ -171,7 +171,7 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size,
 	float speed = 0.5 * dt;
 	if (Target.Current_modetype == speed_escape || Target.Current_modetype == fake_attack)
 	{
-		speed = -1 * dt;
+		speed = 0.8 * dt;
 	}
 	else if (Target.Current_modetype == charge || Target.Current_modetype == Surprise_attack)
 	{
@@ -185,7 +185,7 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size,
 Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[10], float Z_Displacement, float X_Displacement)
 {
 	Position T_Enemy = Current;
-	if ((Current.x - Target.x) < 0 && (Current.x - Speed) > (-Size * 10))
+	if ((Current.x - Target.x) < 0 && (Current.x - Speed) > ((-Size * 10) + X_Displacement))
 	{
 		T_Enemy.x -= Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I,Z_Displacement,X_Displacement))
@@ -193,7 +193,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 			Current = T_Enemy;
 		}
 	}
-	else if ((Current.x - Target.x) > 0 && (Current.x + Speed) < (Size * 10))
+	else if ((Current.x - Target.x) > 0 && (Current.x + Speed) < ((Size * 10) + X_Displacement))
 	{
 		T_Enemy.x += Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
@@ -202,7 +202,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 		}
 
 	}
-	if ((Current.z - Target.z) < 0 && (Current.z - Speed) > (-Size * 10))
+	if ((Current.z - Target.z) < 0 && (Current.z - Speed) > ((-Size * 10) + Z_Displacement))
 	{
 		T_Enemy.z -= Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
@@ -210,7 +210,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 			Current = T_Enemy;
 		}
 	}
-	else if ((Current.z - Target.z) > 0 && (Current.z + Speed) < (Size * 10))
+	else if ((Current.z - Target.z) > 0 && (Current.z + Speed) < ((Size * 10) + Z_Displacement))
 	{
 		T_Enemy.z += Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
@@ -226,7 +226,7 @@ bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20]
 {
 	bool check = true;
 	bool Inside_Scene = true;
-
+	bool enemys = false;
 	int X = 10 + ((Character.x - X_Displacement) / Size);
 	int Z = 10 + ((Character.z - Z_Displacement) / Size);
 	if (X < 25 && X > 19)
@@ -281,12 +281,12 @@ bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20]
 	}
 	if (check)
 	{
-		check = Enemy_Collision(Character, enemy, I, Size);
+		check = Enemy_Collision(Character, enemy, I);
 	}
 	return check;
 }
 
-bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I, float Size)
+bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I)
 {
 	bool check = true;
 	if (I != 9)
@@ -303,7 +303,7 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I, float Si
 			{
 				Z_distance = Z_distance * -1;
 			}
-			if (X_distance < Size && Z_distance < Size)
+			if (X_distance < 10 && Z_distance < 10)
 			{
 				check = false;
 			}
