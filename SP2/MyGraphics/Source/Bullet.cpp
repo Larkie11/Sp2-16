@@ -1,5 +1,12 @@
 #include "Bullet.h"
+#include "Enemy.h"
 #include "Camera3.h"
+#include "CollisionDetector.h"
+#include <vector>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 Bullet::Bullet()
 {
@@ -25,6 +32,7 @@ Bullet::~Bullet()
 
 bool Bullet::Update(double dt)
 {
+	//Bullet travel distance
 	position += direction * b_Speed * dt;
 	b_distanceTravel += dt;
 	if (b_distanceTravel > b_distanceLimit)
@@ -32,4 +40,33 @@ bool Bullet::Update(double dt)
 		destoryBullet = true;
 	}
 	return destoryBullet;
+}
+
+Vector3 Bullet::PtoV(Position V)
+{
+	Vector3 P = { V.x, V.y, V.z };
+	return P;
+}
+
+bool Bullet::CollideWithEnemy(Enemy enemy[], vector<Bullet*>bullet_arr, CollisionDetector detectCollision)
+{
+	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Position enemyPos = enemy[i].Return_Position(enemy[i]);
+			Vector3 enemyVec = PtoV(enemyPos);
+
+			if (detectCollision.collideByDist((*iter)->position, enemyVec) < 10)
+			{
+				cout << "COLLIDED WITH ENEMY" << endl;
+				destoryBullet = true;
+			}
+		}
+		if (!destoryBullet)
+			cout << "NEVER COLLIDED WITH ENEMY" << endl;
+		return destoryBullet;
+	}
+
+
 }

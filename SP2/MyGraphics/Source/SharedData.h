@@ -47,6 +47,7 @@ public:
 	INVENTORY gold;
 	INVENTORY bomb;
 	INVENTORY egg;
+	INVENTORY mineral;
 	float width;
 	float height;
 
@@ -60,7 +61,7 @@ private:
 		egg.quantity = 0;
 		bomb.quantity = 0;
 		gold.quantity = 100;
-
+		mineral.quantity = 0;
 	}
 	~SharedData()
 	{
