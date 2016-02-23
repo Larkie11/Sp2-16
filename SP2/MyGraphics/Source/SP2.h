@@ -217,13 +217,10 @@ class SP2 : public Scene
 	enum Items
 	{
 		None = -1,
-		SPACEBODY,
+
 		SPACEWING,
 		SPACEROCKET,
 		ENEGRYCELL,
-		SWORD,
-		GUN,
-		CAMERA,
 		Num_Object,
 	};
 
@@ -260,8 +257,12 @@ private:
 	DOT robot1;
 	DOT robot2;
 	DOT robot3;
+	DOT spacewing;
+	DOT spacerocket;
+	DOT cell;
 	int dialoguePlus = 6;
 	void RobotTalk();
+
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -319,6 +320,11 @@ private:
 
 	void ObjectsHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
+	float followx = 0;
+	float followy = 0;
+	bool pickupwing = true;
+	bool pickuprocket = true;
+	bool pickupcell = true;
 
 	void Map_Reading();
 	void Map_Rendering();
@@ -327,9 +333,7 @@ private:
 	Objects object[Num_Object];
 	Objects object_on_hand;
 	int T_object_Num;
-	void Object_Reading();
-	void Object_Rendering();
-	void Object_Updating(float dt);
+	
 	float JumpTime;
 	float PressTime;
 

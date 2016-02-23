@@ -32,7 +32,7 @@ void SP2::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
-	Object_Reading();
+	
 	JumpTime = 0;
 	storyShow = true;
 	negativeDotProduct = true;
@@ -50,6 +50,11 @@ void SP2::Init()
 	robot1.Nposition = Vector3(245, -21, -150);
 	robot2.Nposition = Vector3(245, -21, 150);
 	robot3.Nposition = Vector3(92, -21, 361);
+
+	spacewing.Nposition = Vector3(0, -21, 100);
+	spacerocket.Nposition = Vector3(-200, -21, 100);
+	cell.Nposition = Vector3(-200, -21, -100);
+
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -540,7 +545,7 @@ void SP2::Update(double dt)
 		coolDownTime = 0;
 	}
 	Enemy_Updating(dt);
-	Object_Updating(dt);
+
 	Character_Movement(dt);
 	mouse.MouseUpdate(dt, camera);
 	//cout << camera.view.Dot(Nposition) << endl;
@@ -712,6 +717,38 @@ void SP2::Update(double dt)
 		}
 	}
 	deltaTime = (1.0 / dt);
+	modelStack.PushMatrix();
+
+	if (Application::IsKeyPressed('E'))
+	{
+		if (checkNear(camera, spacerocket.Nposition))
+		{
+			if (camera.view.Dot(spacerocket.Nposition) > 0)
+			{
+
+
+				pickuprocket = false;
+			}
+
+
+
+		}
+
+
+		if (checkNear(camera, spacewing.Nposition))
+		{
+			if (camera.view.Dot(spacerocket.Nposition) > 0)
+			{
+
+
+				pickupwing = false;
+			}
+
+		}
+
+	}
+
+	modelStack.PopMatrix();
 }
 //Reading from text file
 void SP2::Dialogue(string filename)
@@ -1085,9 +1122,7 @@ void SP2::Render()
 	Map_Rendering();
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	Object_Rendering();
-	modelStack.PopMatrix();
+	
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-100, 0, 0);
@@ -1106,12 +1141,6 @@ void SP2::Render()
 	modelStack.Translate(350, -20, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(5, 5, 5);
-	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_PLANEWING], true);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_PLANEROCKET], true);
-	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	RenderMesh(meshList[GEO_PLANEBODY], true);
 	modelStack.PopMatrix();
@@ -1179,6 +1208,34 @@ void SP2::Render()
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT1], false);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	if (pickupwing != false)
+	{
+		modelStack.Translate(spacewing.Nposition.x, spacewing.Nposition.y, spacewing.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_PLANEWING], false);
+		modelStack.PopMatrix();
+	}
+	else ObjectsHolding(meshList[GEO_PLANEWING], 0.03);
+
+	if (pickuprocket != false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(spacerocket.Nposition.x, spacerocket.Nposition.y, spacerocket.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_PLANEROCKET], false);
+		modelStack.PopMatrix();
+	}
+	else 	ObjectsHolding(meshList[GEO_PLANEROCKET], 0.05);
+	if (pickupcell = true)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(cell.Nposition.x, cell.Nposition.y, cell.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_COKE], false);
+		modelStack.PopMatrix();
+	}
 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
@@ -1373,26 +1430,34 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed(VK_LEFT))
 	{
 		camera.cameraRotate.y += (float)(100 * dt);
+		followy += (float)(100 * dt);
 	}
 	if (Application::IsKeyPressed(VK_RIGHT))
 	{
 		camera.cameraRotate.y -= (float)(100 * dt);
+		followy -= (float)(100 * dt);
 	}
 	if (Application::IsKeyPressed(VK_UP))
 	{
 		camera.cameraRotate.x -= (float)(100 * dt);
+		followx += (float)(100 * dt);
 	}
 	if (Application::IsKeyPressed(VK_DOWN))
 	{
 		camera.cameraRotate.x += (float)(100 * dt);
+		followx -= (float)(100 * dt);
+
 	}
-	if (Application::IsKeyPressed('N'))
+
+
+	if (followx > camera.maxCameraX)
 	{
-		camera.position.y -= 1;
+		followx = 49.99;
+
 	}
-	if (Application::IsKeyPressed('M'))
+	if (followx < -camera.maxCameraX)
 	{
-		camera.position.y += 1;
+		followx = -49.99;
 	}
 
 	//Bounds checking based on maximum and minimum
@@ -1412,7 +1477,38 @@ void SP2::Character_Movement(float dt)
 	{
 		camera.position.z = camera.minZ;
 	}
+	if (Application::IsKeyPressed(VK_LEFT))
+	{
+		camera.cameraRotate.y += (float)(100 * dt);
+		followy += (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed(VK_RIGHT))
+	{
+		camera.cameraRotate.y -= (float)(100 * dt);
+		followy -= (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed(VK_UP))
+	{
+		camera.cameraRotate.x -= (float)(100 * dt);
+		followx += (float)(100 * dt);
+	}
+	if (Application::IsKeyPressed(VK_DOWN))
+	{
+		camera.cameraRotate.x += (float)(100 * dt);
+		followx -= (float)(100 * dt);
 
+	}
+
+
+	if (followx > camera.maxCameraX)
+	{
+		followx = 49.99;
+
+	}
+	if (followx < -camera.maxCameraX)
+	{
+		followx = -49.99;
+	}
 	//Moving the camera
 	Vector3 Test = camera.position;
 	if (Application::IsKeyPressed('W'))
@@ -1548,126 +1644,21 @@ void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 }
 
 
-void SP2::Object_Reading()
+void SP2::ObjectsHolding(Mesh*mesh, float size)
 {
-	for (int i = 0; i < Num_Object; i++)
-	{/// this + item below =render out 
-		/*	object[i].ItemType = Items::SPACEBODY;
-		object[i].position.Set(i * 10, 0, i * 10);
 
-		object[i].ItemType = Items::SPACEWING;
-		object[i].position.Set(i * 10, 0, i * 10);*/
-
-		object[i].ItemType = Items::SPACEROCKET;
-		object[i].position.Set(i * 10, 0, i * 10);
-
-		/*	object[i].ItemType = Items::SWORD;
-		object[i].position.Set(i * 10, 0, i * 10);
-
-		object[i].ItemType = Items::GUN;
-		object[i].position.Set(i * 10, 0, i * 10);
-
-		object[i].ItemType = Items::CAMERA;
-		object[i].position.Set(i * 10, 0, i * 10);*/
-	}
-	object_on_hand.ItemType = Items::None;
-	object_on_hand.position.Set(camera.view.x, camera.view.y, camera.view.z);
-	T_object_Num = -1;
-}
-
-void SP2::Object_Rendering()
-{
 	modelStack.PushMatrix();
-	//modelStack.Scale(10, 10, 10);
-	for (int i = 0; i < Num_Object; i++) // 5 num object so its run 5 sets 
-	{
-		if (object[i].ItemType == Items::SPACEROCKET)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
-			modelStack.Scale(1, 1, 1);
-			RenderMesh(meshList[GEO_PLANEROCKET], true);
-			modelStack.PopMatrix();
-		}
-	}
-	if (object_on_hand.ItemType == Items::SPACEROCKET)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
-		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
-		modelStack.Scale(1, 1, 1);
 
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
-		modelStack.PopMatrix();
-	}
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
 
-	if (object_on_hand.ItemType == Items::SPACEWING)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
-		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
-		modelStack.Scale(1, 1, 1);
 
-		RenderMesh(meshList[GEO_PLANEWING], true);
-		modelStack.PopMatrix();
-	}
+	modelStack.PushMatrix();
+	modelStack.Translate(0.9, -0.12, -0.3);
+	modelStack.Scale(size, size, size);
+	RenderMesh(mesh, true);
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
-void SP2::Object_Updating(float dt)
-{
-	if (Application::IsKeyPressed('E') && object_on_hand.ItemType != Items::None)
-	{
-		object[T_object_Num].ItemType = object_on_hand.ItemType;
-		object[T_object_Num].position = object_on_hand.position;
-		object_on_hand.ItemType = Items::None;
-		T_object_Num = -1;
-
-	}
-	else if (Application::IsKeyPressed('E'))
-	{
-		int Pointer = 0;
-		float Range = sqrt(((camera.position.x - object[0].position.x)*(camera.position.x - object[0].position.x)) + ((camera.position.x - object[0].position.z)*(camera.position.x - object[0].position.z)));
-		for (int i = 1; i < Num_Object; i++)
-		{
-			float T_Range = sqrt(((camera.position.x - object[i].position.x)*(camera.position.x - object[i].position.x)) + ((camera.position.x - object[i].position.z)*(camera.position.x - object[i].position.z)));
-			if (T_Range < Range)
-			{
-				Range = T_Range;
-				Pointer = i;
-			}
-		}
-		if (Range <= 20)
-		{
-			object_on_hand.ItemType = object[Pointer].ItemType;
-			T_object_Num = Pointer;
-			object[Pointer].ItemType = Items::None;
-			object[Pointer].position.Set(-1000, -1000, -1000);
-		}
-	}
-	object_on_hand.position.Set(camera.position.x - camera.target.x, camera.position.y - camera.target.y, camera.position.z - camera.target.z);
-	if (object_on_hand.position.x < float(0.0000001) && object_on_hand.position.x> 0)
-	{
-		object_on_hand.position.x = 0;
-	}
-	if (object_on_hand.position.x > -float(0.0000001) && object_on_hand.position.x< 0)
-	{
-		object_on_hand.position.x = 0;
-	}
-	if (object_on_hand.position.y < float(0.0000001) && object_on_hand.position.y> 0)
-	{
-		object_on_hand.position.y = 0;
-	}
-	if (object_on_hand.position.y > -float(0.0000001) && object_on_hand.position.y< 0)
-	{
-		object_on_hand.position.y = 0;
-	}
-	if (object_on_hand.position.z < float(0.0000001) && object_on_hand.position.z> 0)
-	{
-		object_on_hand.position.z = 0;
-	}
-	if (object_on_hand.position.z > -float(0.0000001) && object_on_hand.position.z< 0)
-	{
-		object_on_hand.position.z = 0;
-	}
-}
