@@ -445,6 +445,8 @@ void SP2::Init()
 	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
 	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//bulletskin.tga");
 
+	meshList[GEO_BOMB] = MeshBuilder::GenerateOBJ("hand", "OBJ//bomb.obj");
+	meshList[GEO_BOMB]->textureID = LoadTGA("Image//bomb2.tga");
 
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
@@ -740,6 +742,58 @@ void SP2::Update(double dt)
 			}
 		}
 	}
+	if (Application::IsKeyPressed('5') && coolDownTime == 0)
+	{
+
+
+		/*bool toggle = false;
+		bool cam1 = false;
+		bool movement = true;
+		*/
+		coolDownTime = deltaTime / 5;
+
+
+
+		/// when untoggle below runs agains
+		if (cam1 == true && toggle == false)
+		{
+			//press again then teleport 
+			camera.position = newcameraposition;   // teleports u there 
+			movement = false;
+			toggle = true;
+			cout << "u are now in camera mode" << endl;
+			/// restrrrict movement 
+			/// NEED TO MAKE SURE ITS 2ND TIME
+
+		}
+
+		else if (toggle == true && movement == false)
+		{
+			movement = true;
+			camera.position = oldcameraposition;
+			toggle = false;
+
+			cout << "u are now not in camera mode" << endl;
+
+			/// make sure camera mode dont exit and reenter
+		}
+
+
+
+		if (cam1 == false)
+		{
+
+			newcameraposition = camera.position;
+			oldcameraposition = camera.position;
+			cout << newcameraposition << endl;
+			cout << oldcameraposition << "locked old " << endl;
+			cam1 = true;
+
+		}
+		// toggle== false means normal mode haven toggle into camnera mode
+
+
+	}// this allow new position to be camera position
 
 	if (Application::IsKeyPressed(VK_F1))
 	{
@@ -1303,6 +1357,19 @@ void SP2::Render()
 	//modelStack.PopMatrix();
 	//modelStack.PopMatrix();
 
+
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.PushMatrix();
+	modelStack.Translate(0.9, -0.12, -0.3);
+	modelStack.Scale(0.1, 0.1, 0.1);
+	RenderMesh(meshList[GEO_BOMB], true);
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	modelStack.Rotate(followy, 0, 1, 0);
@@ -1602,81 +1669,84 @@ void SP2::Character_Movement(float dt)
 
 	//Moving the camera
 	Vector3 Test = camera.position;
-	if (Application::IsKeyPressed('W'))
+	if (movement == true)
 	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+		if (Application::IsKeyPressed('W'))
 		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed('S'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed('A'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed('D'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-		{
-			camera.position = Test;
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
 		}
 
-		/*if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
+		if (Application::IsKeyPressed('S'))
 		{
-		Test = camera.position;
-		}*/
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+		}
+
+		if (Application::IsKeyPressed('A'))
+		{
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+		}
+
+		if (Application::IsKeyPressed('D'))
+		{
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
+			{
+				camera.position = Test;
+			}
+
+			/*if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
+			{
+			Test = camera.position;
+			}*/
+		}
 	}
 
 	//Only allow rotating to look 90 degrees up and 90 degrees down

@@ -88,6 +88,7 @@ class SP2 : public Scene
 		GEO_RAWMATERIAL,
 		GEO_EXPLOSION,
 		GEO_BULLETSKIN,
+		GEO_BOMB,
 		NUM_GEOMETRY,
 	};
 
@@ -276,7 +277,16 @@ private:
 	void ObjectsHolding(Mesh*mesh, float size);
 	void EquipmentHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
-	
+	float throwingdown = 0;
+	float throwingforward = 0;
+	float throwup = 0;
+	Vector3 newcameraposition = (0, 0, 0);
+	Vector3 oldcameraposition = (0, 0, 0);
+	bool throwbomb = false;
+	bool thrown = false;
+	bool toggle = false;
+	bool cam1 = false;
+	bool movement = true;
 
 	//picking up space ship parts
 	bool pickupwing = false;
