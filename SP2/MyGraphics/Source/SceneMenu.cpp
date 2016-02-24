@@ -274,7 +274,7 @@ void SceneMenu::userInput()
 
 	if (Input == "Menu")
 	{
-		if (px < 210 || px > 540)
+		if (px < SharedData::GetInstance()->width / 9.59 || px > SharedData::GetInstance()->width / 3.58 || py > SharedData::GetInstance()->height / 1.81 || py < SharedData::GetInstance()->height / 2.4)
 		{
 			if (choose < MenuShop::MAX - 1)
 			{
@@ -329,9 +329,9 @@ void SceneMenu::mouseControl()
 	}
 	if (Input == "Menu")
 	{
-		if (px > 210 && px < 540)
+		if (px > SharedData::GetInstance()->width / 9.59 && px < SharedData::GetInstance()->width / 3.58)
 		{
-			if (py >412 && py < 449)
+			if (py > SharedData::GetInstance()->height / 2.62 && py < SharedData::GetInstance()->height / 2.4)
 			{
 				choose = MenuShop::STARTGAME;
 				menuIcon = 117;
@@ -342,8 +342,7 @@ void SceneMenu::mouseControl()
 					SharedData::GetInstance()->gameState = SharedData::GAME;
 				}
 			}
-
-			if (py > 450 && py < 485)
+			if (py > SharedData::GetInstance()->height / 2.397 && py < SharedData::GetInstance()->height / 2.22)
 			{
 				menuIcon = 111.5;
 				choose = MenuShop::OPTIONS;
@@ -354,7 +353,7 @@ void SceneMenu::mouseControl()
 					c_option = MenuShop::O_SETTING;
 				}
 			}
-			if (py > 487 && py < 522)
+			if (py > SharedData::GetInstance()->height / 2.215 && py < SharedData::GetInstance()->height / 2.06)
 			{
 				menuIcon = 105;
 				choose = MenuShop::CREDITS;
@@ -366,7 +365,7 @@ void SceneMenu::mouseControl()
 
 				}
 			}
-			if (py > 523 && py < 556)
+			if (py > SharedData::GetInstance()->height / 2.06 && py < SharedData::GetInstance()->height / 1.94)
 			{
 				menuIcon = 98.5;
 				choose = MenuShop::HELP;
@@ -378,8 +377,7 @@ void SceneMenu::mouseControl()
 
 				}
 			}
-
-			if (py > 556 && py < 595)
+		if( py > SharedData::GetInstance()->height / 1.94 && py < SharedData::GetInstance()->height / 1.81)
 			{
 				menuIcon = 92;
 				choose = MenuShop::QUIT;
@@ -393,7 +391,7 @@ void SceneMenu::mouseControl()
 
 	if (Input == "Credits")
 	{
-		if (px > 210 && px < 339 && py > 559 && py < 591)
+		if (px > SharedData::GetInstance()->width / 9.14 && px < SharedData::GetInstance()->width / 5.66 && py > SharedData::GetInstance()->height / 1.93  && py < SharedData::GetInstance()->height / 1.825)
 		{
 			if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
 			{
@@ -406,7 +404,7 @@ void SceneMenu::mouseControl()
 
 	if (Input == "Help")
 	{
-		if (px > 210 && px < 339 && py > 557 && py < 592)
+		if (px > SharedData::GetInstance()->width / 9.14 && px < SharedData::GetInstance()->width / 5.66 && py > SharedData::GetInstance()->height / 1.93 && py < SharedData::GetInstance()->height / 1.825)
 		{
 			if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
 			{
@@ -419,15 +417,15 @@ void SceneMenu::mouseControl()
 
 	if (Input == "Options")
 	{
-		if (px > 210 && px < 582)
+		if (px > SharedData::GetInstance()->width / 9.14 && px < SharedData::GetInstance()->width / 3.3)
 		{
-			if (py > 488 && py < 519)
+			if (py > SharedData::GetInstance()->height / 2.211 && py < SharedData::GetInstance()->height / 2.07)
 			{
 				menuIcon = 104;
 				c_option = MenuShop::O_SETTING;
 			}
 
-			if (py > 520 && py < 555)
+			if (py > SharedData::GetInstance()->height / 2.07 && py < SharedData::GetInstance()->height / 1.94)
 			{
 				menuIcon = 97.5;
 				c_option = MenuShop::O_QUIT;

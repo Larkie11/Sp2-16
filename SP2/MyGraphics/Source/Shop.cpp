@@ -32,7 +32,6 @@ void Shop::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
-	shopInput = "Shop";
 	icon = 31.6;
 	icon2 = 19;
 	JumpTime = 0;
@@ -42,6 +41,7 @@ void Shop::Init()
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 0.08;
 	startCoolDdown = false;
+	seller.Nposition = Vector3(20, -20, 0);
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -294,23 +294,23 @@ void Shop::Init()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
 
 	//Initialize camera settings
-	camera.Init(Vector3(200, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
-	camera.cameraRotate.y = -45;
+	camera.Init(Vector3(-75, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.cameraRotate.y = -270;
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
-	meshList[GEO_QUAD]->textureID = LoadTGA("Image//Tile.tga");
+	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ShopFloor.tga");
 	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;
 
-	meshList[GEO_FLOOR] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 1.015, 1, 10);
-	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//Tile2.tga");
-	meshList[GEO_FLOOR]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
-	meshList[GEO_FLOOR]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
-	meshList[GEO_FLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
-	meshList[GEO_FLOOR]->material.kShininess = 1.f;
+	meshList[GEO_CEILING] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 1, 1, 10);
+	meshList[GEO_CEILING]->textureID = LoadTGA("Image//Ceiling.tga");
+	meshList[GEO_CEILING]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
+	meshList[GEO_CEILING]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
+	meshList[GEO_CEILING]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
+	meshList[GEO_CEILING]->material.kShininess = 1.f;
 
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
@@ -319,16 +319,16 @@ void Shop::Init()
 	meshList[GEO_SHOP]->textureID = LoadTGA("Image//shop.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//spacewall.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1, 1);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//m_back.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//spacewall.tga");
 
 	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1, 1);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//m_left.tga");
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//spacewall.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1, 1);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//m_right.tga");
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//spacewall.tga");
 
 	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1, 1);
 	meshList[GEO_TOP]->textureID = LoadTGA("Image//m_top.tga");
@@ -360,20 +360,17 @@ void Shop::Init()
 	meshList[GEO_SHOPICON] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 5, 2);
 	meshList[GEO_SHOPICON]->textureID = LoadTGA("Image//speech.tga");
 
-
-	GLuint wood = LoadTGA("Image//book.tga");
-	GLuint textID = LoadTGA("Image//Chair.tga");
-	meshList[GEO_BENCH] = MeshBuilder::GenerateOBJ("bench", "OBJ//Bench.obj");
-	meshList[GEO_BENCH]->textureID = wood;
-
 	meshList[GEO_SHOPKEEPER] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 4, 7);
 	meshList[GEO_SHOPKEEPER]->textureID = LoadTGA("Image//Cp30.tga");
 
-	GLuint santa = LoadTGA("Image//Santa.tga");
-	
+	meshList[GEO_SHOPKEEPER3D] = MeshBuilder::GenerateOBJ("bottom", "OBJ//ShopKeeper.obj");
+	meshList[GEO_SHOPKEEPER3D]->textureID = LoadTGA("Image//Shopkeeper.tga");
 
-	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
-	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
+	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("bottom", "OBJ//Table.obj");
+	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
+	
+	meshList[GEO_SHOPWALL] = MeshBuilder::GenerateOBJ("shop", "OBJ//Shop1.obj");
+	meshList[GEO_SHOPWALL]->textureID = LoadTGA("Image//spacewall.tga");
 
 	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
 	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
@@ -415,7 +412,6 @@ void Shop::Init()
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
 	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
 
-
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
@@ -445,11 +441,25 @@ void Shop::Update(double dt)
 		coolDown = 0;
 	}
 
+	if (shopInput != "Shop" && shopInput != "Buy" && shopInput != "Sell")
+	{
+		camera.Update(dt);
+	}
 	//Character_Movement(dt);
-	if (Application::IsKeyPressed('E'))
+	/*if (Application::IsKeyPressed('E'))
 	{
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::GAME;
+	}*/
+
+	if (detectCollision.collideByDist(camera.position, seller.Nposition) <= 50)
+	{
+		if (Application::IsKeyPressed('E') && PressTime == 0)
+		{
+
+			PressTime = deltaTime/5;
+			shopInput = "Shop";
+		}
 	}
 
 	if (shopInput == "Shop")
@@ -483,7 +493,7 @@ void Shop::Update(double dt)
 		case S_BACK:
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				if (SharedData::GetInstance()->gameScene == "Scene1")
+				/*if (SharedData::GetInstance()->gameScene == "Scene1")
 				{
 					SharedData::GetInstance()->stateCheck = true;
 					SharedData::GetInstance()->gameState = SharedData::GAME;
@@ -492,7 +502,9 @@ void Shop::Update(double dt)
 				{
 					SharedData::GetInstance()->stateCheck = true;
 					SharedData::GetInstance()->gameState = SharedData::SCENE2;
-				}
+				}*/
+				shopInput = "";
+				s_option = S_BUY;
 				icon = 31.6;
 				icon2 = 19;
 				cout << "Byebye" << endl;
@@ -609,10 +621,10 @@ void Shop::Update(double dt)
 				PressTime = deltaTime / 5;
 				coolDown = deltaTime;
 				gold = 25;
-				if (SharedData::GetInstance()->bomb.quantity > 0)
+				if (SharedData::GetInstance()->mineral.quantity > 0)
 				{
 					SharedData::GetInstance()->gold.quantity += gold;
-					SharedData::GetInstance()->bomb.quantity--;
+					SharedData::GetInstance()->mineral.quantity--;
 					sell_gold = true;
 				}
 				else
@@ -904,6 +916,66 @@ void Shop::RenderSkybox()
 		RenderMesh(meshList[GEO_TOP1], false);
 		modelStack.PopMatrix();
 }
+static float SSCALE1 = 500.f;
+void Shop::RenderShop()
+{
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -20, -398);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Rotate(180, 0, 0, 1);
+	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
+	RenderMesh(meshList[GEO_FRONT1], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, 0, -0.9);
+	modelStack.Translate(0, -20, 600);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
+	RenderMesh(meshList[GEO_BACK], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(5, 0, 0);
+	modelStack.Translate(-500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(-180, 1, 0, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
+	RenderMesh(meshList[GEO_LEFT], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	//to do: transformation code here	
+	modelStack.Translate(-5, 0, 0);
+	modelStack.Translate(500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
+	RenderMesh(meshList[GEO_RIGHT1], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -500, 100);
+	modelStack.Rotate(180, 1, 0, 0);
+	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
+	RenderMesh(meshList[GEO_BOTTOM], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -13, 0);
+	modelStack.Translate(0, 490, 100);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(360, 0, 0, 1);
+	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
+	RenderMesh(meshList[GEO_TOP], false);
+	modelStack.PopMatrix();
+}
 void Shop::Render()
 {
 	std::ostringstream oss;
@@ -1058,10 +1130,6 @@ void Shop::Render()
 		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	RenderQuadOnScreen(meshList[GEO_SHOP], 6, 6.7, 5, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 8.2, 3.5, 90, 1, 0, 0, 1);
-	RenderQuadOnScreen(meshList[GEO_SHOPICON], 10, 3.2, 3, 90, 1, 0, 0, 1);
-
 	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
@@ -1092,30 +1160,60 @@ void Shop::Render()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
-
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
 	modelStack.Scale(3, 3, 3);
 	RenderSkybox();
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0 , -20, 0);
+	modelStack.Scale(7, 7, 7);
+	RenderMesh(meshList[GEO_SHOPWALL], true);
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_TABLE], true);
+	
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(seller.Nposition.x, seller.Nposition.y, seller.Nposition.z);
+	modelStack.Scale(3, 3, 3);
+	RenderMesh(meshList[GEO_SHOPKEEPER3D], true);
+	modelStack.PopMatrix();
 	
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
 	//scale, translate, rotate
-	modelStack.Translate(0, -20, 0);
+	modelStack.Translate(110, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(1000, 1, 1000);
+	modelStack.Scale(400, 1, 400);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 1, 0);
-	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.PushMatrix();
+	//scale, translate, rotate
+	modelStack.Translate(50, 20, 0);
+	modelStack.Rotate(180, 1, 0, 0);
+	modelStack.Scale(400, 1, 400);
+	RenderMesh(meshList[GEO_QUAD], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	if (shopInput == "Shop" || shopInput == "Buy" || shopInput == "Sell")
+	{
+		RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 8.2, 3.5, 90, 1, 0, 0, 1);
+		RenderQuadOnScreen(meshList[GEO_SHOPICON], 10, 3.2, 3, 90, 1, 0, 0, 1);
+	}
 
 	if (shopInput == "Shop")
 	{
+		
 		int j = 21;
 		int x = 5;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
@@ -1184,17 +1282,6 @@ void Shop::Render()
 			}
 		}
 	}
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(-10, 3, -60);
-	RenderText(meshList[GEO_TEXT], "", Color(0, 1, 0));
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(25, 0, 0);
-	RenderText(meshList[GEO_TEXT], "", Color(0, 1, 0));
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
@@ -1305,7 +1392,7 @@ void Shop::Map_Rendering()
 //		camera.Reset();
 //	}
 //
-//	//Changing view (target)
+//	Changing view (target)
 //	if (Application::IsKeyPressed(VK_LEFT))
 //	{
 //		camera.cameraRotate.y += (float)(100 * dt);
@@ -1331,7 +1418,7 @@ void Shop::Map_Rendering()
 //		camera.position.y += 1;
 //	}
 //
-//	//Bounds checking based on maximum and minimum
+//	Bounds checking based on maximum and minimum
 //	if (camera.position.x > camera.maxX)
 //	{
 //		camera.position.x = camera.maxX;
@@ -1349,7 +1436,7 @@ void Shop::Map_Rendering()
 //		camera.position.z = camera.minZ;
 //	}
 //
-//	//Moving the camera
+//	Moving the camera
 //	Vector3 Test = camera.position;
 //	if (Application::IsKeyPressed('W'))
 //	{
@@ -1425,7 +1512,7 @@ void Shop::Map_Rendering()
 //	}
 //
 //
-//	//Only allow rotating to look 90 degrees up and 90 degrees down
+//	Only allow rotating to look 90 degrees up and 90 degrees down
 //	if (camera.cameraRotate.x > camera.maxCameraX)
 //	{
 //		camera.cameraRotate.x = camera.maxCameraX;
@@ -1436,7 +1523,7 @@ void Shop::Map_Rendering()
 //		camera.cameraRotate.x = -camera.maxCameraX;
 //	}
 //
-//	//Changing target
+//	Changing target
 //	camera.target = Vector3(sin(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.x, -sin(DegreeToRadian(camera.cameraRotate.x)) + camera.position.y,
 //		cos(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.z);
 //	camera.view = (camera.target - camera.position).Normalized();

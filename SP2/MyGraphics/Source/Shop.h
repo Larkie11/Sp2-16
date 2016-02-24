@@ -11,6 +11,7 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Objects.h"
+#include "CollisionDetector.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -24,6 +25,12 @@ using std::string;
 
 class Shop : public Scene
 {
+	struct DOT
+	{
+		bool negativeDotProduct;
+		bool canInteract;
+		Vector3 Nposition;
+	};
 	enum SHOP_OPTION
 	{
 		S_BUY,
@@ -50,7 +57,9 @@ class Shop : public Scene
 	{
 		GEO_TRIANGLE_1 = 0,
 		GEO_TRIANGLE_2,
+		GEO_SHOPKEEPER3D,
 		GEO_SHOPKEEPER,
+		GEO_TABLE,
 		GEO_REF_AXES,
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
@@ -68,11 +77,13 @@ class Shop : public Scene
 		GEO_BOTTOM1,
 		GEO_FRONT1,
 		GEO_BACK1,
+		GEO_SHOPWALL,
 		GEO_STAR,
 		GEO_TEXT,
 		GEO_WALL,
 		GEO_OUTER,
 		GEO_SHOPICON,
+		GEO_CEILING,
 		GEO_FLOOR,
 		GEO_PATH,
 		GEO_BENCH,
@@ -239,6 +250,7 @@ private:
 	Light light[8]; //shader max 8 lights
 
 	void RenderSkybox();
+	void RenderShop();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
@@ -298,6 +310,8 @@ private:
 	bool none = false;
 	float coolDown;
 	bool sell_gold;
+	DOT seller;
+	CollisionDetector detectCollision;
 	int gold;
 	SHOP_BUY s_buy;
 };

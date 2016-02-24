@@ -44,6 +44,8 @@ void SP2::Init()
 	startCoolDdown = false;
 	storyPosition = 3;
 
+	camera.cameraRotate = Vector3(0, 270, 0);
+
 	//Position of door
 	door.Nposition = Vector3(92, -22, 0);
 	door.canGoThrough = false;
@@ -462,8 +464,7 @@ void SP2::Init()
 	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
 	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//bulletskin.tga");
 
-	meshList[GEO_SWORDHAND] = MeshBuilder::GenerateOBJ("hand", "OBJ//hand.obj");
-	meshList[GEO_SWORDHAND]->textureID = LoadTGA("Image//hand.tga");
+
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -1207,7 +1208,7 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	Map_Rendering();
+	//Map_Rendering();
 	modelStack.PopMatrix();
 
 	
@@ -1349,33 +1350,9 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 
-//	EquipmentHolding(meshList[GEO_GUN], 0.1);
-	//EquipmentHolding(meshList[GEO_SWORD], 0.1,x,y,z);
-//	EquipmentHolding(meshList[GEO_PICKAXE], 0.1);
-	//EquipmentHolding(meshList[GEO_SWORDHAND], 0.1,x,y,z);
-////////////////////HS OVER HERE
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(0.8, -0.12, 0.3);
-	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_SWORDHAND], true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(0.5, -0.28, 0.3);
-	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_SWORD], true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-
+	EquipmentHolding(meshList[GEO_GUN], 0.1);
+	EquipmentHolding(meshList[GEO_SWORD], 0.1);
+	EquipmentHolding(meshList[GEO_PICKAXE], 0.1);
 
 
 	modelStack.PushMatrix();
@@ -1783,7 +1760,7 @@ void SP2::ObjectsHolding(Mesh*mesh, float size)
 }
 
 
-void SP2::EquipmentHolding(Mesh*mesh, float size,float x,float y,float z)
+void SP2::EquipmentHolding(Mesh*mesh, float size)
 {
 
 	modelStack.PushMatrix();
@@ -1794,7 +1771,7 @@ void SP2::EquipmentHolding(Mesh*mesh, float size,float x,float y,float z)
 
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0.5, -0.12, 0.3);
+	modelStack.Translate(0.9, -0.12, 0.3);
 	modelStack.Scale(size, size, size);
 	RenderMesh(mesh, true);
 	modelStack.PopMatrix();
