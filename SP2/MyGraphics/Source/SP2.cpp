@@ -29,7 +29,7 @@ void SP2::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
-	
+
 	JumpTime = 0;
 	storyShow = true;
 	Dialogue("Text//RobotScene1.txt");
@@ -44,11 +44,11 @@ void SP2::Init()
 
 	//Position of door
 	rawMaterial = Vector3(235, -21, -90);
-	
+
 	npc.door.Nposition = Vector3(92, -22, 0);
 	npc.door.canGoThrough = false;
 	npc.door.Collision = true;
-	npc.robot1.Nposition = Vector3(245, -21, -150);
+	npc.robot1.Nposition = Vector3(280, -21, -150);
 	npc.robot2.Nposition = Vector3(245, -21, 150);
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spacebody.Nposition = Vector3(345, -21, 0);
@@ -367,6 +367,11 @@ void SP2::Init()
 	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
 	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
 
+	meshList[GEO_ROBOTH] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2_head.obj");
+	meshList[GEO_ROBOTH]->textureID = LoadTGA("Image//R2D2_D.tga");
+	meshList[GEO_ROBOTB] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2_body.obj");
+	meshList[GEO_ROBOTB]->textureID = LoadTGA("Image//R2D2_D.tga");
+
 	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2.obj");
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//R2D2_D.tga");
 
@@ -470,12 +475,62 @@ void SP2::Update(double dt)
 
 	//Talking to npc or opening door
 	npc.Update(camera, deltaTime);
+	//Dialogue for robot with rotating head
 	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
 	{
 		coolDownTime = deltaTime / 10;
-		if (npc.dialoguePlus < my_arr.size()-1)
+		robot1rotation = 0;
+		if (npc.dialoguePlus < my_arr.size() - 1)
 		{
 			++npc.dialoguePlus;
+		}
+	}
+	//NPC movement/rotation
+	else if (npc.robot3.robot != "robot3")
+	{
+		if (robot1rotate == false)
+		{
+			robot1rotation += (float)(20 * dt);
+
+			if (robot1rotation >= 80)
+			{
+				robot1rotate = true;
+			}
+		}
+		if (robot1rotate)
+		{
+			robot1rotation -= (float)(20 * dt);
+
+			if (robot1rotation <= -80)
+			{
+				robot1rotate = false;
+			}
+		}
+	}
+	if (npc.robot1.robot != "robot1" && npc.robot1.robot != "robot1.1" && npc.robot1.robot!= "robot1.2")
+	{
+		if (robot1moved == false)
+		{
+			npc.robot1.Nposition.z += (float)(10 * dt);
+
+			if (npc.robot1.Nposition.z >= -100)
+			{
+				robot1moved = true;
+
+			}
+		}
+
+		if (robot1moved)
+		{
+			if (npc.robot1.Nposition.z > -150)
+			{
+				npc.robot1.Nposition.z -= (float)(10 * dt);
+
+				if (npc.robot1.Nposition.z <= -150)
+				{
+					robot1moved = false;
+				}
+			}
 		}
 	}
 	if (npc.door.canGoThrough)
@@ -497,82 +552,6 @@ void SP2::Update(double dt)
 	}
 	Character_Movement(dt);
 	mouse.MouseUpdate(dt, camera);
-	//cout << camera.view.Dot(Nposition) << endl;
-	//cout << camera.cameraRotate.y << endl;
-
-	//cout << camera.view.Dot(robot1.Nposition) << endl;
-	//If player is on the outside of the pyramid
-	//if (camera.position.x > door.Nposition.x)
-	//{
-	//	door.negativeDotProduct = true;
-	//}
-	////If player is on the inside of the pyramid
-	//if (camera.position.x < door.Nposition.x)
-	//{
-	//	door.negativeDotProduct = false;
-	//}
-	////This is to check if player is near to the door and facing the door using dot product
-	////Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
-	//if (detectCollision.collideByDist(camera.position, door.Nposition) <= 25)
-	//{
-	//	//Check if the player is outside the temple and facing door to the inside
-	//	if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
-	//	{
-	//		interactDia = "Press E to open the door";
-	//		//Show player press e to interact
-	//		door.canInteract = true;
-	//		if (Application::IsKeyPressed('E'))
-	//		{
-	//			door.canGoThrough = true;
-	//		}
-	//	}
-	//	//Update player if player turns away
-	//	else if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) > 0)
-	//	{
-	//		door.canInteract = false;
-	//		door.canGoThrough = false;
-	//	}
-	//	//Check if player is inside the temple and facing door to the outside
-	//	if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) > 0)
-	//	{
-	//		door.canInteract = true;
-	//		if (Application::IsKeyPressed('E'))
-	//		{
-	//			door.canGoThrough = true;
-	//		}
-	//	}
-	//	//Update player if player turns away
-	//	else if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) < 0)
-	//	{
-	//		door.canInteract = false;
-	//		door.canGoThrough = false;
-	//	}
-	//}
-	//else
-	//{
-	//	//Dont show the press e to interact
-	//	door.canInteract = false;
-	//	door.canGoThrough = false;
-	//	door.Collision = true;
-
-	//	//Everytime a player is far, the door will auto close up
-	//	if (door.Nposition.y < -23)
-	//	{
-	//		door.canGoThrough = false;
-	//		door.Nposition.y += (float)(100 * dt);
-	//	}
-	//}
-	//RobotTalk();
-
-	//if (door.canGoThrough)
-	//{
-	//	door.Collision = false;
-	//	if (door.Nposition.y > -60)
-	//	{
-	//		door.canGoThrough = true;
-	//		door.Nposition.y -= (float)(100 * dt);
-	//	}
-	//}
 
 	if (fixrocket && fixwing)
 	{
@@ -705,14 +684,14 @@ void SP2::Update(double dt)
 		if (detectCollision.collideByDist(camera.position, npc.spacerocket.Nposition) <= 25 && coolDownTime == 0)
 		{
 			if (camera.view.Dot(npc.spacerocket.Nposition) > 0)
-			{	
+			{
 				coolDownTime = deltaTime / 10;
 				pickuprocket = true;
 				parts++;
 
 			}
 		}
-	
+
 
 		if (detectCollision.collideByDist(camera.position, npc.spacewing.Nposition) <= 25 && coolDownTime == 0)
 		{
@@ -980,8 +959,8 @@ void SP2::Render()
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
 	eggOSS << SharedData::GetInstance()->egg.quantity;
-	
-	partscountOSS << "SpaceShip Parts: " << parts<<"/2";
+
+	partscountOSS << "SpaceShip Parts: " << parts << "/2";
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -1211,7 +1190,11 @@ void SP2::Render()
 	modelStack.Translate(npc.robot3.Nposition.x, npc.robot3.Nposition.y, npc.robot3.Nposition.z);
 	modelStack.Rotate(150, 0, 1, 0);
 	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_ROBOT], false);
+	RenderMesh(meshList[GEO_ROBOTB], false);
+	modelStack.PushMatrix();
+	modelStack.Rotate(robot1rotation, 0, 1, 0);
+	RenderMesh(meshList[GEO_ROBOTH], false);
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -1340,7 +1323,7 @@ void SP2::Render()
 		}
 		if (npc.robot3.robot == "robot3")
 		{
-			
+
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
@@ -1370,7 +1353,7 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0.9, 0.5), 1.5, 1, 5.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0.9, 0.5), 1.5, 1, 1.5);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34,39);
+	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
@@ -1391,7 +1374,6 @@ void SP2::Enemy_Updating(float dt)
 	{
 		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
-	camera = enemy[0].Enemy_Attack(enemy, camera);
 }
 void SP2::Enemy_Rendering()
 {
@@ -1522,7 +1504,7 @@ void SP2::Character_Movement(float dt)
 
 
 
-	if (checkNear(camera,npc.door.Nposition) <= 15)
+	if (checkNear(camera, npc.door.Nposition) <= 15)
 	{
 		if (npc.door.Collision)
 		{
@@ -1539,10 +1521,10 @@ void SP2::Character_Movement(float dt)
 	}
 
 
-	
 
 
-	
+
+
 
 	//Moving the camera
 	Vector3 Test = camera.position;
@@ -1619,7 +1601,7 @@ void SP2::Character_Movement(float dt)
 
 		/*if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
 		{
-			Test = camera.position;
+		Test = camera.position;
 		}*/
 	}
 

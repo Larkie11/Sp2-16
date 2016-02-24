@@ -44,7 +44,7 @@ class SP2 : public Scene
 		GEO_BB8HEAD,
 		GEO_BB8BODY,
 		GEO_CROSSHAIR,
-	
+
 		GEO_LEFT1,
 		GEO_RIGHT1,
 		GEO_TOP1,
@@ -67,6 +67,8 @@ class SP2 : public Scene
 		GEO_BUILDING,
 		GEO_COKE,
 		GEO_BULLET,
+		GEO_ROBOTB,
+		GEO_ROBOTH,
 		GEO_ROBOT,
 		GEO_ROBOT1,
 		GEO_ROBOT2,
@@ -261,6 +263,10 @@ private:
 	float deltaTime;
 	Bullet bullet;
 	Objects objects;
+
+	bool robot1moved = false;
+	bool robot1rotate = false;
+	float robot1rotation = 0;
 
 	Enemy enemy[10];
 	void Enemy_Rendering();

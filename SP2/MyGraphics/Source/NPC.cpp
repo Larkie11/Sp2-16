@@ -1,4 +1,5 @@
 #include "NPC.h"
+#include "SharedData.h"
 
 NPC::NPC()
 {
@@ -12,6 +13,7 @@ NPC::~NPC()
 
 void NPC::Update(Camera3 camera, double dt)
 {
+	
 	if (coolDownTime > 0)
 	{
 		coolDownTime -= (float)(1 * dt);
@@ -22,26 +24,56 @@ void NPC::Update(Camera3 camera, double dt)
 	}
 	if (detectCollision.collideByDist(camera.position, robot1.Nposition) <= 25)
 	{
-		if (camera.view.Dot(robot1.Nposition) > 0)
+		if (SharedData::GetInstance()->gameState == SharedData::STARTGAME)
 		{
-			interactDia = "Press E to interact and 1 and 2 for choices";
-			//Show player press e to interact
-			robot1.canInteract = true;
-			if (Application::IsKeyPressed('E') && coolDownTime == 0)
+			if (camera.view.Dot(robot1.Nposition) > 0)
 			{
-				dialogue = 0;
-				coolDownTime = dt;
-				robot1.robot = "robot1";
-			}
-			if (robot1.robot == "robot1")
-			{
-				if (Application::IsKeyPressed('1'))
+				interactDia = "Press E to interact and 1 and 2 for choices";
+				//Show player press e to interact
+				robot1.canInteract = true;
+				if (Application::IsKeyPressed('E') && coolDownTime == 0)
 				{
-					robot1.robot = "robot1.1";
+					dialogue = 0;
+					coolDownTime = dt;
+					robot1.robot = "robot1";
 				}
-				if (Application::IsKeyPressed('2'))
+				if (robot1.robot == "robot1")
 				{
-					robot1.robot = "robot1.2";
+					if (Application::IsKeyPressed('1'))
+					{
+						robot1.robot = "robot1.1";
+					}
+					if (Application::IsKeyPressed('2'))
+					{
+						robot1.robot = "robot1.2";
+					}
+				}
+			}
+		}
+
+		if (SharedData::GetInstance()->gameState == SharedData::SCENE2)
+		{
+			if (camera.view.Dot(robot1.Nposition) < 0)
+			{
+				interactDia = "Press E to interact and 1 and 2 for choices";
+				//Show player press e to interact
+				robot1.canInteract = true;
+				if (Application::IsKeyPressed('E') && coolDownTime == 0)
+				{
+					dialogue = 0;
+					coolDownTime = dt;
+					robot1.robot = "robot1";
+				}
+				if (robot1.robot == "robot1")
+				{
+					if (Application::IsKeyPressed('1'))
+					{
+						robot1.robot = "robot1.1";
+					}
+					if (Application::IsKeyPressed('2'))
+					{
+						robot1.robot = "robot1.2";
+					}
 				}
 			}
 		}
