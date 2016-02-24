@@ -1391,6 +1391,7 @@ void SP2::Enemy_Updating(float dt)
 	{
 		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
+	camera = enemy[0].Enemy_Attack(enemy, camera);
 }
 void SP2::Enemy_Rendering()
 {

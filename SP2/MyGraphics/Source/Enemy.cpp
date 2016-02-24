@@ -68,11 +68,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Camera.x + 10 * cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = Camera.x + 0 * cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Camera.z + 10 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = Camera.z + 0 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == explore)
@@ -93,25 +93,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 		if (mode == fake_attack)
 		{
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 10)
-			{
-			}
-			else
-			{
-				//Enemy Melee Attack
-			}
 			Target_To_Move_To = Camera;
 		}
 		if (mode == hold_down)
 		{
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 10)
-			{
-			}
-			else
-			{
-				//Enemy Melee Attack
-			}
 			Target_To_Move_To = Camera;
 		}
 		if (mode == speed_escape)
@@ -124,25 +110,16 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 		if (mode == Surprise_attack)
 		{
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 5)
-			{
-			}
 			Target_To_Move_To = Camera;
 		}
 		if (mode == strategic_planning)
 		{
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 2)
-			{
-			}
 			Target_To_Move_To = Camera;
 		}
 		if (mode == charge)
 		{
 			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 20)
-			{
-			}
 			Target_To_Move_To = Camera;
 		}
 	}
@@ -310,4 +287,26 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I)
 		}
 	}
 	return check;
+}
+
+Camera3 Enemy::Enemy_Attack(Enemy enemy[10], Camera3 character)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		float X_distance = character.position.x - enemy[i].position.x;
+		float Z_distance = character.position.z - enemy[i].position.z;
+		if (X_distance < 0)
+		{
+			X_distance = X_distance * -1;
+		}
+		if (Z_distance < 0)
+		{
+			Z_distance = Z_distance * -1;
+		}
+		if (X_distance < 20 && Z_distance < 20)
+		{
+			character.Reset();
+		}
+	}
+	return character;
 }

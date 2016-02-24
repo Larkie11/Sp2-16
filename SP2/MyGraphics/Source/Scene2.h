@@ -1,29 +1,22 @@
-#ifndef Scene2_H
-#define Scene2_H
+#ifndef SCENE2_H
+#define SCENE2_H
 
-#include "MeshBuilder.h"
-#include "Utility.h"
 #include "Scene.h"
 #include "Mtx44.h"
-#include "MyMath.h"
-#include "Light.h"
-#include "Material.h"
-
 #include "Camera3.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
+#include "Light.h"
+#include "Material.h"
 #include "Bullet.h"
-#include "NPC.h"
 #include "Enemy.h"
 #include "Objects.h"
+#include "MyMath.h"
 #include "Mouse.h"
-
 #include <string>
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include <sstream>
-
 
 using std::cout;
 using std::endl;
@@ -33,6 +26,42 @@ using std::string;
 
 class Scene2 : public Scene
 {
+	struct DOT
+	{
+		bool negativeDotProduct;
+		bool canInteract;
+		Vector3 Nposition;
+	};
+	enum MENU
+	{
+		MENU1 = 0,
+		STARTGAME,
+		OPTIONS,
+		QUIT,
+		MAX,
+	};
+	enum OPTION
+	{
+		O_SETTING,
+		O_QUIT,
+		O_MAX,
+	};
+	enum SHOP_OPTION
+	{
+		S_YES,
+		S_NO,
+		S_BUY,
+		S_SELL,
+		S_BACK,
+		S_MAX,
+	};
+	enum SHOP_BUY
+	{
+		SB_AMMO,
+		SB_BOMB,
+		SB_BACK,
+		SB_MAX,
+	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_TRIANGLE_1 = 0,
@@ -41,10 +70,12 @@ class Scene2 : public Scene
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
 		GEO_QUAD,
-		GEO_BB8HEAD,
-		GEO_BB8BODY,
-		GEO_CROSSHAIR,
-
+		GEO_LEFT,
+		GEO_RIGHT,
+		GEO_TOP,
+		GEO_BOTTOM,
+		GEO_FRONT,
+		GEO_BACK,
 		GEO_LEFT1,
 		GEO_RIGHT1,
 		GEO_TOP1,
@@ -55,21 +86,13 @@ class Scene2 : public Scene
 		GEO_STORY1,
 		GEO_TEXT,
 		GEO_PATH,
-		GEO_AMMOICON,
-		GEO_GOLDICON,
-		GEO_EGGICON,
-		GEO_BOMBICON,
-		GEO_OREICON,
 		GEO_VENDING,
 		GEO_BAG,
 		GEO_PYRAMIDDOOR,
-		GEO_INVENTORY,
 		GEO_BUILDING,
 		GEO_COKE,
 		GEO_BULLET,
 		GEO_ROBOT,
-		GEO_ROBOT1,
-		GEO_ROBOT2,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -79,12 +102,6 @@ class Scene2 : public Scene
 		GEO_PLANEBODY,
 		GEO_PLANEWING,
 		GEO_PLANEROCKET,
-		GEO_PICKAXE,
-		GEO_GUN,
-		GEO_SWORD,
-		GEO_RAWMATERIAL,
-		GEO_EXPLOSION,
-		GEO_BULLETSKIN,
 		NUM_GEOMETRY,
 	};
 
@@ -187,9 +204,13 @@ class Scene2 : public Scene
 	enum Items
 	{
 		None = -1,
-
+		SPACEBODY,
 		SPACEWING,
 		SPACEROCKET,
+		ENEGRYCELL,
+		SWORD,
+		GUN,
+		CAMERA,
 		Num_Object,
 	};
 
@@ -212,15 +233,18 @@ private:
 
 	unsigned m_vertexArrayID;
 	unsigned m_indexBuffer[NUM_GEOMETRY];
-	unsigned m_vertexBuffer[NUM_GEOMETRY];
+	unsigned m_vertexBuffer[NUM_GEOMETRY]; 
 	unsigned m_colorBuffer[NUM_GEOMETRY];
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 	void UpdateMenu();
+	//Camera camera;
+	
 
-	NPC npc;
-
-	int parts = 0;
+	bool renderMenu = false;
+	//Check distance for interactable items
+	DOT door;
+	DOT robot1;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -229,6 +253,7 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
+	string shopInput;
 
 	Light light[8]; //shader max 8 lights
 
@@ -238,10 +263,17 @@ private:
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
 	void Dialogue(string filename);
 	string new_line;
-
+	
 	//Check for distance of object
-	float checkNear(Camera3 camera, Vector3 rhs);
+	bool checkNear(Camera3 camera, Vector3 rhs);
+	bool checkFaceNorth(Camera3 camera, Vector3 rhs, bool north);
 	//Check for player view
+	bool negativeDotProduct;
+	string whichRobot = "";
+	int dialogue = -1;
+	//Show when player can interact with items
+	bool canInteract;
+
 	Camera3 camera;
 
 	vector<string>my_arr;
@@ -251,51 +283,43 @@ private:
 	double b_coolDownLimit;
 	bool startCoolDdown;
 	int b_Ammo;
-
-	//for story tab
 	float storyPosition;
 	bool storyDismiss;
 	bool storyShow;
+	float coolDownTime;
 	string story;
 
 	float deltaTime;
 	Bullet bullet;
 	Objects objects;
+	string shop = "";
 
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 
 	void ObjectsHolding(Mesh*mesh, float size);
-	void EquipmentHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
-
-
-	//picking up space ship parts
-	bool pickupwing = false;
-	bool pickuprocket = false;
-	float followx = 0;
-	float followy = 0;
-	bool fixwing = false;
-	bool fixrocket = false;
-	float coolDownTime;
-	string shop;
 
 	void Map_Reading();
 	void Map_Rendering();
 	void Character_Movement(float dt);
-
+	
 	Objects object[Num_Object];
 	Objects object_on_hand;
 	int T_object_Num;
-
+	void Object_Reading();
+	void Object_Rendering();
+	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
+	bool b_gold;
 
+	void Plane_Updating(float dt);
+	void Plane_Rendering();
+	bool In_Ship = false;
+	float Speed = 0;
+	Position Plane;
 	Mouse mouse;
-	CollisionDetector detectCollision;
-
-	//TEMPO OBJECT FOR TESTING ONLY
-	Vector3 rawMaterial;
 };
 #endif
