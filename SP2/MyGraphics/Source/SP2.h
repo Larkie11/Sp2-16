@@ -1,22 +1,29 @@
 #ifndef SP2_H
 #define SP2_H
 
+#include "MeshBuilder.h"
+#include "Utility.h"
 #include "Scene.h"
 #include "Mtx44.h"
+#include "MyMath.h"
+#include "Light.h"
+#include "Material.h"
+
 #include "Camera3.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
-#include "Light.h"
-#include "Material.h"
 #include "Bullet.h"
+#include "NPC.h"
 #include "Enemy.h"
 #include "Objects.h"
-#include "MyMath.h"
 #include "Mouse.h"
+
 #include <string>
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <sstream>
+
 
 using std::cout;
 using std::endl;
@@ -26,45 +33,6 @@ using std::string;
 
 class SP2 : public Scene
 {
-	struct DOT
-	{
-		bool negativeDotProduct;
-		bool canInteract;
-		bool canGoThrough;
-		bool Collision;
-		Vector3 Nposition;
-		string robot;
-	};
-	enum MENU
-	{
-		MENU1 = 0,
-		STARTGAME,
-		OPTIONS,
-		QUIT,
-		MAX,
-	};
-	enum OPTION
-	{
-		O_SETTING,
-		O_QUIT,
-		O_MAX,
-	};
-	enum SHOP_OPTION
-	{
-		S_YES,
-		S_NO,
-		S_BUY,
-		S_SELL,
-		S_BACK,
-		S_MAX,
-	};
-	enum SHOP_BUY
-	{
-		SB_AMMO,
-		SB_BOMB,
-		SB_BACK,
-		SB_MAX,
-	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_TRIANGLE_1 = 0,
@@ -76,12 +44,7 @@ class SP2 : public Scene
 		GEO_BB8HEAD,
 		GEO_BB8BODY,
 		GEO_CROSSHAIR,
-		GEO_LEFT,
-		GEO_RIGHT,
-		GEO_TOP,
-		GEO_BOTTOM,
-		GEO_FRONT,
-		GEO_BACK,
+	
 		GEO_LEFT1,
 		GEO_RIGHT1,
 		GEO_TOP1,
@@ -227,9 +190,6 @@ class SP2 : public Scene
 
 		SPACEWING,
 		SPACEROCKET,
-
-
-
 		Num_Object,
 	};
 
@@ -257,23 +217,10 @@ private:
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 	void UpdateMenu();
-	//Camera camera;
 
+	NPC npc;
 
-	//Check distance for interactable items
-	//NPC and doors
-	DOT door;
-	DOT robot1;
-	DOT robot2;
-	DOT robot3;
-	DOT spacebody;
-	DOT spacewing;
-	DOT spacerocket;
-
-	int dialoguePlus = 6;
 	int parts = 0;
-	void RobotTalk();
-
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -282,8 +229,6 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
-
-	string interactDia;
 
 	Light light[8]; //shader max 8 lights
 
@@ -296,14 +241,7 @@ private:
 
 	//Check for distance of object
 	float checkNear(Camera3 camera, Vector3 rhs);
-	bool checkFaceNorth(Camera3 camera, Vector3 rhs, bool north);
 	//Check for player view
-	bool negativeDotProduct;
-	string whichRobot = "";
-	int dialogue = -1;
-	//Show when player can interact with items
-	bool canInteract;
-
 	Camera3 camera;
 
 	vector<string>my_arr;
@@ -318,13 +256,11 @@ private:
 	float storyPosition;
 	bool storyDismiss;
 	bool storyShow;
-	float coolDownTime;
 	string story;
 
 	float deltaTime;
 	Bullet bullet;
 	Objects objects;
-	string shop = "";
 
 	Enemy enemy[10];
 	void Enemy_Rendering();
@@ -333,16 +269,17 @@ private:
 	void ObjectsHolding(Mesh*mesh, float size);
 	void EquipmentHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
-	float followx = 0;
-	float followy = 0;
+	
 
+	//picking up space ship parts
 	bool pickupwing = false;
 	bool pickuprocket = false;
-	
-
+	float followx = 0;
+	float followy = 0;
 	bool fixwing = false;
 	bool fixrocket = false;
-	
+	float coolDownTime;
+	string shop;
 
 	void Map_Reading();
 	void Map_Rendering();

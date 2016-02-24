@@ -4,12 +4,9 @@
 #include "shader.hpp"
 #include "Mtx44.h"
 
-#include "Application.h"
-#include "MeshBuilder.h"
-#include "Utility.h"
+
 #include "LoadTGA.h"
 #include "SharedData.h"
-#include <sstream>
 
 //This class is to render the first scenario where player has to fix his own spaceship
 static Position VtoP(Vector3 V)
@@ -35,7 +32,6 @@ void SP2::Init()
 	
 	JumpTime = 0;
 	storyShow = true;
-	negativeDotProduct = true;
 	Dialogue("Text//RobotScene1.txt");
 	SharedData::GetInstance()->gameScene = "Scene1";
 	PressTime = 0;
@@ -47,20 +43,17 @@ void SP2::Init()
 	camera.cameraRotate = Vector3(0, 270, 0);
 
 	//Position of door
-	door.Nposition = Vector3(92, -22, 0);
-	door.canGoThrough = false;
-	door.Collision = true;
-	robot1.Nposition = Vector3(245, -21, -150);
-	robot2.Nposition = Vector3(245, -21, 150);
-	robot3.Nposition = Vector3(92, -21, 361);
 	rawMaterial = Vector3(235, -21, -90);
-
-	spacebody.Nposition = Vector3(345, -21, 0);
-	spacewing.Nposition = Vector3(0, -21, 100);
-	spacerocket.Nposition = Vector3(-200, -21, 100);
 	
-
-
+	npc.door.Nposition = Vector3(92, -22, 0);
+	npc.door.canGoThrough = false;
+	npc.door.Collision = true;
+	npc.robot1.Nposition = Vector3(245, -21, -150);
+	npc.robot2.Nposition = Vector3(245, -21, 150);
+	npc.robot3.Nposition = Vector3(92, -21, 361);
+	npc.spacebody.Nposition = Vector3(345, -21, 0);
+	npc.spacewing.Nposition = Vector3(0, -21, 100);
+	npc.spacerocket.Nposition = Vector3(-200, -21, 100);
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -344,24 +337,6 @@ void SP2::Init()
 	meshList[GEO_BOMBICON] = MeshBuilder::GenerateQuad("Bomb", Color(1, 1, 1), 3, 3);
 	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//Bomb.tga");
 
-	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//m_front.tga");
-
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1, 1);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//m_back.tga");
-
-	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1, 1);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//m_left.tga");
-
-	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1, 1);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//m_right.tga");
-
-	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1, 1);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//m_top.tga");
-
-	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1, 1);
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//m_bottom.tga");
-
 	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//d_front.tga");
 
@@ -481,92 +456,6 @@ float SP2::checkNear(Camera3 camera, Vector3 rhs)
 	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
 
 }
-void SP2::RobotTalk()
-{
-
-	if (detectCollision.collideByDist(camera.position,robot1.Nposition)<= 25)
-	{
-		if (camera.view.Dot(robot1.Nposition) > 0)
-		{
-			interactDia = "Press E to interact and 1 and 2 for choices";
-			//Show player press e to interact
-			robot1.canInteract = true;
-			if (Application::IsKeyPressed('E') && coolDownTime == 0)
-			{
-				dialogue = 0;
-				coolDownTime = deltaTime / 5;
-				robot1.robot = "robot1";
-			}
-			if (robot1.robot == "robot1")
-			{
-				if (Application::IsKeyPressed('1'))
-				{
-					robot1.robot = "robot1.1";
-				}
-				if (Application::IsKeyPressed('2'))
-				{
-					robot1.robot = "robot1.2";
-				}
-			}
-		}
-		else
-		{
-			robot1.canInteract = false;
-		}
-	}
-	else
-	{
-		robot1.canInteract = false;
-		robot1.robot = "";
-	}
-
-	if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
-	{
-		interactDia = "Press E to interact";
-		robot2.canInteract = true;
-		if (Application::IsKeyPressed('E') && coolDownTime == 0)
-		{
-			coolDownTime = deltaTime / 5;
-			robot2.robot = "robot2";
-		}
-	}
-	else
-	{
-		robot2.canInteract = false;
-		robot2.robot = "";
-	}
-
-	if (detectCollision.collideByDist(camera.position, robot3.Nposition) <= 25)
-	{
-		if (camera.view.Dot(robot3.Nposition) > 0)
-		{
-			//Show player press e to interact
-			robot3.canInteract = true;
-			interactDia = "Press E to interact";
-
-			if (Application::IsKeyPressed('E') && coolDownTime == 0)
-			{
-				robot3.robot = "robot3";
-				coolDownTime = deltaTime / 10;
-
-				if (dialoguePlus < my_arr.size() - 1)
-				{
-					++dialoguePlus;
-				}
-			}
-		}
-		else
-		{
-			robot3.canInteract = false;
-		}
-	}
-	else
-	{
-		dialoguePlus = 6;
-		robot3.canInteract = false;
-		robot3.robot = "";
-	}
-}
 void SP2::Update(double dt)
 {
 	if (coolDownTime > 0)
@@ -579,6 +468,33 @@ void SP2::Update(double dt)
 	}
 	Enemy_Updating(dt);
 
+	//Talking to npc or opening door
+	npc.Update(camera, deltaTime);
+	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
+	{
+		coolDownTime = deltaTime / 10;
+		if (npc.dialoguePlus < my_arr.size()-1)
+		{
+			++npc.dialoguePlus;
+		}
+	}
+	if (npc.door.canGoThrough)
+	{
+		npc.door.Collision = false;
+		if (npc.door.Nposition.y > -60)
+		{
+			npc.door.canGoThrough = true;
+			npc.door.Nposition.y -= (float)(100 * dt);
+		}
+	}
+	if (detectCollision.collideByDist(camera.position, npc.door.Nposition) >= 25)
+	{
+		if (npc.door.Nposition.y < -23)
+		{
+			npc.door.canGoThrough = false;
+			npc.door.Nposition.y += (float)(100 * dt);
+		}
+	}
 	Character_Movement(dt);
 	mouse.MouseUpdate(dt, camera);
 	//cout << camera.view.Dot(Nposition) << endl;
@@ -586,77 +502,77 @@ void SP2::Update(double dt)
 
 	//cout << camera.view.Dot(robot1.Nposition) << endl;
 	//If player is on the outside of the pyramid
-	if (camera.position.x > door.Nposition.x)
-	{
-		door.negativeDotProduct = true;
-	}
-	//If player is on the inside of the pyramid
-	if (camera.position.x < door.Nposition.x)
-	{
-		door.negativeDotProduct = false;
-	}
-	//This is to check if player is near to the door and facing the door using dot product
-	//Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
-	if (detectCollision.collideByDist(camera.position, door.Nposition) <= 25)
-	{
-		//Check if the player is outside the temple and facing door to the inside
-		if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
-		{
-			interactDia = "Press E to open the door";
-			//Show player press e to interact
-			door.canInteract = true;
-			if (Application::IsKeyPressed('E'))
-			{
-				door.canGoThrough = true;
-			}
-		}
-		//Update player if player turns away
-		else if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) > 0)
-		{
-			door.canInteract = false;
-			door.canGoThrough = false;
-		}
-		//Check if player is inside the temple and facing door to the outside
-		if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) > 0)
-		{
-			door.canInteract = true;
-			if (Application::IsKeyPressed('E'))
-			{
-				door.canGoThrough = true;
-			}
-		}
-		//Update player if player turns away
-		else if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) < 0)
-		{
-			door.canInteract = false;
-			door.canGoThrough = false;
-		}
-	}
-	else
-	{
-		//Dont show the press e to interact
-		door.canInteract = false;
-		door.canGoThrough = false;
-		door.Collision = true;
+	//if (camera.position.x > door.Nposition.x)
+	//{
+	//	door.negativeDotProduct = true;
+	//}
+	////If player is on the inside of the pyramid
+	//if (camera.position.x < door.Nposition.x)
+	//{
+	//	door.negativeDotProduct = false;
+	//}
+	////This is to check if player is near to the door and facing the door using dot product
+	////Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
+	//if (detectCollision.collideByDist(camera.position, door.Nposition) <= 25)
+	//{
+	//	//Check if the player is outside the temple and facing door to the inside
+	//	if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
+	//	{
+	//		interactDia = "Press E to open the door";
+	//		//Show player press e to interact
+	//		door.canInteract = true;
+	//		if (Application::IsKeyPressed('E'))
+	//		{
+	//			door.canGoThrough = true;
+	//		}
+	//	}
+	//	//Update player if player turns away
+	//	else if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) > 0)
+	//	{
+	//		door.canInteract = false;
+	//		door.canGoThrough = false;
+	//	}
+	//	//Check if player is inside the temple and facing door to the outside
+	//	if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) > 0)
+	//	{
+	//		door.canInteract = true;
+	//		if (Application::IsKeyPressed('E'))
+	//		{
+	//			door.canGoThrough = true;
+	//		}
+	//	}
+	//	//Update player if player turns away
+	//	else if (door.negativeDotProduct == false && camera.view.Dot(door.Nposition) < 0)
+	//	{
+	//		door.canInteract = false;
+	//		door.canGoThrough = false;
+	//	}
+	//}
+	//else
+	//{
+	//	//Dont show the press e to interact
+	//	door.canInteract = false;
+	//	door.canGoThrough = false;
+	//	door.Collision = true;
 
-		//Everytime a player is far, the door will auto close up
-		if (door.Nposition.y < -23)
-		{
-			door.canGoThrough = false;
-			door.Nposition.y += (float)(100 * dt);
-		}
-	}
-	RobotTalk();
+	//	//Everytime a player is far, the door will auto close up
+	//	if (door.Nposition.y < -23)
+	//	{
+	//		door.canGoThrough = false;
+	//		door.Nposition.y += (float)(100 * dt);
+	//	}
+	//}
+	//RobotTalk();
 
-	if (door.canGoThrough)
-	{
-		door.Collision = false;
-		if (door.Nposition.y > -60)
-		{
-			door.canGoThrough = true;
-			door.Nposition.y -= (float)(100 * dt);
-		}
-	}
+	//if (door.canGoThrough)
+	//{
+	//	door.Collision = false;
+	//	if (door.Nposition.y > -60)
+	//	{
+	//		door.canGoThrough = true;
+	//		door.Nposition.y -= (float)(100 * dt);
+	//	}
+	//}
 
 	if (fixrocket && fixwing)
 	{
@@ -786,9 +702,9 @@ void SP2::Update(double dt)
 	deltaTime = (1.0 / dt);
 	if (Application::IsKeyPressed('E'))
 	{
-		if (detectCollision.collideByDist(camera.position, spacerocket.Nposition) <= 25 && coolDownTime==0)
+		if (detectCollision.collideByDist(camera.position, npc.spacerocket.Nposition) <= 25 && coolDownTime == 0)
 		{
-			if (camera.view.Dot(spacerocket.Nposition) > 0)
+			if (camera.view.Dot(npc.spacerocket.Nposition) > 0)
 			{	
 				coolDownTime = deltaTime / 10;
 				pickuprocket = true;
@@ -798,9 +714,9 @@ void SP2::Update(double dt)
 		}
 	
 
-		if (detectCollision.collideByDist(camera.position, spacewing.Nposition) <= 25 && coolDownTime==0)
+		if (detectCollision.collideByDist(camera.position, npc.spacewing.Nposition) <= 25 && coolDownTime == 0)
 		{
-			if (camera.view.Dot(spacewing.Nposition) > 0)
+			if (camera.view.Dot(npc.spacewing.Nposition) > 0)
 			{
 				coolDownTime = deltaTime / 10;
 				pickupwing = true;
@@ -812,10 +728,10 @@ void SP2::Update(double dt)
 
 	if (Application::IsKeyPressed('E'))
 	{
-		if (pickuprocket == true && detectCollision.collideByDist(camera.position, spacebody.Nposition) <= 25)
+		if (pickuprocket == true && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)
 
 		{
-			if (camera.view.Dot(spacebody.Nposition) > 0)
+			if (camera.view.Dot(npc.spacebody.Nposition) > 0)
 			{
 				fixrocket = true;
 				pickuprocket = false;
@@ -826,9 +742,9 @@ void SP2::Update(double dt)
 
 	if (Application::IsKeyPressed('E'))
 	{
-		if (pickupwing == true && detectCollision.collideByDist(camera.position, spacebody.Nposition) <= 25)
+		if (pickupwing == true && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)
 		{
-			if (camera.view.Dot(spacebody.Nposition) > 0)
+			if (camera.view.Dot(npc.spacebody.Nposition) > 0)
 			{
 				fixwing = true;
 				pickupwing = false;
@@ -1208,10 +1124,8 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	//Map_Rendering();
+	Map_Rendering();
 	modelStack.PopMatrix();
-
-	
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-100, 0, 0);
@@ -1282,26 +1196,26 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(door.Nposition.x, door.Nposition.y, door.Nposition.z);
+	modelStack.Translate(npc.door.Nposition.x, npc.door.Nposition.y, npc.door.Nposition.z);
 	modelStack.Scale(37, 37, 37);
 	RenderMesh(meshList[GEO_PYRAMIDDOOR], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(robot1.Nposition.x, robot1.Nposition.y, robot1.Nposition.z);
+	modelStack.Translate(npc.robot1.Nposition.x, npc.robot1.Nposition.y, npc.robot1.Nposition.z);
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(robot3.Nposition.x, robot3.Nposition.y, robot3.Nposition.z);
+	modelStack.Translate(npc.robot3.Nposition.x, npc.robot3.Nposition.y, npc.robot3.Nposition.z);
 	modelStack.Rotate(150, 0, 1, 0);
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(robot2.Nposition.x, robot2.Nposition.y, robot2.Nposition.z);
+	modelStack.Translate(npc.robot2.Nposition.x, npc.robot2.Nposition.y, npc.robot2.Nposition.z);
 	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Scale(5, 5, 5);
 	RenderMesh(meshList[GEO_ROBOT1], false);
@@ -1310,7 +1224,7 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	if (pickupwing == false && fixwing == false)
 	{
-		modelStack.Translate(spacewing.Nposition.x, spacewing.Nposition.y, spacewing.Nposition.z);
+		modelStack.Translate(npc.spacewing.Nposition.x, npc.spacewing.Nposition.y, npc.spacewing.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		RenderMesh(meshList[GEO_PLANEWING], true);
 		modelStack.PopMatrix();
@@ -1327,7 +1241,7 @@ void SP2::Render()
 	if (pickuprocket == false && fixrocket == false)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(spacerocket.Nposition.x, spacerocket.Nposition.y, spacerocket.Nposition.z);
+		modelStack.Translate(npc.spacerocket.Nposition.x, npc.spacerocket.Nposition.y, npc.spacerocket.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		RenderMesh(meshList[GEO_PLANEROCKET], true);
 		modelStack.PopMatrix();
@@ -1398,35 +1312,36 @@ void SP2::Render()
 	Fps.resize(11);
 
 	//Show player if he can interact with item
-	if (robot1.canInteract || door.canInteract || robot2.canInteract || robot3.canInteract)
+	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], interactDia, Color(1, 1, 0), 1.5, 7, 20);
-		if (robot1.robot == "robot1")
+		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+		if (npc.robot1.robot == "robot1")
 		{
 			int j = 25;
-			for (int i = dialogue; i < my_arr.size() - 7; ++i)
+			for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
 			{
 				j--;
 				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
 			}
 		}
-		if (robot1.robot == "robot1.1")
+		if (npc.robot1.robot == "robot1.1")
 		{
-			dialogue = 1;
+			npc.dialogue = 1;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
 		}
-		if (robot1.robot == "robot1.2")
+		if (npc.robot1.robot == "robot1.2")
 		{
-			dialogue = 2;
+			npc.dialogue = 2;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
 		}
-		if (robot2.robot == "robot2")
+		if (npc.robot2.robot == "robot2")
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
 		}
-		if (robot3.robot == "robot3")
+		if (npc.robot3.robot == "robot3")
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
+			
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
@@ -1606,18 +1521,18 @@ void SP2::Character_Movement(float dt)
 
 
 
-	if (checkNear(camera,door.Nposition) <= 15)
+	if (checkNear(camera,npc.door.Nposition) <= 15)
 	{
-		if (door.Collision)
+		if (npc.door.Collision)
 		{
-			if (camera.position.x < door.Nposition.x)
+			if (camera.position.x < npc.door.Nposition.x)
 			{
-				camera.position.x = door.Nposition.x - 10;
+				camera.position.x = npc.door.Nposition.x - 10;
 			}
 
-			if (camera.position.x > door.Nposition.x)
+			if (camera.position.x > npc.door.Nposition.x)
 			{
-				camera.position.x = door.Nposition.x + 10;
+				camera.position.x = npc.door.Nposition.x + 10;
 			}
 		}
 	}
@@ -1633,7 +1548,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('W'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1642,7 +1557,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1651,7 +1566,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('S'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1660,7 +1575,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1669,7 +1584,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('A'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1678,7 +1593,7 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1687,7 +1602,7 @@ void SP2::Character_Movement(float dt)
 	if (Application::IsKeyPressed('D'))
 	{
 		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
@@ -1696,15 +1611,15 @@ void SP2::Character_Movement(float dt)
 			Test = camera.position;
 		}
 		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canGoThrough))
+		if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 		{
 			camera.position = Test;
 		}
 
-		if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
+		/*if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
 		{
 			Test = camera.position;
-		}
+		}*/
 	}
 
 	//Only allow rotating to look 90 degrees up and 90 degrees down
