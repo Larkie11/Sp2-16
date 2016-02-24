@@ -31,6 +31,7 @@ Scene2::~Scene2()
 void Scene2::Init()
 {
 	srand(time(NULL));
+	Plane.Set(350,-20,0);
 	Map_Reading();
 	Object_Reading();
 	JumpTime = 0;
@@ -1023,21 +1024,6 @@ void Scene2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(350, -20, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_PLANEWING], true);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_PLANEROCKET], true);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_PLANEBODY], true);
-	modelStack.PopMatrix();
-
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
@@ -1242,7 +1228,6 @@ void Scene2::Map_Rendering()
 		}
 	}
 	modelStack.PopMatrix();
-	camera.position.y = -10;
 }
 
 
@@ -1281,6 +1266,7 @@ void Scene2::Character_Movement(float dt)
 	}
 
 	//Bounds checking based on maximum and minimum
+
 	if (camera.position.x > camera.maxX)
 	{
 		camera.position.x = camera.maxX;
@@ -1298,106 +1284,125 @@ void Scene2::Character_Movement(float dt)
 		camera.position.z = camera.minZ;
 	}
 
-	//Moving the camera
-	Vector3 Test = camera.position;
-	if (Application::IsKeyPressed('W'))
+	if (Application::IsKeyPressed(VK_OEM_PLUS))
 	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
+		In_Ship = true;
+		camera.position.Set(Plane.x, 40 + Plane.y, Plane.z);
+	}
+	if (Application::IsKeyPressed(VK_OEM_MINUS))
+	{
+		In_Ship = false;
+		camera.Reset();
 	}
 
-	if (Application::IsKeyPressed('S'))
+	if (In_Ship)
 	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+		if (Application::IsKeyPressed('W'))
 		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
-
-	}
-
-	if (Application::IsKeyPressed('A'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed('D'))
-	{
-		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
-		else
-		{
-			Test = camera.position;
-		}
-		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-		if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
-		{
-			camera.position = Test;
-		}
-	}
-
-	if (Application::IsKeyPressed(VK_SPACE))
-	{
-		Map_Reading();
-		std::ofstream myfile("Map//Map1.txt");
-		if (myfile.is_open())
-		{
-			for (int i = 0; i < 20; i++)
+			if (Plane.y < 200)
 			{
-				for (int j = 0; j < 20; j++)
-				{
-					if (Map[i][j] != char('D'))
-					{
-						myfile << char(Map[i][j]);
-					}
-					else
-					{
-						myfile << " ";
-					}
-				}
-				myfile << "/n";
+				Speed += dt;
+				Plane.y += Speed * dt;
 			}
-			myfile.close();
+			else if (Plane.x > 10)
+			{
+				Speed += dt;
+				Plane.x -= Speed * dt;
+			}
 		}
-		else cout << "Unable to read Map!!" << endl;
-		Map_Reading();
+
+		if (Application::IsKeyPressed('S'))
+		{
+			if (Plane.x < 350)
+			{
+				Speed -= dt;
+				Plane.x += Speed * dt;
+			}
+			else if (Plane.y > -20)
+			{
+				Speed -= dt;
+				Plane.y -= Speed * dt;
+			}
+		}
+		camera.position.Set(Plane.x, 40 + Plane.y, Plane.z);
+	}
+	else
+	{
+		//Moving the camera
+		Vector3 Test = camera.position;
+		if (Application::IsKeyPressed('W'))
+		{
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+		}
+
+		if (Application::IsKeyPressed('S'))
+		{
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+
+		}
+
+		if (Application::IsKeyPressed('A'))
+		{
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+		}
+
+		if (Application::IsKeyPressed('D'))
+		{
+			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+			else
+			{
+				Test = camera.position;
+			}
+			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
+			if (enemy[0].Collision_Detection(VtoP2(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, door.canInteract))
+			{
+				camera.position = Test;
+			}
+		}
+
 	}
 
 
@@ -1532,38 +1537,18 @@ void Scene2::Plane_Updating(float dt)
 void  Scene2::Plane_Rendering()
 {
 	modelStack.PushMatrix();
-	//modelStack.Scale(10, 10, 10);
-	for (int i = 0; i < Num_Object; i++) // 5 num object so its run 5 sets 
-	{
-		if (object[i].ItemType == Items::SPACEROCKET)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(object[i].position.x, object[i].position.y, object[i].position.z);   // original location
-			modelStack.Scale(1, 1, 1);
-			RenderMesh(meshList[GEO_PLANEROCKET], true);
-			modelStack.PopMatrix();
-		}
-	}
-	if (object_on_hand.ItemType == Items::SPACEROCKET)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
-		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
-		modelStack.Scale(1, 1, 1);
+	modelStack.Translate(Plane.x, Plane.y, Plane.z);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
 
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
-		modelStack.PopMatrix();
-	}
-
-	if (object_on_hand.ItemType == Items::SPACEWING)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);//change to hand
-		modelStack.Translate(-object_on_hand.position.x * 5, -object_on_hand.position.y, -object_on_hand.position.z * 5);//change to hand
-		modelStack.Scale(1, 1, 1);
-
-		RenderMesh(meshList[GEO_PLANEWING], true);
-		modelStack.PopMatrix();
-	}
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEWING], true);
 	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEROCKET], true);
+	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEBODY], true);
+	modelStack.PopMatrix();
+
 }

@@ -317,6 +317,8 @@ private:
 
 	void Plane_Updating(float dt);
 	void Plane_Rendering();
+	bool In_Ship = false;
+	float Speed = 0;
 	Position Plane;
 	Mouse mouse;
 };
