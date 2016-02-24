@@ -17,6 +17,7 @@
 #include "Enemy.h"
 #include "Objects.h"
 #include "Mouse.h"
+#include "Animation.h"
 
 #include <string>
 #include <vector>
@@ -303,5 +304,14 @@ private:
 
 	//TEMPO OBJECT FOR TESTING ONLY
 	Vector3 rawMaterial;
+
+	Animation animation;
+	float swordRotation;
+	float gunTranslation;
+	float pickAxeRotation;
+
+	bool playSlashingAnimation;
+	bool playShootingAnimation;
+	bool playMiningAnimation;
 };
 #endif

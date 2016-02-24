@@ -38,6 +38,7 @@ void SP2::Init()
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 1;
 	startCoolDdown = false;
+	swordRotation = pickAxeRotation = gunTranslation = 0;
 	storyPosition = 3;
 
 	camera.cameraRotate = Vector3(0, 270, 0);
@@ -621,9 +622,9 @@ void SP2::Update(double dt)
 	{
 		SharedData::GetInstance()->bullet.quantity = 30;
 	}
-	if (Application::IsKeyPressed(VK_LBUTTON))
+	if (Application::IsKeyPressed(VK_LBUTTON) || Application::IsKeyPressed(VK_SPACE))
 	{
-		if (SharedData::GetInstance()->bullet.quantity > 0)
+		if (SharedData::GetInstance()->bullet.quantity > 0 && playShootingAnimation == true)
 		{
 			startCoolDdown = true;
 			if (b_coolDown == b_coolDownLimit)
@@ -631,6 +632,15 @@ void SP2::Update(double dt)
 				SharedData::GetInstance()->bullet.quantity--;
 				bullet_arr.push_back(new Bullet(camera));
 			}
+			animation.Shoot(dt, gunTranslation);
+		}
+		if (playSlashingAnimation)
+		{
+			animation.Slash(dt, swordRotation);
+		}
+		if (playMiningAnimation)
+		{
+			animation.Mine(dt, pickAxeRotation);
 		}
 	}
 	if (startCoolDdown)
@@ -729,6 +739,27 @@ void SP2::Update(double dt)
 				pickupwing = false;
 			}
 		}
+	}
+
+	if (Application::IsKeyPressed(VK_F1))
+	{
+		playSlashingAnimation = true;
+		playShootingAnimation = false;
+		playMiningAnimation = false;
+	}
+
+	if (Application::IsKeyPressed(VK_F2))
+	{
+		playSlashingAnimation = false;
+		playShootingAnimation = false;
+		playMiningAnimation = true;
+	}
+
+	if (Application::IsKeyPressed(VK_F3))
+	{
+		playSlashingAnimation = false;
+		playShootingAnimation = true;
+		playMiningAnimation = false;
 	}
 }
 //Reading from text file
@@ -839,7 +870,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 	for (unsigned i = 0; i < text.length(); ++i)
 	{
 		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		characterSpacing.SetToTranslation(i * 0.7f, 0, 0); //1.0f is the spacing of each character, you may change this value
 		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -1247,9 +1278,52 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 
-	EquipmentHolding(meshList[GEO_GUN], 0.1);
-	EquipmentHolding(meshList[GEO_SWORD], 0.1);
-	EquipmentHolding(meshList[GEO_PICKAXE], 0.1);
+
+	//modelStack.PushMatrix();
+	//modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	//modelStack.Rotate(followy, 0, 1, 0);
+	//modelStack.Rotate(followx, 0, 0, 1);
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0.4, -0.3, 0.22);
+	//modelStack.Rotate(-pickAxeRotation, 0, 0, 1);
+	//modelStack.Scale(0.5, 0.2, 0.5);
+	//RenderMesh(meshList[GEO_PICKAXE], true);
+	//modelStack.PopMatrix();
+	//modelStack.PopMatrix();
+
+	//modelStack.PushMatrix();
+	//modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	//modelStack.Rotate(followy, 0, 1, 0);
+	//modelStack.Rotate(followx, 0, 0, 1);
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0.5, -0.28, 0.3);
+	//modelStack.Rotate(-swordRotation, 0, 0, 1);
+	//modelStack.Scale(0.1, 0.1, 0.1);
+	//RenderMesh(meshList[GEO_SWORD], true);
+	//modelStack.PopMatrix();
+	//modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.PushMatrix();
+	modelStack.Translate(gunTranslation + 0.59, -0.15, 0.3);
+	modelStack.Scale(0.1, 0.1, 0.1);
+	RenderMesh(meshList[GEO_GUN], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.PushMatrix();
+	modelStack.Translate(gunTranslation + 0.59, -0.15, 0.3);
+	modelStack.Scale(0.1, 0.1, 0.1);
+	RenderMesh(meshList[GEO_GUN], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
 
 
 	modelStack.PushMatrix();
