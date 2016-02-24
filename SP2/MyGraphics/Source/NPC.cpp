@@ -3,7 +3,7 @@
 
 NPC::NPC()
 {
-	
+
 }
 
 NPC::~NPC()
@@ -13,7 +13,6 @@ NPC::~NPC()
 
 void NPC::Update(Camera3 camera, double dt)
 {
-	
 	if (coolDownTime > 0)
 	{
 		coolDownTime -= (float)(1 * dt);
@@ -24,7 +23,7 @@ void NPC::Update(Camera3 camera, double dt)
 	}
 	if (detectCollision.collideByDist(camera.position, robot1.Nposition) <= 25)
 	{
-		if (SharedData::GetInstance()->gameState == SharedData::STARTGAME)
+		if (SharedData::GetInstance()->gameState == SharedData::GAME)
 		{
 			if (camera.view.Dot(robot1.Nposition) > 0)
 			{
@@ -51,7 +50,7 @@ void NPC::Update(Camera3 camera, double dt)
 			}
 		}
 
-		if (SharedData::GetInstance()->gameState == SharedData::SCENE2)
+		else if (SharedData::GetInstance()->gameState == SharedData::SCENE2)
 		{
 			if (camera.view.Dot(robot1.Nposition) < 0)
 			{

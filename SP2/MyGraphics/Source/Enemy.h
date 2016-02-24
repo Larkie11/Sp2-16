@@ -2,7 +2,6 @@
 #define Enemy_H
 
 #include "Vertex.h"
-#include "Camera3.h"
 
 class Enemy
 {
@@ -38,7 +37,6 @@ class Enemy
 public:
 	Enemy();
 	~Enemy();
-	Camera3 Enemy_Attack(Enemy enemy[10], Camera3 character);
 	int Return_HP(Enemy Target);
 	Enemy Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement);
 	Enemy DamageReceived(Enemy Target, int Damage);

@@ -1170,9 +1170,9 @@ void Shop::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0 , -20, 0);
 	modelStack.Scale(7, 7, 7);
-	RenderMesh(meshList[GEO_SHOPWALL], true);
+	RenderMesh(meshList[GEO_SHOPWALL], false);
 	modelStack.PushMatrix();
-	RenderMesh(meshList[GEO_TABLE], true);
+	RenderMesh(meshList[GEO_TABLE], false);
 	
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
@@ -1180,7 +1180,7 @@ void Shop::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(seller.Nposition.x, seller.Nposition.y, seller.Nposition.z);
 	modelStack.Scale(3, 3, 3);
-	RenderMesh(meshList[GEO_SHOPKEEPER3D], true);
+	RenderMesh(meshList[GEO_SHOPKEEPER3D], false);
 	modelStack.PopMatrix();
 	
 	modelStack.PushMatrix();
@@ -1190,7 +1190,7 @@ void Shop::Render()
 	modelStack.Translate(110, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(400, 1, 400);
-	RenderMesh(meshList[GEO_QUAD], true);
+	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
@@ -1201,7 +1201,7 @@ void Shop::Render()
 	modelStack.Translate(50, 20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(400, 1, 400);
-	RenderMesh(meshList[GEO_QUAD], true);
+	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
