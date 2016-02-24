@@ -36,6 +36,7 @@ void Scene3::Init()
 	JumpTime = 0;
 	storyShow = true;
 	negativeDotProduct = true;
+	SharedData::GetInstance()->gameScene = "Scene3";
 	Dialogue("Text//RobotScene1.txt");
 	PressTime = 0;
 	// Init VBO here

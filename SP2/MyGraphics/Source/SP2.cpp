@@ -33,7 +33,6 @@ void SP2::Init()
 	JumpTime = 0;
 	storyShow = true;
 	Dialogue("Text//RobotScene1.txt");
-	SharedData::GetInstance()->gameScene = "Scene1";
 	PressTime = 0;
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 1;
@@ -1469,7 +1468,7 @@ void SP2::Render()
 		}
 	}
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
-	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 3, 3, 5);
+	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
 
 	int y = 14;
 

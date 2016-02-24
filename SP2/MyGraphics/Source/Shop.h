@@ -12,6 +12,7 @@
 #include "Enemy.h"
 #include "Objects.h"
 #include "CollisionDetector.h"
+#include "NPC.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -63,6 +64,13 @@ class Shop : public Scene
 		GEO_REF_AXES,
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
+		GEO_INVENTORY,
+		GEO_AMMOICON,
+		GEO_GOLDICON,
+		GEO_EGGICON,
+		GEO_BOMBICON,
+		GEO_OREICON,
+		GEO_SPACEDOOR,
 		GEO_QUAD,
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -237,6 +245,8 @@ private:
 	
 
 	bool renderMenu = false;
+	float spaceDoor = 0;
+
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
@@ -293,6 +303,8 @@ private:
 	float icon2;
 	float rotateCoke;
 	float menuIcon;
+
+	NPC npc;
 	
 	Objects object[Num_Object];
 	Objects object_on_hand;

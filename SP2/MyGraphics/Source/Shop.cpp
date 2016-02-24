@@ -12,16 +12,6 @@
 #include <sstream>
 
 //This class is to rendeer the shop scene
-Position VtoPa(Vector3 V)
-{
-	Position P = { V.x, V.y, V.z };
-	return P;
-}
-Vector3 PtoVa(Position V)
-{
-	Vector3 P = { V.x, V.y, V.z };
-	return P;
-}
 Shop::Shop()
 {
 }
@@ -30,18 +20,13 @@ Shop::~Shop()
 }
 void Shop::Init()
 {
-	srand(time(NULL));
-	Map_Reading();
+	npc.spaceDoor.Nposition = Vector3(-90, -20, 0);
+	npc.seller.Nposition = Vector3(20, -20, 0);
+
 	icon = 31.6;
 	icon2 = 19;
-	JumpTime = 0;
-	Input = "Menu";
-	Dialogue("Text//Dialogue1.txt");
+	Dialogue("Text//Shop.txt");
 	PressTime = 0;
-	// Init VBO here
-	b_coolDown = b_coolDownLimit = 0.08;
-	startCoolDdown = false;
-	seller.Nposition = Vector3(20, -20, 0);
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -294,7 +279,7 @@ void Shop::Init()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
 
 	//Initialize camera settings
-	camera.Init(Vector3(-75, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(-30, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	camera.cameraRotate.y = -270;
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
@@ -357,7 +342,7 @@ void Shop::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
 
-	meshList[GEO_SHOPICON] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 5, 2);
+	meshList[GEO_SHOPICON] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 5, 1);
 	meshList[GEO_SHOPICON]->textureID = LoadTGA("Image//speech.tga");
 
 	meshList[GEO_SHOPKEEPER] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 4, 7);
@@ -366,9 +351,13 @@ void Shop::Init()
 	meshList[GEO_SHOPKEEPER3D] = MeshBuilder::GenerateOBJ("bottom", "OBJ//ShopKeeper.obj");
 	meshList[GEO_SHOPKEEPER3D]->textureID = LoadTGA("Image//Shopkeeper.tga");
 
+
+	meshList[GEO_SPACEDOOR] = MeshBuilder::GenerateOBJ("bottom", "OBJ//Spacedoor.obj");
+	meshList[GEO_SPACEDOOR]->textureID = LoadTGA("Image//Spacedoor.tga");
+
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("bottom", "OBJ//Table.obj");
 	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
-	
+
 	meshList[GEO_SHOPWALL] = MeshBuilder::GenerateOBJ("shop", "OBJ//Shop1.obj");
 	meshList[GEO_SHOPWALL]->textureID = LoadTGA("Image//spacewall.tga");
 
@@ -414,6 +403,24 @@ void Shop::Init()
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
+	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("inventorybar", Color(1, 1, 1), 3, 3);
+	meshList[GEO_INVENTORY]->textureID = LoadTGA("Image//Inventory.tga");
+
+	meshList[GEO_AMMOICON] = MeshBuilder::GenerateQuad("ammoicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//Ammo.tga");
+
+	meshList[GEO_GOLDICON] = MeshBuilder::GenerateQuad("goldicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//Gold.tga");
+
+	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
+	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
+
+	meshList[GEO_OREICON] = MeshBuilder::GenerateQuad("Ore", Color(1, 1, 1), 3, 3);
+	meshList[GEO_OREICON]->textureID = LoadTGA("Image//Ore.tga");
+
+	meshList[GEO_BOMBICON] = MeshBuilder::GenerateQuad("Bomb", Color(1, 1, 1), 3, 3);
+	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//Bomb.tga");
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
@@ -423,6 +430,7 @@ static bool Lighting9 = true;
 
 void Shop::Update(double dt)
 {
+	npc.Shop(camera);
 	if (PressTime > 0)
 	{
 		PressTime -= 1;
@@ -445,20 +453,54 @@ void Shop::Update(double dt)
 	{
 		camera.Update(dt);
 	}
-	//Character_Movement(dt);
-	/*if (Application::IsKeyPressed('E'))
-	{
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::GAME;
-	}*/
-
-	if (detectCollision.collideByDist(camera.position, seller.Nposition) <= 50)
+	if (detectCollision.collideByDist(camera.position, npc.seller.Nposition) <= 50)
 	{
 		if (Application::IsKeyPressed('E') && PressTime == 0)
 		{
 
-			PressTime = deltaTime/5;
+			PressTime = deltaTime / 5;
 			shopInput = "Shop";
+		}
+	}
+
+	if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) <= 25)
+	{
+		npc.interactDia = "Press E to go back to land";
+		npc.spaceDoor.canGoThrough = true;
+		if (Application::IsKeyPressed('E'))
+		{
+			npc.spaceDoor.canInteract = true;
+		}
+	}
+	else
+	{
+		npc.spaceDoor.canInteract = false;
+		if (npc.spaceDoor.Nposition.z > 0)
+		{
+			npc.spaceDoor.Nposition.z -= (float)(30 * dt);
+		}
+	}
+	if (npc.spaceDoor.canInteract)
+	{
+		if (npc.spaceDoor.Nposition.z < 40)
+		{
+			npc.spaceDoor.Nposition.z += (float)(30 * dt);
+
+			if (npc.spaceDoor.Nposition.z >= 40)
+			{
+				if (SharedData::GetInstance()->gameScene == "Scene2")
+				{
+					npc.interactDia = "Flying back to land...";
+					SharedData::GetInstance()->stateCheck = true;
+					SharedData::GetInstance()->gameState = SharedData::SCENE2;
+				}
+				if (SharedData::GetInstance()->gameScene == "Scene3")
+				{
+					SharedData::GetInstance()->stateCheck = true;
+					SharedData::GetInstance()->gameState = SharedData::SCENE3;
+				}
+				npc.spaceDoor.canInteract = false;
+			}
 		}
 	}
 
@@ -473,8 +515,8 @@ void Shop::Update(double dt)
 			colorShop[3].Set(0, 0.8, 0.7);
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				icon = 30;
-				icon2 = 18;
+				icon = 31.6;
+				icon2 = 19;
 				PressTime = deltaTime / 5;
 				shopInput = "Buy";
 				s_buy = SB_AMMO;
@@ -484,29 +526,20 @@ void Shop::Update(double dt)
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				icon = 30;
-				icon2 = 18;
+				icon = 31.6;
+				icon2 = 19;
 				shopInput = "Sell";
 				s_sell = SS_AMMO;
 			}
 			break;
 		case S_BACK:
-			if (Application::IsKeyPressed(VK_RETURN))
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				/*if (SharedData::GetInstance()->gameScene == "Scene1")
-				{
-					SharedData::GetInstance()->stateCheck = true;
-					SharedData::GetInstance()->gameState = SharedData::GAME;
-				}
-				if (SharedData::GetInstance()->gameScene == "Scene2")
-				{
-					SharedData::GetInstance()->stateCheck = true;
-					SharedData::GetInstance()->gameState = SharedData::SCENE2;
-				}*/
 				shopInput = "";
 				s_option = S_BUY;
 				icon = 31.6;
 				icon2 = 19;
+				PressTime = deltaTime;
 				cout << "Byebye" << endl;
 			}
 			break;
@@ -547,21 +580,41 @@ void Shop::Update(double dt)
 					SharedData::GetInstance()->gold.quantity -= 20;
 					SharedData::GetInstance()->bullet.quantity++;
 					coolDown = deltaTime;
-					g_gold = true;
+					b_gold = true;
+					nomore = "gained ammo";
 				}
 				else
 				{
 					coolDown = deltaTime;
 					b_gold = true;
+					nomore = "no gold to buy";
 				}
 			}
 			break;
 		case SB_BOMB:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				if (SharedData::GetInstance()->gold.quantity > 49)
+				{
+					SharedData::GetInstance()->gold.quantity -= 50;
+					SharedData::GetInstance()->bomb.quantity++;
+					coolDown = deltaTime;
+					b_gold = true;
+					nomore = "gained bomb";
+				}
+				else
+				{
+					coolDown = deltaTime;
+					b_gold = true;
+					nomore = "no gold to buy";
+				}
+			}
 			break;
 		case SB_BACK:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				PressTime = deltaTime / 10;
+				PressTime = deltaTime;
 				shopInput = "Shop";
 				s_option = S_BUY;
 				icon = 31.6;
@@ -604,14 +657,15 @@ void Shop::Update(double dt)
 				gold = 10;
 				if (SharedData::GetInstance()->bullet.quantity > 0)
 				{
-					sell_gold = true;
+					none = true;
+					nomore = "gained gold";
 					SharedData::GetInstance()->gold.quantity += gold;
 					SharedData::GetInstance()->bullet.quantity--;
 				}
 				else
 				{
 					none = true;
-					nomore = "ammo";
+					nomore = "no ammo";
 				}
 			}
 			break;
@@ -625,12 +679,13 @@ void Shop::Update(double dt)
 				{
 					SharedData::GetInstance()->gold.quantity += gold;
 					SharedData::GetInstance()->mineral.quantity--;
-					sell_gold = true;
+					none = true;
+					nomore = "Gained gold";
 				}
 				else
 				{
 					none = true;
-					nomore = "bomb";
+					nomore = "no ore";
 				}
 			}
 			break;
@@ -644,19 +699,20 @@ void Shop::Update(double dt)
 				{
 					SharedData::GetInstance()->gold.quantity += gold;
 					SharedData::GetInstance()->egg.quantity--;
-					sell_gold = true;
+					none = true;
+					nomore = "Gained gold";
 				}
 				else
 				{
 					none = true;
-					nomore = "egg";
+					nomore = "no egg";
 				}
 			}
 			break;
 		case SS_BACK:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				PressTime = deltaTime / 10;
+				PressTime = deltaTime;
 				shopInput = "Shop";
 				s_option = S_BUY;
 				icon = 31.6;
@@ -664,56 +720,56 @@ void Shop::Update(double dt)
 			}
 			break;
 		}
-				if (s_sell > SS_AMMO)
-				{
-				if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
-				{
+		if (s_sell > SS_AMMO)
+		{
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
+			{
 				PressTime = deltaTime / 7;
 				s_sell = static_cast<SHOP_SELL>(s_sell - 1);
 				cout << s_sell;
 				icon += 1.6;
 				icon2 += 1;
-				}
-				}
-				if (s_sell < SS_MAX - 1)
-				{
-					if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
-					{
-						PressTime = deltaTime / 7;
-						s_sell = static_cast<SHOP_SELL>(s_sell + 1);
-						cout << s_sell;
-						icon -= 1.6;
-						icon2 -= 1;
-					}
-				}
+			}
 		}
-
-		rotateCoke += (float)(100 * dt);
-
-		if (Application::IsKeyPressed('1')) //enable back face culling
-			glEnable(GL_CULL_FACE);
-		if (Application::IsKeyPressed('2')) //disable back face culling
-			glDisable(GL_CULL_FACE);
-		if (Application::IsKeyPressed('3'))
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-		if (Application::IsKeyPressed('4'))
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-		if (Application::IsKeyPressed('Z'))
+		if (s_sell < SS_MAX - 1)
 		{
-			Lighting9 = false;
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				s_sell = static_cast<SHOP_SELL>(s_sell + 1);
+				cout << s_sell;
+				icon -= 1.6;
+				icon2 -= 1;
+			}
 		}
+	}
 
-		else if (Application::IsKeyPressed('X'))
-		{
-			Lighting9 = true;
+	rotateCoke += (float)(100 * dt);
 
-		}
-		if (Application::IsKeyPressed('H'))
-		{
-			SharedData::GetInstance()->bullet.quantity += 30;
+	if (Application::IsKeyPressed('1')) //enable back face culling
+		glEnable(GL_CULL_FACE);
+	if (Application::IsKeyPressed('2')) //disable back face culling
+		glDisable(GL_CULL_FACE);
+	if (Application::IsKeyPressed('3'))
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
+	if (Application::IsKeyPressed('4'))
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+	if (Application::IsKeyPressed('Z'))
+	{
+		Lighting9 = false;
+	}
 
-		}
-		deltaTime = (1.0 / dt);
+	else if (Application::IsKeyPressed('X'))
+	{
+		Lighting9 = true;
+
+	}
+	if (Application::IsKeyPressed('H'))
+	{
+		SharedData::GetInstance()->bullet.quantity += 30;
+
+	}
+	deltaTime = (1.0 / dt);
 }
 void Shop::Dialogue(string filename)
 {
@@ -859,62 +915,62 @@ void Shop::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float ro
 static float SBSCALE1 = 1000.f;
 void Shop::RenderSkybox()
 {
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -20, -398);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Rotate(180, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_FRONT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -20, -398);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Rotate(180, 0, 0, 1);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_FRONT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, 0, -0.9);
-		modelStack.Translate(0, -20, 600);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BACK1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, 0, -0.9);
+	modelStack.Translate(0, -20, 600);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_BACK1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(5, 0, 0);
-		modelStack.Translate(-500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(-180, 1, 0, 0);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_LEFT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(5, 0, 0);
+	modelStack.Translate(-500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(-180, 1, 0, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_LEFT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here	
-		modelStack.Translate(-5, 0, 0);
-		modelStack.Translate(500, -20, 100);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_RIGHT1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here	
+	modelStack.Translate(-5, 0, 0);
+	modelStack.Translate(500, -20, 100);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_RIGHT1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -500, 100);
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_BOTTOM1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -500, 100);
+	modelStack.Rotate(180, 1, 0, 0);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_BOTTOM1], false);
+	modelStack.PopMatrix();
 
-		modelStack.PushMatrix();
-		//to do: transformation code here
-		modelStack.Translate(0, -13, 0);
-		modelStack.Translate(0, 490, 100);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(360, 0, 0, 1);
-		modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
-		RenderMesh(meshList[GEO_TOP1], false);
-		modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	//to do: transformation code here
+	modelStack.Translate(0, -13, 0);
+	modelStack.Translate(0, 490, 100);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Rotate(360, 0, 0, 1);
+	modelStack.Scale(SBSCALE1, SBSCALE1, SBSCALE1);
+	RenderMesh(meshList[GEO_TOP1], false);
+	modelStack.PopMatrix();
 }
 static float SSCALE1 = 500.f;
 void Shop::RenderShop()
@@ -988,20 +1044,30 @@ void Shop::Render()
 
 	std::ostringstream ammoOSS;
 	std::ostringstream goldOSS;
+	std::ostringstream bombOSS;
+	std::ostringstream oreOSS;
+	std::ostringstream eggOSS;
 	std::ostringstream fpsOSS;
 	std::ostringstream nomoreOSS;
 	std::ostringstream gainOSS;
 
-	ammoOSS << "AMMO : " << SharedData::GetInstance()->bullet.quantity;
-	goldOSS << "Gold: " << SharedData::GetInstance()->gold.quantity;
+	ammoOSS << SharedData::GetInstance()->bullet.quantity;
+	goldOSS << SharedData::GetInstance()->gold.quantity;
+	bombOSS << SharedData::GetInstance()->bomb.quantity;
+	oreOSS << SharedData::GetInstance()->mineral.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity;
 	fpsOSS << "FPS : " << deltaTime;
-	nomoreOSS << "You have no " << nomore << " to sell!";
-	gainOSS << "You have gained " << gold << " gold!";
+
+	
+	nomoreOSS << "You have " << nomore;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
+	string egg = eggOSS.str();
+	string ore = oreOSS.str();
 	string s_gold = goldOSS.str();
 	string nmOSS = nomoreOSS.str();
 	string gain = gainOSS.str();
+	string bomb = bombOSS.str();
 
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1013,7 +1079,7 @@ void Shop::Render()
 		camera.target.x, camera.target.y, camera.target.z,
 		camera.up.x, camera.up.y, camera.up.z
 		);
-	
+
 	modelStack.LoadIdentity();
 
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
@@ -1131,6 +1197,18 @@ void Shop::Render()
 	}
 
 	modelStack.PushMatrix();
+	modelStack.Translate(-135, -40, -5);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_PLANEBODY], false);
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEROCKET], false);
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEWING], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
 	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
@@ -1168,21 +1246,26 @@ void Shop::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0 , -20, 0);
+	modelStack.Translate(0, -20, 0);
 	modelStack.Scale(7, 7, 7);
 	RenderMesh(meshList[GEO_SHOPWALL], false);
 	modelStack.PushMatrix();
 	RenderMesh(meshList[GEO_TABLE], false);
-	
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(seller.Nposition.x, seller.Nposition.y, seller.Nposition.z);
+	modelStack.Translate(npc.spaceDoor.Nposition.x, npc.spaceDoor.Nposition.y, npc.spaceDoor.Nposition.z);
+	modelStack.Scale(7, 7, 7);
+	RenderMesh(meshList[GEO_SPACEDOOR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(npc.seller.Nposition.x, npc.seller.Nposition.y, npc.seller.Nposition.z);
 	modelStack.Scale(3, 3, 3);
 	RenderMesh(meshList[GEO_SHOPKEEPER3D], false);
 	modelStack.PopMatrix();
-	
+
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.PushMatrix();
@@ -1205,6 +1288,12 @@ void Shop::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
+
+	if (npc.seller.canInteract||npc.spaceDoor.canGoThrough)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+	}
+
 	if (shopInput == "Shop" || shopInput == "Buy" || shopInput == "Sell")
 	{
 		RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 8.2, 3.5, 90, 1, 0, 0, 1);
@@ -1213,79 +1302,63 @@ void Shop::Render()
 
 	if (shopInput == "Shop")
 	{
-		
+
 		int j = 21;
 		int x = 5;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke,0,1,0,0);
+		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
 		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
 		for (int arr = 0; arr < my_arr.size() - 9; ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr],Color(0,0,0), 1.7, x, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, x, j);
 		}
 	}
 	if (shopInput == "Buy")
 	{
-		int j = 20;
+		int j = 21;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(1, 1, 1), 1.7, 4, icon2);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
 
-		for (int arr = 4; arr < my_arr.size()-5; ++arr)
+		for (int arr = 4; arr < my_arr.size() - 5; ++arr)
 		{
 			--j;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 5, j);
 		}
 		if (b_gold)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "No more gold!", Color(1, 0, 0), 1.7, 10, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 10, 21);
 			if (coolDown == 0)
 			{
 				b_gold = false;
-			}
-		}
-		if (g_gold)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Obtained an ammo", Color(1, 0, 0), 1.7, 10, 21);
-			if (coolDown == 0)
-			{
-				g_gold = false;
 			}
 		}
 	}
 
 	if (shopInput == "Sell")
 	{
-		int j = 20;
+		int j = 21;
 		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
 		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
 
 		for (int arr = 8; arr < my_arr.size(); ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0,0,0), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 5, j);
 		}
 
 		if (none)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 8, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 8, 21);
 			if (coolDown == 0)
 			{
 				none = false;
-			}
-		}
-		if (sell_gold)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], gain, Color(1, 0, 0), 1.7, 8, 20);
-			if (coolDown == 0)
-			{
-				sell_gold = false;
 			}
 		}
 	}
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate((*iter)->position.x,(*iter)->position.y,(*iter)->position.z);
+		modelStack.Translate((*iter)->position.x, (*iter)->position.y, (*iter)->position.z);
 		modelStack.Rotate(-90, 0, 1, 0);
 		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
 
@@ -1296,238 +1369,33 @@ void Shop::Render()
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 1, 0), 1.5, 1, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 1, 0), 1.5, 45, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 38);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 37);
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
+	int y = 14;
+
+	for (int i = 0; i < 5; i++)
+	{
+		//RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, 1.3, 18, 90, 1, 0, 0, 0);
+		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, -1);
+		y -= 3;
+	}
+
+	//All element for player inventory
+	RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.7, 19, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_GOLDICON], 1.5, 1.7, 15, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_EGGICON], 1.5, 1.7, 10.8, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_OREICON], 1.5, 1.7, 6.8, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_BOMBICON], 1.5, 1.7, 2.9, 90, 1, 0, 0, 0);
+
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0.9, 0.5), 1.5, 1, 17.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0.9, 0.5), 1.5, 1, 13.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0.9, 0.5), 1.5, 1, 5.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0.9, 0.5), 1.5, 1, 1.5);
 }
 void Shop::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
 }
-//void Shop::Enemy_Updating(float dt)
-//{
-//	Position P = { camera.position.x, camera.position.y, camera.position.z };
-//	for (int i = 0; i < 10; i++)
-//	{
-//		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy,i);
-//	}
-//}
-void Shop::Enemy_Rendering()
-{
-	for (int i = 0; i < 10; i++)
-	{
-		Position A = enemy[i].Return_Position(enemy[i]);
-		modelStack.PushMatrix();
-		modelStack.Translate(A.x, -20, A.z);
-		modelStack.Scale(30, 30, 30);
-		RenderMesh(meshList[GEO_COKE], true);
-		modelStack.PopMatrix();
-	}
-}
-
-void Shop::Map_Reading()
-{
-	string line;
-	ifstream myfile("Map//Map1.txt");
-	if (myfile.is_open())
-	{
-		for (int i = 0; i < 20; i++)
-		{
-			getline(myfile, line);
-			for (int j = 0; j < 20; j++)
-			{
-				Map[i][j] = line.at(j);
-			}
-		}
-		myfile.close();
-	}
-	else cout << "Unable to read Map!!" << endl;
-}
-
-void Shop::Map_Rendering()
-{
-	modelStack.PushMatrix();
-
-	modelStack.Translate(0, -21, 0);
-
-	modelStack.PushMatrix();
-	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
-	RenderMesh(meshList[GEO_PYRAMIDNEW], true);
-	modelStack.PushMatrix();
-	modelStack.Scale(Size, (2 / (2.5*Size)), Size);
-	RenderMesh(meshList[GEO_PYRAMIDWALL], true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-
-	//Start Point
-	modelStack.Translate(-Size * 10, 10, -Size * 10);
-	for (int i = 0; i < 20; i++)
-	{
-		for (int j = 0; j < 20; j++)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(Size*i, 0, Size*j);
-			modelStack.Scale(Size, Size, Size);
-			if (Map[i][j] == char('0'))
-			{
-				RenderMesh(meshList[GEO_PYRAMIDPILLAR], true);
-			}
-			else if (Map[i][j] == char('1'))
-			{
-				RenderMesh(meshList[GEO_PYRAMIDWALL], true);
-			}
-			modelStack.PopMatrix();
-		}
-	}
-	modelStack.PopMatrix();
-	camera.position.y = -10;
-}
-//void Shop::Character_Movement(float dt)
-//{
-//	if (Application::IsKeyPressed('R'))
-//	{
-//		camera.Reset();
-//	}
-//
-//	Changing view (target)
-//	if (Application::IsKeyPressed(VK_LEFT))
-//	{
-//		camera.cameraRotate.y += (float)(100 * dt);
-//	}
-//	if (Application::IsKeyPressed(VK_RIGHT))
-//	{
-//		camera.cameraRotate.y -= (float)(100 * dt);
-//	}
-//	if (Application::IsKeyPressed(VK_UP))
-//	{
-//		camera.cameraRotate.x -= (float)(100 * dt);
-//	}
-//	if (Application::IsKeyPressed(VK_DOWN))
-//	{
-//		camera.cameraRotate.x += (float)(100 * dt);
-//	}
-//	if (Application::IsKeyPressed('N'))
-//	{
-//		camera.position.y -= 1;
-//	}
-//	if (Application::IsKeyPressed('M'))
-//	{
-//		camera.position.y += 1;
-//	}
-//
-//	Bounds checking based on maximum and minimum
-//	if (camera.position.x > camera.maxX)
-//	{
-//		camera.position.x = camera.maxX;
-//	}
-//	if (camera.position.x < camera.minX)
-//	{
-//		camera.position.x = camera.minX;
-//	}
-//	if (camera.position.z > camera.maxZ)
-//	{
-//		camera.position.z = camera.maxZ;
-//	}
-//	if (camera.position.z < camera.minZ)
-//	{
-//		camera.position.z = camera.minZ;
-//	}
-//
-//	Moving the camera
-//	Vector3 Test = camera.position;
-//	if (Application::IsKeyPressed('W'))
-//	{
-//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1),NULL)
-//		{
-//			camera.position = Test;
-//		}
-//		else
-//		{
-//			Test = camera.position;
-//		}
-//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//	}
-//
-//	if (Application::IsKeyPressed('S'))
-//	{
-//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//		else
-//		{
-//			Test = camera.position;
-//		}
-//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//
-//	}
-//
-//	if (Application::IsKeyPressed('A'))
-//	{
-//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//		else
-//		{
-//			Test = camera.position;
-//		}
-//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//	}
-//
-//	if (Application::IsKeyPressed('D'))
-//	{
-//		Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//		else
-//		{
-//			Test = camera.position;
-//		}
-//		Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-//		if (enemy[0].Collision_Detection(VtoPa(Test), Size, Map, enemy,-1))
-//		{
-//			camera.position = Test;
-//		}
-//	}
-//
-//
-//	Only allow rotating to look 90 degrees up and 90 degrees down
-//	if (camera.cameraRotate.x > camera.maxCameraX)
-//	{
-//		camera.cameraRotate.x = camera.maxCameraX;
-//	}
-//
-//	else if (camera.cameraRotate.x < -camera.maxCameraX)
-//	{
-//		camera.cameraRotate.x = -camera.maxCameraX;
-//	}
-//
-//	Changing target
-//	camera.target = Vector3(sin(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.x, -sin(DegreeToRadian(camera.cameraRotate.x)) + camera.position.y,
-//		cos(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.z);
-//	camera.view = (camera.target - camera.position).Normalized();
-//	Vector3 right = camera.view.Cross(camera.defaultUp);
-//	right.y = 0;
-//	camera.up = right.Cross(camera.view);
-//}

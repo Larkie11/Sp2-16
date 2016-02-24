@@ -1,13 +1,13 @@
 Hello, Do you need help?
 Buy
 Sell
-Going back to land
+Exit Shop
 What would you like to buy?
 Ammo - 20G
 Bomb - 50G
 Back
 What would you like to sell?
 Ammo - 10G
-Bomb - 25G
+Ore - 25G
 Egg - 100G
 Back

@@ -30,6 +30,8 @@ public:
 	DOT spacebody;
 	DOT spacewing;
 	DOT spacerocket;
+	DOT seller;
+	DOT spaceDoor;
 
 	CollisionDetector detectCollision;
 	string interactDia;
@@ -38,6 +40,7 @@ public:
 	int dialogue;
 	
 	void Update(Camera3 camera, double dt);
+	void Shop(Camera3 camera);
 	NPC();
 	~NPC();
 };

@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Mtx44.h"
 #include "MyMath.h"
+#include "SharedData.h"
 
 Camera3::Camera3()
 {
@@ -20,6 +21,14 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	minX = -500;
 	maxZ = 500;
 	minZ = -500;
+
+	if (SharedData::GetInstance()->gameState == SharedData::SHOP)
+	{
+		maxX = -11;
+		minX = -85;
+		maxZ = 48;
+		minZ = -44;
+	}
 
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;

@@ -102,7 +102,6 @@ void NPC::Update(Camera3 camera, double dt)
 		robot2.canInteract = false;
 		robot2.robot = "";
 	}
-
 	if (detectCollision.collideByDist(camera.position, robot3.Nposition) <= 25)
 	{
 		if (camera.view.Dot(robot3.Nposition) > 0)
@@ -184,4 +183,17 @@ void NPC::Update(Camera3 camera, double dt)
 		door.canGoThrough = false;
 		door.Collision = true;
 	}
+}
+void NPC::Shop(Camera3 camera)
+{
+	if (detectCollision.collideByDist(camera.position, seller.Nposition) <= 50)
+	{
+			interactDia = "Press E browse shop";
+			seller.canInteract = true;
+	}
+	else
+	{
+		seller.canInteract = false;
+	}
+
 }
