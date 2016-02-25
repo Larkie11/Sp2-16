@@ -57,9 +57,10 @@ bool Bullet::CollideWithEnemy(Enemy enemy[], vector<Bullet*>bullet_arr, Collisio
 			Position enemyPos = enemy[i].Return_Position(enemy[i]);
 			Vector3 enemyVec = PtoV(enemyPos);
 
-			if (detectCollision.collideByDist((*iter)->position, enemyVec) < 10)
+			if (detectCollision.collideByDist((*iter)->position, enemyVec) < 25)
 			{
 				cout << "COLLIDED WITH ENEMY" << endl;
+				enemy[i] = enemy[i].DamageReceived(enemy[i], 30);
 				destoryBullet = true;
 			}
 		}

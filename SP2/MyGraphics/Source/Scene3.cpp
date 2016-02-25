@@ -1164,6 +1164,8 @@ void Scene3::Enemy_Updating(float dt)
 	{
 		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
+
+	camera = enemy[0].enemy_attack(enemy, VtoP3(camera.position), camera);
 }
 void Scene3::Enemy_Rendering()
 {

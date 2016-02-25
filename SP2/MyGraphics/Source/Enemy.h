@@ -2,6 +2,7 @@
 #define Enemy_H
 
 #include "Vertex.h"
+#include "Camera3.h"
 
 class Enemy
 {
@@ -42,6 +43,7 @@ public:
 	Enemy DamageReceived(Enemy Target, int Damage);
 	Position Return_Position(Enemy Target);
 	bool Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement, bool enter = false);
+	Camera3 enemy_attack(Enemy enemy[10],Position character, Camera3 view);
 };
 
 #endif

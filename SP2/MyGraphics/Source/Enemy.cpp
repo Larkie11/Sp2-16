@@ -5,7 +5,7 @@
 Enemy::Enemy()
 {
 	HP = 100;
-	position = Ground = SpawnPoint = { 0, 0, 0 };
+	position = Ground = SpawnPoint = { -200, 0, 0 };
 	MeleeDamage = rand() % 20;
 	Current_modetype = rand() % 3;
 }
@@ -56,11 +56,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.SpawnPoint.x + 20 * cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = Target.SpawnPoint.x + 10 *cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Target.SpawnPoint.z + 20 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = Target.SpawnPoint.z + 10 *sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == assassination)
@@ -68,14 +68,29 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Camera.x + 10 * cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = Camera.x + 10 *cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Camera.z + 10 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = Camera.z + 10 *sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == explore)
+		{
+			int Angle = rand() % 360;
+			if (Angle != 90 && Angle != 270)
+			{
+				Target_To_Move_To.x = Target.Ground.x + 10 *cos(Math::DegreeToRadian(Angle));
+			}
+			if (Angle != 0 && Angle != 180)
+			{
+				Target_To_Move_To.z = Target.Ground.z + 10 *sin(Math::DegreeToRadian(Angle));
+			}
+		}
+	}
+	else if (mode < 6)
+	{
+		if (mode == fake_attack)
 		{
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
@@ -87,62 +102,59 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 				Target_To_Move_To.z = Target.Ground.z + 20 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
-	}
-	else if (mode < 6)
-	{
-		if (mode == fake_attack)
-		{
-			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 10)
-			{
-			}
-			else
-			{
-				//Enemy Melee Attack
-			}
-			Target_To_Move_To = Camera;
-		}
 		if (mode == hold_down)
 		{
-			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 10)
+			int Angle = rand() % 360;
+			if (Angle != 90 && Angle != 270)
 			{
+				Target_To_Move_To.x = Camera.x + 5 * cos(Math::DegreeToRadian(Angle));
 			}
-			else
+			if (Angle != 0 && Angle != 180)
 			{
-				//Enemy Melee Attack
+				Target_To_Move_To.z = Camera.z + 5 * sin(Math::DegreeToRadian(Angle));
 			}
-			Target_To_Move_To = Camera;
 		}
 		if (mode == speed_escape)
 		{
-			Target_To_Move_To = Camera;
+			int Angle = rand() % 360;
+			if (Angle != 90 && Angle != 270)
+			{
+				Target_To_Move_To.x = Target.SpawnPoint.x + 10 *cos(Math::DegreeToRadian(Angle));
+			}
+			if (Angle != 0 && Angle != 180)
+			{
+				Target_To_Move_To.z = Target.SpawnPoint.z + 10 *sin(Math::DegreeToRadian(Angle));
+			}
 		}
 	}
 	else
 	{
 		if (mode == Surprise_attack)
 		{
-			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 5)
+			int Angle = rand() % 360;
+			if (Angle != 90 && Angle != 270)
 			{
+				Target_To_Move_To.x = Camera.x + 5 * cos(Math::DegreeToRadian(Angle));
 			}
-			Target_To_Move_To = Camera;
+			if (Angle != 0 && Angle != 180)
+			{
+				Target_To_Move_To.z = Target.Ground.z + 5 * sin(Math::DegreeToRadian(Angle));
+			}
 		}
 		if (mode == strategic_planning)
 		{
-			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 2)
+			int Angle = rand() % 360;
+			if (Angle != 90 && Angle != 270)
 			{
+				Target_To_Move_To.x = Camera.x + 5 * cos(Math::DegreeToRadian(Angle));
 			}
-			Target_To_Move_To = Camera;
+			if (Angle != 0 && Angle != 180)
+			{
+				Target_To_Move_To.z = Camera.z + 5 * sin(Math::DegreeToRadian(Angle));
+			}
 		}
 		if (mode == charge)
 		{
-			float Range = sqrt(((Camera.x - Target.position.x)*(Camera.x - Target.position.x)) + ((Camera.z - Target.position.z)*(Camera.z - Target.position.z)));
-			if (Range > 20)
-			{
-			}
 			Target_To_Move_To = Camera;
 		}
 	}
@@ -168,14 +180,14 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size,
 		Target = mode_Action(Target,Camera);
 	}
 	Target = mode_Action(Target, Camera);
-	float speed = 0.5 * dt;
+	float speed = 0.2 * dt;
 	if (Target.Current_modetype == speed_escape || Target.Current_modetype == fake_attack)
 	{
-		speed = 0.8 * dt;
+		speed = 0.5 * dt;
 	}
 	else if (Target.Current_modetype == charge || Target.Current_modetype == Surprise_attack)
 	{
-		speed = 1 * dt;
+		speed = 0.7 * dt;
 	}
 	Target.position = Movement(Target.position, Target.Ground, speed, Size, Map, I, enemy, Z_Displacement, X_Displacement);
 	return Target;
@@ -185,34 +197,34 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size,
 Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[10], float Z_Displacement, float X_Displacement)
 {
 	Position T_Enemy = Current;
-	if ((Current.x - Target.x) < 0 && (Current.x - Speed) > ((-Size * 10) + X_Displacement))
+	if ((Current.x - Target.x) < 0 && (Current.x + Speed) < ((Size * 10) + X_Displacement))
 	{
-		T_Enemy.x -= Speed;
+		T_Enemy.x += Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I,Z_Displacement,X_Displacement))
 		{
 			Current = T_Enemy;
 		}
 	}
-	else if ((Current.x - Target.x) > 0 && (Current.x + Speed) < ((Size * 10) + X_Displacement))
+	else if ((Current.x - Target.x) > 0 && (Current.x - Speed) > ((-Size * 10) + X_Displacement))
 	{
-		T_Enemy.x += Speed;
+		T_Enemy.x -= Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
 		{
 			Current = T_Enemy;
 		}
 
 	}
-	if ((Current.z - Target.z) < 0 && (Current.z - Speed) > ((-Size * 10) + Z_Displacement))
+	if ((Current.z - Target.z) < 0 && (Current.z + Speed) < ((Size * 10) + Z_Displacement))
 	{
-		T_Enemy.z -= Speed;
+		T_Enemy.z += Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
 		{
 			Current = T_Enemy;
 		}
 	}
-	else if ((Current.z - Target.z) > 0 && (Current.z + Speed) < ((Size * 10) + Z_Displacement))
+	else if ((Current.z - Target.z) > 0 && (Current.z - Speed) > ((-Size * 10) + Z_Displacement))
 	{
-		T_Enemy.z += Speed;
+		T_Enemy.z -= Speed;
 		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
 		{
 			Current = T_Enemy;
@@ -310,4 +322,26 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I)
 		}
 	}
 	return check;
+}
+
+Camera3 Enemy::enemy_attack(Enemy enemy[10], Position character, Camera3 view)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		float X_distance = character.x - enemy[i].position.x;
+		float Z_distance = character.z - enemy[i].position.z;
+		if (X_distance < 0)
+		{
+			X_distance = X_distance * -1;
+		}
+		if (Z_distance < 0)
+		{
+			Z_distance = Z_distance * -1;
+		}
+		if (X_distance < 20 && Z_distance < 20)
+		{
+			view.Reset();
+		}
+	}
+	return view;
 }

@@ -301,5 +301,10 @@ private:
 
 	//TEMPO OBJECT FOR TESTING ONLY
 	Vector3 rawMaterial;
+
+	bool On_Plane = false;
+	float Speed = 0;
+	Position Plane;
+	void Plane_Rendering();
 };
 #endif
