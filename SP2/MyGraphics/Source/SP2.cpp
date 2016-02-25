@@ -454,6 +454,10 @@ void SP2::Init()
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//cameraskin.tga");
 
+	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
+	meshList[GEO_EGG]->textureID = LoadTGA("Image//Alien_Egg_D.tga");
+
+
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
@@ -701,8 +705,12 @@ void SP2::Update(double dt)
 			if (camera.view.Dot(npc.spacerocket.Nposition) > 0)
 			{
 				coolDownTime = deltaTime / 10;
+				if (pickuprocket == false)
+				{
+					parts++;
+				}
 				pickuprocket = true;
-				parts++;
+
 
 			}
 		}
@@ -713,13 +721,17 @@ void SP2::Update(double dt)
 			if (camera.view.Dot(npc.spacewing.Nposition) > 0)
 			{
 				coolDownTime = deltaTime / 10;
+				if (pickupwing == false)
+				{
+					parts++;
+
+				}
 				pickupwing = true;
-				parts++;
+
 			}
-
 		}
-	}
 
+	}
 	if (Application::IsKeyPressed('E'))
 	{
 		if (pickuprocket == true && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)

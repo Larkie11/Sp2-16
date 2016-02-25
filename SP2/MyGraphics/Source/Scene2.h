@@ -284,6 +284,7 @@ private:
 	bool fixrocket = false;
 	float coolDownTime;
 	string shop;
+	bool doorinteract = true;
 
 	void Map_Reading();
 	void Map_Rendering();

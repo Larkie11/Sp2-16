@@ -1279,38 +1279,41 @@ void Scene2::Render()
 	Fps.resize(11);
 
 	//Show player if he can interact with item
-	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
+	if (doorinteract == true)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
-		if (npc.robot1.robot == "robot1")
+		if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
 		{
-			int j = 25;
-			for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
+			RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+			if (npc.robot1.robot == "robot1")
 			{
-				j--;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
+				int j = 25;
+				for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
+				{
+					j--;
+					RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
+				}
+			}
+			if (npc.robot1.robot == "robot1.1")
+			{
+				npc.dialogue = 1;
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
+			}
+			if (npc.robot1.robot == "robot1.2")
+			{
+				npc.dialogue = 2;
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
+			}
+			if (npc.robot2.robot == "robot2")
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
+			}
+			if (npc.robot3.robot == "robot3")
+			{
+
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 			}
 		}
-		if (npc.robot1.robot == "robot1.1")
-		{
-			npc.dialogue = 1;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
-		}
-		if (npc.robot1.robot == "robot1.2")
-		{
-			npc.dialogue = 2;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
-		}
-		if (npc.robot2.robot == "robot2")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
-		}
-		if (npc.robot3.robot == "robot3")
-		{
-
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
-		}
-	}
+}
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 3, 3, 5);
 
 	int y = 14;
@@ -1512,15 +1515,19 @@ void Scene2::Character_Movement(float dt)
 	}
 
 
-	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS))
+	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y < 0 && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)
 	{
+		doorinteract = false;
 		On_Plane = true;
 	}
-	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS))
+	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS) && Plane.y<0)
 	{
+		doorinteract = true;
 		On_Plane = false;
 		camera.Reset();
 	}
+
+
 
 	if (On_Plane)
 	{

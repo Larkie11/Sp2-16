@@ -91,6 +91,7 @@ class SP2 : public Scene
 		GEO_BULLETSKIN,
 		GEO_BOMB,
 		GEO_CCTV,
+		GEO_EGG,
 		NUM_GEOMETRY,
 	};
 
@@ -290,6 +291,7 @@ private:
 	bool cam1 = false;
 	bool movement = true;
 
+
 	//picking up space ship parts
 	bool pickupwing = false;
 	bool pickuprocket = false;
@@ -298,6 +300,7 @@ private:
 	bool fixwing = false;
 	bool fixrocket = false;
 	float coolDownTime;
+	
 	string shop;
 
 	void Map_Reading();
