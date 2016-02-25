@@ -39,7 +39,7 @@ void Scene2::Init()
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 1;
 	startCoolDdown = false;
-	storyPosition = 3;
+	storyPosition = 2.5;
 
 	camera.cameraRotate = Vector3(0, 270, 0);
 
@@ -562,7 +562,7 @@ void Scene2::Update(double dt)
 	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
 	{
 		coolDownTime = deltaTime / 10;
-		if (storyPosition >= 3)
+		if (storyPosition >= 2.5)
 		{
 			storyDismiss = true;
 			storyShow = false;
@@ -584,7 +584,7 @@ void Scene2::Update(double dt)
 		storyPosition -= (float)(3 * dt);
 
 	}
-	if (storyShow && storyPosition < 3)
+	if (storyShow && storyPosition < 2.5)
 	{
 		storyPosition += (float)(3 * dt);
 	}
@@ -1311,7 +1311,6 @@ void Scene2::Render()
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
-	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 3, 3, 5);
 
 	int y = 14;
@@ -1343,7 +1342,14 @@ void Scene2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
-	RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
+	glBlendFunc(1, 1);
+	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	if (storyDismiss)
+	{
+		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
+	}
 }
 
 void Scene2::Exit()

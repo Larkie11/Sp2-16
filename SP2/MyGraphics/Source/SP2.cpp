@@ -38,7 +38,7 @@ void SP2::Init()
 	b_coolDown = b_coolDownLimit = 1;
 	startCoolDdown = false;
 	swordRotation = pickAxeRotation = gunTranslation = 0;
-	storyPosition = 3;
+	storyPosition = 2.5;
 
 	camera.cameraRotate = Vector3(0, 270, 0);
 
@@ -331,6 +331,9 @@ void SP2::Init()
 	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
 	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
 
+	meshList[GEO_TRIANGLE] = MeshBuilder::GenerateQuad("triangle", Color(1, 1, 1), 8, 5);
+	meshList[GEO_TRIANGLE]->textureID = LoadTGA("Image//Triangle.tga");
+
 	meshList[GEO_OREICON] = MeshBuilder::GenerateQuad("Ore", Color(1, 1, 1), 3, 3);
 	meshList[GEO_OREICON]->textureID = LoadTGA("Image//Ore.tga");
 
@@ -566,7 +569,7 @@ void SP2::Update(double dt)
 	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
 	{
 		coolDownTime = deltaTime / 10;
-		if (storyPosition >= 3)
+		if (storyPosition >= 2.5)
 		{
 			storyDismiss = true;
 			storyShow = false;
@@ -588,7 +591,7 @@ void SP2::Update(double dt)
 		storyPosition -= (float)(3 * dt);
 
 	}
-	if (storyShow && storyPosition < 3)
+	if (storyShow && storyPosition < 2.5)
 	{
 		storyPosition += (float)(3 * dt);
 	}
@@ -1404,16 +1407,6 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(-10, 3, -60);
-	RenderText(meshList[GEO_TEXT], "", Color(0, 1, 0));
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(25, 0, 0);
-	RenderText(meshList[GEO_TEXT], "", Color(0, 1, 0));
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
 	//Bullet render
@@ -1428,7 +1421,6 @@ void SP2::Render()
 		RenderMesh(meshList[GEO_BULLETSKIN], false);
 		modelStack.PopMatrix();
 	}
-
 
 	var.resize(16);
 	var1.resize(16);
@@ -1467,7 +1459,6 @@ void SP2::Render()
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
-	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
 
 	int y = 14;
@@ -1499,7 +1490,15 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
-	RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
+
+	glBlendFunc(1, 1);
+	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	if (storyDismiss)
+	{
+		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
+	}
 }
 
 void SP2::Exit()

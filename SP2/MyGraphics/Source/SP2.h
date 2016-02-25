@@ -45,6 +45,7 @@ class SP2 : public Scene
 		GEO_BB8HEAD,
 		GEO_BB8BODY,
 		GEO_CROSSHAIR,
+		GEO_TRIANGLE,
 
 		GEO_LEFT1,
 		GEO_RIGHT1,
