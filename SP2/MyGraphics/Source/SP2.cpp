@@ -454,6 +454,9 @@ void SP2::Init()
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//cameraskin.tga");
 
+	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
+	meshList[GEO_EGG]->textureID = LoadTGA("Image//Alien_Egg_D.tga");
+
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
 	Mtx44 projection;
@@ -1374,7 +1377,7 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_CCTV], true);
+	RenderMesh(meshList[GEO_EGG], true);
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();

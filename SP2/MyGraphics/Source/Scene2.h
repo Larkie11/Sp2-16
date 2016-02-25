@@ -305,6 +305,7 @@ private:
 
 	bool On_Plane = false;
 	float Speed = 0;
+	bool doorinteract = true;
 	Position Plane;
 	void Plane_Rendering();
 };
