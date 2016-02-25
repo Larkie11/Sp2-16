@@ -476,7 +476,8 @@ void SP2::Update(double dt)
 	Enemy_Updating(dt);
 
 	//Talking to npc or opening door
-	npc.Update(camera, deltaTime);
+	npc.Door(camera, dt);
+	npc.Scene1(camera, dt);
 	//Dialogue for robot with rotating head
 	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
 	{
@@ -488,6 +489,7 @@ void SP2::Update(double dt)
 		}
 	}
 	//NPC movement/rotation
+
 	else if (npc.robot3.robot != "robot3")
 	{
 		if (robot1rotate == false)
@@ -518,21 +520,17 @@ void SP2::Update(double dt)
 			if (npc.robot1.Nposition.z >= -100)
 			{
 				robot1moved = true;
-
 			}
 		}
 
 		if (robot1moved)
 		{
-			if (npc.robot1.Nposition.z > -150)
-			{
-				npc.robot1.Nposition.z -= (float)(10 * dt);
+			npc.robot1.Nposition.z -= (float)(10 * dt);
 
-				if (npc.robot1.Nposition.z <= -150)
+				if (npc.robot1.Nposition.z <= -160)
 				{
 					robot1moved = false;
 				}
-			}
 		}
 	}
 	if (npc.door.canGoThrough)
@@ -1786,12 +1784,9 @@ void SP2::ObjectsHolding(Mesh*mesh, float size)
 {
 
 	modelStack.PushMatrix();
-
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
-
-
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(size, size, size);

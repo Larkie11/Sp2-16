@@ -474,7 +474,8 @@ void Scene2::Update(double dt)
 	Enemy_Updating(dt);
 
 	//Talking to npc or opening door
-	npc.Update(camera, deltaTime);
+	npc.Door(camera, dt);
+	npc.Scene2(camera, dt);
 	//Dialogue for robot with rotating head
 	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
 	{
@@ -526,21 +527,9 @@ void Scene2::Update(double dt)
 
 			if (npc.robot1.Nposition.x >= 240)
 			{
-				robot1moved = true;
+				robot1moved = false;
 			}
 		}
-		/*if (robot1moved)
-		{
-			if (npc.robot1.Nposition.z > -150)
-			{
-				npc.robot1.Nposition.z -= (float)(10 * dt);
-
-				if (npc.robot1.Nposition.z <= -150)
-				{
-					robot1moved = false;
-				}
-			}
-		}*/
 	}
 	if (npc.door.canGoThrough)
 	{

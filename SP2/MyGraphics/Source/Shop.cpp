@@ -126,7 +126,6 @@ void Shop::Init()
 	m_parameters[U_LIGHT5_COSINNER] = glGetUniformLocation(m_programID, "lights[5].cosInner");
 	m_parameters[U_LIGHT5_EXPONENT] = glGetUniformLocation(m_programID, "lights[5].exponent");
 
-
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
@@ -452,35 +451,18 @@ void Shop::Update(double dt)
 	if (shopInput != "Shop" && shopInput != "Buy" && shopInput != "Sell")
 	{
 		camera.Update(dt);
+		mouse.MouseUpdate(dt, camera);
 	}
-	if (detectCollision.collideByDist(camera.position, npc.seller.Nposition) <= 50)
+	if (detectCollision.collideByDist(camera.position, npc.seller.Nposition) <= 35)
 	{
 		if (Application::IsKeyPressed('E') && PressTime == 0)
 		{
-
 			PressTime = deltaTime / 5;
 			shopInput = "Shop";
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) <= 25)
-	{
-		npc.interactDia = "Press E to go back to land";
-		npc.spaceDoor.canGoThrough = true;
-		if (Application::IsKeyPressed('E'))
-		{
-			npc.spaceDoor.canInteract = true;
-		}
-	}
-	else
-	{
-		npc.spaceDoor.canInteract = false;
-		if (npc.spaceDoor.Nposition.z > 0)
-		{
-			npc.spaceDoor.Nposition.z -= (float)(30 * dt);
-		}
-	}
-	if (npc.spaceDoor.canInteract)
+	if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) <= 20)
 	{
 		if (npc.spaceDoor.Nposition.z < 40)
 		{
@@ -488,6 +470,7 @@ void Shop::Update(double dt)
 
 			if (npc.spaceDoor.Nposition.z >= 40)
 			{
+				npc.spaceDoor.canInteract = true;
 				if (SharedData::GetInstance()->gameScene == "Scene2")
 				{
 					npc.interactDia = "Flying back to land...";
@@ -499,8 +482,17 @@ void Shop::Update(double dt)
 					SharedData::GetInstance()->stateCheck = true;
 					SharedData::GetInstance()->gameState = SharedData::SCENE3;
 				}
-				npc.spaceDoor.canInteract = false;
 			}
+		}
+	}
+
+	else if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) >= 20)
+	{
+		npc.spaceDoor.canInteract = false;
+
+		if (npc.spaceDoor.Nposition.z > 0)
+		{
+			npc.spaceDoor.Nposition.z -= (float)(30 * dt);
 		}
 	}
 
@@ -1289,7 +1281,7 @@ void Shop::Render()
 	modelStack.PopMatrix();
 
 
-	if (npc.seller.canInteract||npc.spaceDoor.canGoThrough)
+	if (npc.seller.canInteract || npc.spaceDoor.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 	}

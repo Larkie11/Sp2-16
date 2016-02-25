@@ -8,6 +8,8 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Material.h"
+#include "Mouse.h"
+
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Objects.h"
@@ -246,7 +248,7 @@ private:
 
 	bool renderMenu = false;
 	float spaceDoor = 0;
-
+	Mouse mouse;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];

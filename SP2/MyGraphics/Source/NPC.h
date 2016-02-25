@@ -39,7 +39,9 @@ public:
 	double coolDownTime;
 	int dialogue;
 	
-	void Update(Camera3 camera, double dt);
+	void Scene1(Camera3 camera, double dt);
+	void Scene2(Camera3 camera, double dt);
+	void Door(Camera3 camera, double dt);
 	void Shop(Camera3 camera);
 	NPC();
 	~NPC();
