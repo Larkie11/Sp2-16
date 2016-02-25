@@ -89,6 +89,7 @@ class SP2 : public Scene
 		GEO_EXPLOSION,
 		GEO_BULLETSKIN,
 		GEO_BOMB,
+		GEO_CCTV,
 		NUM_GEOMETRY,
 	};
 

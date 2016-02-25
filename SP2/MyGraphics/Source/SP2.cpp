@@ -444,9 +444,12 @@ void SP2::Init()
 	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
 	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//bulletskin.tga");
 
-	meshList[GEO_BOMB] = MeshBuilder::GenerateOBJ("hand", "OBJ//bomb.obj");
+	meshList[GEO_BOMB] = MeshBuilder::GenerateOBJ("bomb", "OBJ//bomb.obj");
 	meshList[GEO_BOMB]->textureID = LoadTGA("Image//bomb2.tga");
 
+
+	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
+	meshList[GEO_CCTV]->textureID = LoadTGA("Image//cameraskin.tga");
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -1334,6 +1337,7 @@ void SP2::Render()
 	//modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	//modelStack.Rotate(followy, 0, 1, 0);
 	//modelStack.Rotate(followx, 0, 0, 1);
+	//modelStack.Rotate(180, 0, 1, 0);
 	//modelStack.PushMatrix();
 	//modelStack.Translate(0.4, -0.3, 0.22);
 	//modelStack.Rotate(-pickAxeRotation, 0, 0, 1);
@@ -1346,6 +1350,7 @@ void SP2::Render()
 	//modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	//modelStack.Rotate(followy, 0, 1, 0);
 	//modelStack.Rotate(followx, 0, 0, 1);
+	//modelStack.Rotate(180, 0, 1, 0);
 	//modelStack.PushMatrix();
 	//modelStack.Translate(0.5, -0.28, 0.3);
 	//modelStack.Rotate(-swordRotation, 0, 0, 1);
@@ -1356,21 +1361,25 @@ void SP2::Render()
 
 
 	modelStack.PushMatrix();
+
 	modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_BOMB], true);
+	RenderMesh(meshList[GEO_CCTV], true);
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
+
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.Rotate(followx, 0, 0, 1);	
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.PushMatrix();
 	modelStack.Translate(gunTranslation + 0.59, -0.15, 0.3);
 	modelStack.Scale(0.1, 0.1, 0.1);
@@ -1378,16 +1387,7 @@ void SP2::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(gunTranslation + 0.59, -0.15, 0.3);
-	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_GUN], true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
+	
 
 
 	modelStack.PushMatrix();
