@@ -1538,8 +1538,15 @@ void Scene2::Character_Movement(float dt)
 			}
 			else if (Plane.x > 15)
 			{
+				Plane.y = 200;
 				Speed -= (0.65*Speed)*dt;
 				Plane.x -= Speed*dt;
+			}
+			else
+			{
+				Plane.y = 200;
+				Plane.x = 15;
+				Speed = 0;
 			}
 		}
 		if (Application::IsKeyPressed('S'))
@@ -1551,8 +1558,15 @@ void Scene2::Character_Movement(float dt)
 			}
 			else if (Plane.y > -20)
 			{
+				Plane.x = 350;
 				Speed -= (0.65*Speed)*dt;
 				Plane.y -= Speed*dt;
+			}
+			else
+			{
+				Plane.x = 350;
+				Plane.y = -20;
+				Speed = 0;
 			}
 		}
 	}
