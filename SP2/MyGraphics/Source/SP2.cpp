@@ -1301,7 +1301,9 @@ void SP2::Render()
 	else
 	{
 		if (fixwing == false)
-			ObjectsHolding(meshList[GEO_PLANEWING], 0.03);
+
+			ObjectsHolding(meshList[GEO_PLANEWING],0.05);
+		
 		//hold in ur hand 
 
 	}
@@ -1788,6 +1790,7 @@ void SP2::ObjectsHolding(Mesh*mesh, float size)
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(size, size, size);
