@@ -266,6 +266,7 @@ private:
 	Bullet bullet;
 	Objects objects;
 
+	int emeny_size = 10;
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);

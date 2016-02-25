@@ -272,6 +272,7 @@ private:
 	bool robot1rotate = false;
 	float robot1rotation = 0;
 
+	int emeny_size = 10;
 	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);

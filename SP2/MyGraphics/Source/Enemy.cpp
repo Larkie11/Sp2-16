@@ -173,7 +173,7 @@ int Enemy::Return_HP(Enemy Target)
 	return Target.HP;
 }
 
-Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement)
+Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement, int enemy_size)
 {
 	if (Target.Current_modetype < 3)
 	{
@@ -189,18 +189,18 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size,
 	{
 		speed = 0.7 * dt;
 	}
-	Target.position = Movement(Target.position, Target.Ground, speed, Size, Map, I, enemy, Z_Displacement, X_Displacement);
+	Target.position = Movement(Target.position, Target.Ground, speed, Size, Map, I, enemy, Z_Displacement, X_Displacement,enemy_size);
 	return Target;
 
 }
 
-Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[10], float Z_Displacement, float X_Displacement)
+Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[10], float Z_Displacement, float X_Displacement, int enemy_size)
 {
 	Position T_Enemy = Current;
 	if ((Current.x - Target.x) < 0 && (Current.x + Speed) < ((Size * 10) + X_Displacement))
 	{
 		T_Enemy.x += Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I,Z_Displacement,X_Displacement))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement,enemy_size))
 		{
 			Current = T_Enemy;
 		}
@@ -208,7 +208,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	else if ((Current.x - Target.x) > 0 && (Current.x - Speed) > ((-Size * 10) + X_Displacement))
 	{
 		T_Enemy.x -= Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement, enemy_size))
 		{
 			Current = T_Enemy;
 		}
@@ -217,7 +217,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	if ((Current.z - Target.z) < 0 && (Current.z + Speed) < ((Size * 10) + Z_Displacement))
 	{
 		T_Enemy.z += Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement, enemy_size))
 		{
 			Current = T_Enemy;
 		}
@@ -225,7 +225,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	else if ((Current.z - Target.z) > 0 && (Current.z - Speed) > ((-Size * 10) + Z_Displacement))
 	{
 		T_Enemy.z -= Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement, enemy_size))
 		{
 			Current = T_Enemy;
 		}
@@ -234,7 +234,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	return Current;
 }
 
-bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement, bool enter)
+bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement,int enemy_size, bool enter)
 {
 	bool check = true;
 	bool Inside_Scene = true;
@@ -293,17 +293,17 @@ bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20]
 	}
 	if (check)
 	{
-		check = Enemy_Collision(Character, enemy, I);
+		check = Enemy_Collision(Character, enemy, I, enemy_size);
 	}
 	return check;
 }
 
-bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I)
+bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I,int enemy_size)
 {
 	bool check = true;
 	if (I != 9)
 	{
-		for (int i = I + 1; i < 10; i++)
+		for (int i = I + 1; i < enemy_size; i++)
 		{
 			float X_distance = Character.x - enemy[i].position.x;
 			float Z_distance = Character.z - enemy[i].position.z;
@@ -324,9 +324,9 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I)
 	return check;
 }
 
-Camera3 Enemy::enemy_attack(Enemy enemy[10], Position character, Camera3 view)
+Camera3 Enemy::enemy_attack(Enemy enemy[10], Position character, Camera3 view,int enemy_size)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < enemy_size; i++)
 	{
 		float X_distance = character.x - enemy[i].position.x;
 		float Z_distance = character.z - enemy[i].position.z;
@@ -338,7 +338,7 @@ Camera3 Enemy::enemy_attack(Enemy enemy[10], Position character, Camera3 view)
 		{
 			Z_distance = Z_distance * -1;
 		}
-		if (X_distance < 20 && Z_distance < 20)
+		if (X_distance < 15 && Z_distance < 15)
 		{
 			view.Reset();
 		}
