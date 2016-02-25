@@ -1,9 +1,23 @@
-#ifndef Enemy_H
+/****************************************************************************/
+/*!
+\file Enemy.h
+\author Francis Wong
+\par email: swordismylife@gmail.com
+\brief
+Class to define enemy
+*/
+/****************************************************************************/#ifndef Enemy_H
 #define Enemy_H
 
 #include "Vertex.h"
 #include "Camera3.h"
 
+/****************************************************************************/
+/*!
+Class Enemy:
+\brief Defines Enemy and its methods
+*/
+/****************************************************************************/
 class Enemy
 {
 	float HP;
