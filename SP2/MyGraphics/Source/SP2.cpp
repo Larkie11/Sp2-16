@@ -3,8 +3,6 @@
 
 #include "shader.hpp"
 #include "Mtx44.h"
-
-
 #include "LoadTGA.h"
 #include "SharedData.h"
 
@@ -35,6 +33,7 @@ void SP2::Init()
 	Dialogue("Text//RobotScene1.txt");
 	PressTime = 0;
 	// Init VBO here
+	gun = 0;
 	b_coolDown = b_coolDownLimit = 1;
 	startCoolDdown = false;
 	usingSword = true;
@@ -174,10 +173,10 @@ void SP2::Init()
 
 	glUseProgram(m_programID);
 
-	light[0].type = Light::LIGHT_POINT;
-	light[0].position.Set(0, 0, 0);
+	light[0].type = Light::LIGHT_DIRECTIONAL;
+	light[0].position.Set(0, 1, 0);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 2;
+	light[0].power = 0.2;
 	light[0].kC = 5.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -198,10 +197,10 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	light[1].type = Light::LIGHT_SPOT;
-	light[1].position.Set(-300, 37, 0);
+	light[1].position.Set(350, 37, 0);
 	light[1].color.Set(1, 1, 1);
 	light[1].power = 3;
-	light[1].kC = 5.f;
+	light[1].kC = 1.f;
 	light[1].kL = 0.1f;
 	light[1].kQ = 0.001f;
 	light[1].cosCutOff = cos(Math::DegreeToRadian(45));
@@ -219,10 +218,10 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
 	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
 
-	light[2].type = Light::LIGHT_DIRECTIONAL;
-	light[2].position.Set(0, 1, 0);
-	light[2].color.Set(1, 1, 1);
-	light[2].power = 0.5;
+	light[2].type = Light::LIGHT_POINT;
+	light[2].position.Set(-100, 55, 0);
+	light[2].color.Set(1, 0, 1);
+	light[2].power = 3;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -241,108 +240,52 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT2_COSINNER], light[2].cosInner);
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
 
-	light[3].type = Light::LIGHT_SPOT;
-	light[3].position.Set(350, 37, 0);
-	light[3].color.Set(1, 1, 1);
-	light[3].power = 3;
-	light[3].kC = 1.f;
-	light[3].kL = 0.1f;
-	light[3].kQ = 0.001f;
-	light[3].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[3].cosInner = cos(Math::DegreeToRadian(30));
-	light[3].exponent = 3.f;
-	light[3].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT3_TYPE], light[3].type);
-	glUniform3fv(m_parameters[U_LIGHT3_COLOR], 1, &light[3].color.r);
-	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
-	glUniform1f(m_parameters[U_LIGHT3_KC], light[3].kC);
-	glUniform1f(m_parameters[U_LIGHT3_KL], light[3].kL);
-	glUniform1f(m_parameters[U_LIGHT3_KQ], light[3].kQ);
-	glUniform1f(m_parameters[U_LIGHT3_COSCUTOFF], light[3].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT3_COSINNER], light[3].cosInner);
-	glUniform1f(m_parameters[U_LIGHT3_EXPONENT], light[3].exponent);
-
-	light[4].type = Light::LIGHT_POINT;
-	light[4].position.Set(0, 200, 300);
-	light[4].color.Set(1, 1, 1);
-	light[4].power = 40;
-	light[4].kC = 1.f;
-	light[4].kL = 0.1f;
-	light[4].kQ = 0.001f;
-	light[4].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[4].cosInner = cos(Math::DegreeToRadian(30));
-	light[4].exponent = 3.f;
-	light[4].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT4_TYPE], light[4].type);
-	glUniform3fv(m_parameters[U_LIGHT4_COLOR], 1, &light[4].color.r);
-	glUniform1f(m_parameters[U_LIGHT4_POWER], light[4].power);
-	glUniform1f(m_parameters[U_LIGHT4_KC], light[4].kC);
-	glUniform1f(m_parameters[U_LIGHT4_KL], light[4].kL);
-	glUniform1f(m_parameters[U_LIGHT4_KQ], light[4].kQ);
-	glUniform1f(m_parameters[U_LIGHT4_COSCUTOFF], light[4].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT4_COSINNER], light[4].cosInner);
-	glUniform1f(m_parameters[U_LIGHT4_EXPONENT], light[4].exponent);
-
-	light[5].type = Light::LIGHT_POINT;
-	light[5].position.Set(-100, 55, 0);
-	light[5].color.Set(1, 0, 1);
-	light[5].power = 3;
-	light[5].kC = 1.f;
-	light[5].kL = 0.1f;
-	light[5].kQ = 0.001f;
-	light[5].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[5].cosInner = cos(Math::DegreeToRadian(30));
-	light[5].exponent = 3.f;
-	light[5].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT5_TYPE], light[5].type);
-	glUniform3fv(m_parameters[U_LIGHT5_COLOR], 1, &light[5].color.r);
-	glUniform1f(m_parameters[U_LIGHT5_POWER], light[5].power);
-	glUniform1f(m_parameters[U_LIGHT5_KC], light[5].kC);
-	glUniform1f(m_parameters[U_LIGHT5_KL], light[5].kL);
-	glUniform1f(m_parameters[U_LIGHT5_KQ], light[5].kQ);
-	glUniform1f(m_parameters[U_LIGHT5_COSCUTOFF], light[5].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT5_COSINNER], light[5].cosInner);
-	glUniform1f(m_parameters[U_LIGHT5_EXPONENT], light[5].exponent);
-
-	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
+	glUniform1i(m_parameters[U_NUMLIGHTS], 3);
 
 	//Initialize camera settings
 	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
+
+	GLuint floor = LoadTGA("Image//Scene_Floor.tga");
+
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
-	meshList[GEO_QUAD]->textureID = LoadTGA("Image//Tile.tga");
+	meshList[GEO_QUAD]->textureID = floor;
 	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;
 
-	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
-	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
-
-	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("inventorybar", Color(1, 1, 1), 3, 3);
-	meshList[GEO_INVENTORY]->textureID = LoadTGA("Image//Inventory.tga");
+	meshList[GEO_PYRAMIDFLOOR] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1.4, 1.4, 10);
+	meshList[GEO_PYRAMIDFLOOR]->textureID = floor;
+	meshList[GEO_PYRAMIDFLOOR]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
+	meshList[GEO_PYRAMIDFLOOR]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
+	meshList[GEO_PYRAMIDFLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
+	meshList[GEO_PYRAMIDFLOOR]->material.kShininess = 1.f;
 
 	meshList[GEO_AMMOICON] = MeshBuilder::GenerateQuad("ammoicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//Ammo.tga");
+	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//I_Ammo.tga");
 
 	meshList[GEO_GOLDICON] = MeshBuilder::GenerateQuad("goldicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//Gold.tga");
+	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//I_Gold.tga");
 
 	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
+	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//I_Egg.tga");
 
-	meshList[GEO_TRIANGLE] = MeshBuilder::GenerateQuad("triangle", Color(1, 1, 1), 8, 5);
-	meshList[GEO_TRIANGLE]->textureID = LoadTGA("Image//Triangle.tga");
+	meshList[GEO_GUNICON] = MeshBuilder::GenerateQuad("gun", Color(1, 1, 1), 3, 3);
+	meshList[GEO_GUNICON]->textureID = LoadTGA("Image//I_Gun.tga");
+
+	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("pickaxe", Color(1, 1, 1), 3, 3);
+	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//I_PickAxe.tga");
+
+	meshList[GEO_SWORDICON] = MeshBuilder::GenerateQuad("sword", Color(1, 1, 1), 3, 3);
+	meshList[GEO_SWORDICON]->textureID = LoadTGA("Image//I_Sword.tga");
 
 	meshList[GEO_OREICON] = MeshBuilder::GenerateQuad("Ore", Color(1, 1, 1), 3, 3);
-	meshList[GEO_OREICON]->textureID = LoadTGA("Image//Ore.tga");
+	meshList[GEO_OREICON]->textureID = LoadTGA("Image//I_Ore.tga");
 
 	meshList[GEO_BOMBICON] = MeshBuilder::GenerateQuad("Bomb", Color(1, 1, 1), 3, 3);
-	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//Bomb.tga");
+	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//I_Bomb.tga");
 
 	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//d_front.tga");
@@ -366,100 +309,88 @@ void SP2::Init()
 	meshList[GEO_BOTTOM1]->textureID = LoadTGA("Image//d_bottom.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
-	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
+	meshList[GEO_TEXT]->textureID = LoadTGA("Image//_Font.tga");
 
-	meshList[GEO_BAG] = MeshBuilder::GenerateQuad("Bag", Color(1, 1, 1), 5, 5);
-	meshList[GEO_BAG]->textureID = LoadTGA("Image//Bag.tga");
-
-	meshList[GEO_VENDING] = MeshBuilder::GenerateOBJ("VM", "OBJ//shelves.obj");
-	meshList[GEO_VENDING]->textureID = LoadTGA("Image//vending.tga");
-
+	GLuint R2D2 = LoadTGA("Image//Scene_R2D2_D.tga");
 	meshList[GEO_ROBOTH] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2_head.obj");
-	meshList[GEO_ROBOTH]->textureID = LoadTGA("Image//R2D2_D.tga");
+	meshList[GEO_ROBOTH]->textureID = R2D2;
 	meshList[GEO_ROBOTB] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2_body.obj");
-	meshList[GEO_ROBOTB]->textureID = LoadTGA("Image//R2D2_D.tga");
+	meshList[GEO_ROBOTB]->textureID = R2D2;
 
 	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2.obj");
-	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//R2D2_D.tga");
+	meshList[GEO_ROBOT]->textureID = R2D2;
 
 	meshList[GEO_ROBOT1] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
-	meshList[GEO_ROBOT1]->textureID = LoadTGA("Image//R2D2_A.tga");
+	meshList[GEO_ROBOT1]->textureID = LoadTGA("Image//Scene_R2D2_A.tga");
 
 	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//BB8.obj");
-	meshList[GEO_COKE]->textureID = LoadTGA("Image//BB8.tga");
+	meshList[GEO_COKE]->textureID = LoadTGA("Image//Scene_BB8.tga");
 
 	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story1", Color(1, 1, 1), 4, 5);
 	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story1.tga");
 
-	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pryramidobj.obj");
-	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//sand_2.tga");
 
 	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
-	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//moon.tga");
+	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//Scene_moon.tga");
 
-	meshList[GEO_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//Missile.obj");
-	meshList[GEO_BULLET]->textureID = LoadTGA("Image//coke.tga");
-
+	GLuint pyramid = LoadTGA("Image//Scene_Pyramid.tga");
+	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pryramidobj.obj");
+	meshList[GEO_PYRAMID]->textureID = pyramid;
 	meshList[GEO_PYRAMIDNEW] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidNew.obj");
-	meshList[GEO_PYRAMIDNEW]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PYRAMIDNEW]->textureID = pyramid;
 	meshList[GEO_PYRAMIDDOOR] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidDoor.obj");
-	meshList[GEO_PYRAMIDDOOR]->textureID = LoadTGA("Image//slabs.tga");
+	meshList[GEO_PYRAMIDDOOR]->textureID = LoadTGA("Image//Scene_slabs.tga");
 	meshList[GEO_PYRAMIDWALL] = MeshBuilder::GenerateOBJ("Walls", "OBJ/Wall.obj");
-	meshList[GEO_PYRAMIDWALL]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PYRAMIDWALL]->textureID = pyramid;
 	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
-	meshList[GEO_PYRAMIDPILLAR]->textureID = LoadTGA("Image//sand_2.tga");
-
-	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
-	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PYRAMIDPILLAR]->textureID = pyramid;
 
 	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
-	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//SPACESHIP.tga");
+	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//Scene_SpaceShip.tga");
 
 	meshList[GEO_BB8HEAD] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8head.obj");
-	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//BB8head.tga");
+	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//Scene_BB8head.tga");
 
 	meshList[GEO_BB8BODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8sphere.obj");
-	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//BB8sphere.tga");
+	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//Scene_BB8sphere.tga");
 
+	GLuint plane = LoadTGA("Image//Scene_Plane.tga");
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
-	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//PLANE.tga");
+	meshList[GEO_PLANEBODY]->textureID = plane;
 
 	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("Star", "OBJ//planewing.obj");
-	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//PLANE.tga");
+	meshList[GEO_PLANEWING]->textureID = plane;
 
 	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("Star", "OBJ//planerocket.obj");
-	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//PLANE.tga");
-
-	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
-	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_PLANEROCKET]->textureID = plane;
 
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("pickaxe", "OBJ//pickaxe.obj");
-	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//pickaxeskin.tga");
+	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Weapon_PickAxe.tga");
 
 	meshList[GEO_GUN] = MeshBuilder::GenerateOBJ("gun", "OBJ//M24_R_Low_Poly_Version_obj.obj");
-	meshList[GEO_GUN]->textureID = LoadTGA("Image//M24R_C.tga");
+	meshList[GEO_GUN]->textureID = LoadTGA("Image//Weapon_Gun.tga");
 
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//Sword.obj");
-	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Sword.tga");
+	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Weapon_Sword.tga");
 
 	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
-	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//RawMaterial.tga");
+	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//Scene_RawMaterial.tga");
 
 	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
-	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//explosion1.tga");
+	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//Scene_Explosion.tga");
 
 	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
-	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//bulletskin.tga");
+	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//Scene_Bullet.tga");
 
 	meshList[GEO_BOMB] = MeshBuilder::GenerateOBJ("bomb", "OBJ//bomb.obj");
-	meshList[GEO_BOMB]->textureID = LoadTGA("Image//bomb2.tga");
+	meshList[GEO_BOMB]->textureID = LoadTGA("Image//Scene_Bomb.tga");
 
 
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
-	meshList[GEO_CCTV]->textureID = LoadTGA("Image//cameraskin.tga");
+	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
 
 	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
-	meshList[GEO_EGG]->textureID = LoadTGA("Image//Alien_Egg_D.tga");
+	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
 
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
@@ -612,13 +543,13 @@ void SP2::Update(double dt)
 	}
 
 	//To open the shop for now
-	if (Application::IsKeyPressed('O'))
+	/*if (Application::IsKeyPressed('O'))
 	{
 		shop = "Loading Shop";
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SHOP;
 	}
-
+*/
 	if (Application::IsKeyPressed('3'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if (Application::IsKeyPressed('4'))
@@ -835,7 +766,6 @@ void SP2::Update(double dt)
 	{
 		//SWORD
 		weaponChoice = 1;
-
 		usingSword = true;
 		usingGun = false;
 		usingPickAxe = false;
@@ -845,7 +775,6 @@ void SP2::Update(double dt)
 	{
 		//PICKAXE
 		weaponChoice = 3;
-
 		usingSword = false;
 		usingGun = false;
 		usingPickAxe = true;
@@ -855,12 +784,33 @@ void SP2::Update(double dt)
 	{
 		//GUN
 		weaponChoice = 2;
-
+		
 		usingSword = false;
 		usingGun = true;
 		usingPickAxe = false;
 	}
 
+
+	if (weaponChoice == 1)
+	{
+		gun = 0;
+		sword = 1;
+		pickaxe = 0;
+	}
+
+	if (weaponChoice == 2)
+	{
+		gun = 1;
+		sword = 0;
+		pickaxe = 0;
+	}
+
+	if (weaponChoice == 3)
+	{
+		gun = 0;
+		sword = 0;
+		pickaxe = 1;
+	}
 	animation.moveSword(dt, swordTranslation, usingSword);
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
@@ -1438,17 +1388,19 @@ void SP2::Render()
 
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(2000, 1, 2000);
 	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 1, 0);
-	modelStack.Rotate(90, 1, 0, 0);
+	//scale, translate, rotate
+	modelStack.Translate(-108, -19.9, 0);
+	modelStack.Rotate(180, 1, 0, 0);
+	modelStack.Scale(300, 1, 300);
+	RenderMesh(meshList[GEO_PYRAMIDFLOOR], true);
 	modelStack.PopMatrix();
 
 	//Bullet render
@@ -1503,28 +1455,20 @@ void SP2::Render()
 	}
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
 
+	int x = 38.5;
 	int y = 14;
-
-	modelStack.PushMatrix();
-	for (int i = 0; i < 5; i++)
-	{
-		//RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, 1.3, 18, 90, 1, 0, 0, 0);
-		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, -1);
-		y -= 3;
-	}
-
 	//All element for player inventory
-	RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.7, 19, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_GOLDICON], 1.5, 1.7, 15, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_EGGICON], 1.5, 1.7, 10.8, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_OREICON], 1.5, 1.7, 6.8, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_BOMBICON], 1.5, 1.7, 2.9, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, x, y, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_GOLDICON], 2, x, y-3, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_EGGICON], 2, x, y-6, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_OREICON], 2, x, y-9, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_BOMBICON], 2, x, y-12, 90, 1, 0, 0, 0);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0.9, 0.5), 1.5, 1, 17.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0.9, 0.5), 1.5, 1, 13.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0.9, 0.5), 1.5, 1, 5.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0.9, 0.5), 1.5, 1, 1.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0, 1), 1.5, x + 11.5, y +3.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0, 1), 1.5, x + 11.5, y - 0.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
 
 	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
@@ -1532,9 +1476,20 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
-
 	glBlendFunc(1, 1);
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glBlendFunc(1, gun);
+	RenderQuadOnScreen(meshList[GEO_GUNICON], 2, 1.6, 2, 90, 1, 0, 0, 0);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glBlendFunc(1, pickaxe);
+	RenderQuadOnScreen(meshList[GEO_PICKAXEICON], 2, 1.6, 5, 90, 1, 0, 0, 0);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glBlendFunc(1, sword);
+	RenderQuadOnScreen(meshList[GEO_SWORDICON], 2, 1.6, 8, 90, 1, 0, 0, 0);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	if (storyDismiss)

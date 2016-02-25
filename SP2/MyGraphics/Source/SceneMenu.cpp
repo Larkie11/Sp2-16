@@ -85,23 +85,14 @@ void SceneMenu::Init()
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
-	meshList[GEO_INSTRUCTIONS] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 10, 10);
-	meshList[GEO_INSTRUCTIONS]->textureID = LoadTGA("Image//Instructions.tga");
-
-	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("land", "Obj//planewing.obj");
-	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//Plane.tga");
-
-	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("land", "Obj//planebody.obj");
-	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//Plane.tga");
-
-	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("land", "Obj//planerocket.obj");
-	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//Plane.tga");
+	meshList[GEO_INSTRUCTIONS] = MeshBuilder::GenerateQuad("instructions", Color(1, 1, 1), 10, 10);
+	meshList[GEO_INSTRUCTIONS]->textureID = LoadTGA("Image//Menu_Instructions.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
-	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
+	meshList[GEO_TEXT]->textureID = LoadTGA("Image//_Font.tga");
 
 	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
-	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
+	meshList[GEO_STAR]->textureID = LoadTGA("Image//Scene_Pyramid.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
@@ -523,7 +514,7 @@ void SceneMenu::Render()
 	if (Input == "Menu")
 	{
 		int j = 19;
-		for (int i = 0; i < my_arr.size() - 2; ++i)
+		for (int i = 0; i < my_arr.size() - 1; ++i)
 		{
 			j--;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);

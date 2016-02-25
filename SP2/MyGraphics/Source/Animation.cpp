@@ -102,7 +102,7 @@ void Animation::moveGun(double dt, float& targetTranslation, bool usingGun)
 	{
 		if (targetTranslation < 0)
 		{
-			targetTranslation += (float)(2 * dt);
+			targetTranslation += (float)(5 * dt);
 		}
 	}
 	else if (!usingGun && targetTranslation != -2)

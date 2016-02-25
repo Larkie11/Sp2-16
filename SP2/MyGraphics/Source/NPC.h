@@ -32,6 +32,7 @@ public:
 	DOT spacerocket;
 	DOT seller;
 	DOT spaceDoor;
+	DOT spaceShip;
 
 	CollisionDetector detectCollision;
 	string interactDia;

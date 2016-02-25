@@ -283,42 +283,18 @@ void Shop::Init()
 	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
-	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ShopFloor.tga");
+	meshList[GEO_QUAD]->textureID = LoadTGA("Image//Shop_Floor.tga");
 	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;
 
 	meshList[GEO_CEILING] = MeshBuilder::GenerateRepeatQuad("floor", Color(1, 1, 1), 1, 1, 10);
-	meshList[GEO_CEILING]->textureID = LoadTGA("Image//Ceiling.tga");
+	meshList[GEO_CEILING]->textureID = LoadTGA("Image//Shop_Floor.tga");
 	meshList[GEO_CEILING]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
 	meshList[GEO_CEILING]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_CEILING]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_CEILING]->material.kShininess = 1.f;
-
-	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
-	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
-
-	meshList[GEO_SHOP] = MeshBuilder::GenerateQuad("shop", Color(1, 1, 1), 14, 13);
-	meshList[GEO_SHOP]->textureID = LoadTGA("Image//shop.tga");
-
-	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//spacewall.tga");
-
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1, 1);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//spacewall.tga");
-
-	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1, 1);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//spacewall.tga");
-
-	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1, 1);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//spacewall.tga");
-
-	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1, 1);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//m_top.tga");
-
-	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1, 1);
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//m_bottom.tga");
 
 	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//d_front.tga");
@@ -339,86 +315,50 @@ void Shop::Init()
 	meshList[GEO_BOTTOM1]->textureID = LoadTGA("Image//d_bottom.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
-	meshList[GEO_TEXT]->textureID = LoadTGA("Image//Text2.tga");
+	meshList[GEO_TEXT]->textureID = LoadTGA("Image//_Font.tga");
 
 	meshList[GEO_SHOPICON] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 5, 1);
-	meshList[GEO_SHOPICON]->textureID = LoadTGA("Image//speech.tga");
+	meshList[GEO_SHOPICON]->textureID = LoadTGA("Image//Shop_Speech.tga");
 
 	meshList[GEO_SHOPKEEPER] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 4, 7);
-	meshList[GEO_SHOPKEEPER]->textureID = LoadTGA("Image//Cp30.tga");
+	meshList[GEO_SHOPKEEPER]->textureID = LoadTGA("Image//Shop_Cp30.tga");
 
 	meshList[GEO_SHOPKEEPER3D] = MeshBuilder::GenerateOBJ("bottom", "OBJ//ShopKeeper.obj");
-	meshList[GEO_SHOPKEEPER3D]->textureID = LoadTGA("Image//Shopkeeper.tga");
-
+	meshList[GEO_SHOPKEEPER3D]->textureID = LoadTGA("Image//Shop_Keeper.tga");
 
 	meshList[GEO_SPACEDOOR] = MeshBuilder::GenerateOBJ("bottom", "OBJ//Spacedoor.obj");
-	meshList[GEO_SPACEDOOR]->textureID = LoadTGA("Image//Spacedoor.tga");
+	meshList[GEO_SPACEDOOR]->textureID = LoadTGA("Image//Shop_Spacedoor.tga");
 
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("bottom", "OBJ//Table.obj");
-	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
+	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Shop_Table.tga");
 
 	meshList[GEO_SHOPWALL] = MeshBuilder::GenerateOBJ("shop", "OBJ//Shop1.obj");
-	meshList[GEO_SHOPWALL]->textureID = LoadTGA("Image//spacewall.tga");
+	meshList[GEO_SHOPWALL]->textureID = LoadTGA("Image//Shop_SpaceWall.tga");
 
-	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Building", "OBJ//building.obj");
-	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//b1.tga");
-
-	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//coke.obj");
-	meshList[GEO_COKE]->textureID = LoadTGA("Image//coke.tga");
-
-	meshList[GEO_PYRAMID] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//pryramidobj.obj");
-	meshList[GEO_PYRAMID]->textureID = LoadTGA("Image//sand_2.tga");
-
-	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
-	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//moon.tga");
-
-	meshList[GEO_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//Missile.obj");
-	meshList[GEO_BULLET]->textureID = LoadTGA("Image//coke.tga");
-
-	meshList[GEO_PYRAMIDNEW] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidNew.obj");
-	meshList[GEO_PYRAMIDNEW]->textureID = LoadTGA("Image//sand_2.tga");
-	meshList[GEO_PYRAMIDWALL] = MeshBuilder::GenerateOBJ("Walls", "OBJ/Wall.obj");
-	meshList[GEO_PYRAMIDWALL]->textureID = LoadTGA("Image//sand_2.tga");
-	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
-	meshList[GEO_PYRAMIDPILLAR]->textureID = LoadTGA("Image//sand_2.tga");
-
-	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
-	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
-
-	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
-	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//SPACESHIP.tga");
-
+	GLuint plane = LoadTGA("Image//Scene_Plane.tga");
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
-	meshList[GEO_PLANEBODY]->textureID = LoadTGA("Image//PLANE.tga");
+	meshList[GEO_PLANEBODY]->textureID = plane;
 
 	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("Star", "OBJ//planewing.obj");
-	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//PLANE.tga");
+	meshList[GEO_PLANEWING]->textureID = plane;
 
 	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("Star", "OBJ//planerocket.obj");
-	meshList[GEO_PLANEROCKET]->textureID = LoadTGA("Image//PLANE.tga");
-
-	meshList[GEO_STAR] = MeshBuilder::GenerateOBJ("Star", "OBJ//Star.obj");
-	meshList[GEO_STAR]->textureID = LoadTGA("Image//sand_2.tga");
-
-	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
-
-	meshList[GEO_INVENTORY] = MeshBuilder::GenerateQuad("inventorybar", Color(1, 1, 1), 3, 3);
-	meshList[GEO_INVENTORY]->textureID = LoadTGA("Image//Inventory.tga");
+	meshList[GEO_PLANEROCKET]->textureID = plane;
 
 	meshList[GEO_AMMOICON] = MeshBuilder::GenerateQuad("ammoicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//Ammo.tga");
+	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//I_Ammo.tga");
 
 	meshList[GEO_GOLDICON] = MeshBuilder::GenerateQuad("goldicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//Gold.tga");
+	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//I_Gold.tga");
 
 	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//Egg.tga");
+	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//I_Egg.tga");
 
 	meshList[GEO_OREICON] = MeshBuilder::GenerateQuad("Ore", Color(1, 1, 1), 3, 3);
-	meshList[GEO_OREICON]->textureID = LoadTGA("Image//Ore.tga");
+	meshList[GEO_OREICON]->textureID = LoadTGA("Image//I_Ore.tga");
 
 	meshList[GEO_BOMBICON] = MeshBuilder::GenerateQuad("Bomb", Color(1, 1, 1), 3, 3);
-	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//Bomb.tga");
+	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//I_Bomb.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
@@ -471,14 +411,21 @@ void Shop::Update(double dt)
 			if (npc.spaceDoor.Nposition.z >= 40)
 			{
 				npc.spaceDoor.canInteract = true;
-				if (SharedData::GetInstance()->gameScene == "Scene2")
+				if (SharedData::GetInstance()->gameScene == "Scene2" && SharedData::GetInstance()->bomb.quantity <= 0)
 				{
 					npc.interactDia = "Flying back to land...";
 					SharedData::GetInstance()->stateCheck = true;
 					SharedData::GetInstance()->gameState = SharedData::SCENE2;
 				}
-				if (SharedData::GetInstance()->gameScene == "Scene3")
+				else if (SharedData::GetInstance()->bomb.quantity >= 0)
 				{
+					npc.interactDia = "Loading...";
+					SharedData::GetInstance()->stateCheck = true;
+					SharedData::GetInstance()->gameState = SharedData::SCENE3;
+				}
+				else if (SharedData::GetInstance()->gameScene == "Scene3")
+				{
+					npc.interactDia = "Loading...";
 					SharedData::GetInstance()->stateCheck = true;
 					SharedData::GetInstance()->gameState = SharedData::SCENE3;
 				}
@@ -564,6 +511,7 @@ void Shop::Update(double dt)
 		switch (s_buy)
 		{
 		case SB_AMMO:
+			description = "To shoot at your enemies!";
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
@@ -584,6 +532,7 @@ void Shop::Update(double dt)
 			}
 			break;
 		case SB_BOMB:
+			description = "Oh... This is a MUST to get! Hehe.";
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
@@ -604,6 +553,7 @@ void Shop::Update(double dt)
 			}
 			break;
 		case SB_BACK:
+			description = "";
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime;
@@ -870,7 +820,7 @@ void Shop::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 	for (unsigned i = 0; i < text.length(); ++i)
 	{
 		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		characterSpacing.SetToTranslation(i * 0.7f, 0, 0); //1.0f is the spacing of each character, you may change this value
 		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -1200,36 +1150,6 @@ void Shop::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[2].position.x, light[2].position.y, light[2].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[3].position.x, light[3].position.y, light[3].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[4].position.x, light[4].position.y, light[4].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[5].position.x, light[5].position.y, light[5].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
@@ -1281,66 +1201,65 @@ void Shop::Render()
 	modelStack.PopMatrix();
 
 
-	if (npc.seller.canInteract || npc.spaceDoor.canInteract)
+	if (npc.seller.canInteract && shopInput != "Shop" && shopInput != "Buy" && shopInput != "Sell"||npc.spaceDoor.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 	}
 
 	if (shopInput == "Shop" || shopInput == "Buy" || shopInput == "Sell")
 	{
-		RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 8.2, 3.5, 90, 1, 0, 0, 1);
-		RenderQuadOnScreen(meshList[GEO_SHOPICON], 10, 3.2, 3, 90, 1, 0, 0, 1);
+		RenderQuadOnScreen(meshList[GEO_SHOPKEEPER], 8, 2, 3.5, 90, 1, 0, 0, 1);
+		RenderQuadOnScreen(meshList[GEO_SHOPICON], 10, 4.7, 3, 90, 1, 0, 0, 1);
 	}
 
 	if (shopInput == "Shop")
 	{
 
 		int j = 21;
-		int x = 5;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 0, 1), 1.7, 16, icon2);
 		for (int arr = 0; arr < my_arr.size() - 9; ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, x, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 17, j);
 		}
 	}
 	if (shopInput == "Buy")
 	{
 		int j = 21;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 0, 1), 1.7, 16, icon2);
 
 		for (int arr = 4; arr < my_arr.size() - 5; ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 17, j);
 		}
 		if (b_gold)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 10, 21);
+			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 18, 21);
 			if (coolDown == 0)
 			{
 				b_gold = false;
 			}
 		}
+
+		RenderTextOnScreen(meshList[GEO_TEXT], description, Color(1, 0, 0), 1.7, 17, 16);
+
 	}
 
 	if (shopInput == "Sell")
 	{
 		int j = 21;
-		RenderQuadOnScreen(meshList[GEO_COKE], 1, 6, icon, rotateCoke, 0, 1, 0, 0);
-		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 1, 0), 1.7, 4, icon2);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">", Color(0, 0, 1), 1.7, 16, icon2);
 
 		for (int arr = 8; arr < my_arr.size(); ++arr)
 		{
 			--j;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 5, j);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[arr], Color(0, 0, 0), 1.7, 17, j);
 		}
 
 		if (none)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 8, 21);
+			RenderTextOnScreen(meshList[GEO_TEXT], nmOSS, Color(1, 0, 0), 1.7, 18, 21);
 			if (coolDown == 0)
 			{
 				none = false;
@@ -1364,27 +1283,20 @@ void Shop::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 38);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 37);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
+	int x = 38.5;
 	int y = 14;
-
-	for (int i = 0; i < 5; i++)
-	{
-		//RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, 1.3, 18, 90, 1, 0, 0, 0);
-		RenderQuadOnScreen(meshList[GEO_INVENTORY], 2, 1.3, y, 90, 1, 0, 0, -1);
-		y -= 3;
-	}
-
 	//All element for player inventory
-	RenderQuadOnScreen(meshList[GEO_AMMOICON], 1.5, 1.7, 19, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_GOLDICON], 1.5, 1.7, 15, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_EGGICON], 1.5, 1.7, 10.8, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_OREICON], 1.5, 1.7, 6.8, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_BOMBICON], 1.5, 1.7, 2.9, 90, 1, 0, 0, 0);
+	RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, x, y, 90, 1, 0, 0, 1);
+	RenderQuadOnScreen(meshList[GEO_GOLDICON], 2, x, y - 3, 90, 1, 0, 0, 1);
+	RenderQuadOnScreen(meshList[GEO_EGGICON], 2, x, y - 6, 90, 1, 0, 0, 1);
+	RenderQuadOnScreen(meshList[GEO_OREICON], 2, x, y - 9, 90, 1, 0, 0, 1);
+	RenderQuadOnScreen(meshList[GEO_BOMBICON], 2, x, y - 12, 90, 1, 0, 0, 1);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0.9, 0.5), 1.5, 1, 17.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0.9, 0.5), 1.5, 1, 13.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0.9, 0.5), 1.5, 1, 9.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0.9, 0.5), 1.5, 1, 5.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0.9, 0.5), 1.5, 1, 1.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0, 1), 1.5, x + 11.5, y + 3.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0, 1), 1.5, x + 11.5, y - 0.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
 }
 void Shop::Exit()
 {

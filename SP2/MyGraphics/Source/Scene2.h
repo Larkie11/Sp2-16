@@ -18,6 +18,8 @@
 #include "Objects.h"
 #include "Mouse.h"
 
+#include "Animation.h"
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -41,6 +43,7 @@ class Scene2 : public Scene
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
 		GEO_QUAD,
+		GEO_PYRAMIDFLOOR,
 		GEO_BB8HEAD,
 		GEO_BB8BODY,
 		GEO_CROSSHAIR,
@@ -60,7 +63,13 @@ class Scene2 : public Scene
 		GEO_EGGICON,
 		GEO_BOMBICON,
 		GEO_OREICON,
+		GEO_GUNICON,
+		GEO_PICKAXEICON,
+		GEO_SWORDICON,
 		GEO_VENDING,
+		GEO_BOMB,
+		GEO_CCTV,
+		GEO_EGG,
 		GEO_BAG,
 		GEO_PYRAMIDDOOR,
 		GEO_INVENTORY,
@@ -273,6 +282,16 @@ private:
 	void ObjectsHolding(Mesh*mesh, float size);
 	void EquipmentHolding(Mesh*mesh, float size);
 	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
+	float throwingdown = 0;
+	float throwingforward = 0;
+	float throwup = 0;
+	Vector3 newcameraposition = (0, 0, 0);
+	Vector3 oldcameraposition = (0, 0, 0);
+	bool throwbomb = false;
+	bool thrown = false;
+	bool toggle = false;
+	bool cam1 = false;
+	bool movement = true;
 
 
 	//picking up space ship parts
@@ -307,5 +326,27 @@ private:
 	float Speed = 0;
 	Position Plane;
 	void Plane_Rendering();
+
+	Animation animation;
+	float swordRotation;
+	float pickAxeRotation;
+	float gunRotation;
+
+	float gunTranslation;
+	float swordTranslation;
+	float pickAxeTranslation;
+
+	bool playSlashingAnimation;
+	bool playShootingAnimation;
+	bool playMiningAnimation;
+
+	bool usingSword;
+	bool usingGun;
+	bool usingPickAxe;
+	int weaponChoice;
+
+	int gun;
+	int sword;
+	int pickaxe;
 };
 #endif

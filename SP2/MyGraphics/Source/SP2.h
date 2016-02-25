@@ -42,10 +42,14 @@ class SP2 : public Scene
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
 		GEO_QUAD,
+		GEO_PYRAMIDFLOOR,
 		GEO_BB8HEAD,
 		GEO_BB8BODY,
 		GEO_CROSSHAIR,
-		GEO_TRIANGLE,
+
+		GEO_GUNICON,
+		GEO_SWORDICON,
+		GEO_PICKAXEICON,
 
 		GEO_LEFT1,
 		GEO_RIGHT1,
@@ -228,6 +232,9 @@ private:
 	NPC npc;
 
 	int parts = 0;
+	int gun;
+	int pickaxe;
+	int sword;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];

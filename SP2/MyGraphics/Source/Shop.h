@@ -58,15 +58,12 @@ class Shop : public Scene
 	};
 	enum GEOMETRY_TYPE
 	{
-		GEO_TRIANGLE_1 = 0,
-		GEO_TRIANGLE_2,
-		GEO_SHOPKEEPER3D,
+		GEO_SHOPKEEPER3D = 0,
 		GEO_SHOPKEEPER,
 		GEO_TABLE,
 		GEO_REF_AXES,
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
-		GEO_INVENTORY,
 		GEO_AMMOICON,
 		GEO_GOLDICON,
 		GEO_EGGICON,
@@ -316,6 +313,7 @@ private:
 	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
+	string description;
 	SHOP_OPTION s_option;
 	SHOP_SELL s_sell;
 	bool b_gold;
