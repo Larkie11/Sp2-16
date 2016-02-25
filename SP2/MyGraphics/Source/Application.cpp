@@ -15,6 +15,7 @@
 #include "SceneMenu.h"
 #include "Shop.h"
 #include "Scene2.h"
+#include "Scene3.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -138,15 +139,19 @@ void Application::Run()
 				scene = new SceneMenu();
 				break;
 			case SharedData::GAME:
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 				scene = new SP2();
 				break;
 			case SharedData::SCENE2:
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 				scene = new Scene2();
 				break;
 			case SharedData::SCENE3:
-				scene = new Scene2();
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+				scene = new Scene3();
 				break;
 			case SharedData::SHOP:
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 				scene = new Shop();
 				break;
 			}

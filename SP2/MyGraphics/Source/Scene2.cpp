@@ -593,7 +593,7 @@ void Scene2::Update(double dt)
 	if (Application::IsKeyPressed('P'))
 	{
 		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SCENE2;
+		SharedData::GetInstance()->gameState = SharedData::SCENE3;
 	}
 
 	//To open the shop for now
@@ -1279,39 +1279,36 @@ void Scene2::Render()
 	Fps.resize(11);
 
 	//Show player if he can interact with item
-	if (doorinteract == true)
+	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
 	{
-		if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
+		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+		if (npc.robot1.robot == "robot1")
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
-			if (npc.robot1.robot == "robot1")
+			int j = 25;
+			for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
 			{
-				int j = 25;
-				for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
-				{
-					j--;
-					RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
-				}
+				j--;
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
 			}
-			if (npc.robot1.robot == "robot1.1")
-			{
-				npc.dialogue = 1;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
-			}
-			if (npc.robot1.robot == "robot1.2")
-			{
-				npc.dialogue = 2;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
-			}
-			if (npc.robot2.robot == "robot2")
-			{
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
-			}
-			if (npc.robot3.robot == "robot3")
-			{
+		}
+		if (npc.robot1.robot == "robot1.1")
+		{
+			npc.dialogue = 1;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (npc.robot1.robot == "robot1.2")
+		{
+			npc.dialogue = 2;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (npc.robot2.robot == "robot2")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
+		}
+		if (npc.robot3.robot == "robot3")
+		{
 
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
-			}
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 3, 3, 5);
@@ -1365,13 +1362,13 @@ void Scene2::Enemy_Updating(float dt)
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 10; i++)
 	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement, emeny_size);
+		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
-	camera = enemy[0].enemy_attack(enemy, VtoP(camera.position), camera, emeny_size);
+	camera = enemy[0].enemy_attack(enemy, VtoP(camera.position), camera);
 }
 void Scene2::Enemy_Rendering()
 {
-	for (int i = 0; i < emeny_size; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		Position A = enemy[i].Return_Position(enemy[i]);
 		modelStack.PushMatrix();
@@ -1415,7 +1412,7 @@ void Scene2::Map_Rendering()
 	modelStack.PopMatrix();
 
 	//Start Point
-	modelStack.Translate(-Size * 10, Size*1.3, -Size * 10);
+	modelStack.Translate(-Size * 10, 10, -Size * 10);
 	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 20; j++)
@@ -1435,6 +1432,7 @@ void Scene2::Map_Rendering()
 		}
 	}
 	modelStack.PopMatrix();
+	camera.position.y = -10;
 }
 void Scene2::Character_Movement(float dt)
 {
@@ -1514,16 +1512,14 @@ void Scene2::Character_Movement(float dt)
 	}
 
 
-	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y < 0 && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)
+	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS))
 	{
 		On_Plane = true;
-		doorinteract = false;
 	}
-	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS) && Plane.y < 0)
+	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS))
 	{
 		On_Plane = false;
 		camera.Reset();
-		doorinteract = true;
 	}
 
 	if (On_Plane)
@@ -1542,15 +1538,8 @@ void Scene2::Character_Movement(float dt)
 			}
 			else if (Plane.x > 15)
 			{
-				Plane.y = 200;
 				Speed -= (0.65*Speed)*dt;
 				Plane.x -= Speed*dt;
-			}
-			else
-			{
-				Plane.y = 200;
-				Plane.x = 15;
-				Speed = 0;
 			}
 		}
 		if (Application::IsKeyPressed('S'))
@@ -1562,15 +1551,8 @@ void Scene2::Character_Movement(float dt)
 			}
 			else if (Plane.y > -20)
 			{
-				Plane.x = 350;
 				Speed -= (0.65*Speed)*dt;
 				Plane.y -= Speed*dt;
-			}
-			else
-			{
-				Plane.x = 350;
-				Plane.y = -20;
-				Speed = 0;
 			}
 		}
 	}
@@ -1581,7 +1563,7 @@ void Scene2::Character_Movement(float dt)
 		if (Application::IsKeyPressed('W'))
 		{
 			Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1590,7 +1572,7 @@ void Scene2::Character_Movement(float dt)
 				Test = camera.position;
 			}
 			Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1599,7 +1581,7 @@ void Scene2::Character_Movement(float dt)
 		if (Application::IsKeyPressed('S'))
 		{
 			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1608,7 +1590,7 @@ void Scene2::Character_Movement(float dt)
 				Test = camera.position;
 			}
 			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1617,7 +1599,7 @@ void Scene2::Character_Movement(float dt)
 		if (Application::IsKeyPressed('A'))
 		{
 			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1626,7 +1608,7 @@ void Scene2::Character_Movement(float dt)
 				Test = camera.position;
 			}
 			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1635,7 +1617,7 @@ void Scene2::Character_Movement(float dt)
 		if (Application::IsKeyPressed('D'))
 		{
 			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}
@@ -1644,7 +1626,7 @@ void Scene2::Character_Movement(float dt)
 				Test = camera.position;
 			}
 			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement, emeny_size))
+			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
 			{
 				camera.position = Test;
 			}

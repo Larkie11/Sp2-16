@@ -266,8 +266,7 @@ private:
 	Bullet bullet;
 	Objects objects;
 
-	int emeny_size = 5;
-	Enemy enemy[5];
+	Enemy enemy[10];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 
@@ -305,7 +304,6 @@ private:
 
 	bool On_Plane = false;
 	float Speed = 0;
-	bool doorinteract = true;
 	Position Plane;
 	void Plane_Rendering();
 };

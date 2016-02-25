@@ -1,18 +1,6 @@
 Start
-Options
 Credit
-Help
+How to play
 Quit
-Settings
 Back
-Our Awesome Team:
-Wei Min
-Heng Soon
-Francis
-Zhan Wei
-Back
-Movement:
-Up, down, left, right/Mouse control
-Interacting:
-E
 Back

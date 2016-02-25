@@ -32,6 +32,7 @@ class SceneMenu : public Scene
 		GEO_PATH,
 		GEO_VENDING,
 		GEO_COKE,
+		GEO_INSTRUCTIONS,
 		GEO_PLANEWING,
 		GEO_PLANEROCKET,
 		GEO_PLANEBODY,
@@ -107,6 +108,9 @@ private:
 	Color colorNormal;
 	int px;
 	int py;
+
+	bool instructions;
+	bool credits;
 
 	string Input;
 	string color;

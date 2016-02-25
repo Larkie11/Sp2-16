@@ -27,7 +27,6 @@ void SceneMenu::Init()
 
 	//Sets the enum for option menu and menu scren
 	choose = menushop.STARTGAME;
-	c_option = menushop.O_SETTING;
 	Input = "Menu";
 
 	//Play 2d music with irrklang
@@ -86,6 +85,9 @@ void SceneMenu::Init()
 	meshList[GEO_PATH] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 14, 13);
 	meshList[GEO_PATH]->textureID = LoadTGA("Image//Menu.tga");
 
+	meshList[GEO_INSTRUCTIONS] = MeshBuilder::GenerateQuad("land", Color(1, 1, 1), 10, 10);
+	meshList[GEO_INSTRUCTIONS]->textureID = LoadTGA("Image//Instructions.tga");
+
 	meshList[GEO_PLANEWING] = MeshBuilder::GenerateOBJ("land", "Obj//planewing.obj");
 	meshList[GEO_PLANEWING]->textureID = LoadTGA("Image//Plane.tga");
 
@@ -133,7 +135,6 @@ void SceneMenu::UpdateMenu()
 			setColor(1, "colorNormal");
 			setColor(2, "colorNormal");
 			setColor(3, "colorNormal");
-			setColor(4, "colorNormal");
 			menuIcon = 117;
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
@@ -144,51 +145,30 @@ void SceneMenu::UpdateMenu()
 			}
 			userInput();
 			break;
-		case MenuShop::OPTIONS:
+		case MenuShop::CREDITS:
 			setColor(0, "colorNormal");
 			setColor(1, "colorBlue");
 			setColor(2, "colorNormal");
 			setColor(3, "colorNormal");
-			setColor(4, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
-				menushop.PressTime = deltaTime / 5;
-				menuIcon = 104;
-				Input = "Options";
-				c_option = MenuShop::O_SETTING;
-			}
-			userInput();
-			break;
-		case MenuShop::CREDITS:
-			setColor(1, "colorNormal");
-			setColor(2, "colorBlue");
-			setColor(3, "colorNormal");
-			setColor(6, "colorSpecial");
-			setColor(7, "colorNormal");
-			setColor(8, "colorNormal");
-			setColor(9, "colorNormal");
-			setColor(10, "colorNormal");
-			setColor(11, "colorNormal");
-			setColor(12, "colorBlue");
-			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
-			{
-				menuIcon = 90;
+				menuIcon = 30.5;
 				menushop.PressTime = deltaTime / 5;
 				Input = "Credits";
 				c_option = MenuShop::O_CREDIT;
+				instructions = true;
 			}
 			userInput();
 			break;
 		case MenuShop::HELP:
 			setColor(0, "colorNormal");
 			setColor(1, "colorNormal");
-			setColor(2, "colorNormal");
-			setColor(3, "colorBlue");
-			setColor(4, "colorNormal");
+			setColor(2, "colorBlue");
+			setColor(3, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
 				menushop.PressTime = deltaTime / 5;
-				menuIcon = 90;
+				menuIcon = 30.5;
 				Input = "Help";
 				c_option = MenuShop::O_HELP;
 			}
@@ -198,39 +178,10 @@ void SceneMenu::UpdateMenu()
 			setColor(0, "colorNormal");
 			setColor(1, "colorNormal");
 			setColor(2, "colorNormal");
-			setColor(3, "colorNormal");
-			setColor(4, "colorBlue");
+			setColor(3, "colorBlue");
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 				SharedData::GetInstance()->gameState = SharedData::QUIT;
-			}
-			userInput();
-			break;
-		}
-	}
-	if (Input == "Options")
-	{
-		switch (c_option)
-		{
-		case MenuShop::O_SETTING:
-			setColor(5, "colorBlue");
-			setColor(6, "colorNormal");
-			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
-			{
-					menushop.PressTime = deltaTime / 5;
-					choose = MenuShop::STARTGAME;
-					Input = "Menu";
-			}
-			userInput();
-			break;
-		case MenuShop::O_QUIT:
-			setColor(5, "colorNormal");
-			setColor(6, "colorBlue");
-			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
-			{
-				menushop.PressTime = deltaTime / 5;
-				choose = MenuShop::STARTGAME;
-				Input = "Menu";
 			}
 			userInput();
 			break;
@@ -242,11 +193,11 @@ void SceneMenu::UpdateMenu()
 		{
 		case MenuShop::O_CREDIT:
 			setColor(4, "colorBlue");
-			setColor(5, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
 				menushop.PressTime = deltaTime / 5;
 				Input = "Menu";
+				instructions = false;
 				choose = MenuShop::STARTGAME;
 			}
 			break;
@@ -296,27 +247,6 @@ void SceneMenu::userInput()
 			}
 		}
 	}
-		if (Input == "Options")
-		{
-			if (c_option < MenuShop::O_MAX - 3)
-			{
-				if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
-				{
-					menuIcon -= 6.5;
-					menushop.PressTime = deltaTime / 10;
-					c_option = static_cast<MenuShop::OPTION>(c_option + 1);
-				}
-			}
-			if (c_option > MenuShop::O_SETTING)
-			{
-				if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
-				{
-					menuIcon += 6.5;
-					menushop.PressTime = deltaTime / 10;
-					c_option = static_cast<MenuShop::OPTION>(c_option - 1);
-				}
-			}
-		}
 }
 //Handles user mouse input
 void SceneMenu::mouseControl()
@@ -345,41 +275,28 @@ void SceneMenu::mouseControl()
 			if (py > SharedData::GetInstance()->height / 2.397 && py < SharedData::GetInstance()->height / 2.22)
 			{
 				menuIcon = 111.5;
-				choose = MenuShop::OPTIONS;
+				choose = MenuShop::CREDITS;
 				if (Application::IsKeyPressed(VK_LBUTTON))
 				{
-					menuIcon = 104;
-					Input = "Options";
-					c_option = MenuShop::O_SETTING;
+					menuIcon = 30.5;
+					Input = "Credits";
+					c_option = MenuShop::O_CREDIT;
 				}
 			}
 			if (py > SharedData::GetInstance()->height / 2.215 && py < SharedData::GetInstance()->height / 2.06)
 			{
-				menuIcon = 105;
-				choose = MenuShop::CREDITS;
+				menuIcon = 103.8;
+				choose = MenuShop::HELP;
 				if (Application::IsKeyPressed(VK_LBUTTON))
 				{
-					menuIcon = 90;
-					Input = "Credits";
-					c_option = MenuShop::O_CREDIT;
-
+					menuIcon = 30.5;
+					Input = "Help";
+					c_option = MenuShop::O_HELP;
 				}
 			}
 			if (py > SharedData::GetInstance()->height / 2.06 && py < SharedData::GetInstance()->height / 1.94)
 			{
-				menuIcon = 98.5;
-				choose = MenuShop::HELP;
-				if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
-				{
-					menuIcon = 90;
-					Input = "Help";
-					c_option = MenuShop::O_HELP;
-
-				}
-			}
-		if( py > SharedData::GetInstance()->height / 1.94 && py < SharedData::GetInstance()->height / 1.81)
-			{
-				menuIcon = 92;
+				menuIcon = 97.5;
 				choose = MenuShop::QUIT;
 				if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
 				{
@@ -415,28 +332,6 @@ void SceneMenu::mouseControl()
 		}
 	}
 
-	if (Input == "Options")
-	{
-		if (px > SharedData::GetInstance()->width / 9.14 && px < SharedData::GetInstance()->width / 3.3)
-		{
-			if (py > SharedData::GetInstance()->height / 2.211 && py < SharedData::GetInstance()->height / 2.07)
-			{
-				menuIcon = 104;
-				c_option = MenuShop::O_SETTING;
-			}
-
-			if (py > SharedData::GetInstance()->height / 2.07 && py < SharedData::GetInstance()->height / 1.94)
-			{
-				menuIcon = 97.5;
-				c_option = MenuShop::O_QUIT;
-				if (Application::IsKeyPressed(VK_LBUTTON))
-				{
-					menushop.PressTime = deltaTime / 5;
-					Input = "Menu";
-				}
-			}
-		}
-	}
 }
 void SceneMenu::Update(double dt)
 {
@@ -615,6 +510,10 @@ void SceneMenu::Render()
 
 	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.5, 6, 90, 1, 0, 0, -1);
 
+	if (instructions)
+	{
+		RenderQuadOnScreen(meshList[GEO_INSTRUCTIONS], 6, 6.5, 4, 90, 1, 0, 0, 0);
+	}
 	modelStack.PushMatrix();
 	/*RenderQuadOnScreen(meshList[GEO_PLANEWING], 1, 50, 30, rotateCoke, 0, 0, 1, 3);
 	RenderQuadOnScreen(meshList[GEO_PLANEROCKET], 1, 50, 30, rotateCoke, 0, 0, 1, 4);
@@ -624,16 +523,7 @@ void SceneMenu::Render()
 	if (Input == "Menu")
 	{
 		int j = 19;
-		for (int i = 0; i < my_arr.size() - 13; ++i)
-		{
-			j--;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
-		}
-	}
-	if (Input == "Options")
-	{
-		int j = 17.9;
-		for (int i = 5; i < my_arr.size() - 11; ++i)
+		for (int i = 0; i < my_arr.size() - 2; ++i)
 		{
 			j--;
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
@@ -641,24 +531,16 @@ void SceneMenu::Render()
 	}
 	if (Input == "Credits")
 	{
-		int j = 20;
-		for (int i = 7; i < my_arr.size()-5; ++i)
-		{
-			j--;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
-		}
+		int j = 5;
+		RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], colorA[4], 2, 5, j);
+
 	}
 
 	if (Input == "Help")
 	{
-		int j = 19;
-		for (int i = 13; i < my_arr.size(); ++i)
-		{
-			j--;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], colorA[i], 2, 5, j);
-		}
+		int j = 5;
+		RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], colorA[4], 2, 5, j);
 	}
-
 	Fps.resize(11);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], mouseX, Color(1, 1, 0), 1.5, 1, 2);
@@ -668,5 +550,4 @@ void SceneMenu::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
-	sound.engine->stopAllSounds();
 }

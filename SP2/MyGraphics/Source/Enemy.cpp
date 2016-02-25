@@ -1,26 +1,7 @@
-/****************************************************************************/
-/*!
-\file Enemy.h
-\author Francis Wong
-\par email: swordismylife@gmail.com
-\brief
-Class to define enemy
-*/
-/****************************************************************************/#include "Enemy.h"
+#include "Enemy.h"
 #include "SP2.h"
 
-/****************************************************************************/
-/*!
-\brief
-Enemy Constructor
-\param rhs
-none
-\exception
-none
-\return
-none
-*/
-/****************************************************************************/
+
 Enemy::Enemy()
 {
 	HP = 100;
@@ -29,34 +10,11 @@ Enemy::Enemy()
 	Current_modetype = rand() % 3;
 }
 
-/****************************************************************************/
-/*!
-\brief
-Enemy Destructor
-\param rhs
-none
-\exception
-none
-\return
-none
-*/
-/****************************************************************************/
+
 Enemy::~Enemy()
 {
 }
 
-/****************************************************************************/
-/*!
-\brief
-Return the new mode of the emeny
-\param rhs
-Enemy Data
-\exception
-none
-\return
-new mode
-*/
-/****************************************************************************/
 int Enemy::mode_Change(Enemy Target)
 {
 	int mode = 0;
@@ -75,18 +33,6 @@ int Enemy::mode_Change(Enemy Target)
 	return mode;
 }
 
-/****************************************************************************/
-/*!
-\brief
-Reduce enemy HP
-\param rhs
-Enemy Data and Damage by weapon
-\exception 
-none
-\return
-new enemy data
-*/
-/****************************************************************************/
 Enemy Enemy::DamageReceived(Enemy Target, int Damage)
 {
 	Target.HP -= Damage;
@@ -99,18 +45,6 @@ Enemy Enemy::DamageReceived(Enemy Target, int Damage)
 	return Target;
 }
 
-/****************************************************************************/
-/*!
-\brief
-allow enemy to move based on their mode
-\param rhs
-Enemy Data and camera position
-\exception
-none
-\return
-new enemy data
-*/
-/****************************************************************************/
 Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 {
 	int mode = Target.Current_modetype;
@@ -228,53 +162,18 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 	return Target;
 }
 
-/****************************************************************************/
-/*!
-\brief
-return enemy position
-\param rhs
-Enemy Data
-\exception
-none
-\return
-enemy position
-*/
-/****************************************************************************/
 Position Enemy::Return_Position(Enemy Target)
 {
 	return Target.position;
 }
 
-/****************************************************************************/
-/*!
-\brief
-return enemy HP
-\param rhs
-Enemy Data
-\exception
-none
-\return
-int HP
-*/
-/****************************************************************************/
+
 int Enemy::Return_HP(Enemy Target)
 {
 	return Target.HP;
 }
 
-/****************************************************************************/
-/*!
-\brief
-Deciding movement based on mode
-\param rhs
-Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[], int I, float Z_Displacement, float X_Displacement, int enemy_size
-\exception
-none
-\return
-new enemy data
-*/
-/****************************************************************************/
-Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[], int I, float Z_Displacement, float X_Displacement, int enemy_size)
+Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement)
 {
 	if (Target.Current_modetype < 3)
 	{
@@ -290,30 +189,18 @@ Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size,
 	{
 		speed = 0.7 * dt;
 	}
-	Target.position = Movement(Target.position, Target.Ground, speed, Size, Map, I, enemy, Z_Displacement, X_Displacement,enemy_size);
+	Target.position = Movement(Target.position, Target.Ground, speed, Size, Map, I, enemy, Z_Displacement, X_Displacement);
 	return Target;
 
 }
 
-/****************************************************************************/
-/*!
-\brief
-Allow enemy to move
-\param rhs
-Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[], int I, float Z_Displacement, float X_Displacement, int enemy_size
-\exception
-none
-\return
-new enemy data
-*/
-/****************************************************************************/
-Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[], float Z_Displacement, float X_Displacement, int enemy_size)
+Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[10], float Z_Displacement, float X_Displacement)
 {
 	Position T_Enemy = Current;
 	if ((Current.x - Target.x) < 0 && (Current.x + Speed) < ((Size * 10) + X_Displacement))
 	{
 		T_Enemy.x += Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement,enemy_size))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I,Z_Displacement,X_Displacement))
 		{
 			Current = T_Enemy;
 		}
@@ -321,7 +208,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	else if ((Current.x - Target.x) > 0 && (Current.x - Speed) > ((-Size * 10) + X_Displacement))
 	{
 		T_Enemy.x -= Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement, enemy_size))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
 		{
 			Current = T_Enemy;
 		}
@@ -330,7 +217,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	if ((Current.z - Target.z) < 0 && (Current.z + Speed) < ((Size * 10) + Z_Displacement))
 	{
 		T_Enemy.z += Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement, enemy_size))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
 		{
 			Current = T_Enemy;
 		}
@@ -338,7 +225,7 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	else if ((Current.z - Target.z) > 0 && (Current.z - Speed) > ((-Size * 10) + Z_Displacement))
 	{
 		T_Enemy.z -= Speed;
-		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement, enemy_size))
+		if (Collision_Detection(T_Enemy, Size, Map, enemy, I, Z_Displacement, X_Displacement))
 		{
 			Current = T_Enemy;
 		}
@@ -346,19 +233,8 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	
 	return Current;
 }
-/****************************************************************************/
-/*!
-\brief
-collision check with map
-\param rhs
-Position Character, float Size, char Map[20][20], Enemy enemy[], int I, float Z_Displacement, float X_Displacement,int enemy_size, bool enter
-\exception
-none
-\return
-bool coillision
-*/
-/****************************************************************************/
-bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[], int I, float Z_Displacement, float X_Displacement,int enemy_size, bool enter)
+
+bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[10], int I, float Z_Displacement, float X_Displacement, bool enter)
 {
 	bool check = true;
 	bool Inside_Scene = true;
@@ -417,29 +293,17 @@ bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20]
 	}
 	if (check)
 	{
-		check = Enemy_Collision(Character, enemy, I, enemy_size);
+		check = Enemy_Collision(Character, enemy, I);
 	}
 	return check;
 }
 
-/****************************************************************************/
-/*!
-\brief
-collision check with enemy
-\param rhs
-Position Character, Enemy enemy[], int I,int enemy_size
-\exception
-none
-\return
-bool coillision
-*/
-/****************************************************************************/
-bool Enemy::Enemy_Collision(Position Character, Enemy enemy[], int I,int enemy_size)
+bool Enemy::Enemy_Collision(Position Character, Enemy enemy[10], int I)
 {
 	bool check = true;
 	if (I != 9)
 	{
-		for (int i = I + 1; i < enemy_size; i++)
+		for (int i = I + 1; i < 10; i++)
 		{
 			float X_distance = Character.x - enemy[i].position.x;
 			float Z_distance = Character.z - enemy[i].position.z;
@@ -460,21 +324,9 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[], int I,int enemy_s
 	return check;
 }
 
-/****************************************************************************/
-/*!
-\brief
-Killing player
-\param rhs
-Enemy enemy[], Position character, Camera3 view,int enemy_size
-\exception
-none
-\return
-sent enemy to respawn point
-*/
-/****************************************************************************/
-Camera3 Enemy::enemy_attack(Enemy enemy[], Position character, Camera3 view,int enemy_size)
+Camera3 Enemy::enemy_attack(Enemy enemy[10], Position character, Camera3 view)
 {
-	for (int i = 0; i < enemy_size; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		float X_distance = character.x - enemy[i].position.x;
 		float Z_distance = character.z - enemy[i].position.z;
@@ -486,7 +338,7 @@ Camera3 Enemy::enemy_attack(Enemy enemy[], Position character, Camera3 view,int 
 		{
 			Z_distance = Z_distance * -1;
 		}
-		if (X_distance < 15 && Z_distance < 15)
+		if (X_distance < 20 && Z_distance < 20)
 		{
 			view.Reset();
 		}

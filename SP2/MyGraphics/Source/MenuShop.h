@@ -15,7 +15,6 @@ public:
 	{
 		MENU1 = 0,
 		STARTGAME,
-		OPTIONS,
 		CREDITS,
 		HELP,
 		QUIT,
@@ -23,7 +22,6 @@ public:
 	};
 	enum OPTION
 	{
-		O_SETTING,
 		O_QUIT,
 		O_CREDIT,
 		O_HELP,
