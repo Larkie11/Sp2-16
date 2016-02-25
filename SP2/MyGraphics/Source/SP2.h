@@ -322,11 +322,20 @@ private:
 
 	Animation animation;
 	float swordRotation;
-	float gunTranslation;
 	float pickAxeRotation;
+	float gunRotation;
+
+	float gunTranslation;
+	float swordTranslation;
+	float pickAxeTranslation;
 
 	bool playSlashingAnimation;
 	bool playShootingAnimation;
 	bool playMiningAnimation;
+
+	bool usingSword;
+	bool usingGun;
+	bool usingPickAxe;
+	int weaponChoice;
 };
 #endif

@@ -37,7 +37,11 @@ void SP2::Init()
 	// Init VBO here
 	b_coolDown = b_coolDownLimit = 1;
 	startCoolDdown = false;
-	swordRotation = pickAxeRotation = gunTranslation = 0;
+	usingSword = true;
+	usingGun = usingPickAxe = false;
+	weaponChoice = 1;
+
+	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
 	storyPosition = 2.5;
 
 	camera.cameraRotate = Vector3(0, 270, 0);
@@ -633,25 +637,39 @@ void SP2::Update(double dt)
 	}
 	if (Application::IsKeyPressed(VK_LBUTTON) || Application::IsKeyPressed(VK_SPACE))
 	{
-		if (SharedData::GetInstance()->bullet.quantity > 0 && playShootingAnimation == true)
+		switch (weaponChoice)
 		{
-			startCoolDdown = true;
-			if (b_coolDown == b_coolDownLimit)
+		case 1:
+			playSlashingAnimation = true;
+			break;
+
+		case 2:
+			if (SharedData::GetInstance()->bullet.quantity > 0)
 			{
-				SharedData::GetInstance()->bullet.quantity--;
-				bullet_arr.push_back(new Bullet(camera));
+				startCoolDdown = true;
+				if (b_coolDown == b_coolDownLimit)
+				{
+					SharedData::GetInstance()->bullet.quantity--;
+					bullet_arr.push_back(new Bullet(camera));
+				}
+				animation.Shoot(dt, gunTranslation, playShootingAnimation);
 			}
-			animation.Shoot(dt, gunTranslation);
-		}
-		if (playSlashingAnimation)
-		{
-			animation.Slash(dt, swordRotation);
-		}
-		if (playMiningAnimation)
-		{
-			animation.Mine(dt, pickAxeRotation);
+			break;
+
+		case 3:
+			playMiningAnimation = true;
+			break;
 		}
 	}
+	if (playSlashingAnimation)
+	{
+		animation.Slash(dt, swordRotation, playSlashingAnimation);
+	}
+	if (playMiningAnimation)
+	{
+		animation.Mine(dt, pickAxeRotation, playMiningAnimation);
+	}
+
 	if (startCoolDdown)
 	{
 		b_coolDown -= dt;
@@ -676,14 +694,17 @@ void SP2::Update(double dt)
 	}
 
 	// MINING COLLISION
-	if (detectCollision.collideByDist(camera.position, rawMaterial) < 50 && Application::IsKeyPressed(VK_LBUTTON))
+	if (detectCollision.collideByDist(camera.position, rawMaterial) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
+		detectCollision.collideByDist(camera.position, rawMaterial) < 18 && Application::IsKeyPressed(VK_SPACE))
 	{
-
-		startCoolDdown = true;
-		if (b_coolDown == b_coolDownLimit)
+		if (usingPickAxe)
 		{
-			SharedData::GetInstance()->mineral.quantity++;
-			cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+			startCoolDdown = true;
+			if (b_coolDown == b_coolDownLimit)
+			{
+				SharedData::GetInstance()->mineral.quantity++;
+				cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+			}
 		}
 	}
 
@@ -812,24 +833,38 @@ void SP2::Update(double dt)
 
 	if (Application::IsKeyPressed(VK_F1))
 	{
-		playSlashingAnimation = true;
-		playShootingAnimation = false;
-		playMiningAnimation = false;
+		//SWORD
+		weaponChoice = 1;
+
+		usingSword = true;
+		usingGun = false;
+		usingPickAxe = false;
 	}
 
 	if (Application::IsKeyPressed(VK_F2))
 	{
-		playSlashingAnimation = false;
-		playShootingAnimation = false;
-		playMiningAnimation = true;
+		//PICKAXE
+		weaponChoice = 3;
+
+		usingSword = false;
+		usingGun = false;
+		usingPickAxe = true;
 	}
 
 	if (Application::IsKeyPressed(VK_F3))
 	{
-		playSlashingAnimation = false;
-		playShootingAnimation = true;
-		playMiningAnimation = false;
+		//GUN
+		weaponChoice = 2;
+
+		usingSword = false;
+		usingGun = true;
+		usingPickAxe = false;
 	}
+
+	animation.moveSword(dt, swordTranslation, usingSword);
+	animation.moveGun(dt, gunTranslation, usingGun);
+	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
+
 }
 //Reading from text file
 void SP2::Dialogue(string filename)
@@ -1348,35 +1383,6 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_RAWMATERIAL], true);
 	modelStack.PopMatrix();
 
-
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	//modelStack.Rotate(followy, 0, 1, 0);
-	//modelStack.Rotate(followx, 0, 0, 1);
-	//modelStack.Rotate(180, 0, 1, 0);
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0.4, -0.3, 0.22);
-	//modelStack.Rotate(-pickAxeRotation, 0, 0, 1);
-	//modelStack.Scale(0.5, 0.2, 0.5);
-	//RenderMesh(meshList[GEO_PICKAXE], true);
-	//modelStack.PopMatrix();
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	//modelStack.Rotate(followy, 0, 1, 0);
-	//modelStack.Rotate(followx, 0, 0, 1);
-	//modelStack.Rotate(180, 0, 1, 0);
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0.5, -0.28, 0.3);
-	//modelStack.Rotate(-swordRotation, 0, 0, 1);
-	//modelStack.Scale(0.1, 0.1, 0.1);
-	//RenderMesh(meshList[GEO_SWORD], true);
-	//modelStack.PopMatrix();
-	//modelStack.PopMatrix();
-
-
 	modelStack.PushMatrix();
 
 	modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
@@ -1392,17 +1398,41 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);	
-	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
-	modelStack.Translate(gunTranslation + 0.59, -0.15, 0.3);
+	modelStack.Translate(pickAxeTranslation + 0.5, -0.3, 0.22);
+	modelStack.Rotate(-pickAxeRotation, 0, 0, 1);
+	modelStack.Scale(0.5, 0.2, 0.5);
+	RenderMesh(meshList[GEO_PICKAXE], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.PushMatrix();
+	modelStack.Translate(swordTranslation + 0.5, -0.28, 0.3);
+	modelStack.Rotate(-swordRotation, 0, 0, 1);
+	modelStack.Scale(0.1, 0.1, 0.1);
+	RenderMesh(meshList[GEO_SWORD], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(followy, 0, 1, 0);
+	modelStack.Rotate(followx, 0, 0, 1);
+	modelStack.PushMatrix();
+	modelStack.Translate(gunTranslation + 0.3, -0.15, 0.3);
+	modelStack.Rotate(-gunRotation, 0, 0, 1);
 	modelStack.Scale(0.1, 0.1, 0.1);
 	RenderMesh(meshList[GEO_GUN], true);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
+
 
 	
 
