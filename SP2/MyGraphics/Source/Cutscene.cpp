@@ -1,5 +1,5 @@
 #include "GL\glew.h"
-#include "SP2.h"
+#include "Cutscene.h"
 
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -17,59 +17,23 @@ static Vector3 PtoV(Position V)
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
 }
-SP2::SP2()
+Cutscene::Cutscene()
 {
 }
-SP2::~SP2()
+Cutscene::~Cutscene()
 {
 }
-void SP2::Init()
+void Cutscene::Init()
 {
 	srand(time(NULL));
 	Map_Reading();
 
 	JumpTime = 0;
-	//story tab
-	storyShow = true;
-	storyPosition = 2.5;
 
 
-	//Npc dialogue
-	Dialogue("Text//RobotScene1.txt");
 	PressTime = 0;
 
-	//Icon location
-	x = 38.5;
-	y = 14;
-	w_x = 1.6;
-	w_y = 2;
-	gun = 0;
-
-	//Weapons
-	b_coolDown = b_coolDownLimit = 1;
-	startCoolDdown = false;
-	usingSword = true;
-	usingGun = usingPickAxe = false;
-	rm_coolDown = rm_coolDownLimit = 10;
-	startRMcoolDown = false;
-	weaponChoice = 1;
-	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
-
-	camera.cameraRotate = Vector3(0, 270, 0);
-
-	oreMaterial_arr[0].pos = Vector3(235, -21, -90);
-	oreMaterial_arr[1].pos = Vector3(215, -21, -120);
-	oreMaterial_arr[2].pos = Vector3(255, -21, -120);
-
-	npc.door.Nposition = Vector3(92, -22, 0);
-	npc.door.canGoThrough = false;
-	npc.door.Collision = true;
-	npc.robot1.Nposition = Vector3(280, -21, -150);
-	npc.robot2.Nposition = Vector3(245, -21, 150);
-	npc.robot3.Nposition = Vector3(92, -21, 361);
-	npc.spacebody.Nposition = Vector3(345, -21, 0);
-	npc.spacewing.Nposition = Vector3(0, -21, 100);
-	npc.spacerocket.Nposition = Vector3(-200, -21, 100);
+	camera.cameraRotate = Vector3(0, 140, 0);
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -247,9 +211,10 @@ void SP2::Init()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 4);
 
 	//Initialize camera settings
-	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
-	meshList[GEO_REF_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
-
+	if (planePos2 < 1200)
+	{
+		camera.Init(Vector3(220, 0, 195), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	}
 	GLuint floor = LoadTGA("Image//Scene_Floor.tga");
 
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
@@ -315,28 +280,6 @@ void SP2::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//_Font.tga");
 
-	GLuint R2D2 = LoadTGA("Image//Scene_R2D2_D.tga");
-	meshList[GEO_ROBOTH] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2_head.obj");
-	meshList[GEO_ROBOTH]->textureID = R2D2;
-	meshList[GEO_ROBOTB] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2_body.obj");
-	meshList[GEO_ROBOTB]->textureID = R2D2;
-
-	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("Robot", "OBJ//R2D2.obj");
-	meshList[GEO_ROBOT]->textureID = R2D2;
-
-	meshList[GEO_ROBOT1] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
-	meshList[GEO_ROBOT1]->textureID = LoadTGA("Image//Scene_R2D2_A.tga");
-
-	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//BB8.obj");
-	meshList[GEO_COKE]->textureID = LoadTGA("Image//Scene_BB8.tga");
-
-	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story1", Color(1, 1, 1), 4, 5);
-	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story1.tga");
-
-
-	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
-	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//Scene_moon.tga");
-
 	GLuint pyramid = LoadTGA("Image//Scene_Pyramid.tga");
 	meshList[GEO_PYRAMIDNEW] = MeshBuilder::GenerateOBJ("pyramid", "OBJ//PyramidNew.obj");
 	meshList[GEO_PYRAMIDNEW]->textureID = pyramid;
@@ -344,17 +287,6 @@ void SP2::Init()
 	meshList[GEO_PYRAMIDDOOR]->textureID = LoadTGA("Image//Scene_slabs.tga");
 	meshList[GEO_PYRAMIDWALL] = MeshBuilder::GenerateOBJ("Walls", "OBJ/Wall.obj");
 	meshList[GEO_PYRAMIDWALL]->textureID = pyramid;
-	meshList[GEO_PYRAMIDPILLAR] = MeshBuilder::GenerateOBJ("Pillars", "OBJ//Pillar.obj");
-	meshList[GEO_PYRAMIDPILLAR]->textureID = pyramid;
-
-	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
-	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//Scene_SpaceShip.tga");
-
-	meshList[GEO_BB8HEAD] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8head.obj");
-	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//Scene_BB8head.tga");
-
-	meshList[GEO_BB8BODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8sphere.obj");
-	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//Scene_BB8sphere.tga");
 
 	GLuint plane = LoadTGA("Image//Scene_Plane.tga");
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
@@ -366,510 +298,62 @@ void SP2::Init()
 	meshList[GEO_PLANEROCKET] = MeshBuilder::GenerateOBJ("Star", "OBJ//planerocket.obj");
 	meshList[GEO_PLANEROCKET]->textureID = plane;
 
-	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("pickaxe", "OBJ//pickaxe.obj");
-	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Weapon_PickAxe.tga");
+	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
+	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//Scene_moon.tga");
 
-	meshList[GEO_GUN] = MeshBuilder::GenerateOBJ("gun", "OBJ//M24_R_Low_Poly_Version_obj.obj");
-	meshList[GEO_GUN]->textureID = LoadTGA("Image//Weapon_Gun.tga");
-
-	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//Sword.obj");
-	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Weapon_Sword.tga");
-
-	meshList[GEO_RMSMALL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial3.obj");
-	meshList[GEO_RMSMALL]->textureID = LoadTGA("Image//RawMaterial.tga");
-
-	meshList[GEO_RMMEDIUM] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial2.obj");
-	meshList[GEO_RMMEDIUM]->textureID = meshList[GEO_RMSMALL]->textureID;
-
-	meshList[GEO_RMBIG] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
-	meshList[GEO_RMBIG]->textureID = meshList[GEO_RMSMALL]->textureID;
-
-	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
+	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateOBJ("moonball", "OBJ//Explode.obj");
 	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//Scene_Explosion.tga");
 
-	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
-	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//Scene_Bullet.tga");
-
-	meshList[GEO_BOMB] = MeshBuilder::GenerateOBJ("bomb", "OBJ//bomb.obj");
-	meshList[GEO_BOMB]->textureID = LoadTGA("Image//Scene_Bomb.tga");
-
-
-	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
-	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
-
-
-
-	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
+	meshList[GEO_THRUSTER] = MeshBuilder::GenerateOBJ("moonball", "OBJ//thruster.obj");
+	meshList[GEO_THRUSTER]->textureID = LoadTGA("Image//Scene_Thruster.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
-static float LSPEED = 10.f;
-static bool Lighting9 = true;
-//Check for player and object distance
-//Takes in camera and object vector3
-float SP2::checkNear(Camera3 camera, Vector3 rhs)
+void Cutscene::Update(double dt)
 {
-	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
-
-}
-void SP2::Update(double dt)
-{
-	if (coolDownTime > 0)
+	/*if (planePos2 < 1200)
 	{
-		coolDownTime -= (float)(10 * dt);
+		camera.Init(Vector3(220, 0, 195), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	}*/
+	if (planePos2 >= 1200)
+	{
+		camera.Init(Vector3(400, 20, 2), Vector3(0, 0, 0), Vector3(0, 1, 0));
+		camera.cameraRotate= Vector3(-10, 270, 0);
+		randNum = (rand() % 4) + 1;
 	}
-	else
+	if (planePos2 >= 1100)
 	{
-		coolDownTime = 0;
-	}
-	Enemy_Updating(dt);
-
-	//Talking to npc or opening door
-	npc.Door(camera, dt);
-	npc.Scene1(camera, dt);
-	//Dialogue for robot with rotating head
-	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
-	{
-		coolDownTime = deltaTime / 10;
-		robot1rotation = 0;
-		if (npc.dialoguePlus < my_arr.size() - 1)
+		blowUp = true;
+		if (explosionScale < 200)
 		{
-			++npc.dialoguePlus;
+			explosionScale += (float)(50 * dt);
 		}
 	}
-	//NPC movement/rotation
-
-	else if (npc.robot3.robot != "robot3")
+	if (planePos < 10)
 	{
-		if (robot1rotate == false)
-		{
-			robot1rotation += (float)(20 * dt);
-
-			if (robot1rotation >= 80)
-			{
-				robot1rotate = true;
-			}
-		}
-		if (robot1rotate)
-		{
-			robot1rotation -= (float)(20 * dt);
-
-			if (robot1rotation <= -80)
-			{
-				robot1rotate = false;
-			}
-		}
+		planePos += (float)(10 * dt);
 	}
-	if (npc.robot1.robot != "robot1" && npc.robot1.robot != "robot1.1" && npc.robot1.robot!= "robot1.2")
-	{
-		if (robot1moved == false)
-		{
-			npc.robot1.Nposition.z += (float)(10 * dt);
 
-			if (npc.robot1.Nposition.z >= -100)
-			{
-				robot1moved = true;
-			}
-		}
-
-		if (robot1moved)
-		{
-			npc.robot1.Nposition.z -= (float)(10 * dt);
-
-				if (npc.robot1.Nposition.z <= -160)
-				{
-					robot1moved = false;
-				}
-		}
-	}
-	if (npc.door.canGoThrough)
+	if (planePos >= 10 && planePos2 < 1200)
 	{
-		npc.door.Collision = false;
-		if (npc.door.Nposition.y > -60)
+		planePos2 += (float)(1000 * dt);
+		if (thrusterScale < 1)
 		{
-			npc.door.canGoThrough = true;
-			npc.door.Nposition.y -= (float)(100 * dt);
-		}
-	}
-	if (detectCollision.collideByDist(camera.position, npc.door.Nposition) >= 25)
-	{
-		if (npc.door.Nposition.y < -23)
-		{
-			npc.door.canGoThrough = false;
-			npc.door.Nposition.y += (float)(100 * dt);
+			thrusterScale += (float)(10 * dt);
 		}
 	}
 	Character_Movement(dt);
-	mouse.MouseUpdate(dt, camera, followx, followy);
-
-	if (fixrocket && fixwing)
-	{
-		npc.interactDia = "You have fixed the ship. Loading...";
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SCENE2;
-	}
-
-	//Check if player presses tab and start to move the story upwards
-	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
-	{
-		coolDownTime = deltaTime / 10;
-		if (storyPosition >= 2.5)
-		{
-			storyDismiss = true;
-			storyShow = false;
-		}
-	}
-	//Check if player presses tab and start to move story downwards
-	if (storyDismiss == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
-	{
-		coolDownTime = deltaTime / 10;
-		if (storyPosition <= -3)
-		{
-			storyDismiss = false;
-			storyShow = true;
-		}
-	}
-
-	if (storyDismiss && storyPosition > -3)
-	{
-		storyPosition -= (float)(3 * dt);
-
-	}
-	if (storyShow && storyPosition < 2.5)
-	{
-		storyPosition += (float)(3 * dt);
-	}
-
 	//Debugging purpose
 	if (Application::IsKeyPressed('P'))
 	{
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SCENE2;
 	}
-
-	//To open the shop for now
-	/*if (Application::IsKeyPressed('O'))
-	{
-		shop = "Loading Shop";
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SHOP;
-	}
-*/
-	if (Application::IsKeyPressed('3'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if (Application::IsKeyPressed('4'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if (Application::IsKeyPressed('Z'))
-	{
-		Lighting9 = false;
-	}
-	else if (Application::IsKeyPressed('X'))
-	{
-		Lighting9 = true;
-	}
-	if (Application::IsKeyPressed('H'))
-	{
-		SharedData::GetInstance()->bullet.quantity = 30;
-	}
-	if (Application::IsKeyPressed(VK_LBUTTON) || Application::IsKeyPressed(VK_SPACE))
-	{
-		switch (weaponChoice)
-		{
-		case 1:
-			playSlashingAnimation = true;
-			break;
-
-		case 2:
-			if (SharedData::GetInstance()->bullet.quantity > 0)
-			{
-				startCoolDdown = true;
-				if (b_coolDown == b_coolDownLimit)
-				{
-					SharedData::GetInstance()->bullet.quantity--;
-					bullet_arr.push_back(new Bullet(camera));
-				}
-				animation.Shoot(dt, gunTranslation, playShootingAnimation);
-			}
-			break;
-
-		case 3:
-			playMiningAnimation = true;
-			break;
-		}
-	}
-	if (playSlashingAnimation)
-	{
-		animation.Slash(dt, swordRotation, playSlashingAnimation);
-	}
-	if (playMiningAnimation)
-	{
-		animation.Mine(dt, pickAxeRotation, playMiningAnimation);
-	}
-
-	if (startCoolDdown)
-	{
-		b_coolDown -= dt;
-		if (b_coolDown < 0)
-		{
-			b_coolDown = b_coolDownLimit;
-			startCoolDdown = false;
-		}
-	}
-
-	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
-	{
-		//if destory bullet = true 
-		if ((*iter)->Update(dt) || (*iter)->CollideWithEnemy(enemy, bullet_arr, detectCollision))
-		{
-			iter = bullet_arr.erase(iter);
-		}
-		else
-		{
-			iter++;
-		}
-	}
-
-	//Check if enemy got slashed by the player
-	if (usingSword)
-		detectCollision.swordCollision(enemy, camera.position);
-
-	// MINING COLLISION
-	for (int i = 0; i < 3; ++i)
-	{
-		if (detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
-			detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_SPACE))
-		{
-			if (usingPickAxe && oreMaterial_arr[i].hp > 0)
-			{
-				startCoolDdown = true;
-				if (b_coolDown == b_coolDownLimit)
-				{
-					SharedData::GetInstance()->mineral.quantity++;
-					oreMaterial_arr[i].hp--;
-					cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
-				}
-			}
-		}
-
-		switch (oreMaterial_arr[i].hp)
-		{
-		case 0:
-			oreMaterial_arr[i].isAlive = false;
-			startRMcoolDown = true;
-			break;
-		case 1:
-			oreMaterial_arr[i].shape = meshList[GEO_RMSMALL];
-			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMSMALL]->textureID;
-			break;
-		case 2:
-			oreMaterial_arr[i].shape = meshList[GEO_RMMEDIUM];
-			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMMEDIUM]->textureID;
-			break;
-		case 3:
-			oreMaterial_arr[i].shape = meshList[GEO_RMBIG];
-			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMBIG]->textureID;
-			break;
-		}
-
-		if (startRMcoolDown)
-		{
-			rm_coolDown -= dt;
-			cout << rm_coolDown << endl;
-			if (rm_coolDown < 0)
-			{
-				oreMaterial_arr[i].isAlive = true;
-				oreMaterial_arr[i].hp = 3;
-				startRMcoolDown = false;
-			}
-		}
-		else
-		{
-			rm_coolDown = rm_coolDownLimit;
-		}
-
-	}
-
-	if (startCoolDdown)
-	{
-		b_coolDown -= dt;
-		if (b_coolDown < 0)
-		{
-			b_coolDown = b_coolDownLimit;
-			startCoolDdown = false;
-		}
-	}
-
-	deltaTime = (1.0 / dt);
-	if (Application::IsKeyPressed('E'))
-	{
-		if (detectCollision.collideByDist(camera.position, npc.spacerocket.Nposition) <= 25 && coolDownTime == 0)
-		{
-			if (camera.view.Dot(npc.spacerocket.Nposition) > 0)
-			{
-				coolDownTime = deltaTime / 10;
-				if (pickuprocket == false)
-				{
-					parts++;
-				}
-				pickuprocket = true;
-
-
-			}
-		}
-
-
-		if (detectCollision.collideByDist(camera.position, npc.spacewing.Nposition) <= 25 && coolDownTime == 0)
-		{
-			if (camera.view.Dot(npc.spacewing.Nposition) > 0)
-			{
-				coolDownTime = deltaTime / 10;
-				if (pickupwing == false)
-				{
-					parts++;
-
-				}
-				pickupwing = true;
-
-			}
-		}
-
-	}
-	if (Application::IsKeyPressed('E'))
-	{
-		if (pickuprocket == true && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)
-
-		{
-			if (camera.view.Dot(npc.spacebody.Nposition) > 0)
-			{
-				fixrocket = true;
-				pickuprocket = false;
-
-			}
-		}
-	}
-
-	if (Application::IsKeyPressed('E'))
-	{
-		if (pickupwing == true && detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25)
-		{
-			if (camera.view.Dot(npc.spacebody.Nposition) > 0)
-			{
-				fixwing = true;
-				pickupwing = false;
-			}
-		}
-	}
-	if (Application::IsKeyPressed('5') && coolDownTime == 0)
-	{
-
-
-		/*bool toggle = false;
-		bool cam1 = false;
-		bool movement = true;
-		*/
-		coolDownTime = deltaTime / 5;
-
-
-
-		/// when untoggle below runs agains
-		if (cam1 == true && toggle == false)
-		{
-			//press again then teleport 
-			camera.position = newcameraposition;   // teleports u there 
-			movement = false;
-			toggle = true;
-			cout << "u are now in camera mode" << endl;
-			/// restrrrict movement 
-			/// NEED TO MAKE SURE ITS 2ND TIME
-
-		}
-
-		else if (toggle == true && movement == false)
-		{
-			movement = true;
-			camera.position = oldcameraposition;
-			toggle = false;
-
-			cout << "u are now not in camera mode" << endl;
-
-			/// make sure camera mode dont exit and reenter
-		}
-
-
-
-		if (cam1 == false)
-		{
-			holdingcctv = true;
-			newcameraposition = camera.position;
-			oldcameraposition = camera.position;
-			cout << newcameraposition << endl;
-			cout << oldcameraposition << "locked old " << endl;
-			cam1 = true;
-
-		}
-		// toggle== false means normal mode haven toggle into camnera mode
-
-
-	}// this allow new position to be camera position
-
-	if (Application::IsKeyPressed(VK_F1))
-	{
-		//SWORD
-		weaponChoice = 1;
-		usingSword = true;
-		usingGun = false;
-		usingPickAxe = false;
-	}
-
-	if (Application::IsKeyPressed(VK_F2))
-	{
-		//PICKAXE
-		weaponChoice = 3;
-		usingSword = false;
-		usingGun = false;
-		usingPickAxe = true;
-	}
-
-	if (Application::IsKeyPressed(VK_F3))
-	{
-		//GUN
-		weaponChoice = 2;
-		
-		usingSword = false;
-		usingGun = true;
-		usingPickAxe = false;
-	}
-
-
-	if (weaponChoice == 1)
-	{
-		gun = 0;
-		sword = 1;
-		pickaxe = 0;
-	}
-
-	if (weaponChoice == 2)
-	{
-		gun = 1;
-		sword = 0;
-		pickaxe = 0;
-	}
-
-	if (weaponChoice == 3)
-	{
-		gun = 0;
-		sword = 0;
-		pickaxe = 1;
-	}
-	animation.moveSword(dt, swordTranslation, usingSword);
-	animation.moveGun(dt, gunTranslation, usingGun);
-	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
-
 }
 //Reading from text file
-void SP2::Dialogue(string filename)
+void Cutscene::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
 	string line;
@@ -881,7 +365,8 @@ void SP2::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
-void SP2::RenderMesh(Mesh * mesh, bool enableLight)
+bool Lighting9 = true;
+void Cutscene::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 	MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top();
@@ -921,7 +406,7 @@ void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
-void SP2::RenderText(Mesh* mesh, std::string text, Color color)
+void Cutscene::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -947,7 +432,7 @@ void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
-void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void Cutscene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -993,7 +478,7 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 	glEnable(GL_DEPTH_TEST);
 }
 //Takes in mesh, the size of the mesh, the position, the rotation, and z layering
-void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
+void Cutscene::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
@@ -1013,7 +498,7 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 }
 //Rendering current skybox
 static float SBSCALE1 = 1000.f;
-void SP2::RenderSkybox()
+void Cutscene::RenderSkybox()
 {
 	modelStack.PushMatrix();
 	//to do: transformation code here
@@ -1073,7 +558,7 @@ void SP2::RenderSkybox()
 	modelStack.PopMatrix();
 }
 //Render codes
-void SP2::Render()
+void Cutscene::Render()
 {
 	std::ostringstream oss;
 	oss << "Camera X: " << camera.position.x;
@@ -1177,11 +662,6 @@ void SP2::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[2].position;
 		glUniform3fv(m_parameters[U_LIGHT2_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-
-	modelStack.PushMatrix();
-	Enemy_Rendering();
-	modelStack.PopMatrix();
-
 	modelStack.PushMatrix();
 	Map_Rendering();
 	modelStack.PopMatrix();
@@ -1194,30 +674,32 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-100, 230, 0);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_SPACESHIP], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(350, -20, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Translate(planePos2, planePos, 0);
+	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Scale(5, 5, 5);
 	modelStack.PushMatrix();
 	RenderMesh(meshList[GEO_PLANEBODY], true);
-	if (fixrocket == true)
-	{
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
-	}
-	if (fixwing == true)
-	{
-		RenderMesh(meshList[GEO_PLANEWING], true);
-	}
-
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEROCKET], true);
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_PLANEWING], true);
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 3.6, -3);
+	modelStack.Scale(thrusterScale, thrusterScale, thrusterScale);
+	RenderMesh(meshList[GEO_THRUSTER], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	modelStack.PopMatrix();
-
+	if (blowUp)
+	{
+		modelStack.PushMatrix();
+		modelStack.Scale(explosionScale, explosionScale, explosionScale);
+		RenderMesh(meshList[GEO_EXPLOSION], false);
+		modelStack.PopMatrix();
+	}
 
 	//Move skybox
 	modelStack.PushMatrix();
@@ -1229,138 +711,7 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(npc.door.Nposition.x, npc.door.Nposition.y, npc.door.Nposition.z);
 	modelStack.Scale(37, 37, 37);
-	RenderMesh(meshList[GEO_PYRAMIDDOOR], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(npc.robot1.Nposition.x, npc.robot1.Nposition.y, npc.robot1.Nposition.z);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_ROBOT], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(npc.robot3.Nposition.x, npc.robot3.Nposition.y, npc.robot3.Nposition.z);
-	modelStack.Rotate(150, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_ROBOTB], false);
-	modelStack.PushMatrix();
-	modelStack.Rotate(robot1rotation, 0, 1, 0);
-	RenderMesh(meshList[GEO_ROBOTH], false);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(npc.robot2.Nposition.x, npc.robot2.Nposition.y, npc.robot2.Nposition.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_ROBOT1], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	if (pickupwing == false && fixwing == false)
-	{
-		modelStack.Translate(npc.spacewing.Nposition.x, npc.spacewing.Nposition.y, npc.spacewing.Nposition.z);
-		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_PLANEWING], true);
-		modelStack.PopMatrix();
-		//render main wing inpyramid
-	}
-	else
-	{
-		if (fixwing == false)
-
-			ObjectsHolding(meshList[GEO_PLANEWING],0.05);
-		
-		//hold in ur hand 
-
-	}
-
-	if (pickuprocket == false && fixrocket == false)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(npc.spacerocket.Nposition.x, npc.spacerocket.Nposition.y, npc.spacerocket.Nposition.z);
-		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
-		modelStack.PopMatrix();
-		//renders main rocket in pyramid
-
-	}
-	else
-	{
-		if (fixrocket == false)
-			ObjectsHolding(meshList[GEO_PLANEROCKET], 0.05);
-		//hold in the hand
-	}
-
-	//Mining rock 
-	for (int i = 0; i < 3; ++i)
-	{
-		if (oreMaterial_arr[i].isAlive)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(oreMaterial_arr[i].pos.x, oreMaterial_arr[i].pos.y, oreMaterial_arr[i].pos.z);
-			modelStack.Scale(10, 10, 10);
-			RenderMesh(oreMaterial_arr[i].shape, true);
-			modelStack.PopMatrix();
-		}
-	}
-
-
-	if (holdingcctv == true)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
-		modelStack.Rotate(180, 0, 1, 0);
-		modelStack.Rotate(followy, 0, 1, 0);
-		modelStack.Rotate(followx, 0, 0, 1);
-
-		modelStack.PushMatrix();
-		modelStack.Translate(0.9, -0.12, -0.3);
-		modelStack.Scale(0.1, 0.1, 0.1);
-		RenderMesh(meshList[GEO_CCTV], true);
-		modelStack.PopMatrix();
-		modelStack.PopMatrix();
-		/// animation for it gg up 
-	}
-
-
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(pickAxeTranslation + 0.5, -0.3, 0.22);
-	modelStack.Rotate(-pickAxeRotation, 0, 0, 1);
-	modelStack.Scale(0.5, 0.2, 0.5);
-	RenderMesh(meshList[GEO_PICKAXE], true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(swordTranslation + 0.5, -0.28, 0.3);
-	modelStack.Rotate(-swordRotation, 0, 0, 1);
-	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_SWORD], false);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(gunTranslation + 0.3, -0.15, 0.3);
-	modelStack.Rotate(-gunRotation, 0, 0, 1);
-	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_GUN], false);
-	modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_PYRAMIDDOOR], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -1371,100 +722,14 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	//scale, translate, rotate
-	modelStack.Translate(-108, -19.9, 0);
-	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(300, 1, 300);
-	RenderMesh(meshList[GEO_PYRAMIDFLOOR], true);
-	modelStack.PopMatrix();
-
-	//Bullet render
-	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate((*iter)->position.x, (*iter)->position.y, (*iter)->position.z);
-		modelStack.Rotate(-90, 0, 1, 0);
-		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
-
-		modelStack.Scale(0.3, 0.3, 0.3);
-		RenderMesh(meshList[GEO_BULLETSKIN], false);
-		modelStack.PopMatrix();
-	}
-
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);
-
-	//Show player if he can interact with item
-	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract || fixwing && fixrocket)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
-		if (npc.robot1.robot == "robot1")
-		{
-			int j = 25;
-			for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
-			{
-				j--;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
-			}
-		}
-		if (npc.robot1.robot == "robot1.1")
-		{
-			npc.dialogue = 1;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
-		}
-		if (npc.robot1.robot == "robot1.2")
-		{
-			npc.dialogue = 2;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
-		}
-		if (npc.robot2.robot == "robot2")
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
-		}
-		if (npc.robot3.robot == "robot3")
-		{
-
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
-		}
-	}
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
-
-	//All element for player inventory
-	RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, x, y, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_GOLDICON], 2, x, y-3, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_EGGICON], 2, x, y-6, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_OREICON], 2, x, y-9, 90, 1, 0, 0, 0);
-	RenderQuadOnScreen(meshList[GEO_BOMBICON], 2, x, y-12, 90, 1, 0, 0, 0);
-
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0, 1), 1.5, x + 11.5, y +3.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0, 1), 1.5, x + 11.5, y - 0.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
-
-	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
-
-	glBlendFunc(1, 1);
-	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	glBlendFunc(1, gun);
-	RenderQuadOnScreen(meshList[GEO_GUNICON], 2, 1.6, w_y, 90, 1, 0, 0, 0);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	glBlendFunc(1, pickaxe);
-	RenderQuadOnScreen(meshList[GEO_PICKAXEICON], 2, 1.6, w_y+3, 90, 1, 0, 0, 0);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	glBlendFunc(1, sword);
-	RenderQuadOnScreen(meshList[GEO_SWORDICON], 2, 1.6, w_y+6, 90, 1, 0, 0, 0);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	if (storyDismiss && npc.interactDia != "You have fixed the ship. Loading...")
 	{
@@ -1472,12 +737,12 @@ void SP2::Render()
 	}
 }
 
-void SP2::Exit()
+void Cutscene::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
 }
-void SP2::Enemy_Updating(float dt)
+void Cutscene::Enemy_Updating(float dt)
 {
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 5; i++)
@@ -1486,7 +751,7 @@ void SP2::Enemy_Updating(float dt)
 	}
 	camera = enemy[0].enemy_attack(enemy,VtoP(camera.position),camera);
 }
-void SP2::Enemy_Rendering()
+void Cutscene::Enemy_Rendering()
 {
 	for (int i = 0; i < 5; i++)
 	{
@@ -1498,7 +763,7 @@ void SP2::Enemy_Rendering()
 		modelStack.PopMatrix();
 	}
 }
-void SP2::Map_Reading()
+void Cutscene::Map_Reading()
 {
 	string line;
 	ifstream myfile("Map//Map1.txt");
@@ -1516,7 +781,7 @@ void SP2::Map_Reading()
 	}
 	else cout << "Unable to read Map!!" << endl;
 }
-void SP2::Map_Rendering()
+void Cutscene::Map_Rendering()
 {
 	modelStack.PushMatrix();
 
@@ -1524,37 +789,15 @@ void SP2::Map_Rendering()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
-	RenderMesh(meshList[GEO_PYRAMIDNEW], true);
+	RenderMesh(meshList[GEO_PYRAMIDNEW], false);
 	modelStack.PushMatrix();
 	modelStack.Scale(Size, (2 / (2.5*Size)), Size);
 	RenderMesh(meshList[GEO_PYRAMIDWALL], true);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
-
-	//Start Point
-	modelStack.Translate(-Size * 10, Size * 1.3, -Size * 10);
-	for (int i = 0; i < 20; i++)
-	{
-		for (int j = 0; j < 20; j++)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(Size*i, 0, Size*j);
-			modelStack.Scale(Size, Size, Size);
-			if (Map[i][j] == char('0'))
-			{
-				RenderMesh(meshList[GEO_PYRAMIDPILLAR], true);
-			}
-			else if (Map[i][j] == char('1'))
-			{
-				RenderMesh(meshList[GEO_PYRAMIDWALL], true);
-			}
-			modelStack.PopMatrix();
-		}
-	}
-	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
-void SP2::Character_Movement(float dt)
+void Cutscene::Character_Movement(float dt)
 {
 	if (Application::IsKeyPressed('Q') && light[3].power == 0)
 	{
@@ -1577,174 +820,26 @@ void SP2::Character_Movement(float dt)
 	}
 
 	//Changing view (target)
-	if (Application::IsKeyPressed(VK_LEFT))
+	if (randNum == 1)
 	{
 		camera.cameraRotate.y += (float)(100 * dt);
-		followy += (float)(100 * dt);
 	}
-	if (Application::IsKeyPressed(VK_RIGHT))
+	if (randNum == 2)
 	{
 		camera.cameraRotate.y -= (float)(100 * dt);
 		followy -= (float)(100 * dt);
 	}
-	if (Application::IsKeyPressed(VK_UP))
+	if (randNum == 3)
 	{
 		camera.cameraRotate.x -= (float)(100 * dt);
-		followx += (float)(100 * dt);
 	}
-	if (Application::IsKeyPressed(VK_DOWN))
+	if (randNum == 4)
 	{
 		camera.cameraRotate.x += (float)(100 * dt);
-		followx -= (float)(100 * dt);
-
 	}
-
-
-	if (followx > camera.maxCameraX)
-	{
-		followx = 49.99;
-
-	}
-	if (followx < -camera.maxCameraX)
-	{
-		followx = -49.99;
-	}
-
-	//Bounds checking based on maximum and minimum
-	if (camera.position.x > camera.maxX)
-	{
-		camera.position.x = camera.maxX;
-	}
-	if (camera.position.x < camera.minX)
-	{
-		camera.position.x = camera.minX;
-	}
-	if (camera.position.z > camera.maxZ)
-	{
-		camera.position.z = camera.maxZ;
-	}
-	if (camera.position.z < camera.minZ)
-	{
-		camera.position.z = camera.minZ;
-	}
-
-
-
-	if (checkNear(camera, npc.door.Nposition) <= 15)
-	{
-		if (npc.door.Collision)
-		{
-			if (camera.position.x < npc.door.Nposition.x)
-			{
-				camera.position.x = npc.door.Nposition.x - 10;
-			}
-
-			if (camera.position.x > npc.door.Nposition.x)
-			{
-				camera.position.x = npc.door.Nposition.x + 10;
-			}
-		}
-	}
-
-
-
-
-
-
 
 	//Moving the camera
 	Vector3 Test = camera.position;
-	if (movement == true)
-	{
-		if (Application::IsKeyPressed('W'))
-		{
-			Test.x += sin(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed*dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-			else
-			{
-				Test = camera.position;
-			}
-			Test.z += cos(DegreeToRadian(camera.cameraRotate.y)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-		}
-
-		if (Application::IsKeyPressed('S'))
-		{
-			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-			else
-			{
-				Test = camera.position;
-			}
-			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 180)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-		}
-
-		if (Application::IsKeyPressed('A'))
-		{
-			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-			else
-			{
-				Test = camera.position;
-			}
-			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 90)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-		}
-
-		if (Application::IsKeyPressed('D'))
-		{
-			Test.x += sin(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-			else
-			{
-				Test = camera.position;
-			}
-			Test.z += cos(DegreeToRadian(camera.cameraRotate.y + 270)) * camera.cameraSpeed *dt;
-			if (enemy[0].Collision_Detection(VtoP(Test), Size, Map, enemy, -1, Z_Displacement, X_Displacement))
-			{
-				camera.position = Test;
-			}
-
-			/*if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
-			{
-			Test = camera.position;
-			}*/
-		}
-	}
-
-	//Only allow rotating to look 90 degrees up and 90 degrees down
-	if (camera.cameraRotate.x > camera.maxCameraX)
-	{
-		camera.cameraRotate.x = camera.maxCameraX;
-	}
-
-	else if (camera.cameraRotate.x < -camera.maxCameraX)
-	{
-		camera.cameraRotate.x = -camera.maxCameraX;
-	}
-
 	//Changing target
 	camera.target = Vector3(sin(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.x, -sin(DegreeToRadian(camera.cameraRotate.x)) + camera.position.y,
 		cos(DegreeToRadian(camera.cameraRotate.y))*cos(DegreeToRadian(camera.cameraRotate.x)) + camera.position.z);
@@ -1752,54 +847,4 @@ void SP2::Character_Movement(float dt)
 	Vector3 right = camera.view.Cross(camera.defaultUp);
 	right.y = 0;
 	camera.up = right.Cross(camera.view);
-}
-
-
-void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
-{
-
-	modelStack.PushMatrix();
-	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, z);
-	RenderMesh(mesh, true);
-
-
-	modelStack.PopMatrix();
-}
-
-
-void SP2::ObjectsHolding(Mesh*mesh, float size)
-{
-
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0.9, -0.12, -0.3);
-	modelStack.Scale(size, size, size);
-	RenderMesh(mesh, true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-}
-
-
-void SP2::EquipmentHolding(Mesh*mesh, float size)
-{
-
-	modelStack.PushMatrix();
-
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0.9, -0.12, 0.3);
-	modelStack.Scale(size, size, size);
-	RenderMesh(mesh, true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
 }
