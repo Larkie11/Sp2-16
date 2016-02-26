@@ -506,6 +506,7 @@ void SP2::Update(double dt)
 
 	if (fixrocket && fixwing)
 	{
+		npc.interactDia = "You have fixed the ship. Loading...";
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SCENE2;
 	}
@@ -1392,7 +1393,7 @@ void SP2::Render()
 	Fps.resize(11);
 
 	//Show player if he can interact with item
-	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
+	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract || fixwing && fixrocket)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 		if (npc.robot1.robot == "robot1")
@@ -1461,7 +1462,7 @@ void SP2::Render()
 	RenderQuadOnScreen(meshList[GEO_SWORDICON], 2, 1.6, w_y+6, 90, 1, 0, 0, 0);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	if (storyDismiss)
+	if (storyDismiss && npc.interactDia != "You have fixed the ship. Loading...")
 	{
 		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 	}
