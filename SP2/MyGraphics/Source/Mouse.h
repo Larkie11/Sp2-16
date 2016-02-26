@@ -26,6 +26,7 @@ public:
 	~Mouse();
 	void AssignePointToVector(POINT point, Vector3 &vec);
 	void MouseUpdate(double dt, Camera3 &camera);
+	void MouseUpdate(double dt, Camera3 &camera, float& followx, float& followy);
 };
 #endif
 

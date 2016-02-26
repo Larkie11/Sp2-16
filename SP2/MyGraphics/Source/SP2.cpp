@@ -240,7 +240,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT2_COSINNER], light[2].cosInner);
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
 
-	glUniform1i(m_parameters[U_NUMLIGHTS], 3);
+	glUniform1i(m_parameters[U_NUMLIGHTS], 4);
 
 	//Initialize camera settings
 	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -496,7 +496,7 @@ void SP2::Update(double dt)
 		}
 	}
 	Character_Movement(dt);
-	mouse.MouseUpdate(dt, camera);
+	mouse.MouseUpdate(dt, camera, followx, followy);
 
 	if (fixrocket && fixwing)
 	{
@@ -1336,9 +1336,10 @@ void SP2::Render()
 	modelStack.PushMatrix();
 
 	modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.Rotate(180, 0, 1, 0);
+	
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(0.1, 0.1, 0.1);
@@ -1349,6 +1350,7 @@ void SP2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
@@ -1361,6 +1363,7 @@ void SP2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
@@ -1373,6 +1376,7 @@ void SP2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
@@ -1472,8 +1476,8 @@ void SP2::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
-	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
+	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
 	glBlendFunc(1, 1);
@@ -1784,9 +1788,10 @@ void SP2::ObjectsHolding(Mesh*mesh, float size)
 
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.Rotate(180, 0, 1, 0);
+
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(size, size, size);
