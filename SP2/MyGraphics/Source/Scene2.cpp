@@ -46,7 +46,7 @@ void Scene2::Init()
 	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
 	storyPosition = 2.5;
 
-	camera.cameraRotate = Vector3(0, 180, 0);
+	camera.cameraRotate = Vector3(0, 90, 0);
 
 	//Position of door
 	rawMaterial = Vector3(235, -21, -90);

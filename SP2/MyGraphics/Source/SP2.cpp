@@ -50,12 +50,16 @@ void SP2::Init()
 	startCoolDdown = false;
 	usingSword = true;
 	usingGun = usingPickAxe = false;
+	rm_coolDown = rm_coolDownLimit = 10;
+	startRMcoolDown = false;
 	weaponChoice = 1;
 	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
 
 	camera.cameraRotate = Vector3(0, 270, 0);
 
-	rawMaterial = Vector3(235, -21, -90);
+	oreMaterial_arr[0].pos = Vector3(235, -21, -90);
+	oreMaterial_arr[1].pos = Vector3(215, -21, -120);
+	oreMaterial_arr[2].pos = Vector3(255, -21, -120);
 
 	npc.door.Nposition = Vector3(92, -22, 0);
 	npc.door.canGoThrough = false;
@@ -371,8 +375,14 @@ void SP2::Init()
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//Sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Weapon_Sword.tga");
 
-	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
-	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//Scene_RawMaterial.tga");
+	meshList[GEO_RMSMALL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial3.obj");
+	meshList[GEO_RMSMALL]->textureID = LoadTGA("Image//RawMaterial.tga");
+
+	meshList[GEO_RMMEDIUM] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial2.obj");
+	meshList[GEO_RMMEDIUM]->textureID = meshList[GEO_RMSMALL]->textureID;
+
+	meshList[GEO_RMBIG] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
+	meshList[GEO_RMBIG]->textureID = meshList[GEO_RMSMALL]->textureID;
 
 	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
 	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//Scene_Explosion.tga");
@@ -621,18 +631,59 @@ void SP2::Update(double dt)
 	}
 
 	// MINING COLLISION
-	if (detectCollision.collideByDist(camera.position, rawMaterial) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
-		detectCollision.collideByDist(camera.position, rawMaterial) < 18 && Application::IsKeyPressed(VK_SPACE))
+	for (int i = 0; i < 3; ++i)
 	{
-		if (usingPickAxe)
+		if (detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
+			detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_SPACE))
 		{
-			startCoolDdown = true;
-			if (b_coolDown == b_coolDownLimit)
+			if (usingPickAxe && oreMaterial_arr[i].hp > 0)
 			{
-				SharedData::GetInstance()->mineral.quantity++;
-				cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+				startCoolDdown = true;
+				if (b_coolDown == b_coolDownLimit)
+				{
+					SharedData::GetInstance()->mineral.quantity++;
+					oreMaterial_arr[i].hp--;
+					cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+				}
 			}
 		}
+
+		switch (oreMaterial_arr[i].hp)
+		{
+		case 0:
+			oreMaterial_arr[i].isAlive = false;
+			startRMcoolDown = true;
+			break;
+		case 1:
+			oreMaterial_arr[i].shape = meshList[GEO_RMSMALL];
+			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMSMALL]->textureID;
+			break;
+		case 2:
+			oreMaterial_arr[i].shape = meshList[GEO_RMMEDIUM];
+			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMMEDIUM]->textureID;
+			break;
+		case 3:
+			oreMaterial_arr[i].shape = meshList[GEO_RMBIG];
+			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMBIG]->textureID;
+			break;
+		}
+
+		if (startRMcoolDown)
+		{
+			rm_coolDown -= dt;
+			cout << rm_coolDown << endl;
+			if (rm_coolDown < 0)
+			{
+				oreMaterial_arr[i].isAlive = true;
+				oreMaterial_arr[i].hp = 3;
+				startRMcoolDown = false;
+			}
+		}
+		else
+		{
+			rm_coolDown = rm_coolDownLimit;
+		}
+
 	}
 
 	if (startCoolDdown)
@@ -1236,13 +1287,19 @@ void SP2::Render()
 		//hold in the hand
 	}
 
-
 	//Mining rock 
-	modelStack.PushMatrix();
-	modelStack.Translate(rawMaterial.x, rawMaterial.y, rawMaterial.z);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_RAWMATERIAL], true);
-	modelStack.PopMatrix();
+	for (int i = 0; i < 3; ++i)
+	{
+		if (oreMaterial_arr[i].isAlive)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(oreMaterial_arr[i].pos.x, oreMaterial_arr[i].pos.y, oreMaterial_arr[i].pos.z);
+			modelStack.Scale(10, 10, 10);
+			RenderMesh(oreMaterial_arr[i].shape, true);
+			modelStack.PopMatrix();
+		}
+	}
+
 
 	if (holdingcctv == true)
 	{
@@ -1470,7 +1527,7 @@ void SP2::Map_Rendering()
 	modelStack.PopMatrix();
 
 	//Start Point
-	modelStack.Translate(-Size * 10, 10, -Size * 10);
+	modelStack.Translate(-Size * 10, Size * 1.3, -Size * 10);
 	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 20; j++)
