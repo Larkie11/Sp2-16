@@ -292,7 +292,7 @@ private:
 	bool toggle = false;
 	bool cam1 = false;
 	bool movement = true;
-
+	bool plantbomb = false;
 
 	//picking up space ship parts
 	float followx = 0;

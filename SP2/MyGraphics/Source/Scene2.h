@@ -292,7 +292,11 @@ private:
 	bool toggle = false;
 	bool cam1 = false;
 	bool movement = true;
-
+	bool pickupegg1 = false;
+	bool pickupegg2 = false;
+	bool pickupegg3 = false;
+	bool pickupegg4 = false;
+	bool pickupegg5 = false;
 
 	//picking up space ship parts
 	bool pickupwing = false;

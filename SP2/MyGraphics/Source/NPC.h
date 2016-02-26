@@ -33,6 +33,12 @@ public:
 	DOT seller;
 	DOT spaceDoor;
 	DOT spaceShip;
+	DOT egg1;
+	DOT egg2;
+	DOT egg3;
+	DOT egg4;
+	DOT egg5;
+	DOT bomb;
 
 	CollisionDetector detectCollision;
 	string interactDia;

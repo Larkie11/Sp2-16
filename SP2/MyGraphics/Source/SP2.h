@@ -283,6 +283,7 @@ private:
 	bool toggle = false;
 	bool cam1 = false;
 	bool movement = true;
+	bool holdingcctv = false;
 
 	//picking up space ship parts
 	bool pickupwing = false;

@@ -58,6 +58,11 @@ void Scene2::Init()
 	npc.robot2.Nposition = Vector3(245, -21, 150);
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spaceShip.Nposition = Vector3(-100, 230, 0);
+	npc.egg1.Nposition = Vector3(-210, -19.5, 115);
+	npc.egg2.Nposition = Vector3(-215, -19.5, -115);
+	npc.egg3.Nposition = Vector3(-150, -19.5, -25);
+	npc.egg4.Nposition = Vector3(-75, -19.5, 85);
+	npc.egg5.Nposition = Vector3(15, -19.5, -115);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -510,7 +515,7 @@ void Scene2::Update(double dt)
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150)
+	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -530,7 +535,7 @@ void Scene2::Update(double dt)
 		npc.spaceShip.canInteract = false;
 	}
 	Character_Movement(dt);
-	mouse.MouseUpdate(dt, camera);
+	mouse.MouseUpdate(dt, camera, followx, followy);
 
 	//Check if player presses tab and start to move the story upwards
 	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
@@ -678,6 +683,77 @@ void Scene2::Update(double dt)
 	}
 
 	deltaTime = (1.0 / dt);
+
+	if (Application::IsKeyPressed('E'))
+	{
+
+		if (detectCollision.collideByDist(camera.position, npc.egg1.Nposition) <= 25 && coolDownTime == 0 && pickupegg1 == false)
+		{
+			if (camera.view.Dot(npc.egg1.Nposition) > 0)
+			{
+				coolDownTime = deltaTime / 10;
+
+				SharedData::GetInstance()->egg.quantity += 1;
+
+				pickupegg1 = true;
+
+			}
+		}
+
+		if (detectCollision.collideByDist(camera.position, npc.egg2.Nposition) <= 25 && coolDownTime == 0 && pickupegg2 == false)
+		{
+			if (camera.view.Dot(npc.egg2.Nposition) > 0)
+			{
+				coolDownTime = deltaTime / 10;
+
+				SharedData::GetInstance()->egg.quantity += 1;
+
+				pickupegg2 = true;
+
+			}
+		}
+
+		if (detectCollision.collideByDist(camera.position, npc.egg3.Nposition) <= 25 && coolDownTime == 0 && pickupegg3 == false)
+		{
+			if (camera.view.Dot(npc.egg3.Nposition) > 0)
+			{
+				coolDownTime = deltaTime / 10;
+
+				SharedData::GetInstance()->egg.quantity += 1;
+
+				pickupegg3 = true;
+
+			}
+		}
+
+		if (detectCollision.collideByDist(camera.position, npc.egg4.Nposition) <= 25 && coolDownTime == 0 && pickupegg4 == false)
+		{
+			//if (camera.view.Dot(npc.egg4.Nposition) > 0)
+			//{
+			coolDownTime = deltaTime / 10;
+
+			SharedData::GetInstance()->egg.quantity += 1;
+
+			pickupegg4 = true;
+
+			//	}
+		}
+		if (detectCollision.collideByDist(camera.position, npc.egg5.Nposition) <= 25 && coolDownTime == 0 && pickupegg5 == false)
+		{
+			if (camera.view.Dot(npc.egg5.Nposition) > 0)
+			{
+				coolDownTime = deltaTime / 10;
+
+				SharedData::GetInstance()->egg.quantity += 1;
+
+				pickupegg5 = true;
+
+			}
+		}
+
+
+	}
+
 	if (Application::IsKeyPressed('5') && coolDownTime == 0)
 	{
 
@@ -1216,6 +1292,55 @@ void Scene2::Render()
 	RenderMesh(meshList[GEO_RAWMATERIAL], true);
 	modelStack.PopMatrix();
 
+	if (pickupegg1 == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(npc.egg1.Nposition.x, npc.egg1.Nposition.y, npc.egg1.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_EGG], true);
+		modelStack.PopMatrix();
+		//render main wing inpyramid
+	}
+
+	if (pickupegg2 == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(npc.egg2.Nposition.x, npc.egg2.Nposition.y, npc.egg2.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_EGG], true);
+		modelStack.PopMatrix();
+		//render main wing inpyramid
+	}
+
+	if (pickupegg3 == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(npc.egg3.Nposition.x, npc.egg3.Nposition.y, npc.egg3.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_EGG], true);
+		modelStack.PopMatrix();
+		//render main wing inpyramid
+	}
+
+	if (pickupegg4 == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(npc.egg4.Nposition.x, npc.egg4.Nposition.y, npc.egg4.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_EGG], true);
+		modelStack.PopMatrix();
+		//render main wing inpyramid
+	}
+
+	if (pickupegg5 == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(npc.egg5.Nposition.x, npc.egg5.Nposition.y, npc.egg5.Nposition.z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_EGG], true);
+		modelStack.PopMatrix();
+		//render main wing inpyramid
+	}
 	modelStack.PushMatrix();
 
 	modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
@@ -1417,7 +1542,7 @@ void Scene2::Enemy_Rendering()
 void Scene2::Map_Reading()
 {
 	string line;
-	ifstream myfile("Map//Map1.txt");
+	ifstream myfile("Map//Map2.txt");
 	if (myfile.is_open())
 	{
 		for (int i = 0; i < 20; i++)

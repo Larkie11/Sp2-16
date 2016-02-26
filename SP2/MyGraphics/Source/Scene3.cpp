@@ -58,6 +58,7 @@ void Scene3::Init()
 	npc.robot2.Nposition = Vector3(245, -21, 150);
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spaceShip.Nposition = Vector3(-100, 230, 0);
+	npc.bomb.Nposition = Vector3(-115, -18, 0);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -403,8 +404,6 @@ void Scene3::Init()
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
 
-	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
-	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -509,7 +508,7 @@ void Scene3::Update(double dt)
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150)
+	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -529,7 +528,7 @@ void Scene3::Update(double dt)
 		npc.spaceShip.canInteract = false;
 	}
 	Character_Movement(dt);
-	mouse.MouseUpdate(dt, camera);
+	mouse.MouseUpdate(dt, camera, followx, followy);
 
 	//Check if player presses tab and start to move the story upwards
 	if (storyShow == true && Application::IsKeyPressed(VK_TAB) && coolDownTime == 0)
@@ -549,6 +548,22 @@ void Scene3::Update(double dt)
 		{
 			storyDismiss = false;
 			storyShow = true;
+		}
+	}
+
+	if (Application::IsKeyPressed('E'))
+	{
+
+		if (detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25 && coolDownTime == 0 && plantbomb == false)
+		{
+			//	if (camera.view.Dot(npc.bomb.Nposition) > 0)
+			//{
+			coolDownTime = deltaTime / 10;
+
+			SharedData::GetInstance()->bomb.quantity -= 1;
+			plantbomb = true;
+
+			//}
 		}
 	}
 
@@ -1167,6 +1182,14 @@ void Scene3::Render()
 	RenderMesh(meshList[GEO_SPACESHIP], false);
 	modelStack.PopMatrix();
 
+	if (plantbomb == true)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(npc.bomb.Nposition.x, npc.bomb.Nposition.y, npc.bomb.Nposition.z);
+		modelStack.Scale(10, 10, 10);
+		RenderMesh(meshList[GEO_BOMB], false);
+		modelStack.PopMatrix();
+	}
 
 	//Move skybox
 	modelStack.PushMatrix();
@@ -1415,7 +1438,7 @@ void Scene3::Enemy_Rendering()
 void Scene3::Map_Reading()
 {
 	string line;
-	ifstream myfile("Map//Map1.txt");
+	ifstream myfile("Map//Map3.txt");
 	if (myfile.is_open())
 	{
 		for (int i = 0; i < 20; i++)

@@ -387,8 +387,6 @@ void SP2::Init()
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
 
-	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
-	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
 
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
@@ -747,7 +745,7 @@ void SP2::Update(double dt)
 
 		if (cam1 == false)
 		{
-
+			holdingcctv = true;
 			newcameraposition = camera.position;
 			oldcameraposition = camera.position;
 			cout << newcameraposition << endl;
@@ -1246,20 +1244,23 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_RAWMATERIAL], true);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
+	if (holdingcctv == true)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
+		modelStack.Rotate(180, 0, 1, 0);
+		modelStack.Rotate(followy, 0, 1, 0);
+		modelStack.Rotate(followx, 0, 0, 1);
 
-	modelStack.Translate(camera.position.x, camera.position.y + (throwup), camera.position.z);
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	
-	modelStack.PushMatrix();
-	modelStack.Translate(0.9, -0.12, -0.3);
-	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_CCTV], true);
-	modelStack.PopMatrix();
+		modelStack.PushMatrix();
+		modelStack.Translate(0.9, -0.12, -0.3);
+		modelStack.Scale(0.1, 0.1, 0.1);
+		RenderMesh(meshList[GEO_CCTV], true);
+		modelStack.PopMatrix();
+		modelStack.PopMatrix();
+		/// animation for it gg up 
+	}
 
-	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
