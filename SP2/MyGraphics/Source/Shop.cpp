@@ -54,80 +54,6 @@ void Shop::Init()
 	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
 	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
 	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
-	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
-	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
-	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
-	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
-	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
-	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
-	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
-	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
-	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
-	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
-
-	m_parameters[U_LIGHT1_POSITION] = glGetUniformLocation(m_programID, "lights[1].position_cameraspace");
-	m_parameters[U_LIGHT1_COLOR] = glGetUniformLocation(m_programID, "lights[1].color");
-	m_parameters[U_LIGHT1_POWER] = glGetUniformLocation(m_programID, "lights[1].power");
-	m_parameters[U_LIGHT1_KC] = glGetUniformLocation(m_programID, "lights[1].kC");
-	m_parameters[U_LIGHT1_KL] = glGetUniformLocation(m_programID, "lights[1].kL");
-	m_parameters[U_LIGHT1_KQ] = glGetUniformLocation(m_programID, "lights[1].kQ");
-	m_parameters[U_LIGHT1_TYPE] = glGetUniformLocation(m_programID, "lights[1].type");
-	m_parameters[U_LIGHT1_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[1].spotDirection");
-	m_parameters[U_LIGHT1_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[1].cosCutoff");
-	m_parameters[U_LIGHT1_COSINNER] = glGetUniformLocation(m_programID, "lights[1].cosInner");
-	m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");
-
-	m_parameters[U_LIGHT2_POSITION] = glGetUniformLocation(m_programID, "lights[2].position_cameraspace");
-	m_parameters[U_LIGHT2_COLOR] = glGetUniformLocation(m_programID, "lights[2].color");
-	m_parameters[U_LIGHT2_POWER] = glGetUniformLocation(m_programID, "lights[2].power");
-	m_parameters[U_LIGHT2_KC] = glGetUniformLocation(m_programID, "lights[2].kC");
-	m_parameters[U_LIGHT2_KL] = glGetUniformLocation(m_programID, "lights[2].kL");
-	m_parameters[U_LIGHT2_KQ] = glGetUniformLocation(m_programID, "lights[2].kQ");
-	m_parameters[U_LIGHT2_TYPE] = glGetUniformLocation(m_programID, "lights[2].type");
-	m_parameters[U_LIGHT2_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[2].spotDirection");
-	m_parameters[U_LIGHT2_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[2].cosCutoff");
-	m_parameters[U_LIGHT2_COSINNER] = glGetUniformLocation(m_programID, "lights[2].cosInner");
-	m_parameters[U_LIGHT2_EXPONENT] = glGetUniformLocation(m_programID, "lights[2].exponent");
-
-	m_parameters[U_LIGHT3_POSITION] = glGetUniformLocation(m_programID, "lights[3].position_cameraspace");
-	m_parameters[U_LIGHT3_COLOR] = glGetUniformLocation(m_programID, "lights[3].color");
-	m_parameters[U_LIGHT3_POWER] = glGetUniformLocation(m_programID, "lights[3].power");
-	m_parameters[U_LIGHT3_KC] = glGetUniformLocation(m_programID, "lights[3].kC");
-	m_parameters[U_LIGHT3_KL] = glGetUniformLocation(m_programID, "lights[3].kL");
-	m_parameters[U_LIGHT3_KQ] = glGetUniformLocation(m_programID, "lights[3].kQ");
-	m_parameters[U_LIGHT3_TYPE] = glGetUniformLocation(m_programID, "lights[3].type");
-	m_parameters[U_LIGHT3_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[3].spotDirection");
-	m_parameters[U_LIGHT3_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[3].cosCutoff");
-	m_parameters[U_LIGHT3_COSINNER] = glGetUniformLocation(m_programID, "lights[3].cosInner");
-	m_parameters[U_LIGHT3_EXPONENT] = glGetUniformLocation(m_programID, "lights[3].exponent");
-
-	m_parameters[U_LIGHT4_POSITION] = glGetUniformLocation(m_programID, "lights[4].position_cameraspace");
-	m_parameters[U_LIGHT4_COLOR] = glGetUniformLocation(m_programID, "lights[4].color");
-	m_parameters[U_LIGHT4_POWER] = glGetUniformLocation(m_programID, "lights[4].power");
-	m_parameters[U_LIGHT4_KC] = glGetUniformLocation(m_programID, "lights[4].kC");
-	m_parameters[U_LIGHT4_KL] = glGetUniformLocation(m_programID, "lights[4].kL");
-	m_parameters[U_LIGHT4_KQ] = glGetUniformLocation(m_programID, "lights[4].kQ");
-	m_parameters[U_LIGHT4_TYPE] = glGetUniformLocation(m_programID, "lights[4].type");
-	m_parameters[U_LIGHT4_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[4].spotDirection");
-	m_parameters[U_LIGHT4_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[4].cosCutoff");
-	m_parameters[U_LIGHT4_COSINNER] = glGetUniformLocation(m_programID, "lights[4].cosInner");
-	m_parameters[U_LIGHT4_EXPONENT] = glGetUniformLocation(m_programID, "lights[4].exponent");
-
-	m_parameters[U_LIGHT5_POSITION] = glGetUniformLocation(m_programID, "lights[5].position_cameraspace");
-	m_parameters[U_LIGHT5_COLOR] = glGetUniformLocation(m_programID, "lights[5].color");
-	m_parameters[U_LIGHT5_POWER] = glGetUniformLocation(m_programID, "lights[5].power");
-	m_parameters[U_LIGHT5_KC] = glGetUniformLocation(m_programID, "lights[5].kC");
-	m_parameters[U_LIGHT5_KL] = glGetUniformLocation(m_programID, "lights[5].kL");
-	m_parameters[U_LIGHT5_KQ] = glGetUniformLocation(m_programID, "lights[5].kQ");
-	m_parameters[U_LIGHT5_TYPE] = glGetUniformLocation(m_programID, "lights[5].type");
-	m_parameters[U_LIGHT5_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[5].spotDirection");
-	m_parameters[U_LIGHT5_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[5].cosCutoff");
-	m_parameters[U_LIGHT5_COSINNER] = glGetUniformLocation(m_programID, "lights[5].cosInner");
-	m_parameters[U_LIGHT5_EXPONENT] = glGetUniformLocation(m_programID, "lights[5].exponent");
-
-	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
-	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
 	// Get a handle for our "colorTexture" uniform
 	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
@@ -141,141 +67,6 @@ void Shop::Init()
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glUseProgram(m_programID);
-
-	light[0].type = Light::LIGHT_POINT;
-	light[0].position.Set(0, 100, 0);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 2;
-	light[0].kC = 5.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-	light[0].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
-	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.f, 1.f, 0.f);
-
-	//Make sure you pass uniform parameters after glUseProgram()
-	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
-	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
-	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
-	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
-
-	light[1].type = Light::LIGHT_SPOT;
-	light[1].position.Set(-300, 37, 185);
-	light[1].color.Set(1, 1, 1);
-	light[1].power = 3;
-	light[1].kC = 5.f;
-	light[1].kL = 0.1f;
-	light[1].kQ = 0.001f;
-	light[1].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[1].cosInner = cos(Math::DegreeToRadian(30));
-	light[1].exponent = 3.f;
-	light[1].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
-	glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &light[1].color.r);
-	glUniform1f(m_parameters[U_LIGHT1_POWER], light[1].power);
-	glUniform1f(m_parameters[U_LIGHT1_KC], light[1].kC);
-	glUniform1f(m_parameters[U_LIGHT1_KL], light[1].kL);
-	glUniform1f(m_parameters[U_LIGHT1_KQ], light[1].kQ);
-	glUniform1f(m_parameters[U_LIGHT1_COSCUTOFF], light[1].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
-	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
-
-	light[2].type = Light::LIGHT_SPOT;
-	light[2].position.Set(0, 37, 135);
-	light[2].color.Set(1, 1, 1);
-	light[2].power = 3;
-	light[2].kC = 1.f;
-	light[2].kL = 0.1f;
-	light[2].kQ = 0.001f;
-	light[2].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[2].cosInner = cos(Math::DegreeToRadian(30));
-	light[2].exponent = 3.f;
-	light[2].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT2_TYPE], light[2].type);
-	glUniform3fv(m_parameters[U_LIGHT2_COLOR], 1, &light[2].color.r);
-	glUniform1f(m_parameters[U_LIGHT2_POWER], light[2].power);
-	glUniform1f(m_parameters[U_LIGHT2_KC], light[2].kC);
-	glUniform1f(m_parameters[U_LIGHT2_KL], light[2].kL);
-	glUniform1f(m_parameters[U_LIGHT2_KQ], light[2].kQ);
-	glUniform1f(m_parameters[U_LIGHT2_COSCUTOFF], light[2].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT2_COSINNER], light[2].cosInner);
-	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
-
-	light[3].type = Light::LIGHT_SPOT;
-	light[3].position.Set(300, 37, 185);
-	light[3].color.Set(1, 1, 1);
-	light[3].power = 3;
-	light[3].kC = 1.f;
-	light[3].kL = 0.1f;
-	light[3].kQ = 0.001f;
-	light[3].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[3].cosInner = cos(Math::DegreeToRadian(30));
-	light[3].exponent = 3.f;
-	light[3].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT3_TYPE], light[3].type);
-	glUniform3fv(m_parameters[U_LIGHT3_COLOR], 1, &light[3].color.r);
-	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
-	glUniform1f(m_parameters[U_LIGHT3_KC], light[3].kC);
-	glUniform1f(m_parameters[U_LIGHT3_KL], light[3].kL);
-	glUniform1f(m_parameters[U_LIGHT3_KQ], light[3].kQ);
-	glUniform1f(m_parameters[U_LIGHT3_COSCUTOFF], light[3].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT3_COSINNER], light[3].cosInner);
-	glUniform1f(m_parameters[U_LIGHT3_EXPONENT], light[3].exponent);
-
-	light[4].type = Light::LIGHT_POINT;
-	light[4].position.Set(0, 200, 300);
-	light[4].color.Set(1, 1, 1);
-	light[4].power = 40;
-	light[4].kC = 1.f;
-	light[4].kL = 0.1f;
-	light[4].kQ = 0.001f;
-	light[4].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[4].cosInner = cos(Math::DegreeToRadian(30));
-	light[4].exponent = 3.f;
-	light[4].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT4_TYPE], light[4].type);
-	glUniform3fv(m_parameters[U_LIGHT4_COLOR], 1, &light[4].color.r);
-	glUniform1f(m_parameters[U_LIGHT4_POWER], light[4].power);
-	glUniform1f(m_parameters[U_LIGHT4_KC], light[4].kC);
-	glUniform1f(m_parameters[U_LIGHT4_KL], light[4].kL);
-	glUniform1f(m_parameters[U_LIGHT4_KQ], light[4].kQ);
-	glUniform1f(m_parameters[U_LIGHT4_COSCUTOFF], light[4].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT4_COSINNER], light[4].cosInner);
-	glUniform1f(m_parameters[U_LIGHT4_EXPONENT], light[4].exponent);
-
-	light[5].type = Light::LIGHT_SPOT;
-	light[5].position.Set(40, 37, -70);
-	light[5].color.Set(1, 1, 1);
-	light[5].power = 3;
-	light[5].kC = 1.f;
-	light[5].kL = 0.1f;
-	light[5].kQ = 0.001f;
-	light[5].cosCutOff = cos(Math::DegreeToRadian(45));
-	light[5].cosInner = cos(Math::DegreeToRadian(30));
-	light[5].exponent = 3.f;
-	light[5].spotDirection.Set(0.f, 1.f, 0.f);
-
-	glUniform1i(m_parameters[U_LIGHT5_TYPE], light[5].type);
-	glUniform3fv(m_parameters[U_LIGHT5_COLOR], 1, &light[5].color.r);
-	glUniform1f(m_parameters[U_LIGHT5_POWER], light[5].power);
-	glUniform1f(m_parameters[U_LIGHT5_KC], light[5].kC);
-	glUniform1f(m_parameters[U_LIGHT5_KL], light[5].kL);
-	glUniform1f(m_parameters[U_LIGHT5_KQ], light[5].kQ);
-	glUniform1f(m_parameters[U_LIGHT5_COSCUTOFF], light[5].cosCutOff);
-	glUniform1f(m_parameters[U_LIGHT5_COSINNER], light[5].cosInner);
-	glUniform1f(m_parameters[U_LIGHT5_EXPONENT], light[5].exponent);
-
-	glUniform1i(m_parameters[U_NUMLIGHTS], 6);
 
 	//Initialize camera settings
 	camera.Init(Vector3(-30, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -367,6 +158,265 @@ void Shop::Init()
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
 
+void Shop::ShopOptions()
+{
+	if (shopInput == "Shop")
+	{
+		switch (shop)
+		{
+		case MenuShop::S_BUY:
+			colorShop[0].Set(1, 0, 0);
+			colorShop[1].Set(0, 0.8, 0.7);
+			colorShop[2].Set(0, 0.8, 0.7);
+			colorShop[3].Set(0, 0.8, 0.7);
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				icon = 31.6;
+				icon2 = 19;
+				PressTime = deltaTime / 5;
+				shopInput = "Buy";
+				buy = MenuShop::SB_AMMO;
+			}
+			break;
+		case MenuShop::S_SELL:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				icon = 31.6;
+				icon2 = 19;
+				shopInput = "Sell";
+				sell = MenuShop::SS_AMMO;
+			}
+			break;
+		case MenuShop::S_BACK:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				shopInput = "";
+				icon = 31.6;
+				icon2 = 19;
+				PressTime = deltaTime;
+				shop = MenuShop::S_BUY;
+				cout << "Byebye" << endl;
+			}
+			break;
+		}
+	}
+	if (shopInput == "Buy")
+	{
+		switch (buy)
+		{
+		case MenuShop::SB_AMMO:
+			description = "To shoot at your enemies!";
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				if (SharedData::GetInstance()->gold.quantity > 19)
+				{
+					SharedData::GetInstance()->gold.quantity -= 20;
+					SharedData::GetInstance()->bullet.quantity++;
+					coolDown = deltaTime;
+					b_gold = true;
+					nomore = "gained ammo";
+				}
+				else
+				{
+					coolDown = deltaTime;
+					b_gold = true;
+					nomore = "no gold to buy";
+				}
+			}
+			break;
+		case MenuShop::SB_BOMB:
+			description = "Oh... This is a MUST to get! Hehe.";
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				if (SharedData::GetInstance()->gold.quantity > 49)
+				{
+					SharedData::GetInstance()->gold.quantity -= 50;
+					SharedData::GetInstance()->bomb.quantity++;
+					coolDown = deltaTime;
+					b_gold = true;
+					nomore = "gained bomb";
+				}
+				else
+				{
+					coolDown = deltaTime;
+					b_gold = true;
+					nomore = "no gold to buy";
+				}
+			}
+			break;
+		case MenuShop::SB_BACK:
+			description = "";
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime;
+				shopInput = "Shop";
+				shop = MenuShop::S_BUY;
+				icon = 31.6;
+				icon2 = 19;
+			}
+			break;
+		}
+	}
+	if (shopInput == "Sell")
+	{
+		switch (sell)
+		{
+		case MenuShop::SS_AMMO:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				coolDown = deltaTime;
+				gold = 10;
+				if (SharedData::GetInstance()->bullet.quantity > 0)
+				{
+					none = true;
+					nomore = "gained gold";
+					SharedData::GetInstance()->gold.quantity += gold;
+					SharedData::GetInstance()->bullet.quantity--;
+				}
+				else
+				{
+					none = true;
+					nomore = "no ammo";
+				}
+			}
+			break;
+		case MenuShop::SS_BOMB:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				coolDown = deltaTime;
+				gold = 25;
+				if (SharedData::GetInstance()->mineral.quantity > 0)
+				{
+					SharedData::GetInstance()->gold.quantity += gold;
+					SharedData::GetInstance()->mineral.quantity--;
+					none = true;
+					nomore = "Gained gold";
+				}
+				else
+				{
+					none = true;
+					nomore = "no ore";
+				}
+			}
+			break;
+		case MenuShop::SS_EGG:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 5;
+				coolDown = deltaTime;
+				gold = 100;
+				if (SharedData::GetInstance()->egg.quantity > 0)
+				{
+					SharedData::GetInstance()->gold.quantity += gold;
+					SharedData::GetInstance()->egg.quantity--;
+					none = true;
+					nomore = "Gained gold";
+				}
+				else
+				{
+					none = true;
+					nomore = "no egg";
+				}
+			}
+			break;
+		case MenuShop::SS_BACK:
+			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
+			{
+				PressTime = deltaTime;
+				shopInput = "Shop";
+				shop = MenuShop::S_BUY;
+				icon = 31.6;
+				icon2 = 19;
+			}
+			break;
+		}
+
+	}
+}
+void Shop::userInput()
+{
+	if (shopInput == "Shop")
+	{
+		if (shop > MenuShop::S_BUY)
+		{
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				shop = static_cast<MenuShop::SHOP_OPTION>(shop - 1);
+				cout << shop;
+				icon += 1.6;
+				icon2 += 1;
+			}
+		}
+		if (shop < MenuShop::S_MAX - 1)
+		{
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				shop = static_cast<MenuShop::SHOP_OPTION>(shop + 1);
+				cout << shop;
+				icon -= 1.6;
+				icon2 -= 1;
+			}
+		}
+	}
+	if (shopInput == "Sell")
+	{
+		if (sell > MenuShop::SS_AMMO)
+		{
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				sell = static_cast<MenuShop::SHOP_SELL>(sell - 1);
+				cout << sell;
+				icon += 1.6;
+				icon2 += 1;
+			}
+		}
+		if (sell < MenuShop::SS_MAX - 1)
+		{
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				sell = static_cast<MenuShop::SHOP_SELL>(sell + 1);
+				cout << sell;
+				icon -= 1.6;
+				icon2 -= 1;
+			}
+		}
+	}
+
+	if (shopInput == "Buy")
+	{
+		if (buy > MenuShop::SB_AMMO)
+		{
+			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				buy = static_cast<MenuShop::SHOP_BUY>(buy - 1);
+				cout << buy;
+				icon += 1.6;
+				icon2 += 1;
+			}
+		}
+		if (buy < MenuShop::SB_MAX - 1)
+		{
+			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
+			{
+				PressTime = deltaTime / 7;
+				buy = static_cast<MenuShop::SHOP_BUY>(buy + 1);
+				cout << buy;
+				icon -= 1.6;
+				icon2 -= 1;
+			}
+		}
+	}
+}
 void Shop::Update(double dt)
 {
 	npc.Shop(camera);
@@ -401,7 +451,8 @@ void Shop::Update(double dt)
 			shopInput = "Shop";
 		}
 	}
-
+	ShopOptions();
+	userInput();
 	if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) <= 20)
 	{
 		if (npc.spaceDoor.Nposition.z < 40)
@@ -442,250 +493,6 @@ void Shop::Update(double dt)
 			npc.spaceDoor.Nposition.z -= (float)(30 * dt);
 		}
 	}
-
-	if (shopInput == "Shop")
-	{
-		switch (s_option)
-		{
-		case S_BUY:
-			colorShop[0].Set(1, 0, 0);
-			colorShop[1].Set(0, 0.8, 0.7);
-			colorShop[2].Set(0, 0.8, 0.7);
-			colorShop[3].Set(0, 0.8, 0.7);
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				icon = 31.6;
-				icon2 = 19;
-				PressTime = deltaTime / 5;
-				shopInput = "Buy";
-				s_buy = SB_AMMO;
-			}
-			break;
-		case S_SELL:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				icon = 31.6;
-				icon2 = 19;
-				shopInput = "Sell";
-				s_sell = SS_AMMO;
-			}
-			break;
-		case S_BACK:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				shopInput = "";
-				s_option = S_BUY;
-				icon = 31.6;
-				icon2 = 19;
-				PressTime = deltaTime;
-				cout << "Byebye" << endl;
-			}
-			break;
-		}
-		if (s_option > S_BUY)
-		{
-			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_option = static_cast<SHOP_OPTION>(s_option - 1);
-				cout << s_option;
-				icon += 1.6;
-				icon2 += 1;
-			}
-		}
-		if (s_option < S_MAX - 1)
-		{
-			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_option = static_cast<SHOP_OPTION>(s_option + 1);
-				cout << s_option;
-				icon -= 1.6;
-				icon2 -= 1;
-			}
-		}
-	}
-	if (shopInput == "Buy")
-	{
-		switch (s_buy)
-		{
-		case SB_AMMO:
-			description = "To shoot at your enemies!";
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				if (SharedData::GetInstance()->gold.quantity > 19)
-				{
-					SharedData::GetInstance()->gold.quantity -= 20;
-					SharedData::GetInstance()->bullet.quantity++;
-					coolDown = deltaTime;
-					b_gold = true;
-					nomore = "gained ammo";
-				}
-				else
-				{
-					coolDown = deltaTime;
-					b_gold = true;
-					nomore = "no gold to buy";
-				}
-			}
-			break;
-		case SB_BOMB:
-			description = "Oh... This is a MUST to get! Hehe.";
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				if (SharedData::GetInstance()->gold.quantity > 49)
-				{
-					SharedData::GetInstance()->gold.quantity -= 50;
-					SharedData::GetInstance()->bomb.quantity++;
-					coolDown = deltaTime;
-					b_gold = true;
-					nomore = "gained bomb";
-				}
-				else
-				{
-					coolDown = deltaTime;
-					b_gold = true;
-					nomore = "no gold to buy";
-				}
-			}
-			break;
-		case SB_BACK:
-			description = "";
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime;
-				shopInput = "Shop";
-				s_option = S_BUY;
-				icon = 31.6;
-				icon2 = 19;
-			}
-			break;
-		}
-		if (s_buy > SB_AMMO)
-		{
-			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_buy = static_cast<SHOP_BUY>(s_buy - 1);
-				cout << s_buy;
-				icon += 1.6;
-				icon2 += 1;
-			}
-		}
-		if (s_buy < SB_MAX - 1)
-		{
-			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_buy = static_cast<SHOP_BUY>(s_buy + 1);
-				cout << s_buy;
-				icon -= 1.6;
-				icon2 -= 1;
-			}
-		}
-	}
-	if (shopInput == "Sell")
-	{
-		switch (s_sell)
-		{
-		case SS_AMMO:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				coolDown = deltaTime;
-				gold = 10;
-				if (SharedData::GetInstance()->bullet.quantity > 0)
-				{
-					none = true;
-					nomore = "gained gold";
-					SharedData::GetInstance()->gold.quantity += gold;
-					SharedData::GetInstance()->bullet.quantity--;
-				}
-				else
-				{
-					none = true;
-					nomore = "no ammo";
-				}
-			}
-			break;
-		case SS_BOMB:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				coolDown = deltaTime;
-				gold = 25;
-				if (SharedData::GetInstance()->mineral.quantity > 0)
-				{
-					SharedData::GetInstance()->gold.quantity += gold;
-					SharedData::GetInstance()->mineral.quantity--;
-					none = true;
-					nomore = "Gained gold";
-				}
-				else
-				{
-					none = true;
-					nomore = "no ore";
-				}
-			}
-			break;
-		case SS_EGG:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 5;
-				coolDown = deltaTime;
-				gold = 100;
-				if (SharedData::GetInstance()->egg.quantity > 0)
-				{
-					SharedData::GetInstance()->gold.quantity += gold;
-					SharedData::GetInstance()->egg.quantity--;
-					none = true;
-					nomore = "Gained gold";
-				}
-				else
-				{
-					none = true;
-					nomore = "no egg";
-				}
-			}
-			break;
-		case SS_BACK:
-			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
-			{
-				PressTime = deltaTime;
-				shopInput = "Shop";
-				s_option = S_BUY;
-				icon = 31.6;
-				icon2 = 19;
-			}
-			break;
-		}
-		if (s_sell > SS_AMMO)
-		{
-			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_sell = static_cast<SHOP_SELL>(s_sell - 1);
-				cout << s_sell;
-				icon += 1.6;
-				icon2 += 1;
-			}
-		}
-		if (s_sell < SS_MAX - 1)
-		{
-			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
-			{
-				PressTime = deltaTime / 7;
-				s_sell = static_cast<SHOP_SELL>(s_sell + 1);
-				cout << s_sell;
-				icon -= 1.6;
-				icon2 -= 1;
-			}
-		}
-	}
-
 	rotateCoke += (float)(100 * dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
@@ -732,22 +539,6 @@ void Shop::RenderMesh(Mesh * mesh, bool enableLight)
 	glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 	modelView = viewStack.Top() * modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MODELVIEW], 1, GL_FALSE, &modelView.a[0]);
-
-	if (enableLight && Lighting9)
-	{
-		glUniform1i(m_parameters[U_LIGHTENABLED], 1);
-		modelView_inverse_transpose = modelView.GetInverse().GetTranspose();
-		glUniformMatrix4fv(m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE], 1, GL_FALSE, &modelView_inverse_transpose.a[0]);
-		//load material
-		glUniform3fv(m_parameters[U_MATERIAL_AMBIENT], 1, &mesh->material.kAmbient.r);
-		glUniform3fv(m_parameters[U_MATERIAL_DIFFUSE], 1, &mesh->material.kDiffuse.r);
-		glUniform3fv(m_parameters[U_MATERIAL_SPECULAR], 1, &mesh->material.kSpecular.r);
-		glUniform1f(m_parameters[U_MATERIAL_SHININESS], mesh->material.kShininess);
-	}
-	else
-	{
-		glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-	}
 	if (mesh->textureID > 0)
 	{
 		glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
@@ -773,7 +564,6 @@ void Shop::RenderText(Mesh* mesh, std::string text, Color color)
 	glDisable(GL_DEPTH_TEST);
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
@@ -812,7 +602,6 @@ void Shop::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
@@ -917,62 +706,6 @@ void Shop::RenderSkybox()
 static float SSCALE1 = 500.f;
 void Shop::RenderShop()
 {
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, -20, -398);
-	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.Rotate(180, 0, 0, 1);
-	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
-	RenderMesh(meshList[GEO_FRONT1], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, 0, -0.9);
-	modelStack.Translate(0, -20, 600);
-	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
-	RenderMesh(meshList[GEO_BACK], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(5, 0, 0);
-	modelStack.Translate(-500, -20, 100);
-	modelStack.Rotate(-90, 0, 0, 1);
-	modelStack.Rotate(-180, 1, 0, 0);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
-	RenderMesh(meshList[GEO_LEFT], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here	
-	modelStack.Translate(-5, 0, 0);
-	modelStack.Translate(500, -20, 100);
-	modelStack.Rotate(-90, 0, 0, 1);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
-	RenderMesh(meshList[GEO_RIGHT1], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, -500, 100);
-	modelStack.Rotate(180, 1, 0, 0);
-	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
-	RenderMesh(meshList[GEO_BOTTOM], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	//to do: transformation code here
-	modelStack.Translate(0, -13, 0);
-	modelStack.Translate(0, 490, 100);
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Rotate(360, 0, 0, 1);
-	modelStack.Scale(SSCALE1, SSCALE1, SSCALE1);
-	RenderMesh(meshList[GEO_TOP], false);
-	modelStack.PopMatrix();
 }
 void Shop::Render()
 {
@@ -1023,120 +756,6 @@ void Shop::Render()
 		);
 
 	modelStack.LoadIdentity();
-
-	if (light[0].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[0].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[1].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[1].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[1].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT1_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[2].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[2].position.x, light[2].position.y, light[2].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT2_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[2].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[2].position;
-		glUniform3fv(m_parameters[U_LIGHT2_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[2].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT2_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[2].position;
-		glUniform3fv(m_parameters[U_LIGHT2_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[3].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[3].position.x, light[3].position.y, light[3].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT3_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[3].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[3].position;
-		glUniform3fv(m_parameters[U_LIGHT3_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[3].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT3_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[3].position;
-		glUniform3fv(m_parameters[U_LIGHT3_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[4].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[4].position.x, light[4].position.y, light[4].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[4].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[4].position;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[4].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT4_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[4].position;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[5].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[5].position.x, light[5].position.y, light[5].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[5].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[5].position;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[5].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT5_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[5].position;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
-	}
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-135, -40, -5);
@@ -1265,17 +884,6 @@ void Shop::Render()
 				none = false;
 			}
 		}
-	}
-	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end(); ++iter)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate((*iter)->position.x, (*iter)->position.y, (*iter)->position.z);
-		modelStack.Rotate(-90, 0, 1, 0);
-		modelStack.Rotate((*iter)->b_Angle, 0, 1, 0);
-
-		modelStack.Scale(0.3, 0.3, 0.3);
-		RenderMesh(meshList[GEO_BULLET], true);
-		modelStack.PopMatrix();
 	}
 	var.resize(16);
 	var1.resize(16);

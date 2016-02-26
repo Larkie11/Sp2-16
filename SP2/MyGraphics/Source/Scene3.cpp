@@ -329,7 +329,6 @@ void Scene3::Init()
 	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story3", Color(1, 1, 1), 4, 5);
 	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story3.tga");
 
-
 	meshList[GEO_MOONBALL] = MeshBuilder::GenerateOBJ("moonball", "OBJ//moon.obj");
 	meshList[GEO_MOONBALL]->textureID = LoadTGA("Image//Scene_moon.tga");
 
@@ -391,7 +390,6 @@ void Scene3::Init()
 
 	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
 	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
-
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
 
@@ -499,6 +497,7 @@ void Scene3::Update(double dt)
 	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150)
 	{
 		npc.spaceShip.canInteract = true;
+		npc.door.canInteract = false;
 		if (SharedData::GetInstance()->gameState != SharedData::SHOP)
 		{
 			npc.interactDia = "Press E to enter Shop";
@@ -509,6 +508,10 @@ void Scene3::Update(double dt)
 			SharedData::GetInstance()->stateCheck = true;
 			SharedData::GetInstance()->gameState = SharedData::SHOP;
 		}
+	}
+	else
+	{
+		npc.spaceShip.canInteract = false;
 	}
 	Character_Movement(dt);
 	mouse.MouseUpdate(dt, camera);
@@ -984,7 +987,6 @@ void Scene3::Render()
 	std::ostringstream eggOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	std::ostringstream partscountOSS;
 
 	ammoOSS << SharedData::GetInstance()->bullet.quantity;
 	goldOSS << SharedData::GetInstance()->gold.quantity;
@@ -999,7 +1001,6 @@ void Scene3::Render()
 	string egg = eggOSS.str();
 	string ore = oreOSS.str();
 	string s_gold = goldOSS.str();
-	string partscount = partscountOSS.str();
 
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1286,7 +1287,7 @@ void Scene3::Render()
 	Fps.resize(11);
 
 
-	if (npc.spaceShip.canInteract)
+	if (On_Plane && npc.spaceShip.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 	}
@@ -1343,8 +1344,6 @@ void Scene3::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
-
-	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/

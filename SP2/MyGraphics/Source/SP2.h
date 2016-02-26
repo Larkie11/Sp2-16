@@ -36,21 +36,26 @@ class SP2 : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-		GEO_TRIANGLE_1 = 0,
-		GEO_TRIANGLE_2,
-		GEO_REF_AXES,
+		GEO_REF_AXES = 0,
 		GEO_REF_QUAD,
 		GEO_LIGHTBALL,
 		GEO_QUAD,
-		GEO_PYRAMIDFLOOR,
+		
 		GEO_BB8HEAD,
 		GEO_BB8BODY,
 		GEO_CROSSHAIR,
 
+		//Icons
+		GEO_AMMOICON,
+		GEO_GOLDICON,
+		GEO_EGGICON,
+		GEO_BOMBICON,
+		GEO_OREICON,
 		GEO_GUNICON,
 		GEO_SWORDICON,
 		GEO_PICKAXEICON,
 
+		//Skybox
 		GEO_LEFT1,
 		GEO_RIGHT1,
 		GEO_TOP1,
@@ -61,25 +66,20 @@ class SP2 : public Scene
 		GEO_STORY1,
 		GEO_TEXT,
 		GEO_PATH,
-		GEO_AMMOICON,
-		GEO_GOLDICON,
-		GEO_EGGICON,
-		GEO_BOMBICON,
-		GEO_OREICON,
+		
 		GEO_VENDING,
 		GEO_BAG,
-		GEO_PYRAMIDDOOR,
-		GEO_INVENTORY,
-		GEO_BUILDING,
 		GEO_COKE,
-		GEO_BULLET,
+
+		//NPC
 		GEO_ROBOTB,
 		GEO_ROBOTH,
 		GEO_ROBOT,
 		GEO_ROBOT1,
 		GEO_ROBOT2,
+
+		//Scene
 		GEO_MOONBALL,
-		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
 		GEO_PYRAMIDWALL,
 		GEO_PYRAMIDPILLAR,
@@ -87,6 +87,11 @@ class SP2 : public Scene
 		GEO_PLANEBODY,
 		GEO_PLANEWING,
 		GEO_PLANEROCKET,
+		GEO_PYRAMIDFLOOR,
+		GEO_PYRAMIDDOOR,
+
+		//Weapon
+		GEO_BULLET,
 		GEO_PICKAXE,
 		GEO_GUN,
 		GEO_SWORD,
@@ -146,45 +151,6 @@ class SP2 : public Scene
 		U_LIGHT2_COSCUTOFF,
 		U_LIGHT2_COSINNER,
 		U_LIGHT2_EXPONENT,
-
-		U_LIGHT3_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT3_COLOR,
-		U_LIGHT3_POWER,
-		U_LIGHT3_KC,
-		U_LIGHT3_KL,
-		U_LIGHT3_KQ,
-		U_LIGHT3ENABLED,
-		U_LIGHT3_TYPE,
-		U_LIGHT3_SPOTDIRECTION,
-		U_LIGHT3_COSCUTOFF,
-		U_LIGHT3_COSINNER,
-		U_LIGHT3_EXPONENT,
-
-		U_LIGHT4_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT4_COLOR,
-		U_LIGHT4_POWER,
-		U_LIGHT4_KC,
-		U_LIGHT4_KL,
-		U_LIGHT4_KQ,
-		U_LIGHT4ENABLED,
-		U_LIGHT4_TYPE,
-		U_LIGHT4_SPOTDIRECTION,
-		U_LIGHT4_COSCUTOFF,
-		U_LIGHT4_COSINNER,
-		U_LIGHT4_EXPONENT,
-
-		U_LIGHT5_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT5_COLOR,
-		U_LIGHT5_POWER,
-		U_LIGHT5_KC,
-		U_LIGHT5_KL,
-		U_LIGHT5_KQ,
-		U_LIGHT5ENABLED,
-		U_LIGHT5_TYPE,
-		U_LIGHT5_SPOTDIRECTION,
-		U_LIGHT5_COSCUTOFF,
-		U_LIGHT5_COSINNER,
-		U_LIGHT5_EXPONENT,
 
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
@@ -250,6 +216,7 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
+
 	void Dialogue(string filename);
 	string new_line;
 
@@ -276,6 +243,12 @@ private:
 	Bullet bullet;
 	Objects objects;
 
+	//Icon location
+	int x;
+	int y;
+	int w_x;
+	int w_y;
+
 	bool robot1moved = false;
 	bool robot1rotate = false;
 	float robot1rotation = 0;
@@ -297,7 +270,6 @@ private:
 	bool toggle = false;
 	bool cam1 = false;
 	bool movement = true;
-
 
 	//picking up space ship parts
 	bool pickupwing = false;

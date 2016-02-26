@@ -498,6 +498,7 @@ void Scene2::Update(double dt)
 	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150)
 	{
 		npc.spaceShip.canInteract = true;
+		npc.door.canInteract = false;
 		if (SharedData::GetInstance()->gameState != SharedData::SHOP)
 		{
 			npc.interactDia = "Press E to enter Shop";
@@ -508,6 +509,10 @@ void Scene2::Update(double dt)
 			SharedData::GetInstance()->stateCheck = true;
 			SharedData::GetInstance()->gameState = SharedData::SHOP;
 		}
+	}
+	else
+	{
+		npc.spaceShip.canInteract = false;
 	}
 	Character_Movement(dt);
 	mouse.MouseUpdate(dt, camera);
@@ -658,40 +663,6 @@ void Scene2::Update(double dt)
 	}
 
 	deltaTime = (1.0 / dt);
-	if (Application::IsKeyPressed('E'))
-	{
-		if (detectCollision.collideByDist(camera.position, npc.spacerocket.Nposition) <= 25 && coolDownTime == 0)
-		{
-			if (camera.view.Dot(npc.spacerocket.Nposition) > 0)
-			{
-				coolDownTime = deltaTime / 10;
-				if (pickuprocket == false)
-				{
-					parts++;
-				}
-				pickuprocket = true;
-
-
-			}
-		}
-
-
-		if (detectCollision.collideByDist(camera.position, npc.spacewing.Nposition) <= 25 && coolDownTime == 0)
-		{
-			if (camera.view.Dot(npc.spacewing.Nposition) > 0)
-			{
-				coolDownTime = deltaTime / 10;
-				if (pickupwing == false)
-				{
-					parts++;
-
-				}
-				pickupwing = true;
-
-			}
-		}
-
-	}
 	if (Application::IsKeyPressed('5') && coolDownTime == 0)
 	{
 
@@ -1017,7 +988,6 @@ void Scene2::Render()
 	std::ostringstream eggOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream fpsOSS;
-	std::ostringstream partscountOSS;
 
 	ammoOSS << SharedData::GetInstance()->bullet.quantity;
 	goldOSS << SharedData::GetInstance()->gold.quantity;
@@ -1025,7 +995,6 @@ void Scene2::Render()
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
 	eggOSS << SharedData::GetInstance()->egg.quantity;
 
-	partscountOSS << "SpaceShip Parts: " << parts << "/2";
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -1033,7 +1002,6 @@ void Scene2::Render()
 	string egg = eggOSS.str();
 	string ore = oreOSS.str();
 	string s_gold = goldOSS.str();
-	string partscount = partscountOSS.str();
 
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1321,7 +1289,7 @@ void Scene2::Render()
 	Fps.resize(11);
 
 
-	if (npc.spaceShip.canInteract)
+	if (On_Plane && npc.spaceShip.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 	}
@@ -1378,8 +1346,6 @@ void Scene2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
-
-	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/

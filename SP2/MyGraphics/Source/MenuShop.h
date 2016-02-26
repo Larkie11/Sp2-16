@@ -29,8 +29,6 @@ public:
 	};
 	enum SHOP_OPTION
 	{
-		S_YES,
-		S_NO,
 		S_BUY,
 		S_SELL,
 		S_BACK,
@@ -43,6 +41,16 @@ public:
 		SB_BACK,
 		SB_MAX,
 	};
+
+	enum SHOP_SELL
+	{
+		SS_AMMO,
+		SS_BOMB,
+		SS_EGG,
+		SS_BACK,
+		SS_MAX,
+	};
+
 	SHOP_OPTION s_option;
 	SHOP_BUY s_buy;
 	MenuShop(){}
