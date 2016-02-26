@@ -1185,35 +1185,7 @@ void Scene2::Render()
 	RenderMesh(meshList[GEO_SPACESHIP], false);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[2].position.x, light[2].position.y, light[2].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[3].position.x, light[3].position.y, light[3].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[4].position.x, light[4].position.y, light[4].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(light[5].position.x, light[5].position.y, light[5].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
 
 	//Move skybox
 	modelStack.PushMatrix();
@@ -1591,7 +1563,7 @@ void Scene2::Character_Movement(float dt)
 		}
 	}
 
-	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS))
+	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y<0)
 	{
 		doorinteract = false;
 		On_Plane = true;
@@ -1619,8 +1591,15 @@ void Scene2::Character_Movement(float dt)
 			}
 			else if (Plane.x > 15)
 			{
+				Plane.y = 200;
 				Speed -= (0.65*Speed)*dt;
 				Plane.x -= Speed*dt;
+			}
+			else
+			{
+				Speed = 0;
+				Plane.y = 200;
+				Plane.x = 15;
 			}
 		}
 		if (Application::IsKeyPressed('S'))
@@ -1632,8 +1611,15 @@ void Scene2::Character_Movement(float dt)
 			}
 			else if (Plane.y > -20)
 			{
+				Plane.x = 350;
 				Speed -= (0.65*Speed)*dt;
 				Plane.y -= Speed*dt;
+			}
+			else
+			{
+				Speed = 0;
+				Plane.y = -20;
+				Plane.x = 350;
 			}
 		}
 	}
