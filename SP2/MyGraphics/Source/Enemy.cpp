@@ -5,7 +5,7 @@
 Enemy::Enemy()
 {
 	HP = 100;
-	position = Ground = SpawnPoint = { 200, 0, 0 };
+	position = Ground = SpawnPoint = { -220, 0, 120 };
 	MeleeDamage = rand() % 20;
 	Current_modetype = rand() % 3;
 }
@@ -39,7 +39,7 @@ Enemy Enemy::DamageReceived(Enemy Target, int Damage)
 	if (Target.HP < 0)
 	{
 		Target.HP = 100;
-		Target.position = Target.Ground = Target.SpawnPoint = { 0, 0, 0 };
+		Target.position = Target.Ground = Target.SpawnPoint = { -220, 0, 120 };;
 	}
 	Target.Current_modetype = mode_Change(Target);
 	return Target;
