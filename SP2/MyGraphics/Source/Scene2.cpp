@@ -1443,7 +1443,7 @@ void Scene2::Exit()
 void Scene2::Enemy_Updating(float dt)
 {
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
@@ -1451,7 +1451,7 @@ void Scene2::Enemy_Updating(float dt)
 }
 void Scene2::Enemy_Rendering()
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		Position A = enemy[i].Return_Position(enemy[i]);
 		modelStack.PushMatrix();

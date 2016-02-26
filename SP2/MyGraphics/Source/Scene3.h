@@ -275,7 +275,7 @@ private:
 	Bullet bullet;
 	Objects objects;
 
-	Enemy enemy[10];
+	Enemy enemy[5];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 
