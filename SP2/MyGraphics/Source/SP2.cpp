@@ -129,6 +129,18 @@ void SP2::Init()
 	m_parameters[U_LIGHT2_COSINNER] = glGetUniformLocation(m_programID, "lights[2].cosInner");
 	m_parameters[U_LIGHT2_EXPONENT] = glGetUniformLocation(m_programID, "lights[2].exponent");
 
+	m_parameters[U_LIGHT3_POSITION] = glGetUniformLocation(m_programID, "lights[3].position_cameraspace");
+	m_parameters[U_LIGHT3_COLOR] = glGetUniformLocation(m_programID, "lights[3].color");
+	m_parameters[U_LIGHT3_POWER] = glGetUniformLocation(m_programID, "lights[3].power");
+	m_parameters[U_LIGHT3_KC] = glGetUniformLocation(m_programID, "lights[3].kC");
+	m_parameters[U_LIGHT3_KL] = glGetUniformLocation(m_programID, "lights[3].kL");
+	m_parameters[U_LIGHT3_KQ] = glGetUniformLocation(m_programID, "lights[3].kQ");
+	m_parameters[U_LIGHT3_TYPE] = glGetUniformLocation(m_programID, "lights[3].type");
+	m_parameters[U_LIGHT3_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[3].spotDirection");
+	m_parameters[U_LIGHT3_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[3].cosCutoff");
+	m_parameters[U_LIGHT3_COSINNER] = glGetUniformLocation(m_programID, "lights[3].cosInner");
+	m_parameters[U_LIGHT3_EXPONENT] = glGetUniformLocation(m_programID, "lights[3].exponent");
+
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 
@@ -212,6 +224,21 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT2_COSCUTOFF], light[2].cosCutOff);
 	glUniform1f(m_parameters[U_LIGHT2_COSINNER], light[2].cosInner);
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
+
+	light[3].type = Light::LIGHT_POINT;
+	light[3].position.Set(-100, 55, 0);
+	light[3].color.Set(1, 0, 0);
+	light[3].power = 3;
+	light[3].kC = 1.f;
+	light[3].kL = 0.1f;
+	light[3].kQ = 0.001f;
+
+	glUniform1i(m_parameters[U_LIGHT3_TYPE], light[3].type);
+	glUniform3fv(m_parameters[U_LIGHT3_COLOR], 1, &light[3].color.r);
+	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
+	glUniform1f(m_parameters[U_LIGHT3_KC], light[3].kC);
+	glUniform1f(m_parameters[U_LIGHT3_KL], light[3].kL);
+	glUniform1f(m_parameters[U_LIGHT3_KQ], light[3].kQ);
 
 	glUniform1i(m_parameters[U_NUMLIGHTS], 4);
 
@@ -1466,6 +1493,21 @@ void SP2::Map_Rendering()
 }
 void SP2::Character_Movement(float dt)
 {
+	if (Application::IsKeyPressed('Q') && light[3].power == 0)
+	{
+		light[3].position = VtoP(camera.position);
+		light[3].power = 10000 * dt;
+	}
+	if (light[3].power > 0)
+	{
+		light[3].power -= 100 * dt;
+	}
+	else if (light[3].power < 0)
+	{
+		light[3].power = 0;
+	}
+	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
+
 	if (Application::IsKeyPressed('R'))
 	{
 		camera.Reset();

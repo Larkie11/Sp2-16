@@ -240,7 +240,22 @@ void Scene3::Init()
 	glUniform1f(m_parameters[U_LIGHT2_COSINNER], light[2].cosInner);
 	glUniform1f(m_parameters[U_LIGHT2_EXPONENT], light[2].exponent);
 
-	glUniform1i(m_parameters[U_NUMLIGHTS], 3);
+	light[3].type = Light::LIGHT_POINT;
+	light[3].position.Set(-100, 55, 0);
+	light[3].color.Set(1, 0, 0);
+	light[3].power = 3;
+	light[3].kC = 1.f;
+	light[3].kL = 0.1f;
+	light[3].kQ = 0.001f;
+
+	glUniform1i(m_parameters[U_LIGHT3_TYPE], light[3].type);
+	glUniform3fv(m_parameters[U_LIGHT3_COLOR], 1, &light[3].color.r);
+	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
+	glUniform1f(m_parameters[U_LIGHT3_KC], light[3].kC);
+	glUniform1f(m_parameters[U_LIGHT3_KL], light[3].kL);
+	glUniform1f(m_parameters[U_LIGHT3_KQ], light[3].kQ);
+
+	glUniform1i(m_parameters[U_NUMLIGHTS], 4);
 
 	//Initialize camera settings
 	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -1455,6 +1470,21 @@ void Scene3::Map_Rendering()
 }
 void Scene3::Character_Movement(float dt)
 {
+	if (Application::IsKeyPressed('Q') && light[3].power == 0)
+	{
+		light[3].position = VtoP(camera.position);
+		light[3].power = 10000 * dt;
+	}
+	if (light[3].power > 0)
+	{
+		light[3].power -= 100 * dt;
+	}
+	else if (light[3].power < 0)
+	{
+		light[3].power = 0;
+	}
+	
+	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
 	if (Application::IsKeyPressed('R'))
 	{
 		camera.Reset();
