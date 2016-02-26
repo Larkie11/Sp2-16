@@ -23,6 +23,8 @@ public:
 		SCENE2,
 		SCENE3,
 		SHOP,
+		CUTSCENE,
+		WIN,
 		QUIT,
 		MAX,
 	};

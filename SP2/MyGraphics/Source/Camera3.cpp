@@ -113,15 +113,18 @@ void Camera3::Update(double dt)
 		position.z += cos(DegreeToRadian(cameraRotate.y + 270)) * cameraSpeed *dt;
 	}
 
-	//Only allow rotating to look 90 degrees up and 90 degrees down
-	if (cameraRotate.x > maxCameraX)
+	if (SharedData::GetInstance()->gameState != SharedData::CUTSCENE)
 	{
-		cameraRotate.x = maxCameraX;
-	}
+		//Only allow rotating to look 90 degrees up and 90 degrees down
+		if (cameraRotate.x > maxCameraX)
+		{
+			cameraRotate.x = maxCameraX;
+		}
 
-	else if (cameraRotate.x < -maxCameraX)
-	{
-		cameraRotate.x = -maxCameraX;
+		else if (cameraRotate.x < -maxCameraX)
+		{
+			cameraRotate.x = -maxCameraX;
+		}
 	}
 
 	//Changing target
