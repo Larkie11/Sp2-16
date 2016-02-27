@@ -13,7 +13,7 @@ class Sound
 public:
 	irrklang::ISoundEngine* musicEngine;
 	irrklang::ISound* Song;
-	
+	irrklang::ISound* SoundEffect;
 	Sound();
 	~Sound();
 	void playMusic(string Music);

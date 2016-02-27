@@ -5,7 +5,7 @@
 #include "Application.h"
 #include "Camera3.h"
 #include "CollisionDetector.h"
-
+#include "Sound.h"
 #include <string>
 using std::string;
 
@@ -45,11 +45,17 @@ public:
 	int dialoguePlus = 6;
 	double coolDownTime;
 	int dialogue;
-	
+	bool moveFront;
+	bool moveBack;
+	bool robot3rotate;
+	bool robot1moved;
+	Sound sound;
 	void Scene1(Camera3 camera, double dt);
 	void Scene2(Camera3 camera, double dt);
 	void Door(Camera3 camera, double dt);
-	void Shop(Camera3 camera);
+	void Shop(Camera3 camera, double dt);
+	void NPCmovement(double dt, float& targetMovement);
+	void NPCmovement2(double dt, float& targetMovement);
 	NPC();
 	~NPC();
 };

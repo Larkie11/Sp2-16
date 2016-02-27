@@ -14,7 +14,7 @@ void Sound::playMusic(string Music)
 }
 void Sound::playSE(string Music)
 {
-	Song = musicEngine->play2D(Music.c_str(), false, false, false);
+	SoundEffect = musicEngine->play2D(Music.c_str(), false, false, false);
 }
 void Sound::stopMusic(string Music)
 {

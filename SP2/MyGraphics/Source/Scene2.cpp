@@ -40,7 +40,8 @@ void Scene2::Init()
 	SharedData::GetInstance()->gameScene = "Scene2";
 	PressTime = 0;
 	On_Plane = false;
-	npc.spacebody.Nposition = Vector3(350, -20, 0);
+	Plane.Set(350, -20, 0);
+
 	// Init VBO here
 	gun = 0;
 	b_coolDown = b_coolDownLimit = 1;
@@ -465,46 +466,11 @@ void Scene2::Update(double dt)
 
 	else if (npc.robot3.robot != "robot3")
 	{
-		if (robot1rotate == false)
-		{
-			robot1rotation += (float)(20 * dt);
-
-			if (robot1rotation >= 80)
-			{
-				robot1rotate = true;
-			}
-		}
-		if (robot1rotate)
-		{
-			robot1rotation -= (float)(20 * dt);
-
-			if (robot1rotation <= -80)
-			{
-				robot1rotate = false;
-			}
-		}
+		npc.NPCmovement(dt, robot1rotation);
 	}
 	if (npc.robot1.robot != "robot1" && npc.robot1.robot != "robot1.1" && npc.robot1.robot != "robot1.2")
 	{
-		if (robot1moved == false)
-		{
-			npc.robot1.Nposition.z += (float)(10 * dt);
-
-			if (npc.robot1.Nposition.z >= -100)
-			{
-				robot1moved = true;
-			}
-		}
-
-		if (robot1moved)
-		{
-			npc.robot1.Nposition.z -= (float)(10 * dt);
-
-			if (npc.robot1.Nposition.z <= -160)
-			{
-				robot1moved = false;
-			}
-		}
+		npc.NPCmovement2(dt, npc.robot1.Nposition.z);
 	}
 	if (npc.door.canGoThrough)
 	{
@@ -585,29 +551,17 @@ void Scene2::Update(double dt)
 	}
 
 	//To open the shop for now
-	if (Application::IsKeyPressed('O'))
-	{
-		shop = "Loading Shop";
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SHOP;
-	}
+	//if (Application::IsKeyPressed('O'))
+	//{
+	//	shop = "Loading Shop";
+	//	SharedData::GetInstance()->stateCheck = true;
+	//	SharedData::GetInstance()->gameState = SharedData::SHOP;
+	//}
 
-	if (Application::IsKeyPressed('3'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if (Application::IsKeyPressed('4'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if (Application::IsKeyPressed('Z'))
-	{
-		Lighting9 = false;
-	}
-	else if (Application::IsKeyPressed('X'))
-	{
-		Lighting9 = true;
-	}
-	if (Application::IsKeyPressed('H'))
-	{
-		SharedData::GetInstance()->bullet.quantity = 30;
-	}
+	//if (Application::IsKeyPressed('H'))
+	//{
+	//	SharedData::GetInstance()->bullet.quantity = 30;
+	//}
 	if (Application::IsKeyPressed(VK_LBUTTON) || Application::IsKeyPressed(VK_SPACE))
 	{
 		switch (weaponChoice)
@@ -803,18 +757,10 @@ void Scene2::Update(double dt)
 
 			}
 		}
-
-
 	}
 
 	if (Application::IsKeyPressed('5') && coolDownTime == 0)
 	{
-
-
-		/*bool toggle = false;
-		bool cam1 = false;
-		bool movement = true;
-		*/
 		coolDownTime = deltaTime / 5;
 		/// when untoggle below runs agains
 		if (cam1 == true && toggle == false)
@@ -824,11 +770,7 @@ void Scene2::Update(double dt)
 			movement = false;
 			toggle = true;
 			cout << "u are now in camera mode" << endl;
-			/// restrrrict movement 
-			/// NEED TO MAKE SURE ITS 2ND TIME
-
 		}
-
 		else if (toggle == true && movement == false)
 		{
 			movement = true;
@@ -836,25 +778,16 @@ void Scene2::Update(double dt)
 			toggle = false;
 
 			cout << "u are now not in camera mode" << endl;
-
-			/// make sure camera mode dont exit and reenter
 		}
-
-
-
 		if (cam1 == false)
 		{
-
 			newcameraposition = camera.position;
 			oldcameraposition = camera.position;
 			cout << newcameraposition << endl;
 			cout << oldcameraposition << "locked old " << endl;
 			cam1 = true;
-
 		}
 		// toggle== false means normal mode haven toggle into camnera mode
-
-
 	}// this allow new position to be camera position
 
 	if (Application::IsKeyPressed(VK_F1))
@@ -884,8 +817,6 @@ void Scene2::Update(double dt)
 		usingGun = true;
 		usingPickAxe = false;
 	}
-
-
 	if (weaponChoice == 1)
 	{
 		gun = 0;
@@ -909,7 +840,6 @@ void Scene2::Update(double dt)
 	animation.moveSword(dt, swordTranslation, usingSword);
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
-
 }
 //Reading from text file
 void Scene2::Dialogue(string filename)
@@ -1238,44 +1168,6 @@ void Scene2::Render()
 		glUniform3fv(m_parameters[U_LIGHT3_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	if (light[4].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[4].position.x, light[4].position.y, light[4].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[4].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[4].position;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[4].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT4_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[4].position;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[5].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[5].position.x, light[5].position.y, light[5].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[5].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[5].position;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[5].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT5_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[5].position;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
 	modelStack.PushMatrix();
 	Enemy_Rendering();
 	modelStack.PopMatrix();
@@ -1296,9 +1188,6 @@ void Scene2::Render()
 	modelStack.Scale(10, 10, 10);
 	RenderMesh(meshList[GEO_SPACESHIP], false);
 	modelStack.PopMatrix();
-
-
-
 	//Move skybox
 	modelStack.PushMatrix();
 	modelStack.Translate(0 + camera.position.x, 0, -90 + camera.position.z + 50);
@@ -1437,10 +1326,6 @@ void Scene2::Render()
 	RenderMesh(meshList[GEO_GUN], true);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
-
-
-
-
 
 	modelStack.PushMatrix();
 	//scale, translate, rotate
@@ -1633,7 +1518,7 @@ void Scene2::Map_Rendering()
 	modelStack.PopMatrix();
 
 	//Start Point
-	modelStack.Translate(-Size * 10, 10, -Size * 10);
+	modelStack.Translate(-Size * 10, Size*1.3, -Size * 10);
 	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 20; j++)

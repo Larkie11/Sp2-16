@@ -129,6 +129,7 @@ void SceneMenu::UpdateMenu()
 			menuIcon = 117;
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				sound.playSE("Music//Enter.mp3");
 				sound.stopMusic("Music//Music.mp3");
 				menushop.PressTime = deltaTime / 2;
 				my_arr[0] = "Loading Game";
@@ -144,6 +145,7 @@ void SceneMenu::UpdateMenu()
 			setColor(3, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				sound.playSE("Music//Enter.mp3");
 				menuIcon = 30.5;
 				menushop.PressTime = deltaTime / 5;
 				Input = "Credits";
@@ -159,6 +161,7 @@ void SceneMenu::UpdateMenu()
 			setColor(3, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				sound.playSE("Music//Enter.mp3");
 				menushop.PressTime = deltaTime / 5;
 				menuIcon = 30.5;
 				Input = "Help";
@@ -223,6 +226,7 @@ void SceneMenu::userInput()
 			{
 				if (Application::IsKeyPressed(VK_DOWN) && menushop.PressTime == 0)
 				{
+					sound.playSE("Music//Menu.mp3");
 					menuIcon -= 6.5;
 					menushop.PressTime = deltaTime / 10;
 					choose = static_cast<MenuShop::MENU>(choose + 1);
@@ -232,6 +236,7 @@ void SceneMenu::userInput()
 			{
 				if (Application::IsKeyPressed(VK_UP) && menushop.PressTime == 0)
 				{
+					sound.playSE("Music//Menu.mp3");
 					menuIcon += 6.5;
 					menushop.PressTime = deltaTime / 10;
 					choose = static_cast<MenuShop::MENU>(choose - 1);

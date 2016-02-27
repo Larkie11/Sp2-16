@@ -9,15 +9,10 @@
 #include "Light.h"
 #include "Material.h"
 #include "Mouse.h"
-
-#include "Bullet.h"
-#include "Enemy.h"
-#include "Objects.h"
+#include "Sound.h"
 #include "CollisionDetector.h"
 #include "NPC.h"
 #include <string>
-#include <vector>
-#include <iostream>
 #include <fstream>
 
 using std::cout;
@@ -82,7 +77,6 @@ class Shop : public Scene
 		U_MATERIAL_DIFFUSE,
 		U_MATERIAL_SPECULAR,
 		U_MATERIAL_SHININESS,
-	
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
 		U_TEXT_ENABLED,
@@ -143,39 +137,18 @@ private:
 	string Input;
 	string color;
 	vector<string>my_arr;
-	vector<Bullet*>bullet_arr;
-	double b_coolDown;
-	double b_coolDownLimit;
-	bool startCoolDdown;
-	int b_Ammo;
 
 	float deltaTime;
-	Bullet bullet;
-	Objects objects;
 
-	Enemy enemy[10];
-	void Enemy_Rendering();
-	void Enemy_Updating(float dt);
-
-	void ObjectsHolding(Mesh*mesh, float size);
-	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
-
-
-	void Map_Reading();
-	void Map_Rendering();
 	void Character_Movement(float dt);
 
 	float icon;
 	float icon2;
-	float rotateCoke;
 	float menuIcon;
 
 	NPC npc;
+	Sound sound;
 	
-	int T_object_Num;
-	void Object_Reading();
-	void Object_Rendering();
-	void Object_Updating(float dt);
 	float JumpTime;
 	float PressTime;
 	string description;
@@ -185,7 +158,6 @@ private:
 	bool none = false;
 	float coolDown;
 	bool sell_gold;
-	DOT seller;
 	CollisionDetector detectCollision;
 	int gold;
 

@@ -27,7 +27,7 @@ void Shop::Init()
 	icon2 = 19;
 	Dialogue("Text//Shop.txt");
 	PressTime = 0;
-
+	sound.playMusic("Music//Shop.mp3");
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -157,7 +157,6 @@ void Shop::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-
 void Shop::ShopOptions()
 {
 	if (shopInput == "Shop")
@@ -191,6 +190,7 @@ void Shop::ShopOptions()
 		case MenuShop::S_BACK:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
+				sound.playSE("Music//Robot.mp3");
 				shopInput = "";
 				icon = 31.6;
 				icon2 = 19;
@@ -353,6 +353,7 @@ void Shop::userInput()
 		{
 			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				shop = static_cast<MenuShop::SHOP_OPTION>(shop - 1);
 				cout << shop;
@@ -364,6 +365,7 @@ void Shop::userInput()
 		{
 			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				shop = static_cast<MenuShop::SHOP_OPTION>(shop + 1);
 				cout << shop;
@@ -378,6 +380,7 @@ void Shop::userInput()
 		{
 			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				sell = static_cast<MenuShop::SHOP_SELL>(sell - 1);
 				cout << sell;
@@ -389,6 +392,7 @@ void Shop::userInput()
 		{
 			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				sell = static_cast<MenuShop::SHOP_SELL>(sell + 1);
 				cout << sell;
@@ -404,6 +408,7 @@ void Shop::userInput()
 		{
 			if (Application::IsKeyPressed(VK_UP) && PressTime == 0)
 			{
+				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				buy = static_cast<MenuShop::SHOP_BUY>(buy - 1);
 				cout << buy;
@@ -415,6 +420,7 @@ void Shop::userInput()
 		{
 			if (Application::IsKeyPressed(VK_DOWN) && PressTime == 0)
 			{
+				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				buy = static_cast<MenuShop::SHOP_BUY>(buy + 1);
 				cout << buy;
@@ -426,7 +432,7 @@ void Shop::userInput()
 }
 void Shop::Update(double dt)
 {
-	npc.Shop(camera);
+	npc.Shop(camera, dt);
 	if (PressTime > 0)
 	{
 		PressTime -= 1;
@@ -454,54 +460,14 @@ void Shop::Update(double dt)
 	{
 		if (Application::IsKeyPressed('E') && PressTime == 0)
 		{
+			sound.playSE("Music//Hello.mp3");
 			PressTime = deltaTime / 5;
 			shopInput = "Shop";
 		}
 	}
 	ShopOptions();
 	userInput();
-	if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) <= 20)
-	{
-		if (npc.spaceDoor.Nposition.z < 40)
-		{
-			npc.spaceDoor.Nposition.z += (float)(30 * dt);
-
-			if (npc.spaceDoor.Nposition.z >= 40)
-			{
-				npc.spaceDoor.canInteract = true;
-				if (SharedData::GetInstance()->gameScene == "Scene2" && SharedData::GetInstance()->bomb.quantity <= 0)
-				{
-					npc.interactDia = "Flying back to land...";
-					SharedData::GetInstance()->stateCheck = true;
-					SharedData::GetInstance()->gameState = SharedData::SCENE2;
-				}
-				else if (SharedData::GetInstance()->bomb.quantity >= 0)
-				{
-					npc.interactDia = "Loading...";
-					SharedData::GetInstance()->stateCheck = true;
-					SharedData::GetInstance()->gameState = SharedData::SCENE3;
-				}
-				else if (SharedData::GetInstance()->gameScene == "Scene3")
-				{
-					npc.interactDia = "Loading...";
-					SharedData::GetInstance()->stateCheck = true;
-					SharedData::GetInstance()->gameState = SharedData::SCENE3;
-				}
-			}
-		}
-	}
-
-	else if (detectCollision.collideByDist(camera.position, npc.spaceDoor.Nposition.x) >= 20)
-	{
-		npc.spaceDoor.canInteract = false;
-
-		if (npc.spaceDoor.Nposition.z > 0)
-		{
-			npc.spaceDoor.Nposition.z -= (float)(30 * dt);
-		}
-	}
-	rotateCoke += (float)(100 * dt);
-
+	
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
 	if (Application::IsKeyPressed('2')) //disable back face culling
@@ -510,21 +476,6 @@ void Shop::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if (Application::IsKeyPressed('Z'))
-	{
-		Lighting9 = false;
-	}
-
-	else if (Application::IsKeyPressed('X'))
-	{
-		Lighting9 = true;
-
-	}
-	if (Application::IsKeyPressed('H'))
-	{
-		SharedData::GetInstance()->bullet.quantity += 30;
-
-	}
 	deltaTime = (1.0 / dt);
 }
 void Shop::Dialogue(string filename)
@@ -740,7 +691,6 @@ void Shop::Render()
 	eggOSS << SharedData::GetInstance()->egg.quantity;
 	fpsOSS << "FPS : " << deltaTime;
 
-	
 	nomoreOSS << "You have " << nomore;
 	string Fps = fpsOSS.str();
 	string ammo = ammoOSS.str();
@@ -826,7 +776,6 @@ void Shop::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-
 	if (npc.seller.canInteract && shopInput != "Shop" && shopInput != "Buy" && shopInput != "Sell"||npc.spaceDoor.canInteract)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
@@ -869,9 +818,7 @@ void Shop::Render()
 		}
 
 		RenderTextOnScreen(meshList[GEO_TEXT], description, Color(1, 0, 0), 1.7, 17, 16);
-
 	}
-
 	if (shopInput == "Sell")
 	{
 		int j = 21;
