@@ -17,6 +17,7 @@
 #include "Scene2.h"
 #include "Scene3.h"
 #include "Cutscene.h"
+#include "SceneWin.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -113,7 +114,7 @@ void Application::Init()
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new SP2;	
+	Scene *scene = new Scene3;	
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -141,7 +142,7 @@ void Application::Run()
 				break;
 			case SharedData::GAME:
 				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-				scene = new Cutscene();
+				scene = new SP2();
 				break;
 			case SharedData::SCENE2:
 				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
@@ -153,7 +154,11 @@ void Application::Run()
 				break;
 			case SharedData::CUTSCENE:
 				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-				scene = new Shop();
+				scene = new Cutscene();
+				break;
+			case SharedData::WIN:
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+				scene = new SceneWin();
 				break;
 			case SharedData::SHOP:
 				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);

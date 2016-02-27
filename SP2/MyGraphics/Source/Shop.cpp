@@ -227,19 +227,26 @@ void Shop::ShopOptions()
 			}
 			break;
 		case MenuShop::SB_BOMB:
-			description = "Oh... This is a MUST to get! Hehe.";
+			if (SharedData::GetInstance()->bomb.quantity < 1)
+			{
+				description = "Oh... This is a MUST to get!";
+			}
+			else
+			{
+				description = "Sold out!";
+			}
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				if (SharedData::GetInstance()->gold.quantity > 49)
+				if (SharedData::GetInstance()->gold.quantity > 49 && SharedData::GetInstance()->bomb.quantity < 1)
 				{
 					SharedData::GetInstance()->gold.quantity -= 50;
-					SharedData::GetInstance()->bomb.quantity++;
+					SharedData::GetInstance()->bomb.quantity=1;
 					coolDown = deltaTime;
 					b_gold = true;
 					nomore = "gained bomb";
 				}
-				else
+				else if (SharedData::GetInstance()->gold.quantity < 49)
 				{
 					coolDown = deltaTime;
 					b_gold = true;

@@ -129,6 +129,7 @@ void SceneMenu::UpdateMenu()
 			menuIcon = 117;
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				sound.stopMusic("Music//Music.mp3");
 				menushop.PressTime = deltaTime / 2;
 				my_arr[0] = "Loading Game";
 				SharedData::GetInstance()->stateCheck = true;

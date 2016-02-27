@@ -17,6 +17,8 @@
 #include "Enemy.h"
 #include "Objects.h"
 #include "Mouse.h"
+#include "rawMaterial.h"
+#include "Sound.h"
 
 #include "Animation.h"
 
@@ -93,7 +95,9 @@ class Scene2 : public Scene
 		GEO_PICKAXE,
 		GEO_GUN,
 		GEO_SWORD,
-		GEO_RAWMATERIAL,
+		GEO_RMSMALL,
+		GEO_RMMEDIUM,
+		GEO_RMBIG,
 		GEO_EXPLOSION,
 		GEO_BULLETSKIN,
 		NUM_GEOMETRY,
@@ -323,9 +327,6 @@ private:
 	Mouse mouse;
 	CollisionDetector detectCollision;
 
-	//TEMPO OBJECT FOR TESTING ONLY
-	Vector3 rawMaterial;
-
 	bool On_Plane = false;
 	float Speed = 0;
 	Position Plane;
@@ -352,5 +353,12 @@ private:
 	int gun;
 	int sword;
 	int pickaxe;
+
+	Sound sound;
+
+	rawMaterial oreMaterial_arr[3];
+	double rm_coolDown;
+	double rm_coolDownLimit;
+	bool startRMcoolDown;
 };
 #endif

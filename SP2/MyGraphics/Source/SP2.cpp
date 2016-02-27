@@ -36,6 +36,7 @@ void SP2::Init()
 
 	//Npc dialogue
 	Dialogue("Text//RobotScene1.txt");
+	sound.playMusic("Music//Music1.mp3");
 	PressTime = 0;
 
 	//Icon location
@@ -578,6 +579,11 @@ void SP2::Update(double dt)
 		switch (weaponChoice)
 		{
 		case 1:
+			if (coolDownTime == 0)
+			{
+				coolDownTime = deltaTime / 10;
+				sound.playSE("Music//Sword.mp3");
+			}
 			playSlashingAnimation = true;
 			break;
 
@@ -587,6 +593,7 @@ void SP2::Update(double dt)
 				startCoolDdown = true;
 				if (b_coolDown == b_coolDownLimit)
 				{
+					sound.playSE("Music//Gun.mp3");
 					SharedData::GetInstance()->bullet.quantity--;
 					bullet_arr.push_back(new Bullet(camera));
 				}
@@ -643,6 +650,12 @@ void SP2::Update(double dt)
 		{
 			if (usingPickAxe && oreMaterial_arr[i].hp > 0)
 			{
+				if (coolDownTime == 0)
+				{
+					coolDownTime = deltaTime / 15;
+					sound.playSE("Music//Mining.mp3");
+				}
+
 				startCoolDdown = true;
 				if (b_coolDown == b_coolDownLimit)
 				{
@@ -1429,7 +1442,6 @@ void SP2::Render()
 			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
 		}
 	}
-	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
 
 	//All element for player inventory
 	RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, x, y, 90, 1, 0, 0, 0);

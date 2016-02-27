@@ -81,7 +81,9 @@ void NPC::Scene1(Camera3 camera, double dt)
 {
 	if (detectCollision.collideByDist(camera.position, robot1.Nposition) <= 25)
 	{
-		if (camera.view.Dot(robot1.Nposition) > 0)
+		if (SharedData::GetInstance()->gameState = SharedData::GAME)
+		{
+			if (camera.view.Dot(robot1.Nposition) > 0)
 			{
 				interactDia = "Press E to interact and 1 and 2 for choices";
 				//Show player press e to interact
@@ -101,6 +103,61 @@ void NPC::Scene1(Camera3 camera, double dt)
 					if (Application::IsKeyPressed('2'))
 					{
 						robot1.robot = "robot1.2";
+					}
+				}
+			}
+		}
+
+		else if (SharedData::GetInstance()->gameState = SharedData::SCENE2)
+		{
+			if (camera.view.Dot(robot1.Nposition) < 0)
+			{
+				interactDia = "Press E to interact and 1 and 2 for choices";
+				//Show player press e to interact
+				robot1.canInteract = true;
+				if (Application::IsKeyPressed('E') && coolDownTime == 0)
+				{
+					dialogue = 0;
+					coolDownTime = dt;
+					robot1.robot = "robot1";
+				}
+				if (robot1.robot == "robot1")
+				{
+					if (Application::IsKeyPressed('1'))
+					{
+						robot1.robot = "robot1.1";
+					}
+					if (Application::IsKeyPressed('2'))
+					{
+						robot1.robot = "robot1.2";
+					}
+				}
+			}
+		}
+
+		else if (SharedData::GetInstance()->gameState = SharedData::SCENE3)
+			{
+				if (camera.view.Dot(robot1.Nposition) > 0)
+				{
+					interactDia = "Press E to interact and 1 and 2 for choices";
+					//Show player press e to interact
+					robot1.canInteract = true;
+					if (Application::IsKeyPressed('E') && coolDownTime == 0)
+					{
+						dialogue = 0;
+						coolDownTime = dt;
+						robot1.robot = "robot1";
+					}
+					if (robot1.robot == "robot1")
+					{
+						if (Application::IsKeyPressed('1'))
+						{
+							robot1.robot = "robot1.1";
+						}
+						if (Application::IsKeyPressed('2'))
+						{
+							robot1.robot = "robot1.2";
+						}
 					}
 				}
 			}

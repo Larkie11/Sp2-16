@@ -28,13 +28,19 @@ void Scene2::Init()
 	srand(time(NULL));
 	Map_Reading();
 
+
+	oreMaterial_arr[0].pos = Vector3(235, -21, -90);
+	oreMaterial_arr[1].pos = Vector3(215, -21, -120);
+	oreMaterial_arr[2].pos = Vector3(255, -21, -120);
+
+
 	JumpTime = 0;
 	storyShow = true;
 	Dialogue("Text//RobotScene2.txt");
 	SharedData::GetInstance()->gameScene = "Scene2";
 	PressTime = 0;
 	On_Plane = false;
-	Plane.Set(350, -20, 0);
+	npc.spacebody.Nposition = Vector3(350, -20, 0);
 	// Init VBO here
 	gun = 0;
 	b_coolDown = b_coolDownLimit = 1;
@@ -47,9 +53,6 @@ void Scene2::Init()
 	storyPosition = 2.5;
 
 	camera.cameraRotate = Vector3(0, 90, 0);
-
-	//Position of door
-	rawMaterial = Vector3(235, -21, -90);
 
 	npc.door.Nposition = Vector3(92, -22, 0);
 	npc.door.canGoThrough = false;
@@ -393,9 +396,6 @@ void Scene2::Init()
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//Sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Weapon_Sword.tga");
 
-	meshList[GEO_RAWMATERIAL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
-	meshList[GEO_RAWMATERIAL]->textureID = LoadTGA("Image//Scene_RawMaterial.tga");
-
 	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
 	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//Scene_Explosion.tga");
 
@@ -413,6 +413,15 @@ void Scene2::Init()
 	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
+
+	meshList[GEO_RMSMALL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial3.obj");
+	meshList[GEO_RMSMALL]->textureID = LoadTGA("Image//RawMaterial.tga");
+
+	meshList[GEO_RMMEDIUM] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial2.obj");
+	meshList[GEO_RMMEDIUM]->textureID = meshList[GEO_RMSMALL]->textureID;
+
+	meshList[GEO_RMBIG] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
+	meshList[GEO_RMBIG]->textureID = meshList[GEO_RMSMALL]->textureID;
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
@@ -604,22 +613,26 @@ void Scene2::Update(double dt)
 		switch (weaponChoice)
 		{
 		case 1:
+			if (coolDownTime == 0)
+			{
+				coolDownTime = deltaTime / 10;
+				sound.playSE("Music//Sword.mp3");
+			}
 			playSlashingAnimation = true;
 			break;
-
 		case 2:
 			if (SharedData::GetInstance()->bullet.quantity > 0)
 			{
 				startCoolDdown = true;
 				if (b_coolDown == b_coolDownLimit)
 				{
+					sound.playSE("Music//Gun.mp3");
 					SharedData::GetInstance()->bullet.quantity--;
 					bullet_arr.push_back(new Bullet(camera));
 				}
 				animation.Shoot(dt, gunTranslation, playShootingAnimation);
 			}
 			break;
-
 		case 3:
 			playMiningAnimation = true;
 			break;
@@ -632,16 +645,6 @@ void Scene2::Update(double dt)
 	if (playMiningAnimation)
 	{
 		animation.Mine(dt, pickAxeRotation, playMiningAnimation);
-	}
-
-	if (startCoolDdown)
-	{
-		b_coolDown -= dt;
-		if (b_coolDown < 0)
-		{
-			b_coolDown = b_coolDownLimit;
-			startCoolDdown = false;
-		}
 	}
 
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
@@ -657,19 +660,69 @@ void Scene2::Update(double dt)
 		}
 	}
 
+	if (usingSword)
+		detectCollision.swordCollision(enemy, camera.position);
+
 	// MINING COLLISION
-	if (detectCollision.collideByDist(camera.position, rawMaterial) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
-		detectCollision.collideByDist(camera.position, rawMaterial) < 18 && Application::IsKeyPressed(VK_SPACE))
+	for (int i = 0; i < 3; ++i)
 	{
-		if (usingPickAxe)
+		if (detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
+			detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_SPACE))
 		{
-			startCoolDdown = true;
-			if (b_coolDown == b_coolDownLimit)
+			if (usingPickAxe && oreMaterial_arr[i].hp > 0)
 			{
-				SharedData::GetInstance()->mineral.quantity++;
-				cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+				if (coolDownTime == 0)
+				{
+					coolDownTime = deltaTime / 15;
+					sound.playSE("Music//Mining.mp3");
+				}
+
+				startCoolDdown = true;
+				if (b_coolDown == b_coolDownLimit)
+				{
+					SharedData::GetInstance()->mineral.quantity++;
+					oreMaterial_arr[i].hp--;
+					cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
+				}
 			}
 		}
+
+		switch (oreMaterial_arr[i].hp)
+		{
+		case 0:
+			oreMaterial_arr[i].isAlive = false;
+			startRMcoolDown = true;
+			break;
+		case 1:
+			oreMaterial_arr[i].shape = meshList[GEO_RMSMALL];
+			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMSMALL]->textureID;
+			break;
+		case 2:
+			oreMaterial_arr[i].shape = meshList[GEO_RMMEDIUM];
+			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMMEDIUM]->textureID;
+			break;
+		case 3:
+			oreMaterial_arr[i].shape = meshList[GEO_RMBIG];
+			oreMaterial_arr[i].shape->textureID = meshList[GEO_RMBIG]->textureID;
+			break;
+		}
+
+		if (startRMcoolDown)
+		{
+			rm_coolDown -= dt;
+			cout << rm_coolDown << endl;
+			if (rm_coolDown < 0)
+			{
+				oreMaterial_arr[i].isAlive = true;
+				oreMaterial_arr[i].hp = 3;
+				startRMcoolDown = false;
+			}
+		}
+		else
+		{
+			rm_coolDown = rm_coolDownLimit;
+		}
+
 	}
 
 	if (startCoolDdown)
@@ -1285,12 +1338,6 @@ void Scene2::Render()
 
 	modelStack.PushMatrix();
 
-	//Mining rock 
-	modelStack.PushMatrix();
-	modelStack.Translate(rawMaterial.x, rawMaterial.y, rawMaterial.z);
-	modelStack.Scale(10, 10, 10);
-	RenderMesh(meshList[GEO_RAWMATERIAL], true);
-	modelStack.PopMatrix();
 
 	if (pickupegg1 == false)
 	{
@@ -1486,6 +1533,19 @@ void Scene2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
+
+	//Mining rock 
+	for (int i = 0; i < 3; ++i)
+	{
+		if (oreMaterial_arr[i].isAlive)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(oreMaterial_arr[i].pos.x, oreMaterial_arr[i].pos.y, oreMaterial_arr[i].pos.z);
+			modelStack.Scale(10, 10, 10);
+			RenderMesh(oreMaterial_arr[i].shape, true);
+			modelStack.PopMatrix();
+		}
+	}
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/

@@ -52,7 +52,7 @@ bool Bullet::CollideWithEnemy(Enemy enemy[], vector<Bullet*>bullet_arr, Collisio
 {
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 5; i++)
 		{
 			Position enemyPos = enemy[i].Return_Position(enemy[i]);
 			Vector3 enemyVec = PtoV(enemyPos);

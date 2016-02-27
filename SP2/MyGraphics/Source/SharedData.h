@@ -10,7 +10,6 @@ class SharedData
 {
 //Variables in here can be used by any other classes as long as you include "SharedData.h"
 //How to use: SharedData::GetInstance()->(call whatever that is in the shared data class you want, example: bullet.quantity)
-//Don't know can ask me (Wei Min)
 public:
 	struct INVENTORY
 	{
@@ -43,7 +42,6 @@ public:
 		return &data;
 	}
 	bool stateCheck = false;
-	string music;
 	//Items player has share across all scenes
 	INVENTORY bullet;
 	INVENTORY gold;
@@ -52,8 +50,6 @@ public:
 	INVENTORY mineral;
 	float width;
 	float height;
-
-	string SoundName[];
 private:
 	SharedData()
 	{

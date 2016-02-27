@@ -2,13 +2,21 @@
 
 Sound::Sound()
 {
-	engine = irrklang::createIrrKlangDevice();
+	musicEngine = irrklang::createIrrKlangDevice();
 }
 Sound::~Sound()
 {
-	
+
 }
 void Sound::playMusic(string Music)
 {
-	Song = engine->play2D(Music.c_str(), true, false, true);
+	Song = musicEngine->play2D(Music.c_str(), true, false, true);
+}
+void Sound::playSE(string Music)
+{
+	Song = musicEngine->play2D(Music.c_str(), false, false, false);
+}
+void Sound::stopMusic(string Music)
+{
+	Song->stop();
 }

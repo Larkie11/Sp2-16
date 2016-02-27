@@ -58,6 +58,7 @@ void Scene3::Init()
 	npc.robot2.Nposition = Vector3(245, -21, 150);
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spaceShip.Nposition = Vector3(-100, 230, 0);
+	npc.spacebody.Nposition = Vector3(350, -20, 0);
 	npc.bomb.Nposition = Vector3(-115, -18, 0);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -445,8 +446,17 @@ void Scene3::Update(double dt)
 			++npc.dialoguePlus;
 		}
 	}
-	//NPC movement/rotation
 
+	if (plantbomb == true && checkNear(camera, npc.spacebody.Nposition) <= 50)
+	{
+		if (Application::IsKeyPressed('E'))
+		{
+			SharedData::GetInstance()->stateCheck = true;
+			SharedData::GetInstance()->gameState = SharedData::CUTSCENE;
+		}
+	}
+
+	//NPC movement/rotatio
 	else if (npc.robot3.robot != "robot3")
 	{
 		if (robot1rotate == false)
@@ -562,8 +572,6 @@ void Scene3::Update(double dt)
 
 			SharedData::GetInstance()->bomb.quantity -= 1;
 			plantbomb = true;
-
-			//}
 		}
 	}
 
@@ -576,22 +584,6 @@ void Scene3::Update(double dt)
 	{
 		storyPosition += (float)(3 * dt);
 	}
-
-	//Debugging purpose
-	if (Application::IsKeyPressed('P'))
-	{
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SCENE3;
-	}
-
-	//To open the shop for now
-	if (Application::IsKeyPressed('O'))
-	{
-		shop = "Loading Shop";
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SHOP;
-	}
-
 	if (Application::IsKeyPressed('3'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if (Application::IsKeyPressed('4'))
@@ -1579,13 +1571,12 @@ void Scene3::Character_Movement(float dt)
 			}
 		}
 	}
-
-	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y<0)
+	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y<0 && plantbomb == false)
 	{
 		doorinteract = false;
 		On_Plane = true;
 	}
-	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS) && Plane.y<0)
+	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS) && Plane.y<0 && plantbomb == false)
 	{
 		doorinteract = true;
 		On_Plane = false;
@@ -1593,6 +1584,8 @@ void Scene3::Character_Movement(float dt)
 	}
 	if (On_Plane)
 	{
+		camera.position.Set(Plane.x, 40 + Plane.y, Plane.z);
+
 		if (Application::IsKeyPressed('W'))
 		{
 			if (Plane.y < 200)

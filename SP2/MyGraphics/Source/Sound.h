@@ -1,3 +1,6 @@
+#ifndef SOUND_H
+#define SOUND_H
+
 #include "irrKlang.h"
 #include <string>
 using std::string;
@@ -8,12 +11,15 @@ using std::string;
 class Sound
 {
 public:
-	irrklang::ISoundEngine* engine;
+	irrklang::ISoundEngine* musicEngine;
 	irrklang::ISound* Song;
 	
 	Sound();
 	~Sound();
 	void playMusic(string Music);
+	void stopMusic(string Music);
+	void playSE(string Music);
 
 private:
 };
+#endif

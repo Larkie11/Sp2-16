@@ -8,17 +8,12 @@
 #include "MyMath.h"
 #include "Light.h"
 #include "Material.h"
-
+#include "Sound.h"
+#include "Application.h"
 #include "Camera3.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
-#include "Bullet.h"
-#include "NPC.h"
-#include "Enemy.h"
-#include "Objects.h"
 #include "Mouse.h"
-#include "Animation.h"
-#include "rawMaterial.h"
 
 #include <string>
 #include <vector>
@@ -48,16 +43,6 @@ class Cutscene : public Scene
 
 		GEO_THRUSTER,
 
-		//Icons
-		GEO_AMMOICON,
-		GEO_GOLDICON,
-		GEO_EGGICON,
-		GEO_BOMBICON,
-		GEO_OREICON,
-		GEO_GUNICON,
-		GEO_SWORDICON,
-		GEO_PICKAXEICON,
-
 		//Skybox
 		GEO_LEFT1,
 		GEO_RIGHT1,
@@ -68,19 +53,7 @@ class Cutscene : public Scene
 		GEO_STAR,
 		GEO_STORY1,
 		GEO_TEXT,
-		GEO_PATH,
 		
-		GEO_VENDING,
-		GEO_BAG,
-		GEO_COKE,
-
-		//NPC
-		GEO_ROBOTB,
-		GEO_ROBOTH,
-		GEO_ROBOT,
-		GEO_ROBOT1,
-		GEO_ROBOT2,
-
 		//Scene
 		GEO_MOONBALL,
 		GEO_PYRAMIDNEW,
@@ -93,19 +66,8 @@ class Cutscene : public Scene
 		GEO_PYRAMIDFLOOR,
 		GEO_PYRAMIDDOOR,
 
-		//Weapon
-		GEO_BULLET,
-		GEO_PICKAXE,
-		GEO_GUN,
-		GEO_SWORD,
-		GEO_RMSMALL,
-		GEO_RMMEDIUM,
-		GEO_RMBIG,
 		GEO_EXPLOSION,
 		GEO_BULLETSKIN,
-		GEO_BOMB,
-		GEO_CCTV,
-		GEO_EGG,
 		NUM_GEOMETRY,
 	};
 
@@ -178,16 +140,6 @@ class Cutscene : public Scene
 		U_TOTAL,
 	};
 
-
-	enum Items
-	{
-		None = -1,
-
-		SPACEWING,
-		SPACEROCKET,
-		Num_Object,
-	};
-
 public:
 
 	char Map[20][20];
@@ -213,21 +165,11 @@ private:
 	unsigned m_parameters[U_TOTAL];
 	void UpdateMenu();
 
-	NPC npc;
-
-	int parts = 0;
-	int gun;
-	int pickaxe;
-	int sword;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
 
 	MS modelStack, viewStack, projectionStack;
-	float LSPEED = 10.f;
-	float moveSkyBoxZ = 91.f;
-	float moveSkyBoxX = 0.f;
-
 	Light light[8]; //shader max 8 lights
 
 	void RenderSkybox();
@@ -235,109 +177,15 @@ private:
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
 
-	void Dialogue(string filename);
-	string new_line;
-
-	//Check for distance of object
-	float checkNear(Camera3 camera, Vector3 rhs);
-	//Check for player view
 	Camera3 camera;
 
-	vector<string>my_arr;
-	vector<Bullet*>bullet_arr;
-	Vector3 RobotPosition1;
-	double b_coolDown;
-	double b_coolDownLimit;
-	bool startCoolDdown;
-	int b_Ammo;
-
-	//for story tab
-	float storyPosition;
-	bool storyDismiss;
-	bool storyShow;
-	string story;
-
-	float deltaTime;
-	Bullet bullet;
-	Objects objects;
-
-	//Icon location
-	int x;
-	int y;
-	int w_x;
-	int w_y;
-
-	bool robot1moved = false;
-	bool robot1rotate = false;
-	float robot1rotation = 0;
-
-	Enemy enemy[5];
-	void Enemy_Rendering();
-	void Enemy_Updating(float dt);
-
-	void ObjectsHolding(Mesh*mesh, float size);
-	void EquipmentHolding(Mesh*mesh, float size);
-	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
-	float throwingdown = 0;
-	float throwingforward = 0;
-	float throwup = 0;
-	Vector3 newcameraposition = (0, 0, 0);
-	Vector3 oldcameraposition = (0, 0, 0);
-	bool throwbomb = false;
-	bool thrown = false;
-	bool toggle = false;
-	bool cam1 = false;
-	bool movement = true;
-	bool holdingcctv = false;
-
-	//picking up space ship parts
-	bool pickupwing = false;
-	bool pickuprocket = false;
-	float followx = 0;
-	float followy = 0;
-	bool fixwing = false;
-	bool fixrocket = false;
-	float coolDownTime;
-	
-	string shop;
 
 	void Map_Reading();
 	void Map_Rendering();
 	void Character_Movement(float dt);
 
-	Objects object[Num_Object];
-	Objects object_on_hand;
-	int T_object_Num;
-	
-	float JumpTime;
-	float PressTime;
-
 	Mouse mouse;
-	CollisionDetector detectCollision;
-
-	Animation animation;
-	float swordRotation;
-	float pickAxeRotation;
-	float gunRotation;
-
-	float gunTranslation;
-	float swordTranslation;
-	float pickAxeTranslation;
-
-	bool playSlashingAnimation;
-	bool playShootingAnimation;
-	bool playMiningAnimation;
-
-	bool usingSword;
-	bool usingGun;
-	bool usingPickAxe;
-	int weaponChoice;
-
-	rawMaterial oreMaterial_arr[3];
-	double rm_coolDown;
-	double rm_coolDownLimit;
-	bool startRMcoolDown;
-
+	Sound sound;
 	float planePos=-20;
 	float planePos2 = 350;
 	int cameraShake;

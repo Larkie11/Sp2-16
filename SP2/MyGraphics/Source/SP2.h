@@ -19,6 +19,7 @@
 #include "Mouse.h"
 #include "Animation.h"
 #include "rawMaterial.h"
+#include "Sound.h"
 
 #include <string>
 #include <vector>
@@ -240,6 +241,7 @@ private:
 	float checkNear(Camera3 camera, Vector3 rhs);
 	//Check for player view
 	Camera3 camera;
+	Sound sound;
 
 	vector<string>my_arr;
 	vector<Bullet*>bullet_arr;

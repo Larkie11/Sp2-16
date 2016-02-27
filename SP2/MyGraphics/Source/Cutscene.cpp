@@ -7,16 +7,6 @@
 #include "SharedData.h"
 
 //This class is to render the first scenario where player has to fix his own spaceship
-static Position VtoP(Vector3 V)
-{
-	Position P = { V.x, V.y, V.z };
-	return P;
-}
-static Vector3 PtoV(Position V)
-{
-	Vector3 P = { V.x, V.y, V.z };
-	return P;
-}
 Cutscene::Cutscene()
 {
 }
@@ -28,13 +18,8 @@ void Cutscene::Init()
 	srand(time(NULL));
 	Map_Reading();
 
-	JumpTime = 0;
-
-
-	PressTime = 0;
-
 	camera.cameraRotate = Vector3(0, 140, 0);
-
+	sound.playMusic("Music//SE.mp3");
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -232,29 +217,6 @@ void Cutscene::Init()
 	meshList[GEO_PYRAMIDFLOOR]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_PYRAMIDFLOOR]->material.kShininess = 1.f;
 
-	meshList[GEO_AMMOICON] = MeshBuilder::GenerateQuad("ammoicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_AMMOICON]->textureID = LoadTGA("Image//I_Ammo.tga");
-
-	meshList[GEO_GOLDICON] = MeshBuilder::GenerateQuad("goldicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_GOLDICON]->textureID = LoadTGA("Image//I_Gold.tga");
-
-	meshList[GEO_EGGICON] = MeshBuilder::GenerateQuad("eggicon", Color(1, 1, 1), 3, 3);
-	meshList[GEO_EGGICON]->textureID = LoadTGA("Image//I_Egg.tga");
-
-	meshList[GEO_GUNICON] = MeshBuilder::GenerateQuad("gun", Color(1, 1, 1), 3, 3);
-	meshList[GEO_GUNICON]->textureID = LoadTGA("Image//I_Gun.tga");
-
-	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("pickaxe", Color(1, 1, 1), 3, 3);
-	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//I_PickAxe.tga");
-
-	meshList[GEO_SWORDICON] = MeshBuilder::GenerateQuad("sword", Color(1, 1, 1), 3, 3);
-	meshList[GEO_SWORDICON]->textureID = LoadTGA("Image//I_Sword.tga");
-
-	meshList[GEO_OREICON] = MeshBuilder::GenerateQuad("Ore", Color(1, 1, 1), 3, 3);
-	meshList[GEO_OREICON]->textureID = LoadTGA("Image//I_Ore.tga");
-
-	meshList[GEO_BOMBICON] = MeshBuilder::GenerateQuad("Bomb", Color(1, 1, 1), 3, 3);
-	meshList[GEO_BOMBICON]->textureID = LoadTGA("Image//I_Bomb.tga");
 
 	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1, 1);
 	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//d_front.tga");
@@ -331,6 +293,13 @@ void Cutscene::Update(double dt)
 			explosionScale += (float)(50 * dt);
 		}
 	}
+
+	if (explosionScale >= 200)
+	{
+		sound.stopMusic("Music//SE.mp3");
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::WIN;
+	}
 	if (planePos < 10)
 	{
 		planePos += (float)(10 * dt);
@@ -350,19 +319,6 @@ void Cutscene::Update(double dt)
 	{
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SCENE2;
-	}
-}
-//Reading from text file
-void Cutscene::Dialogue(string filename)
-{
-	ifstream myfile(filename.c_str());
-	string line;
-
-	while (std::getline(myfile, line))
-	{
-		new_line = line + "\n";
-		cout << new_line;
-		my_arr.push_back(new_line);
 	}
 }
 bool Lighting9 = true;
@@ -582,16 +538,6 @@ void Cutscene::Render()
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
 	eggOSS << SharedData::GetInstance()->egg.quantity;
 
-	partscountOSS << "SpaceShip Parts: " << parts << "/2";
-	fpsOSS << "FPS : " << deltaTime;
-	string Fps = fpsOSS.str();
-	string ammo = ammoOSS.str();
-	string bomb = bombOSS.str();
-	string egg = eggOSS.str();
-	string ore = oreOSS.str();
-	string s_gold = goldOSS.str();
-	string partscount = partscountOSS.str();
-
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -709,12 +655,6 @@ void Cutscene::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(npc.door.Nposition.x, npc.door.Nposition.y, npc.door.Nposition.z);
-	modelStack.Scale(37, 37, 37);
-	RenderMesh(meshList[GEO_PYRAMIDDOOR], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
@@ -724,44 +664,14 @@ void Cutscene::Render()
 
 	var.resize(16);
 	var1.resize(16);
-	Fps.resize(11);
-	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
-
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
-
-	if (storyDismiss && npc.interactDia != "You have fixed the ship. Loading...")
-	{
-		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
-	}
 }
 
 void Cutscene::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
-}
-void Cutscene::Enemy_Updating(float dt)
-{
-	Position P = { camera.position.x, camera.position.y, camera.position.z };
-	for (int i = 0; i < 5; i++)
-	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
-	}
-	camera = enemy[0].enemy_attack(enemy,VtoP(camera.position),camera);
-}
-void Cutscene::Enemy_Rendering()
-{
-	for (int i = 0; i < 5; i++)
-	{
-		Position A = enemy[i].Return_Position(enemy[i]);
-		modelStack.PushMatrix();
-		modelStack.Translate(A.x, -20, A.z);
-		modelStack.Scale(2, 2, 2);
-		RenderMesh(meshList[GEO_COKE], true);
-		modelStack.PopMatrix();
-	}
 }
 void Cutscene::Map_Reading()
 {
@@ -799,26 +709,6 @@ void Cutscene::Map_Rendering()
 }
 void Cutscene::Character_Movement(float dt)
 {
-	if (Application::IsKeyPressed('Q') && light[3].power == 0)
-	{
-		light[3].position = VtoP(camera.position);
-		light[3].power = 10000 * dt;
-	}
-	if (light[3].power > 0)
-	{
-		light[3].power -= 100 * dt;
-	}
-	else if (light[3].power < 0)
-	{
-		light[3].power = 0;
-	}
-	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
-
-	if (Application::IsKeyPressed('R'))
-	{
-		camera.Reset();
-	}
-
 	//Changing view (target)
 	if (randNum == 1)
 	{
@@ -827,7 +717,6 @@ void Cutscene::Character_Movement(float dt)
 	if (randNum == 2)
 	{
 		camera.cameraRotate.y -= (float)(100 * dt);
-		followy -= (float)(100 * dt);
 	}
 	if (randNum == 3)
 	{
