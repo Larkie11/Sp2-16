@@ -28,11 +28,7 @@ void Scene2::Init()
 	srand(time(NULL));
 	Map_Reading();
 
-
-	oreMaterial_arr[0].pos = Vector3(235, -21, -90);
-	oreMaterial_arr[1].pos = Vector3(215, -21, -120);
-	oreMaterial_arr[2].pos = Vector3(255, -21, -120);
-
+	oreMaterial_arr[0].pos = Vector3(240, -21, 180);
 
 	JumpTime = 0;
 	storyShow = true;
@@ -48,6 +44,8 @@ void Scene2::Init()
 	startCoolDdown = false;
 	usingSword = true;
 	usingGun = usingPickAxe = false;
+	rm_coolDown = rm_coolDownLimit = 10;
+	startRMcoolDown = false;
 	weaponChoice = 1;
 
 	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
@@ -618,7 +616,7 @@ void Scene2::Update(double dt)
 		detectCollision.swordCollision(enemy, camera.position);
 
 	// MINING COLLISION
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < 1; ++i)
 	{
 		if (detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_LBUTTON) ||
 			detectCollision.collideByDist(camera.position, oreMaterial_arr[i].pos) < 18 && Application::IsKeyPressed(VK_SPACE))
@@ -678,6 +676,7 @@ void Scene2::Update(double dt)
 		}
 
 	}
+
 
 	if (startCoolDdown)
 	{
@@ -1420,7 +1419,7 @@ void Scene2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
 
 	//Mining rock 
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < 1; ++i)
 	{
 		if (oreMaterial_arr[i].isAlive)
 		{

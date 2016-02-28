@@ -60,8 +60,8 @@ void SP2::Init()
 
 	//ore positions
 	oreMaterial_arr[0].pos = Vector3(235, -21, -90);
-	oreMaterial_arr[1].pos = Vector3(215, -21, -120);
-	oreMaterial_arr[2].pos = Vector3(255, -21, -120);
+	oreMaterial_arr[1].pos = Vector3(120, -21, 422);
+	oreMaterial_arr[2].pos = Vector3(240, -21, 180);
 
 	//All the position which we want to detect if we are near
 	npc.door.Nposition = Vector3(92, -22, 0);
