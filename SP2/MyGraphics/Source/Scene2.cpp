@@ -249,7 +249,7 @@ void Scene2::Init()
 
 	light[3].type = Light::LIGHT_POINT;
 	light[3].position.Set(-100, 55, 0);
-	light[3].color.Set(1, 0, 0);
+	light[3].color.Set(1, 1, 1);
 	light[3].power = 3;
 	light[3].kC = 1.f;
 	light[3].kL = 0.1f;
