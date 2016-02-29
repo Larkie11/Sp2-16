@@ -1339,7 +1339,7 @@ void Scene3::Render()
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(2000, 1, 2000);
-	RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -1475,6 +1475,15 @@ void Scene3::Render()
 	{
 		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 	}
+
+
+
+	if (plantbomb == false && detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to plant bomb !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+	else if (plantbomb == true && detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25)
+		RenderTextOnScreen(meshList[GEO_TEXT], "You have planted the bomb now run!!!", Color(1, 1, 0), 1.5, 7, 20);
 }
 
 void Scene3::Exit()

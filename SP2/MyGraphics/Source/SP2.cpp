@@ -76,7 +76,7 @@ void SP2::Init()
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spacebody.Nposition = Vector3(345, -21, 0);
 	npc.spacewing.Nposition = Vector3(0, -21, 100);
-	npc.spacerocket.Nposition = Vector3(-200, -21, 100);
+	npc.spacerocket.Nposition = Vector3(-200, -21, -115);
 
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -704,7 +704,7 @@ void SP2::Update(double dt)
 			if (camera.view.Dot(npc.spacebody.Nposition) > 0)
 			{
 				fixrocket = true;
-				pickuprocket = false;
+				//pickuprocket = false;
 
 			}
 		}
@@ -716,7 +716,7 @@ void SP2::Update(double dt)
 			if (camera.view.Dot(npc.spacebody.Nposition) > 0)
 			{
 				fixwing = true;
-				pickupwing = false;
+				//pickupwing = false;
 			}
 		}
 	}
@@ -1229,7 +1229,7 @@ void SP2::Render()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.spacerocket.Nposition.x, npc.spacerocket.Nposition.y, npc.spacerocket.Nposition.z);
-		modelStack.Scale(5, 5, 5);
+		modelStack.Scale(1, 1, 1);
 		RenderMesh(meshList[GEO_PLANEROCKET], true);
 		modelStack.PopMatrix();
 		//renders main rocket in pyramid
@@ -1238,7 +1238,7 @@ void SP2::Render()
 	else
 	{
 		if (fixrocket == false)
-			ObjectsHolding(meshList[GEO_PLANEROCKET], 0.05);
+			ObjectsHolding(meshList[GEO_PLANEROCKET], 0.03);
 		//hold in the hand
 	}
 	//Mining rock 
@@ -1313,7 +1313,7 @@ void SP2::Render()
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(2000, 1, 2000);
-	RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -1424,6 +1424,24 @@ void SP2::Render()
 	{
 		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 	}
+	if (pickupwing == false && detectCollision.collideByDist(camera.position, npc.spacewing.Nposition) <= 25 && (camera.view.Dot(npc.spacewing.Nposition) > 0))
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+	if (pickuprocket == false && detectCollision.collideByDist(camera.position, npc.spacerocket.Nposition) <= 25 && (camera.view.Dot(npc.spacerocket.Nposition) > 0))
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+
+	if (detectCollision.collideByDist(camera.position, npc.spacebody.Nposition) <= 25 && (camera.view.Dot(npc.spacebody.Nposition) > 0))
+	{
+		if (fixwing == false || fixrocket == false)
+		{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Space ship is not fix yet", Color(1, 1, 0), 1.5, 7, 20);
+		}
+	}
+
+
 }
 void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 {

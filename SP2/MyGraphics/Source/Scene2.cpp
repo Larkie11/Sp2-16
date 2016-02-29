@@ -689,66 +689,61 @@ void Scene2::Update(double dt)
 
 		if (detectCollision.collideByDist(camera.position, npc.egg1.Nposition) <= 25 && coolDownTime == 0 && pickupegg1 == false)
 		{
-			if (camera.view.Dot(npc.egg1.Nposition) > 0)
-			{
+			
 				coolDownTime = deltaTime / 10;
 
 				SharedData::GetInstance()->egg.quantity += 1;
 
 				pickupegg1 = true;
 
-			}
+			
 		}
 
 		if (detectCollision.collideByDist(camera.position, npc.egg2.Nposition) <= 25 && coolDownTime == 0 && pickupegg2 == false)
 		{
-			if (camera.view.Dot(npc.egg2.Nposition) > 0)
-			{
+			
 				coolDownTime = deltaTime / 10;
 
 				SharedData::GetInstance()->egg.quantity += 1;
 
 				pickupegg2 = true;
 
-			}
+			
 		}
 
 		if (detectCollision.collideByDist(camera.position, npc.egg3.Nposition) <= 25 && coolDownTime == 0 && pickupegg3 == false)
 		{
-			if (camera.view.Dot(npc.egg3.Nposition) > 0)
-			{
+			
 				coolDownTime = deltaTime / 10;
 
 				SharedData::GetInstance()->egg.quantity += 1;
 
 				pickupegg3 = true;
 
-			}
+			
 		}
 
 		if (detectCollision.collideByDist(camera.position, npc.egg4.Nposition) <= 25 && coolDownTime == 0 && pickupegg4 == false)
 		{
-			//if (camera.view.Dot(npc.egg4.Nposition) > 0)
-			//{
+			
 			coolDownTime = deltaTime / 10;
 
 			SharedData::GetInstance()->egg.quantity += 1;
 
 			pickupegg4 = true;
 
-			//	}
+			
 		}
 		if (detectCollision.collideByDist(camera.position, npc.egg5.Nposition) <= 25 && coolDownTime == 0 && pickupegg5 == false)
 		{
-			if (camera.view.Dot(npc.egg5.Nposition) > 0)
-			{
+			
 				coolDownTime = deltaTime / 10;
 
 				SharedData::GetInstance()->egg.quantity += 1;
 
 				pickupegg5 = true;
 
-			}
+			
 		}
 	}
 
@@ -1324,7 +1319,7 @@ void Scene2::Render()
 	modelStack.Translate(0, -20, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(2000, 1, 2000);
-	RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -1475,6 +1470,37 @@ void Scene2::Render()
 	{
 		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 	}
+
+
+	if (pickupegg1 == false && detectCollision.collideByDist(camera.position, npc.egg1.Nposition) <= 25)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+
+
+	if (pickupegg2 == false && detectCollision.collideByDist(camera.position, npc.egg2.Nposition) <= 25 )
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+
+
+	if (pickupegg3 == false && detectCollision.collideByDist(camera.position, npc.egg3.Nposition) <= 25 )
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+
+
+	if (pickupegg4 == false && detectCollision.collideByDist(camera.position, npc.egg4.Nposition) <= 25 )
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+
+
+	if (pickupegg5 == false && detectCollision.collideByDist(camera.position, npc.egg5.Nposition) <= 25 )
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
+	}
+
 }
 
 void Scene2::Exit()
@@ -1652,6 +1678,7 @@ void Scene2::Character_Movement(float dt)
 	{
 		if (!On_Plane && Application::IsKeyPressed('E'))
 		{
+			camera.cameraRotate = Vector3(0, 270, 0);
 			doorinteract = false;
 			On_Plane = true;
 		}
