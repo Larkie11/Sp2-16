@@ -1467,7 +1467,7 @@ void Scene3::Render()
 	RenderQuadOnScreen(meshList[GEO_SWORDICON], 2, 1.6, 8, 90, 1, 0, 0, 0);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	if (storyDismiss)
+	if (storyDismiss && !npc.robot1.canInteract && !npc.robot2.canInteract && !npc.robot3.canInteract)
 	{
 		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 	}

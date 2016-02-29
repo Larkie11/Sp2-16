@@ -35,8 +35,8 @@ void SceneMenu::Init()
 	SharedData::GetInstance()->engine->play2D(SharedData::GetInstance()->music.c_str());
 	SharedData::GetInstance()->Song = SharedData::GetInstance()->engine->play2D(SharedData::GetInstance()->music.c_str(), true, false, true);
 	SharedData::GetInstance()->Song->setVolume(0.25);*/
+	
 	sound.playMusic("Music//Music.mp3");
-
 	//Read the menu texts from text file
 	Dialogue("Text//Menu.txt");
 
@@ -134,7 +134,7 @@ void SceneMenu::UpdateMenu()
 				menushop.PressTime = deltaTime / 2;
 				my_arr[0] = "Loading Game";
 				SharedData::GetInstance()->stateCheck = true;
-				SharedData::GetInstance()->gameState = SharedData::GAME;
+				SharedData::GetInstance()->gameState = SharedData::G_CUTSCENE;
 			}
 			userInput();
 			break;

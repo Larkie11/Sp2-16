@@ -18,6 +18,7 @@ public:
 	enum GAMESTATE
 	{
 		MENU,
+		G_CUTSCENE,
 		GAME,
 		SCENE2,
 		SCENE3,

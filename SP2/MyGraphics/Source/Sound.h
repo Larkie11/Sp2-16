@@ -19,6 +19,8 @@ public:
 	void playMusic(string Music);
 	void stopMusic(string Music);
 	void playSE(string Music);
+	void stopAll();
+	void startAgain();
 
 private:
 };

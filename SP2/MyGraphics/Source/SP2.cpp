@@ -34,7 +34,7 @@ void SP2::Init()
 
 	//Npc dialogue
 	Dialogue("Text//RobotScene1.txt");
-	sound.playMusic("Music//Music1.mp3");
+	sound.playMusic("Music//Scene1.mp3");
 	PressTime = 0;
 	JumpTime = 0;
 
@@ -417,12 +417,13 @@ void SP2::Update(double dt)
 	}
 	Enemy_Updating(dt);
 	//Talking to npc or opening door
-	npc.Door(camera, dt);
 	npc.Scene1(camera, dt);
+	npc.Door(camera, dt);
+
 	//Dialogue for robot with rotating head
 	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
 	{
-		coolDownTime = dt / 10;
+		coolDownTime = deltaTime / 10;
 		robot1rotation = 0;
 		if (npc.dialoguePlus < my_arr.size() - 1)
 		{
@@ -459,6 +460,7 @@ void SP2::Update(double dt)
 	mouse.MouseUpdate(dt, camera, followx, followy);
 	if (fixrocket && fixwing)
 	{
+		sound.stopMusic("Music//Music1.mp3");
 		npc.interactDia = "You have fixed the ship. Loading...";
 		SharedData::GetInstance()->stateCheck = true;
 		SharedData::GetInstance()->gameState = SharedData::SCENE2;
@@ -492,13 +494,6 @@ void SP2::Update(double dt)
 	if (storyShow && storyPosition < 2.5)
 	{
 		storyPosition += (float)(3 * dt);
-	}
-
-	//Debugging purpose
-	if (Application::IsKeyPressed('P'))
-	{
-		SharedData::GetInstance()->stateCheck = true;
-		SharedData::GetInstance()->gameState = SharedData::SCENE2;
 	}
 	if (Application::IsKeyPressed('3'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
@@ -1381,7 +1376,7 @@ void SP2::Render()
 	RenderQuadOnScreen(meshList[GEO_SWORDICON], 2, 1.6, w_y+6, 90, 1, 0, 0, 0);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	if (storyDismiss && npc.interactDia != "You have fixed the ship. Loading...")
+	if (storyDismiss && npc.interactDia != "You have fixed the ship. Loading..." && !npc.robot1.canInteract && !npc.robot2.canInteract && !npc.robot3.canInteract)
 	{
 		RenderQuadOnScreen(meshList[GEO_CROSSHAIR], 1, 40, 30, 90, 1, 0, 0, 1);
 	}

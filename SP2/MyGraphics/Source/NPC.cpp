@@ -83,12 +83,11 @@ void NPC::Scene1(Camera3 camera, double dt)
 				interactDia = "Press E to interact and 1 and 2 for choices";
 				//Show player press e to interact
 				robot1.canInteract = true;
-				if (Application::IsKeyPressed('E') && coolDownTime == 0)
+				if (Application::IsKeyPressed('E') && coolDownTime == 0 && robot1.robot != "robot1")
 				{
 					sound.playSE("Music//R2D2.mp3");
 					coolDownTime = dt / 10;
 					dialogue = 0;
-					coolDownTime = dt;
 					robot1.robot = "robot1";
 				}
 				if (robot1.robot == "robot1")
@@ -118,10 +117,9 @@ void NPC::Scene1(Camera3 camera, double dt)
 	{
 		interactDia = "Press E to interact";
 		robot2.canInteract = true;
-		if (Application::IsKeyPressed('E') && coolDownTime == 0)
+		if (Application::IsKeyPressed('E') && robot2.robot != "robot2")
 		{
 			sound.playSE("Music//Dead.mp3");
-			coolDownTime = dt / 5;
 			robot2.robot = "robot2";
 		}
 	}
@@ -138,7 +136,7 @@ void NPC::Scene1(Camera3 camera, double dt)
 			robot3.canInteract = true;
 			interactDia = "Press E to interact";
 
-			if (Application::IsKeyPressed('E'))
+			if (Application::IsKeyPressed('E') && robot3.robot!= "robot3")
 			{
 				sound.playSE("Music//R2D2.mp3");
 				robot3.robot = "robot3";
@@ -151,7 +149,7 @@ void NPC::Scene1(Camera3 camera, double dt)
 	}
 	else
 	{
-		dialoguePlus = 6;
+		dialoguePlus = 5;
 		robot3.canInteract = false;
 		robot3.robot = "";
 	}
@@ -180,6 +178,7 @@ void NPC::Shop(Camera3 camera, double dt)
 				spaceDoor.canInteract = true;
 				if (SharedData::GetInstance()->gameScene == "Scene2" && SharedData::GetInstance()->bomb.quantity <= 0)
 				{
+					stopMusic = true;
 					sound.playSE("Music//Fly.mp3");
 					interactDia = "Flying back to land...";
 					SharedData::GetInstance()->stateCheck = true;
@@ -187,13 +186,14 @@ void NPC::Shop(Camera3 camera, double dt)
 				}
 				else if (SharedData::GetInstance()->bomb.quantity >= 0)
 				{
-					sound.playSE("Music//Fly.mp3");
+					stopMusic = true;
 					interactDia = "Loading...";
 					SharedData::GetInstance()->stateCheck = true;
 					SharedData::GetInstance()->gameState = SharedData::SCENE3;
 				}
 				else if (SharedData::GetInstance()->gameScene == "Scene3")
 				{
+					stopMusic = true;
 					sound.playSE("Music//Fly.mp3");
 					interactDia = "Loading...";
 					SharedData::GetInstance()->stateCheck = true;
@@ -209,6 +209,7 @@ void NPC::Shop(Camera3 camera, double dt)
 
 		if (spaceDoor.Nposition.z  > 0)
 		{
+			stopMusic = false;
 			spaceDoor.Nposition.z -= (float)(30 * dt);
 		}
 	}

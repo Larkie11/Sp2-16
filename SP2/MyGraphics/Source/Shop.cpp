@@ -342,7 +342,6 @@ void Shop::ShopOptions()
 			}
 			break;
 		}
-
 	}
 }
 void Shop::userInput()
@@ -450,7 +449,6 @@ void Shop::Update(double dt)
 	{
 		coolDown = 0;
 	}
-
 	if (shopInput != "Shop" && shopInput != "Buy" && shopInput != "Sell")
 	{
 		camera.Update(dt);
@@ -464,6 +462,10 @@ void Shop::Update(double dt)
 			PressTime = deltaTime / 5;
 			shopInput = "Shop";
 		}
+	}
+	if (npc.stopMusic)
+	{
+		sound.stopMusic("Music//Shop.mp3");
 	}
 	ShopOptions();
 	userInput();

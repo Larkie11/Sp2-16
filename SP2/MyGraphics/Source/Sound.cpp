@@ -20,3 +20,11 @@ void Sound::stopMusic(string Music)
 {
 	Song->stop();
 }
+void Sound::stopAll()
+{
+	Song->setIsPaused();
+}
+void Sound::startAgain()
+{
+	Song->setIsPaused(false);
+}

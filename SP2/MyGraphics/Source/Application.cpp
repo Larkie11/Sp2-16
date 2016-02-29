@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "StartCutScene.h"
 #include "Sp2.h"
 #include "SceneMenu.h"
 #include "Shop.h"
@@ -114,7 +115,7 @@ void Application::Init()
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new SP2;	
+	Scene *scene = new SceneMenu;	
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -139,6 +140,10 @@ void Application::Run()
 			{
 			case SharedData::MENU:
 				scene = new SceneMenu();
+				break;
+			case SharedData::G_CUTSCENE:
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+				scene = new StartCutScene();
 				break;
 			case SharedData::GAME:
 				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);

@@ -49,6 +49,7 @@ public:
 	bool moveBack;
 	bool robot3rotate;
 	bool robot1moved;
+	bool stopMusic;
 	Sound sound;
 	void Scene1(Camera3 camera, double dt);
 	void Scene2(Camera3 camera, double dt);
