@@ -54,19 +54,19 @@ bool Bullet::CollideWithEnemy(Enemy enemy[], vector<Bullet*>bullet_arr, Collisio
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			Position enemyPos = enemy[i].Return_Position(enemy[i]);
+			Position enemyPos = enemy[i].Return_Position();
 			Vector3 enemyVec = PtoV(enemyPos);
 
 			if (detectCollision.collideByDist((*iter)->position, enemyVec) < 25)
 			{
 				cout << "COLLIDED WITH ENEMY" << endl;
-				enemy[i] = enemy[i].DamageReceived(enemy[i], 30);
+				enemy[i].DamageReceived( 30);
 				destoryBullet = true;
 			}
 		}
 		if (!destoryBullet)
 			cout << "NEVER COLLIDED WITH ENEMY" << endl;
-		return destoryBullet;
+			return destoryBullet;
 	}
 
 

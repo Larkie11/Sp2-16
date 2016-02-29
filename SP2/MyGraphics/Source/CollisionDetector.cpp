@@ -33,18 +33,15 @@ bool CollisionDetector::swordCollision(Enemy enemy[], Vector3 player)
 {
 	for (int i = 0; i < 5; i++)
 	{
-		Position enemyPos = enemy[i].Return_Position(enemy[i]);
+		Position enemyPos = enemy[i].Return_Position();
 		Vector3 enemyVec = PtoV(enemyPos);
 
 		if (collideByDist(player, enemyVec) < 40)
 		{
 			cout << "YOU SLASHED THE ENEMY" << endl;
-			enemy[i] = enemy[i].DamageReceived(enemy[i], 100);
+			enemy[i].DamageReceived(100);
 			return true;
 		}
-		else
-		{
-			return false;
-		}
 	}
+	return false;
 }

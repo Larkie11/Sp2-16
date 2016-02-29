@@ -5,7 +5,15 @@
 Enemy::Enemy()
 {
 	HP = 100;
-	position = Ground = SpawnPoint = { -220, 0, 120 };
+	float X = (-8 * 15) + rand() % (16 * 15) - 100;
+	float Z = (-8 * 15) + rand() % (16 * 15);
+	position = Ground = SpawnPoint = { X, 0, Z };
+	if (!Quick_check())
+	{
+		X = (-8 * 15) + rand() % (16 * 15) - 100;
+		Z = (-8 * 15) + rand() % (16 * 15);
+		position = Ground = SpawnPoint = { X, 0, Z };
+	}
 	MeleeDamage = rand() % 20;
 	Current_modetype = rand() % 3;
 }
@@ -15,39 +23,97 @@ Enemy::~Enemy()
 {
 }
 
-int Enemy::mode_Change(Enemy Target)
+bool Enemy::Quick_check()
 {
-	int mode = 0;
-	if (Target.HP >= 90)
+	string line;
+	ifstream myfile("Map//Map1.txt");
+	if (myfile.is_open())
 	{
-		mode = rand() % 3;
-	}
-	else if (Target.HP > 50)
-	{
-		mode = rand() % 3 + 3;
+		char Map[20][20];
+		for (int i = 0; i < 20; i++)
+		{
+			getline(myfile, line);
+			for (int j = 0; j < 20; j++)
+			{
+				Map[i][j] = line.at(j);
+			}
+		}
+		myfile.close();
+
+		bool check = true;
+		int X = 10 + ((this->position.x - -100) / 15);
+		int Z = 10 + ((this->position.z - 0) / 15);
+		if (X > -1 && X < 20 && Z > -1 && Z < 20)
+		{
+				if (X < 2)
+				{
+					X = 0;
+				}
+				if (Z < 2)
+				{
+					X = 0;
+				}
+				if (X > 17)
+				{
+					X = 19;
+				}
+				if (Z > 17)
+				{
+					Z = 19;
+				}
+
+			if (char(Map[X][Z]) != char(' ') && char(Map[X][Z]) != char('D'))
+			{
+				check = false;
+			}
+		}
+		return check;
 	}
 	else
 	{
-		mode = rand() % 3 + 6;
+		cout << "Unable To Open Map" << endl;
+		return false;
 	}
-	return mode;
 }
 
-Enemy Enemy::DamageReceived(Enemy Target, int Damage)
+void Enemy::mode_Change()
 {
-	Target.HP -= Damage;
-	if (Target.HP < 0)
+	if (this->HP >= 90)
 	{
-		Target.HP = 100;
-		Target.position = Target.Ground = Target.SpawnPoint = { -220, 0, 120 };;
+		this->Current_modetype = rand() % 3;
 	}
-	Target.Current_modetype = mode_Change(Target);
-	return Target;
+	else if (this->HP > 50)
+	{
+		this->Current_modetype = rand() % 3 + 3;
+	}
+	else
+	{
+		this->Current_modetype = rand() % 3 + 6;
+	}
 }
 
-Enemy Enemy::mode_Action(Enemy Target, Position Camera)
+void Enemy::DamageReceived(int Damage)
 {
-	int mode = Target.Current_modetype;
+	this->HP -= Damage;
+	if (this->HP < 0)
+	{
+		this->HP = 100;
+		float X = (-8 * 15) + rand() % (16 * 15) - 100;
+		float Z = (-8 * 15) + rand() % (16 * 15);
+		position = Ground = SpawnPoint = { X, 0, Z };
+		if (!Quick_check())
+		{
+			X = (-8 * 15) + rand() % (16 * 15) - 100;
+			Z = (-8 * 15) + rand() % (16 * 15);
+			position = Ground = SpawnPoint = { X, 0, Z };
+		}
+	}
+	mode_Change();
+}
+
+void Enemy::mode_Action(Position Camera)
+{
+	int mode = this->Current_modetype;
 	Position Target_To_Move_To = { 0, 0, 0 };
 	if (mode < 3)
 	{
@@ -56,11 +122,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.SpawnPoint.x + 10 *cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = this->SpawnPoint.x + 10 *cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Target.SpawnPoint.z + 10 *sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = this->SpawnPoint.z + 10 *sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		else if (mode == assassination)
@@ -80,11 +146,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.Ground.x + 10 *cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = this->Ground.x + 10 *cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Target.Ground.z + 10 *sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = this->Ground.z + 10 *sin(Math::DegreeToRadian(Angle));
 			}
 		}
 	}
@@ -95,11 +161,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.Ground.x + 20 * cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = this->Ground.x + 20 * cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Target.Ground.z + 20 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = this->Ground.z + 20 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		if (mode == hold_down)
@@ -119,11 +185,11 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			int Angle = rand() % 360;
 			if (Angle != 90 && Angle != 270)
 			{
-				Target_To_Move_To.x = Target.SpawnPoint.x + 10 *cos(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.x = this->SpawnPoint.x + 10 *cos(Math::DegreeToRadian(Angle));
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Target.SpawnPoint.z + 10 *sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = this->SpawnPoint.z + 10 *sin(Math::DegreeToRadian(Angle));
 			}
 		}
 	}
@@ -138,7 +204,7 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			}
 			if (Angle != 0 && Angle != 180)
 			{
-				Target_To_Move_To.z = Target.Ground.z + 5 * sin(Math::DegreeToRadian(Angle));
+				Target_To_Move_To.z = this->Ground.z + 5 * sin(Math::DegreeToRadian(Angle));
 			}
 		}
 		if (mode == strategic_planning)
@@ -158,39 +224,33 @@ Enemy Enemy::mode_Action(Enemy Target, Position Camera)
 			Target_To_Move_To = Camera;
 		}
 	}
-	Target.Ground = Target_To_Move_To;
-	return Target;
+	this->Ground = Target_To_Move_To;
 }
 
-Position Enemy::Return_Position(Enemy Target)
+Position Enemy::Return_Position()
 {
-	return Target.position;
+	return this->position;
 }
 
 
-int Enemy::Return_HP(Enemy Target)
+int Enemy::Return_HP()
 {
-	return Target.HP;
+	return this->HP;
 }
 
-Enemy Enemy::Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement)
+void Enemy::Enemy_movement(Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement)
 {
-	if (Target.Current_modetype < 3)
-	{
-		Target = mode_Action(Target,Camera);
-	}
-	Target = mode_Action(Target, Camera);
+	mode_Action(Camera);
 	float speed = 0.2 * dt;
-	if (Target.Current_modetype == speed_escape || Target.Current_modetype == fake_attack)
+	if (this->Current_modetype == speed_escape || this->Current_modetype == fake_attack)
 	{
 		speed = 0.5 * dt;
 	}
-	else if (Target.Current_modetype == charge || Target.Current_modetype == Surprise_attack)
+	else if (this->Current_modetype == charge || this->Current_modetype == Surprise_attack)
 	{
 		speed = 0.7 * dt;
 	}
-	Target.position = Movement(Target.position, Target.Ground, speed, Size, Map, I, enemy, Z_Displacement, X_Displacement);
-	return Target;
+	this->position = Movement(this->position, this->Ground, speed, Size, Map, I,enemy, Z_Displacement, X_Displacement);
 
 }
 
@@ -338,7 +398,7 @@ Camera3 Enemy::enemy_attack(Enemy enemy[5], Position character, Camera3 view)
 		{
 			Z_distance = Z_distance * -1;
 		}
-		if (X_distance < 10 && Z_distance < 10)
+		if (X_distance < 15 && Z_distance < 15)
 		{
 			view.Reset();
 		}

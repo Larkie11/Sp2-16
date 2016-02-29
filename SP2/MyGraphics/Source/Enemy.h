@@ -30,20 +30,21 @@ class Enemy
 
 	};
 
-	Enemy mode_Action(Enemy Target,Position Camera);
-	int mode_Change(Enemy Target);
+	void mode_Action(Position Camera);
+	void mode_Change();
 	Position Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[5], float Z_Displacement, float X_Displacement);
 	bool Enemy_Collision(Position Character, Enemy enemy[5], int I);
 
 public:
 	Enemy();
 	~Enemy();
-	int Return_HP(Enemy Target);
-	Enemy Enemy_movement(Enemy Target, Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement);
-	Enemy DamageReceived(Enemy Target, int Damage);
-	Position Return_Position(Enemy Target);
+	bool Quick_check();
+	int Return_HP();
+	void Enemy_movement(Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement);
+	void DamageReceived(int Damage);
+	Position Return_Position();
 	bool Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement, bool enter = false);
-	Camera3 enemy_attack(Enemy enemy[5],Position character, Camera3 view);
+	Camera3 enemy_attack(Enemy enemy[5], Position character, Camera3 view);
 };
 
 #endif

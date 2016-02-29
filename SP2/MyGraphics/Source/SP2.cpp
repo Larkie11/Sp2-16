@@ -521,6 +521,9 @@ void SP2::Update(double dt)
 		switch (weaponChoice)
 		{
 		case 1:
+			//Check if enemy got slashed by the player
+			if (usingSword)
+				detectCollision.swordCollision(enemy, camera.position);
 			if (coolDownTime == 0)
 			{
 				coolDownTime = deltaTime / 10;
@@ -580,9 +583,7 @@ void SP2::Update(double dt)
 		}
 	}
 
-	//Check if enemy got slashed by the player
-	if (usingSword)
-		detectCollision.swordCollision(enemy, camera.position);
+	
 
 	// MINING COLLISION
 	for (int i = 0; i < 3; ++i)
@@ -1430,7 +1431,7 @@ void SP2::Enemy_Updating(float dt)
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 5; i++)
 	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
+		enemy[i].Enemy_movement( P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
 	camera = enemy[0].enemy_attack(enemy,VtoP(camera.position),camera);
 }
@@ -1438,7 +1439,7 @@ void SP2::Enemy_Rendering()
 {
 	for (int i = 0; i < 5; i++)
 	{
-		Position A = enemy[i].Return_Position(enemy[i]);
+		Position A = enemy[i].Return_Position();
 		modelStack.PushMatrix();
 		modelStack.Translate(A.x, -20, A.z);
 		modelStack.Scale(2, 2, 2);

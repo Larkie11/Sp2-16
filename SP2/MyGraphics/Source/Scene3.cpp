@@ -1458,7 +1458,7 @@ void Scene3::Enemy_Updating(float dt)
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
 	for (int i = 0; i < 5; i++)
 	{
-		enemy[i] = enemy[i].Enemy_movement(enemy[i], P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
+		enemy[i].Enemy_movement(P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
 	camera = enemy[0].enemy_attack(enemy, VtoP(camera.position), camera);
 }
@@ -1466,7 +1466,7 @@ void Scene3::Enemy_Rendering()
 {
 	for (int i = 0; i < 5; i++)
 	{
-		Position A = enemy[i].Return_Position(enemy[i]);
+		Position A = enemy[i].Return_Position();
 		modelStack.PushMatrix();
 		modelStack.Translate(A.x, -20, A.z);
 		modelStack.Scale(2, 2, 2);
