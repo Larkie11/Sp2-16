@@ -241,14 +241,14 @@ int Enemy::Return_HP()
 void Enemy::Enemy_movement(Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement)
 {
 	mode_Action(Camera);
-	float speed = 0.2 * dt;
+	float speed = 0.5 * dt;
 	if (this->Current_modetype == speed_escape || this->Current_modetype == fake_attack)
 	{
-		speed = 0.5 * dt;
+		speed = 1 * dt;
 	}
 	else if (this->Current_modetype == charge || this->Current_modetype == Surprise_attack)
 	{
-		speed = 0.7 * dt;
+		speed = 1.5 * dt;
 	}
 	this->position = Movement(this->position, this->Ground, speed, Size, Map, I,enemy, Z_Displacement, X_Displacement);
 
