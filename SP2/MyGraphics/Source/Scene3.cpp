@@ -31,7 +31,7 @@ void Scene3::Init()
 	JumpTime = 0;
 	storyShow = true;
 	Dialogue("Text//RobotScene3.txt");
-	sound.playMusic("Music//Music1.mp3");
+	sound.playMusic("Music//Scene3.mp3");
 	SharedData::GetInstance()->gameScene = "Scene3";
 	PressTime = 0;
 	On_Plane = false;
@@ -248,7 +248,7 @@ void Scene3::Init()
 	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
 	meshList[GEO_QUAD]->textureID = floor;
-	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
+	meshList[GEO_QUAD]->material.kAmbient.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;

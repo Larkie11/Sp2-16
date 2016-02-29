@@ -211,13 +211,15 @@ void NPC::Shop(Camera3 camera, double dt)
 
 	if (detectCollision.collideByDist(camera.position, spaceDoor.Nposition.x) <= 20)
 	{
-		if (spaceDoor.Nposition.z < 40)
+		spaceDoor.canInteract = true;
+		interactDia = "Hold E to open door and exit";
+		if (spaceDoor.Nposition.z < 40 && Application::IsKeyPressed('E'))
 		{
+			
 			spaceDoor.Nposition.z += (float)(30 * dt);
 
 			if (spaceDoor.Nposition.z >= 40)
 			{
-				spaceDoor.canInteract = true;
 				if (SharedData::GetInstance()->gameScene == "Scene2" && SharedData::GetInstance()->bomb.quantity <= 0)
 				{
 					stopMusic = true;

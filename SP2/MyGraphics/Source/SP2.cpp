@@ -255,7 +255,7 @@ void SP2::Init()
 	GLuint floor = LoadTGA("Image//Scene_Floor.tga");
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
 	meshList[GEO_QUAD]->textureID = floor;
-	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
+	meshList[GEO_QUAD]->material.kAmbient.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kDiffuse.Set(0.6f, 0.6f, 0.6f);
 	meshList[GEO_QUAD]->material.kSpecular.Set(0.7f, 0.7f, 0.7f);
 	meshList[GEO_QUAD]->material.kShininess = 1.f;

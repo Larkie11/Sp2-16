@@ -4,10 +4,10 @@ Sell
 Exit Shop
 What would you like to buy?
 Ammo - 20G
-Bomb - 50G
+Bomb - 999G
 Back
 What would you like to sell?
 Ammo - 10G
-Ore - 25G
-Egg - 100G
+Ore - 5G
+Egg - 200G
 Back
