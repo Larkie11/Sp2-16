@@ -57,6 +57,7 @@ void SP2::Init()
 	explosionScale = 0.2;
 	explosionLoc = { 0, 0, 0 };
 	explosionLocRotateY = explosionLocRotateX = 0;
+	potatoRotate = 0;
 	
 
 	//Inital camera rotation
@@ -397,7 +398,11 @@ void SP2::Init()
 
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
+
 	
+	meshList[GEO_POTATO] = MeshBuilder::GenerateOBJ("cctv", "OBJ//POTATO.obj");
+	meshList[GEO_POTATO]->textureID = LoadTGA("Image//Scene_Moon.tga");
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
@@ -527,6 +532,7 @@ void SP2::Update(double dt)
 				detectCollision.swordCollision(enemy, camera.position);
 			if (coolDownTime == 0)
 			{
+
 				coolDownTime = deltaTime / 10;
 				sound.playSE("Music//Sword.mp3");
 			}
@@ -802,6 +808,8 @@ void SP2::Update(double dt)
 	animation.moveSword(dt, swordTranslation, usingSword);
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
+
+	potatoRotate += (float)(0.5 * dt);
 }
 //Reading from text file
 void SP2::Dialogue(string filename)
@@ -1142,6 +1150,7 @@ void SP2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-100, 0, 0);
+	modelStack.Rotate(potatoRotate*15,0,1,0);
 	modelStack.Scale(30, 30, 30);
 	RenderMesh(meshList[GEO_MOONBALL], false);
 	modelStack.PopMatrix();
@@ -1400,6 +1409,7 @@ void SP2::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
+
 	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
@@ -1441,7 +1451,7 @@ void SP2::Render()
 		}
 	}
 
-
+	cout << SharedData::GetInstance()->enemycounter/2;
 }
 void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 {
@@ -1531,6 +1541,10 @@ void SP2::Map_Rendering()
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
 	RenderMesh(meshList[GEO_PYRAMIDNEW], true);
+	modelStack.PushMatrix();
+	modelStack.Rotate(potatoRotate * 10, 0,1, 0);
+	RenderMesh(meshList[GEO_POTATO], true);
+	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	modelStack.Scale(Size, (2 / (2.5*Size)), Size);
 	RenderMesh(meshList[GEO_PYRAMIDWALL], true);

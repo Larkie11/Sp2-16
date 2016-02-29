@@ -51,6 +51,7 @@ public:
 	INVENTORY mineral;
 	float width;
 	float height;
+	int enemycounter;
 private:
 	SharedData()
 	{
@@ -61,6 +62,7 @@ private:
 		bomb.quantity = 0;
 		gold.quantity = 100;
 		mineral.quantity = 0;
+		enemycounter = 0;
 	}
 	~SharedData()
 	{

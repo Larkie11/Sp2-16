@@ -106,6 +106,7 @@ class SP2 : public Scene
 		GEO_BOMB,
 		GEO_CCTV,
 		GEO_EGG,
+		GEO_POTATO,
 		NUM_GEOMETRY,
 	};
 
@@ -227,6 +228,7 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
+	float potatoRotate;
 
 	Light light[8]; //shader max 8 lights
 

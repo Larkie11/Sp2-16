@@ -1,5 +1,6 @@
 #include "CollisionDetector.h"
 #include <iostream>
+#include"SharedData.h"
 
 using std::abs;
 using std::cout;
@@ -39,6 +40,7 @@ bool CollisionDetector::swordCollision(Enemy enemy[], Vector3 player)
 		if (collideByDist(player, enemyVec) < 40)
 		{
 			cout << "YOU SLASHED THE ENEMY" << endl;
+			SharedData::GetInstance()->enemycounter++;
 			enemy[i].DamageReceived(100);
 			return true;
 		}

@@ -1680,7 +1680,7 @@ void Scene2::Character_Movement(float dt)
 	{
 		if (!On_Plane && Application::IsKeyPressed('E'))
 		{
-			camera.cameraRotate = Vector3(0, 270, 0);
+			//camera.cameraRotate = Vector3(0, 270, 0);
 			doorinteract = false;
 			On_Plane = true;
 		}

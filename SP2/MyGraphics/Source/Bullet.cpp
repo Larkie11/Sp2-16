@@ -4,6 +4,7 @@
 #include "CollisionDetector.h"
 #include <vector>
 #include <iostream>
+#include "SharedData.h"
 
 using std::cout;
 using std::endl;
@@ -62,6 +63,7 @@ bool Bullet::CollideWithEnemy(Enemy enemy[], vector<Bullet*>bullet_arr, Collisio
 				cout << "COLLIDED WITH ENEMY" << endl;
 				enemy[i].DamageReceived( 30);
 				destoryBullet = true;
+				SharedData::GetInstance()->enemycounter++;
 			}
 		}
 
