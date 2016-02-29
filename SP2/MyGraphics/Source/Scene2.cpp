@@ -1166,7 +1166,6 @@ void Scene2::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[3].position;
 		glUniform3fv(m_parameters[U_LIGHT3_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-
 	modelStack.PushMatrix();
 	Enemy_Rendering();
 	modelStack.PopMatrix();
@@ -1365,6 +1364,32 @@ void Scene2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 	}
 
+	if (Plane.y < 0)
+	{
+		if (!On_Plane)
+		{
+			float distance = sqrt(((camera.position.x - Plane.x)*(camera.position.x - Plane.x)) + ((camera.position.z - Plane.z)*(camera.position.z - Plane.z)));
+			if (distance <= 100)
+			{
+				modelStack.PushMatrix();
+				RenderTextOnScreen(meshList[GEO_TEXT], "Press \' E \' to board Ship", Color(1, 1, 0), 1.5, 7, 20);
+				modelStack.PopMatrix();
+			}
+		}
+		else if (On_Plane)
+		{
+			modelStack.PushMatrix();
+			RenderTextOnScreen(meshList[GEO_TEXT], "Press \' Q \' to unboard Ship", Color(1, 1, 0), 1.5, 7, 20);
+			modelStack.PopMatrix();
+		}
+	}
+	if (On_Plane)
+	{
+		modelStack.PushMatrix();
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press \' W \' and \' S \' to Start Ship", Color(1, 1, 0), 1.5, 7, 22);
+		modelStack.PopMatrix();
+	}
+
 	//Show player if he can interact with item
 	if (doorinteract)
 	{
@@ -1430,6 +1455,7 @@ void Scene2::Render()
 			modelStack.PopMatrix();
 		}
 	}
+
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
@@ -1627,25 +1653,24 @@ void Scene2::Character_Movement(float dt)
 		}
 	}
 
-	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y<0)
+	float distance = sqrt(((camera.position.x - Plane.x)*(camera.position.x - Plane.x)) + ((camera.position.z - Plane.z)*(camera.position.z - Plane.z)));
+	if (distance <= 100 && Plane.y < 0)
 	{
-		doorinteract = false;
-		On_Plane = true;
+		if (!On_Plane && Application::IsKeyPressed('E'))
+		{
+			doorinteract = false;
+			On_Plane = true;
+		}
+		if (On_Plane && Application::IsKeyPressed('Q'))
+		{
+			doorinteract = true;
+			On_Plane = false;
+			camera.Reset();
+		}
 	}
-	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS) && Plane.y<0)
-	{
-		doorinteract = true;
-		On_Plane = false;
-		camera.Reset();
-	}
-
 	if (On_Plane)
 	{
 		camera.position.Set(Plane.x, 40 + Plane.y, Plane.z);
-	}
-
-	if (On_Plane)
-	{
 		if (Application::IsKeyPressed('W'))
 		{
 			if (Plane.y < 200)

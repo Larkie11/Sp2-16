@@ -1368,6 +1368,31 @@ void Scene3::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
 	}
+	if (Plane.y < 0)
+	{
+		if (!On_Plane)
+		{
+			float distance = sqrt(((camera.position.x - Plane.x)*(camera.position.x - Plane.x)) + ((camera.position.z - Plane.z)*(camera.position.z - Plane.z)));
+			if (distance <= 100)
+			{
+				modelStack.PushMatrix();
+				RenderTextOnScreen(meshList[GEO_TEXT], "Press \' E \' to board Ship", Color(1, 1, 0), 1.5, 7, 20);
+				modelStack.PopMatrix();
+			}
+		}
+		else if (On_Plane)
+		{
+			modelStack.PushMatrix();
+			RenderTextOnScreen(meshList[GEO_TEXT], "Press \' Q \' to unboard Ship", Color(1, 1, 0), 1.5, 7, 20);
+			modelStack.PopMatrix();
+		}
+	}
+	if (On_Plane)
+	{
+		modelStack.PushMatrix();
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press \' W \' and \' S \' to Start Ship", Color(1, 1, 0), 1.5, 7, 22);
+		modelStack.PopMatrix();
+	}
 
 	//Show player if he can interact with item
 	if (doorinteract)
@@ -1618,16 +1643,20 @@ void Scene3::Character_Movement(float dt)
 			}
 		}
 	}
-	if (!On_Plane && Application::IsKeyPressed(VK_OEM_PLUS) && Plane.y<0 && plantbomb == false)
+	float distance = sqrt(((camera.position.x - Plane.x)*(camera.position.x - Plane.x))+((camera.position.z - Plane.z)*(camera.position.z - Plane.z)));
+	if (distance <= 100 && Plane.y < 0)
 	{
-		doorinteract = false;
-		On_Plane = true;
-	}
-	if (On_Plane && Application::IsKeyPressed(VK_OEM_MINUS) && Plane.y<0 && plantbomb == false)
-	{
-		doorinteract = true;
-		On_Plane = false;
-		camera.Reset();
+		if (!On_Plane && Application::IsKeyPressed('E') && plantbomb == false)
+		{
+			doorinteract = false;
+			On_Plane = true;
+		}
+		if (On_Plane && Application::IsKeyPressed('Q') && plantbomb == false)
+		{
+			doorinteract = true;
+			On_Plane = false;
+			camera.Reset();
+		}
 	}
 	if (On_Plane)
 	{
