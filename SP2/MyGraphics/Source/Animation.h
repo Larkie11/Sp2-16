@@ -12,6 +12,7 @@ class Animation
 		void Mine(double dt, float& targetRotation, bool& start);
 		void moveSword(double dt, float& targetTranslation, bool usingSword);
 		void moveGun(double dt, float& targetTranslation, bool usingGun);
+		void explosion(double dt, float& explosionScale, bool& playExplosion);
 		bool Update(double dt);
 
 		bool sliceUp;

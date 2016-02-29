@@ -16,7 +16,7 @@ Camera3::~Camera3()
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	maxCameraX = 49.99f;
-	cameraSpeed = 150.f;
+	cameraSpeed = 100.f;
 	maxX = 500;
 	minX = -500;
 	maxZ = 500;

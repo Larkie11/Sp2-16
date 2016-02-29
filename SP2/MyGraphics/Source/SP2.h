@@ -101,6 +101,7 @@ class SP2 : public Scene
 		GEO_RMMEDIUM,
 		GEO_RMBIG,
 		GEO_EXPLOSION,
+		GEO_EXPLOSION2,
 		GEO_BULLETSKIN,
 		GEO_BOMB,
 		GEO_CCTV,
@@ -327,6 +328,7 @@ private:
 	bool playSlashingAnimation;
 	bool playShootingAnimation;
 	bool playMiningAnimation;
+	bool playExplosionAnimation;
 
 	bool usingSword;
 	bool usingGun;
@@ -337,6 +339,11 @@ private:
 	double rm_coolDown;
 	double rm_coolDownLimit;
 	bool startRMcoolDown;
+
+	float explosionScale;
+	Vector3 explosionLoc;
+	float explosionLocRotateY;
+	float explosionLocRotateX;
 
 };
 #endif

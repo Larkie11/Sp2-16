@@ -230,9 +230,9 @@ void Shop::ShopOptions()
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				if (SharedData::GetInstance()->gold.quantity > 49 && SharedData::GetInstance()->bomb.quantity < 1)
+				if (SharedData::GetInstance()->gold.quantity > 999 && SharedData::GetInstance()->bomb.quantity < 1)
 				{
-					SharedData::GetInstance()->gold.quantity -= 50;
+					SharedData::GetInstance()->gold.quantity -= 999;
 					SharedData::GetInstance()->bomb.quantity=1;
 					coolDown = deltaTime;
 					b_gold = true;
@@ -288,7 +288,7 @@ void Shop::ShopOptions()
 			{
 				PressTime = deltaTime / 5;
 				coolDown = deltaTime;
-				gold = 25;
+				gold = 5;
 				if (SharedData::GetInstance()->mineral.quantity > 0)
 				{
 					SharedData::GetInstance()->gold.quantity += gold;

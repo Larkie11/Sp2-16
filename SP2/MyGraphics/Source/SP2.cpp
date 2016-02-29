@@ -54,6 +54,10 @@ void SP2::Init()
 	startRMcoolDown = false;
 	weaponChoice = 1;
 	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
+	explosionScale = 0.2;
+	explosionLoc = { 0, 0, 0 };
+	explosionLocRotateY = explosionLocRotateX = 0;
+	
 
 	//Inital camera rotation
 	camera.cameraRotate = Vector3(0, 270, 0);
@@ -382,6 +386,9 @@ void SP2::Init()
 	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateQuad("explosion1", Color(1, 1, 1), 5, 5);
 	meshList[GEO_EXPLOSION]->textureID = LoadTGA("Image//Scene_Explosion.tga");
 
+	meshList[GEO_EXPLOSION2] = MeshBuilder::GenerateQuad("explosion2", Color(1, 1, 1), 5, 5);
+	meshList[GEO_EXPLOSION2]->textureID = LoadTGA("Image//explosion.tga");
+
 	meshList[GEO_BULLETSKIN] = MeshBuilder::GenerateOBJ("gun", "OBJ//bulletskin.obj");
 	meshList[GEO_BULLETSKIN]->textureID = LoadTGA("Image//Scene_Bullet.tga");
 
@@ -567,8 +574,14 @@ void SP2::Update(double dt)
 	for (vector<Bullet*>::iterator iter = bullet_arr.begin(); iter != bullet_arr.end();)
 	{
 		//if destory bullet = true 
-		if ((*iter)->Update(dt) || (*iter)->CollideWithEnemy(enemy, bullet_arr, detectCollision))
+		if ((*iter)->Update(dt) || 
+			(*iter)->CollideWithEnemy(enemy, bullet_arr, detectCollision) ||
+			(*iter)->position.y > 3 || (*iter)->position.y < -20)
 		{
+			playExplosionAnimation = true;
+			explosionLocRotateY = camera.cameraRotate.y;
+			explosionLocRotateX = camera.cameraRotate.x;
+			explosionLoc = (*iter)->position;
 			iter = bullet_arr.erase(iter);
 		}
 		else
@@ -576,9 +589,10 @@ void SP2::Update(double dt)
 			iter++;
 		}
 	}
-
-	
-
+	if (playExplosionAnimation)
+	{
+		animation.explosion(dt, explosionScale, playExplosionAnimation);
+	}
 	// MINING COLLISION
 	for (int i = 0; i < 3; ++i)
 	{
@@ -1235,7 +1249,7 @@ void SP2::Render()
 			modelStack.PushMatrix();
 			modelStack.Translate(oreMaterial_arr[i].pos.x, oreMaterial_arr[i].pos.y, oreMaterial_arr[i].pos.z);
 			modelStack.Scale(10, 10, 10);
-			RenderMesh(oreMaterial_arr[i].shape, true);
+			RenderMesh(oreMaterial_arr[i].shape, false);
 			modelStack.PopMatrix();
 		}
 	}
@@ -1274,7 +1288,7 @@ void SP2::Render()
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
-	modelStack.Translate(swordTranslation + 0.5, -0.28, 0.3);
+	modelStack.Translate(swordTranslation + 0.5, -0.35, 0.3);
 	modelStack.Rotate(-swordRotation, 0, 0, 1);
 	modelStack.Scale(0.1, 0.1, 0.1);
 	RenderMesh(meshList[GEO_SWORD], false);
@@ -1323,6 +1337,18 @@ void SP2::Render()
 		modelStack.PopMatrix();
 	}
 
+	if (playExplosionAnimation)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(explosionLoc.x, explosionLoc.y, explosionLoc.z);
+		modelStack.Rotate(180, 0, 1, 0);
+		modelStack.Rotate(90, 1, 0, 0);
+		modelStack.Rotate(-explosionLocRotateY, 0, 0, 1);
+		modelStack.Rotate(-explosionLocRotateX, 1, 0, 0);
+		modelStack.Scale(explosionScale, explosionScale, explosionScale);
+		RenderMesh(meshList[GEO_EXPLOSION2], false);
+		modelStack.PopMatrix();
+	}
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(11);
@@ -1541,23 +1567,23 @@ void SP2::Character_Movement(float dt)
 	//Changing view (target)
 	if (Application::IsKeyPressed(VK_LEFT))
 	{
-		camera.cameraRotate.y += (float)(100 * dt);
-		followy += (float)(100 * dt);
+		camera.cameraRotate.y += (float)(120 * dt);
+		followy += (float)(120 * dt);
 	}
 	if (Application::IsKeyPressed(VK_RIGHT))
 	{
-		camera.cameraRotate.y -= (float)(100 * dt);
-		followy -= (float)(100 * dt);
+		camera.cameraRotate.y -= (float)(120 * dt);
+		followy -= (float)(120 * dt);
 	}
 	if (Application::IsKeyPressed(VK_UP))
 	{
-		camera.cameraRotate.x -= (float)(100 * dt);
-		followx += (float)(100 * dt);
+		camera.cameraRotate.x -= (float)(120 * dt);
+		followx += (float)(120 * dt);
 	}
 	if (Application::IsKeyPressed(VK_DOWN))
 	{
-		camera.cameraRotate.x += (float)(100 * dt);
-		followx -= (float)(100 * dt);
+		camera.cameraRotate.x += (float)(120 * dt);
+		followx -= (float)(120 * dt);
 
 	}
 

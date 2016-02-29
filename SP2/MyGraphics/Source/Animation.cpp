@@ -115,3 +115,16 @@ void Animation::moveGun(double dt, float& targetTranslation, bool usingGun)
 		}
 	}
 }
+
+void Animation::explosion(double dt, float& explosionScale, bool& playExplosion)
+{
+	if (playExplosion && explosionScale < 0.4)
+	{
+		explosionScale += (float)(dt);
+	}
+	else
+	{
+		explosionScale = 0.2;
+		playExplosion = false;
+	}
+}

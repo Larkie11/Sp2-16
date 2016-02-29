@@ -1,6 +1,6 @@
 #include "Mouse.h"
 #include "Camera3.h"
-Mouse::Mouse() :mouseSensitivity(100)
+Mouse::Mouse() :mouseSensitivity(125)
 {
 	boundaryCheckX = GetSystemMetrics(SM_CXSCREEN) - 10;
 	boundaryCheckY = GetSystemMetrics(SM_CYSCREEN) - 10;

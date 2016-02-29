@@ -553,11 +553,14 @@ void Scene2::Update(double dt)
 	//{
 	//	SharedData::GetInstance()->bullet.quantity = 30;
 	//}
+
 	if (Application::IsKeyPressed(VK_LBUTTON) || Application::IsKeyPressed(VK_SPACE))
 	{
 		switch (weaponChoice)
 		{
 		case 1:
+			if (usingSword)
+				detectCollision.swordCollision(enemy, camera.position);
 			if (coolDownTime == 0)
 			{
 				coolDownTime = deltaTime / 10;
@@ -605,8 +608,6 @@ void Scene2::Update(double dt)
 		}
 	}
 
-	if (usingSword)
-		detectCollision.swordCollision(enemy, camera.position);
 
 	// MINING COLLISION
 	for (int i = 0; i < 1; ++i)
@@ -1224,7 +1225,7 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg1.Nposition.x, npc.egg1.Nposition.y, npc.egg1.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], true);
+		RenderMesh(meshList[GEO_EGG], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1234,7 +1235,7 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg2.Nposition.x, npc.egg2.Nposition.y, npc.egg2.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], true);
+		RenderMesh(meshList[GEO_EGG], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1244,7 +1245,7 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg3.Nposition.x, npc.egg3.Nposition.y, npc.egg3.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], true);
+		RenderMesh(meshList[GEO_EGG], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1254,7 +1255,7 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg4.Nposition.x, npc.egg4.Nposition.y, npc.egg4.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], true);
+		RenderMesh(meshList[GEO_EGG], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1264,7 +1265,7 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg5.Nposition.x, npc.egg5.Nposition.y, npc.egg5.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], true);
+		RenderMesh(meshList[GEO_EGG], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1299,10 +1300,10 @@ void Scene2::Render()
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
-	modelStack.Translate(swordTranslation + 0.5, -0.28, 0.3);
+	modelStack.Translate(swordTranslation + 0.5, -0.35, 0.3);
 	modelStack.Rotate(-swordRotation, 0, 0, 1);
 	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_SWORD], true);
+	RenderMesh(meshList[GEO_SWORD], false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
@@ -1314,7 +1315,7 @@ void Scene2::Render()
 	modelStack.Translate(gunTranslation + 0.3, -0.15, 0.3);
 	modelStack.Rotate(-gunRotation, 0, 0, 1);
 	modelStack.Scale(0.1, 0.1, 0.1);
-	RenderMesh(meshList[GEO_GUN], true);
+	RenderMesh(meshList[GEO_GUN], false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
@@ -1444,7 +1445,7 @@ void Scene2::Render()
 			modelStack.PushMatrix();
 			modelStack.Translate(oreMaterial_arr[i].pos.x, oreMaterial_arr[i].pos.y, oreMaterial_arr[i].pos.z);
 			modelStack.Scale(10, 10, 10);
-			RenderMesh(oreMaterial_arr[i].shape, true);
+			RenderMesh(oreMaterial_arr[i].shape, false);
 			modelStack.PopMatrix();
 		}
 	}
@@ -1582,23 +1583,23 @@ void Scene2::Character_Movement(float dt)
 	//Changing view (target)
 	if (Application::IsKeyPressed(VK_LEFT))
 	{
-		camera.cameraRotate.y += (float)(100 * dt);
-		followy += (float)(100 * dt);
+		camera.cameraRotate.y += (float)(120 * dt);
+		followy += (float)(120 * dt);
 	}
 	if (Application::IsKeyPressed(VK_RIGHT))
 	{
-		camera.cameraRotate.y -= (float)(100 * dt);
-		followy -= (float)(100 * dt);
+		camera.cameraRotate.y -= (float)(120 * dt);
+		followy -= (float)(120 * dt);
 	}
 	if (Application::IsKeyPressed(VK_UP))
 	{
-		camera.cameraRotate.x -= (float)(100 * dt);
-		followx += (float)(100 * dt);
+		camera.cameraRotate.x -= (float)(120 * dt);
+		followx += (float)(120 * dt);
 	}
 	if (Application::IsKeyPressed(VK_DOWN))
 	{
-		camera.cameraRotate.x += (float)(100 * dt);
-		followx -= (float)(100 * dt);
+		camera.cameraRotate.x += (float)(120 * dt);
+		followx -= (float)(120 * dt);
 
 	}
 
