@@ -102,7 +102,6 @@ private:
 	unsigned m_colorBuffer[NUM_GEOMETRY];
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
-	//Camera camera;
 	MenuShop menuShop;
 	float spaceDoor = 0;
 	Mouse mouse;
@@ -117,25 +116,18 @@ private:
 	string shopInput;
 
 	void RenderSkybox();
-	void RenderShop();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
-	void RenderMenu();
 	void Dialogue(string filename);
-	bool Menu = true;
-	bool exitGame = false;
-	bool Options = false;
 	string new_line;
 	Camera3 camera;
 	
 	MenuShop::SHOP_OPTION shop;
 	MenuShop::SHOP_BUY buy;
 	MenuShop::SHOP_SELL sell;
-	Color colorShop[15];
 
 	string Input;
-	string color;
 	vector<string>my_arr;
 
 	float deltaTime;

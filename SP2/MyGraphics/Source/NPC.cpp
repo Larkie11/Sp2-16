@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	Npc.cpp
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Checks if player is near and then show and allow the player to do something
+*/
+/******************************************************************************/
 #include "NPC.h"
 #include "SharedData.h"
 
@@ -8,9 +17,22 @@ NPC::NPC()
 NPC::~NPC()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Function that checks for door animation and collision
+
+\param camera
+Takes in player camera position to check if the player is near
+\param dt
+Delta time for game update
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void NPC::Door(Camera3 camera, double dt)
 {
-	//cout << camera.view.Dot(robot1.Nposition) << endl;
 	//If player is on the outside of the pyramid
 	if (camera.position.x > door.Nposition.x)
 	{
@@ -66,16 +88,22 @@ void NPC::Door(Camera3 camera, double dt)
 		door.Collision = true;
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+All NPC interaction and sound effects for NPC
+
+\param camera
+Takes in player camera position to check if the player is near
+\param dt
+Delta time for game update
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void NPC::Scene1(Camera3 camera, double dt)
 {
-	if (coolDownTime > 0)
-	{
-		coolDownTime -= (float)(10 * dt);
-	}
-	else
-	{
-		coolDownTime = 0;
-	}
 	if (detectCollision.collideByDist(camera.position, robot1.Nposition) <= 25)
 	{
 		if (camera.view.Dot(robot1.Nposition) > 0)
@@ -155,6 +183,20 @@ void NPC::Scene1(Camera3 camera, double dt)
 	}
 
 }
+/******************************************************************************/
+/*!
+\brief
+Checks if player is near to the shop, and then allow certain interactions to happen (Like show shop screen, etc)
+
+\param camera
+Takes in player camera position to check if the player is near
+\param dt
+Delta time for game update
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void NPC::Shop(Camera3 camera, double dt)
 {
 	if (detectCollision.collideByDist(camera.position, seller.Nposition) <= 35)
@@ -214,6 +256,20 @@ void NPC::Shop(Camera3 camera, double dt)
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+NPC head rotation
+
+\param dt
+Delta time for game update
+\param targetMovement
+Float to edit for the head movement (rotation float)
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void NPC::NPCmovement(double dt, float& targetMovement)
 {
 	if (robot3rotate == false)
@@ -235,6 +291,21 @@ void NPC::NPCmovement(double dt, float& targetMovement)
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+NPC move backwards and forwards
+
+\param dt
+Delta time for game update
+
+\param targetMovement
+Float to edit for the npc movement
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void NPC::NPCmovement2(double dt, float& targetMovement)
 {
 	if (robot1moved == false)

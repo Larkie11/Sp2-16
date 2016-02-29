@@ -88,6 +88,9 @@ void SceneMenu::Init()
 	meshList[GEO_INSTRUCTIONS] = MeshBuilder::GenerateQuad("instructions", Color(1, 1, 1), 10, 10);
 	meshList[GEO_INSTRUCTIONS]->textureID = LoadTGA("Image//Menu_Instructions.tga");
 
+	meshList[GEO_CREDITS] = MeshBuilder::GenerateQuad("credits", Color(1, 1, 1), 10, 10);
+	meshList[GEO_CREDITS]->textureID = LoadTGA("Image//Menu_Credits.tga");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//_Font.tga");
 
@@ -161,6 +164,7 @@ void SceneMenu::UpdateMenu()
 			setColor(3, "colorNormal");
 			if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 			{
+				credits = true;
 				sound.playSE("Music//Enter.mp3");
 				menushop.PressTime = deltaTime / 5;
 				menuIcon = 30.5;
@@ -206,6 +210,7 @@ void SceneMenu::UpdateMenu()
 			case MenuShop::O_HELP:
 				if (Application::IsKeyPressed(VK_RETURN) && menushop.PressTime == 0)
 				{
+					credits = false;
 					menushop.PressTime = deltaTime/5;
 					Input = "Menu";
 					choose = MenuShop::STARTGAME;
@@ -510,6 +515,10 @@ void SceneMenu::Render()
 	if (instructions)
 	{
 		RenderQuadOnScreen(meshList[GEO_INSTRUCTIONS], 6, 6.5, 4, 90, 1, 0, 0, 0);
+	}
+	if (credits)
+	{
+		RenderQuadOnScreen(meshList[GEO_CREDITS], 6, 6.5, 5.5, 90, 1, 0, 0, 0);
 	}
 	modelStack.PushMatrix();
 	/*RenderQuadOnScreen(meshList[GEO_PLANEWING], 1, 50, 30, rotateCoke, 0, 0, 1, 3);

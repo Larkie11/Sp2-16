@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	NPC.h
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Checks if player is near and then show and allow the player to do something
+*/
+/******************************************************************************/
 #ifndef NPC_H
 #define NPC_H
 
@@ -7,8 +16,15 @@
 #include "CollisionDetector.h"
 #include "Sound.h"
 #include <string>
+
 using std::string;
 
+/******************************************************************************/
+/*!
+Class NPC:
+\brief	Stores the struct/booleans for each NPC/interactable stuff with position and reaction
+*/
+/******************************************************************************/
 class NPC
 {
 	struct DOT

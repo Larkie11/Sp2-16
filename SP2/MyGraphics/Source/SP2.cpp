@@ -38,7 +38,7 @@ void SP2::Init()
 	PressTime = 0;
 	JumpTime = 0;
 
-	//Icon location
+	//Icon location145869
 	x = 38.5;
 	y = 14;
 	w_x = 1.6;
@@ -249,7 +249,6 @@ void SP2::Init()
 	camera.Init(Vector3(300, -10, 0), Vector3(0, 0, 0), Vector3(0, 1, 0));
 
 	GLuint floor = LoadTGA("Image//Scene_Floor.tga");
-	//meshList[GEO_CUBE] = MeshBuilder::GenerateCube("cube", Color(1, 1, 0));
 	meshList[GEO_QUAD] = MeshBuilder::GenerateRepeatQuad("quad", Color(1, 1, 0), 1, 1, 10);
 	meshList[GEO_QUAD]->textureID = floor;
 	meshList[GEO_QUAD]->material.kAmbient.Set(0.1f, 0.1f, 0.1f);
@@ -914,7 +913,26 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 
 	glEnable(GL_DEPTH_TEST);
 }
-//Takes in mesh, the size of the mesh, the position, the rotation, and z layering
+/******************************************************************************/
+/*!
+\brief
+Renders obj and quads on screen
+
+\param mesh
+Takes in which mesh to render out
+\param size
+Scale of the mesh to render out
+\param x, y, z
+The position of the mesh
+\param rotate, rx, ry, rz
+The degree to rotate and which one to rotate
+\param z
+Z layering of the quad/obj
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;

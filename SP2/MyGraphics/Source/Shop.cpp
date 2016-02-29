@@ -34,9 +34,6 @@ void Shop::Init()
 	//Enable depth buffer and depth testing
 	glEnable(GL_DEPTH_TEST);
 
-	//Enable back face culling
-	//glEnable(GL_CULL_FACE);
-
 	//Default to fill mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
@@ -155,7 +152,6 @@ void Shop::Init()
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
-static float LSPEED = 10.f;
 static bool Lighting9 = true;
 void Shop::ShopOptions()
 {
@@ -164,10 +160,6 @@ void Shop::ShopOptions()
 		switch (shop)
 		{
 		case MenuShop::S_BUY:
-			colorShop[0].Set(1, 0, 0);
-			colorShop[1].Set(0, 0.8, 0.7);
-			colorShop[2].Set(0, 0.8, 0.7);
-			colorShop[3].Set(0, 0.8, 0.7);
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				icon = 31.6;
@@ -470,14 +462,6 @@ void Shop::Update(double dt)
 	ShopOptions();
 	userInput();
 	
-	if (Application::IsKeyPressed('1')) //enable back face culling
-		glEnable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('2')) //disable back face culling
-		glDisable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('3'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if (Application::IsKeyPressed('4'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 	deltaTime = (1.0 / dt);
 }
 void Shop::Dialogue(string filename)
@@ -664,9 +648,6 @@ void Shop::RenderSkybox()
 	modelStack.PopMatrix();
 }
 static float SSCALE1 = 500.f;
-void Shop::RenderShop()
-{
-}
 void Shop::Render()
 {
 	std::ostringstream oss;
