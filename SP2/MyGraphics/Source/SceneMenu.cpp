@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	SceneMenu.cpp
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Renders menu where player choses what option they want to choose (Play, instructions, credits, quit)
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "SceneMenu.h"
 
@@ -12,13 +21,39 @@
 #include <sstream>
 using namespace irrklang;
 #pragma comment(lib, "irrKlang.lib")
+/******************************************************************************/
+/*!
+\brief
+Default constructor
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 SceneMenu::SceneMenu()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 SceneMenu::~SceneMenu()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for menu scene, any booleans/strings/floats and meshes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::Init()
 {
 	menuIcon = 118;
@@ -29,13 +64,6 @@ void SceneMenu::Init()
 	choose = menushop.STARTGAME;
 	Input = "Menu";
 
-	//Play 2d music with irrklang
-	//Can play 3d music too
-	/*SharedData::GetInstance()->music = "Music//Music.mp3";
-	SharedData::GetInstance()->engine->play2D(SharedData::GetInstance()->music.c_str());
-	SharedData::GetInstance()->Song = SharedData::GetInstance()->engine->play2D(SharedData::GetInstance()->music.c_str(), true, false, true);
-	SharedData::GetInstance()->Song->setVolume(0.25);*/
-	
 	sound.playMusic("Music//Music.mp3");
 	//Read the menu texts from text file
 	Dialogue("Text//Menu.txt");
@@ -101,7 +129,21 @@ void SceneMenu::Init()
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
-//Sets color for the words
+/******************************************************************************/
+/*!
+\brief
+Setting color for when player presses up and down to each color in array
+
+\param which
+The array number in color to change
+
+\param color
+Pass in which color to change
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::setColor(int which, string color)
 {
 	if (color == "colorBlue")
@@ -117,7 +159,15 @@ void SceneMenu::setColor(int which, string color)
 		colorA[which].Set(0.3, 0.8, 0.4);
 	}
 }
-//Handles all switch cases for menu
+/******************************************************************************/
+/*!
+\brief
+Handles all switch cases for menu
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::UpdateMenu()
 {
 	if (Input == "Menu")
@@ -219,7 +269,15 @@ void SceneMenu::UpdateMenu()
 			}
 		}
 }
-//Handles user up and down input
+/******************************************************************************/
+/*!
+\brief
+Handles user up and down input
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::userInput()
 {
 
@@ -335,6 +393,15 @@ void SceneMenu::mouseControl()
 	}
 
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::Update(double dt)
 {
 	POINT p;
@@ -357,9 +424,16 @@ void SceneMenu::Update(double dt)
 	deltaTime = (1.0 / dt);
 
 	UpdateMenu();
-	mouseControl();
 }
-//Read from text file
+/******************************************************************************/
+/*!
+\brief
+Pushes in the shop scene into array from text file, allows easy changes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -372,6 +446,15 @@ void SceneMenu::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Renders mesh
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -397,6 +480,15 @@ void SceneMenu::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -422,6 +514,15 @@ void SceneMenu::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text on screen
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -466,6 +567,26 @@ void SceneMenu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders obj and quads on screen
+
+\param mesh
+Takes in which mesh to render out
+\param size
+Scale of the mesh to render out
+\param x, y, z
+The position of the mesh
+\param rotate, rx, ry, rz
+The degree to rotate and which one to rotate
+\param z
+Z layering of the quad/obj
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
@@ -484,6 +605,15 @@ void SceneMenu::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, flo
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief
+Main rendering
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::Render()
 {
 	std::ostringstream fpsOSS;
@@ -547,11 +677,20 @@ void SceneMenu::Render()
 		int j = 5;
 		RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], colorA[4], 2, 5, j);
 	}
-	Fps.resize(11);
+	Fps.resize(8);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], mouseX, Color(1, 1, 0), 1.5, 1, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], mouseY, Color(1, 1, 0), 1.5, 1, 3);
 }
+/******************************************************************************/
+/*!
+\brief
+Exits the scene and delete
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneMenu::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);

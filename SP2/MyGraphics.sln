@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyGraphics", "MyGraphics\MyGraphics.vcxproj", "{674D4DBA-CAB8-4AEF-A4E5-5A9CFE27B3A2}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -24,6 +24,7 @@ Global
 		{3738ACD9-5360-4C03-AEBD-864CBC402286}.Debug|Win32.Build.0 = Debug|Win32
 		{3738ACD9-5360-4C03-AEBD-864CBC402286}.Release|Win32.ActiveCfg = Release|Win32
 		{3738ACD9-5360-4C03-AEBD-864CBC402286}.Release|Win32.Build.0 = Release|Win32
+		{3738ACD9-5360-4C03-AEBD-864CBC402286}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

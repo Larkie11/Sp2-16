@@ -252,8 +252,8 @@ void Scene2::Init()
 
 	light[2].type = Light::LIGHT_POINT;
 	light[2].position.Set(-100, 55, 0);
-	light[2].color.Set(1, 0, 1);
-	light[2].power = 3;
+	light[2].color.Set(1, 0.4, 1);
+	light[2].power = 10;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -522,7 +522,7 @@ void Scene2::Update(double dt)
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150 && On_Plane)
+	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 200 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -1439,7 +1439,7 @@ void Scene2::Render()
 
 	var.resize(16);
 	var1.resize(16);
-	Fps.resize(11);
+	Fps.resize(8);
 
 
 	if (On_Plane && npc.spaceShip.canInteract)

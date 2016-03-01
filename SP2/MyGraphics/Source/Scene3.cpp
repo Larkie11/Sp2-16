@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	Scene3.cpp
+\author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
+\par
+\brief
+Renders the 3RD scene where player places bomb
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "Scene3.h"
 
@@ -6,23 +15,67 @@
 #include "LoadTGA.h"
 #include "SharedData.h"
 
-//This class is to render the first scenario where player has to fix his own spaceship
+/******************************************************************************/
+/*!
+\brief
+Vector3 to x and y and z
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static Position VtoP(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
+/******************************************************************************/
+/*!
+\brief
+x and y and z to vector3
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static Vector3 PtoV(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
 }
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Scene3::Scene3()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Scene3::~Scene3()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for 3rd scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::Init()
 {
 	srand(time(NULL));
@@ -202,8 +255,8 @@ void Scene3::Init()
 
 	light[2].type = Light::LIGHT_POINT;
 	light[2].position.Set(-100, 55, 0);
-	light[2].color.Set(1, 0, 1);
-	light[2].power = 3;
+	light[2].color.Set(1, 0.4, 1);
+	light[2].power = 10;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -400,13 +453,15 @@ void Scene3::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-//Check for player and object distance
-//Takes in camera and object vector3
-float Scene3::checkNear(Camera3 camera, Vector3 rhs)
-{
-	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame (Animation/booleans/music etc)
 
-}
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::Update(double dt)
 {
 	if (coolDownTime > 0)
@@ -504,7 +559,7 @@ void Scene3::Update(double dt)
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 150 && On_Plane)
+	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 200 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -834,7 +889,18 @@ void Scene3::Update(double dt)
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
 
 }
-//Reading from text file
+/******************************************************************************/
+/*!
+\brief
+Text pushed in array
+
+\param filename
+Passes in the text file to be pushed into array
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -847,6 +913,15 @@ void Scene3::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Mesh rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -887,6 +962,15 @@ void Scene3::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Text rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -913,6 +997,15 @@ void Scene3::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Text on screen rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -958,7 +1051,26 @@ void Scene3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float
 
 	glEnable(GL_DEPTH_TEST);
 }
-//Takes in mesh, the size of the mesh, the position, the rotation, and z layering
+/******************************************************************************/
+/*!
+\brief
+Renders meshlist/obj on screen
+
+\param mesh
+The mesh to render
+\param size
+Scale of the mesh to render
+\param x, y and z
+Position of the mesh to render
+\param rotate, rx, ry and rz
+Rotation of mesh to render
+\param z
+Z layering
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
@@ -977,8 +1089,16 @@ void Scene3::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float 
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-//Rendering current skybox
 static float SBSCALE1 = 1000.f;
+/******************************************************************************/
+/*!
+\brief
+Renders skybox with rotation and scaling done
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -1038,7 +1158,15 @@ void Scene3::RenderSkybox()
 	RenderMesh(meshList[GEO_TOP1], false);
 	modelStack.PopMatrix();
 }
-//Render codes
+/******************************************************************************/
+/*!
+\brief
+Main rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::Render()
 {
 	std::ostringstream oss;
@@ -1161,44 +1289,6 @@ void Scene3::Render()
 		glUniform3fv(m_parameters[U_LIGHT3_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	if (light[4].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[4].position.x, light[4].position.y, light[4].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[4].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[4].position;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[4].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT4_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[4].position;
-		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
-	if (light[5].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[5].position.x, light[5].position.y, light[5].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[5].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[5].position;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[5].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT5_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[5].position;
-		glUniform3fv(m_parameters[U_LIGHT5_POSITION], 1, &lightPosition_cameraspace.x);
-	}
-
 	modelStack.PushMatrix();
 	Enemy_Rendering();
 	modelStack.PopMatrix();
@@ -1210,7 +1300,6 @@ void Scene3::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(-100, 0, 0);
 	modelStack.Scale(30, 30, 30);
-
 	RenderMesh(meshList[GEO_MOONBALL], false);
 	modelStack.PopMatrix();
 
@@ -1330,10 +1419,6 @@ void Scene3::Render()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-
-
-
-
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Translate(0, -20, 0);
@@ -1344,7 +1429,7 @@ void Scene3::Render()
 
 	modelStack.PushMatrix();
 	//scale, translate, rotate
-	modelStack.Translate(-108, -19.9, 0);
+	modelStack.Translate(-108, -19.5, 0);
 	modelStack.Rotate(180, 1, 0, 0);
 	modelStack.Scale(300, 1, 300);
 	RenderMesh(meshList[GEO_PYRAMIDFLOOR], true);
@@ -1365,7 +1450,7 @@ void Scene3::Render()
 
 	var.resize(16);
 	var1.resize(16);
-	Fps.resize(11);
+	Fps.resize(8);
 
 
 	if (On_Plane && npc.spaceShip.canInteract)
@@ -1478,14 +1563,22 @@ void Scene3::Render()
 
 
 
-	if (plantbomb == false && detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25)
+	if (plantbomb == false && detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25 && SharedData::GetInstance()->bomb.quantity > 0)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to plant bomb !", Color(1, 1, 0), 1.5, 7, 20);
 	}
-	else if (plantbomb == true && detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25)
+	else if (plantbomb == true && detectCollision.collideByDist(camera.position, npc.bomb.Nposition) <= 25 && SharedData::GetInstance()->bomb.quantity > 0)
 		RenderTextOnScreen(meshList[GEO_TEXT], "You have planted the bomb now run!!!", Color(1, 1, 0), 1.5, 7, 20);
 }
+/******************************************************************************/
+/*!
+\brief
+Exit and delete scene
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);

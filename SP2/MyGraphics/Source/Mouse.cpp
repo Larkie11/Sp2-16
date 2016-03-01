@@ -1,6 +1,6 @@
 #include "Mouse.h"
 #include "Camera3.h"
-Mouse::Mouse() :mouseSensitivity(125)
+Mouse::Mouse() :mouseSensitivity(48)
 {
 	boundaryCheckX = GetSystemMetrics(SM_CXSCREEN) - 10;
 	boundaryCheckY = GetSystemMetrics(SM_CYSCREEN) - 10;
@@ -29,36 +29,35 @@ void Mouse::MouseUpdate(double dt, Camera3 &camera, float& followx, float& follo
 	for (vector<Vector3>::iterator iter = position_Vector.begin(); iter != position_Vector.end();)
 	{
 		//Check if there is a 3rd vector pushed in , vector size start count from 0
-		if (position_Vector.size() > 2)
+		if (position_Vector.size() > 6)
 		{
-			//Mouse move Left
-			if (position_Vector.at(0).x > position_Vector.at(1).x)
+			for (int i = 0; i < 5; ++i)
 			{
-				camera.cameraRotate.y += (float)(mouseSensitivity * dt);
-				followy += (float)(mouseSensitivity * dt);
-			}
-			//Mouse move Right
-			else if (position_Vector.at(0).x < position_Vector.at(1).x)
-			{
-				camera.cameraRotate.y -= (float)(mouseSensitivity * dt);
-				followy -= (float)(mouseSensitivity * dt);
-			}
-			//Mouse move Down
-			else if (position_Vector.at(0).y > position_Vector.at(1).y)
-			{
-				camera.cameraRotate.x -= (float)(mouseSensitivity * dt);
-				followx += (float)(mouseSensitivity * dt);
-			}
-			//Mouse move Up
-			else if (position_Vector.at(0).y < position_Vector.at(1).y)
-			{
-				camera.cameraRotate.x += (float)(mouseSensitivity * dt);
-				followx -= (float)(mouseSensitivity * dt);
-			}
-			position_Vector.at(0) = position_Vector.at(1);
+				if (position_Vector.at(i).x > position_Vector.at(i+1).x)
+				{
+					camera.cameraRotate.y += (float)(mouseSensitivity * dt);
+					followy += (float)(mouseSensitivity * dt);
+				}
 
+				if (position_Vector.at(i).x < position_Vector.at(i+1).x)
+				{
+					camera.cameraRotate.y -= (float)(mouseSensitivity * dt);
+					followy -= (float)(mouseSensitivity * dt);
+				}
 
+				if (position_Vector.at(i).y > position_Vector.at(i+1).y)
+				{
+					camera.cameraRotate.x -= (float)(mouseSensitivity/2 * dt);
+					followx += (float)(mouseSensitivity/2 * dt);
+				}
 
+				if (position_Vector.at(i).y < position_Vector.at(i+1).y)
+				{
+					camera.cameraRotate.x += (float)(mouseSensitivity/2 * dt);
+					followx -= (float)(mouseSensitivity/2 * dt);
+				}
+				position_Vector.at(i) = position_Vector.at(i+1);
+			}
 			iter = position_Vector.erase(iter);
 		}
 		iter++;

@@ -1,6 +1,13 @@
-
+/******************************************************************************/
+/*!
+\file	Scene3.cpp
+\author Tang Wen Sheng, edited by Mok Wei Min
+\par
+\brief
+Runs the game, with the correct scenes
+*/
+/******************************************************************************/
 #include "Application.h"
-
 //Include GLEW
 #include <GL/glew.h>
 #include "SharedData.h"
@@ -24,39 +31,96 @@ GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
-//Define an error callback
+/******************************************************************************/
+/*!
+\brief
+Defines an error callback
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static void error_callback(int error, const char* description)
 {
 	fputs(description, stderr);
 	_fgetchar();
 }
 
-//Define the key input callback
+/******************************************************************************/
+/*!
+\brief
+Defines key input callback
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
+/******************************************************************************/
+/*!
+\brief
+Check which key is presses
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 bool Application::IsKeyPressed(unsigned short key)
 {
     return ((GetAsyncKeyState(key) & 0x8001) != 0);
 }
+/******************************************************************************/
+/*!
+\brief
+Default constructor
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 Application::Application()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 Application::~Application()
 {
 }
 
+/******************************************************************************/
+/*!
+\brief
+Updates opengl new window size
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void resize_callback(GLFWwindow* window, int w, int h)
 {
-	glViewport(0, 0, w, h); // update opengl the new window size
+	glViewport(0, 0, w, h);
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Application::Init()
 {
 	//Set the error callback
@@ -111,11 +175,19 @@ void Application::Init()
 		//return -1;
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Main loop to run the game
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new Scene2;	
+	Scene *scene = new SceneMenu;	
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -178,7 +250,15 @@ void Application::Run()
 	delete scene;
 	
 }
+/******************************************************************************/
+/*!
+\brief
+Exit game, terminate and clean up GLFW
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Application::Exit()
 {
 	//Close OpenGL window and terminate GLFW

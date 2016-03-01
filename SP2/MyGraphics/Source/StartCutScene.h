@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	StartCutScene.h
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Scene rendering for starting cutscene
+*/
+/******************************************************************************/
 #ifndef START_CUTSCENE_H
 #define START_CUTSCENE_H
 
@@ -15,19 +24,15 @@
 #include "MatrixStack.h"
 #include "Mouse.h"
 
-#include <string>
-#include <vector>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 
-
-using std::cout;
-using std::endl;
-using std::ifstream;
-using std::vector;
-using std::string;
-
+/******************************************************************************/
+/*!
+Class StartCutScene:
+\brief	Scene rendering for starting cutscene
+*/
+/******************************************************************************/
 class StartCutScene : public Scene
 {
 	enum GEOMETRY_TYPE

@@ -1,28 +1,79 @@
+/******************************************************************************/
+/*!
+\file	SP2.cpp
+\author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
+\par
+\brief
+Renders the 1st scene where player fixes spaceship
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "SP2.h"
 
 #include "shader.hpp"
-#include "Mtx44.h"
 #include "LoadTGA.h"
 #include "SharedData.h"
+/******************************************************************************/
+/*!
+\brief
+Vector3 to x and y and z
 
-//This class is to render the first scenario where player has to fix his own spaceship
+\exception None
+\return None
+*/
+/******************************************************************************/
 static Position VtoP(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
+/******************************************************************************/
+/*!
+\brief
+x and y and z to vector3
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static Vector3 PtoV(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
 }
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 SP2::SP2()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 SP2::~SP2()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for 1st scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::Init()
 {
 	srand(time(NULL));
@@ -214,8 +265,8 @@ void SP2::Init()
 
 	light[2].type = Light::LIGHT_POINT;
 	light[2].position.Set(-100, 55, 0);
-	light[2].color.Set(1, 0, 1);
-	light[2].power = 3;
+	light[2].color.Set(1, 0.4, 1);
+	light[2].power = 10;
 	light[2].kC = 1.f;
 	light[2].kL = 0.1f;
 	light[2].kQ = 0.001f;
@@ -409,13 +460,34 @@ void SP2::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-//Check for player and object distance
-//Takes in camera and object vector3
+/******************************************************************************/
+/*!
+\brief
+Camera position and item distance
+
+\param camera
+Passes in camera
+\param rhs
+Object position
+
+\exception None
+\return the distance between objects
+*/
+/******************************************************************************/
 float SP2::checkNear(Camera3 camera, Vector3 rhs)
 {
 	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
 
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame (Animation/booleans/music etc)
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::Update(double dt)
 {
 	if (coolDownTime > 0)
@@ -811,7 +883,18 @@ void SP2::Update(double dt)
 
 	potatoRotate += (float)(0.5 * dt);
 }
-//Reading from text file
+/******************************************************************************/
+/*!
+\brief
+Text pushed in array
+
+\param filename
+Passes in the text file to be pushed into array
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -824,6 +907,15 @@ void SP2::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
+/****************************************************************************** /
+/*!
+\brief
+Mesh rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -864,6 +956,15 @@ void SP2::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Text rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -890,6 +991,15 @@ void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Text on screen rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -973,7 +1083,15 @@ void SP2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rot
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-//Rendering current skybox
+/******************************************************************************/
+/*!
+\brief
+Renders skybox with rotation and scaling done
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static float SBSCALE1 = 1000.f;
 void SP2::RenderSkybox()
 {
@@ -1034,7 +1152,15 @@ void SP2::RenderSkybox()
 	RenderMesh(meshList[GEO_TOP1], false);
 	modelStack.PopMatrix();
 }
-//Render codes
+/******************************************************************************/
+/*!
+\brief
+Main rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::Render()
 {
 	std::ostringstream oss;
@@ -1360,7 +1486,7 @@ void SP2::Render()
 	}
 	var.resize(16);
 	var1.resize(16);
-	Fps.resize(11);
+	Fps.resize(8);
 	//Show player if he can interact with item
 	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract || fixwing && fixrocket)
 	{
@@ -1410,8 +1536,8 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
 
 
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);
+	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
 	glBlendFunc(1, 1);
@@ -1450,8 +1576,6 @@ void SP2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], "Space ship is not fix yet", Color(1, 1, 0), 1.5, 7, 20);
 		}
 	}
-
-	cout << SharedData::GetInstance()->enemycounter/2;
 }
 void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
 {
@@ -1488,6 +1612,15 @@ void SP2::EquipmentHolding(Mesh*mesh, float size)
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief
+Exit and delete scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
@@ -1736,11 +1869,6 @@ void SP2::Character_Movement(float dt)
 			{
 				camera.position = Test;
 			}
-
-			/*if (door.Collision && checkNear(camera, door.Nposition.z) <= 35)
-			{
-			Test = camera.position;
-			}*/
 		}
 	}
 

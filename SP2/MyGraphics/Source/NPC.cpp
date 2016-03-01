@@ -128,7 +128,7 @@ void NPC::Scene1(Camera3 camera, double dt)
 				interactDia = "Press E to interact and 1 and 2 for choices";
 				//Show player press e to interact
 				robot1.canInteract = true;
-				if (Application::IsKeyPressed('E') && coolDownTime == 0 && robot1.robot != "robot1")
+				if (Application::IsKeyPressed('E') && robot1.robot != "robot1")
 				{
 					sound.playSE("Music//R2D2.mp3");
 					coolDownTime = dt / 10;

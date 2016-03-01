@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	StartCutScene.cpp
+\author Mok Wei Min
+\par
+\brief
+Renders the starting cutscene when player presses play
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "StartCutScene.h"
 
@@ -6,13 +15,39 @@
 #include "LoadTGA.h"
 #include "SharedData.h"
 
-//This class is to render the first scenario where player has to fix his own spaceship
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 StartCutScene::StartCutScene()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 StartCutScene::~StartCutScene()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for this cut scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::Init()
 {
 	srand(time(NULL));
@@ -117,6 +152,15 @@ void StartCutScene::Init()
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::Update(double dt)
 {
 	if (planePos2 > 450)
@@ -146,6 +190,15 @@ void StartCutScene::Update(double dt)
 	Character_Movement(dt);
 }
 static bool Lighting9 = true;
+/******************************************************************************/
+/*!
+\brief
+Renders mesh
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -186,6 +239,15 @@ void StartCutScene::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text for scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -212,6 +274,15 @@ void StartCutScene::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text on screen
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -259,6 +330,15 @@ void StartCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 }
 //Rendering current skybox
 static float SBSCALE1 = 1000.f;
+/******************************************************************************/
+/*!
+\brief
+Renders skybox with scaling and rotation done
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -318,7 +398,15 @@ void StartCutScene::RenderSkybox()
 	RenderMesh(meshList[GEO_TOP1], false);
 	modelStack.PopMatrix();
 }
-//Render codes
+/******************************************************************************/
+/*!
+\brief
+Main rendering 
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::Render()
 {
 	// Render VBO here
@@ -387,6 +475,15 @@ void StartCutScene::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "Loading...", Color(1, 1, 0), 1.5, 1, 1);
 }
+/******************************************************************************/
+/*!
+\brief
+Exits the game and cleanup
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
@@ -404,6 +501,15 @@ void StartCutScene::Map_Rendering()
 	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
+/******************************************************************************/
+/*!
+\brief
+Camera shaking, updating camera target
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void StartCutScene::Character_Movement(float dt)
 {
 	//Changing view (target)

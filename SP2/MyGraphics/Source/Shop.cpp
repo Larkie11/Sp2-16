@@ -665,7 +665,18 @@ void Shop::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 /******************************************************************************/
 /*!
 \brief
-Renders any meshList items/obj on the screen
+Renders obj and quads on screen
+
+\param mesh
+Takes in which mesh to render out
+\param size
+Scale of the mesh to render out
+\param x, y, z
+The position of the mesh
+\param rotate, rx, ry, rz
+The degree to rotate and which one to rotate
+\param z
+Z layering of the quad/obj
 
 \exception None
 \return None

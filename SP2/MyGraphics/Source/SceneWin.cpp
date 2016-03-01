@@ -114,7 +114,7 @@ Updates the scene every frame (Animation/booleans/music etc)
 /******************************************************************************/
 void SceneWin::Update(double dt)
 {
-	if (Application::IsKeyPressed('E'))
+	if (Application::IsKeyPressed('Q'))
 	{
 		SharedData::GetInstance()->stateCheck = true;
 		sound.stopMusic("Music//Win.mp3");
