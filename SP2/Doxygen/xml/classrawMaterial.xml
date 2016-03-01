@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classrawMaterial" kind="class" language="C++" prot="public">
+    <compoundname>rawMaterial</compoundname>
+    <includes refid="rawMaterial_8h" local="no">rawMaterial.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classrawMaterial_1ad0bdf0b510eab04ccbe56bd0f7ae6109" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rawMaterial::hp</definition>
+        <argsstring></argsstring>
+        <name>hp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/rawMaterial.h" line="10" column="1" bodyfile="MyGraphics/Source/rawMaterial.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrawMaterial_1a2372bcb8718dabb03f025455ab6f81ed" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 rawMaterial::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/rawMaterial.h" line="11" column="1" bodyfile="MyGraphics/Source/rawMaterial.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrawMaterial_1a4f07e821388361689557bbbe841bd947" prot="public" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* rawMaterial::shape</definition>
+        <argsstring></argsstring>
+        <name>shape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/rawMaterial.h" line="12" column="1" bodyfile="MyGraphics/Source/rawMaterial.h" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classrawMaterial_1a72d088f5e675dc11141a8e620da5e60e" compoundref="rawMatierial_8cpp" startline="5" endline="9">rawMaterial</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrawMaterial_1a7b66a0082fa0f640f8dbf74708dd36a2" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool rawMaterial::isAlive</definition>
+        <argsstring></argsstring>
+        <name>isAlive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/rawMaterial.h" line="13" column="1" bodyfile="MyGraphics/Source/rawMaterial.h" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrawMaterial_1a72d088f5e675dc11141a8e620da5e60e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rawMaterial::rawMaterial</definition>
+        <argsstring>()</argsstring>
+        <name>rawMaterial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/rawMaterial.h" line="15" column="1" bodyfile="MyGraphics/Source/rawMatierial.cpp" bodystart="5" bodyend="9"/>
+        <references refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="66">LoadTGA</references>
+        <references refid="classrawMaterial_1a4f07e821388361689557bbbe841bd947" compoundref="rawMaterial_8h" startline="12">shape</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+      </memberdef>
+      <memberdef kind="function" id="classrawMaterial_1a2827009c193cf9dba01ec6bf19923df4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rawMaterial::~rawMaterial</definition>
+        <argsstring>()</argsstring>
+        <name>~rawMaterial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/rawMaterial.h" line="16" column="1" bodyfile="MyGraphics/Source/rawMatierial.cpp" bodystart="10" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="863">
+        <label>rawMaterial</label>
+        <link refid="classrawMaterial"/>
+        <childnode refid="864" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="866" relation="usage">
+          <edgelabel>hp</edgelabel>
+        </childnode>
+        <childnode refid="867" relation="usage">
+          <edgelabel>isAlive</edgelabel>
+        </childnode>
+        <childnode refid="868" relation="usage">
+          <edgelabel>shape</edgelabel>
+        </childnode>
+      </node>
+      <node id="870">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="865" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="868">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="869" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="871" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="872" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="873" relation="usage">
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="871">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="872">
+        <label>string</label>
+      </node>
+      <node id="869">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="865" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="870" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="865">
+        <label>float</label>
+      </node>
+      <node id="866">
+        <label>int</label>
+      </node>
+      <node id="873">
+        <label>unsigned</label>
+      </node>
+      <node id="867">
+        <label>bool</label>
+      </node>
+      <node id="864">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="865" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/rawMaterial.h" line="8" column="1" bodyfile="MyGraphics/Source/rawMaterial.h" bodystart="7" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classrawMaterial_1ad0bdf0b510eab04ccbe56bd0f7ae6109" prot="public" virt="non-virtual"><scope>rawMaterial</scope><name>hp</name></member>
+      <member refid="classrawMaterial_1a7b66a0082fa0f640f8dbf74708dd36a2" prot="public" virt="non-virtual"><scope>rawMaterial</scope><name>isAlive</name></member>
+      <member refid="classrawMaterial_1a2372bcb8718dabb03f025455ab6f81ed" prot="public" virt="non-virtual"><scope>rawMaterial</scope><name>pos</name></member>
+      <member refid="classrawMaterial_1a72d088f5e675dc11141a8e620da5e60e" prot="public" virt="non-virtual"><scope>rawMaterial</scope><name>rawMaterial</name></member>
+      <member refid="classrawMaterial_1a4f07e821388361689557bbbe841bd947" prot="public" virt="non-virtual"><scope>rawMaterial</scope><name>shape</name></member>
+      <member refid="classrawMaterial_1a2827009c193cf9dba01ec6bf19923df4" prot="public" virt="non-virtual"><scope>rawMaterial</scope><name>~rawMaterial</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

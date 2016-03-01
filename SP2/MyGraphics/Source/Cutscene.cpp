@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	Cutscene.cpp
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Renders scene where player leaves in spaceship and temple explodes
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "Cutscene.h"
 
@@ -6,13 +15,39 @@
 #include "LoadTGA.h"
 #include "SharedData.h"
 
-//This class is to render the first scenario where player has to fix his own spaceship
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Cutscene::Cutscene()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Cutscene::~Cutscene()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for cutscene, meshes/floats/booleans
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::Init()
 {
 	srand(time(NULL));
@@ -119,6 +154,15 @@ void Cutscene::Init()
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame (Animation/booleans/music etc)
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::Update(double dt)
 {
 	if (planePos2 >= 1200)
@@ -156,6 +200,15 @@ void Cutscene::Update(double dt)
 	Character_Movement(dt);
 }
 bool Lighting9 = true;
+/******************************************************************************/
+/*!
+\brief
+Mesh rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -164,21 +217,6 @@ void Cutscene::RenderMesh(Mesh * mesh, bool enableLight)
 	modelView = viewStack.Top() * modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MODELVIEW], 1, GL_FALSE, &modelView.a[0]);
 
-	if (enableLight && Lighting9)
-	{
-		glUniform1i(m_parameters[U_LIGHTENABLED], 1);
-		modelView_inverse_transpose = modelView.GetInverse().GetTranspose();
-		glUniformMatrix4fv(m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE], 1, GL_FALSE, &modelView_inverse_transpose.a[0]);
-		//load material
-		glUniform3fv(m_parameters[U_MATERIAL_AMBIENT], 1, &mesh->material.kAmbient.r);
-		glUniform3fv(m_parameters[U_MATERIAL_DIFFUSE], 1, &mesh->material.kDiffuse.r);
-		glUniform3fv(m_parameters[U_MATERIAL_SPECULAR], 1, &mesh->material.kSpecular.r);
-		glUniform1f(m_parameters[U_MATERIAL_SHININESS], mesh->material.kShininess);
-	}
-	else
-	{
-		glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-	}
 	if (mesh->textureID > 0)
 	{
 		glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
@@ -196,6 +234,15 @@ void Cutscene::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -204,7 +251,6 @@ void Cutscene::RenderText(Mesh* mesh, std::string text, Color color)
 	glDisable(GL_DEPTH_TEST);
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
@@ -222,6 +268,15 @@ void Cutscene::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text on screen
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -243,7 +298,6 @@ void Cutscene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
 
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
@@ -267,8 +321,16 @@ void Cutscene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
 
 	glEnable(GL_DEPTH_TEST);
 }
-//Rendering current skybox
 static float SBSCALE1 = 1000.f;
+/******************************************************************************/
+/*!
+\brief
+Renders the skybox on screen with rotation, scaling done
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -328,7 +390,15 @@ void Cutscene::RenderSkybox()
 	RenderMesh(meshList[GEO_TOP1], false);
 	modelStack.PopMatrix();
 }
-//Render codes
+/******************************************************************************/
+/*!
+\brief
+The main render function for this scene, renders any text/meshes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::Render()
 {
 	// Render VBO here
@@ -413,6 +483,15 @@ void Cutscene::Map_Rendering()
 	modelStack.PopMatrix();
 	camera.position.y = -10;
 }
+/******************************************************************************/
+/*!
+\brief
+Random camera shaking when explosion happens
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Cutscene::Character_Movement(float dt)
 {
 	//Changing view (target)

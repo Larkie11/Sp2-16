@@ -1,0 +1,660 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Shop_8h" kind="file" language="C++">
+    <compoundname>Shop.h</compoundname>
+    <includes refid="Scene_8h" local="yes">Scene.h</includes>
+    <includes refid="Mtx44_8h" local="yes">Mtx44.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <includes refid="MeshBuilder_8h" local="yes">MeshBuilder.h</includes>
+    <includes refid="Utility_8h" local="yes">Utility.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="Mesh_8h" local="yes">Mesh.h</includes>
+    <includes refid="MatrixStack_8h" local="yes">MatrixStack.h</includes>
+    <includes refid="Light_8h" local="yes">Light.h</includes>
+    <includes refid="Material_8h" local="yes">Material.h</includes>
+    <includes refid="Mouse_8h" local="yes">Mouse.h</includes>
+    <includes refid="Sound_8h" local="yes">Sound.h</includes>
+    <includes refid="CollisionDetector_8h" local="yes">CollisionDetector.h</includes>
+    <includes refid="MenuShop_8h" local="yes">MenuShop.h</includes>
+    <includes refid="NPC_8h" local="yes">NPC.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">fstream</includes>
+    <includedby refid="Application_8cpp" local="yes">MyGraphics/Source/Application.cpp</includedby>
+    <includedby refid="Shop_8cpp" local="yes">MyGraphics/Source/Shop.cpp</includedby>
+    <incdepgraph>
+      <node id="6335">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6331" relation="include">
+        </childnode>
+      </node>
+      <node id="6333">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="6334" relation="include">
+        </childnode>
+        <childnode refid="6331" relation="include">
+        </childnode>
+      </node>
+      <node id="6300">
+        <label>MyGraphics/Source/Shop.h</label>
+        <link refid="Shop.h"/>
+        <childnode refid="6301" relation="include">
+        </childnode>
+        <childnode refid="6302" relation="include">
+        </childnode>
+        <childnode refid="6310" relation="include">
+        </childnode>
+        <childnode refid="6313" relation="include">
+        </childnode>
+        <childnode refid="6318" relation="include">
+        </childnode>
+        <childnode refid="6319" relation="include">
+        </childnode>
+        <childnode refid="6314" relation="include">
+        </childnode>
+        <childnode refid="6321" relation="include">
+        </childnode>
+        <childnode refid="6323" relation="include">
+        </childnode>
+        <childnode refid="6316" relation="include">
+        </childnode>
+        <childnode refid="6324" relation="include">
+        </childnode>
+        <childnode refid="6329" relation="include">
+        </childnode>
+        <childnode refid="6353" relation="include">
+        </childnode>
+        <childnode refid="6355" relation="include">
+        </childnode>
+        <childnode refid="6356" relation="include">
+        </childnode>
+        <childnode refid="6315" relation="include">
+        </childnode>
+        <childnode refid="6357" relation="include">
+        </childnode>
+      </node>
+      <node id="6327">
+        <label>iomanip</label>
+      </node>
+      <node id="6324">
+        <label>Mouse.h</label>
+        <link refid="Mouse_8h"/>
+        <childnode refid="6319" relation="include">
+        </childnode>
+        <childnode refid="6325" relation="include">
+        </childnode>
+        <childnode refid="6326" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+        <childnode refid="6327" relation="include">
+        </childnode>
+        <childnode refid="6328" relation="include">
+        </childnode>
+      </node>
+      <node id="6344">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="6336" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+      </node>
+      <node id="6312">
+        <label>windows.h</label>
+      </node>
+      <node id="6343">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="6336" relation="include">
+        </childnode>
+        <childnode refid="6344" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+      </node>
+      <node id="6352">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6342" relation="include">
+        </childnode>
+      </node>
+      <node id="6325">
+        <label>Windows.h</label>
+      </node>
+      <node id="6304">
+        <label>cmath</label>
+      </node>
+      <node id="6330">
+        <label>irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6331" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6336" relation="include">
+        </childnode>
+        <childnode refid="6337" relation="include">
+        </childnode>
+        <childnode refid="6338" relation="include">
+        </childnode>
+        <childnode refid="6339" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+        <childnode refid="6341" relation="include">
+        </childnode>
+        <childnode refid="6342" relation="include">
+        </childnode>
+        <childnode refid="6343" relation="include">
+        </childnode>
+        <childnode refid="6347" relation="include">
+        </childnode>
+        <childnode refid="6348" relation="include">
+        </childnode>
+        <childnode refid="6344" relation="include">
+        </childnode>
+        <childnode refid="6350" relation="include">
+        </childnode>
+        <childnode refid="6345" relation="include">
+        </childnode>
+        <childnode refid="6349" relation="include">
+        </childnode>
+        <childnode refid="6351" relation="include">
+        </childnode>
+        <childnode refid="6352" relation="include">
+        </childnode>
+        <childnode refid="6346" relation="include">
+        </childnode>
+      </node>
+      <node id="6315">
+        <label>string</label>
+      </node>
+      <node id="6320">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6301">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="6340">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+      </node>
+      <node id="6305">
+        <label>exception</label>
+      </node>
+      <node id="6357">
+        <label>fstream</label>
+      </node>
+      <node id="6313">
+        <label>MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="6314" relation="include">
+        </childnode>
+        <childnode refid="6317" relation="include">
+        </childnode>
+      </node>
+      <node id="6339">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="6342">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="6336" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+        <childnode refid="6339" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+      </node>
+      <node id="6347">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+      </node>
+      <node id="6355">
+        <label>MenuShop.h</label>
+        <link refid="MenuShop_8h"/>
+        <childnode refid="6303" relation="include">
+        </childnode>
+        <childnode refid="6315" relation="include">
+        </childnode>
+      </node>
+      <node id="6338">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="6354">
+        <label>Enemy.h</label>
+        <link refid="Enemy_8h"/>
+        <childnode refid="6317" relation="include">
+        </childnode>
+        <childnode refid="6319" relation="include">
+        </childnode>
+      </node>
+      <node id="6319">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="6320" relation="include">
+        </childnode>
+        <childnode refid="6303" relation="include">
+        </childnode>
+      </node>
+      <node id="6351">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+      </node>
+      <node id="6332">
+        <label>wchar.h</label>
+      </node>
+      <node id="6353">
+        <label>CollisionDetector.h</label>
+        <link refid="CollisionDetector_8h"/>
+        <childnode refid="6303" relation="include">
+        </childnode>
+        <childnode refid="6354" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6311">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="6312" relation="include">
+        </childnode>
+      </node>
+      <node id="6306">
+        <label>ctime</label>
+      </node>
+      <node id="6317">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6331">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6332" relation="include">
+        </childnode>
+      </node>
+      <node id="6314">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="6315" relation="include">
+        </childnode>
+        <childnode refid="6316" relation="include">
+        </childnode>
+      </node>
+      <node id="6326">
+        <label>winuser.h</label>
+      </node>
+      <node id="6302">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="6303" relation="include">
+        </childnode>
+        <childnode refid="6308" relation="include">
+        </childnode>
+      </node>
+      <node id="6328">
+        <label>vector</label>
+      </node>
+      <node id="6322">
+        <label>stack</label>
+      </node>
+      <node id="6348">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6349" relation="include">
+        </childnode>
+      </node>
+      <node id="6337">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="6345">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+      </node>
+      <node id="6323">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="6317" relation="include">
+        </childnode>
+      </node>
+      <node id="6310">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="6311" relation="include">
+        </childnode>
+      </node>
+      <node id="6318">
+        <label>Utility.h</label>
+        <link refid="Utility_8h"/>
+        <childnode refid="6317" relation="include">
+        </childnode>
+        <childnode refid="6302" relation="include">
+        </childnode>
+      </node>
+      <node id="6316">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+        <childnode refid="6317" relation="include">
+        </childnode>
+      </node>
+      <node id="6334">
+        <label>math.h</label>
+      </node>
+      <node id="6329">
+        <label>Sound.h</label>
+        <link refid="Sound_8h"/>
+        <childnode refid="6330" relation="include">
+        </childnode>
+        <childnode refid="6315" relation="include">
+        </childnode>
+      </node>
+      <node id="6307">
+        <label>cstdlib</label>
+      </node>
+      <node id="6321">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="6322" relation="include">
+        </childnode>
+        <childnode refid="6302" relation="include">
+        </childnode>
+      </node>
+      <node id="6309">
+        <label>iostream</label>
+      </node>
+      <node id="6303">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6304" relation="include">
+        </childnode>
+        <childnode refid="6305" relation="include">
+        </childnode>
+        <childnode refid="6306" relation="include">
+        </childnode>
+        <childnode refid="6307" relation="include">
+        </childnode>
+      </node>
+      <node id="6336">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="6331" relation="include">
+        </childnode>
+      </node>
+      <node id="6356">
+        <label>NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="6308" relation="include">
+        </childnode>
+        <childnode refid="6310" relation="include">
+        </childnode>
+        <childnode refid="6319" relation="include">
+        </childnode>
+        <childnode refid="6353" relation="include">
+        </childnode>
+        <childnode refid="6329" relation="include">
+        </childnode>
+        <childnode refid="6315" relation="include">
+        </childnode>
+      </node>
+      <node id="6341">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+        <childnode refid="6342" relation="include">
+        </childnode>
+        <childnode refid="6343" relation="include">
+        </childnode>
+        <childnode refid="6339" relation="include">
+        </childnode>
+        <childnode refid="6345" relation="include">
+        </childnode>
+        <childnode refid="6346" relation="include">
+        </childnode>
+      </node>
+      <node id="6346">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+      </node>
+      <node id="6350">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+      </node>
+      <node id="6349">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="6335" relation="include">
+        </childnode>
+      </node>
+      <node id="6308">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6303" relation="include">
+        </childnode>
+        <childnode refid="6309" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6358">
+        <label>MyGraphics/Source/Shop.h</label>
+        <link refid="Shop.h"/>
+        <childnode refid="6359" relation="include">
+        </childnode>
+        <childnode refid="6360" relation="include">
+        </childnode>
+      </node>
+      <node id="6360">
+        <label>MyGraphics/Source/Shop.cpp</label>
+        <link refid="Shop_8cpp"/>
+      </node>
+      <node id="6359">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classShop" prot="public">Shop</innerclass>
+    <briefdescription>
+<para>Renders the scene where player can talk to the shopkeeper. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Mok Wei Min </para></simplesect>
+<simplesect kind="par"><title>email: 155208U@mymail.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SHOP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHOP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mtx44_8h" kindref="compound">Mtx44.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MeshBuilder_8h" kindref="compound">MeshBuilder.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Utility_8h" kindref="compound">Utility.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mesh_8h" kindref="compound">Mesh.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MatrixStack_8h" kindref="compound">MatrixStack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Light_8h" kindref="compound">Light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Material_8h" kindref="compound">Material.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mouse_8h" kindref="compound">Mouse.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Sound_8h" kindref="compound">Sound.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CollisionDetector_8h" kindref="compound">CollisionDetector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MenuShop_8h" kindref="compound">MenuShop.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NPC_8h" kindref="compound">NPC.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::ifstream;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classShop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classShop" kindref="compound">Shop</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416" kindref="member">GEOMETRY_TYPE</ref></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a265c8161cb0e5262afb01192a0dd7c24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a265c8161cb0e5262afb01192a0dd7c24" kindref="member">GEO_SHOPKEEPER3D</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="46" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ad11eaedf7bc92db8bf76ec2459aa2bc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ad11eaedf7bc92db8bf76ec2459aa2bc5" kindref="member">GEO_SHOPKEEPER</ref>,</highlight></codeline>
+<codeline lineno="47" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a6bf468e5297c7c4d17adedaaceff29d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a6bf468e5297c7c4d17adedaaceff29d3" kindref="member">GEO_TABLE</ref>,</highlight></codeline>
+<codeline lineno="48" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a608c5bb32a6967cbe392402526a5772d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a608c5bb32a6967cbe392402526a5772d" kindref="member">GEO_REF_AXES</ref>,</highlight></codeline>
+<codeline lineno="49" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a04b96dae699e2b08ede1a9a048fd5c78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a04b96dae699e2b08ede1a9a048fd5c78" kindref="member">GEO_REF_QUAD</ref>,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a417e0562e674da2df6f7e7d35eb50c13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a417e0562e674da2df6f7e7d35eb50c13" kindref="member">GEO_LIGHTBALL</ref>,</highlight></codeline>
+<codeline lineno="52" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a381b270ce0b3ab3a70968437235544fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a381b270ce0b3ab3a70968437235544fa" kindref="member">GEO_AMMOICON</ref>,</highlight></codeline>
+<codeline lineno="53" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a07f8a187cefb2d77653c34e52ea9ccf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a07f8a187cefb2d77653c34e52ea9ccf0" kindref="member">GEO_GOLDICON</ref>,</highlight></codeline>
+<codeline lineno="54" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae82515e0e5ea42f1df38644035c6bd01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae82515e0e5ea42f1df38644035c6bd01" kindref="member">GEO_EGGICON</ref>,</highlight></codeline>
+<codeline lineno="55" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a220d60100cc496780a3e6bd38949661d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a220d60100cc496780a3e6bd38949661d" kindref="member">GEO_BOMBICON</ref>,</highlight></codeline>
+<codeline lineno="56" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416afdd06b937d34ab4a972eb438645bcd3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416afdd06b937d34ab4a972eb438645bcd3e" kindref="member">GEO_OREICON</ref>,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b95fb6fa6fed31b041e9c80dfc77e8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b95fb6fa6fed31b041e9c80dfc77e8f" kindref="member">GEO_SPACEDOOR</ref>,</highlight></codeline>
+<codeline lineno="59" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4277ccab3267f17cc2102aa06dd4c6f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4277ccab3267f17cc2102aa06dd4c6f6" kindref="member">GEO_QUAD</ref>,</highlight></codeline>
+<codeline lineno="60" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aaf1a04dc181577c2c37da59c3c9b2201" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aaf1a04dc181577c2c37da59c3c9b2201" kindref="member">GEO_LEFT1</ref>,</highlight></codeline>
+<codeline lineno="61" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4bba55f92fb0b1c79b4e1bc0ab6d39ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4bba55f92fb0b1c79b4e1bc0ab6d39ba" kindref="member">GEO_RIGHT1</ref>,</highlight></codeline>
+<codeline lineno="62" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ac7e89fd92e6af8a7791f3fe519939490" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ac7e89fd92e6af8a7791f3fe519939490" kindref="member">GEO_TOP1</ref>,</highlight></codeline>
+<codeline lineno="63" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aae87c5586238e53c70a0381519d90f78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aae87c5586238e53c70a0381519d90f78" kindref="member">GEO_BOTTOM1</ref>,</highlight></codeline>
+<codeline lineno="64" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ade302637c0f81e20204a5771d556ceb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ade302637c0f81e20204a5771d556ceb6" kindref="member">GEO_FRONT1</ref>,</highlight></codeline>
+<codeline lineno="65" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aac508a1bd2446e38ebb688d5853ef158" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aac508a1bd2446e38ebb688d5853ef158" kindref="member">GEO_BACK1</ref>,</highlight></codeline>
+<codeline lineno="66" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b8fbf8480a158e3c115824e389c9b9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b8fbf8480a158e3c115824e389c9b9b" kindref="member">GEO_SHOPWALL</ref>,</highlight></codeline>
+<codeline lineno="67" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a3c24c681d6a88f01b32214aa1bda8577" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a3c24c681d6a88f01b32214aa1bda8577" kindref="member">GEO_TEXT</ref>,</highlight></codeline>
+<codeline lineno="68" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a480ed0edd552bc3b3bdee5f2b20910b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a480ed0edd552bc3b3bdee5f2b20910b4" kindref="member">GEO_WALL</ref>,</highlight></codeline>
+<codeline lineno="69" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a9dddd8941e513532d96d7ac1d38c3a52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a9dddd8941e513532d96d7ac1d38c3a52" kindref="member">GEO_OUTER</ref>,</highlight></codeline>
+<codeline lineno="70" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae1b34f075a6fe197ef9a74f83b70c3e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae1b34f075a6fe197ef9a74f83b70c3e4" kindref="member">GEO_SHOPICON</ref>,</highlight></codeline>
+<codeline lineno="71" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a259ac42d6a437d0b72b5097550684547" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a259ac42d6a437d0b72b5097550684547" kindref="member">GEO_CEILING</ref>,</highlight></codeline>
+<codeline lineno="72" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa7a798cef31371d6848c0bef82e9b51d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa7a798cef31371d6848c0bef82e9b51d" kindref="member">GEO_FLOOR</ref>,</highlight></codeline>
+<codeline lineno="73" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ab148391990cad24394969ebee45e7eee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ab148391990cad24394969ebee45e7eee" kindref="member">GEO_SPACESHIP</ref>,</highlight></codeline>
+<codeline lineno="74" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a87e40640e9b1dbf9980e02b3112f6f4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a87e40640e9b1dbf9980e02b3112f6f4f" kindref="member">GEO_PLANEBODY</ref>,</highlight></codeline>
+<codeline lineno="75" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa78323b517a4f4e7eb5d345a6336440b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa78323b517a4f4e7eb5d345a6336440b" kindref="member">GEO_PLANEWING</ref>,</highlight></codeline>
+<codeline lineno="76" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a1994403227f539bce14d8b3caab46e90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a1994403227f539bce14d8b3caab46e90" kindref="member">GEO_PLANEROCKET</ref>,</highlight></codeline>
+<codeline lineno="77" refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" kindref="member">NUM_GEOMETRY</ref>,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classShop_1a151fbaea06abc7312da34ba5deeb031e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031e" kindref="member">UNIFORM_TYPE</ref></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" kindref="member">U_MVP</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="83" refid="classShop_1a151fbaea06abc7312da34ba5deeb031eacd22c3ed8de58efe071a8db3392b35f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031eacd22c3ed8de58efe071a8db3392b35f0" kindref="member">U_MODELVIEW</ref>,</highlight></codeline>
+<codeline lineno="84" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea9e94ab8a5fcfbcd88d29bfbae2f55238" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea9e94ab8a5fcfbcd88d29bfbae2f55238" kindref="member">U_MODELVIEW_INVERSE_TRANSPOSE</ref>,</highlight></codeline>
+<codeline lineno="85" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea33ab68e6277c7d3b8aee994b52fc0423" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea33ab68e6277c7d3b8aee994b52fc0423" kindref="member">U_MATERIAL_AMBIENT</ref>,</highlight></codeline>
+<codeline lineno="86" refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaae388c66c3393e516e958313ae908702" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaae388c66c3393e516e958313ae908702" kindref="member">U_MATERIAL_DIFFUSE</ref>,</highlight></codeline>
+<codeline lineno="87" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea433cc718fe207b130fc909853280cb4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea433cc718fe207b130fc909853280cb4a" kindref="member">U_MATERIAL_SPECULAR</ref>,</highlight></codeline>
+<codeline lineno="88" refid="classShop_1a151fbaea06abc7312da34ba5deeb031eadb17b1d9ab988b385f617c256b012651" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031eadb17b1d9ab988b385f617c256b012651" kindref="member">U_MATERIAL_SHININESS</ref>,</highlight></codeline>
+<codeline lineno="89" refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" kindref="member">U_COLOR_TEXTURE_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="90" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" kindref="member">U_COLOR_TEXTURE</ref>,</highlight></codeline>
+<codeline lineno="91" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" kindref="member">U_TEXT_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="92" refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" kindref="member">U_TEXT_COLOR</ref>,</highlight></codeline>
+<codeline lineno="93" refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaad7e4af62480b154a1e6575d413f6999" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaad7e4af62480b154a1e6575d413f6999" kindref="member">U_TOTAL</ref>,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a579ed9f949f7db3f90c22dfe10b25797" kindref="member">Shop</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShop_1a36bf69bdc0da1b7258acc63a5fe89d40" kindref="member">~Shop</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1af915842cee6266631dc4f18abd95d854" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" kindref="member">Render</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a4421e06b07aab249cfd25f76e9719311" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" kindref="member">RenderMesh</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref><sp/>*mesh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enableLight);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classShop_1aed6644b28dda3192121de81c3bcaecd6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classShop_1aed6644b28dda3192121de81c3bcaecd6" kindref="member">m_vertexArrayID</ref>;</highlight></codeline>
+<codeline lineno="109" refid="classShop_1a27d17cd03597d4befbe8e06914351cdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classShop_1a27d17cd03597d4befbe8e06914351cdc" kindref="member">m_indexBuffer</ref>[<ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="110" refid="classShop_1a5f420b522d1afdff1476972f62616f4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classShop_1a5f420b522d1afdff1476972f62616f4e" kindref="member">m_vertexBuffer</ref>[<ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" kindref="member">NUM_GEOMETRY</ref>];<sp/></highlight></codeline>
+<codeline lineno="111" refid="classShop_1a91967bca57e2f2e87693e7a6de829ccb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classShop_1a91967bca57e2f2e87693e7a6de829ccb" kindref="member">m_colorBuffer</ref>[<ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="112" refid="classShop_1aeeba933e140ea55bef27ce3fc8d12f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classShop_1aeeba933e140ea55bef27ce3fc8d12f0d" kindref="member">m_programID</ref>;</highlight></codeline>
+<codeline lineno="113" refid="classShop_1a11824081d86bb26322e84ac767653a13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classShop_1a11824081d86bb26322e84ac767653a13" kindref="member">m_parameters</ref>[<ref refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaad7e4af62480b154a1e6575d413f6999" kindref="member">U_TOTAL</ref>];</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classShop_1a3d99c43c39781ed47b33ef1fe42f3b57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMouse" kindref="compound">Mouse</ref><sp/><ref refid="classShop_1a3d99c43c39781ed47b33ef1fe42f3b57" kindref="member">mouse</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Array<sp/>of<sp/>meshes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" kindref="member">meshList</ref>[<ref refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMS" kindref="compound">MS</ref><sp/><ref refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" kindref="member">modelStack</ref>,<sp/><ref refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" kindref="member">viewStack</ref>,<sp/><ref refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" kindref="member">projectionStack</ref>;</highlight></codeline>
+<codeline lineno="121" refid="classShop_1a190c4a96ef561037ef7d13077607830d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a190c4a96ef561037ef7d13077607830d" kindref="member">LSPEED</ref><sp/>=<sp/>10.f;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a8a70313590dea95a14f0f24001ca2c9d" kindref="member">RenderSkybox</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" kindref="member">RenderText</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" kindref="member">RenderTextOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1aee217c79bf37585efa133ac5a5b91316" kindref="member">RenderQuadOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ry,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rz,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a3085c0af3050029f63f1ad0ef2b88f36" kindref="member">Dialogue</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classShop_1a0c8a352a83872a8a521e5585ce353706" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classShop_1a0c8a352a83872a8a521e5585ce353706" kindref="member">new_line</ref>;</highlight></codeline>
+<codeline lineno="130" refid="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/><ref refid="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132" refid="classShop_1ab490edf8241ef1421377f9f85f4937f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401" kindref="member">MenuShop::SHOP_OPTION</ref><sp/><ref refid="classShop_1ab490edf8241ef1421377f9f85f4937f3" kindref="member">shop</ref>;</highlight></codeline>
+<codeline lineno="133" refid="classShop_1ac5493983ac670f850951c40dd9e4e3e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715" kindref="member">MenuShop::SHOP_BUY</ref><sp/><ref refid="classShop_1ac5493983ac670f850951c40dd9e4e3e5" kindref="member">buy</ref>;</highlight></codeline>
+<codeline lineno="134" refid="classShop_1a090ff360ea9d0ddee5b2f9a140aee2f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27" kindref="member">MenuShop::SHOP_SELL</ref><sp/><ref refid="classShop_1a090ff360ea9d0ddee5b2f9a140aee2f0" kindref="member">sell</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classShop_1a6a2a9c5179f2f0812934bfa2c4190aa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classShop_1a6a2a9c5179f2f0812934bfa2c4190aa2" kindref="member">Input</ref>;</highlight></codeline>
+<codeline lineno="137" refid="classShop_1a9d42f9df020ca32e88b866d0caa57fb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<ref refid="classShop_1a9d42f9df020ca32e88b866d0caa57fb1" kindref="member">my_arr</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classShop_1a0c67869f2d6719b6612de1655f179c29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a0c67869f2d6719b6612de1655f179c29" kindref="member">deltaTime</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" kindref="member">icon</ref>;</highlight></codeline>
+<codeline lineno="142" refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" kindref="member">icon2</ref>;</highlight></codeline>
+<codeline lineno="143" refid="classShop_1a949494a1fbe5483c36ed83ceaf995907" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a949494a1fbe5483c36ed83ceaf995907" kindref="member">menuIcon</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classShop_1af7d08a5452419f7b88bab07efa24dcf9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classNPC" kindref="compound">NPC</ref><sp/><ref refid="classShop_1af7d08a5452419f7b88bab07efa24dcf9" kindref="member">npc</ref>;</highlight></codeline>
+<codeline lineno="146" refid="classShop_1ab4f5180509908922f5d07fd78f561306" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSound" kindref="compound">Sound</ref><sp/><ref refid="classShop_1ab4f5180509908922f5d07fd78f561306" kindref="member">sound</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148" refid="classShop_1a2c3c25fc5b1de2edfd167f2270246bce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a2c3c25fc5b1de2edfd167f2270246bce" kindref="member">JumpTime</ref>;</highlight></codeline>
+<codeline lineno="149" refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" kindref="member">PressTime</ref>;</highlight></codeline>
+<codeline lineno="150" refid="classShop_1a7699c2e660a7a342ce361c8dedf3e33a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a7699c2e660a7a342ce361c8dedf3e33a" kindref="member">spaceDoor</ref>;</highlight></codeline>
+<codeline lineno="151" refid="classShop_1ae5d78237a865dfb79b90fd13384913f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classShop_1ae5d78237a865dfb79b90fd13384913f6" kindref="member">description</ref>;</highlight></codeline>
+<codeline lineno="152" refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" kindref="member">shopInput</ref>;</highlight></codeline>
+<codeline lineno="153" refid="classShop_1ad9710140e9d75352970c18371f0d7523" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classShop_1ad9710140e9d75352970c18371f0d7523" kindref="member">b_gold</ref>;</highlight></codeline>
+<codeline lineno="154" refid="classShop_1a490850703fe7f123ccca077852c3c7f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classShop_1a490850703fe7f123ccca077852c3c7f7" kindref="member">g_gold</ref>;</highlight></codeline>
+<codeline lineno="155" refid="classShop_1a9de0d1efa4f876cc278e294e80dd9f1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classShop_1a9de0d1efa4f876cc278e294e80dd9f1c" kindref="member">nomore</ref>;</highlight></codeline>
+<codeline lineno="156" refid="classShop_1a4963af7089ec42d8edc02f1d9430bc86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classShop_1a4963af7089ec42d8edc02f1d9430bc86" kindref="member">none</ref>;</highlight></codeline>
+<codeline lineno="157" refid="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" kindref="member">coolDown</ref>;</highlight></codeline>
+<codeline lineno="158" refid="classShop_1a0cc1326a58849660572e743feeb5b9d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classShop_1a0cc1326a58849660572e743feeb5b9d0" kindref="member">sell_gold</ref>;</highlight></codeline>
+<codeline lineno="159" refid="classShop_1a1874c4a9f7a54518be96ac6ebc5b7172" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref><sp/><ref refid="classShop_1a1874c4a9f7a54518be96ac6ebc5b7172" kindref="member">detectCollision</ref>;</highlight></codeline>
+<codeline lineno="160" refid="classShop_1a1eddc4bc8977b7d0f056197456f87f40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classShop_1a1eddc4bc8977b7d0f056197456f87f40" kindref="member">gold</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" kindref="member">ShopOptions</ref>();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classShop_1a6c97c222063586a3493580f3aaea1065" kindref="member">userInput</ref>();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Shop.h"/>
+  </compounddef>
+</doxygen>

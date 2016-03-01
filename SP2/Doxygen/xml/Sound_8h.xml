@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Sound_8h" kind="file" language="C++">
+    <compoundname>Sound.h</compoundname>
+    <includes refid="irrKlang_8h" local="yes">irrKlang.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="StartCutScene_8h" local="yes">MyGraphics/Source/StartCutScene.h</includedby>
+    <includedby refid="NPC_8h" local="yes">MyGraphics/Source/NPC.h</includedby>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="SceneMenu_8h" local="yes">MyGraphics/Source/SceneMenu.h</includedby>
+    <includedby refid="Shop_8h" local="yes">MyGraphics/Source/Shop.h</includedby>
+    <includedby refid="Scene2_8h" local="yes">MyGraphics/Source/Scene2.h</includedby>
+    <includedby refid="Scene3_8h" local="yes">MyGraphics/Source/Scene3.h</includedby>
+    <includedby refid="Cutscene_8h" local="yes">MyGraphics/Source/Cutscene.h</includedby>
+    <includedby refid="SceneWin_8h" local="yes">MyGraphics/Source/SceneWin.h</includedby>
+    <includedby refid="Sound_8cpp" local="yes">MyGraphics/Source/Sound.cpp</includedby>
+    <incdepgraph>
+      <node id="6394">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6390" relation="include">
+        </childnode>
+      </node>
+      <node id="6392">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="6393" relation="include">
+        </childnode>
+        <childnode refid="6390" relation="include">
+        </childnode>
+      </node>
+      <node id="6403">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="6395" relation="include">
+        </childnode>
+        <childnode refid="6392" relation="include">
+        </childnode>
+      </node>
+      <node id="6402">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="6395" relation="include">
+        </childnode>
+        <childnode refid="6403" relation="include">
+        </childnode>
+        <childnode refid="6392" relation="include">
+        </childnode>
+      </node>
+      <node id="6411">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6389">
+        <label>irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6390" relation="include">
+        </childnode>
+        <childnode refid="6392" relation="include">
+        </childnode>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6395" relation="include">
+        </childnode>
+        <childnode refid="6396" relation="include">
+        </childnode>
+        <childnode refid="6397" relation="include">
+        </childnode>
+        <childnode refid="6398" relation="include">
+        </childnode>
+        <childnode refid="6399" relation="include">
+        </childnode>
+        <childnode refid="6400" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+        <childnode refid="6402" relation="include">
+        </childnode>
+        <childnode refid="6406" relation="include">
+        </childnode>
+        <childnode refid="6407" relation="include">
+        </childnode>
+        <childnode refid="6403" relation="include">
+        </childnode>
+        <childnode refid="6409" relation="include">
+        </childnode>
+        <childnode refid="6404" relation="include">
+        </childnode>
+        <childnode refid="6408" relation="include">
+        </childnode>
+        <childnode refid="6410" relation="include">
+        </childnode>
+        <childnode refid="6411" relation="include">
+        </childnode>
+        <childnode refid="6405" relation="include">
+        </childnode>
+      </node>
+      <node id="6412">
+        <label>string</label>
+      </node>
+      <node id="6399">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+      </node>
+      <node id="6398">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="6401">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="6395" relation="include">
+        </childnode>
+        <childnode refid="6392" relation="include">
+        </childnode>
+        <childnode refid="6398" relation="include">
+        </childnode>
+        <childnode refid="6399" relation="include">
+        </childnode>
+      </node>
+      <node id="6406">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6399" relation="include">
+        </childnode>
+      </node>
+      <node id="6397">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="6410">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+      </node>
+      <node id="6391">
+        <label>wchar.h</label>
+      </node>
+      <node id="6390">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6391" relation="include">
+        </childnode>
+      </node>
+      <node id="6407">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6408" relation="include">
+        </childnode>
+      </node>
+      <node id="6396">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="6404">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+      </node>
+      <node id="6393">
+        <label>math.h</label>
+      </node>
+      <node id="6388">
+        <label>MyGraphics/Source/Sound.h</label>
+        <link refid="Sound.h"/>
+        <childnode refid="6389" relation="include">
+        </childnode>
+        <childnode refid="6412" relation="include">
+        </childnode>
+      </node>
+      <node id="6395">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="6390" relation="include">
+        </childnode>
+      </node>
+      <node id="6400">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6392" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+        <childnode refid="6402" relation="include">
+        </childnode>
+        <childnode refid="6398" relation="include">
+        </childnode>
+        <childnode refid="6404" relation="include">
+        </childnode>
+        <childnode refid="6405" relation="include">
+        </childnode>
+      </node>
+      <node id="6405">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6399" relation="include">
+        </childnode>
+      </node>
+      <node id="6409">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6399" relation="include">
+        </childnode>
+      </node>
+      <node id="6408">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6421">
+        <label>MyGraphics/Source/Shop.h</label>
+        <link refid="Shop_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6422" relation="include">
+        </childnode>
+      </node>
+      <node id="6432">
+        <label>MyGraphics/Source/SceneWin.h</label>
+        <link refid="SceneWin_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6433" relation="include">
+        </childnode>
+      </node>
+      <node id="6430">
+        <label>MyGraphics/Source/Cutscene.h</label>
+        <link refid="Cutscene_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6431" relation="include">
+        </childnode>
+      </node>
+      <node id="6431">
+        <label>MyGraphics/Source/Cutscene.cpp</label>
+        <link refid="Cutscene_8cpp"/>
+      </node>
+      <node id="6429">
+        <label>MyGraphics/Source/SceneMenu.cpp</label>
+        <link refid="SceneMenu_8cpp"/>
+      </node>
+      <node id="6424">
+        <label>MyGraphics/Source/Scene2.cpp</label>
+        <link refid="Scene2_8cpp"/>
+      </node>
+      <node id="6426">
+        <label>MyGraphics/Source/Scene3.cpp</label>
+        <link refid="Scene3_8cpp"/>
+      </node>
+      <node id="6422">
+        <label>MyGraphics/Source/Shop.cpp</label>
+        <link refid="Shop_8cpp"/>
+      </node>
+      <node id="6425">
+        <label>MyGraphics/Source/Scene3.h</label>
+        <link refid="Scene3_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6426" relation="include">
+        </childnode>
+      </node>
+      <node id="6419">
+        <label>MyGraphics/Source/Enemy.cpp</label>
+        <link refid="Enemy_8cpp"/>
+      </node>
+      <node id="6418">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6419" relation="include">
+        </childnode>
+        <childnode refid="6420" relation="include">
+        </childnode>
+      </node>
+      <node id="6428">
+        <label>MyGraphics/Source/SceneMenu.h</label>
+        <link refid="SceneMenu_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6429" relation="include">
+        </childnode>
+      </node>
+      <node id="6434">
+        <label>MyGraphics/Source/Sound.cpp</label>
+        <link refid="Sound_8cpp"/>
+      </node>
+      <node id="6416">
+        <label>MyGraphics/Source/StartCutScene.cpp</label>
+        <link refid="StartCutScene_8cpp"/>
+      </node>
+      <node id="6427">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="6433">
+        <label>MyGraphics/Source/SceneWin.cpp</label>
+        <link refid="SceneWin_8cpp"/>
+      </node>
+      <node id="6413">
+        <label>MyGraphics/Source/Sound.h</label>
+        <link refid="Sound.h"/>
+        <childnode refid="6414" relation="include">
+        </childnode>
+        <childnode refid="6417" relation="include">
+        </childnode>
+        <childnode refid="6418" relation="include">
+        </childnode>
+        <childnode refid="6428" relation="include">
+        </childnode>
+        <childnode refid="6421" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6430" relation="include">
+        </childnode>
+        <childnode refid="6432" relation="include">
+        </childnode>
+        <childnode refid="6434" relation="include">
+        </childnode>
+      </node>
+      <node id="6415">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="6423">
+        <label>MyGraphics/Source/Scene2.h</label>
+        <link refid="Scene2_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6424" relation="include">
+        </childnode>
+      </node>
+      <node id="6414">
+        <label>MyGraphics/Source/StartCutScene.h</label>
+        <link refid="StartCutScene_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6416" relation="include">
+        </childnode>
+      </node>
+      <node id="6417">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="6418" relation="include">
+        </childnode>
+        <childnode refid="6421" relation="include">
+        </childnode>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+        <childnode refid="6427" relation="include">
+        </childnode>
+      </node>
+      <node id="6420">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classSound" prot="public">Sound</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SOUND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOUND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="irrKlang_8h" kindref="compound">irrKlang.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>comment(lib,<sp/>&quot;irrKlang.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classSound" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classSound" kindref="compound">Sound</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSound_1a539c205cdf06fe2c621fd77c37bcfac9" kindref="member">Sound</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSound_1a0907389078bf740be2a5763366ad3376" kindref="member">~Sound</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSound_1abafebbb8a0c9e262405ff8752f220baa" kindref="member">playMusic</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>Music);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" kindref="member">stopMusic</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>Music);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSound_1aff890910a52b741e92134ee9c3c82408" kindref="member">playSE</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>Music);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36" refid="classSound_1aba686845571b90d93ecba24fe65037c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISoundEngine" kindref="compound">irrklang::ISoundEngine</ref>*<sp/><ref refid="classSound_1aba686845571b90d93ecba24fe65037c3" kindref="member">musicEngine</ref>;</highlight></codeline>
+<codeline lineno="37" refid="classSound_1afc8246f655d428da7f043ed7eb3c89a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">irrklang::ISound</ref>*<sp/><ref refid="classSound_1afc8246f655d428da7f043ed7eb3c89a2" kindref="member">Song</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classSound_1aab62d4295cd67e47c24766e8365590ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">irrklang::ISound</ref>*<sp/><ref refid="classSound_1aab62d4295cd67e47c24766e8365590ba" kindref="member">SoundEffect</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Sound.h"/>
+  </compounddef>
+</doxygen>

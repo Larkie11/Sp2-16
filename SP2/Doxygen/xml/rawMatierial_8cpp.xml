@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="rawMatierial_8cpp" kind="file" language="C++">
+    <compoundname>rawMatierial.cpp</compoundname>
+    <includes refid="rawMaterial_8h" local="yes">rawMaterial.h</includes>
+    <includes refid="MeshBuilder_8h" local="yes">MeshBuilder.h</includes>
+    <includes refid="LoadTGA_8h" local="yes">LoadTGA.h</includes>
+    <incdepgraph>
+      <node id="5644">
+        <label>MyGraphics/Source/rawMatierial.cpp</label>
+        <link refid="rawMatierial.cpp"/>
+        <childnode refid="5645" relation="include">
+        </childnode>
+        <childnode refid="5661" relation="include">
+        </childnode>
+        <childnode refid="5662" relation="include">
+        </childnode>
+      </node>
+      <node id="5648">
+        <label>cmath</label>
+      </node>
+      <node id="5659">
+        <label>string</label>
+      </node>
+      <node id="5663">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="5657">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5646" relation="include">
+        </childnode>
+      </node>
+      <node id="5649">
+        <label>exception</label>
+      </node>
+      <node id="5661">
+        <label>MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="5658" relation="include">
+        </childnode>
+        <childnode refid="5655" relation="include">
+        </childnode>
+      </node>
+      <node id="5654">
+        <label>Enemy.h</label>
+        <link refid="Enemy_8h"/>
+        <childnode refid="5655" relation="include">
+        </childnode>
+        <childnode refid="5656" relation="include">
+        </childnode>
+      </node>
+      <node id="5656">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5657" relation="include">
+        </childnode>
+        <childnode refid="5647" relation="include">
+        </childnode>
+      </node>
+      <node id="5653">
+        <label>CollisionDetector.h</label>
+        <link refid="CollisionDetector_8h"/>
+        <childnode refid="5647" relation="include">
+        </childnode>
+        <childnode refid="5654" relation="include">
+        </childnode>
+        <childnode refid="5646" relation="include">
+        </childnode>
+      </node>
+      <node id="5650">
+        <label>ctime</label>
+      </node>
+      <node id="5655">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5646" relation="include">
+        </childnode>
+      </node>
+      <node id="5658">
+        <label>mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5659" relation="include">
+        </childnode>
+        <childnode refid="5660" relation="include">
+        </childnode>
+      </node>
+      <node id="5662">
+        <label>LoadTGA.h</label>
+        <link refid="LoadTGA_8h"/>
+        <childnode refid="5663" relation="include">
+        </childnode>
+      </node>
+      <node id="5660">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+        <childnode refid="5655" relation="include">
+        </childnode>
+      </node>
+      <node id="5651">
+        <label>cstdlib</label>
+      </node>
+      <node id="5645">
+        <label>rawMaterial.h</label>
+        <link refid="rawMaterial_8h"/>
+        <childnode refid="5646" relation="include">
+        </childnode>
+        <childnode refid="5653" relation="include">
+        </childnode>
+        <childnode refid="5658" relation="include">
+        </childnode>
+      </node>
+      <node id="5652">
+        <label>iostream</label>
+      </node>
+      <node id="5647">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5648" relation="include">
+        </childnode>
+        <childnode refid="5649" relation="include">
+        </childnode>
+        <childnode refid="5650" relation="include">
+        </childnode>
+        <childnode refid="5651" relation="include">
+        </childnode>
+      </node>
+      <node id="5646">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5647" relation="include">
+        </childnode>
+        <childnode refid="5652" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rawMaterial_8h" kindref="compound">rawMaterial.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MeshBuilder_8h" kindref="compound">MeshBuilder.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LoadTGA_8h" kindref="compound">LoadTGA.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classrawMaterial_1a72d088f5e675dc11141a8e620da5e60e" refkind="member"><highlight class="normal"><ref refid="classrawMaterial_1a72d088f5e675dc11141a8e620da5e60e" kindref="member">rawMaterial::rawMaterial</ref>()<sp/>:hp(3),<sp/>isAlive(true)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrawMaterial_1a4f07e821388361689557bbbe841bd947" kindref="member">shape</ref><sp/>=<sp/><ref refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" kindref="member">MeshBuilder::GenerateOBJ</ref>(</highlight><highlight class="stringliteral">&quot;material&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;OBJ//rawMaterial.obj&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrawMaterial_1a4f07e821388361689557bbbe841bd947" kindref="member">shape</ref>-&gt;<ref refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" kindref="member">textureID</ref><sp/>=<sp/><ref refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" kindref="member">LoadTGA</ref>(</highlight><highlight class="stringliteral">&quot;Image//RawMaterial.tga&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="10" refid="classrawMaterial_1a2827009c193cf9dba01ec6bf19923df4" refkind="member"><highlight class="normal"><ref refid="classrawMaterial_1a2827009c193cf9dba01ec6bf19923df4" kindref="member">rawMaterial::~rawMaterial</ref>()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{};</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/rawMatierial.cpp"/>
+  </compounddef>
+</doxygen>

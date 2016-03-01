@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Bullet_8h" kind="file" language="C++">
+    <compoundname>Bullet.h</compoundname>
+    <includes refid="Enemy_8h" local="yes">Enemy.h</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="CollisionDetector_8h" local="yes">CollisionDetector.h</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="Scene2_8h" local="yes">MyGraphics/Source/Scene2.h</includedby>
+    <includedby refid="Scene3_8h" local="yes">MyGraphics/Source/Scene3.h</includedby>
+    <includedby refid="Bullet_8cpp" local="yes">MyGraphics/Source/Bullet.cpp</includedby>
+    <incdepgraph>
+      <node id="4780">
+        <label>cmath</label>
+      </node>
+      <node id="4775">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet.h"/>
+        <childnode refid="4776" relation="include">
+        </childnode>
+        <childnode refid="4778" relation="include">
+        </childnode>
+        <childnode refid="4785" relation="include">
+        </childnode>
+        <childnode refid="4787" relation="include">
+        </childnode>
+        <childnode refid="4788" relation="include">
+        </childnode>
+      </node>
+      <node id="4786">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="4778" relation="include">
+        </childnode>
+      </node>
+      <node id="4781">
+        <label>exception</label>
+      </node>
+      <node id="4776">
+        <label>Enemy.h</label>
+        <link refid="Enemy_8h"/>
+        <childnode refid="4777" relation="include">
+        </childnode>
+        <childnode refid="4785" relation="include">
+        </childnode>
+      </node>
+      <node id="4785">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="4786" relation="include">
+        </childnode>
+        <childnode refid="4779" relation="include">
+        </childnode>
+      </node>
+      <node id="4787">
+        <label>CollisionDetector.h</label>
+        <link refid="CollisionDetector_8h"/>
+        <childnode refid="4779" relation="include">
+        </childnode>
+        <childnode refid="4776" relation="include">
+        </childnode>
+        <childnode refid="4778" relation="include">
+        </childnode>
+      </node>
+      <node id="4782">
+        <label>ctime</label>
+      </node>
+      <node id="4777">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="4778" relation="include">
+        </childnode>
+      </node>
+      <node id="4788">
+        <label>vector</label>
+      </node>
+      <node id="4783">
+        <label>cstdlib</label>
+      </node>
+      <node id="4784">
+        <label>iostream</label>
+      </node>
+      <node id="4779">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="4780" relation="include">
+        </childnode>
+        <childnode refid="4781" relation="include">
+        </childnode>
+        <childnode refid="4782" relation="include">
+        </childnode>
+        <childnode refid="4783" relation="include">
+        </childnode>
+      </node>
+      <node id="4778">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="4779" relation="include">
+        </childnode>
+        <childnode refid="4784" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4789">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet.h"/>
+        <childnode refid="4790" relation="include">
+        </childnode>
+        <childnode refid="4794" relation="include">
+        </childnode>
+        <childnode refid="4796" relation="include">
+        </childnode>
+        <childnode refid="4798" relation="include">
+        </childnode>
+      </node>
+      <node id="4795">
+        <label>MyGraphics/Source/Scene2.cpp</label>
+        <link refid="Scene2_8cpp"/>
+      </node>
+      <node id="4797">
+        <label>MyGraphics/Source/Scene3.cpp</label>
+        <link refid="Scene3_8cpp"/>
+      </node>
+      <node id="4798">
+        <label>MyGraphics/Source/Bullet.cpp</label>
+        <link refid="Bullet_8cpp"/>
+      </node>
+      <node id="4796">
+        <label>MyGraphics/Source/Scene3.h</label>
+        <link refid="Scene3_8h"/>
+        <childnode refid="4791" relation="include">
+        </childnode>
+        <childnode refid="4797" relation="include">
+        </childnode>
+      </node>
+      <node id="4792">
+        <label>MyGraphics/Source/Enemy.cpp</label>
+        <link refid="Enemy_8cpp"/>
+      </node>
+      <node id="4790">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="4791" relation="include">
+        </childnode>
+        <childnode refid="4792" relation="include">
+        </childnode>
+        <childnode refid="4793" relation="include">
+        </childnode>
+      </node>
+      <node id="4791">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="4794">
+        <label>MyGraphics/Source/Scene2.h</label>
+        <link refid="Scene2_8h"/>
+        <childnode refid="4791" relation="include">
+        </childnode>
+        <childnode refid="4795" relation="include">
+        </childnode>
+      </node>
+      <node id="4793">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classBullet" prot="public">Bullet</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>BULLET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BULLET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CollisionDetector_8h" kindref="compound">CollisionDetector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classBullet" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classBullet" kindref="compound">Bullet</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="18" refid="classBullet_1a1c2981247686929466f7537f6c5a1581" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classBullet_1a1c2981247686929466f7537f6c5a1581" kindref="member">direction</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" kindref="member">b_Speed</ref>;</highlight></codeline>
+<codeline lineno="21" refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" kindref="member">b_Angle</ref>;</highlight></codeline>
+<codeline lineno="22" refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23" refid="classBullet_1a8669e4b4c08338b0d75396416346619d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a8669e4b4c08338b0d75396416346619d" kindref="member">b_distanceLimit</ref>;</highlight></codeline>
+<codeline lineno="24" refid="classBullet_1a88a7e152eefd331d199b5ab940167409" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a88a7e152eefd331d199b5ab940167409" kindref="member">b_damage</ref>;</highlight></codeline>
+<codeline lineno="25" refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" kindref="member">PtoV</ref>(<ref refid="structPosition" kindref="compound">Position</ref><sp/>V);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" kindref="member">CollideWithEnemy</ref>(<ref refid="classEnemy" kindref="compound">Enemy</ref><sp/>enemy[],<sp/>vector&lt;Bullet*&gt;bullet_arr,<sp/><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref><sp/>detectCollision);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" kindref="member">~Bullet</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Bullet.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="dir_490afda4105391e253318e4f31153e26" kind="dir">
+    <compoundname>MyGraphics/irrKlang-1.5.0/plugins</compoundname>
+    <innerdir refid="dir_ad0697383858acbe5c2877c8d2583a88">MyGraphics/irrKlang-1.5.0/plugins/ikpMP3</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MyGraphics/irrKlang-1.5.0/plugins/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1980 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classStartCutScene" kind="class" language="C++" prot="public">
+    <compoundname>StartCutScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="StartCutScene_8h" local="no">StartCutScene.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4" prot="private" static="no">
+        <name>GEOMETRY_TYPE</name>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af6436b2500618be730ddab54c5728af0" prot="private">
+          <name>GEO_REF_AXES</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a8d9bf92e10f439364f2d6e08e0bf23f1" prot="private">
+          <name>GEO_REF_QUAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a5601b9177135e2fb4c9f2563d6f52d45" prot="private">
+          <name>GEO_LIGHTBALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a62ff07c7d2424d7e6aeb4d88f48ebc0f" prot="private">
+          <name>GEO_QUAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a3049865576477f459973a6c35c77ab38" prot="private">
+          <name>GEO_BB8HEAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a25e479b67429e1315aa637a0d4989d5d" prot="private">
+          <name>GEO_BB8BODY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a9e6d786cf3b29d78efa9361bb0758f95" prot="private">
+          <name>GEO_CROSSHAIR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4addeb1790497becd6b8ac600386eb831f" prot="private">
+          <name>GEO_THRUSTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a2e33a2771d7f10362e07004c7bde290b" prot="private">
+          <name>GEO_LEFT1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a049d7b9e48851afaff9c517fcfa92adc" prot="private">
+          <name>GEO_RIGHT1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a9b10fb317105227404a1a7f9cbdc3ff9" prot="private">
+          <name>GEO_TOP1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a715ead62376f29dff93ae148e4b12ef5" prot="private">
+          <name>GEO_BOTTOM1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a3731af4a2a470529a3089e869db30c12" prot="private">
+          <name>GEO_FRONT1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a348d812262f128ec0480ac76ab5255e4" prot="private">
+          <name>GEO_BACK1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a956027f5ef98c63d3ddf2517de638229" prot="private">
+          <name>GEO_STAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a82e799a93b1e5f39e7bccccb17fa47ce" prot="private">
+          <name>GEO_STORY1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a510078c42447a4f8164399e257d3482d" prot="private">
+          <name>GEO_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a797cb39c3ec22c1cc3ad181cd89f169c" prot="private">
+          <name>GEO_MOONBALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af5b6e3239d41d8cab3ed7efc6a9f901e" prot="private">
+          <name>GEO_PYRAMIDNEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4ad777f6c1d8b46166d9fd7310608cf277" prot="private">
+          <name>GEO_PYRAMIDWALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a6ee848411747a4fdeff8a19a2018f68f" prot="private">
+          <name>GEO_PYRAMIDPILLAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af72f8f23e82d3d4a3836dd156fce8054" prot="private">
+          <name>GEO_SPACESHIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4aa1107dff272c1dc1aac92fd7ba032885" prot="private">
+          <name>GEO_PLANEBODY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a48e352ecccb29e2391786eea1b279f0c" prot="private">
+          <name>GEO_PLANEWING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a7feb3b637c454ec8f021e2ff77c4df32" prot="private">
+          <name>GEO_PLANEROCKET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a38689893c919b1702e8c8c9c5dd4ffdc" prot="private">
+          <name>GEO_PYRAMIDFLOOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a5f6ab264664329f0c599965c9f18cabd" prot="private">
+          <name>GEO_PYRAMIDDOOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a1a3ad531d7beb8b6893b3f5b1ec70f95" prot="private">
+          <name>GEO_EXPLOSION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4acf9b5faf39229d4335e07ab1c7f5e23d" prot="private">
+          <name>GEO_BULLETSKIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4ae3587e7c0cbb1493b4f168a734acac94" prot="private">
+          <name>NUM_GEOMETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="34" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="33" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="enum" id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5" prot="private" static="no">
+        <name>UNIFORM_TYPE</name>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6131193871c9352af42373b655443ccd" prot="private">
+          <name>U_MVP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0bb6ef04159eee8becd5429249bb42fd" prot="private">
+          <name>U_MODELVIEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4697f24025919eb99dab27ab8a2b7903" prot="private">
+          <name>U_MODELVIEW_INVERSE_TRANSPOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a3435a13eaa9eaae49d4c2096a37de980" prot="private">
+          <name>U_MATERIAL_AMBIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a776c48a691f96b25b0e22bc9b291e98d" prot="private">
+          <name>U_MATERIAL_DIFFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af1b025bf1748c521ccf685e09b763e69" prot="private">
+          <name>U_MATERIAL_SPECULAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a374fe7481737c862d8b37593576aba66" prot="private">
+          <name>U_MATERIAL_SHININESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aabef24509a3cfe2a848a9640a1b17d6e" prot="private">
+          <name>U_LIGHT0_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a2e54f066a55503d8c9d417efd9133f32" prot="private">
+          <name>U_LIGHT0_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aa295783013a140e8f3568d1cedfe969e" prot="private">
+          <name>U_LIGHT0_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aa01084d006e9ac208013f7380b8d1ae7" prot="private">
+          <name>U_LIGHT0_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ac3e57c46939c2a5a3ef2767c62136437" prot="private">
+          <name>U_LIGHT0_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af4f4290732374050278567c9dbbb4e79" prot="private">
+          <name>U_LIGHT0_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a89c67e46b0ec088934366a224eabffcd" prot="private">
+          <name>U_LIGHTENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5afb0878f30ca295355ddaf17292983b5a" prot="private">
+          <name>U_LIGHT0_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af24c8e793079c9bfb484997257f28a0f" prot="private">
+          <name>U_LIGHT0_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a2b25875631aeac3f4b5113d1491e7bb8" prot="private">
+          <name>U_LIGHT0_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a58624bf7e95df2f7ac0446f42df4c11c" prot="private">
+          <name>U_LIGHT0_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a7bba5b21753818397a18190398e98001" prot="private">
+          <name>U_LIGHT0_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0e90f184d9c0775748cc4b76c8e32c39" prot="private">
+          <name>U_LIGHT1_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a00f8577e011b6611627d3b9df5b180ec" prot="private">
+          <name>U_LIGHT1_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a63ded310d726ca58afb7f10b9e15749b" prot="private">
+          <name>U_LIGHT1_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af176fcc31442f5c1a7595520b8449605" prot="private">
+          <name>U_LIGHT1_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ac17269f4831436a7186725ede9dc3c2d" prot="private">
+          <name>U_LIGHT1_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0c71de281fed9b1a4f4b3860e7024fd" prot="private">
+          <name>U_LIGHT1_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4e67f1f50aa54151d57395f59a0f72fa" prot="private">
+          <name>U_LIGHT1ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6fcd10cacc5735fd864c756f8488c8a7" prot="private">
+          <name>U_LIGHT1_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a88348b424c2696eb4b5bc329a97c06b8" prot="private">
+          <name>U_LIGHT1_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a21ec3990bfca61743f79f1b2a807f402" prot="private">
+          <name>U_LIGHT1_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a34757149c4ec4cb2a3334e7c9b7fc578" prot="private">
+          <name>U_LIGHT1_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6e2565e5d5cc410fa238820072e6c32b" prot="private">
+          <name>U_LIGHT1_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5afa2b02daec8aa4ff882660f2bf775bf8" prot="private">
+          <name>U_LIGHT2_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a42383a621b3b262004e7e9d2bfd890b9" prot="private">
+          <name>U_LIGHT2_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a9da17f3d8ee64cd6f8a2d4baf6a14030" prot="private">
+          <name>U_LIGHT2_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5acd40872254a81198ecba659881dfce24" prot="private">
+          <name>U_LIGHT2_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ae73d7572f2d317cf1bb702adbbb20f4c" prot="private">
+          <name>U_LIGHT2_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a43ffa1cd3c125c203f195fe94e749685" prot="private">
+          <name>U_LIGHT2_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0e795d0953da495c6b9047de159ea5e2" prot="private">
+          <name>U_LIGHT2ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a093b5e4458ae40ade7e3190cf98c4869" prot="private">
+          <name>U_LIGHT2_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aab84062c68a2afd886f22db4fce450b8" prot="private">
+          <name>U_LIGHT2_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab349935ea9e50d6bc47998d42f0b846d" prot="private">
+          <name>U_LIGHT2_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aea4d258d729185b6a5cce329ce4c1131" prot="private">
+          <name>U_LIGHT2_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5acd4212a238d1f15e84ee203e04a992b3" prot="private">
+          <name>U_LIGHT2_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a777d7705a72888da28782b71dddf4412" prot="private">
+          <name>U_LIGHT3_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a9fc510075264ab795b738b539bafad19" prot="private">
+          <name>U_LIGHT3_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a19870bf3eac023eff070ad561718a976" prot="private">
+          <name>U_LIGHT3_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ae4e238be606ffb08573be3f234f4f033" prot="private">
+          <name>U_LIGHT3_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aaeda5ef827140587fda2a5a9e273be98" prot="private">
+          <name>U_LIGHT3_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a69cd3e9c64789ede879fc6ae01bc0194" prot="private">
+          <name>U_LIGHT3_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af427d4941f6bd394c8716504808814fe" prot="private">
+          <name>U_LIGHT3ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0f81822378cbb427b9c61658a0288c4c" prot="private">
+          <name>U_LIGHT3_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ac6d13499c800f4c1accaf2c4c2fd16ed" prot="private">
+          <name>U_LIGHT3_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a8f5f7a3501523ec33000c6a89b485c21" prot="private">
+          <name>U_LIGHT3_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a095fbf2b36406cfb1b00f0a8e60bbd87" prot="private">
+          <name>U_LIGHT3_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a91c911a15b59e48849b330ac5bd93c0e" prot="private">
+          <name>U_LIGHT3_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a40baad0eb6aa723eb5c5756f255c592c" prot="private">
+          <name>U_NUMLIGHTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4cde1175669016a0479e0f9222c6df7d" prot="private">
+          <name>U_COLOR_TEXTURE_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab488120613fe649c2da07a05d9e4fd3c" prot="private">
+          <name>U_COLOR_TEXTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a60c1e51279e4fc21ffaa976e6df76ad8" prot="private">
+          <name>U_TEXT_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0d873f4f756c8bee5b0adda6ae8370c" prot="private">
+          <name>U_TEXT_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0a821a95fa705dffde01856c8da027d7" prot="private">
+          <name>U_TOTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="75" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="74" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classStartCutScene_1a4acf5075287a73fa9d89c2e8e1a1c00e" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char StartCutScene::Map[20][20]</definition>
+        <argsstring>[20][20]</argsstring>
+        <name>Map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="145" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1ae18d465af24bdbefb41fe1a630b65ad4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="146" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a9b1cb241a8ca530ed72c46316ee4e7ad" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::Z_Displacement</definition>
+        <argsstring></argsstring>
+        <name>Z_Displacement</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="147" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="147" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a8bf3ffd9a31a24fa6bbf208ee133e38f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::X_Displacement</definition>
+        <argsstring></argsstring>
+        <name>X_Displacement</name>
+        <initializer>= -100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="148" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="148" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classStartCutScene_1a17dca5bd672d24cec46f62c544ec055c" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned StartCutScene::m_vertexArrayID</definition>
+        <argsstring></argsstring>
+        <name>m_vertexArrayID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="160" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="160" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a201fce4a6e9377b95aa63bf38615b70b" compoundref="StartCutScene_8cpp" startline="390" endline="394">Exit</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a051f952beedd14f428d02239cd674960" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned StartCutScene::m_indexBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_indexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="161" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a0568d51645c903d081841653f792e8cb" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned StartCutScene::m_vertexBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_vertexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="162" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a9b54f820018288ee76ccadeaacb10929" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned StartCutScene::m_colorBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_colorBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="163" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1ad230b850e7a42f02f44528c94e8215a6" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned StartCutScene::m_programID</definition>
+        <argsstring></argsstring>
+        <name>m_programID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="164" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="164" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a201fce4a6e9377b95aa63bf38615b70b" compoundref="StartCutScene_8cpp" startline="390" endline="394">Exit</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a71946d0a767a645da627e6a99a5e2a0e" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned StartCutScene::m_parameters[U_TOTAL]</definition>
+        <argsstring>[U_TOTAL]</argsstring>
+        <name>m_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="165" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="165" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a118df161e351fd834381cf198be23c48" prot="private" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* StartCutScene::meshList[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>meshList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="170" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="170" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1a468cad6c3f1fa2defe987e3b36d4d7c2" compoundref="StartCutScene_8cpp" startline="262" endline="320">RenderSkybox</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS StartCutScene::modelStack</definition>
+        <argsstring></argsstring>
+        <name>modelStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="172" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="172" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1a468cad6c3f1fa2defe987e3b36d4d7c2" compoundref="StartCutScene_8cpp" startline="262" endline="320">RenderSkybox</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1aa4d49312d58303dd5bb70fb80ccda38c" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS StartCutScene::viewStack</definition>
+        <argsstring></argsstring>
+        <name>viewStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="172" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="172" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a816e39698adf1e9019b7bd3edfcf2890" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS StartCutScene::projectionStack</definition>
+        <argsstring></argsstring>
+        <name>projectionStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="172" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="172" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a12c431bfe4ce2f0ed53505fbcaeb2123" prot="private" static="no" mutable="no">
+        <type><ref refid="structLight" kindref="compound">Light</ref></type>
+        <definition>Light StartCutScene::light[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="173" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1ac5a0a3c784c676e15aee02661eb48610" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
+        <definition>Camera3 StartCutScene::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="180" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="180" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">Character_Movement</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1af9560388ba9659ee55bfc3c302f8a980" prot="private" static="no" mutable="no">
+        <type><ref refid="classMouse" kindref="compound">Mouse</ref></type>
+        <definition>Mouse StartCutScene::mouse</definition>
+        <argsstring></argsstring>
+        <name>mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="187" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a0a547bc9134c89f067c987c6cd284fb6" prot="private" static="no" mutable="no">
+        <type><ref refid="classSound" kindref="compound">Sound</ref></type>
+        <definition>Sound StartCutScene::sound</definition>
+        <argsstring></argsstring>
+        <name>sound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="188" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="188" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a571ac458f7da8d392a9bc3c121b4af79" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::planePos</definition>
+        <argsstring></argsstring>
+        <name>planePos</name>
+        <initializer>=100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="189" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="189" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a7f118205705d1a831673521106966b3c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::planePos2</definition>
+        <argsstring></argsstring>
+        <name>planePos2</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="190" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="190" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1aebf952518f3025f49643e0fc10cd6c84" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int StartCutScene::cameraShake</definition>
+        <argsstring></argsstring>
+        <name>cameraShake</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="191" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a68ddaa2ee85aa1b4d172de8094abd43a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int StartCutScene::randNum</definition>
+        <argsstring></argsstring>
+        <name>randNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="192" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="192" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">Character_Movement</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1af49ef6ec172e44756e66942f8f4bf377" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StartCutScene::blowUp</definition>
+        <argsstring></argsstring>
+        <name>blowUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="193" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="193" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a4a2037d73efa54de3230584964423ff9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::explosionScale</definition>
+        <argsstring></argsstring>
+        <name>explosionScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="194" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="194" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStartCutScene_1a8dbb0368e94b074fe9ae65e392989371" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StartCutScene::thrusterScale</definition>
+        <argsstring></argsstring>
+        <name>thrusterScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="195" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="195" bodyend="-1"/>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classStartCutScene_1acb9995123b5d830414fdab53148212c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StartCutScene::StartCutScene</definition>
+        <argsstring>()</argsstring>
+        <name>StartCutScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="149" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a16144738956bdaaaae83b68fd644aaa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StartCutScene::~StartCutScene</definition>
+        <argsstring>()</argsstring>
+        <name>~StartCutScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="150" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a982675447a165086a784db31ece4dbb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="152" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="16" bodyend="119"/>
+        <references refid="classStartCutScene_1ac5a0a3c784c676e15aee02661eb48610" compoundref="StartCutScene_8h" startline="180">camera</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</references>
+        <references refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</references>
+        <references refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</references>
+        <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a348d812262f128ec0480ac76ab5255e4" compoundref="StartCutScene_8h" startline="52">GEO_BACK1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a715ead62376f29dff93ae148e4b12ef5" compoundref="StartCutScene_8h" startline="50">GEO_BOTTOM1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a1a3ad531d7beb8b6893b3f5b1ec70f95" compoundref="StartCutScene_8h" startline="69">GEO_EXPLOSION</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a3731af4a2a470529a3089e869db30c12" compoundref="StartCutScene_8h" startline="51">GEO_FRONT1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a2e33a2771d7f10362e07004c7bde290b" compoundref="StartCutScene_8h" startline="47">GEO_LEFT1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a797cb39c3ec22c1cc3ad181cd89f169c" compoundref="StartCutScene_8h" startline="58">GEO_MOONBALL</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4aa1107dff272c1dc1aac92fd7ba032885" compoundref="StartCutScene_8h" startline="63">GEO_PLANEBODY</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a7feb3b637c454ec8f021e2ff77c4df32" compoundref="StartCutScene_8h" startline="65">GEO_PLANEROCKET</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a48e352ecccb29e2391786eea1b279f0c" compoundref="StartCutScene_8h" startline="64">GEO_PLANEWING</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af5b6e3239d41d8cab3ed7efc6a9f901e" compoundref="StartCutScene_8h" startline="59">GEO_PYRAMIDNEW</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a62ff07c7d2424d7e6aeb4d88f48ebc0f" compoundref="StartCutScene_8h" startline="38">GEO_QUAD</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a049d7b9e48851afaff9c517fcfa92adc" compoundref="StartCutScene_8h" startline="48">GEO_RIGHT1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a510078c42447a4f8164399e257d3482d" compoundref="StartCutScene_8h" startline="55">GEO_TEXT</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4addeb1790497becd6b8ac600386eb831f" compoundref="StartCutScene_8h" startline="44">GEO_THRUSTER</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a9b10fb317105227404a1a7f9cbdc3ff9" compoundref="StartCutScene_8h" startline="49">GEO_TOP1</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</references>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="17">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="18">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="20">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="19">Material::kSpecular</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="16" endline="107">LoadShaders</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="66">LoadTGA</references>
+        <references refid="classStartCutScene_1a71946d0a767a645da627e6a99a5e2a0e" compoundref="StartCutScene_8h" startline="165">m_parameters</references>
+        <references refid="classStartCutScene_1ad230b850e7a42f02f44528c94e8215a6" compoundref="StartCutScene_8h" startline="164">m_programID</references>
+        <references refid="classStartCutScene_1a17dca5bd672d24cec46f62c544ec055c" compoundref="StartCutScene_8h" startline="160">m_vertexArrayID</references>
+        <references refid="classMesh_1a3368c3bc60dd176e522df1542b764847" compoundref="Mesh_8h" startline="27">Mesh::material</references>
+        <references refid="classStartCutScene_1a118df161e351fd834381cf198be23c48" compoundref="StartCutScene_8h" startline="170">meshList</references>
+        <references refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">Sound::playSE</references>
+        <references refid="classStartCutScene_1a816e39698adf1e9019b7bd3edfcf2890" compoundref="StartCutScene_8h" startline="172">projectionStack</references>
+        <references refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8h" startline="12" endline="12">Component::Set</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="classStartCutScene_1a0a547bc9134c89f067c987c6cd284fb6" compoundref="StartCutScene_8h" startline="188">sound</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab488120613fe649c2da07a05d9e4fd3c" compoundref="StartCutScene_8h" startline="137">U_COLOR_TEXTURE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4cde1175669016a0479e0f9222c6df7d" compoundref="StartCutScene_8h" startline="136">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a3435a13eaa9eaae49d4c2096a37de980" compoundref="StartCutScene_8h" startline="79">U_MATERIAL_AMBIENT</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a776c48a691f96b25b0e22bc9b291e98d" compoundref="StartCutScene_8h" startline="80">U_MATERIAL_DIFFUSE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a374fe7481737c862d8b37593576aba66" compoundref="StartCutScene_8h" startline="82">U_MATERIAL_SHININESS</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af1b025bf1748c521ccf685e09b763e69" compoundref="StartCutScene_8h" startline="81">U_MATERIAL_SPECULAR</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0bb6ef04159eee8becd5429249bb42fd" compoundref="StartCutScene_8h" startline="77">U_MODELVIEW</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4697f24025919eb99dab27ab8a2b7903" compoundref="StartCutScene_8h" startline="78">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6131193871c9352af42373b655443ccd" compoundref="StartCutScene_8h" startline="76">U_MVP</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0d873f4f756c8bee5b0adda6ae8370c" compoundref="StartCutScene_8h" startline="139">U_TEXT_COLOR</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a60c1e51279e4fc21ffaa976e6df76ad8" compoundref="StartCutScene_8h" startline="138">U_TEXT_ENABLED</references>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="153" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="120" bodyend="147"/>
+        <references refid="classStartCutScene_1af49ef6ec172e44756e66942f8f4bf377" compoundref="StartCutScene_8h" startline="193">blowUp</references>
+        <references refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">Character_Movement</references>
+        <references refid="classStartCutScene_1a4a2037d73efa54de3230584964423ff9" compoundref="StartCutScene_8h" startline="194">explosionScale</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba779ebe0a34809ed51d63a96e6b1d7531" compoundref="SharedData_8h" startline="37">SharedData::GAME</references>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classStartCutScene_1a571ac458f7da8d392a9bc3c121b4af79" compoundref="StartCutScene_8h" startline="189">planePos</references>
+        <references refid="classStartCutScene_1a7f118205705d1a831673521106966b3c" compoundref="StartCutScene_8h" startline="190">planePos2</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="154" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="322" bodyend="389"/>
+        <references refid="classStartCutScene_1af49ef6ec172e44756e66942f8f4bf377" compoundref="StartCutScene_8h" startline="193">blowUp</references>
+        <references refid="classStartCutScene_1ac5a0a3c784c676e15aee02661eb48610" compoundref="StartCutScene_8h" startline="180">camera</references>
+        <references refid="classStartCutScene_1a4a2037d73efa54de3230584964423ff9" compoundref="StartCutScene_8h" startline="194">explosionScale</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a1a3ad531d7beb8b6893b3f5b1ec70f95" compoundref="StartCutScene_8h" startline="69">GEO_EXPLOSION</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a797cb39c3ec22c1cc3ad181cd89f169c" compoundref="StartCutScene_8h" startline="58">GEO_MOONBALL</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4aa1107dff272c1dc1aac92fd7ba032885" compoundref="StartCutScene_8h" startline="63">GEO_PLANEBODY</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a7feb3b637c454ec8f021e2ff77c4df32" compoundref="StartCutScene_8h" startline="65">GEO_PLANEROCKET</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a48e352ecccb29e2391786eea1b279f0c" compoundref="StartCutScene_8h" startline="64">GEO_PLANEWING</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a62ff07c7d2424d7e6aeb4d88f48ebc0f" compoundref="StartCutScene_8h" startline="38">GEO_QUAD</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a510078c42447a4f8164399e257d3482d" compoundref="StartCutScene_8h" startline="55">GEO_TEXT</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4addeb1790497becd6b8ac600386eb831f" compoundref="StartCutScene_8h" startline="44">GEO_THRUSTER</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
+        <references refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</references>
+        <references refid="classStartCutScene_1a118df161e351fd834381cf198be23c48" compoundref="StartCutScene_8h" startline="170">meshList</references>
+        <references refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" compoundref="StartCutScene_8h" startline="172">modelStack</references>
+        <references refid="classStartCutScene_1a571ac458f7da8d392a9bc3c121b4af79" compoundref="StartCutScene_8h" startline="189">planePos</references>
+        <references refid="classStartCutScene_1a7f118205705d1a831673521106966b3c" compoundref="StartCutScene_8h" startline="190">planePos2</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</references>
+        <references refid="classStartCutScene_1a468cad6c3f1fa2defe987e3b36d4d7c2" compoundref="StartCutScene_8cpp" startline="262" endline="320">RenderSkybox</references>
+        <references refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">RenderTextOnScreen</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classStartCutScene_1a8dbb0368e94b074fe9ae65e392989371" compoundref="StartCutScene_8h" startline="195">thrusterScale</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <references refid="classStartCutScene_1aa4d49312d58303dd5bb70fb80ccda38c" compoundref="StartCutScene_8h" startline="172">viewStack</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a201fce4a6e9377b95aa63bf38615b70b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="155" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="390" bodyend="394"/>
+        <references refid="classStartCutScene_1ad230b850e7a42f02f44528c94e8215a6" compoundref="StartCutScene_8h" startline="164">m_programID</references>
+        <references refid="classStartCutScene_1a17dca5bd672d24cec46f62c544ec055c" compoundref="StartCutScene_8h" startline="160">m_vertexArrayID</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::RenderMesh</definition>
+        <argsstring>(Mesh *mesh, bool enableLight)</argsstring>
+        <name>RenderMesh</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableLight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="158" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="149" bodyend="188"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMtx44_1aac1ba21ddfc5f3c24baa4f58d9c5c256" compoundref="Mtx44_8cpp" startline="139" endline="195">Mtx44::GetInverse</references>
+        <references refid="classMtx44_1aebb16a0329c5237e314af0d75d8081fd" compoundref="Mtx44_8cpp" startline="123" endline="127">Mtx44::GetTranspose</references>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="17">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="18">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="20">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="19">Material::kSpecular</references>
+        <references refid="StartCutScene_8cpp_1a9f1aff7bda9fb9597e24bacabe44cafb" compoundref="StartCutScene_8cpp" startline="148">Lighting9</references>
+        <references refid="classStartCutScene_1a71946d0a767a645da627e6a99a5e2a0e" compoundref="StartCutScene_8h" startline="165">m_parameters</references>
+        <references refid="classMesh_1a3368c3bc60dd176e522df1542b764847" compoundref="Mesh_8h" startline="27">Mesh::material</references>
+        <references refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" compoundref="StartCutScene_8h" startline="172">modelStack</references>
+        <references refid="classStartCutScene_1a816e39698adf1e9019b7bd3edfcf2890" compoundref="StartCutScene_8h" startline="172">projectionStack</references>
+        <references refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" compoundref="Material_8h" startline="10">Component::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab488120613fe649c2da07a05d9e4fd3c" compoundref="StartCutScene_8h" startline="137">U_COLOR_TEXTURE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4cde1175669016a0479e0f9222c6df7d" compoundref="StartCutScene_8h" startline="136">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a89c67e46b0ec088934366a224eabffcd" compoundref="StartCutScene_8h" startline="89">U_LIGHTENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a3435a13eaa9eaae49d4c2096a37de980" compoundref="StartCutScene_8h" startline="79">U_MATERIAL_AMBIENT</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a776c48a691f96b25b0e22bc9b291e98d" compoundref="StartCutScene_8h" startline="80">U_MATERIAL_DIFFUSE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a374fe7481737c862d8b37593576aba66" compoundref="StartCutScene_8h" startline="82">U_MATERIAL_SHININESS</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af1b025bf1748c521ccf685e09b763e69" compoundref="StartCutScene_8h" startline="81">U_MATERIAL_SPECULAR</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0bb6ef04159eee8becd5429249bb42fd" compoundref="StartCutScene_8h" startline="77">U_MODELVIEW</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4697f24025919eb99dab27ab8a2b7903" compoundref="StartCutScene_8h" startline="78">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6131193871c9352af42373b655443ccd" compoundref="StartCutScene_8h" startline="76">U_MVP</references>
+        <references refid="classStartCutScene_1aa4d49312d58303dd5bb70fb80ccda38c" compoundref="StartCutScene_8h" startline="172">viewStack</references>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">Map_Rendering</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+        <referencedby refid="classStartCutScene_1a468cad6c3f1fa2defe987e3b36d4d7c2" compoundref="StartCutScene_8cpp" startline="262" endline="320">RenderSkybox</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1ac07d7cf6bd9d1bb1c6dc400ee5eec3a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::UpdateMenu</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="166" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a468cad6c3f1fa2defe987e3b36d4d7c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::RenderSkybox</definition>
+        <argsstring>()</argsstring>
+        <name>RenderSkybox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="175" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="262" bodyend="320"/>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a348d812262f128ec0480ac76ab5255e4" compoundref="StartCutScene_8h" startline="52">GEO_BACK1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a715ead62376f29dff93ae148e4b12ef5" compoundref="StartCutScene_8h" startline="50">GEO_BOTTOM1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a3731af4a2a470529a3089e869db30c12" compoundref="StartCutScene_8h" startline="51">GEO_FRONT1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a2e33a2771d7f10362e07004c7bde290b" compoundref="StartCutScene_8h" startline="47">GEO_LEFT1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a049d7b9e48851afaff9c517fcfa92adc" compoundref="StartCutScene_8h" startline="48">GEO_RIGHT1</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a9b10fb317105227404a1a7f9cbdc3ff9" compoundref="StartCutScene_8h" startline="49">GEO_TOP1</references>
+        <references refid="classStartCutScene_1a118df161e351fd834381cf198be23c48" compoundref="StartCutScene_8h" startline="170">meshList</references>
+        <references refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" compoundref="StartCutScene_8h" startline="172">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="StartCutScene_8cpp_1aafa5737879309927e64a8ef22416cf16" compoundref="StartCutScene_8cpp" startline="261">SBSCALE1</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::RenderText</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color)</argsstring>
+        <name>RenderText</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="176" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="189" bodyend="214"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classStartCutScene_1a71946d0a767a645da627e6a99a5e2a0e" compoundref="StartCutScene_8h" startline="165">m_parameters</references>
+        <references refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" compoundref="StartCutScene_8h" startline="172">modelStack</references>
+        <references refid="classStartCutScene_1a816e39698adf1e9019b7bd3edfcf2890" compoundref="StartCutScene_8h" startline="172">projectionStack</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab488120613fe649c2da07a05d9e4fd3c" compoundref="StartCutScene_8h" startline="137">U_COLOR_TEXTURE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4cde1175669016a0479e0f9222c6df7d" compoundref="StartCutScene_8h" startline="136">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a89c67e46b0ec088934366a224eabffcd" compoundref="StartCutScene_8h" startline="89">U_LIGHTENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6131193871c9352af42373b655443ccd" compoundref="StartCutScene_8h" startline="76">U_MVP</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0d873f4f756c8bee5b0adda6ae8370c" compoundref="StartCutScene_8h" startline="139">U_TEXT_COLOR</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a60c1e51279e4fc21ffaa976e6df76ad8" compoundref="StartCutScene_8h" startline="138">U_TEXT_ENABLED</references>
+        <references refid="classStartCutScene_1aa4d49312d58303dd5bb70fb80ccda38c" compoundref="StartCutScene_8h" startline="172">viewStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::RenderTextOnScreen</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color, float size, float x, float y)</argsstring>
+        <name>RenderTextOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="177" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="215" bodyend="259"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classStartCutScene_1a71946d0a767a645da627e6a99a5e2a0e" compoundref="StartCutScene_8h" startline="165">m_parameters</references>
+        <references refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" compoundref="StartCutScene_8h" startline="172">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classStartCutScene_1a816e39698adf1e9019b7bd3edfcf2890" compoundref="StartCutScene_8h" startline="172">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab488120613fe649c2da07a05d9e4fd3c" compoundref="StartCutScene_8h" startline="137">U_COLOR_TEXTURE</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4cde1175669016a0479e0f9222c6df7d" compoundref="StartCutScene_8h" startline="136">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a89c67e46b0ec088934366a224eabffcd" compoundref="StartCutScene_8h" startline="89">U_LIGHTENABLED</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6131193871c9352af42373b655443ccd" compoundref="StartCutScene_8h" startline="76">U_MVP</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0d873f4f756c8bee5b0adda6ae8370c" compoundref="StartCutScene_8h" startline="139">U_TEXT_COLOR</references>
+        <references refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a60c1e51279e4fc21ffaa976e6df76ad8" compoundref="StartCutScene_8h" startline="138">U_TEXT_ENABLED</references>
+        <references refid="classStartCutScene_1aa4d49312d58303dd5bb70fb80ccda38c" compoundref="StartCutScene_8h" startline="172">viewStack</references>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1aa37f87586e628c706017a4fdae8552a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::RenderQuadOnScreen</definition>
+        <argsstring>(Mesh *mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)</argsstring>
+        <name>RenderQuadOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ry</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a37f3ee35933ae0826bc5d455ddff9c25" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Map_Reading</definition>
+        <argsstring>()</argsstring>
+        <name>Map_Reading</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="183" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Map_Rendering</definition>
+        <argsstring>()</argsstring>
+        <name>Map_Rendering</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="184" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="395" bodyend="406"/>
+        <references refid="classStartCutScene_1ac5a0a3c784c676e15aee02661eb48610" compoundref="StartCutScene_8h" startline="180">camera</references>
+        <references refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af5b6e3239d41d8cab3ed7efc6a9f901e" compoundref="StartCutScene_8h" startline="59">GEO_PYRAMIDNEW</references>
+        <references refid="classStartCutScene_1a118df161e351fd834381cf198be23c48" compoundref="StartCutScene_8h" startline="170">meshList</references>
+        <references refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" compoundref="StartCutScene_8h" startline="172">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">RenderMesh</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classStartCutScene_1ae18d465af24bdbefb41fe1a630b65ad4" compoundref="StartCutScene_8h" startline="146">Size</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classStartCutScene_1a8bf3ffd9a31a24fa6bbf208ee133e38f" compoundref="StartCutScene_8h" startline="148">X_Displacement</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="classStartCutScene_1a9b1cb241a8ca530ed72c46316ee4e7ad" compoundref="StartCutScene_8h" startline="147">Z_Displacement</references>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartCutScene::Character_Movement</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>Character_Movement</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StartCutScene.h" line="185" column="1" bodyfile="MyGraphics/Source/StartCutScene.cpp" bodystart="407" bodyend="436"/>
+        <references refid="classStartCutScene_1ac5a0a3c784c676e15aee02661eb48610" compoundref="StartCutScene_8h" startline="180">camera</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Vector3::Cross</references>
+        <references refid="classCamera3_1a089366725666df811a969aca24168cb6" compoundref="Camera3_8h" startline="18">Camera3::defaultUp</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classStartCutScene_1a68ddaa2ee85aa1b4d172de8094abd43a" compoundref="StartCutScene_8h" startline="192">randNum</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="20">Camera3::view</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1127">
+        <label>StartCutScene</label>
+        <link refid="classStartCutScene"/>
+        <childnode refid="1128" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1128">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1151">
+        <label>irrklang::IVirtualRefCounted</label>
+        <link refid="classirrklang_1_1IVirtualRefCounted"/>
+      </node>
+      <node id="1139">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="1146">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="1147">
+        <label>Sound</label>
+        <link refid="classSound"/>
+        <childnode refid="1148" relation="usage">
+          <edgelabel>musicEngine</edgelabel>
+        </childnode>
+        <childnode refid="1150" relation="usage">
+          <edgelabel>SoundEffect</edgelabel>
+          <edgelabel>Song</edgelabel>
+        </childnode>
+      </node>
+      <node id="1154">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="1138">
+        <label>LIGHT_TYPE</label>
+      </node>
+      <node id="1135">
+        <label>vector&lt; Vector3 &gt;</label>
+      </node>
+      <node id="1152">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="1153" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="1155" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="1156" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1157" relation="usage">
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="1148">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="1149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1129">
+        <label>StartCutScene</label>
+        <link refid="classStartCutScene"/>
+        <childnode refid="1130" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1131" relation="usage">
+          <edgelabel>mouse</edgelabel>
+        </childnode>
+        <childnode refid="1137" relation="usage">
+          <edgelabel>light</edgelabel>
+        </childnode>
+        <childnode refid="1141" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>Size</edgelabel>
+          <edgelabel>planePos</edgelabel>
+          <edgelabel>explosionScale</edgelabel>
+          <edgelabel>planePos2</edgelabel>
+          <edgelabel>Z_Displacement</edgelabel>
+          <edgelabel>thrusterScale</edgelabel>
+          <edgelabel>X_Displacement</edgelabel>
+        </childnode>
+        <childnode refid="1144" relation="usage">
+          <edgelabel>Map</edgelabel>
+        </childnode>
+        <childnode refid="1145" relation="usage">
+          <edgelabel>projectionStack</edgelabel>
+          <edgelabel>modelStack</edgelabel>
+          <edgelabel>viewStack</edgelabel>
+        </childnode>
+        <childnode refid="1134" relation="usage">
+          <edgelabel>randNum</edgelabel>
+          <edgelabel>cameraShake</edgelabel>
+        </childnode>
+        <childnode refid="1143" relation="usage">
+          <edgelabel>blowUp</edgelabel>
+        </childnode>
+        <childnode refid="1147" relation="usage">
+          <edgelabel>sound</edgelabel>
+        </childnode>
+        <childnode refid="1152" relation="usage">
+          <edgelabel>meshList</edgelabel>
+        </childnode>
+        <childnode refid="1157" relation="usage">
+          <edgelabel>m_indexBuffer</edgelabel>
+          <edgelabel>m_parameters</edgelabel>
+          <edgelabel>m_colorBuffer</edgelabel>
+          <edgelabel>m_vertexBuffer</edgelabel>
+          <edgelabel>m_programID</edgelabel>
+          <edgelabel>m_vertexArrayID</edgelabel>
+        </childnode>
+      </node>
+      <node id="1155">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="1142">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="1132" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="1156">
+        <label>string</label>
+      </node>
+      <node id="1153">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="1154" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="1133">
+        <label>float</label>
+      </node>
+      <node id="1145">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="1146" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+      <node id="1130">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="1137">
+        <label>Light</label>
+        <link refid="structLight"/>
+        <childnode refid="1138" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>exponent</edgelabel>
+          <edgelabel>kL</edgelabel>
+          <edgelabel>cosCutOff</edgelabel>
+          <edgelabel>cosInner</edgelabel>
+          <edgelabel>kQ</edgelabel>
+          <edgelabel>kC</edgelabel>
+          <edgelabel>power</edgelabel>
+        </childnode>
+        <childnode refid="1132" relation="usage">
+          <edgelabel>spotDirection</edgelabel>
+        </childnode>
+        <childnode refid="1139" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="1140" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="1150">
+        <label>irrklang::ISound</label>
+        <link refid="classirrklang_1_1ISound"/>
+        <childnode refid="1151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1131">
+        <label>Mouse</label>
+        <link refid="classMouse"/>
+        <childnode refid="1132" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1134" relation="usage">
+          <edgelabel>mouseSensitivity</edgelabel>
+          <edgelabel>resetX</edgelabel>
+          <edgelabel>resetY</edgelabel>
+        </childnode>
+        <childnode refid="1135" relation="usage">
+          <edgelabel>position_Vector</edgelabel>
+        </childnode>
+        <childnode refid="1136" relation="usage">
+          <edgelabel>boundaryCheckX</edgelabel>
+          <edgelabel>boundaryCheckY</edgelabel>
+        </childnode>
+      </node>
+      <node id="1141">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="1142" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>maxCameraX</edgelabel>
+          <edgelabel>maxX</edgelabel>
+          <edgelabel>minX</edgelabel>
+          <edgelabel>maxZ</edgelabel>
+          <edgelabel>minZ</edgelabel>
+        </childnode>
+        <childnode refid="1132" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>view</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>cameraRotate</edgelabel>
+        </childnode>
+        <childnode refid="1143" relation="usage">
+          <edgelabel>door</edgelabel>
+        </childnode>
+      </node>
+      <node id="1134">
+        <label>int</label>
+      </node>
+      <node id="1140">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="1149">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="1134" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+      <node id="1157">
+        <label>unsigned</label>
+      </node>
+      <node id="1143">
+        <label>bool</label>
+      </node>
+      <node id="1136">
+        <label>LONG</label>
+      </node>
+      <node id="1144">
+        <label>char</label>
+      </node>
+      <node id="1132">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1133" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/StartCutScene.h" line="32" column="1" bodyfile="MyGraphics/Source/StartCutScene.h" bodystart="31" bodyend="196"/>
+    <listofallmembers>
+      <member refid="classStartCutScene_1af49ef6ec172e44756e66942f8f4bf377" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>blowUp</name></member>
+      <member refid="classStartCutScene_1ac5a0a3c784c676e15aee02661eb48610" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>camera</name></member>
+      <member refid="classStartCutScene_1aebf952518f3025f49643e0fc10cd6c84" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>cameraShake</name></member>
+      <member refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>Character_Movement</name></member>
+      <member refid="classStartCutScene_1a201fce4a6e9377b95aa63bf38615b70b" prot="public" virt="virtual"><scope>StartCutScene</scope><name>Exit</name></member>
+      <member refid="classStartCutScene_1a4a2037d73efa54de3230584964423ff9" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>explosionScale</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a348d812262f128ec0480ac76ab5255e4" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_BACK1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a25e479b67429e1315aa637a0d4989d5d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_BB8BODY</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a3049865576477f459973a6c35c77ab38" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_BB8HEAD</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a715ead62376f29dff93ae148e4b12ef5" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_BOTTOM1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4acf9b5faf39229d4335e07ab1c7f5e23d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_BULLETSKIN</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a9e6d786cf3b29d78efa9361bb0758f95" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_CROSSHAIR</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a1a3ad531d7beb8b6893b3f5b1ec70f95" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_EXPLOSION</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a3731af4a2a470529a3089e869db30c12" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_FRONT1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a2e33a2771d7f10362e07004c7bde290b" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_LEFT1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a5601b9177135e2fb4c9f2563d6f52d45" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_LIGHTBALL</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a797cb39c3ec22c1cc3ad181cd89f169c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_MOONBALL</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4aa1107dff272c1dc1aac92fd7ba032885" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PLANEBODY</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a7feb3b637c454ec8f021e2ff77c4df32" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PLANEROCKET</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a48e352ecccb29e2391786eea1b279f0c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PLANEWING</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a5f6ab264664329f0c599965c9f18cabd" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PYRAMIDDOOR</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a38689893c919b1702e8c8c9c5dd4ffdc" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PYRAMIDFLOOR</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af5b6e3239d41d8cab3ed7efc6a9f901e" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PYRAMIDNEW</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a6ee848411747a4fdeff8a19a2018f68f" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PYRAMIDPILLAR</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4ad777f6c1d8b46166d9fd7310608cf277" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_PYRAMIDWALL</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a62ff07c7d2424d7e6aeb4d88f48ebc0f" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_QUAD</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af6436b2500618be730ddab54c5728af0" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_REF_AXES</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a8d9bf92e10f439364f2d6e08e0bf23f1" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_REF_QUAD</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a049d7b9e48851afaff9c517fcfa92adc" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_RIGHT1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4af72f8f23e82d3d4a3836dd156fce8054" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_SPACESHIP</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a956027f5ef98c63d3ddf2517de638229" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_STAR</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a82e799a93b1e5f39e7bccccb17fa47ce" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_STORY1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a510078c42447a4f8164399e257d3482d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_TEXT</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4addeb1790497becd6b8ac600386eb831f" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_THRUSTER</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4a9b10fb317105227404a1a7f9cbdc3ff9" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEO_TOP1</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>GEOMETRY_TYPE</name></member>
+      <member refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" prot="public" virt="virtual"><scope>StartCutScene</scope><name>Init</name></member>
+      <member refid="classStartCutScene_1a12c431bfe4ce2f0ed53505fbcaeb2123" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>light</name></member>
+      <member refid="classStartCutScene_1a9b54f820018288ee76ccadeaacb10929" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>m_colorBuffer</name></member>
+      <member refid="classStartCutScene_1a051f952beedd14f428d02239cd674960" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>m_indexBuffer</name></member>
+      <member refid="classStartCutScene_1a71946d0a767a645da627e6a99a5e2a0e" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>m_parameters</name></member>
+      <member refid="classStartCutScene_1ad230b850e7a42f02f44528c94e8215a6" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>m_programID</name></member>
+      <member refid="classStartCutScene_1a17dca5bd672d24cec46f62c544ec055c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>m_vertexArrayID</name></member>
+      <member refid="classStartCutScene_1a0568d51645c903d081841653f792e8cb" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>m_vertexBuffer</name></member>
+      <member refid="classStartCutScene_1a4acf5075287a73fa9d89c2e8e1a1c00e" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>Map</name></member>
+      <member refid="classStartCutScene_1a37f3ee35933ae0826bc5d455ddff9c25" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>Map_Reading</name></member>
+      <member refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>Map_Rendering</name></member>
+      <member refid="classStartCutScene_1a118df161e351fd834381cf198be23c48" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>meshList</name></member>
+      <member refid="classStartCutScene_1a9958de1b8228d9d3b9a60690a585f0a6" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>modelStack</name></member>
+      <member refid="classStartCutScene_1af9560388ba9659ee55bfc3c302f8a980" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>mouse</name></member>
+      <member refid="classStartCutScene_1a368421878e2d79a6793c2abe23224ad4ae3587e7c0cbb1493b4f168a734acac94" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>NUM_GEOMETRY</name></member>
+      <member refid="classStartCutScene_1a571ac458f7da8d392a9bc3c121b4af79" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>planePos</name></member>
+      <member refid="classStartCutScene_1a7f118205705d1a831673521106966b3c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>planePos2</name></member>
+      <member refid="classStartCutScene_1a816e39698adf1e9019b7bd3edfcf2890" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>projectionStack</name></member>
+      <member refid="classStartCutScene_1a68ddaa2ee85aa1b4d172de8094abd43a" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>randNum</name></member>
+      <member refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" prot="public" virt="virtual"><scope>StartCutScene</scope><name>Render</name></member>
+      <member refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>RenderMesh</name></member>
+      <member refid="classStartCutScene_1aa37f87586e628c706017a4fdae8552a8" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>RenderQuadOnScreen</name></member>
+      <member refid="classStartCutScene_1a468cad6c3f1fa2defe987e3b36d4d7c2" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>RenderSkybox</name></member>
+      <member refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>RenderText</name></member>
+      <member refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>RenderTextOnScreen</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>Scene</name></member>
+      <member refid="classStartCutScene_1ae18d465af24bdbefb41fe1a630b65ad4" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>Size</name></member>
+      <member refid="classStartCutScene_1a0a547bc9134c89f067c987c6cd284fb6" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>sound</name></member>
+      <member refid="classStartCutScene_1acb9995123b5d830414fdab53148212c3" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>StartCutScene</name></member>
+      <member refid="classStartCutScene_1a8dbb0368e94b074fe9ae65e392989371" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>thrusterScale</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab488120613fe649c2da07a05d9e4fd3c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_COLOR_TEXTURE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4cde1175669016a0479e0f9222c6df7d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_COLOR_TEXTURE_ENABLED</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a2e54f066a55503d8c9d417efd9133f32" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_COLOR</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a2b25875631aeac3f4b5113d1491e7bb8" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_COSCUTOFF</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a58624bf7e95df2f7ac0446f42df4c11c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_COSINNER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a7bba5b21753818397a18190398e98001" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_EXPONENT</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aa01084d006e9ac208013f7380b8d1ae7" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_KC</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ac3e57c46939c2a5a3ef2767c62136437" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_KL</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af4f4290732374050278567c9dbbb4e79" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_KQ</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aabef24509a3cfe2a848a9640a1b17d6e" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_POSITION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aa295783013a140e8f3568d1cedfe969e" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_POWER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af24c8e793079c9bfb484997257f28a0f" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_SPOTDIRECTION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5afb0878f30ca295355ddaf17292983b5a" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT0_TYPE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a00f8577e011b6611627d3b9df5b180ec" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_COLOR</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a21ec3990bfca61743f79f1b2a807f402" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_COSCUTOFF</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a34757149c4ec4cb2a3334e7c9b7fc578" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_COSINNER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6e2565e5d5cc410fa238820072e6c32b" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_EXPONENT</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af176fcc31442f5c1a7595520b8449605" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_KC</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ac17269f4831436a7186725ede9dc3c2d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_KL</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0c71de281fed9b1a4f4b3860e7024fd" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_KQ</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0e90f184d9c0775748cc4b76c8e32c39" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_POSITION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a63ded310d726ca58afb7f10b9e15749b" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_POWER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a88348b424c2696eb4b5bc329a97c06b8" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_SPOTDIRECTION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6fcd10cacc5735fd864c756f8488c8a7" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1_TYPE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4e67f1f50aa54151d57395f59a0f72fa" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT1ENABLED</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a42383a621b3b262004e7e9d2bfd890b9" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_COLOR</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ab349935ea9e50d6bc47998d42f0b846d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_COSCUTOFF</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aea4d258d729185b6a5cce329ce4c1131" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_COSINNER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5acd4212a238d1f15e84ee203e04a992b3" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_EXPONENT</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5acd40872254a81198ecba659881dfce24" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_KC</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ae73d7572f2d317cf1bb702adbbb20f4c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_KL</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a43ffa1cd3c125c203f195fe94e749685" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_KQ</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5afa2b02daec8aa4ff882660f2bf775bf8" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_POSITION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a9da17f3d8ee64cd6f8a2d4baf6a14030" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_POWER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aab84062c68a2afd886f22db4fce450b8" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_SPOTDIRECTION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a093b5e4458ae40ade7e3190cf98c4869" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2_TYPE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0e795d0953da495c6b9047de159ea5e2" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT2ENABLED</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a9fc510075264ab795b738b539bafad19" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_COLOR</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a8f5f7a3501523ec33000c6a89b485c21" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_COSCUTOFF</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a095fbf2b36406cfb1b00f0a8e60bbd87" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_COSINNER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a91c911a15b59e48849b330ac5bd93c0e" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_EXPONENT</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ae4e238be606ffb08573be3f234f4f033" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_KC</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5aaeda5ef827140587fda2a5a9e273be98" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_KL</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a69cd3e9c64789ede879fc6ae01bc0194" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_KQ</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a777d7705a72888da28782b71dddf4412" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_POSITION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a19870bf3eac023eff070ad561718a976" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_POWER</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5ac6d13499c800f4c1accaf2c4c2fd16ed" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_SPOTDIRECTION</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0f81822378cbb427b9c61658a0288c4c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3_TYPE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af427d4941f6bd394c8716504808814fe" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHT3ENABLED</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a89c67e46b0ec088934366a224eabffcd" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_LIGHTENABLED</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a3435a13eaa9eaae49d4c2096a37de980" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MATERIAL_AMBIENT</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a776c48a691f96b25b0e22bc9b291e98d" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MATERIAL_DIFFUSE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a374fe7481737c862d8b37593576aba66" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MATERIAL_SHININESS</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af1b025bf1748c521ccf685e09b763e69" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MATERIAL_SPECULAR</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0bb6ef04159eee8becd5429249bb42fd" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MODELVIEW</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a4697f24025919eb99dab27ab8a2b7903" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MODELVIEW_INVERSE_TRANSPOSE</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a6131193871c9352af42373b655443ccd" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_MVP</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a40baad0eb6aa723eb5c5756f255c592c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_NUMLIGHTS</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5af0d873f4f756c8bee5b0adda6ae8370c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_TEXT_COLOR</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a60c1e51279e4fc21ffaa976e6df76ad8" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_TEXT_ENABLED</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5a0a821a95fa705dffde01856c8da027d7" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>U_TOTAL</name></member>
+      <member refid="classStartCutScene_1a12708149d3d17700f3e229d9391941b5" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>UNIFORM_TYPE</name></member>
+      <member refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" prot="public" virt="virtual"><scope>StartCutScene</scope><name>Update</name></member>
+      <member refid="classStartCutScene_1ac07d7cf6bd9d1bb1c6dc400ee5eec3a5" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>UpdateMenu</name></member>
+      <member refid="classStartCutScene_1aa4d49312d58303dd5bb70fb80ccda38c" prot="private" virt="non-virtual"><scope>StartCutScene</scope><name>viewStack</name></member>
+      <member refid="classStartCutScene_1a8bf3ffd9a31a24fa6bbf208ee133e38f" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>X_Displacement</name></member>
+      <member refid="classStartCutScene_1a9b1cb241a8ca530ed72c46316ee4e7ad" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>Z_Displacement</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>~Scene</name></member>
+      <member refid="classStartCutScene_1a16144738956bdaaaae83b68fd644aaa2" prot="public" virt="non-virtual"><scope>StartCutScene</scope><name>~StartCutScene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,4 @@
+<map id="Enemy::Movement" name="Enemy::Movement">
+<area shape="rect" id="node2" href="$classEnemy.html#aa04b1e981e9910935e1a1df8524f5f18" title="Enemy::Collision_Detection" alt="" coords="184,5,367,32"/>
+<area shape="rect" id="node3" href="$classEnemy.html#ab87351b3b0661edb047cc2d0acdc8722" title="Enemy::Enemy_Collision" alt="" coords="415,5,583,32"/>
+</map>

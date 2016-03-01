@@ -1,0 +1,4 @@
+<map id="Scene3::checkNear" name="Scene3::checkNear">
+<area shape="rect" id="node2" href="$classScene3.html#a97c70e9151bede5a2ea42b19b5098337" title="Scene3::Character_Movement" alt="" coords="189,5,385,32"/>
+<area shape="rect" id="node3" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="433,31,548,57"/>
+</map>

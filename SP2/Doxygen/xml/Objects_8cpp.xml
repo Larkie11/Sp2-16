@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Objects_8cpp" kind="file" language="C++">
+    <compoundname>Objects.cpp</compoundname>
+    <includes refid="Objects_8h" local="yes">Objects.h</includes>
+    <incdepgraph>
+      <node id="5589">
+        <label>cmath</label>
+      </node>
+      <node id="5596">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5593" relation="include">
+        </childnode>
+      </node>
+      <node id="5590">
+        <label>exception</label>
+      </node>
+      <node id="5595">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5596" relation="include">
+        </childnode>
+        <childnode refid="5588" relation="include">
+        </childnode>
+      </node>
+      <node id="5591">
+        <label>ctime</label>
+      </node>
+      <node id="5586">
+        <label>MyGraphics/Source/Objects.cpp</label>
+        <link refid="Objects.cpp"/>
+        <childnode refid="5587" relation="include">
+        </childnode>
+      </node>
+      <node id="5587">
+        <label>Objects.h</label>
+        <link refid="Objects_8h"/>
+        <childnode refid="5588" relation="include">
+        </childnode>
+        <childnode refid="5593" relation="include">
+        </childnode>
+        <childnode refid="5595" relation="include">
+        </childnode>
+      </node>
+      <node id="5592">
+        <label>cstdlib</label>
+      </node>
+      <node id="5594">
+        <label>iostream</label>
+      </node>
+      <node id="5588">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5589" relation="include">
+        </childnode>
+        <childnode refid="5590" relation="include">
+        </childnode>
+        <childnode refid="5591" relation="include">
+        </childnode>
+        <childnode refid="5592" relation="include">
+        </childnode>
+      </node>
+      <node id="5593">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5588" relation="include">
+        </childnode>
+        <childnode refid="5594" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Objects_8h" kindref="compound">Objects.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="classObjects_1a99a95835b9c3df255e18c5f2f50219de" refkind="member"><highlight class="normal"><ref refid="classObjects_1a99a95835b9c3df255e18c5f2f50219de" kindref="member">Objects::Objects</ref>()</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classObjects_1a86a7e38eca3e25f52e1208965d1ea5b1" refkind="member"><highlight class="normal"><ref refid="classObjects_1a86a7e38eca3e25f52e1208965d1ea5b1" kindref="member">Objects::~Objects</ref>()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Objects.cpp"/>
+  </compounddef>
+</doxygen>

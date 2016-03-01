@@ -1,28 +1,80 @@
+/******************************************************************************/
+/*!
+\file	Scene2.cpp
+\author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
+\par	
+\brief
+Renders the 2nd scene for player to pick up eggs and access shop
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "Scene2.h"
 
 #include "shader.hpp"
-#include "Mtx44.h"
 #include "LoadTGA.h"
 #include "SharedData.h"
 
-//This class is to render the first scenario where player has to fix his own spaceship
+/******************************************************************************/
+/*!
+\brief
+Vector3 to x and y and z
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static Position VtoP(Vector3 V)
 {
 	Position P = { V.x, V.y, V.z };
 	return P;
 }
+/******************************************************************************/
+/*!
+\brief
+x and y and z to vector3
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 static Vector3 PtoV(Position V)
 {
 	Vector3 P = { V.x, V.y, V.z };
 	return P;
 }
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Scene2::Scene2()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Scene2::~Scene2()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for 2nd scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Init()
 {
 	srand(time(NULL));
@@ -73,17 +125,12 @@ void Scene2::Init()
 	//Enable depth buffer and depth testing
 	glEnable(GL_DEPTH_TEST);
 
-	//Enable back face culling
-	//glEnable(GL_CULL_FACE);
-
-	//Default to fill mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	// Generate a default VAO for now
 	glGenVertexArrays(1, &m_vertexArrayID);
 	glBindVertexArray(m_vertexArrayID);
 
-	//m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Blending.fragmentshader");
 	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
 	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
@@ -140,30 +187,6 @@ void Scene2::Init()
 	m_parameters[U_LIGHT3_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[3].cosCutoff");
 	m_parameters[U_LIGHT3_COSINNER] = glGetUniformLocation(m_programID, "lights[3].cosInner");
 	m_parameters[U_LIGHT3_EXPONENT] = glGetUniformLocation(m_programID, "lights[3].exponent");
-
-	m_parameters[U_LIGHT4_POSITION] = glGetUniformLocation(m_programID, "lights[4].position_cameraspace");
-	m_parameters[U_LIGHT4_COLOR] = glGetUniformLocation(m_programID, "lights[4].color");
-	m_parameters[U_LIGHT4_POWER] = glGetUniformLocation(m_programID, "lights[4].power");
-	m_parameters[U_LIGHT4_KC] = glGetUniformLocation(m_programID, "lights[4].kC");
-	m_parameters[U_LIGHT4_KL] = glGetUniformLocation(m_programID, "lights[4].kL");
-	m_parameters[U_LIGHT4_KQ] = glGetUniformLocation(m_programID, "lights[4].kQ");
-	m_parameters[U_LIGHT4_TYPE] = glGetUniformLocation(m_programID, "lights[4].type");
-	m_parameters[U_LIGHT4_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[4].spotDirection");
-	m_parameters[U_LIGHT4_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[4].cosCutoff");
-	m_parameters[U_LIGHT4_COSINNER] = glGetUniformLocation(m_programID, "lights[4].cosInner");
-	m_parameters[U_LIGHT4_EXPONENT] = glGetUniformLocation(m_programID, "lights[4].exponent");
-
-	m_parameters[U_LIGHT5_POSITION] = glGetUniformLocation(m_programID, "lights[5].position_cameraspace");
-	m_parameters[U_LIGHT5_COLOR] = glGetUniformLocation(m_programID, "lights[5].color");
-	m_parameters[U_LIGHT5_POWER] = glGetUniformLocation(m_programID, "lights[5].power");
-	m_parameters[U_LIGHT5_KC] = glGetUniformLocation(m_programID, "lights[5].kC");
-	m_parameters[U_LIGHT5_KL] = glGetUniformLocation(m_programID, "lights[5].kL");
-	m_parameters[U_LIGHT5_KQ] = glGetUniformLocation(m_programID, "lights[5].kQ");
-	m_parameters[U_LIGHT5_TYPE] = glGetUniformLocation(m_programID, "lights[5].type");
-	m_parameters[U_LIGHT5_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[5].spotDirection");
-	m_parameters[U_LIGHT5_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[5].cosCutoff");
-	m_parameters[U_LIGHT5_COSINNER] = glGetUniformLocation(m_programID, "lights[5].cosInner");
-	m_parameters[U_LIGHT5_EXPONENT] = glGetUniformLocation(m_programID, "lights[5].exponent");
 
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
@@ -347,8 +370,8 @@ void Scene2::Init()
 	meshList[GEO_ROBOT1] = MeshBuilder::GenerateOBJ("Robot1", "OBJ//R2D2.obj");
 	meshList[GEO_ROBOT1]->textureID = LoadTGA("Image//Scene_R2D2_A.tga");
 
-	meshList[GEO_COKE] = MeshBuilder::GenerateOBJ("coke", "OBJ//BB8.obj");
-	meshList[GEO_COKE]->textureID = LoadTGA("Image//Scene_BB8.tga");
+	meshList[GEO_ENEMY] = MeshBuilder::GenerateOBJ("coke", "OBJ//BB8.obj");
+	meshList[GEO_ENEMY]->textureID = LoadTGA("Image//Scene_BB8.tga");
 
 	meshList[GEO_STORY1] = MeshBuilder::GenerateQuad("story3", Color(1, 1, 1), 4, 5);
 	meshList[GEO_STORY1]->textureID = LoadTGA("Image//story2.tga");
@@ -371,12 +394,6 @@ void Scene2::Init()
 
 	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
 	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//Scene_SpaceShip.tga");
-
-	meshList[GEO_BB8HEAD] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8head.obj");
-	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//Scene_BB8head.tga");
-
-	meshList[GEO_BB8BODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8sphere.obj");
-	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//Scene_BB8sphere.tga");
 
 	GLuint plane = LoadTGA("Image//Scene_Plane.tga");
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
@@ -413,8 +430,6 @@ void Scene2::Init()
 	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
 	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
 
-	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
-
 	meshList[GEO_RMSMALL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial3.obj");
 	meshList[GEO_RMSMALL]->textureID = LoadTGA("Image//RawMaterial.tga");
 
@@ -430,13 +445,34 @@ void Scene2::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
-//Check for player and object distance
-//Takes in camera and object vector3
+/******************************************************************************/
+/*!
+\brief
+Camera position and item distance
+
+\param camera
+Passes in camera 
+\param rhs
+Object position
+
+\exception None
+\return the distance between objects
+*/
+/******************************************************************************/
 float Scene2::checkNear(Camera3 camera, Vector3 rhs)
 {
 	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
 
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame (Animation/booleans/music etc)
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Update(double dt)
 {
 	if (coolDownTime > 0)
@@ -449,10 +485,8 @@ void Scene2::Update(double dt)
 	}
 	Enemy_Updating(dt);
 
-	//Talking to npc or opening door
 	npc.Door(camera, dt);
 	npc.Scene1(camera, dt);
-	//Dialogue for robot with rotating head
 	if (Application::IsKeyPressed('E') && npc.robot3.robot == "robot3" && coolDownTime == 0)
 	{
 		coolDownTime = deltaTime / 10;
@@ -462,8 +496,6 @@ void Scene2::Update(double dt)
 			++npc.dialoguePlus;
 		}
 	}
-	//NPC movement/rotation
-
 	else if (npc.robot3.robot != "robot3")
 	{
 		npc.NPCmovement(dt, robot1rotation);
@@ -542,19 +574,6 @@ void Scene2::Update(double dt)
 	{
 		storyPosition += (float)(3 * dt);
 	}
-
-	//To open the shop for now
-	//if (Application::IsKeyPressed('O'))
-	//{
-	//	shop = "Loading Shop";
-	//	SharedData::GetInstance()->stateCheck = true;
-	//	SharedData::GetInstance()->gameState = SharedData::SHOP;
-	//}
-
-	//if (Application::IsKeyPressed('H'))
-	//{
-	//	SharedData::GetInstance()->bullet.quantity = 30;
-	//}
 
 	if (Application::IsKeyPressed(VK_LBUTTON) || Application::IsKeyPressed(VK_SPACE))
 	{
@@ -831,7 +850,18 @@ void Scene2::Update(double dt)
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
 }
-//Reading from text file
+/******************************************************************************/
+/*!
+\brief
+Text pushed in array
+
+\param filename
+Passes in the text file to be pushed into array
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -844,6 +874,15 @@ void Scene2::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Mesh rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -884,6 +923,15 @@ void Scene2::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Text rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -910,6 +958,15 @@ void Scene2::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Text on screen rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -955,7 +1012,26 @@ void Scene2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float
 
 	glEnable(GL_DEPTH_TEST);
 }
-//Takes in mesh, the size of the mesh, the position, the rotation, and z layering
+/******************************************************************************/
+/*!
+\brief
+Renders meshlist/obj on screen
+
+\param mesh
+The mesh to render
+\param size
+Scale of the mesh to render
+\param x, y and z
+Position of the mesh to render
+\param rotate, rx, ry and rz
+Rotation of mesh to render
+\param z
+Z layering
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
@@ -974,8 +1050,16 @@ void Scene2::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float 
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-//Rendering current skybox
 static float SBSCALE1 = 1000.f;
+/******************************************************************************/
+/*!
+\brief
+Renders skybox with rotation and scaling done
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -1035,7 +1119,15 @@ void Scene2::RenderSkybox()
 	RenderMesh(meshList[GEO_TOP1], false);
 	modelStack.PopMatrix();
 }
-//Render codes
+/******************************************************************************/
+/*!
+\brief
+Main rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Render()
 {
 	std::ostringstream oss;
@@ -1504,7 +1596,15 @@ void Scene2::Render()
 	}
 
 }
+/******************************************************************************/
+/*!
+\brief
+Exit and delete scene 
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
@@ -1527,7 +1627,7 @@ void Scene2::Enemy_Rendering()
 		modelStack.PushMatrix();
 		modelStack.Translate(A.x, -20, A.z);
 		modelStack.Scale(2, 2, 2);
-		RenderMesh(meshList[GEO_COKE], true);
+		RenderMesh(meshList[GEO_ENEMY], true);
 		modelStack.PopMatrix();
 	}
 }

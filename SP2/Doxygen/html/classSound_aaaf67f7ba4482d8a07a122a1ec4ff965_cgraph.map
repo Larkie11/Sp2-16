@@ -1,0 +1,3 @@
+<map id="Sound::stopMusic" name="Sound::stopMusic">
+<area shape="rect" id="node2" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="180,5,325,32"/>
+</map>

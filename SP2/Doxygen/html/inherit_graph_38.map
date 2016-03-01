@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classScene.html" title="Scene" alt="" coords="5,183,64,209"/>
+<area shape="rect" id="node2" href="$classCutscene.html" title="Meshes/booleans/floats for rendering and animation. " alt="" coords="127,5,204,32"/>
+<area shape="rect" id="node3" href="$classScene2.html" title="Initialize other class objects, meshes to render, booleans, floats and strings. " alt="" coords="132,56,199,83"/>
+<area shape="rect" id="node4" href="$classScene3.html" title="Scene3" alt="" coords="132,107,199,133"/>
+<area shape="rect" id="node5" href="$classSceneMenu.html" title="SceneMenu" alt="" coords="120,157,211,184"/>
+<area shape="rect" id="node6" href="$classSceneWin.html" title="Mesh list, floats and booleans to render the win scene. " alt="" coords="124,208,207,235"/>
+<area shape="rect" id="node7" href="$classShop.html" title="Renders the shop scene with needed meshes and takes care of shop interactables. " alt="" coords="139,259,191,285"/>
+<area shape="rect" id="node8" href="$classSP2.html" title="SP2" alt="" coords="142,309,189,336"/>
+<area shape="rect" id="node9" href="$classStartCutScene.html" title="StartCutScene" alt="" coords="112,360,219,387"/>
+</map>

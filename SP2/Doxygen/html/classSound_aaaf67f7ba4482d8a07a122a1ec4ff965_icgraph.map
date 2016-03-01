@@ -1,0 +1,6 @@
+<map id="Sound::stopMusic" name="Sound::stopMusic">
+<area shape="rect" id="node2" href="$classSceneWin.html#ae9b6232f0d97525ea3f26af4b1811a5b" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="180,5,311,32"/>
+<area shape="rect" id="node3" href="$classCutscene.html#ad0419ba77f29fa1707e56b9635a0addc" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="182,56,309,83"/>
+<area shape="rect" id="node4" href="$classShop.html#af915842cee6266631dc4f18abd95d854" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="195,107,296,133"/>
+<area shape="rect" id="node5" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="197,157,293,184"/>
+</map>

@@ -10,10 +10,27 @@ Checks if player is near and then show and allow the player to do something
 #include "NPC.h"
 #include "SharedData.h"
 
+/******************************************************************************/
+/*!
+\brief
+Default constructor 
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 NPC::NPC()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor 
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 NPC::~NPC()
 {
 }

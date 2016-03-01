@@ -1,23 +1,53 @@
+/******************************************************************************/
+/*!
+\file	Shop.cpp
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Renders the scene where player can talk to the shopkeeper
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "Shop.h"
 
 #include "shader.hpp"
-#include "Mtx44.h"
-
-#include "Application.h"
-#include "MeshBuilder.h"
-#include "Utility.h"
 #include "LoadTGA.h"
 #include "SharedData.h"
 #include <sstream>
 
-//This class is to rendeer the shop scene
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Shop::Shop()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 Shop::~Shop()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for shop scene, any booleans/strings/floats and meshes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::Init()
 {
 	npc.spaceDoor.Nposition = Vector3(-90, -20, 0);
@@ -153,6 +183,15 @@ void Shop::Init()
 	projectionStack.LoadMatrix(projection);
 }
 static bool Lighting9 = true;
+/******************************************************************************/
+/*!
+\brief
+Checks for if player is in each other the "shop/buying/selling" scene and show out the options player can use
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::ShopOptions()
 {
 	if (shopInput == "Shop")
@@ -336,6 +375,15 @@ void Shop::ShopOptions()
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Checks for player input in "Shop/Buy/Selling"
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::userInput()
 {
 	if (shopInput == "Shop")
@@ -421,6 +469,15 @@ void Shop::userInput()
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame (Animation/booleans/music etc)
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::Update(double dt)
 {
 	npc.Shop(camera, dt);
@@ -464,6 +521,15 @@ void Shop::Update(double dt)
 	
 	deltaTime = (1.0 / dt);
 }
+/******************************************************************************/
+/*!
+\brief
+Pushes in the shop scene into array from text file, allows easy changes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::Dialogue(string filename)
 {
 	ifstream myfile(filename.c_str());
@@ -476,6 +542,15 @@ void Shop::Dialogue(string filename)
 		my_arr.push_back(new_line);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Mesh rendering function 
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -500,6 +575,15 @@ void Shop::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text in the game
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -525,6 +609,15 @@ void Shop::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text on screen in the game
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -569,6 +662,15 @@ void Shop::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders any meshList items/obj on the screen
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
@@ -588,6 +690,15 @@ void Shop::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float ro
 	modelStack.PopMatrix();
 }
 static float SBSCALE1 = 1000.f;
+/******************************************************************************/
+/*!
+\brief
+Renders the skybox on screen with rotation, scaling done
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -647,7 +758,15 @@ void Shop::RenderSkybox()
 	RenderMesh(meshList[GEO_TOP1], false);
 	modelStack.PopMatrix();
 }
-static float SSCALE1 = 500.f;
+/******************************************************************************/
+/*!
+\brief
+The main render function for this scene, renders any text/meshes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::Render()
 {
 	std::ostringstream oss;
@@ -843,6 +962,15 @@ void Shop::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
 }
+/******************************************************************************/
+/*!
+\brief
+Delete scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Shop::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);

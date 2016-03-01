@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classSharedData" kind="class" language="C++" prot="public">
+    <compoundname>SharedData</compoundname>
+    <includes refid="SharedData_8h" local="no">SharedData.h</includes>
+    <innerclass refid="structSharedData_1_1INVENTORY" prot="public">SharedData::INVENTORY</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5b" prot="public" static="no">
+        <name>GAMESTATE</name>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" prot="public">
+          <name>MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bae0fc3e56dcec516055b634ccf34e6f71" prot="public">
+          <name>G_CUTSCENE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba779ebe0a34809ed51d63a96e6b1d7531" prot="public">
+          <name>GAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12559547ceddc6681610499196ae63a9" prot="public">
+          <name>SCENE2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bac54d14bd2c7e410718c56fe1930ad437" prot="public">
+          <name>SCENE3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba2aa984e73581ce69c0380744c50369db" prot="public">
+          <name>SHOP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba40d64a08038d0d14f76bdaac41e3dfe3" prot="public">
+          <name>CUTSCENE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba90ea93156d3af904699969de05941e85" prot="public">
+          <name>WIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" prot="public">
+          <name>QUIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5baeab4df39075cda3ee77c394e42df30bf" prot="public">
+          <name>MAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="34" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="33" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="classSharedData_1a4042d28f7384c145e1e832dce6cfe80c" prot="public" static="no">
+        <name>MENUPAGE</name>
+        <enumvalue id="classSharedData_1a4042d28f7384c145e1e832dce6cfe80cabc7c73f0fb940ebe183a07da8a5975cb" prot="public">
+          <name>STARTGAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a4042d28f7384c145e1e832dce6cfe80ca8ecc8e00e7d90eca0c2de1e34bb5786a" prot="public">
+          <name>SETTING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a4042d28f7384c145e1e832dce6cfe80ca89844fd33caba6888212d4a705615666" prot="public">
+          <name>CREDIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSharedData_1a4042d28f7384c145e1e832dce6cfe80ca75515472b6e7839c6d4c284404ac36af" prot="public">
+          <name>M_QUIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="47" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="46" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" prot="public" static="no" mutable="no">
+        <type><ref refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5b" kindref="member">GAMESTATE</ref></type>
+        <definition>GAMESTATE SharedData::gameState</definition>
+        <argsstring></argsstring>
+        <name>gameState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="53" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classSceneMenu_1a119a0daee8a124bbe5cb408f9ce944b1" compoundref="SceneMenu_8cpp" startline="254" endline="337">SceneMenu::mouseControl</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" compoundref="SceneWin_8cpp" startline="115" endline="123">SceneWin::Update</referencedby>
+        <referencedby refid="classCutscene_1ad0419ba77f29fa1707e56b9635a0addc" compoundref="Cutscene_8cpp" startline="166" endline="201">Cutscene::Update</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">StartCutScene::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classSceneMenu_1a6337296b63007ec335cadba8665d7d94" compoundref="SceneMenu_8cpp" startline="121" endline="221">SceneMenu::UpdateMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a7e8c368c5192d3f846b2fcac7dac2a77" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SharedData::gameScene</definition>
+        <argsstring></argsstring>
+        <name>gameScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="54" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a10d4f68a6965711b0435a8f46990af78" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SharedData::stateCheck</definition>
+        <argsstring></argsstring>
+        <name>stateCheck</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="60" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classSceneMenu_1a119a0daee8a124bbe5cb408f9ce944b1" compoundref="SceneMenu_8cpp" startline="254" endline="337">SceneMenu::mouseControl</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" compoundref="SceneWin_8cpp" startline="115" endline="123">SceneWin::Update</referencedby>
+        <referencedby refid="classCutscene_1ad0419ba77f29fa1707e56b9635a0addc" compoundref="Cutscene_8cpp" startline="166" endline="201">Cutscene::Update</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">StartCutScene::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classSceneMenu_1a6337296b63007ec335cadba8665d7d94" compoundref="SceneMenu_8cpp" startline="121" endline="221">SceneMenu::UpdateMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1af7b98080b9f3bc80f554f3ba8fca7621" prot="public" static="no" mutable="no">
+        <type><ref refid="structSharedData_1_1INVENTORY" kindref="compound">INVENTORY</ref></type>
+        <definition>INVENTORY SharedData::bullet</definition>
+        <argsstring></argsstring>
+        <name>bullet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="62" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a59d13d3c8c35d1caa654680cefdb189d" prot="public" static="no" mutable="no">
+        <type><ref refid="structSharedData_1_1INVENTORY" kindref="compound">INVENTORY</ref></type>
+        <definition>INVENTORY SharedData::gold</definition>
+        <argsstring></argsstring>
+        <name>gold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="63" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1ac789ec12fe814d50b8b24bbe65c3ef62" prot="public" static="no" mutable="no">
+        <type><ref refid="structSharedData_1_1INVENTORY" kindref="compound">INVENTORY</ref></type>
+        <definition>INVENTORY SharedData::bomb</definition>
+        <argsstring></argsstring>
+        <name>bomb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="64" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1ad78b13ca367eb739bff4859b40e1966e" prot="public" static="no" mutable="no">
+        <type><ref refid="structSharedData_1_1INVENTORY" kindref="compound">INVENTORY</ref></type>
+        <definition>INVENTORY SharedData::egg</definition>
+        <argsstring></argsstring>
+        <name>egg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="65" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a9836d6bd377314252b3142c60155fc07" prot="public" static="no" mutable="no">
+        <type><ref refid="structSharedData_1_1INVENTORY" kindref="compound">INVENTORY</ref></type>
+        <definition>INVENTORY SharedData::mineral</definition>
+        <argsstring></argsstring>
+        <name>mineral</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="66" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a61a51fd899d848713bfaeb6323f8df84" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SharedData::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="67" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="60" endline="113">Application::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a97439660413bfd5df853f74cd9342382" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SharedData::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="68" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="60" endline="113">Application::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSharedData_1a212c6461f83b5ab83e44118b34f52154" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SharedData::enemycounter</definition>
+        <argsstring></argsstring>
+        <name>enemycounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="69" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">Bullet::CollideWithEnemy</referencedby>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">SceneWin::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" compoundref="CollisionDetector_8cpp" startline="33" endline="49">CollisionDetector::swordCollision</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classSharedData" kindref="compound">SharedData</ref> *</type>
+        <definition>static SharedData* SharedData::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="55" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="55" bodyend="59"/>
+        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">Bullet::CollideWithEnemy</referencedby>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="60" endline="113">Application::Init</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classSceneMenu_1a119a0daee8a124bbe5cb408f9ce944b1" compoundref="SceneMenu_8cpp" startline="254" endline="337">SceneMenu::mouseControl</referencedby>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">SceneWin::Render</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" compoundref="CollisionDetector_8cpp" startline="33" endline="49">CollisionDetector::swordCollision</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</referencedby>
+        <referencedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" compoundref="SceneWin_8cpp" startline="115" endline="123">SceneWin::Update</referencedby>
+        <referencedby refid="classCutscene_1ad0419ba77f29fa1707e56b9635a0addc" compoundref="Cutscene_8cpp" startline="166" endline="201">Cutscene::Update</referencedby>
+        <referencedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86" compoundref="StartCutScene_8cpp" startline="120" endline="147">StartCutScene::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classSceneMenu_1a6337296b63007ec335cadba8665d7d94" compoundref="SceneMenu_8cpp" startline="121" endline="221">SceneMenu::UpdateMenu</referencedby>
+        <referencedby refid="classSceneMenu_1a422db583e22754ce8449f93aa40019f5" compoundref="SceneMenu_8cpp" startline="223" endline="252">SceneMenu::userInput</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSharedData_1a67fec283f34fd58f1d767ca561998baf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SharedData::SharedData</definition>
+        <argsstring>()</argsstring>
+        <name>SharedData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="71" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="71" bodyend="81"/>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" compoundref="SharedData_8h" startline="35">MENU</references>
+        <references refid="structSharedData_1_1INVENTORY_1add1e00847ed9b01f99d8b71b42b44ff2" compoundref="SharedData_8h" startline="31">SharedData::INVENTORY::quantity</references>
+      </memberdef>
+      <memberdef kind="function" id="classSharedData_1ae3ea8cd45636fce349eb72923285c0f3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SharedData::~SharedData</definition>
+        <argsstring>()</argsstring>
+        <name>~SharedData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SharedData.h" line="82" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="82" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Stores the struct/booleans/game states that we want to access from other classes. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classSharedData" kindref="compound">SharedData</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1033">
+        <label>SharedData</label>
+        <link refid="classSharedData"/>
+        <childnode refid="1034" relation="usage">
+          <edgelabel>width</edgelabel>
+          <edgelabel>height</edgelabel>
+        </childnode>
+        <childnode refid="1035" relation="usage">
+          <edgelabel>gameState</edgelabel>
+        </childnode>
+        <childnode refid="1036" relation="usage">
+          <edgelabel>enemycounter</edgelabel>
+        </childnode>
+        <childnode refid="1037" relation="usage">
+          <edgelabel>stateCheck</edgelabel>
+        </childnode>
+        <childnode refid="1038" relation="usage">
+          <edgelabel>gameScene</edgelabel>
+        </childnode>
+        <childnode refid="1039" relation="usage">
+          <edgelabel>gold</edgelabel>
+          <edgelabel>bullet</edgelabel>
+          <edgelabel>bomb</edgelabel>
+          <edgelabel>mineral</edgelabel>
+          <edgelabel>egg</edgelabel>
+        </childnode>
+      </node>
+      <node id="1039">
+        <label>SharedData::INVENTORY</label>
+        <link refid="structSharedData_1_1INVENTORY"/>
+        <childnode refid="1036" relation="usage">
+          <edgelabel>quantity</edgelabel>
+        </childnode>
+      </node>
+      <node id="1038">
+        <label>string</label>
+      </node>
+      <node id="1034">
+        <label>float</label>
+      </node>
+      <node id="1036">
+        <label>int</label>
+      </node>
+      <node id="1035">
+        <label>GAMESTATE</label>
+      </node>
+      <node id="1037">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/SharedData.h" line="25" column="1" bodyfile="MyGraphics/Source/SharedData.h" bodystart="24" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classSharedData_1ac789ec12fe814d50b8b24bbe65c3ef62" prot="public" virt="non-virtual"><scope>SharedData</scope><name>bomb</name></member>
+      <member refid="classSharedData_1af7b98080b9f3bc80f554f3ba8fca7621" prot="public" virt="non-virtual"><scope>SharedData</scope><name>bullet</name></member>
+      <member refid="classSharedData_1a4042d28f7384c145e1e832dce6cfe80ca89844fd33caba6888212d4a705615666" prot="public" virt="non-virtual"><scope>SharedData</scope><name>CREDIT</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba40d64a08038d0d14f76bdaac41e3dfe3" prot="public" virt="non-virtual"><scope>SharedData</scope><name>CUTSCENE</name></member>
+      <member refid="classSharedData_1ad78b13ca367eb739bff4859b40e1966e" prot="public" virt="non-virtual"><scope>SharedData</scope><name>egg</name></member>
+      <member refid="classSharedData_1a212c6461f83b5ab83e44118b34f52154" prot="public" virt="non-virtual"><scope>SharedData</scope><name>enemycounter</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bae0fc3e56dcec516055b634ccf34e6f71" prot="public" virt="non-virtual"><scope>SharedData</scope><name>G_CUTSCENE</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba779ebe0a34809ed51d63a96e6b1d7531" prot="public" virt="non-virtual"><scope>SharedData</scope><name>GAME</name></member>
+      <member refid="classSharedData_1a7e8c368c5192d3f846b2fcac7dac2a77" prot="public" virt="non-virtual"><scope>SharedData</scope><name>gameScene</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5b" prot="public" virt="non-virtual"><scope>SharedData</scope><name>GAMESTATE</name></member>
+      <member refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" prot="public" virt="non-virtual"><scope>SharedData</scope><name>gameState</name></member>
+      <member refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" prot="public" virt="non-virtual"><scope>SharedData</scope><name>GetInstance</name></member>
+      <member refid="classSharedData_1a59d13d3c8c35d1caa654680cefdb189d" prot="public" virt="non-virtual"><scope>SharedData</scope><name>gold</name></member>
+      <member refid="classSharedData_1a97439660413bfd5df853f74cd9342382" prot="public" virt="non-virtual"><scope>SharedData</scope><name>height</name></member>
+      <member refid="classSharedData_1a4042d28f7384c145e1e832dce6cfe80ca75515472b6e7839c6d4c284404ac36af" prot="public" virt="non-virtual"><scope>SharedData</scope><name>M_QUIT</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5baeab4df39075cda3ee77c394e42df30bf" prot="public" virt="non-virtual"><scope>SharedData</scope><name>MAX</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" prot="public" virt="non-virtual"><scope>SharedData</scope><name>MENU</name></member>
+      <member refid="classSharedData_1a4042d28f7384c145e1e832dce6cfe80c" prot="public" virt="non-virtual"><scope>SharedData</scope><name>MENUPAGE</name></member>
+      <member refid="classSharedData_1a9836d6bd377314252b3142c60155fc07" prot="public" virt="non-virtual"><scope>SharedData</scope><name>mineral</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" prot="public" virt="non-virtual"><scope>SharedData</scope><name>QUIT</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12559547ceddc6681610499196ae63a9" prot="public" virt="non-virtual"><scope>SharedData</scope><name>SCENE2</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bac54d14bd2c7e410718c56fe1930ad437" prot="public" virt="non-virtual"><scope>SharedData</scope><name>SCENE3</name></member>
+      <member refid="classSharedData_1a4042d28f7384c145e1e832dce6cfe80ca8ecc8e00e7d90eca0c2de1e34bb5786a" prot="public" virt="non-virtual"><scope>SharedData</scope><name>SETTING</name></member>
+      <member refid="classSharedData_1a67fec283f34fd58f1d767ca561998baf" prot="private" virt="non-virtual"><scope>SharedData</scope><name>SharedData</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba2aa984e73581ce69c0380744c50369db" prot="public" virt="non-virtual"><scope>SharedData</scope><name>SHOP</name></member>
+      <member refid="classSharedData_1a4042d28f7384c145e1e832dce6cfe80cabc7c73f0fb940ebe183a07da8a5975cb" prot="public" virt="non-virtual"><scope>SharedData</scope><name>STARTGAME</name></member>
+      <member refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" prot="public" virt="non-virtual"><scope>SharedData</scope><name>stateCheck</name></member>
+      <member refid="classSharedData_1a61a51fd899d848713bfaeb6323f8df84" prot="public" virt="non-virtual"><scope>SharedData</scope><name>width</name></member>
+      <member refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba90ea93156d3af904699969de05941e85" prot="public" virt="non-virtual"><scope>SharedData</scope><name>WIN</name></member>
+      <member refid="classSharedData_1ae3ea8cd45636fce349eb72923285c0f3" prot="private" virt="non-virtual"><scope>SharedData</scope><name>~SharedData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	SceneWin.h
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Renders the win screen for player
+*/
+/******************************************************************************/
 #ifndef SCENEWIN_H
 #define SCENEWIN_H
 
@@ -12,15 +21,12 @@
 #include "MenuShop.h"
 #include "Sound.h"
 
-#include <vector>
-#include <iostream>
-#include <fstream>
-
-using std::cout;
-using std::endl;
-using std::ifstream;
-using std::vector;
-
+/******************************************************************************/
+/*!
+Class SceneWin:
+\brief	Mesh list, floats and booleans to render the win scene
+*/
+/******************************************************************************/
 class SceneWin : public Scene
 {
 	enum GEOMETRY_TYPE
@@ -74,10 +80,7 @@ private:
 	unsigned m_colorBuffer[NUM_GEOMETRY];
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
-	void UpdateMenu();
-	MenuShop menushop;
 
-	bool clicked;
 	Mesh* meshList[NUM_GEOMETRY];
 
 	MS modelStack, viewStack, projectionStack;
@@ -93,8 +96,5 @@ private:
 	Camera3 camera;
 
 	Sound sound;
-
-	vector<string>my_arr;
-	float deltaTime;
 };
 #endif

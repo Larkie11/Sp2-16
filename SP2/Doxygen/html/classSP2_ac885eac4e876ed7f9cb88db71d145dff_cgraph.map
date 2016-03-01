@@ -1,0 +1,11 @@
+<map id="SP2::Enemy_Updating" name="SP2::Enemy_Updating">
+<area shape="rect" id="node2" href="$classEnemy.html#a819ee9012f940e2c1c81064b1983c037" title="Enemy::enemy_attack" alt="" coords="221,5,374,32"/>
+<area shape="rect" id="node4" href="$classEnemy.html#a13a4b0c7f0300b80cdc924aea52ecaf7" title="Enemy::Enemy_movement" alt="" coords="208,56,387,83"/>
+<area shape="rect" id="node10" href="$SP2_8cpp.html#ac07446f8019674e7e66875dd6d25588d" title="VtoP" alt="" coords="272,107,323,133"/>
+<area shape="rect" id="node3" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Camera3::Reset" alt="" coords="450,5,566,32"/>
+<area shape="rect" id="node5" href="$classEnemy.html#a5ee4dd60f6ce56952ff5d74e6777efd3" title="Enemy::mode_Action" alt="" coords="435,56,581,83"/>
+<area shape="rect" id="node7" href="$classEnemy.html#a49c6f489172cdc0d246fdeb08506eacd" title="Enemy::Movement" alt="" coords="443,107,573,133"/>
+<area shape="rect" id="node6" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="643,56,798,83"/>
+<area shape="rect" id="node8" href="$classEnemy.html#aa04b1e981e9910935e1a1df8524f5f18" title="Enemy::Collision_Detection" alt="" coords="629,107,812,133"/>
+<area shape="rect" id="node9" href="$classEnemy.html#ab87351b3b0661edb047cc2d0acdc8722" title="Enemy::Enemy_Collision" alt="" coords="860,107,1028,133"/>
+</map>

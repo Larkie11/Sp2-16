@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Animation_8h" kind="file" language="C++">
+    <compoundname>Animation.h</compoundname>
+    <includes refid="Mesh_8h" local="yes">Mesh.h</includes>
+    <includedby refid="Animation_8cpp" local="yes">MyGraphics/Source/Animation.cpp</includedby>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="Scene2_8h" local="yes">MyGraphics/Source/Scene2.h</includedby>
+    <includedby refid="Scene3_8h" local="yes">MyGraphics/Source/Scene3.h</includedby>
+    <incdepgraph>
+      <node id="4608">
+        <label>MyGraphics/Source/Animation.h</label>
+        <link refid="Animation.h"/>
+        <childnode refid="4609" relation="include">
+        </childnode>
+      </node>
+      <node id="4615">
+        <label>cmath</label>
+      </node>
+      <node id="4610">
+        <label>string</label>
+      </node>
+      <node id="4616">
+        <label>exception</label>
+      </node>
+      <node id="4617">
+        <label>ctime</label>
+      </node>
+      <node id="4612">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="4613" relation="include">
+        </childnode>
+      </node>
+      <node id="4609">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="4610" relation="include">
+        </childnode>
+        <childnode refid="4611" relation="include">
+        </childnode>
+      </node>
+      <node id="4611">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+        <childnode refid="4612" relation="include">
+        </childnode>
+      </node>
+      <node id="4618">
+        <label>cstdlib</label>
+      </node>
+      <node id="4619">
+        <label>iostream</label>
+      </node>
+      <node id="4614">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="4615" relation="include">
+        </childnode>
+        <childnode refid="4616" relation="include">
+        </childnode>
+        <childnode refid="4617" relation="include">
+        </childnode>
+        <childnode refid="4618" relation="include">
+        </childnode>
+      </node>
+      <node id="4613">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="4614" relation="include">
+        </childnode>
+        <childnode refid="4619" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4620">
+        <label>MyGraphics/Source/Animation.h</label>
+        <link refid="Animation.h"/>
+        <childnode refid="4621" relation="include">
+        </childnode>
+        <childnode refid="4622" relation="include">
+        </childnode>
+        <childnode refid="4626" relation="include">
+        </childnode>
+        <childnode refid="4628" relation="include">
+        </childnode>
+      </node>
+      <node id="4627">
+        <label>MyGraphics/Source/Scene2.cpp</label>
+        <link refid="Scene2_8cpp"/>
+      </node>
+      <node id="4629">
+        <label>MyGraphics/Source/Scene3.cpp</label>
+        <link refid="Scene3_8cpp"/>
+      </node>
+      <node id="4628">
+        <label>MyGraphics/Source/Scene3.h</label>
+        <link refid="Scene3_8h"/>
+        <childnode refid="4623" relation="include">
+        </childnode>
+        <childnode refid="4629" relation="include">
+        </childnode>
+      </node>
+      <node id="4624">
+        <label>MyGraphics/Source/Enemy.cpp</label>
+        <link refid="Enemy_8cpp"/>
+      </node>
+      <node id="4622">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="4623" relation="include">
+        </childnode>
+        <childnode refid="4624" relation="include">
+        </childnode>
+        <childnode refid="4625" relation="include">
+        </childnode>
+      </node>
+      <node id="4623">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="4626">
+        <label>MyGraphics/Source/Scene2.h</label>
+        <link refid="Scene2_8h"/>
+        <childnode refid="4623" relation="include">
+        </childnode>
+        <childnode refid="4627" relation="include">
+        </childnode>
+      </node>
+      <node id="4625">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="4621">
+        <label>MyGraphics/Source/Animation.cpp</label>
+        <link refid="Animation_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classAnimation" prot="public">Animation</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ANIMATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ANIMATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mesh_8h" kindref="compound">Mesh.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classAnimation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAnimation" kindref="compound">Animation</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" kindref="member">Animation</ref>();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAnimation_1a401b68793d4fbf48d481c030ee4b2a16" kindref="member">~Animation</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" kindref="member">Slash</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetRotation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>start);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1adc6488f1436096edbb58454315f04bed" kindref="member">Shoot</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetTranslation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>start);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" kindref="member">Mine</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetRotation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>start);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a0c16fd819ed0a965ef3f66f2c1957a1b" kindref="member">moveSword</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetTranslation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usingSword);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a4acfd87b27928b8955a1d4679e7c1166" kindref="member">moveGun</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetTranslation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usingGun);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a15100ed0ea6b8fcdbc3b6837be44f5e0" kindref="member">explosion</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>explosionScale,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>playExplosion);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a7bd2623cd7040e32837d7fb312d31790" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" kindref="member">sliceUp</ref>;</highlight></codeline>
+<codeline lineno="19" refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" kindref="member">sliceDown</ref>;</highlight></codeline>
+<codeline lineno="20" refid="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" kindref="member">moveFront</ref>;</highlight></codeline>
+<codeline lineno="21" refid="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" kindref="member">moveBack</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classAnimation_1adeaa31f34e61ae2d9aec9f3b1328d1da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1adeaa31f34e61ae2d9aec9f3b1328d1da" kindref="member">switchDown</ref>;</highlight></codeline>
+<codeline lineno="24" refid="classAnimation_1a873241ab36c3f925b7466a324e0f82c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classAnimation_1a873241ab36c3f925b7466a324e0f82c3" kindref="member">switchUp</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Animation.h"/>
+  </compounddef>
+</doxygen>

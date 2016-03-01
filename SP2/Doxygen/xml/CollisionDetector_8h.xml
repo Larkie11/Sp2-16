@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="CollisionDetector_8h" kind="file" language="C++">
+    <compoundname>CollisionDetector.h</compoundname>
+    <includes refid="MyMath_8h" local="yes">MyMath.h</includes>
+    <includes refid="Enemy_8h" local="yes">Enemy.h</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includedby refid="Bullet_8h" local="yes">MyGraphics/Source/Bullet.h</includedby>
+    <includedby refid="NPC_8h" local="yes">MyGraphics/Source/NPC.h</includedby>
+    <includedby refid="rawMaterial_8h" local="yes">MyGraphics/Source/rawMaterial.h</includedby>
+    <includedby refid="Shop_8h" local="yes">MyGraphics/Source/Shop.h</includedby>
+    <includedby refid="Bullet_8cpp" local="yes">MyGraphics/Source/Bullet.cpp</includedby>
+    <includedby refid="CollisionDetector_8cpp" local="yes">MyGraphics/Source/CollisionDetector.cpp</includedby>
+    <incdepgraph>
+      <node id="4979">
+        <label>cmath</label>
+      </node>
+      <node id="4988">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="4985" relation="include">
+        </childnode>
+      </node>
+      <node id="4980">
+        <label>exception</label>
+      </node>
+      <node id="4983">
+        <label>Enemy.h</label>
+        <link refid="Enemy_8h"/>
+        <childnode refid="4984" relation="include">
+        </childnode>
+        <childnode refid="4987" relation="include">
+        </childnode>
+      </node>
+      <node id="4987">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="4988" relation="include">
+        </childnode>
+        <childnode refid="4978" relation="include">
+        </childnode>
+      </node>
+      <node id="4977">
+        <label>MyGraphics/Source/CollisionDetector.h</label>
+        <link refid="CollisionDetector.h"/>
+        <childnode refid="4978" relation="include">
+        </childnode>
+        <childnode refid="4983" relation="include">
+        </childnode>
+        <childnode refid="4985" relation="include">
+        </childnode>
+      </node>
+      <node id="4981">
+        <label>ctime</label>
+      </node>
+      <node id="4984">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="4985" relation="include">
+        </childnode>
+      </node>
+      <node id="4982">
+        <label>cstdlib</label>
+      </node>
+      <node id="4986">
+        <label>iostream</label>
+      </node>
+      <node id="4978">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="4979" relation="include">
+        </childnode>
+        <childnode refid="4980" relation="include">
+        </childnode>
+        <childnode refid="4981" relation="include">
+        </childnode>
+        <childnode refid="4982" relation="include">
+        </childnode>
+      </node>
+      <node id="4985">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="4978" relation="include">
+        </childnode>
+        <childnode refid="4986" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5001">
+        <label>MyGraphics/Source/Shop.h</label>
+        <link refid="Shop_8h"/>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="5002" relation="include">
+        </childnode>
+      </node>
+      <node id="5006">
+        <label>MyGraphics/Source/CollisionDetector.cpp</label>
+        <link refid="CollisionDetector_8cpp"/>
+      </node>
+      <node id="5005">
+        <label>MyGraphics/Source/rawMatierial.cpp</label>
+        <link refid="rawMatierial_8cpp"/>
+      </node>
+      <node id="4990">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet_8h"/>
+        <childnode refid="4991" relation="include">
+        </childnode>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4997" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+      </node>
+      <node id="4996">
+        <label>MyGraphics/Source/Scene2.cpp</label>
+        <link refid="Scene2_8cpp"/>
+      </node>
+      <node id="4998">
+        <label>MyGraphics/Source/Scene3.cpp</label>
+        <link refid="Scene3_8cpp"/>
+      </node>
+      <node id="5002">
+        <label>MyGraphics/Source/Shop.cpp</label>
+        <link refid="Shop_8cpp"/>
+      </node>
+      <node id="4999">
+        <label>MyGraphics/Source/Bullet.cpp</label>
+        <link refid="Bullet_8cpp"/>
+      </node>
+      <node id="4997">
+        <label>MyGraphics/Source/Scene3.h</label>
+        <link refid="Scene3_8h"/>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="4998" relation="include">
+        </childnode>
+      </node>
+      <node id="4993">
+        <label>MyGraphics/Source/Enemy.cpp</label>
+        <link refid="Enemy_8cpp"/>
+      </node>
+      <node id="4991">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="4993" relation="include">
+        </childnode>
+        <childnode refid="4994" relation="include">
+        </childnode>
+      </node>
+      <node id="4989">
+        <label>MyGraphics/Source/CollisionDetector.h</label>
+        <link refid="CollisionDetector.h"/>
+        <childnode refid="4990" relation="include">
+        </childnode>
+        <childnode refid="5000" relation="include">
+        </childnode>
+        <childnode refid="5004" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+        <childnode refid="5006" relation="include">
+        </childnode>
+      </node>
+      <node id="5003">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="4992">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5004">
+        <label>MyGraphics/Source/rawMaterial.h</label>
+        <link refid="rawMaterial_8h"/>
+        <childnode refid="4991" relation="include">
+        </childnode>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4997" relation="include">
+        </childnode>
+        <childnode refid="5005" relation="include">
+        </childnode>
+      </node>
+      <node id="4995">
+        <label>MyGraphics/Source/Scene2.h</label>
+        <link refid="Scene2_8h"/>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="4996" relation="include">
+        </childnode>
+      </node>
+      <node id="5000">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="4991" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
+        </childnode>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4997" relation="include">
+        </childnode>
+        <childnode refid="5003" relation="include">
+        </childnode>
+      </node>
+      <node id="4994">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCollisionDetector" prot="public">CollisionDetector</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>COLLISIONDETECTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COLLISIONDETECTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MyMath_8h" kindref="compound">MyMath.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classCollisionDetector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classCollisionDetector_1a262c765bb31ff03d3e898212ab205e9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCollisionDetector_1a262c765bb31ff03d3e898212ab205e9f" kindref="member">dist</ref>;</highlight></codeline>
+<codeline lineno="13" refid="classCollisionDetector_1a2d8c2177af82a09c07a3170f8f826bc3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCollisionDetector_1a2d8c2177af82a09c07a3170f8f826bc3" kindref="member">diffInX</ref>;</highlight></codeline>
+<codeline lineno="14" refid="classCollisionDetector_1a0f5c51de18ae957b263f4dc1829a2825" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCollisionDetector_1a0f5c51de18ae957b263f4dc1829a2825" kindref="member">diffInZ</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCollisionDetector_1ab3f66bd8d272a21674e38bf46d4d31e0" kindref="member">CollisionDetector</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCollisionDetector_1a1a0f7a386920e0cf83a101be92f04598" kindref="member">~CollisionDetector</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" kindref="member">collideByDist</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>target);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" kindref="member">swordCollision</ref>(<ref refid="classEnemy" kindref="compound">Enemy</ref><sp/>enemy[],<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>player);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCollisionDetector_1ad3acbd851fc0aad3f07036dd26bcf239" kindref="member">PtoV</ref>(<ref refid="structPosition" kindref="compound">Position</ref><sp/>V);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/CollisionDetector.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,9 @@
+<map id="MyGraphics/Source/MenuShop.h" name="MyGraphics/Source/MenuShop.h">
+<area shape="rect" id="node2" href="$SceneMenu_8h.html" title="MyGraphics/Source/SceneMenu.h" alt="" coords="582,80,803,107"/>
+<area shape="rect" id="node5" href="$Shop_8h.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="139,80,321,107"/>
+<area shape="rect" id="node7" href="$SceneWin_8h.html" title="Renders the win screen for player. " alt="" coords="345,80,557,107"/>
+<area shape="rect" id="node3" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="225,155,456,181"/>
+<area shape="rect" id="node4" href="$SceneMenu_8cpp.html" title="MyGraphics/Source/SceneMenu.cpp" alt="" coords="731,155,966,181"/>
+<area shape="rect" id="node6" href="$Shop_8cpp.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="5,155,201,181"/>
+<area shape="rect" id="node8" href="$SceneWin_8cpp.html" title="Renders the screen to show player win and how many enemies killed. " alt="" coords="481,155,707,181"/>
+</map>

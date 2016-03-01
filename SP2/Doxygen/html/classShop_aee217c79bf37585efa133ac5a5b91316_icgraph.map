@@ -1,0 +1,3 @@
+<map id="Shop::RenderQuadOnScreen" name="Shop::RenderQuadOnScreen">
+<area shape="rect" id="node2" href="$classShop.html#ae965cfdda5e2d6214a7daf7d300f2ff0" title="The main render function for this scene, renders any text/meshes. " alt="" coords="244,5,345,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SceneMenu::UpdateMenu" name="SceneMenu::UpdateMenu">
+<area shape="rect" id="node2" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="229,5,397,32"/>
+<area shape="rect" id="node3" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="225,56,400,83"/>
+</map>

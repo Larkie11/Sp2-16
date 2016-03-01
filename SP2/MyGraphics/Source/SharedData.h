@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	SharedData.h
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Variables that are accessible for other classes
+*/
+/******************************************************************************/
 #ifndef SHARED_DATA_H
 #define SHARED_DATA_H
 #include "irrklang.h"
@@ -6,6 +15,12 @@
 using std::string;
 using std::cout;
 
+/******************************************************************************/
+/*!
+Class SharedData:
+\brief	Stores the struct/booleans/game states that we want to access from other classes
+*/
+/******************************************************************************/
 class SharedData
 {
 //Variables in here can be used by any other classes as long as you include "SharedData.h"

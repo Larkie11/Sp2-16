@@ -1,0 +1,7 @@
+<map id="Enemy::DamageReceived" name="Enemy::DamageReceived">
+<area shape="rect" id="node2" href="$classBullet.html#a34a5f24f34cab14f7c538d212f42adf6" title="Bullet::CollideWithEnemy" alt="" coords="224,5,395,32"/>
+<area shape="rect" id="node3" href="$classCollisionDetector.html#ab0e66145f256871c8d274bede39d24d7" title="CollisionDetector::\lswordCollision" alt="" coords="245,57,373,98"/>
+<area shape="rect" id="node4" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="452,13,548,40"/>
+<area shape="rect" id="node5" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="443,64,557,91"/>
+<area shape="rect" id="node6" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="443,115,557,141"/>
+</map>

@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="MatrixStack_8h" kind="file" language="C++">
+    <compoundname>MatrixStack.h</compoundname>
+    <includes local="no">stack</includes>
+    <includes refid="Mtx44_8h" local="yes">Mtx44.h</includes>
+    <includedby refid="MatrixStack_8cpp" local="yes">Common/Source/MatrixStack.cpp</includedby>
+    <includedby refid="StartCutScene_8h" local="yes">MyGraphics/Source/StartCutScene.h</includedby>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="SceneMenu_8h" local="yes">MyGraphics/Source/SceneMenu.h</includedby>
+    <includedby refid="Shop_8h" local="yes">MyGraphics/Source/Shop.h</includedby>
+    <includedby refid="Scene2_8h" local="yes">MyGraphics/Source/Scene2.h</includedby>
+    <includedby refid="Scene3_8h" local="yes">MyGraphics/Source/Scene3.h</includedby>
+    <includedby refid="Cutscene_8h" local="yes">MyGraphics/Source/Cutscene.h</includedby>
+    <includedby refid="SceneWin_8h" local="yes">MyGraphics/Source/SceneWin.h</includedby>
+    <incdepgraph>
+      <node id="3381">
+        <label>cmath</label>
+      </node>
+      <node id="3382">
+        <label>exception</label>
+      </node>
+      <node id="3383">
+        <label>ctime</label>
+      </node>
+      <node id="3379">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="3380" relation="include">
+        </childnode>
+        <childnode refid="3385" relation="include">
+        </childnode>
+      </node>
+      <node id="3378">
+        <label>stack</label>
+      </node>
+      <node id="3384">
+        <label>cstdlib</label>
+      </node>
+      <node id="3377">
+        <label>Common/Source/MatrixStack.h</label>
+        <link refid="MatrixStack.h"/>
+        <childnode refid="3378" relation="include">
+        </childnode>
+        <childnode refid="3379" relation="include">
+        </childnode>
+      </node>
+      <node id="3386">
+        <label>iostream</label>
+      </node>
+      <node id="3380">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="3381" relation="include">
+        </childnode>
+        <childnode refid="3382" relation="include">
+        </childnode>
+        <childnode refid="3383" relation="include">
+        </childnode>
+        <childnode refid="3384" relation="include">
+        </childnode>
+      </node>
+      <node id="3385">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="3380" relation="include">
+        </childnode>
+        <childnode refid="3386" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3397">
+        <label>MyGraphics/Source/Shop.h</label>
+        <link refid="Shop_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3398" relation="include">
+        </childnode>
+      </node>
+      <node id="3405">
+        <label>MyGraphics/Source/SceneWin.h</label>
+        <link refid="SceneWin_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3406" relation="include">
+        </childnode>
+      </node>
+      <node id="3403">
+        <label>MyGraphics/Source/Cutscene.h</label>
+        <link refid="Cutscene_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3404" relation="include">
+        </childnode>
+      </node>
+      <node id="3404">
+        <label>MyGraphics/Source/Cutscene.cpp</label>
+        <link refid="Cutscene_8cpp"/>
+      </node>
+      <node id="3396">
+        <label>MyGraphics/Source/SceneMenu.cpp</label>
+        <link refid="SceneMenu_8cpp"/>
+      </node>
+      <node id="3400">
+        <label>MyGraphics/Source/Scene2.cpp</label>
+        <link refid="Scene2_8cpp"/>
+      </node>
+      <node id="3402">
+        <label>MyGraphics/Source/Scene3.cpp</label>
+        <link refid="Scene3_8cpp"/>
+      </node>
+      <node id="3398">
+        <label>MyGraphics/Source/Shop.cpp</label>
+        <link refid="Shop_8cpp"/>
+      </node>
+      <node id="3401">
+        <label>MyGraphics/Source/Scene3.h</label>
+        <link refid="Scene3_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3402" relation="include">
+        </childnode>
+      </node>
+      <node id="3393">
+        <label>MyGraphics/Source/Enemy.cpp</label>
+        <link refid="Enemy_8cpp"/>
+      </node>
+      <node id="3392">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3393" relation="include">
+        </childnode>
+        <childnode refid="3394" relation="include">
+        </childnode>
+      </node>
+      <node id="3395">
+        <label>MyGraphics/Source/SceneMenu.h</label>
+        <link refid="SceneMenu_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3396" relation="include">
+        </childnode>
+      </node>
+      <node id="3391">
+        <label>MyGraphics/Source/StartCutScene.cpp</label>
+        <link refid="StartCutScene_8cpp"/>
+      </node>
+      <node id="3406">
+        <label>MyGraphics/Source/SceneWin.cpp</label>
+        <link refid="SceneWin_8cpp"/>
+      </node>
+      <node id="3390">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3387">
+        <label>Common/Source/MatrixStack.h</label>
+        <link refid="MatrixStack.h"/>
+        <childnode refid="3388" relation="include">
+        </childnode>
+        <childnode refid="3389" relation="include">
+        </childnode>
+        <childnode refid="3392" relation="include">
+        </childnode>
+        <childnode refid="3395" relation="include">
+        </childnode>
+        <childnode refid="3397" relation="include">
+        </childnode>
+        <childnode refid="3399" relation="include">
+        </childnode>
+        <childnode refid="3401" relation="include">
+        </childnode>
+        <childnode refid="3403" relation="include">
+        </childnode>
+        <childnode refid="3405" relation="include">
+        </childnode>
+      </node>
+      <node id="3399">
+        <label>MyGraphics/Source/Scene2.h</label>
+        <link refid="Scene2_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3400" relation="include">
+        </childnode>
+      </node>
+      <node id="3389">
+        <label>MyGraphics/Source/StartCutScene.h</label>
+        <link refid="StartCutScene_8h"/>
+        <childnode refid="3390" relation="include">
+        </childnode>
+        <childnode refid="3391" relation="include">
+        </childnode>
+      </node>
+      <node id="3394">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="3388">
+        <label>Common/Source/MatrixStack.cpp</label>
+        <link refid="MatrixStack_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMS" prot="public">MS</innerclass>
+    <briefdescription>
+<para>Matrix Stack to replace openGL math function. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Wen Sheng Tang </para></simplesect>
+<simplesect kind="par"><title>email: tang_wen_sheng@nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MATRIXSTACK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MATRIXSTACK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stack&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mtx44_8h" kindref="compound">Mtx44.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classMS" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMS" kindref="compound">MS</ref><sp/>{</highlight></codeline>
+<codeline lineno="23" refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stack&lt;Mtx44&gt;<sp/><ref refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" kindref="member">ms</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMS_1adddd1194f4978eab6618be6a22ed8e48" kindref="member">MS</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMS_1ac7ec3f1bdabca61e69d3068ee9ba0995" kindref="member">~MS</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMtx44" kindref="compound">Mtx44</ref>&amp;<sp/><ref refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" kindref="member">Top</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" kindref="member">PopMatrix</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" kindref="member">PushMatrix</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1ab3eb89506a55a00137cba928686b0201" kindref="member">Clear</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" kindref="member">LoadIdentity</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" kindref="member">LoadMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMtx44" kindref="compound">Mtx44</ref><sp/>&amp;matrix);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1af5a89751ef3b273288bee108113d4899" kindref="member">MultMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMtx44" kindref="compound">Mtx44</ref><sp/>&amp;matrix);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a6ce592114042b920b648bca5519690cd" kindref="member">Rotate</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>degrees,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>axisX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>axisY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>axisZ);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a52109795de960e24663b315e9128533f" kindref="member">Scale</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleZ);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" kindref="member">Translate</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>translateX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>translateY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>translateZ);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a155508354e47f5aa755e181e69fc3cd4" kindref="member">Frustum</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>right,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>bottom,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>top,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>near,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>far);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMS_1a2638cd3249260877cc31329978fb6b38" kindref="member">LookAt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>eyeX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>eyeY,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>eyeZ,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>centerX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>centerY,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>centerZ,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>upX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>upY,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>upZ);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Common/Source/MatrixStack.h"/>
+  </compounddef>
+</doxygen>

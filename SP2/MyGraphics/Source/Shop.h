@@ -1,8 +1,20 @@
+/******************************************************************************/
+/*!
+\file	Shop.h
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Renders the scene where player can talk to the shopkeeper
+*/
+/******************************************************************************/
 #ifndef SHOP_H
 #define SHOP_H
 
 #include "Scene.h"
 #include "Mtx44.h"
+#include "Application.h"
+#include "MeshBuilder.h"
+#include "Utility.h"
 #include "Camera3.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
@@ -11,26 +23,23 @@
 #include "Mouse.h"
 #include "Sound.h"
 #include "CollisionDetector.h"
+#include "MenuShop.h"
 #include "NPC.h"
 #include <string>
 #include <fstream>
 
-using std::cout;
-using std::endl;
 using std::ifstream;
 using std::vector;
 using std::string;
 
-#include "MenuShop.h"
-
+/******************************************************************************/
+/*!
+Class Shop:
+\brief	Renders the shop scene with needed meshes and takes care of shop interactables
+*/
+/******************************************************************************/
 class Shop : public Scene
 {
-	struct DOT
-	{
-		bool negativeDotProduct;
-		bool canInteract;
-		Vector3 Nposition;
-	};
 	enum GEOMETRY_TYPE
 	{
 		GEO_SHOPKEEPER3D = 0,
@@ -102,8 +111,7 @@ private:
 	unsigned m_colorBuffer[NUM_GEOMETRY];
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
-	MenuShop menuShop;
-	float spaceDoor = 0;
+
 	Mouse mouse;
 
 	//Array of meshes
@@ -111,15 +119,13 @@ private:
 
 	MS modelStack, viewStack, projectionStack;
 	float LSPEED = 10.f;
-	float moveSkyBoxZ = 91.f;
-	float moveSkyBoxX = 0.f;
-	string shopInput;
 
 	void RenderSkybox();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z);
 	void Dialogue(string filename);
+
 	string new_line;
 	Camera3 camera;
 	
@@ -132,8 +138,6 @@ private:
 
 	float deltaTime;
 
-	void Character_Movement(float dt);
-
 	float icon;
 	float icon2;
 	float menuIcon;
@@ -143,11 +147,13 @@ private:
 	
 	float JumpTime;
 	float PressTime;
+	float spaceDoor;
 	string description;
+	string shopInput;
 	bool b_gold;
 	bool g_gold;
 	string nomore;
-	bool none = false;
+	bool none;
 	float coolDown;
 	bool sell_gold;
 	CollisionDetector detectCollision;

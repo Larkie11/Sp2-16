@@ -1,0 +1,1134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classSceneWin" kind="class" language="C++" prot="public">
+    <compoundname>SceneWin</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="SceneWin_8h" local="no">SceneWin.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classSceneWin_1a19628d801a2c95da779f8da16f360277" prot="private" static="no">
+        <name>GEOMETRY_TYPE</name>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a53d1cd0bd5b18ddf85adc55ac273f72d" prot="private">
+          <name>GEO_REF_AXES</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a048f58a2eef504dffbcadf6e624c2cc8" prot="private">
+          <name>GEO_QUAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a4f84d6505ab043b652b85c673dbdbcd3" prot="private">
+          <name>GEO_STAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a79ac4c6686997bd6c6feb76dd5bc7c71" prot="private">
+          <name>GEO_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277abfef84dfd586b9175456846aded619b2" prot="private">
+          <name>GEO_PATH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277aa6670a8a0a4fedfa6736e40f519ff0c2" prot="private">
+          <name>GEO_VENDING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277aecac6ba754a14765a86c7fbbbabe18df" prot="private">
+          <name>GEO_COKE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a6502a10fe79aa6a5c6bf7e49caecf7e5" prot="private">
+          <name>GEO_INSTRUCTIONS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a44dda5ee05c600eedb8412d3e6d429a7" prot="private">
+          <name>GEO_PLANEWING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277adf68f965aed152ecc44c7029bec548a5" prot="private">
+          <name>GEO_PLANEROCKET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277a19c1dfc79e43b02781c9452382053ae5" prot="private">
+          <name>GEO_PLANEBODY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1a19628d801a2c95da779f8da16f360277af440955987373fb1c6bf50809542ec8a" prot="private">
+          <name>NUM_GEOMETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="33" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="32" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="enum" id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4" prot="private" static="no">
+        <name>UNIFORM_TYPE</name>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a293b0286704fda3f40e94e3ecde99585" prot="private">
+          <name>U_MVP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a40638ee157bf902c5223dfd918962907" prot="private">
+          <name>U_MODELVIEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a249d2c933325ab1c0f1552ea2685e1bc" prot="private">
+          <name>U_MODELVIEW_INVERSE_TRANSPOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4adcd590c5c6454e2763f924a07981d941" prot="private">
+          <name>U_MATERIAL_AMBIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a80321490e04cd6a4adb29519e3dbd4ff" prot="private">
+          <name>U_MATERIAL_DIFFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ae7a3036c0ed2f039e0795f43da1f9c35" prot="private">
+          <name>U_MATERIAL_SPECULAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4adcb4ef2f9537a8ea971e35ef9e3465b9" prot="private">
+          <name>U_MATERIAL_SHININESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad06ba5ec39da006eda6eff5c5180d560" prot="private">
+          <name>U_COLOR_TEXTURE_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a79cf1e9055ec8851edadc28d12569281" prot="private">
+          <name>U_COLOR_TEXTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a13b4d03f21e6c5338c52d46ab0fa4b84" prot="private">
+          <name>U_TEXT_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a67889ac836d339654ce8da09bec0a069" prot="private">
+          <name>U_TEXT_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad34a2c74c9655abefc206a4f806ea881" prot="private">
+          <name>U_TOTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="49" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="48" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSceneWin_1a601805cf21f88bf1c92c66da9e3adc34" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SceneWin::m_vertexArrayID</definition>
+        <argsstring></argsstring>
+        <name>m_vertexArrayID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="77" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afc8a5e5259775be90f08830e5f57ac79" compoundref="SceneWin_8cpp" startline="315" endline="319">Exit</referencedby>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a979a1507b4161a19a25a8f7ef9bfb4ae" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SceneWin::m_indexBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_indexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="78" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1ac631a5c8f51db366d0a543a93a689c1d" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SceneWin::m_vertexBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_vertexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="79" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a6ba7992b4d61e08a42ac02c8fec4b73b" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SceneWin::m_colorBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_colorBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="80" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1ab51fe6fc39281f06f68dcf9b384f80c6" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SceneWin::m_programID</definition>
+        <argsstring></argsstring>
+        <name>m_programID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="81" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afc8a5e5259775be90f08830e5f57ac79" compoundref="SceneWin_8cpp" startline="315" endline="319">Exit</referencedby>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1ac39dc028a91efc12e909a4021d0b37ea" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SceneWin::m_parameters[U_TOTAL]</definition>
+        <argsstring>[U_TOTAL]</argsstring>
+        <name>m_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="82" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+        <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">RenderMesh</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1ade345e2f4b94cbf34b13a60bbc9995e7" prot="private" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* SceneWin::meshList[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>meshList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="84" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS SceneWin::modelStack</definition>
+        <argsstring></argsstring>
+        <name>modelStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="86" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">Render</referencedby>
+        <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">RenderMesh</referencedby>
+        <referencedby refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" compoundref="SceneWin_8cpp" startline="256" endline="273">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS SceneWin::viewStack</definition>
+        <argsstring></argsstring>
+        <name>viewStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="86" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">Render</referencedby>
+        <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">RenderMesh</referencedby>
+        <referencedby refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" compoundref="SceneWin_8cpp" startline="256" endline="273">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS SceneWin::projectionStack</definition>
+        <argsstring></argsstring>
+        <name>projectionStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="86" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+        <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">RenderMesh</referencedby>
+        <referencedby refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" compoundref="SceneWin_8cpp" startline="256" endline="273">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a9e1e5fba501a625ff7589c3d874b0cc1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SceneWin::LSPEED</definition>
+        <argsstring></argsstring>
+        <name>LSPEED</name>
+        <initializer>= 10.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="87" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1abe821e0ff8ef788d8a2fe4509656d63f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SceneWin::moveSkyBoxZ</definition>
+        <argsstring></argsstring>
+        <name>moveSkyBoxZ</name>
+        <initializer>= 91.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="88" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a4b96f716d5af33fb097926835b83f01a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SceneWin::moveSkyBoxX</definition>
+        <argsstring></argsstring>
+        <name>moveSkyBoxX</name>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="89" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a425f450d382279fde98dddab59f7cdde" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
+        <definition>Camera3 SceneWin::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="96" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSceneWin_1a50e7ac3e16961d7a4ced7b5bd0ec0628" prot="private" static="no" mutable="no">
+        <type><ref refid="classSound" kindref="compound">Sound</ref></type>
+        <definition>Sound SceneWin::sound</definition>
+        <argsstring></argsstring>
+        <name>sound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="98" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">Init</referencedby>
+        <referencedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" compoundref="SceneWin_8cpp" startline="115" endline="123">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSceneWin_1ad66e5e3d6293f29c07257eb7945b2cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SceneWin::SceneWin</definition>
+        <argsstring>()</argsstring>
+        <name>SceneWin</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="66" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1aa137a73b4fd2bdd8c67ea9521920bfaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SceneWin::~SceneWin</definition>
+        <argsstring>()</argsstring>
+        <name>~SceneWin</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="67" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SceneWin::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
+        <briefdescription>
+<para>Initializes for win scene, any booleans/strings/floats and meshes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="69" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="53" bodyend="105"/>
+        <references refid="classSceneWin_1a425f450d382279fde98dddab59f7cdde" compoundref="SceneWin_8h" startline="96">camera</references>
+        <references refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</references>
+        <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</references>
+        <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277abfef84dfd586b9175456846aded619b2" compoundref="SceneWin_8h" startline="38">GEO_PATH</references>
+        <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a79ac4c6686997bd6c6feb76dd5bc7c71" compoundref="SceneWin_8h" startline="37">GEO_TEXT</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="16" endline="107">LoadShaders</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="66">LoadTGA</references>
+        <references refid="classSceneWin_1ac39dc028a91efc12e909a4021d0b37ea" compoundref="SceneWin_8h" startline="82">m_parameters</references>
+        <references refid="classSceneWin_1ab51fe6fc39281f06f68dcf9b384f80c6" compoundref="SceneWin_8h" startline="81">m_programID</references>
+        <references refid="classSceneWin_1a601805cf21f88bf1c92c66da9e3adc34" compoundref="SceneWin_8h" startline="77">m_vertexArrayID</references>
+        <references refid="classSceneWin_1ade345e2f4b94cbf34b13a60bbc9995e7" compoundref="SceneWin_8h" startline="84">meshList</references>
+        <references refid="classSound_1abafebbb8a0c9e262405ff8752f220baa" compoundref="Sound_8cpp" startline="32" endline="35">Sound::playMusic</references>
+        <references refid="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" compoundref="SceneWin_8h" startline="86">projectionStack</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="classSceneWin_1a50e7ac3e16961d7a4ced7b5bd0ec0628" compoundref="SceneWin_8h" startline="98">sound</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a79cf1e9055ec8851edadc28d12569281" compoundref="SceneWin_8h" startline="58">U_COLOR_TEXTURE</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad06ba5ec39da006eda6eff5c5180d560" compoundref="SceneWin_8h" startline="57">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4adcd590c5c6454e2763f924a07981d941" compoundref="SceneWin_8h" startline="53">U_MATERIAL_AMBIENT</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a80321490e04cd6a4adb29519e3dbd4ff" compoundref="SceneWin_8h" startline="54">U_MATERIAL_DIFFUSE</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4adcb4ef2f9537a8ea971e35ef9e3465b9" compoundref="SceneWin_8h" startline="56">U_MATERIAL_SHININESS</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ae7a3036c0ed2f039e0795f43da1f9c35" compoundref="SceneWin_8h" startline="55">U_MATERIAL_SPECULAR</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a40638ee157bf902c5223dfd918962907" compoundref="SceneWin_8h" startline="51">U_MODELVIEW</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a249d2c933325ab1c0f1552ea2685e1bc" compoundref="SceneWin_8h" startline="52">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a293b0286704fda3f40e94e3ecde99585" compoundref="SceneWin_8h" startline="50">U_MVP</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a67889ac836d339654ce8da09bec0a069" compoundref="SceneWin_8h" startline="60">U_TEXT_COLOR</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a13b4d03f21e6c5338c52d46ab0fa4b84" compoundref="SceneWin_8h" startline="59">U_TEXT_ENABLED</references>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SceneWin::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Updates the scene every frame (Animation/booleans/music etc) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="70" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="115" bodyend="123"/>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" compoundref="SharedData_8h" startline="35">SharedData::MENU</references>
+        <references refid="classSceneWin_1a50e7ac3e16961d7a4ced7b5bd0ec0628" compoundref="SceneWin_8h" startline="98">sound</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+        <references refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" compoundref="Sound_8cpp" startline="64" endline="67">Sound::stopMusic</references>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SceneWin::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>The main render function for this scene, renders any text/meshes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="71" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="283" bodyend="305"/>
+        <references refid="classSceneWin_1a425f450d382279fde98dddab59f7cdde" compoundref="SceneWin_8h" startline="96">camera</references>
+        <references refid="classSharedData_1a212c6461f83b5ab83e44118b34f52154" compoundref="SharedData_8h" startline="69">SharedData::enemycounter</references>
+        <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277abfef84dfd586b9175456846aded619b2" compoundref="SceneWin_8h" startline="38">GEO_PATH</references>
+        <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a79ac4c6686997bd6c6feb76dd5bc7c71" compoundref="SceneWin_8h" startline="37">GEO_TEXT</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
+        <references refid="classSceneWin_1ade345e2f4b94cbf34b13a60bbc9995e7" compoundref="SceneWin_8h" startline="84">meshList</references>
+        <references refid="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" compoundref="SceneWin_8h" startline="86">modelStack</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" compoundref="SceneWin_8cpp" startline="256" endline="273">RenderQuadOnScreen</references>
+        <references refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">RenderTextOnScreen</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <references refid="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" compoundref="SceneWin_8h" startline="86">viewStack</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1afc8a5e5259775be90f08830e5f57ac79" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SceneWin::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
+        <briefdescription>
+<para>Delete scene. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="72" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="315" bodyend="319"/>
+        <references refid="classSceneWin_1ab51fe6fc39281f06f68dcf9b384f80c6" compoundref="SceneWin_8h" startline="81">m_programID</references>
+        <references refid="classSceneWin_1a601805cf21f88bf1c92c66da9e3adc34" compoundref="SceneWin_8h" startline="77">m_vertexArrayID</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneWin::RenderMesh</definition>
+        <argsstring>(Mesh *mesh, bool enableLight)</argsstring>
+        <name>RenderMesh</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableLight</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classMesh" kindref="compound">Mesh</ref> rendering function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="75" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="133" bodyend="157"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classSceneWin_1ac39dc028a91efc12e909a4021d0b37ea" compoundref="SceneWin_8h" startline="82">m_parameters</references>
+        <references refid="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" compoundref="SceneWin_8h" startline="86">modelStack</references>
+        <references refid="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" compoundref="SceneWin_8h" startline="86">projectionStack</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a79cf1e9055ec8851edadc28d12569281" compoundref="SceneWin_8h" startline="58">U_COLOR_TEXTURE</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad06ba5ec39da006eda6eff5c5180d560" compoundref="SceneWin_8h" startline="57">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a40638ee157bf902c5223dfd918962907" compoundref="SceneWin_8h" startline="51">U_MODELVIEW</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a293b0286704fda3f40e94e3ecde99585" compoundref="SceneWin_8h" startline="50">U_MVP</references>
+        <references refid="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" compoundref="SceneWin_8h" startline="86">viewStack</references>
+        <referencedby refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" compoundref="SceneWin_8cpp" startline="256" endline="273">RenderQuadOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneWin::RenderText</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color)</argsstring>
+        <name>RenderText</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Renders text in the game. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="91" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="168" bodyend="192"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classSceneWin_1ac39dc028a91efc12e909a4021d0b37ea" compoundref="SceneWin_8h" startline="82">m_parameters</references>
+        <references refid="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" compoundref="SceneWin_8h" startline="86">modelStack</references>
+        <references refid="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" compoundref="SceneWin_8h" startline="86">projectionStack</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a79cf1e9055ec8851edadc28d12569281" compoundref="SceneWin_8h" startline="58">U_COLOR_TEXTURE</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad06ba5ec39da006eda6eff5c5180d560" compoundref="SceneWin_8h" startline="57">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a293b0286704fda3f40e94e3ecde99585" compoundref="SceneWin_8h" startline="50">U_MVP</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a67889ac836d339654ce8da09bec0a069" compoundref="SceneWin_8h" startline="60">U_TEXT_COLOR</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a13b4d03f21e6c5338c52d46ab0fa4b84" compoundref="SceneWin_8h" startline="59">U_TEXT_ENABLED</references>
+        <references refid="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" compoundref="SceneWin_8h" startline="86">viewStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneWin::RenderTextOnScreen</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color, float size, float x, float y)</argsstring>
+        <name>RenderTextOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Renders text on screen in the game. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="92" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="203" bodyend="246"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classSceneWin_1ac39dc028a91efc12e909a4021d0b37ea" compoundref="SceneWin_8h" startline="82">m_parameters</references>
+        <references refid="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" compoundref="SceneWin_8h" startline="86">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" compoundref="SceneWin_8h" startline="86">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a79cf1e9055ec8851edadc28d12569281" compoundref="SceneWin_8h" startline="58">U_COLOR_TEXTURE</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad06ba5ec39da006eda6eff5c5180d560" compoundref="SceneWin_8h" startline="57">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a293b0286704fda3f40e94e3ecde99585" compoundref="SceneWin_8h" startline="50">U_MVP</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a67889ac836d339654ce8da09bec0a069" compoundref="SceneWin_8h" startline="60">U_TEXT_COLOR</references>
+        <references refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a13b4d03f21e6c5338c52d46ab0fa4b84" compoundref="SceneWin_8h" startline="59">U_TEXT_ENABLED</references>
+        <references refid="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" compoundref="SceneWin_8h" startline="86">viewStack</references>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneWin::RenderQuadOnScreen</definition>
+        <argsstring>(Mesh *mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)</argsstring>
+        <name>RenderQuadOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ry</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Renders any meshList items/obj on the screen. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="93" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="256" bodyend="273"/>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" compoundref="SceneWin_8h" startline="86">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" compoundref="SceneWin_8h" startline="86">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">RenderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" compoundref="SceneWin_8h" startline="86">viewStack</references>
+        <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSceneWin_1aa32523db81ca5b9816e128b4f1d07a2e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneWin::Dialogue</definition>
+        <argsstring>(string filename)</argsstring>
+        <name>Dialogue</name>
+        <param>
+          <type>string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SceneWin.h" line="94" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classMesh" kindref="compound">Mesh</ref> list, floats and booleans to render the win scene. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classSceneWin" kindref="compound">SceneWin</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1007">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="1006">
+        <label>SceneWin</label>
+        <link refid="classSceneWin"/>
+        <childnode refid="1007" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1022">
+        <label>irrklang::IVirtualRefCounted</label>
+        <link refid="classirrklang_1_1IVirtualRefCounted"/>
+      </node>
+      <node id="1016">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="1017">
+        <label>Sound</label>
+        <link refid="classSound"/>
+        <childnode refid="1018" relation="usage">
+          <edgelabel>musicEngine</edgelabel>
+        </childnode>
+        <childnode refid="1021" relation="usage">
+          <edgelabel>SoundEffect</edgelabel>
+          <edgelabel>Song</edgelabel>
+        </childnode>
+      </node>
+      <node id="1025">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="1013" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="1023">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="1024" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="1026" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="1027" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1028" relation="usage">
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="1018">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="1019" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1026">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="1011">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="1012" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="1027">
+        <label>string</label>
+      </node>
+      <node id="1024">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="1013" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="1025" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="1013">
+        <label>float</label>
+      </node>
+      <node id="1015">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="1016" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+      <node id="1009">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="1008">
+        <label>SceneWin</label>
+        <link refid="classSceneWin"/>
+        <childnode refid="1009" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1010" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="1013" relation="usage">
+          <edgelabel>moveSkyBoxX</edgelabel>
+          <edgelabel>moveSkyBoxZ</edgelabel>
+          <edgelabel>LSPEED</edgelabel>
+        </childnode>
+        <childnode refid="1015" relation="usage">
+          <edgelabel>projectionStack</edgelabel>
+          <edgelabel>modelStack</edgelabel>
+          <edgelabel>viewStack</edgelabel>
+        </childnode>
+        <childnode refid="1017" relation="usage">
+          <edgelabel>sound</edgelabel>
+        </childnode>
+        <childnode refid="1023" relation="usage">
+          <edgelabel>meshList</edgelabel>
+        </childnode>
+        <childnode refid="1028" relation="usage">
+          <edgelabel>m_indexBuffer</edgelabel>
+          <edgelabel>m_parameters</edgelabel>
+          <edgelabel>m_colorBuffer</edgelabel>
+          <edgelabel>m_vertexBuffer</edgelabel>
+          <edgelabel>m_programID</edgelabel>
+          <edgelabel>m_vertexArrayID</edgelabel>
+        </childnode>
+      </node>
+      <node id="1021">
+        <label>irrklang::ISound</label>
+        <link refid="classirrklang_1_1ISound"/>
+        <childnode refid="1022" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1010">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="1011" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1013" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>maxCameraX</edgelabel>
+          <edgelabel>maxX</edgelabel>
+          <edgelabel>minX</edgelabel>
+          <edgelabel>maxZ</edgelabel>
+          <edgelabel>minZ</edgelabel>
+        </childnode>
+        <childnode refid="1012" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>view</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>cameraRotate</edgelabel>
+        </childnode>
+        <childnode refid="1014" relation="usage">
+          <edgelabel>door</edgelabel>
+        </childnode>
+      </node>
+      <node id="1020">
+        <label>int</label>
+      </node>
+      <node id="1019">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="1020" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+      <node id="1028">
+        <label>unsigned</label>
+      </node>
+      <node id="1014">
+        <label>bool</label>
+      </node>
+      <node id="1012">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1013" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/SceneWin.h" line="31" column="1" bodyfile="MyGraphics/Source/SceneWin.h" bodystart="30" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classSceneWin_1a425f450d382279fde98dddab59f7cdde" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>camera</name></member>
+      <member refid="classSceneWin_1aa32523db81ca5b9816e128b4f1d07a2e" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>Dialogue</name></member>
+      <member refid="classSceneWin_1afc8a5e5259775be90f08830e5f57ac79" prot="public" virt="virtual"><scope>SceneWin</scope><name>Exit</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277aecac6ba754a14765a86c7fbbbabe18df" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_COKE</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a6502a10fe79aa6a5c6bf7e49caecf7e5" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_INSTRUCTIONS</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277abfef84dfd586b9175456846aded619b2" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_PATH</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a19c1dfc79e43b02781c9452382053ae5" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_PLANEBODY</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277adf68f965aed152ecc44c7029bec548a5" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_PLANEROCKET</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a44dda5ee05c600eedb8412d3e6d429a7" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_PLANEWING</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a048f58a2eef504dffbcadf6e624c2cc8" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_QUAD</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a53d1cd0bd5b18ddf85adc55ac273f72d" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_REF_AXES</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a4f84d6505ab043b652b85c673dbdbcd3" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_STAR</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a79ac4c6686997bd6c6feb76dd5bc7c71" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_TEXT</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277aa6670a8a0a4fedfa6736e40f519ff0c2" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEO_VENDING</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>GEOMETRY_TYPE</name></member>
+      <member refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" prot="public" virt="virtual"><scope>SceneWin</scope><name>Init</name></member>
+      <member refid="classSceneWin_1a9e1e5fba501a625ff7589c3d874b0cc1" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>LSPEED</name></member>
+      <member refid="classSceneWin_1a6ba7992b4d61e08a42ac02c8fec4b73b" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>m_colorBuffer</name></member>
+      <member refid="classSceneWin_1a979a1507b4161a19a25a8f7ef9bfb4ae" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>m_indexBuffer</name></member>
+      <member refid="classSceneWin_1ac39dc028a91efc12e909a4021d0b37ea" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>m_parameters</name></member>
+      <member refid="classSceneWin_1ab51fe6fc39281f06f68dcf9b384f80c6" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>m_programID</name></member>
+      <member refid="classSceneWin_1a601805cf21f88bf1c92c66da9e3adc34" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>m_vertexArrayID</name></member>
+      <member refid="classSceneWin_1ac631a5c8f51db366d0a543a93a689c1d" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>m_vertexBuffer</name></member>
+      <member refid="classSceneWin_1ade345e2f4b94cbf34b13a60bbc9995e7" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>meshList</name></member>
+      <member refid="classSceneWin_1a2d6ab969532c5ff96b5aa8ba5a0f7d9c" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>modelStack</name></member>
+      <member refid="classSceneWin_1a4b96f716d5af33fb097926835b83f01a" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>moveSkyBoxX</name></member>
+      <member refid="classSceneWin_1abe821e0ff8ef788d8a2fe4509656d63f" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>moveSkyBoxZ</name></member>
+      <member refid="classSceneWin_1a19628d801a2c95da779f8da16f360277af440955987373fb1c6bf50809542ec8a" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>NUM_GEOMETRY</name></member>
+      <member refid="classSceneWin_1acd4fa053b23a65be1bcbb31e15733342" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>projectionStack</name></member>
+      <member refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" prot="public" virt="virtual"><scope>SceneWin</scope><name>Render</name></member>
+      <member refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>RenderMesh</name></member>
+      <member refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>RenderQuadOnScreen</name></member>
+      <member refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>RenderText</name></member>
+      <member refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>RenderTextOnScreen</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>SceneWin</scope><name>Scene</name></member>
+      <member refid="classSceneWin_1ad66e5e3d6293f29c07257eb7945b2cfc" prot="public" virt="non-virtual"><scope>SceneWin</scope><name>SceneWin</name></member>
+      <member refid="classSceneWin_1a50e7ac3e16961d7a4ced7b5bd0ec0628" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>sound</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a79cf1e9055ec8851edadc28d12569281" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_COLOR_TEXTURE</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad06ba5ec39da006eda6eff5c5180d560" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_COLOR_TEXTURE_ENABLED</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4adcd590c5c6454e2763f924a07981d941" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MATERIAL_AMBIENT</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a80321490e04cd6a4adb29519e3dbd4ff" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MATERIAL_DIFFUSE</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4adcb4ef2f9537a8ea971e35ef9e3465b9" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MATERIAL_SHININESS</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ae7a3036c0ed2f039e0795f43da1f9c35" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MATERIAL_SPECULAR</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a40638ee157bf902c5223dfd918962907" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MODELVIEW</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a249d2c933325ab1c0f1552ea2685e1bc" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MODELVIEW_INVERSE_TRANSPOSE</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a293b0286704fda3f40e94e3ecde99585" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_MVP</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a67889ac836d339654ce8da09bec0a069" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_TEXT_COLOR</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4a13b4d03f21e6c5338c52d46ab0fa4b84" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_TEXT_ENABLED</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4ad34a2c74c9655abefc206a4f806ea881" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>U_TOTAL</name></member>
+      <member refid="classSceneWin_1afdf8b8484c1b9442520b024f398b9cc4" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>UNIFORM_TYPE</name></member>
+      <member refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" prot="public" virt="virtual"><scope>SceneWin</scope><name>Update</name></member>
+      <member refid="classSceneWin_1a79bcf83ae062dd796cd9161d8a444f66" prot="private" virt="non-virtual"><scope>SceneWin</scope><name>viewStack</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>SceneWin</scope><name>~Scene</name></member>
+      <member refid="classSceneWin_1aa137a73b4fd2bdd8c67ea9521920bfaa" prot="public" virt="non-virtual"><scope>SceneWin</scope><name>~SceneWin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

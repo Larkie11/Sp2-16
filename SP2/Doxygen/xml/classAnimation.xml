@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classAnimation" kind="class" language="C++" prot="public">
+    <compoundname>Animation</compoundname>
+    <includes refid="Animation_8h" local="no">Animation.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classAnimation_1a71ab985e9db29e34212516ddccc2972e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Animation::sliceUp</definition>
+        <argsstring></argsstring>
+        <name>sliceUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="18" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
+        <referencedby refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" compoundref="Animation_8cpp" startline="51" endline="75">Mine</referencedby>
+        <referencedby refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" compoundref="Animation_8cpp" startline="9" endline="33">Slash</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Animation::sliceDown</definition>
+        <argsstring></argsstring>
+        <name>sliceDown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="19" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
+        <referencedby refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" compoundref="Animation_8cpp" startline="51" endline="75">Mine</referencedby>
+        <referencedby refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" compoundref="Animation_8cpp" startline="9" endline="33">Slash</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Animation::moveFront</definition>
+        <argsstring></argsstring>
+        <name>moveFront</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="20" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Animation::moveBack</definition>
+        <argsstring></argsstring>
+        <name>moveBack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="21" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classAnimation_1adeaa31f34e61ae2d9aec9f3b1328d1da" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Animation::switchDown</definition>
+        <argsstring></argsstring>
+        <name>switchDown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="23" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAnimation_1a873241ab36c3f925b7466a324e0f82c3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Animation::switchUp</definition>
+        <argsstring></argsstring>
+        <name>switchUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="24" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Animation::Animation</definition>
+        <argsstring>()</argsstring>
+        <name>Animation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="8" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="3" bodyend="6"/>
+        <references refid="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" compoundref="Animation_8h" startline="21">moveBack</references>
+        <references refid="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" compoundref="Animation_8h" startline="20">moveFront</references>
+        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="19">sliceDown</references>
+        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="18">sliceUp</references>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a401b68793d4fbf48d481c030ee4b2a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Animation::~Animation</definition>
+        <argsstring>()</argsstring>
+        <name>~Animation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="9" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::Slash</definition>
+        <argsstring>(double dt, float &amp;targetRotation, bool &amp;start)</argsstring>
+        <name>Slash</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>targetRotation</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="10" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="9" bodyend="33"/>
+        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="19">sliceDown</references>
+        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="18">sliceUp</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1adc6488f1436096edbb58454315f04bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::Shoot</definition>
+        <argsstring>(double dt, float &amp;targetTranslation, bool &amp;start)</argsstring>
+        <name>Shoot</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>targetTranslation</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="11" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="35" bodyend="49"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::Mine</definition>
+        <argsstring>(double dt, float &amp;targetRotation, bool &amp;start)</argsstring>
+        <name>Mine</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>targetRotation</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="12" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="51" bodyend="75"/>
+        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="19">sliceDown</references>
+        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="18">sliceUp</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a0c16fd819ed0a965ef3f66f2c1957a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::moveSword</definition>
+        <argsstring>(double dt, float &amp;targetTranslation, bool usingSword)</argsstring>
+        <name>moveSword</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>targetTranslation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>usingSword</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="13" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="77" bodyend="96"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a4acfd87b27928b8955a1d4679e7c1166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::moveGun</definition>
+        <argsstring>(double dt, float &amp;targetTranslation, bool usingGun)</argsstring>
+        <name>moveGun</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>targetTranslation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>usingGun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="14" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="98" bodyend="117"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a15100ed0ea6b8fcdbc3b6837be44f5e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animation::explosion</definition>
+        <argsstring>(double dt, float &amp;explosionScale, bool &amp;playExplosion)</argsstring>
+        <name>explosion</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>explosionScale</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>playExplosion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="15" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="119" bodyend="130"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classAnimation_1a7bd2623cd7040e32837d7fb312d31790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Animation::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Animation.h" line="16" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="592">
+        <label>Animation</label>
+        <link refid="classAnimation"/>
+        <childnode refid="593" relation="usage">
+          <edgelabel>switchUp</edgelabel>
+          <edgelabel>switchDown</edgelabel>
+          <edgelabel>moveFront</edgelabel>
+          <edgelabel>moveBack</edgelabel>
+          <edgelabel>sliceDown</edgelabel>
+          <edgelabel>sliceUp</edgelabel>
+        </childnode>
+      </node>
+      <node id="593">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Animation.h" line="6" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="5" bodyend="25"/>
+    <listofallmembers>
+      <member refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" prot="public" virt="non-virtual"><scope>Animation</scope><name>Animation</name></member>
+      <member refid="classAnimation_1a15100ed0ea6b8fcdbc3b6837be44f5e0" prot="public" virt="non-virtual"><scope>Animation</scope><name>explosion</name></member>
+      <member refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" prot="public" virt="non-virtual"><scope>Animation</scope><name>Mine</name></member>
+      <member refid="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" prot="public" virt="non-virtual"><scope>Animation</scope><name>moveBack</name></member>
+      <member refid="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" prot="public" virt="non-virtual"><scope>Animation</scope><name>moveFront</name></member>
+      <member refid="classAnimation_1a4acfd87b27928b8955a1d4679e7c1166" prot="public" virt="non-virtual"><scope>Animation</scope><name>moveGun</name></member>
+      <member refid="classAnimation_1a0c16fd819ed0a965ef3f66f2c1957a1b" prot="public" virt="non-virtual"><scope>Animation</scope><name>moveSword</name></member>
+      <member refid="classAnimation_1adc6488f1436096edbb58454315f04bed" prot="public" virt="non-virtual"><scope>Animation</scope><name>Shoot</name></member>
+      <member refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" prot="public" virt="non-virtual"><scope>Animation</scope><name>Slash</name></member>
+      <member refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" prot="public" virt="non-virtual"><scope>Animation</scope><name>sliceDown</name></member>
+      <member refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" prot="public" virt="non-virtual"><scope>Animation</scope><name>sliceUp</name></member>
+      <member refid="classAnimation_1adeaa31f34e61ae2d9aec9f3b1328d1da" prot="public" virt="non-virtual"><scope>Animation</scope><name>switchDown</name></member>
+      <member refid="classAnimation_1a873241ab36c3f925b7466a324e0f82c3" prot="public" virt="non-virtual"><scope>Animation</scope><name>switchUp</name></member>
+      <member refid="classAnimation_1a7bd2623cd7040e32837d7fb312d31790" prot="public" virt="non-virtual"><scope>Animation</scope><name>Update</name></member>
+      <member refid="classAnimation_1a401b68793d4fbf48d481c030ee4b2a16" prot="public" virt="non-virtual"><scope>Animation</scope><name>~Animation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

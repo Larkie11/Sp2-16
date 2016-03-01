@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structColor" kind="struct" language="C++" prot="public">
+    <compoundname>Color</compoundname>
+    <includes refid="Vertex_8h" local="no">Vertex.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structColor_1a3958a556b47d2de3dd45c75aac833c20" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vertex.h" line="21" column="1" bodyfile="Common/Source/Vertex.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="400" endline="424">SceneMenu::RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">SceneWin::RenderText</referencedby>
+        <referencedby refid="classCutscene_1a4a1affd3851f94cf875edef8736f5feb" compoundref="Cutscene_8cpp" startline="246" endline="270">Cutscene::RenderText</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">Shop::RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">StartCutScene::RenderText</referencedby>
+        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="867" endline="892">SP2::RenderText</referencedby>
+        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="935" endline="960">Scene2::RenderText</referencedby>
+        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="890" endline="915">Scene3::RenderText</referencedby>
+        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="425" endline="468">SceneMenu::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">SceneWin::RenderTextOnScreen</referencedby>
+        <referencedby refid="classCutscene_1a919fee73f4a423e75aab5bfc5668d051" compoundref="Cutscene_8cpp" startline="280" endline="323">Cutscene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">Shop::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">StartCutScene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="893" endline="937">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="970" endline="1014">Scene2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="916" endline="960">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="24" endline="29">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structColor_1a5defbb21620e480e556181772d665f34" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vertex.h" line="21" column="1" bodyfile="Common/Source/Vertex.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="24" endline="29">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structColor_1a33e482be18d6ea31d2b403bee13683b7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vertex.h" line="21" column="1" bodyfile="Common/Source/Vertex.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="24" endline="29">Set</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Color::Color</definition>
+        <argsstring>(float r=1, float g=1, float b=1)</argsstring>
+        <name>Color</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vertex.h" line="22" column="1" bodyfile="Common/Source/Vertex.h" bodystart="22" bodyend="22"/>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="24" endline="29">Set</references>
+      </memberdef>
+      <memberdef kind="function" id="structColor_1acc77e4e3583d3eca7e476952e51bfb80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Color::Set</definition>
+        <argsstring>(float r, float g, float b)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vertex.h" line="24" column="1" bodyfile="Common/Source/Vertex.h" bodystart="24" bodyend="29"/>
+        <references refid="structColor_1a33e482be18d6ea31d2b403bee13683b7" compoundref="Vertex_8h" startline="21">b</references>
+        <references refid="structColor_1a5defbb21620e480e556181772d665f34" compoundref="Vertex_8h" startline="21">g</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">r</references>
+        <referencedby refid="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" compoundref="Vertex_8h" startline="22" endline="22">Color</referencedby>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="23" endline="93">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" compoundref="Light_8h" startline="14" endline="20">Light::Light</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="646">
+        <label>float</label>
+      </node>
+      <node id="645">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="646" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Common/Source/Vertex.h" line="20" column="1" bodyfile="Common/Source/Vertex.h" bodystart="19" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structColor_1a33e482be18d6ea31d2b403bee13683b7" prot="public" virt="non-virtual"><scope>Color</scope><name>b</name></member>
+      <member refid="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" prot="public" virt="non-virtual"><scope>Color</scope><name>Color</name></member>
+      <member refid="structColor_1a5defbb21620e480e556181772d665f34" prot="public" virt="non-virtual"><scope>Color</scope><name>g</name></member>
+      <member refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" prot="public" virt="non-virtual"><scope>Color</scope><name>r</name></member>
+      <member refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" prot="public" virt="non-virtual"><scope>Color</scope><name>Set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

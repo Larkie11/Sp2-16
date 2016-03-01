@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="NPC_8h" kind="file" language="C++">
+    <compoundname>NPC.h</compoundname>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="CollisionDetector_8h" local="yes">CollisionDetector.h</includes>
+    <includes refid="Sound_8h" local="yes">Sound.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="Shop_8h" local="yes">MyGraphics/Source/Shop.h</includedby>
+    <includedby refid="Scene2_8h" local="yes">MyGraphics/Source/Scene2.h</includedby>
+    <includedby refid="Scene3_8h" local="yes">MyGraphics/Source/Scene3.h</includedby>
+    <includedby refid="NPC_8cpp" local="yes">MyGraphics/Source/NPC.cpp</includedby>
+    <incdepgraph>
+      <node id="5555">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="5551" relation="include">
+        </childnode>
+      </node>
+      <node id="5553">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="5554" relation="include">
+        </childnode>
+        <childnode refid="5551" relation="include">
+        </childnode>
+      </node>
+      <node id="5564">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="5556" relation="include">
+        </childnode>
+        <childnode refid="5553" relation="include">
+        </childnode>
+      </node>
+      <node id="5543">
+        <label>windows.h</label>
+      </node>
+      <node id="5563">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="5556" relation="include">
+        </childnode>
+        <childnode refid="5564" relation="include">
+        </childnode>
+        <childnode refid="5553" relation="include">
+        </childnode>
+      </node>
+      <node id="5572">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5562" relation="include">
+        </childnode>
+      </node>
+      <node id="5536">
+        <label>cmath</label>
+      </node>
+      <node id="5550">
+        <label>irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="5551" relation="include">
+        </childnode>
+        <childnode refid="5553" relation="include">
+        </childnode>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5556" relation="include">
+        </childnode>
+        <childnode refid="5557" relation="include">
+        </childnode>
+        <childnode refid="5558" relation="include">
+        </childnode>
+        <childnode refid="5559" relation="include">
+        </childnode>
+        <childnode refid="5560" relation="include">
+        </childnode>
+        <childnode refid="5561" relation="include">
+        </childnode>
+        <childnode refid="5562" relation="include">
+        </childnode>
+        <childnode refid="5563" relation="include">
+        </childnode>
+        <childnode refid="5567" relation="include">
+        </childnode>
+        <childnode refid="5568" relation="include">
+        </childnode>
+        <childnode refid="5564" relation="include">
+        </childnode>
+        <childnode refid="5570" relation="include">
+        </childnode>
+        <childnode refid="5565" relation="include">
+        </childnode>
+        <childnode refid="5569" relation="include">
+        </childnode>
+        <childnode refid="5571" relation="include">
+        </childnode>
+        <childnode refid="5572" relation="include">
+        </childnode>
+        <childnode refid="5566" relation="include">
+        </childnode>
+      </node>
+      <node id="5573">
+        <label>string</label>
+      </node>
+      <node id="5545">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5534" relation="include">
+        </childnode>
+      </node>
+      <node id="5560">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+      </node>
+      <node id="5537">
+        <label>exception</label>
+      </node>
+      <node id="5559">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="5562">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="5556" relation="include">
+        </childnode>
+        <childnode refid="5553" relation="include">
+        </childnode>
+        <childnode refid="5559" relation="include">
+        </childnode>
+        <childnode refid="5560" relation="include">
+        </childnode>
+      </node>
+      <node id="5567">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5560" relation="include">
+        </childnode>
+      </node>
+      <node id="5558">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="5547">
+        <label>Enemy.h</label>
+        <link refid="Enemy_8h"/>
+        <childnode refid="5548" relation="include">
+        </childnode>
+        <childnode refid="5544" relation="include">
+        </childnode>
+      </node>
+      <node id="5544">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5545" relation="include">
+        </childnode>
+        <childnode refid="5535" relation="include">
+        </childnode>
+      </node>
+      <node id="5571">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+      </node>
+      <node id="5552">
+        <label>wchar.h</label>
+      </node>
+      <node id="5546">
+        <label>CollisionDetector.h</label>
+        <link refid="CollisionDetector_8h"/>
+        <childnode refid="5535" relation="include">
+        </childnode>
+        <childnode refid="5547" relation="include">
+        </childnode>
+        <childnode refid="5534" relation="include">
+        </childnode>
+      </node>
+      <node id="5542">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="5543" relation="include">
+        </childnode>
+      </node>
+      <node id="5538">
+        <label>ctime</label>
+      </node>
+      <node id="5548">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5534" relation="include">
+        </childnode>
+      </node>
+      <node id="5551">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="5552" relation="include">
+        </childnode>
+      </node>
+      <node id="5568">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5569" relation="include">
+        </childnode>
+      </node>
+      <node id="5557">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="5565">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+      </node>
+      <node id="5541">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5542" relation="include">
+        </childnode>
+      </node>
+      <node id="5554">
+        <label>math.h</label>
+      </node>
+      <node id="5549">
+        <label>Sound.h</label>
+        <link refid="Sound_8h"/>
+        <childnode refid="5550" relation="include">
+        </childnode>
+        <childnode refid="5573" relation="include">
+        </childnode>
+      </node>
+      <node id="5539">
+        <label>cstdlib</label>
+      </node>
+      <node id="5540">
+        <label>iostream</label>
+      </node>
+      <node id="5535">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5536" relation="include">
+        </childnode>
+        <childnode refid="5537" relation="include">
+        </childnode>
+        <childnode refid="5538" relation="include">
+        </childnode>
+        <childnode refid="5539" relation="include">
+        </childnode>
+      </node>
+      <node id="5556">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="5551" relation="include">
+        </childnode>
+      </node>
+      <node id="5533">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC.h"/>
+        <childnode refid="5534" relation="include">
+        </childnode>
+        <childnode refid="5541" relation="include">
+        </childnode>
+        <childnode refid="5544" relation="include">
+        </childnode>
+        <childnode refid="5546" relation="include">
+        </childnode>
+        <childnode refid="5549" relation="include">
+        </childnode>
+        <childnode refid="5573" relation="include">
+        </childnode>
+      </node>
+      <node id="5561">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5553" relation="include">
+        </childnode>
+        <childnode refid="5562" relation="include">
+        </childnode>
+        <childnode refid="5563" relation="include">
+        </childnode>
+        <childnode refid="5559" relation="include">
+        </childnode>
+        <childnode refid="5565" relation="include">
+        </childnode>
+        <childnode refid="5566" relation="include">
+        </childnode>
+      </node>
+      <node id="5566">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5560" relation="include">
+        </childnode>
+      </node>
+      <node id="5570">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+        <childnode refid="5560" relation="include">
+        </childnode>
+      </node>
+      <node id="5569">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="5555" relation="include">
+        </childnode>
+      </node>
+      <node id="5534">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5535" relation="include">
+        </childnode>
+        <childnode refid="5540" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5579">
+        <label>MyGraphics/Source/Shop.h</label>
+        <link refid="Shop_8h"/>
+        <childnode refid="5576" relation="include">
+        </childnode>
+        <childnode refid="5580" relation="include">
+        </childnode>
+      </node>
+      <node id="5582">
+        <label>MyGraphics/Source/Scene2.cpp</label>
+        <link refid="Scene2_8cpp"/>
+      </node>
+      <node id="5584">
+        <label>MyGraphics/Source/Scene3.cpp</label>
+        <link refid="Scene3_8cpp"/>
+      </node>
+      <node id="5580">
+        <label>MyGraphics/Source/Shop.cpp</label>
+        <link refid="Shop_8cpp"/>
+      </node>
+      <node id="5583">
+        <label>MyGraphics/Source/Scene3.h</label>
+        <link refid="Scene3_8h"/>
+        <childnode refid="5576" relation="include">
+        </childnode>
+        <childnode refid="5584" relation="include">
+        </childnode>
+      </node>
+      <node id="5577">
+        <label>MyGraphics/Source/Enemy.cpp</label>
+        <link refid="Enemy_8cpp"/>
+      </node>
+      <node id="5575">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="5576" relation="include">
+        </childnode>
+        <childnode refid="5577" relation="include">
+        </childnode>
+        <childnode refid="5578" relation="include">
+        </childnode>
+      </node>
+      <node id="5585">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="5576">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5581">
+        <label>MyGraphics/Source/Scene2.h</label>
+        <link refid="Scene2_8h"/>
+        <childnode refid="5576" relation="include">
+        </childnode>
+        <childnode refid="5582" relation="include">
+        </childnode>
+      </node>
+      <node id="5574">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC.h"/>
+        <childnode refid="5575" relation="include">
+        </childnode>
+        <childnode refid="5579" relation="include">
+        </childnode>
+        <childnode refid="5581" relation="include">
+        </childnode>
+        <childnode refid="5583" relation="include">
+        </childnode>
+        <childnode refid="5585" relation="include">
+        </childnode>
+      </node>
+      <node id="5578">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classNPC" prot="public">NPC</innerclass>
+    <innerclass refid="structNPC_1_1DOT" prot="private">NPC::DOT</innerclass>
+    <briefdescription>
+<para>Checks if player is near and then show and allow the player to do something. </para>    </briefdescription>
+    <detaileddescription>
+<para>Handles music and sound effect for the game using irrklang.</para><para><simplesect kind="author"><para>Mok Wei Min </para></simplesect>
+<simplesect kind="par"><title>email: 155208U@mymail.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NPC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NPC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CollisionDetector_8h" kindref="compound">CollisionDetector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Sound_8h" kindref="compound">Sound.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classNPC" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classNPC" kindref="compound">NPC</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="structNPC_1_1DOT" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32" refid="structNPC_1_1DOT_1a7fc79b24f05ce5144cc3b1dc63731f1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structNPC_1_1DOT_1a7fc79b24f05ce5144cc3b1dc63731f1e" kindref="member">negativeDotProduct</ref>;</highlight></codeline>
+<codeline lineno="33" refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" kindref="member">canInteract</ref>;</highlight></codeline>
+<codeline lineno="34" refid="structNPC_1_1DOT_1a43f8834f2ab49434068d1a102994eae0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structNPC_1_1DOT_1a43f8834f2ab49434068d1a102994eae0" kindref="member">canGoThrough</ref>;</highlight></codeline>
+<codeline lineno="35" refid="structNPC_1_1DOT_1ae2cacde2ef87e5080e0a9229ab080290" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structNPC_1_1DOT_1ae2cacde2ef87e5080e0a9229ab080290" kindref="member">Collision</ref>;</highlight></codeline>
+<codeline lineno="36" refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" kindref="member">Nposition</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structNPC_1_1DOT_1aed31700ee9837a78817024847a7bdfca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structNPC_1_1DOT_1aed31700ee9837a78817024847a7bdfca" kindref="member">robot</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classNPC_1ae031c59118e339bc7b983d755270b3ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1ae031c59118e339bc7b983d755270b3ed" kindref="member">door</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" kindref="member">robot1</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" kindref="member">robot2</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classNPC_1a85d74e45c09b9682b51c8de0be2b86e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a85d74e45c09b9682b51c8de0be2b86e8" kindref="member">robot3</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classNPC_1aa66dc59a5b8d5c3f6f167b30accbfdd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1aa66dc59a5b8d5c3f6f167b30accbfdd3" kindref="member">spacebody</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classNPC_1a393fc83597650a8ac9e8a7ce41bdb73b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a393fc83597650a8ac9e8a7ce41bdb73b" kindref="member">spacewing</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classNPC_1a62229900f73556ef0e63491651811bf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a62229900f73556ef0e63491651811bf8" kindref="member">spacerocket</ref>;</highlight></codeline>
+<codeline lineno="49" refid="classNPC_1a265b0c5463e405764e127013956bafe8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a265b0c5463e405764e127013956bafe8" kindref="member">seller</ref>;</highlight></codeline>
+<codeline lineno="50" refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" kindref="member">spaceDoor</ref>;</highlight></codeline>
+<codeline lineno="51" refid="classNPC_1a87b08e0f34557711ef21bb042fa5510e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a87b08e0f34557711ef21bb042fa5510e" kindref="member">spaceShip</ref>;</highlight></codeline>
+<codeline lineno="52" refid="classNPC_1aae7da60114eed97a8cab60efb9c774bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1aae7da60114eed97a8cab60efb9c774bb" kindref="member">egg1</ref>;</highlight></codeline>
+<codeline lineno="53" refid="classNPC_1ab0a53022b2f32c23623fdc49f8270b71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1ab0a53022b2f32c23623fdc49f8270b71" kindref="member">egg2</ref>;</highlight></codeline>
+<codeline lineno="54" refid="classNPC_1ad960bb15d983e36d98cdd8a3a3ebdaa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1ad960bb15d983e36d98cdd8a3a3ebdaa7" kindref="member">egg3</ref>;</highlight></codeline>
+<codeline lineno="55" refid="classNPC_1ad5fbe58d73eda3c6dc184db36a86da1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1ad5fbe58d73eda3c6dc184db36a86da1a" kindref="member">egg4</ref>;</highlight></codeline>
+<codeline lineno="56" refid="classNPC_1a65a4cff8745128f22b60e70181e71ac7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a65a4cff8745128f22b60e70181e71ac7" kindref="member">egg5</ref>;</highlight></codeline>
+<codeline lineno="57" refid="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref><sp/><ref refid="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" kindref="member">bomb</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref><sp/><ref refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" kindref="member">detectCollision</ref>;</highlight></codeline>
+<codeline lineno="60" refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" kindref="member">interactDia</ref>;</highlight></codeline>
+<codeline lineno="61" refid="classNPC_1acc292d328d6ed61ee652ba1e9371c490" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNPC_1acc292d328d6ed61ee652ba1e9371c490" kindref="member">dialoguePlus</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="62" refid="classNPC_1a072b54dc68788df7544884e3a4631410" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a072b54dc68788df7544884e3a4631410" kindref="member">coolDownTime</ref>;</highlight></codeline>
+<codeline lineno="63" refid="classNPC_1a727cc5aef2e9753e0f094a7511afd321" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a727cc5aef2e9753e0f094a7511afd321" kindref="member">dialogue</ref>;</highlight></codeline>
+<codeline lineno="64" refid="classNPC_1ab8a82c886c19a301950fe033e7f27574" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNPC_1ab8a82c886c19a301950fe033e7f27574" kindref="member">moveFront</ref>;</highlight></codeline>
+<codeline lineno="65" refid="classNPC_1ab2a347de5d84d055e740679379377436" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNPC_1ab2a347de5d84d055e740679379377436" kindref="member">moveBack</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" kindref="member">robot3rotate</ref>;</highlight></codeline>
+<codeline lineno="67" refid="classNPC_1ab80b828ce8758d633fdd679b8732f7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNPC_1ab80b828ce8758d633fdd679b8732f7c5" kindref="member">robot1moved</ref>;</highlight></codeline>
+<codeline lineno="68" refid="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" kindref="member">stopMusic</ref>;</highlight></codeline>
+<codeline lineno="69" refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSound" kindref="compound">Sound</ref><sp/><ref refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" kindref="member">sound</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" kindref="member">Scene1</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a42cb3233dc7befff196bd9d08eb6cacf" kindref="member">Scene2</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a36e813302930862ecaea05db5286d271" kindref="member">Door</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" kindref="member">Shop</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a54669bd593dce1ca5fb994e11f5da8be" kindref="member">NPCmovement</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetMovement);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNPC_1a3e837aa5669c2fa5395e2b037bcadd5d" kindref="member">NPCmovement2</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>targetMovement);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classNPC_1a59b45912692304d555df9d6957046962" kindref="member">NPC</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classNPC_1a67c0caca129b56c82bb7ec8bce6be52b" kindref="member">~NPC</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/NPC.h"/>
+  </compounddef>
+</doxygen>

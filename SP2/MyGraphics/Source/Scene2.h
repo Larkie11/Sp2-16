@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	Scene2.h
+\author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
+\par	
+\brief
+Renders the 2nd scene for player to pick up eggs and access shop
+*/
+/******************************************************************************/
 #ifndef Scene2_H
 #define Scene2_H
 
@@ -8,7 +17,6 @@
 #include "MyMath.h"
 #include "Light.h"
 #include "Material.h"
-
 #include "Camera3.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
@@ -19,37 +27,35 @@
 #include "Mouse.h"
 #include "rawMaterial.h"
 #include "Sound.h"
-
 #include "Animation.h"
 
 #include <string>
 #include <vector>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 
-
-using std::cout;
-using std::endl;
 using std::ifstream;
 using std::vector;
 using std::string;
 
+/******************************************************************************/
+/*!
+Class SceneWin:
+\brief	Initialize other class objects, meshes to render, booleans, floats and strings
+*/
+/******************************************************************************/
 class Scene2 : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-		GEO_TRIANGLE_1 = 0,
-		GEO_TRIANGLE_2,
-		GEO_REF_AXES,
+		GEO_REF_AXES = 0,
 		GEO_REF_QUAD,
-		GEO_LIGHTBALL,
 		GEO_QUAD,
-		GEO_PYRAMIDFLOOR,
-		GEO_BB8HEAD,
-		GEO_BB8BODY,
+
+		GEO_ENEMY,
 		GEO_CROSSHAIR,
 
+		//Skybox
 		GEO_LEFT1,
 		GEO_RIGHT1,
 		GEO_TOP1,
@@ -57,9 +63,12 @@ class Scene2 : public Scene
 		GEO_FRONT1,
 		GEO_BACK1,
 		GEO_STAR,
+
+		//Story text
 		GEO_STORY1,
 		GEO_TEXT,
-		GEO_PATH,
+
+		//Icons
 		GEO_AMMOICON,
 		GEO_GOLDICON,
 		GEO_EGGICON,
@@ -68,36 +77,46 @@ class Scene2 : public Scene
 		GEO_GUNICON,
 		GEO_PICKAXEICON,
 		GEO_SWORDICON,
-		GEO_VENDING,
+
+		//Collectibles
 		GEO_BOMB,
 		GEO_CCTV,
 		GEO_EGG,
 		GEO_BAG,
-		GEO_PYRAMIDDOOR,
-		GEO_INVENTORY,
-		GEO_BUILDING,
-		GEO_COKE,
+
 		GEO_BULLET,
+
+		//Enemy
 		GEO_ROBOTH,
 		GEO_ROBOTB,
 		GEO_ROBOT,
 		GEO_ROBOT1,
 		GEO_ROBOT2,
+
+		//Scene
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
+		GEO_PYRAMIDFLOOR,
 		GEO_PYRAMIDWALL,
+		GEO_PYRAMIDDOOR,
 		GEO_PYRAMIDPILLAR,
 		GEO_SPACESHIP,
 		GEO_PLANEBODY,
 		GEO_PLANEWING,
 		GEO_PLANEROCKET,
+
+		//Weapons
 		GEO_PICKAXE,
 		GEO_GUN,
 		GEO_SWORD,
+
+		//Minerals
 		GEO_RMSMALL,
 		GEO_RMMEDIUM,
 		GEO_RMBIG,
+
+		//Others
 		GEO_EXPLOSION,
 		GEO_BULLETSKIN,
 		NUM_GEOMETRY,
@@ -164,32 +183,6 @@ class Scene2 : public Scene
 		U_LIGHT3_COSINNER,
 		U_LIGHT3_EXPONENT,
 
-		U_LIGHT4_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT4_COLOR,
-		U_LIGHT4_POWER,
-		U_LIGHT4_KC,
-		U_LIGHT4_KL,
-		U_LIGHT4_KQ,
-		U_LIGHT4ENABLED,
-		U_LIGHT4_TYPE,
-		U_LIGHT4_SPOTDIRECTION,
-		U_LIGHT4_COSCUTOFF,
-		U_LIGHT4_COSINNER,
-		U_LIGHT4_EXPONENT,
-
-		U_LIGHT5_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT5_COLOR,
-		U_LIGHT5_POWER,
-		U_LIGHT5_KC,
-		U_LIGHT5_KL,
-		U_LIGHT5_KQ,
-		U_LIGHT5ENABLED,
-		U_LIGHT5_TYPE,
-		U_LIGHT5_SPOTDIRECTION,
-		U_LIGHT5_COSCUTOFF,
-		U_LIGHT5_COSINNER,
-		U_LIGHT5_EXPONENT,
-
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
@@ -202,7 +195,6 @@ class Scene2 : public Scene
 	enum Items
 	{
 		None = -1,
-
 		SPACEWING,
 		SPACEROCKET,
 		Num_Object,

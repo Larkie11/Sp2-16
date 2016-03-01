@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classObjects" kind="class" language="C++" prot="public">
+    <compoundname>Objects</compoundname>
+    <includes refid="Objects_8h" local="no">Objects.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1" prot="public" static="no">
+        <name>OBJECTS</name>
+        <enumvalue id="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1a26e1c41822a098cd1ebfc8b5997faa19" prot="public">
+          <name>COKE</name>
+          <initializer>=0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1a49635ad08b4a140a51f9b53faa26ccd1" prot="public">
+          <name>VENDINGMACHINE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Objects.h" line="14" column="1" bodyfile="MyGraphics/Source/Objects.h" bodystart="13" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classObjects_1a62b1bae89c8d586d0537444dd708640d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Objects::ItemType</definition>
+        <argsstring></argsstring>
+        <name>ItemType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Objects.h" line="11" column="1" bodyfile="MyGraphics/Source/Objects.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classObjects_1a1e3d945e13a62c21a8f00e1f6f72ffe2" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Objects::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Objects.h" line="12" column="1" bodyfile="MyGraphics/Source/Objects.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classObjects_1a99a95835b9c3df255e18c5f2f50219de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Objects::Objects</definition>
+        <argsstring>()</argsstring>
+        <name>Objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Objects.h" line="19" column="1" bodyfile="MyGraphics/Source/Objects.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classObjects_1a86a7e38eca3e25f52e1208965d1ea5b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Objects::~Objects</definition>
+        <argsstring>()</argsstring>
+        <name>~Objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Objects.h" line="20" column="1" bodyfile="MyGraphics/Source/Objects.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="845">
+        <label>Objects</label>
+        <link refid="classObjects"/>
+        <childnode refid="846" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="848" relation="usage">
+          <edgelabel>ItemType</edgelabel>
+        </childnode>
+      </node>
+      <node id="847">
+        <label>float</label>
+      </node>
+      <node id="848">
+        <label>int</label>
+      </node>
+      <node id="846">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="847" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Objects.h" line="9" column="1" bodyfile="MyGraphics/Source/Objects.h" bodystart="8" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1a26e1c41822a098cd1ebfc8b5997faa19" prot="public" virt="non-virtual"><scope>Objects</scope><name>COKE</name></member>
+      <member refid="classObjects_1a62b1bae89c8d586d0537444dd708640d" prot="public" virt="non-virtual"><scope>Objects</scope><name>ItemType</name></member>
+      <member refid="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1" prot="public" virt="non-virtual"><scope>Objects</scope><name>OBJECTS</name></member>
+      <member refid="classObjects_1a99a95835b9c3df255e18c5f2f50219de" prot="public" virt="non-virtual"><scope>Objects</scope><name>Objects</name></member>
+      <member refid="classObjects_1a1e3d945e13a62c21a8f00e1f6f72ffe2" prot="public" virt="non-virtual"><scope>Objects</scope><name>position</name></member>
+      <member refid="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1a49635ad08b4a140a51f9b53faa26ccd1" prot="public" virt="non-virtual"><scope>Objects</scope><name>VENDINGMACHINE</name></member>
+      <member refid="classObjects_1a86a7e38eca3e25f52e1208965d1ea5b1" prot="public" virt="non-virtual"><scope>Objects</scope><name>~Objects</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

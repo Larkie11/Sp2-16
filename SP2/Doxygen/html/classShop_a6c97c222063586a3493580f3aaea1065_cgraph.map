@@ -1,0 +1,5 @@
+<map id="Shop::userInput" name="Shop::userInput">
+<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="167,5,341,32"/>
+<area shape="rect" id="node3" href="$classSound.html#aff890910a52b741e92134ee9c3c82408" title="Plays the sound effect no loop. " alt="" coords="199,56,309,83"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="389,49,541,90"/>
+</map>

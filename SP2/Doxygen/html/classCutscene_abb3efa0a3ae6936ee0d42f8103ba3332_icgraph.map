@@ -1,0 +1,3 @@
+<map id="Cutscene::Map_Rendering" name="Cutscene::Map_Rendering">
+<area shape="rect" id="node2" href="$classCutscene.html#a74edfeb7d02dd7ee12e965c748ce422e" title="The main render function for this scene, renders any text/meshes. " alt="" coords="228,5,355,32"/>
+</map>

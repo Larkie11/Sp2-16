@@ -1,0 +1,11 @@
+<map id="MyGraphics/Source/shader.hpp" name="MyGraphics/Source/shader.hpp">
+<area shape="rect" id="node2" href="$Cutscene_8cpp.html" title="Renders scene where player leaves in spaceship and temple explodes. " alt="" coords="5,87,227,114"/>
+<area shape="rect" id="node3" href="$Scene2_8cpp.html" title="Renders the 2nd scene for player to pick up eggs and access shop. " alt="" coords="251,87,461,114"/>
+<area shape="rect" id="node4" href="$Scene3_8cpp.html" title="MyGraphics/Source/Scene3.cpp" alt="" coords="485,87,696,114"/>
+<area shape="rect" id="node5" href="$SceneMenu_8cpp.html" title="MyGraphics/Source/SceneMenu.cpp" alt="" coords="720,87,955,114"/>
+<area shape="rect" id="node6" href="$SceneWin_8cpp.html" title="Renders the screen to show player win and how many enemies killed. " alt="" coords="979,87,1205,114"/>
+<area shape="rect" id="node7" href="$shader_8cpp.html" title="MyGraphics/Source/shader.cpp" alt="" coords="1229,87,1435,114"/>
+<area shape="rect" id="node8" href="$Shop_8cpp.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="1459,87,1655,114"/>
+<area shape="rect" id="node9" href="$SP2_8cpp.html" title="MyGraphics/Source/SP2.cpp" alt="" coords="1679,87,1870,114"/>
+<area shape="rect" id="node10" href="$StartCutScene_8cpp.html" title="MyGraphics/Source/StartCut\lScene.cpp" alt="" coords="1895,80,2084,121"/>
+</map>

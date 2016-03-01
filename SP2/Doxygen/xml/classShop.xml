@@ -1,0 +1,2053 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classShop" kind="class" language="C++" prot="public">
+    <compoundname>Shop</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="Shop_8h" local="no">Shop.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classShop_1ab2e8f4ab5bb828684d1f158b10136416" prot="private" static="no">
+        <name>GEOMETRY_TYPE</name>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a265c8161cb0e5262afb01192a0dd7c24" prot="private">
+          <name>GEO_SHOPKEEPER3D</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416ad11eaedf7bc92db8bf76ec2459aa2bc5" prot="private">
+          <name>GEO_SHOPKEEPER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a6bf468e5297c7c4d17adedaaceff29d3" prot="private">
+          <name>GEO_TABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a608c5bb32a6967cbe392402526a5772d" prot="private">
+          <name>GEO_REF_AXES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a04b96dae699e2b08ede1a9a048fd5c78" prot="private">
+          <name>GEO_REF_QUAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a417e0562e674da2df6f7e7d35eb50c13" prot="private">
+          <name>GEO_LIGHTBALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a381b270ce0b3ab3a70968437235544fa" prot="private">
+          <name>GEO_AMMOICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a07f8a187cefb2d77653c34e52ea9ccf0" prot="private">
+          <name>GEO_GOLDICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae82515e0e5ea42f1df38644035c6bd01" prot="private">
+          <name>GEO_EGGICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a220d60100cc496780a3e6bd38949661d" prot="private">
+          <name>GEO_BOMBICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416afdd06b937d34ab4a972eb438645bcd3e" prot="private">
+          <name>GEO_OREICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b95fb6fa6fed31b041e9c80dfc77e8f" prot="private">
+          <name>GEO_SPACEDOOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4277ccab3267f17cc2102aa06dd4c6f6" prot="private">
+          <name>GEO_QUAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416aaf1a04dc181577c2c37da59c3c9b2201" prot="private">
+          <name>GEO_LEFT1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4bba55f92fb0b1c79b4e1bc0ab6d39ba" prot="private">
+          <name>GEO_RIGHT1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416ac7e89fd92e6af8a7791f3fe519939490" prot="private">
+          <name>GEO_TOP1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416aae87c5586238e53c70a0381519d90f78" prot="private">
+          <name>GEO_BOTTOM1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416ade302637c0f81e20204a5771d556ceb6" prot="private">
+          <name>GEO_FRONT1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416aac508a1bd2446e38ebb688d5853ef158" prot="private">
+          <name>GEO_BACK1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b8fbf8480a158e3c115824e389c9b9b" prot="private">
+          <name>GEO_SHOPWALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a3c24c681d6a88f01b32214aa1bda8577" prot="private">
+          <name>GEO_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a480ed0edd552bc3b3bdee5f2b20910b4" prot="private">
+          <name>GEO_WALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a9dddd8941e513532d96d7ac1d38c3a52" prot="private">
+          <name>GEO_OUTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae1b34f075a6fe197ef9a74f83b70c3e4" prot="private">
+          <name>GEO_SHOPICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a259ac42d6a437d0b72b5097550684547" prot="private">
+          <name>GEO_CEILING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa7a798cef31371d6848c0bef82e9b51d" prot="private">
+          <name>GEO_FLOOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416ab148391990cad24394969ebee45e7eee" prot="private">
+          <name>GEO_SPACESHIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a87e40640e9b1dbf9980e02b3112f6f4f" prot="private">
+          <name>GEO_PLANEBODY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa78323b517a4f4e7eb5d345a6336440b" prot="private">
+          <name>GEO_PLANEWING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a1994403227f539bce14d8b3caab46e90" prot="private">
+          <name>GEO_PLANEROCKET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" prot="private">
+          <name>NUM_GEOMETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="44" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="43" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="enum" id="classShop_1a151fbaea06abc7312da34ba5deeb031e" prot="private" static="no">
+        <name>UNIFORM_TYPE</name>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" prot="private">
+          <name>U_MVP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031eacd22c3ed8de58efe071a8db3392b35f0" prot="private">
+          <name>U_MODELVIEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea9e94ab8a5fcfbcd88d29bfbae2f55238" prot="private">
+          <name>U_MODELVIEW_INVERSE_TRANSPOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea33ab68e6277c7d3b8aee994b52fc0423" prot="private">
+          <name>U_MATERIAL_AMBIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031eaae388c66c3393e516e958313ae908702" prot="private">
+          <name>U_MATERIAL_DIFFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea433cc718fe207b130fc909853280cb4a" prot="private">
+          <name>U_MATERIAL_SPECULAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031eadb17b1d9ab988b385f617c256b012651" prot="private">
+          <name>U_MATERIAL_SHININESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" prot="private">
+          <name>U_COLOR_TEXTURE_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" prot="private">
+          <name>U_COLOR_TEXTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" prot="private">
+          <name>U_TEXT_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" prot="private">
+          <name>U_TEXT_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classShop_1a151fbaea06abc7312da34ba5deeb031eaad7e4af62480b154a1e6575d413f6999" prot="private">
+          <name>U_TOTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="81" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="80" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classShop_1aed6644b28dda3192121de81c3bcaecd6" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Shop::m_vertexArrayID</definition>
+        <argsstring></argsstring>
+        <name>m_vertexArrayID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="108" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="classShop_1a4421e06b07aab249cfd25f76e9719311" compoundref="Shop_8cpp" startline="974" endline="978">Exit</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a27d17cd03597d4befbe8e06914351cdc" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Shop::m_indexBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_indexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="109" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a5f420b522d1afdff1476972f62616f4e" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Shop::m_vertexBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_vertexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="110" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a91967bca57e2f2e87693e7a6de829ccb" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Shop::m_colorBuffer[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>m_colorBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="111" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1aeeba933e140ea55bef27ce3fc8d12f0d" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Shop::m_programID</definition>
+        <argsstring></argsstring>
+        <name>m_programID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="112" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classShop_1a4421e06b07aab249cfd25f76e9719311" compoundref="Shop_8cpp" startline="974" endline="978">Exit</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a11824081d86bb26322e84ac767653a13" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Shop::m_parameters[U_TOTAL]</definition>
+        <argsstring>[U_TOTAL]</argsstring>
+        <name>m_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="113" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">RenderText</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a3d99c43c39781ed47b33ef1fe42f3b57" prot="private" static="no" mutable="no">
+        <type><ref refid="classMouse" kindref="compound">Mouse</ref></type>
+        <definition>Mouse Shop::mouse</definition>
+        <argsstring></argsstring>
+        <name>mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="115" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" prot="private" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* Shop::meshList[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>meshList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="118" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a8a70313590dea95a14f0f24001ca2c9d" compoundref="Shop_8cpp" startline="702" endline="760">RenderSkybox</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS Shop::modelStack</definition>
+        <argsstring></argsstring>
+        <name>modelStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="120" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</referencedby>
+        <referencedby refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="674" endline="691">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classShop_1a8a70313590dea95a14f0f24001ca2c9d" compoundref="Shop_8cpp" startline="702" endline="760">RenderSkybox</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">RenderText</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS Shop::viewStack</definition>
+        <argsstring></argsstring>
+        <name>viewStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="120" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</referencedby>
+        <referencedby refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="674" endline="691">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">RenderText</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS Shop::projectionStack</definition>
+        <argsstring></argsstring>
+        <name>projectionStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="120" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</referencedby>
+        <referencedby refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="674" endline="691">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">RenderText</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a190c4a96ef561037ef7d13077607830d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::LSPEED</definition>
+        <argsstring></argsstring>
+        <name>LSPEED</name>
+        <initializer>= 10.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="121" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a0c8a352a83872a8a521e5585ce353706" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Shop::new_line</definition>
+        <argsstring></argsstring>
+        <name>new_line</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="129" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="129" bodyend="-1"/>
+        <referencedby refid="classShop_1a3085c0af3050029f63f1ad0ef2b88f36" compoundref="Shop_8cpp" startline="533" endline="544">Dialogue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
+        <definition>Camera3 Shop::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="130" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ab490edf8241ef1421377f9f85f4937f3" prot="private" static="no" mutable="no">
+        <type><ref refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401" kindref="member">MenuShop::SHOP_OPTION</ref></type>
+        <definition>MenuShop::SHOP_OPTION Shop::shop</definition>
+        <argsstring></argsstring>
+        <name>shop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="132" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ac5493983ac670f850951c40dd9e4e3e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715" kindref="member">MenuShop::SHOP_BUY</ref></type>
+        <definition>MenuShop::SHOP_BUY Shop::buy</definition>
+        <argsstring></argsstring>
+        <name>buy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="133" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="133" bodyend="-1"/>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a090ff360ea9d0ddee5b2f9a140aee2f0" prot="private" static="no" mutable="no">
+        <type><ref refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27" kindref="member">MenuShop::SHOP_SELL</ref></type>
+        <definition>MenuShop::SHOP_SELL Shop::sell</definition>
+        <argsstring></argsstring>
+        <name>sell</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="134" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="134" bodyend="-1"/>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a6a2a9c5179f2f0812934bfa2c4190aa2" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Shop::Input</definition>
+        <argsstring></argsstring>
+        <name>Input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="136" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a9d42f9df020ca32e88b866d0caa57fb1" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Shop::my_arr</definition>
+        <argsstring></argsstring>
+        <name>my_arr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="137" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classShop_1a3085c0af3050029f63f1ad0ef2b88f36" compoundref="Shop_8cpp" startline="533" endline="544">Dialogue</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a0c67869f2d6719b6612de1655f179c29" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::deltaTime</definition>
+        <argsstring></argsstring>
+        <name>deltaTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="139" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="139" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::icon</definition>
+        <argsstring></argsstring>
+        <name>icon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="141" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::icon2</definition>
+        <argsstring></argsstring>
+        <name>icon2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="142" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="142" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a949494a1fbe5483c36ed83ceaf995907" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::menuIcon</definition>
+        <argsstring></argsstring>
+        <name>menuIcon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="143" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1af7d08a5452419f7b88bab07efa24dcf9" prot="private" static="no" mutable="no">
+        <type><ref refid="classNPC" kindref="compound">NPC</ref></type>
+        <definition>NPC Shop::npc</definition>
+        <argsstring></argsstring>
+        <name>npc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="145" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="145" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ab4f5180509908922f5d07fd78f561306" prot="private" static="no" mutable="no">
+        <type><ref refid="classSound" kindref="compound">Sound</ref></type>
+        <definition>Sound Shop::sound</definition>
+        <argsstring></argsstring>
+        <name>sound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="146" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a2c3c25fc5b1de2edfd167f2270246bce" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::JumpTime</definition>
+        <argsstring></argsstring>
+        <name>JumpTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="148" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::PressTime</definition>
+        <argsstring></argsstring>
+        <name>PressTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="149" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="149" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a7699c2e660a7a342ce361c8dedf3e33a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::spaceDoor</definition>
+        <argsstring></argsstring>
+        <name>spaceDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="150" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ae5d78237a865dfb79b90fd13384913f6" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Shop::description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="151" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="151" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a469bdc91ec121bdbe855103b5298fb0e" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Shop::shopInput</definition>
+        <argsstring></argsstring>
+        <name>shopInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="152" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="152" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1ad9710140e9d75352970c18371f0d7523" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Shop::b_gold</definition>
+        <argsstring></argsstring>
+        <name>b_gold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="153" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="153" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a490850703fe7f123ccca077852c3c7f7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Shop::g_gold</definition>
+        <argsstring></argsstring>
+        <name>g_gold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="154" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a9de0d1efa4f876cc278e294e80dd9f1c" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Shop::nomore</definition>
+        <argsstring></argsstring>
+        <name>nomore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="155" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="155" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a4963af7089ec42d8edc02f1d9430bc86" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Shop::none</definition>
+        <argsstring></argsstring>
+        <name>none</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="156" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="156" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Shop::coolDown</definition>
+        <argsstring></argsstring>
+        <name>coolDown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="157" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="157" bodyend="-1"/>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a0cc1326a58849660572e743feeb5b9d0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Shop::sell_gold</definition>
+        <argsstring></argsstring>
+        <name>sell_gold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="158" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a1874c4a9f7a54518be96ac6ebc5b7172" prot="private" static="no" mutable="no">
+        <type><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref></type>
+        <definition>CollisionDetector Shop::detectCollision</definition>
+        <argsstring></argsstring>
+        <name>detectCollision</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="159" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="159" bodyend="-1"/>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classShop_1a1eddc4bc8977b7d0f056197456f87f40" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Shop::gold</definition>
+        <argsstring></argsstring>
+        <name>gold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="160" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="160" bodyend="-1"/>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classShop_1a579ed9f949f7db3f90c22dfe10b25797" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Shop::Shop</definition>
+        <argsstring>()</argsstring>
+        <name>Shop</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="97" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a36bf69bdc0da1b7258acc63a5fe89d40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Shop::~Shop</definition>
+        <argsstring>()</argsstring>
+        <name>~Shop</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="98" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a89d006f2a5dbfa60526a0c55718155b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Shop::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
+        <briefdescription>
+<para>Initializes for shop scene, any booleans/strings/floats and meshes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="100" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="51" bodyend="184"/>
+        <references refid="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" compoundref="Shop_8h" startline="130">camera</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classShop_1a3085c0af3050029f63f1ad0ef2b88f36" compoundref="Shop_8cpp" startline="533" endline="544">Dialogue</references>
+        <references refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="23" endline="93">MeshBuilder::GenerateAxes</references>
+        <references refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</references>
+        <references refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</references>
+        <references refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</references>
+        <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a381b270ce0b3ab3a70968437235544fa" compoundref="Shop_8h" startline="52">GEO_AMMOICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aac508a1bd2446e38ebb688d5853ef158" compoundref="Shop_8h" startline="65">GEO_BACK1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a220d60100cc496780a3e6bd38949661d" compoundref="Shop_8h" startline="55">GEO_BOMBICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aae87c5586238e53c70a0381519d90f78" compoundref="Shop_8h" startline="63">GEO_BOTTOM1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a259ac42d6a437d0b72b5097550684547" compoundref="Shop_8h" startline="71">GEO_CEILING</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae82515e0e5ea42f1df38644035c6bd01" compoundref="Shop_8h" startline="54">GEO_EGGICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ade302637c0f81e20204a5771d556ceb6" compoundref="Shop_8h" startline="64">GEO_FRONT1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a07f8a187cefb2d77653c34e52ea9ccf0" compoundref="Shop_8h" startline="53">GEO_GOLDICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aaf1a04dc181577c2c37da59c3c9b2201" compoundref="Shop_8h" startline="60">GEO_LEFT1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416afdd06b937d34ab4a972eb438645bcd3e" compoundref="Shop_8h" startline="56">GEO_OREICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a87e40640e9b1dbf9980e02b3112f6f4f" compoundref="Shop_8h" startline="74">GEO_PLANEBODY</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a1994403227f539bce14d8b3caab46e90" compoundref="Shop_8h" startline="76">GEO_PLANEROCKET</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa78323b517a4f4e7eb5d345a6336440b" compoundref="Shop_8h" startline="75">GEO_PLANEWING</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4277ccab3267f17cc2102aa06dd4c6f6" compoundref="Shop_8h" startline="59">GEO_QUAD</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a608c5bb32a6967cbe392402526a5772d" compoundref="Shop_8h" startline="48">GEO_REF_AXES</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4bba55f92fb0b1c79b4e1bc0ab6d39ba" compoundref="Shop_8h" startline="61">GEO_RIGHT1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae1b34f075a6fe197ef9a74f83b70c3e4" compoundref="Shop_8h" startline="70">GEO_SHOPICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ad11eaedf7bc92db8bf76ec2459aa2bc5" compoundref="Shop_8h" startline="46">GEO_SHOPKEEPER</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a265c8161cb0e5262afb01192a0dd7c24" compoundref="Shop_8h" startline="45">GEO_SHOPKEEPER3D</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b8fbf8480a158e3c115824e389c9b9b" compoundref="Shop_8h" startline="66">GEO_SHOPWALL</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b95fb6fa6fed31b041e9c80dfc77e8f" compoundref="Shop_8h" startline="58">GEO_SPACEDOOR</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a6bf468e5297c7c4d17adedaaceff29d3" compoundref="Shop_8h" startline="47">GEO_TABLE</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a3c24c681d6a88f01b32214aa1bda8577" compoundref="Shop_8h" startline="67">GEO_TEXT</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ac7e89fd92e6af8a7791f3fe519939490" compoundref="Shop_8h" startline="62">GEO_TOP1</references>
+        <references refid="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" compoundref="Shop_8h" startline="141">icon</references>
+        <references refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" compoundref="Shop_8h" startline="142">icon2</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</references>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="17">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="18">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="20">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="19">Material::kSpecular</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="16" endline="107">LoadShaders</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="66">LoadTGA</references>
+        <references refid="classShop_1a11824081d86bb26322e84ac767653a13" compoundref="Shop_8h" startline="113">m_parameters</references>
+        <references refid="classShop_1aeeba933e140ea55bef27ce3fc8d12f0d" compoundref="Shop_8h" startline="112">m_programID</references>
+        <references refid="classShop_1aed6644b28dda3192121de81c3bcaecd6" compoundref="Shop_8h" startline="108">m_vertexArrayID</references>
+        <references refid="classMesh_1a3368c3bc60dd176e522df1542b764847" compoundref="Mesh_8h" startline="27">Mesh::material</references>
+        <references refid="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" compoundref="Shop_8h" startline="118">meshList</references>
+        <references refid="classShop_1af7d08a5452419f7b88bab07efa24dcf9" compoundref="Shop_8h" startline="145">npc</references>
+        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="36">NPC::DOT::Nposition</references>
+        <references refid="classSound_1abafebbb8a0c9e262405ff8752f220baa" compoundref="Sound_8cpp" startline="32" endline="35">Sound::playMusic</references>
+        <references refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" compoundref="Shop_8h" startline="149">PressTime</references>
+        <references refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" compoundref="Shop_8h" startline="120">projectionStack</references>
+        <references refid="classNPC_1a265b0c5463e405764e127013956bafe8" compoundref="NPC_8h" startline="49">NPC::seller</references>
+        <references refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8h" startline="12" endline="12">Component::Set</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="classShop_1ab4f5180509908922f5d07fd78f561306" compoundref="Shop_8h" startline="146">sound</references>
+        <references refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" compoundref="NPC_8h" startline="50">NPC::spaceDoor</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" compoundref="Shop_8h" startline="90">U_COLOR_TEXTURE</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" compoundref="Shop_8h" startline="89">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea33ab68e6277c7d3b8aee994b52fc0423" compoundref="Shop_8h" startline="85">U_MATERIAL_AMBIENT</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaae388c66c3393e516e958313ae908702" compoundref="Shop_8h" startline="86">U_MATERIAL_DIFFUSE</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eadb17b1d9ab988b385f617c256b012651" compoundref="Shop_8h" startline="88">U_MATERIAL_SHININESS</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea433cc718fe207b130fc909853280cb4a" compoundref="Shop_8h" startline="87">U_MATERIAL_SPECULAR</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eacd22c3ed8de58efe071a8db3392b35f0" compoundref="Shop_8h" startline="83">U_MODELVIEW</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea9e94ab8a5fcfbcd88d29bfbae2f55238" compoundref="Shop_8h" startline="84">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" compoundref="Shop_8h" startline="82">U_MVP</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" compoundref="Shop_8h" startline="92">U_TEXT_COLOR</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" compoundref="Shop_8h" startline="91">U_TEXT_ENABLED</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1af915842cee6266631dc4f18abd95d854" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Shop::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Updates the scene every frame (Animation/booleans/music etc) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="101" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="481" bodyend="523"/>
+        <references refid="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" compoundref="Shop_8h" startline="130">camera</references>
+        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</references>
+        <references refid="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" compoundref="Shop_8h" startline="157">coolDown</references>
+        <references refid="classShop_1a0c67869f2d6719b6612de1655f179c29" compoundref="Shop_8h" startline="139">deltaTime</references>
+        <references refid="classShop_1a1874c4a9f7a54518be96ac6ebc5b7172" compoundref="Shop_8h" startline="159">detectCollision</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
+        <references refid="classShop_1a3d99c43c39781ed47b33ef1fe42f3b57" compoundref="Shop_8h" startline="115">mouse</references>
+        <references refid="classMouse_1a2c9b67e0d34d23bd53abb7662e271a04" compoundref="Mouse_8cpp" startline="75" endline="116">Mouse::MouseUpdate</references>
+        <references refid="classShop_1af7d08a5452419f7b88bab07efa24dcf9" compoundref="Shop_8h" startline="145">npc</references>
+        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="36">NPC::DOT::Nposition</references>
+        <references refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">Sound::playSE</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" compoundref="Shop_8h" startline="149">PressTime</references>
+        <references refid="classNPC_1a265b0c5463e405764e127013956bafe8" compoundref="NPC_8h" startline="49">NPC::seller</references>
+        <references refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</references>
+        <references refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" compoundref="Shop_8h" startline="152">shopInput</references>
+        <references refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">ShopOptions</references>
+        <references refid="classShop_1ab4f5180509908922f5d07fd78f561306" compoundref="Shop_8h" startline="146">sound</references>
+        <references refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" compoundref="Sound_8cpp" startline="64" endline="67">Sound::stopMusic</references>
+        <references refid="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" compoundref="NPC_8h" startline="68">NPC::stopMusic</references>
+        <references refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</references>
+        <references refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">userInput</references>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Shop::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>The main render function for this scene, renders any text/meshes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="102" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="770" bodyend="964"/>
+        <references refid="classShop_1ad9710140e9d75352970c18371f0d7523" compoundref="Shop_8h" startline="153">b_gold</references>
+        <references refid="classSharedData_1ac789ec12fe814d50b8b24bbe65c3ef62" compoundref="SharedData_8h" startline="64">SharedData::bomb</references>
+        <references refid="classSharedData_1af7b98080b9f3bc80f554f3ba8fca7621" compoundref="SharedData_8h" startline="62">SharedData::bullet</references>
+        <references refid="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" compoundref="Shop_8h" startline="130">camera</references>
+        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="33">NPC::DOT::canInteract</references>
+        <references refid="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" compoundref="Shop_8h" startline="157">coolDown</references>
+        <references refid="classShop_1a0c67869f2d6719b6612de1655f179c29" compoundref="Shop_8h" startline="139">deltaTime</references>
+        <references refid="classShop_1ae5d78237a865dfb79b90fd13384913f6" compoundref="Shop_8h" startline="151">description</references>
+        <references refid="classSharedData_1ad78b13ca367eb739bff4859b40e1966e" compoundref="SharedData_8h" startline="65">SharedData::egg</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a381b270ce0b3ab3a70968437235544fa" compoundref="Shop_8h" startline="52">GEO_AMMOICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a220d60100cc496780a3e6bd38949661d" compoundref="Shop_8h" startline="55">GEO_BOMBICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae82515e0e5ea42f1df38644035c6bd01" compoundref="Shop_8h" startline="54">GEO_EGGICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a07f8a187cefb2d77653c34e52ea9ccf0" compoundref="Shop_8h" startline="53">GEO_GOLDICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416afdd06b937d34ab4a972eb438645bcd3e" compoundref="Shop_8h" startline="56">GEO_OREICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a87e40640e9b1dbf9980e02b3112f6f4f" compoundref="Shop_8h" startline="74">GEO_PLANEBODY</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a1994403227f539bce14d8b3caab46e90" compoundref="Shop_8h" startline="76">GEO_PLANEROCKET</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa78323b517a4f4e7eb5d345a6336440b" compoundref="Shop_8h" startline="75">GEO_PLANEWING</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4277ccab3267f17cc2102aa06dd4c6f6" compoundref="Shop_8h" startline="59">GEO_QUAD</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae1b34f075a6fe197ef9a74f83b70c3e4" compoundref="Shop_8h" startline="70">GEO_SHOPICON</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ad11eaedf7bc92db8bf76ec2459aa2bc5" compoundref="Shop_8h" startline="46">GEO_SHOPKEEPER</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a265c8161cb0e5262afb01192a0dd7c24" compoundref="Shop_8h" startline="45">GEO_SHOPKEEPER3D</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b8fbf8480a158e3c115824e389c9b9b" compoundref="Shop_8h" startline="66">GEO_SHOPWALL</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b95fb6fa6fed31b041e9c80dfc77e8f" compoundref="Shop_8h" startline="58">GEO_SPACEDOOR</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a6bf468e5297c7c4d17adedaaceff29d3" compoundref="Shop_8h" startline="47">GEO_TABLE</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a3c24c681d6a88f01b32214aa1bda8577" compoundref="Shop_8h" startline="67">GEO_TEXT</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classSharedData_1a59d13d3c8c35d1caa654680cefdb189d" compoundref="SharedData_8h" startline="63">SharedData::gold</references>
+        <references refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" compoundref="Shop_8h" startline="142">icon2</references>
+        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="60">NPC::interactDia</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
+        <references refid="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" compoundref="Shop_8h" startline="118">meshList</references>
+        <references refid="classSharedData_1a9836d6bd377314252b3142c60155fc07" compoundref="SharedData_8h" startline="66">SharedData::mineral</references>
+        <references refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" compoundref="Shop_8h" startline="120">modelStack</references>
+        <references refid="classShop_1a9d42f9df020ca32e88b866d0caa57fb1" compoundref="Shop_8h" startline="137">my_arr</references>
+        <references refid="classShop_1a9de0d1efa4f876cc278e294e80dd9f1c" compoundref="Shop_8h" startline="155">nomore</references>
+        <references refid="classShop_1a4963af7089ec42d8edc02f1d9430bc86" compoundref="Shop_8h" startline="156">none</references>
+        <references refid="classShop_1af7d08a5452419f7b88bab07efa24dcf9" compoundref="Shop_8h" startline="145">npc</references>
+        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="36">NPC::DOT::Nposition</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="structSharedData_1_1INVENTORY_1add1e00847ed9b01f99d8b71b42b44ff2" compoundref="SharedData_8h" startline="31">SharedData::INVENTORY::quantity</references>
+        <references refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</references>
+        <references refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="674" endline="691">RenderQuadOnScreen</references>
+        <references refid="classShop_1a8a70313590dea95a14f0f24001ca2c9d" compoundref="Shop_8cpp" startline="702" endline="760">RenderSkybox</references>
+        <references refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">RenderTextOnScreen</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classNPC_1a265b0c5463e405764e127013956bafe8" compoundref="NPC_8h" startline="49">NPC::seller</references>
+        <references refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" compoundref="Shop_8h" startline="152">shopInput</references>
+        <references refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" compoundref="NPC_8h" startline="50">NPC::spaceDoor</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <references refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" compoundref="Shop_8h" startline="120">viewStack</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a4421e06b07aab249cfd25f76e9719311" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Shop::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
+        <briefdescription>
+<para>Delete scene. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="103" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="974" bodyend="978"/>
+        <references refid="classShop_1aeeba933e140ea55bef27ce3fc8d12f0d" compoundref="Shop_8h" startline="112">m_programID</references>
+        <references refid="classShop_1aed6644b28dda3192121de81c3bcaecd6" compoundref="Shop_8h" startline="108">m_vertexArrayID</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classShop_1a44b9ea799163d2df68c6444f710f05c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::RenderMesh</definition>
+        <argsstring>(Mesh *mesh, bool enableLight)</argsstring>
+        <name>RenderMesh</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableLight</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classMesh" kindref="compound">Mesh</ref> rendering function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="106" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="554" bodyend="577"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classShop_1a11824081d86bb26322e84ac767653a13" compoundref="Shop_8h" startline="113">m_parameters</references>
+        <references refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" compoundref="Shop_8h" startline="120">modelStack</references>
+        <references refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" compoundref="Shop_8h" startline="120">projectionStack</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" compoundref="Shop_8h" startline="90">U_COLOR_TEXTURE</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" compoundref="Shop_8h" startline="89">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eacd22c3ed8de58efe071a8db3392b35f0" compoundref="Shop_8h" startline="83">U_MODELVIEW</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" compoundref="Shop_8h" startline="82">U_MVP</references>
+        <references refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" compoundref="Shop_8h" startline="120">viewStack</references>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+        <referencedby refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="674" endline="691">RenderQuadOnScreen</referencedby>
+        <referencedby refid="classShop_1a8a70313590dea95a14f0f24001ca2c9d" compoundref="Shop_8cpp" startline="702" endline="760">RenderSkybox</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a8a70313590dea95a14f0f24001ca2c9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::RenderSkybox</definition>
+        <argsstring>()</argsstring>
+        <name>RenderSkybox</name>
+        <briefdescription>
+<para>Renders the skybox on screen with rotation, scaling done. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="123" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="702" bodyend="760"/>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aac508a1bd2446e38ebb688d5853ef158" compoundref="Shop_8h" startline="65">GEO_BACK1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aae87c5586238e53c70a0381519d90f78" compoundref="Shop_8h" startline="63">GEO_BOTTOM1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ade302637c0f81e20204a5771d556ceb6" compoundref="Shop_8h" startline="64">GEO_FRONT1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aaf1a04dc181577c2c37da59c3c9b2201" compoundref="Shop_8h" startline="60">GEO_LEFT1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4bba55f92fb0b1c79b4e1bc0ab6d39ba" compoundref="Shop_8h" startline="61">GEO_RIGHT1</references>
+        <references refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ac7e89fd92e6af8a7791f3fe519939490" compoundref="Shop_8h" startline="62">GEO_TOP1</references>
+        <references refid="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" compoundref="Shop_8h" startline="118">meshList</references>
+        <references refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" compoundref="Shop_8h" startline="120">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="Shop_8cpp_1aafa5737879309927e64a8ef22416cf16" compoundref="Shop_8cpp" startline="692">SBSCALE1</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a072a64331229d665e80c1b6d2efc19d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::RenderText</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color)</argsstring>
+        <name>RenderText</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Renders text in the game. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="124" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="587" bodyend="611"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classShop_1a11824081d86bb26322e84ac767653a13" compoundref="Shop_8h" startline="113">m_parameters</references>
+        <references refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" compoundref="Shop_8h" startline="120">modelStack</references>
+        <references refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" compoundref="Shop_8h" startline="120">projectionStack</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" compoundref="Shop_8h" startline="90">U_COLOR_TEXTURE</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" compoundref="Shop_8h" startline="89">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" compoundref="Shop_8h" startline="82">U_MVP</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" compoundref="Shop_8h" startline="92">U_TEXT_COLOR</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" compoundref="Shop_8h" startline="91">U_TEXT_ENABLED</references>
+        <references refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" compoundref="Shop_8h" startline="120">viewStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1ab16118f0e0243b85a40d728dd6a703ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::RenderTextOnScreen</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color, float size, float x, float y)</argsstring>
+        <name>RenderTextOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Renders text on screen in the game. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="125" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="621" bodyend="664"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classShop_1a11824081d86bb26322e84ac767653a13" compoundref="Shop_8h" startline="113">m_parameters</references>
+        <references refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" compoundref="Shop_8h" startline="120">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" compoundref="Shop_8h" startline="120">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" compoundref="Shop_8h" startline="90">U_COLOR_TEXTURE</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" compoundref="Shop_8h" startline="89">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" compoundref="Shop_8h" startline="82">U_MVP</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" compoundref="Shop_8h" startline="92">U_TEXT_COLOR</references>
+        <references refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" compoundref="Shop_8h" startline="91">U_TEXT_ENABLED</references>
+        <references refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" compoundref="Shop_8h" startline="120">viewStack</references>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1aee217c79bf37585efa133ac5a5b91316" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::RenderQuadOnScreen</definition>
+        <argsstring>(Mesh *mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)</argsstring>
+        <name>RenderQuadOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ry</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Renders any meshList items/obj on the screen. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="126" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="674" bodyend="691"/>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" compoundref="Shop_8h" startline="120">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" compoundref="Shop_8h" startline="120">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">RenderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" compoundref="Shop_8h" startline="120">viewStack</references>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a3085c0af3050029f63f1ad0ef2b88f36" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::Dialogue</definition>
+        <argsstring>(string filename)</argsstring>
+        <name>Dialogue</name>
+        <param>
+          <type>string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Pushes in the shop scene into array from text file, allows easy changes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="127" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="533" bodyend="544"/>
+        <references refid="classShop_1a9d42f9df020ca32e88b866d0caa57fb1" compoundref="Shop_8h" startline="137">my_arr</references>
+        <references refid="classShop_1a0c8a352a83872a8a521e5585ce353706" compoundref="Shop_8h" startline="129">new_line</references>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::ShopOptions</definition>
+        <argsstring>()</argsstring>
+        <name>ShopOptions</name>
+        <briefdescription>
+<para>Checks for if player is in each other the &quot;shop/buying/selling&quot; scene and show out the options player can use. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="162" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="195" bodyend="377"/>
+        <references refid="classShop_1ad9710140e9d75352970c18371f0d7523" compoundref="Shop_8h" startline="153">b_gold</references>
+        <references refid="classSharedData_1ac789ec12fe814d50b8b24bbe65c3ef62" compoundref="SharedData_8h" startline="64">SharedData::bomb</references>
+        <references refid="classSharedData_1af7b98080b9f3bc80f554f3ba8fca7621" compoundref="SharedData_8h" startline="62">SharedData::bullet</references>
+        <references refid="classShop_1ac5493983ac670f850951c40dd9e4e3e5" compoundref="Shop_8h" startline="133">buy</references>
+        <references refid="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" compoundref="Shop_8h" startline="157">coolDown</references>
+        <references refid="classShop_1a0c67869f2d6719b6612de1655f179c29" compoundref="Shop_8h" startline="139">deltaTime</references>
+        <references refid="classShop_1ae5d78237a865dfb79b90fd13384913f6" compoundref="Shop_8h" startline="151">description</references>
+        <references refid="classSharedData_1ad78b13ca367eb739bff4859b40e1966e" compoundref="SharedData_8h" startline="65">SharedData::egg</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classSharedData_1a59d13d3c8c35d1caa654680cefdb189d" compoundref="SharedData_8h" startline="63">SharedData::gold</references>
+        <references refid="classShop_1a1eddc4bc8977b7d0f056197456f87f40" compoundref="Shop_8h" startline="160">gold</references>
+        <references refid="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" compoundref="Shop_8h" startline="141">icon</references>
+        <references refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" compoundref="Shop_8h" startline="142">icon2</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
+        <references refid="classSharedData_1a9836d6bd377314252b3142c60155fc07" compoundref="SharedData_8h" startline="66">SharedData::mineral</references>
+        <references refid="classShop_1a9de0d1efa4f876cc278e294e80dd9f1c" compoundref="Shop_8h" startline="155">nomore</references>
+        <references refid="classShop_1a4963af7089ec42d8edc02f1d9430bc86" compoundref="Shop_8h" startline="156">none</references>
+        <references refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">Sound::playSE</references>
+        <references refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" compoundref="Shop_8h" startline="149">PressTime</references>
+        <references refid="structSharedData_1_1INVENTORY_1add1e00847ed9b01f99d8b71b42b44ff2" compoundref="SharedData_8h" startline="31">SharedData::INVENTORY::quantity</references>
+        <references refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401a54cb956e6fb04e7327457213b490274e" compoundref="MenuShop_8h" startline="34">MenuShop::S_BACK</references>
+        <references refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401ac82245c595b5ff634d436d3582b81cad" compoundref="MenuShop_8h" startline="32">MenuShop::S_BUY</references>
+        <references refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401ade4b78fb584d8bbe1767571af4df46a5" compoundref="MenuShop_8h" startline="33">MenuShop::S_SELL</references>
+        <references refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715aba7172cbc2c716995a58448aeeb566a0" compoundref="MenuShop_8h" startline="39">MenuShop::SB_AMMO</references>
+        <references refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715a3cba574f16350ad139cbbece7c8922e0" compoundref="MenuShop_8h" startline="41">MenuShop::SB_BACK</references>
+        <references refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715acc91ee2249afc588cccc74258a61570a" compoundref="MenuShop_8h" startline="40">MenuShop::SB_BOMB</references>
+        <references refid="classShop_1a090ff360ea9d0ddee5b2f9a140aee2f0" compoundref="Shop_8h" startline="134">sell</references>
+        <references refid="classShop_1ab490edf8241ef1421377f9f85f4937f3" compoundref="Shop_8h" startline="132">shop</references>
+        <references refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" compoundref="Shop_8h" startline="152">shopInput</references>
+        <references refid="classShop_1ab4f5180509908922f5d07fd78f561306" compoundref="Shop_8h" startline="146">sound</references>
+        <references refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abeb6fdbe9a4848f27b4eb173e9f11aff" compoundref="MenuShop_8h" startline="47">MenuShop::SS_AMMO</references>
+        <references refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27a5c847c9a91360d16f6cd2f5f59d0c782" compoundref="MenuShop_8h" startline="50">MenuShop::SS_BACK</references>
+        <references refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27ab1749b88e8cc117d880010ee84a2a3d7" compoundref="MenuShop_8h" startline="48">MenuShop::SS_BOMB</references>
+        <references refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27acef92a3299a443c22c865621b5f6e427" compoundref="MenuShop_8h" startline="49">MenuShop::SS_EGG</references>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classShop_1a6c97c222063586a3493580f3aaea1065" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shop::userInput</definition>
+        <argsstring>()</argsstring>
+        <name>userInput</name>
+        <briefdescription>
+<para>Checks for player input in &quot;Shop/Buy/Selling&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Shop.h" line="163" column="1" bodyfile="MyGraphics/Source/Shop.cpp" bodystart="387" bodyend="471"/>
+        <references refid="classShop_1ac5493983ac670f850951c40dd9e4e3e5" compoundref="Shop_8h" startline="133">buy</references>
+        <references refid="classShop_1a0c67869f2d6719b6612de1655f179c29" compoundref="Shop_8h" startline="139">deltaTime</references>
+        <references refid="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" compoundref="Shop_8h" startline="141">icon</references>
+        <references refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" compoundref="Shop_8h" startline="142">icon2</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
+        <references refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">Sound::playSE</references>
+        <references refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" compoundref="Shop_8h" startline="149">PressTime</references>
+        <references refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401ac82245c595b5ff634d436d3582b81cad" compoundref="MenuShop_8h" startline="32">MenuShop::S_BUY</references>
+        <references refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401a4fb96b41a53308170456dcb0f99a5a77" compoundref="MenuShop_8h" startline="35">MenuShop::S_MAX</references>
+        <references refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715aba7172cbc2c716995a58448aeeb566a0" compoundref="MenuShop_8h" startline="39">MenuShop::SB_AMMO</references>
+        <references refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715a32591e4f6fa7b4e3b73cf971e72ae4a4" compoundref="MenuShop_8h" startline="42">MenuShop::SB_MAX</references>
+        <references refid="classShop_1a090ff360ea9d0ddee5b2f9a140aee2f0" compoundref="Shop_8h" startline="134">sell</references>
+        <references refid="classShop_1ab490edf8241ef1421377f9f85f4937f3" compoundref="Shop_8h" startline="132">shop</references>
+        <references refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" compoundref="Shop_8h" startline="152">shopInput</references>
+        <references refid="classShop_1ab4f5180509908922f5d07fd78f561306" compoundref="Shop_8h" startline="146">sound</references>
+        <references refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abeb6fdbe9a4848f27b4eb173e9f11aff" compoundref="MenuShop_8h" startline="47">MenuShop::SS_AMMO</references>
+        <references refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27aaab9c55ce4ea62c6850d10351e20c63d" compoundref="MenuShop_8h" startline="51">MenuShop::SS_MAX</references>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Renders the shop scene with needed meshes and takes care of shop interactables. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classShop" kindref="compound">Shop</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1040">
+        <label>Shop</label>
+        <link refid="classShop"/>
+        <childnode refid="1041" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1041">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1064">
+        <label>irrklang::IVirtualRefCounted</label>
+        <link refid="classirrklang_1_1IVirtualRefCounted"/>
+      </node>
+      <node id="1056">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="1060">
+        <label>Sound</label>
+        <link refid="classSound"/>
+        <childnode refid="1061" relation="usage">
+          <edgelabel>musicEngine</edgelabel>
+        </childnode>
+        <childnode refid="1063" relation="usage">
+          <edgelabel>SoundEffect</edgelabel>
+          <edgelabel>Song</edgelabel>
+        </childnode>
+      </node>
+      <node id="1067">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="1046" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="1048">
+        <label>vector&lt; Vector3 &gt;</label>
+      </node>
+      <node id="1070">
+        <label>NPC</label>
+        <link refid="classNPC"/>
+        <childnode refid="1071" relation="usage">
+          <edgelabel>coolDownTime</edgelabel>
+        </childnode>
+        <childnode refid="1051" relation="usage">
+          <edgelabel>detectCollision</edgelabel>
+        </childnode>
+        <childnode refid="1072" relation="usage">
+          <edgelabel>egg2</edgelabel>
+          <edgelabel>spacerocket</edgelabel>
+          <edgelabel>egg3</edgelabel>
+          <edgelabel>bomb</edgelabel>
+          <edgelabel>egg4</edgelabel>
+          <edgelabel>egg5</edgelabel>
+          <edgelabel>spacebody</edgelabel>
+          <edgelabel>spaceShip</edgelabel>
+          <edgelabel>spaceDoor</edgelabel>
+          <edgelabel>spacewing</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="1047" relation="usage">
+          <edgelabel>dialogue</edgelabel>
+          <edgelabel>dialoguePlus</edgelabel>
+        </childnode>
+        <childnode refid="1054" relation="usage">
+          <edgelabel>robot3rotate</edgelabel>
+          <edgelabel>moveFront</edgelabel>
+          <edgelabel>robot1moved</edgelabel>
+          <edgelabel>moveBack</edgelabel>
+          <edgelabel>stopMusic</edgelabel>
+        </childnode>
+        <childnode refid="1059" relation="usage">
+          <edgelabel>interactDia</edgelabel>
+        </childnode>
+        <childnode refid="1060" relation="usage">
+          <edgelabel>sound</edgelabel>
+        </childnode>
+      </node>
+      <node id="1058">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="1065">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="1066" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="1068" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="1059" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="1069" relation="usage">
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="1061">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="1062" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1042">
+        <label>Shop</label>
+        <link refid="classShop"/>
+        <childnode refid="1043" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1044" relation="usage">
+          <edgelabel>mouse</edgelabel>
+        </childnode>
+        <childnode refid="1050" relation="usage">
+          <edgelabel>sell</edgelabel>
+        </childnode>
+        <childnode refid="1051" relation="usage">
+          <edgelabel>detectCollision</edgelabel>
+        </childnode>
+        <childnode refid="1052" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="1046" relation="usage">
+          <edgelabel>JumpTime</edgelabel>
+          <edgelabel>deltaTime</edgelabel>
+          <edgelabel>icon2</edgelabel>
+          <edgelabel>menuIcon</edgelabel>
+          <edgelabel>icon</edgelabel>
+          <edgelabel>spaceDoor</edgelabel>
+          <edgelabel>LSPEED</edgelabel>
+          <edgelabel>coolDown</edgelabel>
+          <edgelabel>PressTime</edgelabel>
+        </childnode>
+        <childnode refid="1055" relation="usage">
+          <edgelabel>projectionStack</edgelabel>
+          <edgelabel>modelStack</edgelabel>
+          <edgelabel>viewStack</edgelabel>
+        </childnode>
+        <childnode refid="1057" relation="usage">
+          <edgelabel>buy</edgelabel>
+        </childnode>
+        <childnode refid="1047" relation="usage">
+          <edgelabel>gold</edgelabel>
+        </childnode>
+        <childnode refid="1054" relation="usage">
+          <edgelabel>none</edgelabel>
+          <edgelabel>g_gold</edgelabel>
+          <edgelabel>b_gold</edgelabel>
+          <edgelabel>sell_gold</edgelabel>
+        </childnode>
+        <childnode refid="1058" relation="usage">
+          <edgelabel>my_arr</edgelabel>
+        </childnode>
+        <childnode refid="1059" relation="usage">
+          <edgelabel>new_line</edgelabel>
+          <edgelabel>Input</edgelabel>
+          <edgelabel>nomore</edgelabel>
+          <edgelabel>shopInput</edgelabel>
+          <edgelabel>description</edgelabel>
+        </childnode>
+        <childnode refid="1060" relation="usage">
+          <edgelabel>sound</edgelabel>
+        </childnode>
+        <childnode refid="1065" relation="usage">
+          <edgelabel>meshList</edgelabel>
+        </childnode>
+        <childnode refid="1070" relation="usage">
+          <edgelabel>npc</edgelabel>
+        </childnode>
+        <childnode refid="1069" relation="usage">
+          <edgelabel>m_indexBuffer</edgelabel>
+          <edgelabel>m_parameters</edgelabel>
+          <edgelabel>m_colorBuffer</edgelabel>
+          <edgelabel>m_vertexBuffer</edgelabel>
+          <edgelabel>m_programID</edgelabel>
+          <edgelabel>m_vertexArrayID</edgelabel>
+        </childnode>
+        <childnode refid="1073" relation="usage">
+          <edgelabel>shop</edgelabel>
+        </childnode>
+      </node>
+      <node id="1068">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="1053">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="1045" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="1059">
+        <label>string</label>
+      </node>
+      <node id="1066">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="1046" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="1067" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="1046">
+        <label>float</label>
+      </node>
+      <node id="1055">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="1056" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+      <node id="1073">
+        <label>SHOP_OPTION</label>
+      </node>
+      <node id="1043">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="1063">
+        <label>irrklang::ISound</label>
+        <link refid="classirrklang_1_1ISound"/>
+        <childnode refid="1064" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1044">
+        <label>Mouse</label>
+        <link refid="classMouse"/>
+        <childnode refid="1045" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="1047" relation="usage">
+          <edgelabel>mouseSensitivity</edgelabel>
+          <edgelabel>resetX</edgelabel>
+          <edgelabel>resetY</edgelabel>
+        </childnode>
+        <childnode refid="1048" relation="usage">
+          <edgelabel>position_Vector</edgelabel>
+        </childnode>
+        <childnode refid="1049" relation="usage">
+          <edgelabel>boundaryCheckX</edgelabel>
+          <edgelabel>boundaryCheckY</edgelabel>
+        </childnode>
+      </node>
+      <node id="1072">
+        <label>NPC::DOT</label>
+        <link refid="structNPC_1_1DOT"/>
+        <childnode refid="1045" relation="usage">
+          <edgelabel>Nposition</edgelabel>
+        </childnode>
+        <childnode refid="1059" relation="usage">
+          <edgelabel>robot</edgelabel>
+        </childnode>
+        <childnode refid="1054" relation="usage">
+          <edgelabel>Collision</edgelabel>
+          <edgelabel>negativeDotProduct</edgelabel>
+          <edgelabel>canGoThrough</edgelabel>
+          <edgelabel>canInteract</edgelabel>
+        </childnode>
+      </node>
+      <node id="1052">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="1053" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1046" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>maxCameraX</edgelabel>
+          <edgelabel>maxX</edgelabel>
+          <edgelabel>minX</edgelabel>
+          <edgelabel>maxZ</edgelabel>
+          <edgelabel>minZ</edgelabel>
+        </childnode>
+        <childnode refid="1045" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>view</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>cameraRotate</edgelabel>
+        </childnode>
+        <childnode refid="1054" relation="usage">
+          <edgelabel>door</edgelabel>
+        </childnode>
+      </node>
+      <node id="1047">
+        <label>int</label>
+      </node>
+      <node id="1071">
+        <label>double</label>
+      </node>
+      <node id="1050">
+        <label>SHOP_SELL</label>
+      </node>
+      <node id="1062">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="1047" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+      <node id="1069">
+        <label>unsigned</label>
+      </node>
+      <node id="1054">
+        <label>bool</label>
+      </node>
+      <node id="1051">
+        <label>CollisionDetector</label>
+        <link refid="classCollisionDetector"/>
+        <childnode refid="1046" relation="usage">
+          <edgelabel>diffInZ</edgelabel>
+          <edgelabel>dist</edgelabel>
+          <edgelabel>diffInX</edgelabel>
+        </childnode>
+      </node>
+      <node id="1049">
+        <label>LONG</label>
+      </node>
+      <node id="1057">
+        <label>SHOP_BUY</label>
+      </node>
+      <node id="1045">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1046" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Shop.h" line="42" column="1" bodyfile="MyGraphics/Source/Shop.h" bodystart="41" bodyend="164"/>
+    <listofallmembers>
+      <member refid="classShop_1ad9710140e9d75352970c18371f0d7523" prot="private" virt="non-virtual"><scope>Shop</scope><name>b_gold</name></member>
+      <member refid="classShop_1ac5493983ac670f850951c40dd9e4e3e5" prot="private" virt="non-virtual"><scope>Shop</scope><name>buy</name></member>
+      <member refid="classShop_1ac3376b5b5b7243da22d2fdb1fc26814a" prot="private" virt="non-virtual"><scope>Shop</scope><name>camera</name></member>
+      <member refid="classShop_1a52c9e2f28b078aabe4d8fd51b90c1479" prot="private" virt="non-virtual"><scope>Shop</scope><name>coolDown</name></member>
+      <member refid="classShop_1a0c67869f2d6719b6612de1655f179c29" prot="private" virt="non-virtual"><scope>Shop</scope><name>deltaTime</name></member>
+      <member refid="classShop_1ae5d78237a865dfb79b90fd13384913f6" prot="private" virt="non-virtual"><scope>Shop</scope><name>description</name></member>
+      <member refid="classShop_1a1874c4a9f7a54518be96ac6ebc5b7172" prot="private" virt="non-virtual"><scope>Shop</scope><name>detectCollision</name></member>
+      <member refid="classShop_1a3085c0af3050029f63f1ad0ef2b88f36" prot="private" virt="non-virtual"><scope>Shop</scope><name>Dialogue</name></member>
+      <member refid="classShop_1a4421e06b07aab249cfd25f76e9719311" prot="public" virt="virtual"><scope>Shop</scope><name>Exit</name></member>
+      <member refid="classShop_1a490850703fe7f123ccca077852c3c7f7" prot="private" virt="non-virtual"><scope>Shop</scope><name>g_gold</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a381b270ce0b3ab3a70968437235544fa" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_AMMOICON</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aac508a1bd2446e38ebb688d5853ef158" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_BACK1</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a220d60100cc496780a3e6bd38949661d" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_BOMBICON</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aae87c5586238e53c70a0381519d90f78" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_BOTTOM1</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a259ac42d6a437d0b72b5097550684547" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_CEILING</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae82515e0e5ea42f1df38644035c6bd01" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_EGGICON</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa7a798cef31371d6848c0bef82e9b51d" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_FLOOR</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ade302637c0f81e20204a5771d556ceb6" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_FRONT1</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a07f8a187cefb2d77653c34e52ea9ccf0" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_GOLDICON</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aaf1a04dc181577c2c37da59c3c9b2201" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_LEFT1</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a417e0562e674da2df6f7e7d35eb50c13" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_LIGHTBALL</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416afdd06b937d34ab4a972eb438645bcd3e" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_OREICON</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a9dddd8941e513532d96d7ac1d38c3a52" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_OUTER</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a87e40640e9b1dbf9980e02b3112f6f4f" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_PLANEBODY</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a1994403227f539bce14d8b3caab46e90" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_PLANEROCKET</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416aa78323b517a4f4e7eb5d345a6336440b" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_PLANEWING</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4277ccab3267f17cc2102aa06dd4c6f6" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_QUAD</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a608c5bb32a6967cbe392402526a5772d" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_REF_AXES</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a04b96dae699e2b08ede1a9a048fd5c78" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_REF_QUAD</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a4bba55f92fb0b1c79b4e1bc0ab6d39ba" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_RIGHT1</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ae1b34f075a6fe197ef9a74f83b70c3e4" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_SHOPICON</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ad11eaedf7bc92db8bf76ec2459aa2bc5" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_SHOPKEEPER</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a265c8161cb0e5262afb01192a0dd7c24" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_SHOPKEEPER3D</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b8fbf8480a158e3c115824e389c9b9b" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_SHOPWALL</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a2b95fb6fa6fed31b041e9c80dfc77e8f" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_SPACEDOOR</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ab148391990cad24394969ebee45e7eee" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_SPACESHIP</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a6bf468e5297c7c4d17adedaaceff29d3" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_TABLE</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a3c24c681d6a88f01b32214aa1bda8577" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_TEXT</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416ac7e89fd92e6af8a7791f3fe519939490" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_TOP1</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a480ed0edd552bc3b3bdee5f2b20910b4" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEO_WALL</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416" prot="private" virt="non-virtual"><scope>Shop</scope><name>GEOMETRY_TYPE</name></member>
+      <member refid="classShop_1a1eddc4bc8977b7d0f056197456f87f40" prot="private" virt="non-virtual"><scope>Shop</scope><name>gold</name></member>
+      <member refid="classShop_1a5c2bd71402d7af65f46957ec3066b2a9" prot="private" virt="non-virtual"><scope>Shop</scope><name>icon</name></member>
+      <member refid="classShop_1a1b8c93827b5acbc128c6f688fa0e76d5" prot="private" virt="non-virtual"><scope>Shop</scope><name>icon2</name></member>
+      <member refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" prot="public" virt="virtual"><scope>Shop</scope><name>Init</name></member>
+      <member refid="classShop_1a6a2a9c5179f2f0812934bfa2c4190aa2" prot="private" virt="non-virtual"><scope>Shop</scope><name>Input</name></member>
+      <member refid="classShop_1a2c3c25fc5b1de2edfd167f2270246bce" prot="private" virt="non-virtual"><scope>Shop</scope><name>JumpTime</name></member>
+      <member refid="classShop_1a190c4a96ef561037ef7d13077607830d" prot="private" virt="non-virtual"><scope>Shop</scope><name>LSPEED</name></member>
+      <member refid="classShop_1a91967bca57e2f2e87693e7a6de829ccb" prot="private" virt="non-virtual"><scope>Shop</scope><name>m_colorBuffer</name></member>
+      <member refid="classShop_1a27d17cd03597d4befbe8e06914351cdc" prot="private" virt="non-virtual"><scope>Shop</scope><name>m_indexBuffer</name></member>
+      <member refid="classShop_1a11824081d86bb26322e84ac767653a13" prot="private" virt="non-virtual"><scope>Shop</scope><name>m_parameters</name></member>
+      <member refid="classShop_1aeeba933e140ea55bef27ce3fc8d12f0d" prot="private" virt="non-virtual"><scope>Shop</scope><name>m_programID</name></member>
+      <member refid="classShop_1aed6644b28dda3192121de81c3bcaecd6" prot="private" virt="non-virtual"><scope>Shop</scope><name>m_vertexArrayID</name></member>
+      <member refid="classShop_1a5f420b522d1afdff1476972f62616f4e" prot="private" virt="non-virtual"><scope>Shop</scope><name>m_vertexBuffer</name></member>
+      <member refid="classShop_1a949494a1fbe5483c36ed83ceaf995907" prot="private" virt="non-virtual"><scope>Shop</scope><name>menuIcon</name></member>
+      <member refid="classShop_1ad075cfd094c5f3a19c866d39e4ad5a0f" prot="private" virt="non-virtual"><scope>Shop</scope><name>meshList</name></member>
+      <member refid="classShop_1ac8eb4e9347e3f09ad005ef5ae643b871" prot="private" virt="non-virtual"><scope>Shop</scope><name>modelStack</name></member>
+      <member refid="classShop_1a3d99c43c39781ed47b33ef1fe42f3b57" prot="private" virt="non-virtual"><scope>Shop</scope><name>mouse</name></member>
+      <member refid="classShop_1a9d42f9df020ca32e88b866d0caa57fb1" prot="private" virt="non-virtual"><scope>Shop</scope><name>my_arr</name></member>
+      <member refid="classShop_1a0c8a352a83872a8a521e5585ce353706" prot="private" virt="non-virtual"><scope>Shop</scope><name>new_line</name></member>
+      <member refid="classShop_1a9de0d1efa4f876cc278e294e80dd9f1c" prot="private" virt="non-virtual"><scope>Shop</scope><name>nomore</name></member>
+      <member refid="classShop_1a4963af7089ec42d8edc02f1d9430bc86" prot="private" virt="non-virtual"><scope>Shop</scope><name>none</name></member>
+      <member refid="classShop_1af7d08a5452419f7b88bab07efa24dcf9" prot="private" virt="non-virtual"><scope>Shop</scope><name>npc</name></member>
+      <member refid="classShop_1ab2e8f4ab5bb828684d1f158b10136416a163e6773d020e3d40a5b084f5d420edc" prot="private" virt="non-virtual"><scope>Shop</scope><name>NUM_GEOMETRY</name></member>
+      <member refid="classShop_1a89b5b6eaf13488cabd477296f5ebd16d" prot="private" virt="non-virtual"><scope>Shop</scope><name>PressTime</name></member>
+      <member refid="classShop_1a37e3c304567f65ab27a46ea2bb89ac6e" prot="private" virt="non-virtual"><scope>Shop</scope><name>projectionStack</name></member>
+      <member refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" prot="public" virt="virtual"><scope>Shop</scope><name>Render</name></member>
+      <member refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" prot="private" virt="non-virtual"><scope>Shop</scope><name>RenderMesh</name></member>
+      <member refid="classShop_1aee217c79bf37585efa133ac5a5b91316" prot="private" virt="non-virtual"><scope>Shop</scope><name>RenderQuadOnScreen</name></member>
+      <member refid="classShop_1a8a70313590dea95a14f0f24001ca2c9d" prot="private" virt="non-virtual"><scope>Shop</scope><name>RenderSkybox</name></member>
+      <member refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" prot="private" virt="non-virtual"><scope>Shop</scope><name>RenderText</name></member>
+      <member refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" prot="private" virt="non-virtual"><scope>Shop</scope><name>RenderTextOnScreen</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>Shop</scope><name>Scene</name></member>
+      <member refid="classShop_1a090ff360ea9d0ddee5b2f9a140aee2f0" prot="private" virt="non-virtual"><scope>Shop</scope><name>sell</name></member>
+      <member refid="classShop_1a0cc1326a58849660572e743feeb5b9d0" prot="private" virt="non-virtual"><scope>Shop</scope><name>sell_gold</name></member>
+      <member refid="classShop_1ab490edf8241ef1421377f9f85f4937f3" prot="private" virt="non-virtual"><scope>Shop</scope><name>shop</name></member>
+      <member refid="classShop_1a579ed9f949f7db3f90c22dfe10b25797" prot="public" virt="non-virtual"><scope>Shop</scope><name>Shop</name></member>
+      <member refid="classShop_1a469bdc91ec121bdbe855103b5298fb0e" prot="private" virt="non-virtual"><scope>Shop</scope><name>shopInput</name></member>
+      <member refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" prot="private" virt="non-virtual"><scope>Shop</scope><name>ShopOptions</name></member>
+      <member refid="classShop_1ab4f5180509908922f5d07fd78f561306" prot="private" virt="non-virtual"><scope>Shop</scope><name>sound</name></member>
+      <member refid="classShop_1a7699c2e660a7a342ce361c8dedf3e33a" prot="private" virt="non-virtual"><scope>Shop</scope><name>spaceDoor</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea6a9b7984e36f4a3aecf80cb0e4cdc3ab" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_COLOR_TEXTURE</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaa1f00c510ae71859f23a67096e8f9078" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_COLOR_TEXTURE_ENABLED</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea33ab68e6277c7d3b8aee994b52fc0423" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MATERIAL_AMBIENT</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaae388c66c3393e516e958313ae908702" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MATERIAL_DIFFUSE</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031eadb17b1d9ab988b385f617c256b012651" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MATERIAL_SHININESS</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea433cc718fe207b130fc909853280cb4a" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MATERIAL_SPECULAR</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031eacd22c3ed8de58efe071a8db3392b35f0" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MODELVIEW</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea9e94ab8a5fcfbcd88d29bfbae2f55238" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MODELVIEW_INVERSE_TRANSPOSE</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea35bff48517cc0f2a89f6f9bfd651f3ff" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_MVP</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea2f986b990956470904875b470949f8d1" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_TEXT_COLOR</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031ea03a829681b2d1d080b59866efade982c" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_TEXT_ENABLED</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031eaad7e4af62480b154a1e6575d413f6999" prot="private" virt="non-virtual"><scope>Shop</scope><name>U_TOTAL</name></member>
+      <member refid="classShop_1a151fbaea06abc7312da34ba5deeb031e" prot="private" virt="non-virtual"><scope>Shop</scope><name>UNIFORM_TYPE</name></member>
+      <member refid="classShop_1af915842cee6266631dc4f18abd95d854" prot="public" virt="virtual"><scope>Shop</scope><name>Update</name></member>
+      <member refid="classShop_1a6c97c222063586a3493580f3aaea1065" prot="private" virt="non-virtual"><scope>Shop</scope><name>userInput</name></member>
+      <member refid="classShop_1a99e70812e3fcbd7a08ee0fdae2ac0d37" prot="private" virt="non-virtual"><scope>Shop</scope><name>viewStack</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>Shop</scope><name>~Scene</name></member>
+      <member refid="classShop_1a36bf69bdc0da1b7258acc63a5fe89d40" prot="public" virt="non-virtual"><scope>Shop</scope><name>~Shop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

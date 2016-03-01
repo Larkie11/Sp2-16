@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMouse" kind="class" language="C++" prot="public">
+    <compoundname>Mouse</compoundname>
+    <includes refid="Mouse_8h" local="no">Mouse.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classMouse_1a9fb219e06c0d1535581be7592ff8fcc1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mouse::mouseSensitivity</definition>
+        <argsstring></argsstring>
+        <name>mouseSensitivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="18" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMouse_1a296d0acc3516925293a4eca4fe0f6f04" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mouse::resetX</definition>
+        <argsstring></argsstring>
+        <name>resetX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="19" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classMouse_1a99024d3700d649ae19c1537b42a3e86d" compoundref="Mouse_8cpp" startline="3" endline="10">Mouse</referencedby>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMouse_1acc1e57812f09e01aba52174f8c50b62d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mouse::resetY</definition>
+        <argsstring></argsstring>
+        <name>resetY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="19" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classMouse_1a99024d3700d649ae19c1537b42a3e86d" compoundref="Mouse_8cpp" startline="3" endline="10">Mouse</referencedby>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMouse_1a2c41bf856b83721bfb2985e7a2ebe577" prot="public" static="no" mutable="no">
+        <type>LONG</type>
+        <definition>LONG Mouse::boundaryCheckX</definition>
+        <argsstring></argsstring>
+        <name>boundaryCheckX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="20" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classMouse_1a99024d3700d649ae19c1537b42a3e86d" compoundref="Mouse_8cpp" startline="3" endline="10">Mouse</referencedby>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMouse_1af60a55d3a032228caaaf1400425e4815" prot="public" static="no" mutable="no">
+        <type>LONG</type>
+        <definition>LONG Mouse::boundaryCheckY</definition>
+        <argsstring></argsstring>
+        <name>boundaryCheckY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="21" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classMouse_1a99024d3700d649ae19c1537b42a3e86d" compoundref="Mouse_8cpp" startline="3" endline="10">Mouse</referencedby>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMouse_1a155c9d2058582c1dd5b3048927acbe04" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Mouse::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="22" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMouse_1a41471284751c3d7012dc34e6ffb21c01" prot="public" static="no" mutable="no">
+        <type>vector&lt; <ref refid="structVector3" kindref="compound">Vector3</ref> &gt;</type>
+        <definition>vector&lt;Vector3&gt; Mouse::position_Vector</definition>
+        <argsstring></argsstring>
+        <name>position_Vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="23" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMouse_1a99024d3700d649ae19c1537b42a3e86d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mouse::Mouse</definition>
+        <argsstring>()</argsstring>
+        <name>Mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="25" column="1" bodyfile="MyGraphics/Source/Mouse.cpp" bodystart="3" bodyend="10"/>
+        <references refid="classMouse_1a2c41bf856b83721bfb2985e7a2ebe577" compoundref="Mouse_8h" startline="20">boundaryCheckX</references>
+        <references refid="classMouse_1af60a55d3a032228caaaf1400425e4815" compoundref="Mouse_8h" startline="21">boundaryCheckY</references>
+        <references refid="classMouse_1a296d0acc3516925293a4eca4fe0f6f04" compoundref="Mouse_8h" startline="19">resetX</references>
+        <references refid="classMouse_1acc1e57812f09e01aba52174f8c50b62d" compoundref="Mouse_8h" startline="19">resetY</references>
+      </memberdef>
+      <memberdef kind="function" id="classMouse_1afdf7d8abef29c10be77ead773f964f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mouse::~Mouse</definition>
+        <argsstring>()</argsstring>
+        <name>~Mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="26" column="1" bodyfile="MyGraphics/Source/Mouse.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouse_1a3cb65ae92353822a76957bbf461fac01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mouse::AssignePointToVector</definition>
+        <argsstring>(POINT point, Vector3 &amp;vec)</argsstring>
+        <name>AssignePointToVector</name>
+        <param>
+          <type>POINT</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="27" column="1" bodyfile="MyGraphics/Source/Mouse.cpp" bodystart="15" bodyend="19"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">MouseUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMouse_1a2c9b67e0d34d23bd53abb7662e271a04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mouse::MouseUpdate</definition>
+        <argsstring>(double dt, Camera3 &amp;camera)</argsstring>
+        <name>MouseUpdate</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera3" kindref="compound">Camera3</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="28" column="1" bodyfile="MyGraphics/Source/Mouse.cpp" bodystart="75" bodyend="116"/>
+        <references refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" compoundref="Mouse_8cpp" startline="15" endline="19">AssignePointToVector</references>
+        <references refid="classMouse_1a2c41bf856b83721bfb2985e7a2ebe577" compoundref="Mouse_8h" startline="20">boundaryCheckX</references>
+        <references refid="classMouse_1af60a55d3a032228caaaf1400425e4815" compoundref="Mouse_8h" startline="21">boundaryCheckY</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classMouse_1a9fb219e06c0d1535581be7592ff8fcc1" compoundref="Mouse_8h" startline="18">mouseSensitivity</references>
+        <references refid="classMouse_1a155c9d2058582c1dd5b3048927acbe04" compoundref="Mouse_8h" startline="22">pos</references>
+        <references refid="classMouse_1a41471284751c3d7012dc34e6ffb21c01" compoundref="Mouse_8h" startline="23">position_Vector</references>
+        <references refid="classMouse_1a296d0acc3516925293a4eca4fe0f6f04" compoundref="Mouse_8h" startline="19">resetX</references>
+        <references refid="classMouse_1acc1e57812f09e01aba52174f8c50b62d" compoundref="Mouse_8h" startline="19">resetY</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMouse_1ad63048fcac2af6f05281b4f2f070602c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mouse::MouseUpdate</definition>
+        <argsstring>(double dt, Camera3 &amp;camera, float &amp;followx, float &amp;followy)</argsstring>
+        <name>MouseUpdate</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera3" kindref="compound">Camera3</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>followx</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>followy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mouse.h" line="29" column="1" bodyfile="MyGraphics/Source/Mouse.cpp" bodystart="21" bodyend="73"/>
+        <references refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" compoundref="Mouse_8cpp" startline="15" endline="19">AssignePointToVector</references>
+        <references refid="classMouse_1a2c41bf856b83721bfb2985e7a2ebe577" compoundref="Mouse_8h" startline="20">boundaryCheckX</references>
+        <references refid="classMouse_1af60a55d3a032228caaaf1400425e4815" compoundref="Mouse_8h" startline="21">boundaryCheckY</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classMouse_1a9fb219e06c0d1535581be7592ff8fcc1" compoundref="Mouse_8h" startline="18">mouseSensitivity</references>
+        <references refid="classMouse_1a155c9d2058582c1dd5b3048927acbe04" compoundref="Mouse_8h" startline="22">pos</references>
+        <references refid="classMouse_1a41471284751c3d7012dc34e6ffb21c01" compoundref="Mouse_8h" startline="23">position_Vector</references>
+        <references refid="classMouse_1a296d0acc3516925293a4eca4fe0f6f04" compoundref="Mouse_8h" startline="19">resetX</references>
+        <references refid="classMouse_1acc1e57812f09e01aba52174f8c50b62d" compoundref="Mouse_8h" startline="19">resetY</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="811">
+        <label>vector&lt; Vector3 &gt;</label>
+      </node>
+      <node id="809">
+        <label>float</label>
+      </node>
+      <node id="807">
+        <label>Mouse</label>
+        <link refid="classMouse"/>
+        <childnode refid="808" relation="usage">
+          <edgelabel>pos</edgelabel>
+        </childnode>
+        <childnode refid="810" relation="usage">
+          <edgelabel>mouseSensitivity</edgelabel>
+          <edgelabel>resetX</edgelabel>
+          <edgelabel>resetY</edgelabel>
+        </childnode>
+        <childnode refid="811" relation="usage">
+          <edgelabel>position_Vector</edgelabel>
+        </childnode>
+        <childnode refid="812" relation="usage">
+          <edgelabel>boundaryCheckX</edgelabel>
+          <edgelabel>boundaryCheckY</edgelabel>
+        </childnode>
+      </node>
+      <node id="810">
+        <label>int</label>
+      </node>
+      <node id="812">
+        <label>LONG</label>
+      </node>
+      <node id="808">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="809" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Mouse.h" line="15" column="1" bodyfile="MyGraphics/Source/Mouse.h" bodystart="14" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" prot="public" virt="non-virtual"><scope>Mouse</scope><name>AssignePointToVector</name></member>
+      <member refid="classMouse_1a2c41bf856b83721bfb2985e7a2ebe577" prot="public" virt="non-virtual"><scope>Mouse</scope><name>boundaryCheckX</name></member>
+      <member refid="classMouse_1af60a55d3a032228caaaf1400425e4815" prot="public" virt="non-virtual"><scope>Mouse</scope><name>boundaryCheckY</name></member>
+      <member refid="classMouse_1a99024d3700d649ae19c1537b42a3e86d" prot="public" virt="non-virtual"><scope>Mouse</scope><name>Mouse</name></member>
+      <member refid="classMouse_1a9fb219e06c0d1535581be7592ff8fcc1" prot="public" virt="non-virtual"><scope>Mouse</scope><name>mouseSensitivity</name></member>
+      <member refid="classMouse_1a2c9b67e0d34d23bd53abb7662e271a04" prot="public" virt="non-virtual"><scope>Mouse</scope><name>MouseUpdate</name></member>
+      <member refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" prot="public" virt="non-virtual"><scope>Mouse</scope><name>MouseUpdate</name></member>
+      <member refid="classMouse_1a155c9d2058582c1dd5b3048927acbe04" prot="public" virt="non-virtual"><scope>Mouse</scope><name>pos</name></member>
+      <member refid="classMouse_1a41471284751c3d7012dc34e6ffb21c01" prot="public" virt="non-virtual"><scope>Mouse</scope><name>position_Vector</name></member>
+      <member refid="classMouse_1a296d0acc3516925293a4eca4fe0f6f04" prot="public" virt="non-virtual"><scope>Mouse</scope><name>resetX</name></member>
+      <member refid="classMouse_1acc1e57812f09e01aba52174f8c50b62d" prot="public" virt="non-virtual"><scope>Mouse</scope><name>resetY</name></member>
+      <member refid="classMouse_1afdf7d8abef29c10be77ead773f964f4f" prot="public" virt="non-virtual"><scope>Mouse</scope><name>~Mouse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

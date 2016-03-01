@@ -1,24 +1,55 @@
+/******************************************************************************/
+/*!
+\file	SceneWin.cpp
+\author Mok Wei Min
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Renders the screen to show player win and how many enemies killed
+*/
+/******************************************************************************/
 #include "GL\glew.h"
 #include "SceneWin.h"
 
 #include "shader.hpp"
 #include "Mtx44.h"
-
 #include "MeshBuilder.h"
 #include "Utility.h"
 #include "SharedData.h"
 #include "LoadTGA.h"
-
 #include <sstream>
-using namespace irrklang;
-#pragma comment(lib, "irrKlang.lib")
+/******************************************************************************/
+/*!
+\brief
+Default constructor
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 SceneWin::SceneWin()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 SceneWin::~SceneWin()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes for win scene, any booleans/strings/floats and meshes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneWin::Init()
 {
 	sound.playMusic("Music//Win.mp3");
@@ -28,9 +59,6 @@ void SceneWin::Init()
 
 	//Enable depth buffer and depth testing
 	glEnable(GL_DEPTH_TEST);
-
-	//Enable back face culling
-	//glEnable(GL_CULL_FACE);
 
 	//Default to fill mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -75,6 +103,15 @@ void SceneWin::Init()
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
 }
+/******************************************************************************/
+/*!
+\brief
+Updates the scene every frame (Animation/booleans/music etc)
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneWin::Update(double dt)
 {
 	if (Application::IsKeyPressed('E'))
@@ -83,9 +120,16 @@ void SceneWin::Update(double dt)
 		sound.stopMusic("Music//Win.mp3");
 		SharedData::GetInstance()->gameState = SharedData::MENU;
 	}
-
-	deltaTime = (1.0 / dt);
 }
+/******************************************************************************/
+/*!
+\brief
+Mesh rendering function
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneWin::RenderMesh(Mesh * mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -111,6 +155,16 @@ void SceneWin::RenderMesh(Mesh * mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text in the game
+
+\exception None
+\return None
+*/
+/******************************************************************************/
+
 void SceneWin::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -136,6 +190,16 @@ void SceneWin::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders text on screen in the game
+
+\exception None
+\return None
+*/
+/******************************************************************************/
+
 void SceneWin::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -180,6 +244,15 @@ void SceneWin::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
 
 	glEnable(GL_DEPTH_TEST);
 }
+/******************************************************************************/
+/*!
+\brief
+Renders any meshList items/obj on the screen
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneWin::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, float rotate, float rx, float ry, float rz, float z)
 {
 	Mtx44 ortho;
@@ -198,11 +271,20 @@ void SceneWin::RenderQuadOnScreen(Mesh* mesh, float size, float x, float y, floa
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief
+The main render function for this scene, renders any text/meshes
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneWin::Render()
 {
-	std::ostringstream fpsOSS;
-	fpsOSS << "FPS : " << deltaTime;
-	string Fps = fpsOSS.str();
+	std::ostringstream enemyOSS;
+	enemyOSS << "Enemies killed: " << SharedData::GetInstance()->enemycounter;
+	string enemy = enemyOSS.str();
 
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -218,8 +300,18 @@ void SceneWin::Render()
 	modelStack.LoadIdentity();
 
 	RenderQuadOnScreen(meshList[GEO_PATH], 6, 6.5, 6, 90, 1, 0, 0, -1);
-	Fps.resize(11);
+	enemy.resize(20);
+	RenderTextOnScreen(meshList[GEO_TEXT], enemy, Color(1, 1, 0), 3, 7.5, 10);
 }
+/******************************************************************************/
+/*!
+\brief
+Delete scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SceneWin::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);

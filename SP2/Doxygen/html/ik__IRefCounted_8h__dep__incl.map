@@ -1,0 +1,45 @@
+<map id="MyGraphics/irrKlang&#45;1.5.0/include/ik_IRefCounted.h" name="MyGraphics/irrKlang&#45;1.5.0/include/ik_IRefCounted.h">
+<area shape="rect" id="node2" href="$ik__IAudioRecorder_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_IAudioRecorder.h" alt="" coords="1667,310,1887,351"/>
+<area shape="rect" id="node3" href="$irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1896,414,2055,455"/>
+<area shape="rect" id="node31" href="$ik__SAudioStreamFormat_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_SAudioStream\lFormat.h" alt="" coords="1949,95,2154,151"/>
+<area shape="rect" id="node33" href="$ik__ISoundEngine_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundEngine.h" alt="" coords="1379,310,1591,351"/>
+<area shape="rect" id="node34" href="$ik__IAudioStream_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_IAudioStream.h" alt="" coords="2277,206,2487,247"/>
+<area shape="rect" id="node38" href="$ik__ISoundMixedOutputReceiver_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundMixed\lOutputReceiver.h" alt="" coords="1453,199,1649,255"/>
+<area shape="rect" id="node39" href="$ik__ISoundStopEventReceiver_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundStop\lEventReceiver.h" alt="" coords="2064,199,2252,255"/>
+<area shape="rect" id="node40" href="$ik__IAudioStreamLoader_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_IAudioStream\lLoader.h" alt="" coords="2508,303,2707,359"/>
+<area shape="rect" id="node42" href="$ik__IFileReader_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_IFileReader.h" alt="" coords="2511,206,2709,247"/>
+<area shape="rect" id="node43" href="$ik__IFileFactory_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_IFileFactory.h" alt="" coords="1115,206,1315,247"/>
+<area shape="rect" id="node44" href="$ik__ISoundDeviceList_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundDevice\lList.h" alt="" coords="1725,95,1924,151"/>
+<area shape="rect" id="node4" href="$ikpMP3_8cpp.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/ikpMP3.cpp" alt="" coords="2247,511,2395,567"/>
+<area shape="rect" id="node5" href="$SharedData_8h.html" title="Variables that are accessible for other classes. " alt="" coords="1052,689,1235,731"/>
+<area shape="rect" id="node19" href="$Sound_8h.html" title="MyGraphics/Source/Sound.h" alt="" coords="1931,525,2121,552"/>
+<area shape="rect" id="node6" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="2565,786,2796,813"/>
+<area shape="rect" id="node7" href="$Bullet_8cpp.html" title="MyGraphics/Source/Bullet.cpp" alt="" coords="223,786,421,813"/>
+<area shape="rect" id="node8" href="$Camera3_8cpp.html" title="MyGraphics/Source/Camera3.cpp" alt="" coords="446,786,665,813"/>
+<area shape="rect" id="node9" href="$CollisionDetector_8cpp.html" title="MyGraphics/Source/Collision\lDetector.cpp" alt="" coords="689,779,880,820"/>
+<area shape="rect" id="node10" href="$Cutscene_8cpp.html" title="Renders scene where player leaves in spaceship and temple explodes. " alt="" coords="1854,786,2075,813"/>
+<area shape="rect" id="node11" href="$NPC_8cpp.html" title="Checks if player is near and then show and allow the player to do something. " alt="" coords="5,786,199,813"/>
+<area shape="rect" id="node12" href="$Scene2_8cpp.html" title="Renders the 2nd scene for player to pick up eggs and access shop. " alt="" coords="905,786,1115,813"/>
+<area shape="rect" id="node13" href="$Scene3_8cpp.html" title="MyGraphics/Source/Scene3.cpp" alt="" coords="1139,786,1350,813"/>
+<area shape="rect" id="node14" href="$SceneMenu_8cpp.html" title="MyGraphics/Source/SceneMenu.cpp" alt="" coords="1374,786,1609,813"/>
+<area shape="rect" id="node15" href="$SceneWin_8cpp.html" title="Renders the screen to show player win and how many enemies killed. " alt="" coords="2099,786,2326,813"/>
+<area shape="rect" id="node16" href="$Shop_8cpp.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="1633,786,1829,813"/>
+<area shape="rect" id="node17" href="$SP2_8cpp.html" title="MyGraphics/Source/SP2.cpp" alt="" coords="2351,786,2541,813"/>
+<area shape="rect" id="node18" href="$StartCutScene_8cpp.html" title="MyGraphics/Source/StartCut\lScene.cpp" alt="" coords="2821,779,3010,820"/>
+<area shape="rect" id="node20" href="$StartCutScene_8h.html" title="MyGraphics/Source/StartCut\lScene.h" alt="" coords="2821,689,3010,731"/>
+<area shape="rect" id="node21" href="$NPC_8h.html" title="Checks if player is near and then show and allow the player to do something. " alt="" coords="1701,615,1879,641"/>
+<area shape="rect" id="node22" href="$SP2_8h.html" title="MyGraphics/Source/SP2.h" alt="" coords="2619,697,2796,723"/>
+<area shape="rect" id="node24" href="$Shop_8h.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="1945,697,2128,723"/>
+<area shape="rect" id="node25" href="$Scene2_8h.html" title="Renders the 2nd scene for player to pick up eggs and access shop. " alt="" coords="1259,697,1455,723"/>
+<area shape="rect" id="node26" href="$Scene3_8h.html" title="MyGraphics/Source/Scene3.h" alt="" coords="1479,697,1675,723"/>
+<area shape="rect" id="node27" href="$SceneMenu_8h.html" title="MyGraphics/Source/SceneMenu.h" alt="" coords="1699,697,1921,723"/>
+<area shape="rect" id="node28" href="$Cutscene_8h.html" title="Renders the cutscene where players bombs the place and leaves. " alt="" coords="2152,697,2359,723"/>
+<area shape="rect" id="node29" href="$SceneWin_8h.html" title="Renders the win screen for player. " alt="" coords="2383,697,2595,723"/>
+<area shape="rect" id="node30" href="$Sound_8cpp.html" title="Handles music and sound effect for the game using irrklang. " alt="" coords="2114,615,2317,641"/>
+<area shape="rect" id="node23" href="$Enemy_8cpp.html" title="MyGraphics/Source/Enemy.cpp" alt="" coords="3035,786,3241,813"/>
+<area shape="rect" id="node32" href="$ik__ISoundSource_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundSource.h" alt="" coords="1725,206,1938,247"/>
+<area shape="rect" id="node35" href="$CIrrKlangAudioStreamMP3_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/CIrrKlangAudioStreamMP3.h" alt="" coords="2287,303,2479,359"/>
+<area shape="rect" id="node36" href="$CIrrKlangAudioStreamLoaderMP3_8cpp.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/CIrrKlangAudioStreamLoaderMP3.cpp" alt="" coords="2470,511,2715,567"/>
+<area shape="rect" id="node37" href="$CIrrKlangAudioStreamMP3_8cpp.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/CIrrKlangAudioStreamMP3.cpp" alt="" coords="2169,407,2376,463"/>
+<area shape="rect" id="node41" href="$CIrrKlangAudioStreamLoaderMP3_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/CIrrKlangAudioStreamLoaderMP3.h" alt="" coords="2400,407,2631,463"/>
+</map>

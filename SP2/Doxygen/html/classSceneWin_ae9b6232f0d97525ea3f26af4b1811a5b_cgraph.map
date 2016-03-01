@@ -1,0 +1,6 @@
+<map id="SceneWin::Update" name="SceneWin::Update">
+<area shape="rect" id="node2" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="187,5,355,32"/>
+<area shape="rect" id="node3" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="184,56,359,83"/>
+<area shape="rect" id="node4" href="$classSound.html#aaaf67f7ba4482d8a07a122a1ec4ff965" title="Stop certain music when called. " alt="" coords="208,107,335,133"/>
+<area shape="rect" id="node5" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="407,107,552,133"/>
+</map>

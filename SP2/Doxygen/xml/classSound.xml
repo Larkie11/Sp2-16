@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classSound" kind="class" language="C++" prot="public">
+    <compoundname>Sound</compoundname>
+    <includes refid="Sound_8h" local="no">Sound.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSound_1aba686845571b90d93ecba24fe65037c3" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundEngine" kindref="compound">irrklang::ISoundEngine</ref> *</type>
+        <definition>irrklang::ISoundEngine* Sound::musicEngine</definition>
+        <argsstring></argsstring>
+        <name>musicEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="36" column="1" bodyfile="MyGraphics/Source/Sound.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classSound_1abafebbb8a0c9e262405ff8752f220baa" compoundref="Sound_8cpp" startline="32" endline="35">playMusic</referencedby>
+        <referencedby refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">playSE</referencedby>
+        <referencedby refid="classSound_1a539c205cdf06fe2c621fd77c37bcfac9" compoundref="Sound_8cpp" startline="12" endline="15">Sound</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSound_1afc8246f655d428da7f043ed7eb3c89a2" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISound" kindref="compound">irrklang::ISound</ref> *</type>
+        <definition>irrklang::ISound* Sound::Song</definition>
+        <argsstring></argsstring>
+        <name>Song</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="37" column="1" bodyfile="MyGraphics/Source/Sound.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classSound_1abafebbb8a0c9e262405ff8752f220baa" compoundref="Sound_8cpp" startline="32" endline="35">playMusic</referencedby>
+        <referencedby refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" compoundref="Sound_8cpp" startline="64" endline="67">stopMusic</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSound_1aab62d4295cd67e47c24766e8365590ba" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISound" kindref="compound">irrklang::ISound</ref> *</type>
+        <definition>irrklang::ISound* Sound::SoundEffect</definition>
+        <argsstring></argsstring>
+        <name>SoundEffect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="38" column="1" bodyfile="MyGraphics/Source/Sound.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">playSE</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSound_1a539c205cdf06fe2c621fd77c37bcfac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sound::Sound</definition>
+        <argsstring>()</argsstring>
+        <name>Sound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="29" column="1" bodyfile="MyGraphics/Source/Sound.cpp" bodystart="12" bodyend="15"/>
+        <references refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c">irrklang::createIrrKlangDevice</references>
+        <references refid="classSound_1aba686845571b90d93ecba24fe65037c3" compoundref="Sound_8h" startline="36">musicEngine</references>
+      </memberdef>
+      <memberdef kind="function" id="classSound_1a0907389078bf740be2a5763366ad3376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sound::~Sound</definition>
+        <argsstring>()</argsstring>
+        <name>~Sound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="30" column="1" bodyfile="MyGraphics/Source/Sound.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classSound_1abafebbb8a0c9e262405ff8752f220baa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sound::playMusic</definition>
+        <argsstring>(string Music)</argsstring>
+        <name>playMusic</name>
+        <param>
+          <type>string</type>
+          <declname>Music</declname>
+        </param>
+        <briefdescription>
+<para>Plays the background music looped. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Music</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Takes in path of background music to play</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="31" column="1" bodyfile="MyGraphics/Source/Sound.cpp" bodystart="32" bodyend="35"/>
+        <references refid="classSound_1aba686845571b90d93ecba24fe65037c3" compoundref="Sound_8h" startline="36">musicEngine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classSound_1afc8246f655d428da7f043ed7eb3c89a2" compoundref="Sound_8h" startline="37">Song</references>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">SceneWin::Init</referencedby>
+        <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sound::stopMusic</definition>
+        <argsstring>(string Music)</argsstring>
+        <name>stopMusic</name>
+        <param>
+          <type>string</type>
+          <declname>Music</declname>
+        </param>
+        <briefdescription>
+<para>Stop certain music when called. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Music</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Takes in path of background music/sound effect to stop</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="32" column="1" bodyfile="MyGraphics/Source/Sound.cpp" bodystart="64" bodyend="67"/>
+        <references refid="classSound_1afc8246f655d428da7f043ed7eb3c89a2" compoundref="Sound_8h" startline="37">Song</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <referencedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" compoundref="SceneWin_8cpp" startline="115" endline="123">SceneWin::Update</referencedby>
+        <referencedby refid="classCutscene_1ad0419ba77f29fa1707e56b9635a0addc" compoundref="Cutscene_8cpp" startline="166" endline="201">Cutscene::Update</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSound_1aff890910a52b741e92134ee9c3c82408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sound::playSE</definition>
+        <argsstring>(string Music)</argsstring>
+        <name>playSE</name>
+        <param>
+          <type>string</type>
+          <declname>Music</declname>
+        </param>
+        <briefdescription>
+<para>Plays the sound effect no loop. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Music</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Takes in path of sound effect to play</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Sound.h" line="33" column="1" bodyfile="MyGraphics/Source/Sound.cpp" bodystart="48" bodyend="51"/>
+        <references refid="classSound_1aba686845571b90d93ecba24fe65037c3" compoundref="Sound_8h" startline="36">musicEngine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classSound_1aab62d4295cd67e47c24766e8365590ba" compoundref="Sound_8h" startline="38">SoundEffect</references>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">NPC::Scene1</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">Shop::userInput</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Creates sound engine and allows music to be played. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classSound" kindref="compound">Sound</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1084">
+        <label>irrklang::IVirtualRefCounted</label>
+        <link refid="classirrklang_1_1IVirtualRefCounted"/>
+      </node>
+      <node id="1079">
+        <label>Sound</label>
+        <link refid="classSound"/>
+        <childnode refid="1080" relation="usage">
+          <edgelabel>musicEngine</edgelabel>
+        </childnode>
+        <childnode refid="1083" relation="usage">
+          <edgelabel>SoundEffect</edgelabel>
+          <edgelabel>Song</edgelabel>
+        </childnode>
+      </node>
+      <node id="1080">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="1081" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1083">
+        <label>irrklang::ISound</label>
+        <link refid="classirrklang_1_1ISound"/>
+        <childnode refid="1084" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1082">
+        <label>int</label>
+      </node>
+      <node id="1081">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="1082" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Sound.h" line="26" column="1" bodyfile="MyGraphics/Source/Sound.h" bodystart="25" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classSound_1aba686845571b90d93ecba24fe65037c3" prot="private" virt="non-virtual"><scope>Sound</scope><name>musicEngine</name></member>
+      <member refid="classSound_1abafebbb8a0c9e262405ff8752f220baa" prot="public" virt="non-virtual"><scope>Sound</scope><name>playMusic</name></member>
+      <member refid="classSound_1aff890910a52b741e92134ee9c3c82408" prot="public" virt="non-virtual"><scope>Sound</scope><name>playSE</name></member>
+      <member refid="classSound_1afc8246f655d428da7f043ed7eb3c89a2" prot="private" virt="non-virtual"><scope>Sound</scope><name>Song</name></member>
+      <member refid="classSound_1a539c205cdf06fe2c621fd77c37bcfac9" prot="public" virt="non-virtual"><scope>Sound</scope><name>Sound</name></member>
+      <member refid="classSound_1aab62d4295cd67e47c24766e8365590ba" prot="private" virt="non-virtual"><scope>Sound</scope><name>SoundEffect</name></member>
+      <member refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" prot="public" virt="non-virtual"><scope>Sound</scope><name>stopMusic</name></member>
+      <member refid="classSound_1a0907389078bf740be2a5763366ad3376" prot="public" virt="non-virtual"><scope>Sound</scope><name>~Sound</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

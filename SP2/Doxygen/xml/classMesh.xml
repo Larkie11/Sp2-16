@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMesh" kind="class" language="C++" prot="public">
+    <compoundname>Mesh</compoundname>
+    <includes refid="Mesh_8h" local="no">Mesh.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classMesh_1a3d73fcae9980b9a36297a8481cf1a307" prot="public" static="no">
+        <name>DRAW_MODE</name>
+        <enumvalue id="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a0f1cef52a562b3047017043dd427e2a9" prot="public">
+          <name>DRAW_TRIANGLES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" prot="public">
+          <name>DRAW_TRIANGLE_STRIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a2eacb69a1ffbcde68e12fb36f8c88639" prot="public">
+          <name>DRAW_LINES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classMesh_1a3d73fcae9980b9a36297a8481cf1a307afd8968f2a4b30487c794fbd15024c34e" prot="public">
+          <name>DRAW_MODE_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="17" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="16" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classMesh_1a3368c3bc60dd176e522df1542b764847" prot="public" static="no" mutable="no">
+        <type><ref refid="structMaterial" kindref="compound">Material</ref></type>
+        <definition>Material Mesh::material</definition>
+        <argsstring></argsstring>
+        <name>material</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="27" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMesh_1aa956ea809178c5713ca3e9220cee7980" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string Mesh::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="28" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" prot="public" static="no" mutable="no">
+        <type><ref refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307" kindref="member">DRAW_MODE</ref></type>
+        <definition>DRAW_MODE Mesh::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="29" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="23" endline="93">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</referencedby>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1ada356c86bcb69adb5706e9d63d6c3d62" compoundref="MeshBuilder_8cpp" startline="341" endline="397">MeshBuilder::GenerateSpheres</referencedby>
+        <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</referencedby>
+        <referencedby refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMesh_1a1e99394b36ad335804acd2461a736cfb" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Mesh::vertexBuffer</definition>
+        <argsstring></argsstring>
+        <name>vertexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="30" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="23" endline="93">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</referencedby>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1ada356c86bcb69adb5706e9d63d6c3d62" compoundref="MeshBuilder_8cpp" startline="341" endline="397">MeshBuilder::GenerateSpheres</referencedby>
+        <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</referencedby>
+        <referencedby refid="classMesh_1a8618160123ac2c27985d7ae34ad58cae" compoundref="Mesh_8cpp" startline="13" endline="20">Mesh</referencedby>
+        <referencedby refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Render</referencedby>
+        <referencedby refid="classMesh_1a5efe4da1a4c0971cfb037bd70304c303" compoundref="Mesh_8cpp" startline="28" endline="36">~Mesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Mesh::indexBuffer</definition>
+        <argsstring></argsstring>
+        <name>indexBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="32" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="23" endline="93">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</referencedby>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1ada356c86bcb69adb5706e9d63d6c3d62" compoundref="MeshBuilder_8cpp" startline="341" endline="397">MeshBuilder::GenerateSpheres</referencedby>
+        <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</referencedby>
+        <referencedby refid="classMesh_1a8618160123ac2c27985d7ae34ad58cae" compoundref="Mesh_8cpp" startline="13" endline="20">Mesh</referencedby>
+        <referencedby refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Render</referencedby>
+        <referencedby refid="classMesh_1a5efe4da1a4c0971cfb037bd70304c303" compoundref="Mesh_8cpp" startline="28" endline="36">~Mesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Mesh::indexSize</definition>
+        <argsstring></argsstring>
+        <name>indexSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="33" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="23" endline="93">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</referencedby>
+        <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1ada356c86bcb69adb5706e9d63d6c3d62" compoundref="MeshBuilder_8cpp" startline="341" endline="397">MeshBuilder::GenerateSpheres</referencedby>
+        <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</referencedby>
+        <referencedby refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMesh_1a7abd957a6487641e00c8fb855397bccd" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Mesh::textureID</definition>
+        <argsstring></argsstring>
+        <name>textureID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="34" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">SceneWin::Init</referencedby>
+        <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classMesh_1a8618160123ac2c27985d7ae34ad58cae" compoundref="Mesh_8cpp" startline="13" endline="20">Mesh</referencedby>
+        <referencedby refid="classrawMaterial_1a72d088f5e675dc11141a8e620da5e60e" compoundref="rawMatierial_8cpp" startline="5" endline="9">rawMaterial::rawMaterial</referencedby>
+        <referencedby refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Render</referencedby>
+        <referencedby refid="classSceneMenu_1a073af09ab7ae7f2429c78b3e94998a5e" compoundref="SceneMenu_8cpp" startline="375" endline="399">SceneMenu::RenderMesh</referencedby>
+        <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">SceneWin::RenderMesh</referencedby>
+        <referencedby refid="classCutscene_1ae0aa6fd5192b43cc2a986d51dc001a3c" compoundref="Cutscene_8cpp" startline="212" endline="236">Cutscene::RenderMesh</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">Shop::RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="400" endline="424">SceneMenu::RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">SceneWin::RenderText</referencedby>
+        <referencedby refid="classCutscene_1a4a1affd3851f94cf875edef8736f5feb" compoundref="Cutscene_8cpp" startline="246" endline="270">Cutscene::RenderText</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">Shop::RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">StartCutScene::RenderText</referencedby>
+        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="867" endline="892">SP2::RenderText</referencedby>
+        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="935" endline="960">Scene2::RenderText</referencedby>
+        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="890" endline="915">Scene3::RenderText</referencedby>
+        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="425" endline="468">SceneMenu::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">SceneWin::RenderTextOnScreen</referencedby>
+        <referencedby refid="classCutscene_1a919fee73f4a423e75aab5bfc5668d051" compoundref="Cutscene_8cpp" startline="280" endline="323">Cutscene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">Shop::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">StartCutScene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="893" endline="937">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="970" endline="1014">Scene2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="916" endline="960">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classMesh_1a5efe4da1a4c0971cfb037bd70304c303" compoundref="Mesh_8cpp" startline="28" endline="36">~Mesh</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMesh_1a8618160123ac2c27985d7ae34ad58cae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mesh::Mesh</definition>
+        <argsstring>(const std::string &amp;meshName)</argsstring>
+        <name>Mesh</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <briefdescription>
+<para>Default constructor - generate VBO/IBO here. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>meshName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of mesh </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="23" column="1" bodyfile="MyGraphics/Source/Mesh.cpp" bodystart="13" bodyend="20"/>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">indexBuffer</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">textureID</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">vertexBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classMesh_1a5efe4da1a4c0971cfb037bd70304c303" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mesh::~Mesh</definition>
+        <argsstring>()</argsstring>
+        <name>~Mesh</name>
+        <briefdescription>
+<para>Destructor - delete VBO/IBO here. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="24" column="1" bodyfile="MyGraphics/Source/Mesh.cpp" bodystart="28" bodyend="36"/>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">indexBuffer</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">textureID</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">vertexBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mesh::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <briefdescription>
+<para>OpenGL render code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="25" column="1" bodyfile="MyGraphics/Source/Mesh.cpp" bodystart="44" bodyend="85"/>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a2eacb69a1ffbcde68e12fb36f8c88639" compoundref="Mesh_8h" startline="20">DRAW_LINES</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">mode</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">textureID</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">vertexBuffer</references>
+        <referencedby refid="classSceneMenu_1a073af09ab7ae7f2429c78b3e94998a5e" compoundref="SceneMenu_8cpp" startline="375" endline="399">SceneMenu::RenderMesh</referencedby>
+        <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">SceneWin::RenderMesh</referencedby>
+        <referencedby refid="classCutscene_1ae0aa6fd5192b43cc2a986d51dc001a3c" compoundref="Cutscene_8cpp" startline="212" endline="236">Cutscene::RenderMesh</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">Shop::RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="400" endline="424">SceneMenu::RenderText</referencedby>
+        <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">SceneWin::RenderText</referencedby>
+        <referencedby refid="classCutscene_1a4a1affd3851f94cf875edef8736f5feb" compoundref="Cutscene_8cpp" startline="246" endline="270">Cutscene::RenderText</referencedby>
+        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">Shop::RenderText</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">StartCutScene::RenderText</referencedby>
+        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="867" endline="892">SP2::RenderText</referencedby>
+        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="935" endline="960">Scene2::RenderText</referencedby>
+        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="890" endline="915">Scene3::RenderText</referencedby>
+        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="425" endline="468">SceneMenu::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">SceneWin::RenderTextOnScreen</referencedby>
+        <referencedby refid="classCutscene_1a919fee73f4a423e75aab5bfc5668d051" compoundref="Cutscene_8cpp" startline="280" endline="323">Cutscene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">Shop::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">StartCutScene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="893" endline="937">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="970" endline="1014">Scene2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="916" endline="960">Scene3::RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMesh_1a13afbd2fcdaf0ae700599eb643ae3135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mesh::Render</definition>
+        <argsstring>(unsigned offset, unsigned count)</argsstring>
+        <name>Render</name>
+        <param>
+          <type>unsigned</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Mesh.h" line="26" column="1" bodyfile="MyGraphics/Source/Mesh.cpp" bodystart="87" bodyend="127"/>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a2eacb69a1ffbcde68e12fb36f8c88639" compoundref="Mesh_8h" startline="20">DRAW_LINES</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">indexBuffer</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">mode</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">textureID</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">vertexBuffer</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>To store VBO (vertex &amp; color buffer) and IBO (index buffer) </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classMesh" kindref="compound">Mesh</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="800">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="799" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="797">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="798" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="801" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="802" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="803" relation="usage">
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="801">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="802">
+        <label>string</label>
+      </node>
+      <node id="798">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="799" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="800" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="799">
+        <label>float</label>
+      </node>
+      <node id="803">
+        <label>unsigned</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Mesh.h" line="14" column="1" bodyfile="MyGraphics/Source/Mesh.h" bodystart="13" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a2eacb69a1ffbcde68e12fb36f8c88639" prot="public" virt="non-virtual"><scope>Mesh</scope><name>DRAW_LINES</name></member>
+      <member refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307" prot="public" virt="non-virtual"><scope>Mesh</scope><name>DRAW_MODE</name></member>
+      <member refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307afd8968f2a4b30487c794fbd15024c34e" prot="public" virt="non-virtual"><scope>Mesh</scope><name>DRAW_MODE_LAST</name></member>
+      <member refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" prot="public" virt="non-virtual"><scope>Mesh</scope><name>DRAW_TRIANGLE_STRIP</name></member>
+      <member refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a0f1cef52a562b3047017043dd427e2a9" prot="public" virt="non-virtual"><scope>Mesh</scope><name>DRAW_TRIANGLES</name></member>
+      <member refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" prot="public" virt="non-virtual"><scope>Mesh</scope><name>indexBuffer</name></member>
+      <member refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" prot="public" virt="non-virtual"><scope>Mesh</scope><name>indexSize</name></member>
+      <member refid="classMesh_1a3368c3bc60dd176e522df1542b764847" prot="public" virt="non-virtual"><scope>Mesh</scope><name>material</name></member>
+      <member refid="classMesh_1a8618160123ac2c27985d7ae34ad58cae" prot="public" virt="non-virtual"><scope>Mesh</scope><name>Mesh</name></member>
+      <member refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" prot="public" virt="non-virtual"><scope>Mesh</scope><name>mode</name></member>
+      <member refid="classMesh_1aa956ea809178c5713ca3e9220cee7980" prot="public" virt="non-virtual"><scope>Mesh</scope><name>name</name></member>
+      <member refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" prot="public" virt="non-virtual"><scope>Mesh</scope><name>Render</name></member>
+      <member refid="classMesh_1a13afbd2fcdaf0ae700599eb643ae3135" prot="public" virt="non-virtual"><scope>Mesh</scope><name>Render</name></member>
+      <member refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" prot="public" virt="non-virtual"><scope>Mesh</scope><name>textureID</name></member>
+      <member refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" prot="public" virt="non-virtual"><scope>Mesh</scope><name>vertexBuffer</name></member>
+      <member refid="classMesh_1a5efe4da1a4c0971cfb037bd70304c303" prot="public" virt="non-virtual"><scope>Mesh</scope><name>~Mesh</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

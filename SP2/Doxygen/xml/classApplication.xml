@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classApplication" kind="class" language="C++" prot="public">
+    <compoundname>Application</compoundname>
+    <includes refid="Application_8h" local="no">Application.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classApplication_1ac4e2a80d7e2a298a2674b594cd82a65f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Application::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="16" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="60" endline="113">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a13dcf7ff56434d22f1a7a831321e0cf0" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Application::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="17" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="60" endline="113">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" static="no" mutable="no">
+        <type><ref refid="classStopWatch" kindref="compound">StopWatch</ref></type>
+        <definition>StopWatch Application::m_timer</definition>
+        <argsstring></argsstring>
+        <name>m_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="21" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>()</argsstring>
+        <name>Application</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="10" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="11" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="12" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="60" bodyend="113"/>
+        <references refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" compoundref="Application_8cpp" startline="28" endline="32">error_callback</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classApplication_1ac4e2a80d7e2a298a2674b594cd82a65f" compoundref="Application_8h" startline="16">height</references>
+        <references refid="classSharedData_1a97439660413bfd5df853f74cd9342382" compoundref="SharedData_8h" startline="68">SharedData::height</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="23">m_window</references>
+        <references refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" compoundref="Application_8cpp" startline="55" endline="58">resize_callback</references>
+        <references refid="classApplication_1a13dcf7ff56434d22f1a7a831321e0cf0" compoundref="Application_8h" startline="17">width</references>
+        <references refid="classSharedData_1a61a51fd899d848713bfaeb6323f8df84" compoundref="SharedData_8h" startline="67">SharedData::width</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="5" endline="11">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="13" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="115" bodyend="180"/>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba40d64a08038d0d14f76bdaac41e3dfe3" compoundref="SharedData_8h" startline="41">SharedData::CUTSCENE</references>
+        <references refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Scene::Exit</references>
+        <references refid="Application_8cpp_1ae228418b33873657fa31313fb4189a8f" compoundref="Application_8cpp" startline="25">frameTime</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bae0fc3e56dcec516055b634ccf34e6f71" compoundref="SharedData_8h" startline="36">SharedData::G_CUTSCENE</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba779ebe0a34809ed51d63a96e6b1d7531" compoundref="SharedData_8h" startline="37">SharedData::GAME</references>
+        <references refid="classStopWatch_1ac8be1626396d1a5ca414f74349d59eb2" compoundref="timer_8cpp" startline="34" endline="41">StopWatch::getElapsedTime</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">IsKeyPressed</references>
+        <references refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" compoundref="Application_8h" startline="21">m_timer</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="23">m_window</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" compoundref="SharedData_8h" startline="35">SharedData::MENU</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" compoundref="SharedData_8h" startline="43">SharedData::QUIT</references>
+        <references refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Scene::Render</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12559547ceddc6681610499196ae63a9" compoundref="SharedData_8h" startline="38">SharedData::SCENE2</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bac54d14bd2c7e410718c56fe1930ad437" compoundref="SharedData_8h" startline="39">SharedData::SCENE3</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba2aa984e73581ce69c0380744c50369db" compoundref="SharedData_8h" startline="40">SharedData::SHOP</references>
+        <references refid="classStopWatch_1a23301f735a2e3190435e39c9fd70cdf2" compoundref="timer_8cpp" startline="29" endline="32">StopWatch::startTimer</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+        <references refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Scene::Update</references>
+        <references refid="classStopWatch_1a2cd0856fc87a40038edfd66d784be8b4" compoundref="timer_8cpp" startline="43" endline="56">StopWatch::waitUntil</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba90ea93156d3af904699969de05941e85" compoundref="SharedData_8h" startline="42">SharedData::WIN</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="5" endline="11">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="14" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="182" bodyend="188"/>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="23">m_window</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="5" endline="11">main</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Application::IsKeyPressed</definition>
+        <argsstring>(unsigned short key)</argsstring>
+        <name>IsKeyPressed</name>
+        <param>
+          <type>unsigned short</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="15" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="41" bodyend="44"/>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="107">NPC::Door</referencedby>
+        <referencedby refid="classSceneMenu_1a119a0daee8a124bbe5cb408f9ce944b1" compoundref="SceneMenu_8cpp" startline="254" endline="337">SceneMenu::mouseControl</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Run</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">NPC::Scene1</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classShop_1a9bf25bf857c3d2f12f2afd7d7e034422" compoundref="Shop_8cpp" startline="195" endline="377">Shop::ShopOptions</referencedby>
+        <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Camera::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</referencedby>
+        <referencedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b" compoundref="SceneWin_8cpp" startline="115" endline="123">SceneWin::Update</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classSceneMenu_1a6337296b63007ec335cadba8665d7d94" compoundref="SceneMenu_8cpp" startline="121" endline="221">SceneMenu::UpdateMenu</referencedby>
+        <referencedby refid="classSceneMenu_1a422db583e22754ce8449f93aa40019f5" compoundref="SceneMenu_8cpp" startline="223" endline="252">SceneMenu::userInput</referencedby>
+        <referencedby refid="classShop_1a6c97c222063586a3493580f3aaea1065" compoundref="Shop_8cpp" startline="387" endline="471">Shop::userInput</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="596">
+        <label>float</label>
+      </node>
+      <node id="595">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="596" relation="usage">
+          <edgelabel>width</edgelabel>
+          <edgelabel>height</edgelabel>
+        </childnode>
+        <childnode refid="597" relation="usage">
+          <edgelabel>m_timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="599">
+        <label>LARGE_INTEGER</label>
+      </node>
+      <node id="597">
+        <label>StopWatch</label>
+        <link refid="classStopWatch"/>
+        <childnode refid="598" relation="usage">
+          <edgelabel>wTimerRes</edgelabel>
+        </childnode>
+        <childnode refid="599" relation="usage">
+          <edgelabel>frequency</edgelabel>
+          <edgelabel>currTime</edgelabel>
+          <edgelabel>prevTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="598">
+        <label>UINT</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Application.h" line="8" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="7" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" virt="non-virtual"><scope>Application</scope><name>Exit</name></member>
+      <member refid="classApplication_1ac4e2a80d7e2a298a2674b594cd82a65f" prot="public" virt="non-virtual"><scope>Application</scope><name>height</name></member>
+      <member refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" virt="non-virtual"><scope>Application</scope><name>Init</name></member>
+      <member refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" virt="non-virtual"><scope>Application</scope><name>IsKeyPressed</name></member>
+      <member refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" virt="non-virtual"><scope>Application</scope><name>m_timer</name></member>
+      <member refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" virt="non-virtual"><scope>Application</scope><name>Run</name></member>
+      <member refid="classApplication_1a13dcf7ff56434d22f1a7a831321e0cf0" prot="public" virt="non-virtual"><scope>Application</scope><name>width</name></member>
+      <member refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" virt="non-virtual"><scope>Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

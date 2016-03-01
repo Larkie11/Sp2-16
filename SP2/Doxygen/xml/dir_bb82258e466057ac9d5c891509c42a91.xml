@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="dir_bb82258e466057ac9d5c891509c42a91" kind="dir">
+    <compoundname>MyGraphics/irrKlang-1.5.0</compoundname>
+    <innerdir refid="dir_d17e6d3974e4dda27fe311d616a21151">MyGraphics/irrKlang-1.5.0/include</innerdir>
+    <innerdir refid="dir_490afda4105391e253318e4f31153e26">MyGraphics/irrKlang-1.5.0/plugins</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MyGraphics/irrKlang-1.5.0/"/>
+  </compounddef>
+</doxygen>
