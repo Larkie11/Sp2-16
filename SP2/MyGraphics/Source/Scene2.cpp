@@ -1511,7 +1511,7 @@ void Scene2::Render()
 	if (On_Plane)
 	{
 		modelStack.PushMatrix();
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press \' W \' and \' S \' to Start Ship", Color(1, 1, 0), 1.5, 7, 22);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Hold \' Z \' and \' X \' to Start Ship", Color(1, 1, 0), 1.5, 7, 22);
 		modelStack.PopMatrix();
 	}
 
@@ -1805,7 +1805,7 @@ void Scene2::Character_Movement(float dt)
 	{
 		camera.position.z = camera.minZ;
 	}
-	if (checkNear(camera, npc.door.Nposition) <= 15)
+	if (checkNear(camera, npc.door.Nposition) <= 15 && !On_Plane)
 	{
 		if (npc.door.Collision)
 		{

@@ -1761,7 +1761,7 @@ void Scene3::Character_Movement(float dt)
 	{
 		camera.position.z = camera.minZ;
 	}
-	if (checkNear(camera, npc.door.Nposition) <= 15)
+	if (checkNear(camera, npc.door.Nposition) <= 15 && !On_Plane)
 	{
 		if (npc.door.Collision)
 		{
