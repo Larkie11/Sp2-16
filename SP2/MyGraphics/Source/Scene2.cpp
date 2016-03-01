@@ -536,7 +536,7 @@ void Scene2::Update(double dt)
 		}
 	}
 
-	if (checkNear(camera, npc.spaceShip.Nposition) < 200 && On_Plane)
+	if (camera.position.y >= 240 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -1731,7 +1731,6 @@ void Scene2::Map_Rendering()
 		}
 	}
 	modelStack.PopMatrix();
-	camera.position.y = -10;
 }
 void Scene2::Character_Movement(float dt)
 {
