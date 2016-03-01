@@ -45,14 +45,12 @@ public:
 	enum SHOP_SELL
 	{
 		SS_AMMO,
-		SS_BOMB,
+		SS_ORE,
 		SS_EGG,
 		SS_BACK,
 		SS_MAX,
 	};
 
-	SHOP_OPTION s_option;
-	SHOP_BUY s_buy;
 	MenuShop(){}
 	~MenuShop(){}
 };

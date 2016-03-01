@@ -429,9 +429,6 @@ void Scene2::Init()
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
 
-	meshList[GEO_EGG] = MeshBuilder::GenerateOBJ("egg", "OBJ//Alien_Egg.obj");
-	meshList[GEO_EGG]->textureID = LoadTGA("Image//Scene_AlienEgg.tga");
-
 	meshList[GEO_RMSMALL] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial3.obj");
 	meshList[GEO_RMSMALL]->textureID = LoadTGA("Image//RawMaterial.tga");
 
@@ -546,6 +543,7 @@ void Scene2::Update(double dt)
 		}
 		if (Application::IsKeyPressed('E'))
 		{
+			sound.stopMusic("Music//Scene2.mp3");
 			npc.interactDia = "Loading shop...";
 			SharedData::GetInstance()->stateCheck = true;
 			SharedData::GetInstance()->gameState = SharedData::SHOP;
@@ -1750,7 +1748,8 @@ void Scene2::Character_Movement(float dt)
 
 	if (Application::IsKeyPressed('R'))
 	{
-		camera.Reset();
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SCENE2;
 	}
 
 	//Changing view (target)
@@ -1773,10 +1772,7 @@ void Scene2::Character_Movement(float dt)
 	{
 		camera.cameraRotate.x += (float)(120 * dt);
 		followx -= (float)(120 * dt);
-
 	}
-
-
 	if (followx > camera.maxCameraX)
 	{
 		followx = 49.99;

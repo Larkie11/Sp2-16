@@ -50,25 +50,20 @@ Delta time for game update
 /******************************************************************************/
 void NPC::Door(Camera3 camera, double dt)
 {
-	//If player is on the outside of the pyramid
 	if (camera.position.x > door.Nposition.x)
 	{
 		door.negativeDotProduct = true;
 	}
-	//If player is on the inside of the pyramid
 	if (camera.position.x < door.Nposition.x)
 	{
 		door.negativeDotProduct = false;
 	}
-	//This is to check if player is near to the door and facing the door using dot product
-	//Since a door has 2 side, the character view dot product door will have both negative and positive, so we have to handle both cases
 	if (detectCollision.collideByDist(camera.position, door.Nposition) <= 25)
 	{
 		//Check if the player is outside the temple and facing door to the inside
 		if (door.negativeDotProduct == true && camera.view.Dot(door.Nposition) < 0)
 		{
 			interactDia = "Press E to open the door";
-			//Show player press e to interact
 			door.canInteract = true;
 			if (Application::IsKeyPressed('E'))
 			{
@@ -229,11 +224,11 @@ void NPC::Shop(Camera3 camera, double dt)
 	if (detectCollision.collideByDist(camera.position, spaceDoor.Nposition.x) <= 20)
 	{
 		spaceDoor.canInteract = true;
-		interactDia = "Hold E to open door and exit";
+		interactDia = "Press E to open door and exit";
 		if (spaceDoor.Nposition.z < 40 && Application::IsKeyPressed('E'))
 		{
 			
-			spaceDoor.Nposition.z += (float)(30 * dt);
+			spaceDoor.Nposition.z += (float)(60 * dt);
 
 			if (spaceDoor.Nposition.z >= 40)
 			{

@@ -398,12 +398,6 @@ void Scene3::Init()
 	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
 	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//Scene_SpaceShip.tga");
 
-	meshList[GEO_BB8HEAD] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8head.obj");
-	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//Scene_BB8head.tga");
-
-	meshList[GEO_BB8BODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8sphere.obj");
-	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//Scene_BB8sphere.tga");
-
 	GLuint plane = LoadTGA("Image//Scene_Plane.tga");
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
 	meshList[GEO_PLANEBODY]->textureID = plane;
@@ -594,6 +588,7 @@ void Scene3::Update(double dt)
 		if (Application::IsKeyPressed('E'))
 		{
 			npc.interactDia = "Loading shop...";
+			sound.stopMusic("Music//Scene3.mp3");
 			SharedData::GetInstance()->stateCheck = true;
 			SharedData::GetInstance()->gameState = SharedData::SHOP;
 		}
@@ -1707,7 +1702,8 @@ void Scene3::Character_Movement(float dt)
 	glUniform1f(m_parameters[U_LIGHT3_POWER], light[3].power);
 	if (Application::IsKeyPressed('R'))
 	{
-		camera.Reset();
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::SCENE3;
 	}
 
 	//Changing view (target)

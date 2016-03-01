@@ -53,7 +53,6 @@ void Shop::Init()
 	npc.spaceDoor.Nposition = Vector3(-90, -20, 0);
 	npc.seller.Nposition = Vector3(20, -20, 0);
 
-	icon = 31.6;
 	icon2 = 19;
 	Dialogue("Text//Shop.txt");
 	PressTime = 0;
@@ -201,7 +200,6 @@ void Shop::ShopOptions()
 		case MenuShop::S_BUY:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
-				icon = 31.6;
 				icon2 = 19;
 				PressTime = deltaTime / 5;
 				shopInput = "Buy";
@@ -212,7 +210,6 @@ void Shop::ShopOptions()
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				icon = 31.6;
 				icon2 = 19;
 				shopInput = "Sell";
 				sell = MenuShop::SS_AMMO;
@@ -223,7 +220,6 @@ void Shop::ShopOptions()
 			{
 				sound.playSE("Music//Robot.mp3");
 				shopInput = "";
-				icon = 31.6;
 				icon2 = 19;
 				PressTime = deltaTime;
 				shop = MenuShop::S_BUY;
@@ -292,7 +288,6 @@ void Shop::ShopOptions()
 				PressTime = deltaTime;
 				shopInput = "Shop";
 				shop = MenuShop::S_BUY;
-				icon = 31.6;
 				icon2 = 19;
 			}
 			break;
@@ -322,7 +317,7 @@ void Shop::ShopOptions()
 				}
 			}
 			break;
-		case MenuShop::SS_BOMB:
+		case MenuShop::SS_ORE:
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
@@ -346,7 +341,6 @@ void Shop::ShopOptions()
 			if (Application::IsKeyPressed(VK_RETURN) && PressTime == 0)
 			{
 				PressTime = deltaTime / 5;
-				coolDown = deltaTime;
 				gold = 200;
 				if (SharedData::GetInstance()->egg.quantity > 0)
 				{
@@ -368,7 +362,6 @@ void Shop::ShopOptions()
 				PressTime = deltaTime;
 				shopInput = "Shop";
 				shop = MenuShop::S_BUY;
-				icon = 31.6;
 				icon2 = 19;
 			}
 			break;
@@ -396,7 +389,6 @@ void Shop::userInput()
 				PressTime = deltaTime / 7;
 				shop = static_cast<MenuShop::SHOP_OPTION>(shop - 1);
 				cout << shop;
-				icon += 1.6;
 				icon2 += 1;
 			}
 		}
@@ -408,7 +400,6 @@ void Shop::userInput()
 				PressTime = deltaTime / 7;
 				shop = static_cast<MenuShop::SHOP_OPTION>(shop + 1);
 				cout << shop;
-				icon -= 1.6;
 				icon2 -= 1;
 			}
 		}
@@ -423,7 +414,6 @@ void Shop::userInput()
 				PressTime = deltaTime / 7;
 				sell = static_cast<MenuShop::SHOP_SELL>(sell - 1);
 				cout << sell;
-				icon += 1.6;
 				icon2 += 1;
 			}
 		}
@@ -435,7 +425,6 @@ void Shop::userInput()
 				PressTime = deltaTime / 7;
 				sell = static_cast<MenuShop::SHOP_SELL>(sell + 1);
 				cout << sell;
-				icon -= 1.6;
 				icon2 -= 1;
 			}
 		}
@@ -450,8 +439,6 @@ void Shop::userInput()
 				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				buy = static_cast<MenuShop::SHOP_BUY>(buy - 1);
-				cout << buy;
-				icon += 1.6;
 				icon2 += 1;
 			}
 		}
@@ -462,8 +449,6 @@ void Shop::userInput()
 				sound.playSE("Music//Menu.mp3");
 				PressTime = deltaTime / 7;
 				buy = static_cast<MenuShop::SHOP_BUY>(buy + 1);
-				cout << buy;
-				icon -= 1.6;
 				icon2 -= 1;
 			}
 		}
@@ -481,6 +466,7 @@ Updates the scene every frame (Animation/booleans/music etc)
 void Shop::Update(double dt)
 {
 	npc.Shop(camera, dt);
+	//Player pressing
 	if (PressTime > 0)
 	{
 		PressTime -= 1;
@@ -489,7 +475,7 @@ void Shop::Update(double dt)
 	{
 		PressTime = 0;
 	}
-
+	//Text cooldown
 	if (coolDown > 0)
 	{
 		coolDown -= 1;
