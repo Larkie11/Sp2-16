@@ -77,6 +77,7 @@ Initializes for 2nd scene
 /******************************************************************************/
 void Scene2::Init()
 {
+	randomobject = 0;
 	srand(time(NULL));
 	Map_Reading();
 
@@ -114,11 +115,11 @@ void Scene2::Init()
 	npc.robot2.Nposition = Vector3(245, -21, 150);
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spaceShip.Nposition = Vector3(-100, 230, 0);
-	npc.egg1.Nposition = Vector3(-210, -19.5, 115);
-	npc.egg2.Nposition = Vector3(-215, -19.5, -115);
-	npc.egg3.Nposition = Vector3(-150, -19.5, -25);
-	npc.egg4.Nposition = Vector3(-75, -19.5, 85);
-	npc.egg5.Nposition = Vector3(15, -19.5, -115);
+	npc.egg1.Nposition = Vector3(-210, -15, 115);
+	npc.egg2.Nposition = Vector3(-215, -15, -115);
+	npc.egg3.Nposition = Vector3(-150, -15, -25);
+	npc.egg4.Nposition = Vector3(-75, -15, 85);
+	npc.egg5.Nposition = Vector3(15, -15, -115);
 	// Set background color to dark blue
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -439,6 +440,15 @@ void Scene2::Init()
 	meshList[GEO_RMBIG] = MeshBuilder::GenerateOBJ("material", "OBJ//rawMaterial.obj");
 	meshList[GEO_RMBIG]->textureID = meshList[GEO_RMSMALL]->textureID;
 
+	meshList[GEO_RING] = MeshBuilder::GenerateOBJ("material", "OBJ//RING.obj");
+	meshList[GEO_RING]->textureID = LoadTGA("Image//RingTexture.tga");
+
+	meshList[GEO_SPEHERE] = MeshBuilder::GenerateOBJ("material", "OBJ//SPEHERE.obj");
+	meshList[GEO_SPEHERE]->textureID = LoadTGA("Image//SphereTexture.tga");
+
+	meshList[GEO_PRISM] = MeshBuilder::GenerateOBJ("material", "OBJ//PRISM.obj");
+	meshList[GEO_PRISM]->textureID = LoadTGA("Image//PrismTexture.tga");
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
 	projectionStack.LoadMatrix(projection);
@@ -522,7 +532,7 @@ void Scene2::Update(double dt)
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 200 && On_Plane)
+	if (checkNear(camera, npc.spaceShip.Nposition) < 200 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -849,6 +859,7 @@ void Scene2::Update(double dt)
 	animation.moveSword(dt, swordTranslation, usingSword);
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
+	randomobject += (float)(0.5 * dt);
 }
 /******************************************************************************/
 /*!
@@ -1149,7 +1160,7 @@ void Scene2::Render()
 	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
-	eggOSS << SharedData::GetInstance()->egg.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity<< "/5";
 
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();
@@ -1314,7 +1325,12 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg1.Nposition.x, npc.egg1.Nposition.y, npc.egg1.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], false);
+		modelStack.PushMatrix();
+		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		RenderMesh(meshList[GEO_RING], false);
+		modelStack.PopMatrix();
+		RenderMesh(meshList[GEO_SPEHERE], false);
+		RenderMesh(meshList[GEO_PRISM], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1324,7 +1340,12 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg2.Nposition.x, npc.egg2.Nposition.y, npc.egg2.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], false);
+		modelStack.PushMatrix();
+		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		RenderMesh(meshList[GEO_RING], false);
+		modelStack.PopMatrix();
+		RenderMesh(meshList[GEO_SPEHERE], false);
+		RenderMesh(meshList[GEO_PRISM], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1334,7 +1355,12 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg3.Nposition.x, npc.egg3.Nposition.y, npc.egg3.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], false);
+		modelStack.PushMatrix();
+		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		RenderMesh(meshList[GEO_RING], false);
+		modelStack.PopMatrix();
+		RenderMesh(meshList[GEO_SPEHERE], false);
+		RenderMesh(meshList[GEO_PRISM], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1344,7 +1370,12 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg4.Nposition.x, npc.egg4.Nposition.y, npc.egg4.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], false);
+		modelStack.PushMatrix();
+		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		RenderMesh(meshList[GEO_RING], false);
+		modelStack.PopMatrix();
+		RenderMesh(meshList[GEO_SPEHERE], false);
+		RenderMesh(meshList[GEO_PRISM], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1354,7 +1385,12 @@ void Scene2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.egg5.Nposition.x, npc.egg5.Nposition.y, npc.egg5.Nposition.z);
 		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_EGG], false);
+		modelStack.PushMatrix();
+		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		RenderMesh(meshList[GEO_RING], false);
+		modelStack.PopMatrix();
+		RenderMesh(meshList[GEO_SPEHERE], false);
+		RenderMesh(meshList[GEO_PRISM], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}

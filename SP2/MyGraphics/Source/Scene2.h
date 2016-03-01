@@ -83,6 +83,9 @@ class Scene2 : public Scene
 		GEO_CCTV,
 		GEO_EGG,
 		GEO_BAG,
+		GEO_RING,
+		GEO_PRISM,
+		GEO_SPEHERE,
 
 		GEO_BULLET,
 
@@ -238,7 +241,7 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
-
+	float randomobject;
 	Light light[8]; //shader max 8 lights
 
 	void RenderSkybox();

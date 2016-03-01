@@ -1,6 +1,6 @@
 /******************************************************************************/
 /*!
-\file	Scene3.cpp
+\file	Application.cpp
 \author Tang Wen Sheng, edited by Mok Wei Min
 \par
 \brief
@@ -187,7 +187,7 @@ Main loop to run the game
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new SceneMenu;	
+	Scene *scene = new Scene2;	
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame

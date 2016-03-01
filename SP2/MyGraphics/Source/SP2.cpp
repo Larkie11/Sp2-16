@@ -127,7 +127,7 @@ void SP2::Init()
 	npc.robot2.Nposition = Vector3(245, -21, 150);
 	npc.robot3.Nposition = Vector3(92, -21, 361);
 	npc.spacebody.Nposition = Vector3(345, -21, 0);
-	npc.spacewing.Nposition = Vector3(0, -21, 100);
+	npc.spacewing.Nposition = Vector3(0, -30, 100);
 	npc.spacerocket.Nposition = Vector3(-200, -21, -115);
 
 	// Set background color to dark blue
@@ -1183,7 +1183,7 @@ void SP2::Render()
 	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
-	eggOSS << SharedData::GetInstance()->egg.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity << "/5";
 
 	partscountOSS << "SpaceShip Parts: " << parts << "/2";
 	fpsOSS << "FPS : " << deltaTime;
@@ -1533,13 +1533,13 @@ void SP2::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 34, 39);
+	
 
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
-
+	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 1, 37);
 	glBlendFunc(1, 1);
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

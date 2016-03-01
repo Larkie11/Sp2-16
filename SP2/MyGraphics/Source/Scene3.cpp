@@ -453,6 +453,26 @@ void Scene3::Init()
 }
 static float LSPEED = 10.f;
 static bool Lighting9 = true;
+
+/******************************************************************************/
+/*!
+\brief
+Camera position and item distance
+
+\param camera
+Passes in camera
+\param rhs
+Object position
+
+\exception None
+\return the distance between objects
+*/
+/******************************************************************************/
+float Scene3::checkNear(Camera3 camera, Vector3 rhs)
+{
+	return (sqrt(((camera.position.x - rhs.x)*(camera.position.x - rhs.x)) + ((camera.position.z - rhs.z)*(camera.position.z - rhs.z))));
+
+}
 /******************************************************************************/
 /*!
 \brief
@@ -559,7 +579,7 @@ void Scene3::Update(double dt)
 		}
 	}
 
-	if (detectCollision.collideByDist(camera.position, npc.spaceShip.Nposition) <= 200 && On_Plane)
+	if (checkNear(camera, npc.spaceShip.Nposition) < 200 && On_Plane)
 	{
 		npc.spaceShip.canInteract = true;
 		npc.door.canInteract = false;
@@ -708,9 +728,7 @@ void Scene3::Update(double dt)
 		}
 	}
 
-	//Check if enemy got slashed by the player
-	if (usingSword)
-		detectCollision.swordCollision(enemy, camera.position);
+
 
 	// MINING COLLISION
 	for (int i = 0; i < 2; ++i)
@@ -1188,7 +1206,7 @@ void Scene3::Render()
 	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
-	eggOSS << SharedData::GetInstance()->egg.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity << "/5";
 
 	fpsOSS << "FPS : " << deltaTime;
 	string Fps = fpsOSS.str();

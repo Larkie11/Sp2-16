@@ -283,7 +283,7 @@ The main render function for this scene, renders any text/meshes
 void SceneWin::Render()
 {
 	std::ostringstream enemyOSS;
-	enemyOSS << "Enemies killed: " << SharedData::GetInstance()->enemycounter;
+	enemyOSS << "Enemies killed: " << SharedData::GetInstance()->enemycounter/2;
 	string enemy = enemyOSS.str();
 
 	// Render VBO here
