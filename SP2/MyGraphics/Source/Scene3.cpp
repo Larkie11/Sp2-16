@@ -910,6 +910,7 @@ void Scene3::Update(double dt)
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
 	potatoRotate += (float)(0.5 * dt);
+	
 }
 /******************************************************************************/
 /*!

@@ -78,7 +78,7 @@ Initializes for 2nd scene
 void Scene2::Init()
 {
 	 potatoRotate=0;
-	randomobject = 0;
+
 	srand(time(NULL));
 	Map_Reading();
 
@@ -1332,7 +1332,7 @@ void Scene2::Render()
 		modelStack.Translate(npc.egg1.Nposition.x, npc.egg1.Nposition.y, npc.egg1.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		modelStack.PushMatrix();
-		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
 		RenderMesh(meshList[GEO_RING], false);
 		modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_SPEHERE], false);
@@ -1347,7 +1347,7 @@ void Scene2::Render()
 		modelStack.Translate(npc.egg2.Nposition.x, npc.egg2.Nposition.y, npc.egg2.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		modelStack.PushMatrix();
-		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
 		RenderMesh(meshList[GEO_RING], false);
 		modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_SPEHERE], false);
@@ -1362,7 +1362,7 @@ void Scene2::Render()
 		modelStack.Translate(npc.egg3.Nposition.x, npc.egg3.Nposition.y, npc.egg3.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		modelStack.PushMatrix();
-		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
 		RenderMesh(meshList[GEO_RING], false);
 		modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_SPEHERE], false);
@@ -1377,7 +1377,7 @@ void Scene2::Render()
 		modelStack.Translate(npc.egg4.Nposition.x, npc.egg4.Nposition.y, npc.egg4.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		modelStack.PushMatrix();
-		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
 		RenderMesh(meshList[GEO_RING], false);
 		modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_SPEHERE], false);
@@ -1392,7 +1392,7 @@ void Scene2::Render()
 		modelStack.Translate(npc.egg5.Nposition.x, npc.egg5.Nposition.y, npc.egg5.Nposition.z);
 		modelStack.Scale(5, 5, 5);
 		modelStack.PushMatrix();
-		modelStack.Rotate(randomobject * 50, 0, 1, 0);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
 		RenderMesh(meshList[GEO_RING], false);
 		modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_SPEHERE], false);
@@ -1840,7 +1840,7 @@ void Scene2::Character_Movement(float dt)
 	if (On_Plane)
 	{
 		camera.position.Set(Plane.x, 40 + Plane.y, Plane.z);
-		if (Application::IsKeyPressed('W'))
+		if (Application::IsKeyPressed('Z'))
 		{
 			if (Plane.y < 200)
 			{
@@ -1860,7 +1860,7 @@ void Scene2::Character_Movement(float dt)
 				Plane.x = 15;
 			}
 		}
-		if (Application::IsKeyPressed('S'))
+		if (Application::IsKeyPressed('X'))
 		{
 			if (Plane.x < 350)
 			{
