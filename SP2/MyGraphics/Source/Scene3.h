@@ -100,6 +100,7 @@ class Scene3 : public Scene
 		GEO_RMBIG,
 		GEO_EXPLOSION,
 		GEO_BULLETSKIN,
+		GEO_POTATO,
 		NUM_GEOMETRY,
 	};
 
@@ -246,6 +247,7 @@ private:
 	float LSPEED = 10.f;
 	float moveSkyBoxZ = 91.f;
 	float moveSkyBoxX = 0.f;
+	float potatoRotate;
 
 	Light light[8]; //shader max 8 lights
 

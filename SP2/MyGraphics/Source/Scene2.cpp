@@ -77,6 +77,7 @@ Initializes for 2nd scene
 /******************************************************************************/
 void Scene2::Init()
 {
+	 potatoRotate=0;
 	randomobject = 0;
 	srand(time(NULL));
 	Map_Reading();
@@ -448,6 +449,9 @@ void Scene2::Init()
 
 	meshList[GEO_PRISM] = MeshBuilder::GenerateOBJ("material", "OBJ//PRISM.obj");
 	meshList[GEO_PRISM]->textureID = LoadTGA("Image//PrismTexture.tga");
+
+	meshList[GEO_POTATO] = MeshBuilder::GenerateOBJ("meteor", "OBJ//POTATO.obj");
+	meshList[GEO_POTATO]->textureID = LoadTGA("Image//Scene_Moon.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
@@ -859,7 +863,8 @@ void Scene2::Update(double dt)
 	animation.moveSword(dt, swordTranslation, usingSword);
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
-	randomobject += (float)(0.5 * dt);
+	
+	potatoRotate += (float)(0.5 * dt);
 }
 /******************************************************************************/
 /*!
@@ -1270,6 +1275,7 @@ void Scene2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-100, 0, 0);
+	modelStack.Rotate(potatoRotate * 15, 0, 1, 0);
 	modelStack.Scale(30, 30, 30);
 
 	RenderMesh(meshList[GEO_MOONBALL], false);
@@ -1694,6 +1700,10 @@ void Scene2::Map_Rendering()
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
 	RenderMesh(meshList[GEO_PYRAMIDNEW], true);
+	modelStack.PushMatrix();
+	modelStack.Rotate(potatoRotate * 10, 0, 1, 0);
+	RenderMesh(meshList[GEO_POTATO], true);
+	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	modelStack.Scale(Size, (2 / (2.5*Size)), Size);
 	RenderMesh(meshList[GEO_PYRAMIDWALL], true);

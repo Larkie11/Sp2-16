@@ -451,7 +451,7 @@ void SP2::Init()
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
 
 	
-	meshList[GEO_POTATO] = MeshBuilder::GenerateOBJ("cctv", "OBJ//POTATO.obj");
+	meshList[GEO_POTATO] = MeshBuilder::GenerateOBJ("meteor", "OBJ//POTATO.obj");
 	meshList[GEO_POTATO]->textureID = LoadTGA("Image//Scene_Moon.tga");
 
 	Mtx44 projection;

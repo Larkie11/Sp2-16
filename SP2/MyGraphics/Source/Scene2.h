@@ -108,6 +108,7 @@ class Scene2 : public Scene
 		GEO_PLANEBODY,
 		GEO_PLANEWING,
 		GEO_PLANEROCKET,
+		GEO_POTATO,
 
 		//Weapons
 		GEO_PICKAXE,
@@ -243,6 +244,7 @@ private:
 	float moveSkyBoxX = 0.f;
 	float randomobject;
 	Light light[8]; //shader max 8 lights
+	float potatoRotate;
 
 	void RenderSkybox();
 	void RenderText(Mesh* mesh, std::string text, Color color);

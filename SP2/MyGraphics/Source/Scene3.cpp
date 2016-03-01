@@ -78,6 +78,7 @@ Initializes for 3rd scene
 /******************************************************************************/
 void Scene3::Init()
 {
+	 potatoRotate = 0;
 	srand(time(NULL));
 	Map_Reading();
 
@@ -443,6 +444,9 @@ void Scene3::Init()
 
 	meshList[GEO_CCTV] = MeshBuilder::GenerateOBJ("cctv", "OBJ//camera.obj");
 	meshList[GEO_CCTV]->textureID = LoadTGA("Image//Scene_Camera.tga");
+
+	meshList[GEO_POTATO] = MeshBuilder::GenerateOBJ("meteor", "OBJ//POTATO.obj");
+	meshList[GEO_POTATO]->textureID = LoadTGA("Image//Scene_Moon.tga");
 
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSpheres("Sph", Color(1, 1, 1), 18, 36);
@@ -905,7 +909,7 @@ void Scene3::Update(double dt)
 	animation.moveSword(dt, swordTranslation, usingSword);
 	animation.moveGun(dt, gunTranslation, usingGun);
 	animation.moveSword(dt, pickAxeTranslation, usingPickAxe);
-
+	potatoRotate += (float)(0.5 * dt);
 }
 /******************************************************************************/
 /*!
@@ -1317,6 +1321,7 @@ void Scene3::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-100, 0, 0);
+	modelStack.Rotate(potatoRotate * 15, 0, 1, 0);
 	modelStack.Scale(30, 30, 30);
 	RenderMesh(meshList[GEO_MOONBALL], false);
 	modelStack.PopMatrix();
@@ -1650,6 +1655,10 @@ void Scene3::Map_Rendering()
 	modelStack.PushMatrix();
 	modelStack.Scale(2.5 * Size, 2.5 * Size, 2.5 * Size);
 	RenderMesh(meshList[GEO_PYRAMIDNEW], true);
+	modelStack.PushMatrix();
+	modelStack.Rotate(potatoRotate * 10, 0, 1, 0);
+	RenderMesh(meshList[GEO_POTATO], true);
+	modelStack.PopMatrix();
 	modelStack.PushMatrix();
 	modelStack.Scale(Size, (2 / (2.5*Size)), Size);
 	RenderMesh(meshList[GEO_PYRAMIDWALL], true);
