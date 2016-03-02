@@ -522,7 +522,7 @@ bool Enemy::enemy_attack(Enemy enemy[5], Position character, Camera3 view)
 		}
 		if (X_distance < 15 && Z_distance < 15)
 		{
-			view.Reset();
+			attack = true;
 		}
 	}
 	return attack;
