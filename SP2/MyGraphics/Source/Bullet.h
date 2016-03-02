@@ -1,3 +1,13 @@
+/************************************************************/
+/*!
+\file	Animation.h
+\author	Heng Soon Yap
+\par	email:Romeoyap\@hotmail.com
+\brief
+A class for the bullets to define them in the game
+*/
+/************************************************************/
+
 #ifndef BULLET_H
 #define BULLET_H
 
@@ -9,6 +19,13 @@
 #include <vector>
 
 using std::vector;
+
+/************************************************************/
+/*!
+Class Dweller:
+\brief	Defines a player's bullet in game and its methods
+*/
+/************************************************************/
 
 class Bullet
 {

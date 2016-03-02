@@ -1,9 +1,26 @@
+/************************************************************/
+/*!
+\file	CollisionDetector.h
+\author	Heng Soon Yap
+\par	email:Romeoyap\@hotmail.com
+\brief
+A class for the collisions in the game to define them in the game
+*/
+/************************************************************/
+
 #ifndef COLLISIONDETECTOR_H
 #define	COLLISIONDETECTOR_H
 
 #include "MyMath.h"
 #include "Enemy.h"
 #include "Vector3.h"
+
+/************************************************************/
+/*!
+Class Dweller:
+\brief	Defines a player's weapons collision in game and its methods
+*/
+/************************************************************/
 
 class CollisionDetector
 {
