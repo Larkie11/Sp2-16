@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	SP2.h
+\author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
+\par
+\brief
+Renders the 1st scene where player collects spaceship parts and fixes spaceship
+*/
+/******************************************************************************/
 #ifndef SP2_H
 #define SP2_H
 
@@ -23,17 +32,18 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 
-
-using std::cout;
-using std::endl;
 using std::ifstream;
 using std::vector;
 using std::string;
-
+/******************************************************************************/
+/*!
+Class SceneWin:
+\brief	Class objects, meshes to render, booleans, floats and strings
+*/
+/******************************************************************************/
 class SP2 : public Scene
 {
 	enum GEOMETRY_TYPE
@@ -79,6 +89,7 @@ class SP2 : public Scene
 		GEO_ROBOT,
 		GEO_ROBOT1,
 		GEO_ROBOT2,
+		GEO_SPEECH,
 
 		//Scene
 		GEO_MOONBALL,
@@ -245,6 +256,9 @@ private:
 	//Check for player view
 	Camera3 camera;
 	Sound sound;
+
+	float xtranslate;
+	float ytranslate;
 
 	vector<string>my_arr;
 	vector<Bullet*>bullet_arr;

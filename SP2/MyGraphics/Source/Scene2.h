@@ -41,7 +41,7 @@ using std::string;
 /******************************************************************************/
 /*!
 Class SceneWin:
-\brief	Initialize other class objects, meshes to render, booleans, floats and strings
+\brief	Class objects, meshes to render, booleans, floats and strings
 */
 /******************************************************************************/
 class Scene2 : public Scene
@@ -95,6 +95,7 @@ class Scene2 : public Scene
 		GEO_ROBOT,
 		GEO_ROBOT1,
 		GEO_ROBOT2,
+		GEO_SPEECH,
 
 		//Scene
 		GEO_MOONBALL,
@@ -233,6 +234,8 @@ private:
 	bool robot1moved = false;
 	bool robot1rotate = false;
 	float robot1rotation = 0;
+	float xtranslate;
+	float ytranslate;
 	int parts = 0;
 
 	//Array of meshes

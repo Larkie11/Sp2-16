@@ -401,12 +401,6 @@ void SP2::Init()
 	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Star", "OBJ//SPACESHIP.obj");
 	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//Scene_SpaceShip.tga");
 
-	meshList[GEO_BB8HEAD] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8head.obj");
-	meshList[GEO_BB8HEAD]->textureID = LoadTGA("Image//Scene_BB8head.tga");
-
-	meshList[GEO_BB8BODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//BB8sphere.obj");
-	meshList[GEO_BB8BODY]->textureID = LoadTGA("Image//Scene_BB8sphere.tga");
-
 	GLuint plane = LoadTGA("Image//Scene_Plane.tga");
 	meshList[GEO_PLANEBODY] = MeshBuilder::GenerateOBJ("Star", "OBJ//planebody.obj");
 	meshList[GEO_PLANEBODY]->textureID = plane;
@@ -453,6 +447,9 @@ void SP2::Init()
 	
 	meshList[GEO_POTATO] = MeshBuilder::GenerateOBJ("meteor", "OBJ//POTATO.obj");
 	meshList[GEO_POTATO]->textureID = LoadTGA("Image//Scene_Moon.tga");
+
+	meshList[GEO_SPEECH] = MeshBuilder::GenerateQuad("speech", Color(1, 1, 1), 13, 4);
+	meshList[GEO_SPEECH]->textureID = LoadTGA("Image//Scene_Speech.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.0f / 9.0f, 0.1f, 10000.0f);
@@ -978,10 +975,20 @@ void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+	xtranslate = 0.5f, ytranslate = 0.5f;
 	for (unsigned i = 0; i < text.length(); ++i)
 	{
 		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		//characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		if (i > 0) {
+			xtranslate += 0.8f;
+			if (xtranslate >= 0.8f) {
+				ytranslate -= 1.f;
+				xtranslate -= 10.f;
+			}
+		}
+		characterSpacing.SetToTranslation(xtranslate, ytranslate, 0);  //0.8f is the spacing of each character (can be changed)
+
 		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -1026,10 +1033,19 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
 	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+	xtranslate = 0.5f, ytranslate = 0.5f;
+
 	for (unsigned i = 0; i < text.length(); ++i)
 	{
 		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 0.7f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		if (i > 0) {
+			xtranslate += 0.7f;
+			if (xtranslate >= 35.f) {
+				ytranslate -= 1.f;
+				xtranslate -= 35.f;
+			}
+		}
+		characterSpacing.SetToTranslation(xtranslate, ytranslate, 0);
 		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -1487,39 +1503,45 @@ void SP2::Render()
 	var.resize(16);
 	var1.resize(16);
 	Fps.resize(8);
+	if (npc.speech)
+	{
+		RenderQuadOnScreen(meshList[GEO_SPEECH], 5, 7.8, 2, 90, 1, 0, 0, 0);
+	}
 	//Show player if he can interact with item
 	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract || fixwing && fixrocket)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+		int jy = 10;
+		int jx = 9.5;
+
+		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 0, 0), 1.5, jx, jy - 5);
 		if (npc.robot1.robot == "robot1")
 		{
-			int j = 25;
 			for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
 			{
-				j--;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(1, 1, 0), 1.5, 4, j);
+				jy--;
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(0, 0, 1), 1.5, jx+0.5, jy);
 			}
 		}
 		if (npc.robot1.robot == "robot1.1")
 		{
 			npc.dialogue = 1;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(1, 1, 0), 1.5, 4, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(0, 0, 1), 1.5, jx, jy - 2);
 		}
 		if (npc.robot1.robot == "robot1.2")
 		{
 			npc.dialogue = 2;
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(1, 1, 0), 1.5, 4, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(0, 0, 1), 1.5, jx, jy - 2);
 		}
 		if (npc.robot2.robot == "robot2")
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(1, 1, 0), 1.5, 4, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(0, 0, 1), 1.5, jx, jy - 2);
 		}
 		if (npc.robot3.robot == "robot3")
 		{
-
-			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(1, 1, 0), 1.5, 4, 25);
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(0, 0, 1), 1.5, jx, jy - 2);
 		}
-	}
+	}	
+	
 	//All element for player inventory
 	RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, x, y, 90, 1, 0, 0, 0);
 	RenderQuadOnScreen(meshList[GEO_GOLDICON], 2, x, y-3, 90, 1, 0, 0, 0);

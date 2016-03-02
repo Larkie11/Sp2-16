@@ -119,81 +119,117 @@ void NPC::Scene1(Camera3 camera, double dt)
 	if (detectCollision.collideByDist(camera.position, robot1.Nposition) <= 25)
 	{
 		if (camera.view.Dot(robot1.Nposition) > 0)
-			{
-				interactDia = "Press E to interact and 1 and 2 for choices";
-				//Show player press e to interact
-				robot1.canInteract = true;
-				if (Application::IsKeyPressed('E') && robot1.robot != "robot1")
-				{
-					sound.playSE("Music//R2D2.mp3");
-					coolDownTime = dt / 10;
-					dialogue = 0;
-					robot1.robot = "robot1";
-				}
-				if (robot1.robot == "robot1")
-				{
-					if (Application::IsKeyPressed('1'))
-					{
-						robot1.robot = "robot1.1";
-					}
-					if (Application::IsKeyPressed('2'))
-					{
-						robot1.robot = "robot1.2";
-					}
-				}
-			}
+		{
+			robot = ShowE;
+			robot1.show = true;
 
+			if (Application::IsKeyPressed('E') && robot == ShowE)
+			{
+				robot = Robot1;
+			}
+			if (Application::IsKeyPressed('1'))
+				{
+					robot = Robot1_1;
+				}
+				if (Application::IsKeyPressed('2'))
+				{
+					robot = Robot1_2;
+				}
+		}
 		else
 		{
-			robot1.canInteract = false;
+			robot = None;
 		}
 	}
 	else
 	{
-		robot1.canInteract = false;
-		robot1.robot = "";
+		robot = None;
 	}
 	if (detectCollision.collideByDist(camera.position, robot2.Nposition) <= 25)
 	{
-		interactDia = "Press E to interact";
-		robot2.canInteract = true;
-		if (Application::IsKeyPressed('E') && robot2.robot != "robot2")
+		robot = ShowE;
+		robot2.show = true;
+
+		if (Application::IsKeyPressed('E') && robot == ShowE)
 		{
-			sound.playSE("Music//Dead.mp3");
-			robot2.robot = "robot2";
+			robot = Robot2;
 		}
 	}
 	else
 	{
-		robot2.canInteract = false;
-		robot2.robot = "";
+		robot2.show = false;
 	}
 	if (detectCollision.collideByDist(camera.position, robot3.Nposition) <= 25)
 	{
 		if (camera.view.Dot(robot3.Nposition) > 0)
 		{
-			//Show player press e to interact
-			robot3.canInteract = true;
-			interactDia = "Press E to interact";
+			robot = ShowE;
+			robot3.show = true;
 
-			if (Application::IsKeyPressed('E') && robot3.robot!= "robot3")
+			if (Application::IsKeyPressed('E') && robot3.robot != "robot3")
 			{
-				sound.playSE("Music//R2D2.mp3");
-				robot3.robot = "robot3";
+				robot = Robot3;
 			}
 		}
 		else
 		{
-			robot3.canInteract = false;
+			robot = None;
 		}
 	}
-	else
-	{
-		dialoguePlus = 5;
-		robot3.canInteract = false;
-		robot3.robot = "";
-	}
 
+	switch (robot)
+	{
+	case ShowE:
+		if (robot1.show)
+		{
+			robot1.canInteract = true;
+			interactDia = "Press E/ 1 and 2 for choices";
+		}
+		if (robot2.show)
+		{
+			robot2.canInteract = true;
+			interactDia = "Press E to interact";
+		}
+		if (robot3.show)
+		{
+			robot3.canInteract = true;
+			interactDia = "Press E to interact and next";
+		}
+		speech = true;
+		break;
+	case Robot1:
+		sound.playSE("Music//R2D2.mp3");
+		dialogue = 0;
+		robot1.robot = "robot1";
+		break;
+	case Robot1_1:
+		robot1.robot = "robot1.1";
+		break;
+	case Robot1_2:
+		robot1.robot = "robot1.2";
+		break;
+	case Robot2:
+		sound.playSE("Music//Dead.mp3");
+		robot2.robot = "robot2";
+		break;
+	case Robot3:
+		sound.playSE("Music//R2D2.mp3");
+		robot3.robot = "robot3";
+		break;
+	case None:
+		speech = false;
+		dialoguePlus = 5;
+		robot1.canInteract = false;
+		robot2.canInteract = false;
+		robot3.canInteract = false;
+		robot1.robot = "";
+		robot2.robot = "";
+		robot3.robot = "";
+		robot1.show = false;
+		robot2.show = false;
+		robot3.show = false;
+		break;
+	}
 }
 /******************************************************************************/
 /*!

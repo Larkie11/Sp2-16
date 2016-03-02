@@ -27,15 +27,27 @@ Class NPC:
 /******************************************************************************/
 class NPC
 {
+	enum ROBOT
+	{
+		None = -1,
+		ShowE,
+		Robot1,
+		Robot1_1,
+		Robot1_2,
+		Robot2,
+		Robot3,
+	};
 	struct DOT
 	{
 		bool negativeDotProduct;
 		bool canInteract;
 		bool canGoThrough;
 		bool Collision;
+		bool show;
 		Vector3 Nposition;
 		string robot;
 	};
+	
 
 public:
 
@@ -56,11 +68,13 @@ public:
 	DOT egg5;
 	DOT bomb;
 
+	bool speech;
 	CollisionDetector detectCollision;
 	string interactDia;
 	int dialoguePlus = 6;
 	double coolDownTime;
 	int dialogue;
+	ROBOT robot;
 	bool moveFront;
 	bool moveBack;
 	bool robot3rotate;

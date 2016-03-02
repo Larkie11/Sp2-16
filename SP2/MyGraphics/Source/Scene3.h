@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	Scene3.h
+\author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
+\par
+\brief
+Renders the 3rd scene for player to leave bomb in the middle of the temple
+*/
+/******************************************************************************/
 #ifndef Scene3_H
 #define Scene3_H
 
@@ -24,7 +33,6 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 
@@ -34,7 +42,12 @@ using std::endl;
 using std::ifstream;
 using std::vector;
 using std::string;
-
+/******************************************************************************/
+/*!
+Class SceneWin:
+\brief	Class objects, meshes to render, booleans, floats and strings
+*/
+/******************************************************************************/
 class Scene3 : public Scene
 {
 	enum GEOMETRY_TYPE
@@ -83,6 +96,7 @@ class Scene3 : public Scene
 		GEO_ROBOT,
 		GEO_ROBOT1,
 		GEO_ROBOT2,
+		GEO_SPEECH,
 		GEO_MOONBALL,
 		GEO_PYRAMID,
 		GEO_PYRAMIDNEW,
@@ -165,32 +179,6 @@ class Scene3 : public Scene
 		U_LIGHT3_COSINNER,
 		U_LIGHT3_EXPONENT,
 
-		U_LIGHT4_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT4_COLOR,
-		U_LIGHT4_POWER,
-		U_LIGHT4_KC,
-		U_LIGHT4_KL,
-		U_LIGHT4_KQ,
-		U_LIGHT4ENABLED,
-		U_LIGHT4_TYPE,
-		U_LIGHT4_SPOTDIRECTION,
-		U_LIGHT4_COSCUTOFF,
-		U_LIGHT4_COSINNER,
-		U_LIGHT4_EXPONENT,
-
-		U_LIGHT5_POSITION, //copy all the light parts for multiplie light
-		U_LIGHT5_COLOR,
-		U_LIGHT5_POWER,
-		U_LIGHT5_KC,
-		U_LIGHT5_KL,
-		U_LIGHT5_KQ,
-		U_LIGHT5ENABLED,
-		U_LIGHT5_TYPE,
-		U_LIGHT5_SPOTDIRECTION,
-		U_LIGHT5_COSCUTOFF,
-		U_LIGHT5_COSINNER,
-		U_LIGHT5_EXPONENT,
-
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
@@ -198,8 +186,6 @@ class Scene3 : public Scene
 		U_TEXT_COLOR,
 		U_TOTAL,
 	};
-
-
 	enum Items
 	{
 		None = -1,
@@ -238,6 +224,7 @@ private:
 	bool robot1moved = false;
 	bool robot1rotate = false;
 	float robot1rotation = 0;
+	float xtranslate, ytranslate;
 	int parts = 0;
 
 	//Array of meshes
