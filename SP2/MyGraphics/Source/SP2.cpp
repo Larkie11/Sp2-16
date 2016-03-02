@@ -1518,7 +1518,12 @@ void SP2::Render()
 		RenderQuadOnScreen(meshList[GEO_SPEECH], 5, 7.8, 2, 90, 1, 0, 0, 0);
 	}
 	//Show player if he can interact with item
-	if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract || fixwing && fixrocket)
+	if (npc.door.canInteract || fixwing && fixrocket)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+	}
+
+	if (npc.robot1.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
 	{
 		int jy = 10;
 		int jx = 9.5;

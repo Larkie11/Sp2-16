@@ -1528,40 +1528,45 @@ void Scene2::Render()
 	{
 		RenderQuadOnScreen(meshList[GEO_SPEECH], 5, 7.8, 2, 90, 1, 0, 0, 0);
 	}
-	//Show player if he can interact with item
 	if (doorinteract)
 	{
-		int jy = 10;
-		int jx = 9.5;
-		if (npc.robot1.canInteract || npc.door.canInteract || npc.robot2.canInteract || npc.robot3.canInteract || fixwing && fixrocket)
+		if (npc.door.canInteract)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 0, 0), 1.5, jx, jy - 5);
-			if (npc.robot1.robot == "robot1")
+			RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 1, 0), 1.5, 7, 20);
+		}
+	}
+	//Show player if he can interact with item
+	
+	int jy = 10;
+	int jx = 9.5;
+	if (npc.robot1.canInteract || npc.robot2.canInteract || npc.robot3.canInteract)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], npc.interactDia, Color(1, 0, 0), 1.5, jx, jy - 5);
+		if (npc.robot1.robot == "robot1")
+		{
+			for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
 			{
-				for (int i = npc.dialogue; i < my_arr.size() - 7; ++i)
-				{
-					jy--;
-					RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(0, 0, 1), 1.5, jx + 0.5, jy);
-				}
+				jy--;
+				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[i], Color(0, 0, 1), 1.5, jx + 0.5, jy);
 			}
-			if (npc.robot1.robot == "robot1.1")
-			{
-				npc.dialogue = 1;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(0, 0, 1), 1.5, jx, jy - 2);
-			}
-			if (npc.robot1.robot == "robot1.2")
-			{
-				npc.dialogue = 2;
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(0, 0, 1), 1.5, jx, jy - 2);
-			}
-			if (npc.robot2.robot == "robot2")
-			{
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(0, 0, 1), 1.5, jx, jy - 2);
-			}
-			if (npc.robot3.robot == "robot3")
-			{
-				RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(0, 0, 1), 1.5, jx, jy - 2);
-			}
+		}
+		if (npc.robot1.robot == "robot1.1")
+		{
+			npc.dialogue = 1;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[3], Color(0, 0, 1), 1.5, jx, jy - 2);
+		}
+		if (npc.robot1.robot == "robot1.2")
+		{
+			npc.dialogue = 2;
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[4], Color(0, 0, 1), 1.5, jx, jy - 2);
+		}
+		if (npc.robot2.robot == "robot2")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[5], Color(0, 0, 1), 1.5, jx, jy - 2);
+		}
+		if (npc.robot3.robot == "robot3")
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], my_arr[npc.dialoguePlus], Color(0, 0, 1), 1.5, jx, jy - 2);
 		}
 	}
 	RenderTextOnScreen(meshList[GEO_TEXT], shop, Color(0.4, 0.6, 1), 1.5, 7, 7);
