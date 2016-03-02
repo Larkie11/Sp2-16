@@ -1655,6 +1655,20 @@ void Scene2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to pick up !", Color(1, 1, 0), 1.5, 7, 20);
 	}
 
+	if (enemy[0].enemy_attack(enemy, VtoP(camera.position), camera))
+	{
+		Died_Time = 20;
+		camera.Reset();
+	}
+	if (Died_Time > 0)
+	{
+		Died_Time -= 1;
+		RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0, 0), 10, 0, 0);
+	}
+	else if (Died_Time > 0)
+	{
+		Died_Time = 0;
+	}
 }
 /******************************************************************************/
 /*!
@@ -1670,6 +1684,16 @@ void Scene2::Exit()
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
 }
+
+/******************************************************************************/
+/*!
+\brief
+Updating Enemy In this scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Enemy_Updating(float dt)
 {
 	Position P = { camera.position.x, camera.position.y, camera.position.z };
@@ -1677,8 +1701,17 @@ void Scene2::Enemy_Updating(float dt)
 	{
 		enemy[i].Enemy_movement(P, 30 * dt, Size, Map, enemy, i, Z_Displacement, X_Displacement);
 	}
-	camera = enemy[0].enemy_attack(enemy, VtoP(camera.position), camera);
 }
+
+/******************************************************************************/
+/*!
+\brief
+Rendering Enemy In this scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Enemy_Rendering()
 {
 	for (int i = 0; i < 5; i++)
@@ -1691,6 +1724,16 @@ void Scene2::Enemy_Rendering()
 		modelStack.PopMatrix();
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief
+Reading map form Txt file for this scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Map_Reading()
 {
 	string line;
@@ -1709,6 +1752,16 @@ void Scene2::Map_Reading()
 	}
 	else cout << "Unable to read Map!!" << endl;
 }
+
+/******************************************************************************/
+/*!
+\brief
+Rendering map based on Txt file for this scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Map_Rendering()
 {
 	modelStack.PushMatrix();
@@ -1750,6 +1803,16 @@ void Scene2::Map_Rendering()
 	}
 	modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief
+Platers controls for this scene
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene2::Character_Movement(float dt)
 {
 	if (Application::IsKeyPressed('Q') && light[3].power == 0)

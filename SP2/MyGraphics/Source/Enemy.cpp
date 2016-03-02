@@ -1,7 +1,23 @@
+/******************************************************************************/
+/*!
+\file	Enemy.CPP
+\author Francis Wong
+\par
+\brief
+Contain all function code for enemy NPC
+*/
+/******************************************************************************/
 #include "Enemy.h"
 #include "SP2.h"
 
-
+/******************************************************************************/
+/*!
+\brief
+Default Constructor
+\exception None
+\return None
+*/
+/******************************************************************************/
 Enemy::Enemy()
 {
 	HP = 100;
@@ -19,10 +35,27 @@ Enemy::Enemy()
 }
 
 
+/******************************************************************************/
+/*!
+\brief
+Default destructor
+\exception None
+\return None
+*/
+/******************************************************************************/
 Enemy::~Enemy()
 {
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Collision Detection with map
+\exception None
+\return None
+*/
+/******************************************************************************/
 bool Enemy::Quick_check()
 {
 	string line;
@@ -76,6 +109,14 @@ bool Enemy::Quick_check()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief
+Changing mode for the enemy
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Enemy::mode_Change()
 {
 	if (this->HP >= 90)
@@ -92,6 +133,15 @@ void Enemy::mode_Change()
 	}
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Reducing enemy hp based on attack
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Enemy::DamageReceived(int Damage)
 {
 	this->HP -= Damage;
@@ -111,6 +161,15 @@ void Enemy::DamageReceived(int Damage)
 	mode_Change();
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+carrying out action decided by the enemy mode
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Enemy::mode_Action(Position Camera)
 {
 	int mode = this->Current_modetype;
@@ -227,17 +286,43 @@ void Enemy::mode_Action(Position Camera)
 	this->Ground = Target_To_Move_To;
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Return enemy position
+\exception None
+\return None
+*/
+/******************************************************************************/
 Position Enemy::Return_Position()
 {
 	return this->position;
 }
 
 
+/******************************************************************************/
+/*!
+\brief
+Return enemy HP
+\exception None
+\return None
+*/
+/******************************************************************************/
 int Enemy::Return_HP()
 {
 	return this->HP;
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Deciding enemy speed based on their mode
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Enemy::Enemy_movement(Position Camera, float dt, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement)
 {
 	mode_Action(Camera);
@@ -254,6 +339,15 @@ void Enemy::Enemy_movement(Position Camera, float dt, float Size, char Map[20][2
 
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Updating the enemy position based on their action and speed
+\exception None
+\return None
+*/
+/******************************************************************************/
 Position  Enemy::Movement(Position Current, Position Target, float Speed, float Size, char Map[20][20], int I, Enemy enemy[5], float Z_Displacement, float X_Displacement)
 {
 	Position T_Enemy = Current;
@@ -294,6 +388,15 @@ Position  Enemy::Movement(Position Current, Position Target, float Speed, float 
 	return Current;
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Full Collision Detection for enemy and player
+\exception None
+\return None
+*/
+/******************************************************************************/
 bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement, bool enter)
 {
 	bool check = true;
@@ -358,6 +461,15 @@ bool Enemy::Collision_Detection(Position Character, float Size, char Map[20][20]
 	return check;
 }
 
+
+/******************************************************************************/
+/*!
+\brief
+Full Collision Detection for enemy and enemy
+\exception None
+\return None
+*/
+/******************************************************************************/
 bool Enemy::Enemy_Collision(Position Character, Enemy enemy[5], int I)
 {
 	bool check = true;
@@ -384,8 +496,18 @@ bool Enemy::Enemy_Collision(Position Character, Enemy enemy[5], int I)
 	return check;
 }
 
-Camera3 Enemy::enemy_attack(Enemy enemy[5], Position character, Camera3 view)
+
+/******************************************************************************/
+/*!
+\brief
+Detecting if player is within range for enemy to attack
+\exception None
+\return None
+*/
+/******************************************************************************/
+bool Enemy::enemy_attack(Enemy enemy[5], Position character, Camera3 view)
 {
+	int attack = false;
 	for (int i = 0; i < 5; i++)
 	{
 		float X_distance = character.x - enemy[i].position.x;
@@ -403,5 +525,5 @@ Camera3 Enemy::enemy_attack(Enemy enemy[5], Position character, Camera3 view)
 			view.Reset();
 		}
 	}
-	return view;
+	return attack;
 }

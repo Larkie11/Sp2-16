@@ -1,9 +1,26 @@
+/******************************************************************************/
+/*!
+\file	Enemy.h
+\author Francis Wong
+\par
+\brief
+Contain all variables and function for enemy NPC
+*/
+/******************************************************************************/
 #ifndef Enemy_H
 #define Enemy_H
 
 #include "Vertex.h"
 #include "Camera3.h"
 
+
+/******************************************************************************/
+/*!
+Class Enemy:
+\brief	
+Contain all variables and function for enemy NPC
+*/
+/******************************************************************************/
 class Enemy
 {
 	float HP;
@@ -44,7 +61,7 @@ public:
 	void DamageReceived(int Damage);
 	Position Return_Position();
 	bool Collision_Detection(Position Character, float Size, char Map[20][20], Enemy enemy[5], int I, float Z_Displacement, float X_Displacement, bool enter = false);
-	Camera3 enemy_attack(Enemy enemy[5], Position character, Camera3 view);
+	bool enemy_attack(Enemy enemy[5], Position character, Camera3 view);
 };
 
 #endif

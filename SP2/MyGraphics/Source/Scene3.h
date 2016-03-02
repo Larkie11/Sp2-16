@@ -260,7 +260,8 @@ private:
 
 	float deltaTime;
 	Bullet bullet;
-	
+
+	int Died_Time = 0;
 	Enemy enemy[5];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
