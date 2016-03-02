@@ -4,7 +4,7 @@
 \author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
 \par
 \brief
-Renders the 3RD scene where player places bomb
+Renders the 3rd Scene where player places bomb
 */
 /******************************************************************************/
 #include "GL\glew.h"

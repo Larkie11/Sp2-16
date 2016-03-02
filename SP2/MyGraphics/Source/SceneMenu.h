@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file	SceneMenu.h
+\author Mok Wei Min
+\par
+\brief
+Renders Scene menu where player choses what option they want to choose (Play, instructions, credits, quit)
+*/
+/******************************************************************************/
 #ifndef SCENEMENU_H
 #define SCENEMENU_H
 
@@ -21,6 +30,12 @@ using std::endl;
 using std::ifstream;
 using std::vector;
 
+/******************************************************************************/
+/*!
+Class SceneMenu:
+\brief	Class objects, meshes to render, booleans, floats and strings
+*/
+/******************************************************************************/
 class SceneMenu : public Scene
 {
 	enum GEOMETRY_TYPE

@@ -187,7 +187,9 @@ Main loop to run the game
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new Scene3;	
+	Scene *scene = new SceneMenu;
+	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -211,6 +213,7 @@ void Application::Run()
 			switch (SharedData::GetInstance()->gameState)
 			{
 			case SharedData::MENU:
+				glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 				scene = new SceneMenu();
 				break;
 			case SharedData::G_CUTSCENE:

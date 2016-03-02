@@ -4,7 +4,7 @@
 \author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
 \par
 \brief
-Renders the 3rd scene for player to leave bomb in the middle of the temple
+Renders the 3rd Scene for player to leave bomb in the middle of the temple
 */
 /******************************************************************************/
 #ifndef Scene3_H

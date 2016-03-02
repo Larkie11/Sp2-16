@@ -1,6 +1,6 @@
 /************************************************************/
 /*!
-\file	Animation.h
+\file	Bullet.h
 \author	Heng Soon Yap
 \par	email:Romeoyap\@hotmail.com
 \brief
@@ -22,7 +22,7 @@ using std::vector;
 
 /************************************************************/
 /*!
-Class Dweller:
+Class Bullet:
 \brief	Defines a player's bullet in game and its methods
 */
 /************************************************************/

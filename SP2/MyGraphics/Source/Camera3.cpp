@@ -1,18 +1,58 @@
+/******************************************************************************/
+/*!
+\file	Camera3.cpp
+\author Mok Wei Min, Yap Heng Soon, Oh Zhan Wei, Francis Wong
+\par	email: 155208U\@mymail.nyp.edu.sg
+\brief
+Player's camera and bounds
+*/
+/******************************************************************************/
 #include "Camera3.h"
 #include "Application.h"
 #include "Mtx44.h"
 #include "MyMath.h"
 #include "SharedData.h"
+/******************************************************************************/
+/*!
+\brief
+Default constructor
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 Camera3::Camera3()
 {
 
 }
+/******************************************************************************/
+/*!
+\brief
+Default destructor
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 Camera3::~Camera3()
 {
 }
+/******************************************************************************/
+/*!
+\brief
+Initializes player camera
 
+\param pos
+Passes in camera position to initialize 
+\param target
+Camera target to initialize
+\param up
+Camera up to initialize
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	maxCameraX = 49.99f;
@@ -38,7 +78,18 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
 }
+/******************************************************************************/
+/*!
+\brief
+Updates camera every scene
 
+\param dt
+Updates camera based on delta time
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Camera3::Update(double dt)
 {
 	if (Application::IsKeyPressed('R'))
@@ -135,7 +186,15 @@ void Camera3::Update(double dt)
 	right.y = 0;
 	up = right.Cross(view);
 }
+/******************************************************************************/
+/*!
+\brief
+Resets camera when needed
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Camera3::Reset()
 {
 	position = defaultPosition;

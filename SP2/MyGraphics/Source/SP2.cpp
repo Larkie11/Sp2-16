@@ -4,7 +4,7 @@
 \author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
 \par
 \brief
-Renders the 1st scene where player fixes spaceship
+Renders the 1st Scene where player fixes spaceship
 */
 /******************************************************************************/
 #include "GL\glew.h"
@@ -509,6 +509,11 @@ void SP2::Update(double dt)
 		{
 			++npc.dialoguePlus;
 		}
+	}
+	if (Application::IsKeyPressed('E') && npc.robot1.robot == "robot1" && coolDownTime == 0)
+	{
+		coolDownTime = deltaTime / 10;
+		sound.playSE("Music//R2D2.mp3");
 	}
 	//NPC movement/rotation
 	else if (npc.robot3.robot != "robot3")
@@ -1748,7 +1753,8 @@ void SP2::Character_Movement(float dt)
 
 	if (Application::IsKeyPressed('R'))
 	{
-		camera.Reset();
+		SharedData::GetInstance()->stateCheck = true;
+		SharedData::GetInstance()->gameState = SharedData::GAME;
 	}
 
 	//Changing view (target)

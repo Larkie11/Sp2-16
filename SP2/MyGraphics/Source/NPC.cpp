@@ -103,7 +103,7 @@ void NPC::Door(Camera3 camera, double dt)
 /******************************************************************************/
 /*!
 \brief
-All NPC interaction and sound effects for NPC
+All NPC interaction
 
 \param camera
 Takes in player camera position to check if the player is near
@@ -198,7 +198,6 @@ void NPC::Scene1(Camera3 camera, double dt)
 		speech = true;
 		break;
 	case Robot1:
-		sound.playSE("Music//R2D2.mp3");
 		dialogue = 0;
 		robot1.robot = "robot1";
 		break;

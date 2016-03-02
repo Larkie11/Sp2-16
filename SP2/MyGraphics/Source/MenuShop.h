@@ -1,15 +1,27 @@
+/******************************************************************************/
+/*!
+\file	MenuShop.h
+\author Mok Wei Min
+\par
+\brief
+All the enums for shop/menu states
+*/
+/******************************************************************************/
 #ifndef MENUSHOP_H
 #define MENUSHOP_H
 #include "MyMath.h"
 #include <string>
 using std::string;
 
-//All the enums for shop/menu states
+/******************************************************************************/
+/*!
+Class MenuShop:
+\brief	Shop enums/Menu enums
+*/
+/******************************************************************************/
 class MenuShop
 {
 public:
-	string shopInput;
-	string Input;
 	float PressTime = 0;
 	enum MENU
 	{

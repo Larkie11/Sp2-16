@@ -4,7 +4,7 @@
 \author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
 \par
 \brief
-Renders the 1st scene where player collects spaceship parts and fixes spaceship
+Renders the 1st Scene where player collects spaceship parts and fixes spaceship
 */
 /******************************************************************************/
 #ifndef SP2_H

@@ -1,3 +1,12 @@
+/****************************************************************************** /
+/*!
+\file	Camera3.h
+\author Mok Wei Min, Yap Heng Soon, Oh Zhan Wei, Francis Wong
+\par
+\brief
+Player's camera
+*/
+/******************************************************************************/
 #ifndef CAMERA_3_H
 #define CAMERA_3_H
 
@@ -6,13 +15,15 @@
 
 using Math::DegreeToRadian;
 
+/******************************************************************************/
+/*!
+Class Camera3:
+\brief	Shop enums/Menu enums
+*/
+/******************************************************************************/
 class Camera3 : public Camera
 {
 public:
-	//Vector3 position;
-	//Vector3 target;
-	//Vector3 up;
-
 	Vector3 defaultPosition;
 	Vector3 defaultTarget;
 	Vector3 defaultUp;
@@ -31,7 +42,6 @@ public:
 	float minX;
 	float maxZ;
 	float minZ;
-	bool door = false;
 };
 
 #endif

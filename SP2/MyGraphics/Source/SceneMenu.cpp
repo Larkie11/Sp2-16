@@ -4,7 +4,7 @@
 \author Mok Wei Min
 \par	email: 155208U\@mymail.nyp.edu.sg
 \brief
-Renders menu where player choses what option they want to choose (Play, instructions, credits, quit)
+Renders Scene menu where player choses what option they want to choose (Play, instructions, credits, quit)
 */
 /******************************************************************************/
 #include "GL\glew.h"

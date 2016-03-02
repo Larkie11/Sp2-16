@@ -4,7 +4,7 @@
 \author Mok Wei Min, Heng Soon Yap, Oh Zhan Wei, Francis Wong
 \par	
 \brief
-Renders the 2nd scene for player to pick up eggs and access shop
+Renders the 2nd Scene for player to pick up eggs and access shop
 */
 /******************************************************************************/
 #ifndef Scene2_H

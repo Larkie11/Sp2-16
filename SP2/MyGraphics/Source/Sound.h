@@ -1,6 +1,6 @@
 /******************************************************************************/
 /*!
-\file	NPC.h
+\file	Sound.h
 \author Mok Wei Min
 \par	email: 155208U\@mymail.nyp.edu.sg
 \brief
@@ -15,7 +15,6 @@ Handles music and sound effect for the game using irrklang
 using std::string;
 
 #pragma comment(lib, "irrKlang.lib")
-
 /******************************************************************************/
 /*!
 Class Sound:
