@@ -24,7 +24,7 @@ Renders the 1st Scene where player collects spaceship parts and fixes spaceship
 #include "Bullet.h"
 #include "NPC.h"
 #include "Enemy.h"
-#include "Objects.h"
+
 #include "Mouse.h"
 #include "Animation.h"
 #include "rawMaterial.h"
@@ -191,14 +191,6 @@ class SP2 : public Scene
 	};
 
 
-	enum Items
-	{
-		None = -1,
-
-		SPACEWING,
-		SPACEROCKET,
-		Num_Object,
-	};
 
 public:
 
@@ -276,7 +268,7 @@ private:
 
 	float deltaTime;
 	Bullet bullet;
-	Objects objects;
+
 
 	//Icon location
 	int x;
@@ -293,8 +285,7 @@ private:
 	void Enemy_Updating(float dt);
 
 	void ObjectsHolding(Mesh*mesh, float size);
-	void EquipmentHolding(Mesh*mesh, float size);
-	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
+	
 	float throwingdown = 0;
 	float throwingforward = 0;
 	float throwup = 0;
@@ -322,9 +313,7 @@ private:
 	void Map_Rendering();
 	void Character_Movement(float dt);
 
-	Objects object[Num_Object];
-	Objects object_on_hand;
-	int T_object_Num;
+
 	
 	float JumpTime;
 	float PressTime;

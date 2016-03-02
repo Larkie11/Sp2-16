@@ -1440,7 +1440,7 @@ void Scene3::Render()
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
-	modelStack.Translate(gunTranslation + 0.3, -0.15, 0.3);
+	modelStack.Translate(gunTranslation + 0.3, -0.13, 0.05);
 	modelStack.Rotate(-gunRotation, 0, 0, 1);
 	modelStack.Scale(0.1, 0.1, 0.1);
 	RenderMesh(meshList[GEO_GUN], false);
@@ -1942,19 +1942,23 @@ void Scene3::Character_Movement(float dt)
 }
 
 
-void Scene3::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
-{
-
-	modelStack.PushMatrix();
-	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, z);
-	RenderMesh(mesh, true);
 
 
-	modelStack.PopMatrix();
-}
+/******************************************************************************/
+/*!
+\brief
+hold objects or parts
+
+\param mesh
+Takes in which mesh to render out
+\param size
+Scale of the mesh to render out
 
 
+\exception None
+\return None
+*/
+/******************************************************************************/
 void Scene3::ObjectsHolding(Mesh*mesh, float size)
 {
 
@@ -1971,24 +1975,6 @@ void Scene3::ObjectsHolding(Mesh*mesh, float size)
 	modelStack.PopMatrix();
 }
 
-
-void Scene3::EquipmentHolding(Mesh*mesh, float size)
-{
-
-	modelStack.PushMatrix();
-
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0.9, -0.12, 0.3);
-	modelStack.Scale(size, size, size);
-	RenderMesh(mesh, true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-}
 
 void Scene3::Plane_Rendering()
 {

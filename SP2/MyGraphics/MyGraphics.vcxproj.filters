@@ -65,9 +65,6 @@
     <ClCompile Include="Source\Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Objects.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SceneMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -152,9 +149,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Objects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\SceneMenu.h">

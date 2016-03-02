@@ -24,7 +24,7 @@ Renders the 3rd Scene for player to leave bomb in the middle of the temple
 #include "Bullet.h"
 #include "NPC.h"
 #include "Enemy.h"
-#include "Objects.h"
+
 #include "Mouse.h"
 
 #include "Animation.h"
@@ -186,14 +186,7 @@ class Scene3 : public Scene
 		U_TEXT_COLOR,
 		U_TOTAL,
 	};
-	enum Items
-	{
-		None = -1,
-
-		SPACEWING,
-		SPACEROCKET,
-		Num_Object,
-	};
+	
 
 public:
 
@@ -267,15 +260,13 @@ private:
 
 	float deltaTime;
 	Bullet bullet;
-	Objects objects;
-
+	
 	Enemy enemy[5];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 
 	void ObjectsHolding(Mesh*mesh, float size);
-	void EquipmentHolding(Mesh*mesh, float size);
-	void RenderObjects(Mesh*mesh, float size, float x, float y, float z);
+
 	float throwingdown = 0;
 	float throwingforward = 0;
 	float throwup = 0;
@@ -299,9 +290,7 @@ private:
 	void Map_Rendering();
 	void Character_Movement(float dt);
 
-	Objects object[Num_Object];
-	Objects object_on_hand;
-	int T_object_Num;
+	
 
 	float JumpTime;
 	float PressTime;

@@ -1366,9 +1366,13 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	if (pickupwing == false && fixwing == false)
 	{
+		modelStack.PushMatrix();
 		modelStack.Translate(npc.spacewing.Nposition.x, npc.spacewing.Nposition.y, npc.spacewing.Nposition.z);
-		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_PLANEWING], true);
+		modelStack.Translate(0, 0, 10);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
+		modelStack.Translate(0, 0, -10);
+		modelStack.Scale(4, 4, 4);
+		RenderMesh(meshList[GEO_PLANEWING], false);
 		modelStack.PopMatrix();
 		//render main wing inpyramid
 	}
@@ -1385,8 +1389,9 @@ void SP2::Render()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(npc.spacerocket.Nposition.x, npc.spacerocket.Nposition.y, npc.spacerocket.Nposition.z);
+		modelStack.Rotate(potatoRotate * 50, 0, 1, 0);
 		modelStack.Scale(1, 1, 1);
-		RenderMesh(meshList[GEO_PLANEROCKET], true);
+		RenderMesh(meshList[GEO_PLANEROCKET], false);
 		modelStack.PopMatrix();
 		//renders main rocket in pyramid
 
@@ -1457,7 +1462,7 @@ void SP2::Render()
 	modelStack.Rotate(followy, 0, 1, 0);
 	modelStack.Rotate(followx, 0, 0, 1);
 	modelStack.PushMatrix();
-	modelStack.Translate(gunTranslation + 0.3, -0.15, 0.3);
+	modelStack.Translate(gunTranslation + 0.3, -0.13, 0.05);
 	modelStack.Rotate(-gunRotation, 0, 0, 1);
 	modelStack.Scale(0.1, 0.1, 0.1);
 	RenderMesh(meshList[GEO_GUN], false);
@@ -1604,14 +1609,21 @@ void SP2::Render()
 		}
 	}
 }
-void SP2::RenderObjects(Mesh*mesh, float size, float x, float y, float z)
-{
-	modelStack.PushMatrix();
-	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, z);
-	RenderMesh(mesh, true);
-	modelStack.PopMatrix();
-}
+/******************************************************************************/
+/*!
+\brief
+hold objects or parts
+
+\param mesh
+Takes in which mesh to render out
+\param size
+Scale of the mesh to render out
+
+
+\exception None
+\return None
+*/
+/******************************************************************************/
 void SP2::ObjectsHolding(Mesh*mesh, float size)
 {
 	modelStack.PushMatrix();
@@ -1622,23 +1634,11 @@ void SP2::ObjectsHolding(Mesh*mesh, float size)
 	modelStack.PushMatrix();
 	modelStack.Translate(0.9, -0.12, -0.3);
 	modelStack.Scale(size, size, size);
-	RenderMesh(mesh, true);
+	RenderMesh(mesh, false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-void SP2::EquipmentHolding(Mesh*mesh, float size)
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
-	modelStack.Rotate(followy, 0, 1, 0);
-	modelStack.Rotate(followx, 0, 0, 1);
-	modelStack.PushMatrix();
-	modelStack.Translate(0.9, -0.12, 0.3);
-	modelStack.Scale(size, size, size);
-	RenderMesh(mesh, true);
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-}
+
 /******************************************************************************/
 /*!
 \brief
