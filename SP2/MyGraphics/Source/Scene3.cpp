@@ -1567,14 +1567,12 @@ void Scene3::Render()
 	RenderQuadOnScreen(meshList[GEO_OREICON], 2, x, y - 9, 90, 1, 0, 0, 0);
 	RenderQuadOnScreen(meshList[GEO_BOMBICON], 2, x, y - 12, 90, 1, 0, 0, 0);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0, 1), 1.5, x + 11.5, y + 3.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0, 1), 1.5, x + 11.5, y - 0.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1, 0, 0), 1.5, x + 11.5, y + 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 0, 0), 1.5, x + 11.5, y - 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(1, 0, 0), 1.5, x + 11.5, y - 5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(1, 0, 0), 1.5, x + 11.5, y - 9);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 0, 0), 1.5, x + 11.5, y - 13);
 
-	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
 
 	glBlendFunc(1, 1);
