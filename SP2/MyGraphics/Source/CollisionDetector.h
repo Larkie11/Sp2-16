@@ -14,6 +14,7 @@ A class for the collisions in the game to define them in the game
 #include "MyMath.h"
 #include "Enemy.h"
 #include "Vector3.h"
+#include "SharedData.h"
 
 /************************************************************/
 /*!

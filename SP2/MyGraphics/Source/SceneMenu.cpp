@@ -442,7 +442,6 @@ void SceneMenu::Dialogue(string filename)
 	while (std::getline(myfile, line))
 	{
 		new_line = line + "\n";
-		cout << new_line;
 		my_arr.push_back(new_line);
 	}
 }

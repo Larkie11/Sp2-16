@@ -748,7 +748,6 @@ void Scene3::Update(double dt)
 				{
 					SharedData::GetInstance()->mineral.quantity++;
 					oreMaterial_arr[i].hp--;
-					cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
 				}
 			}
 		}
@@ -776,7 +775,6 @@ void Scene3::Update(double dt)
 		if (startRMcoolDown)
 		{
 			rm_coolDown -= dt;
-			cout << rm_coolDown << endl;
 			if (rm_coolDown < 0)
 			{
 				oreMaterial_arr[i].isAlive = true;
@@ -818,10 +816,6 @@ void Scene3::Update(double dt)
 			camera.position = newcameraposition;   // teleports u there 
 			movement = false;
 			toggle = true;
-			cout << "u are now in camera mode" << endl;
-			/// restrrrict movement 
-			/// NEED TO MAKE SURE ITS 2ND TIME
-
 		}
 
 		else if (toggle == true && movement == false)
@@ -829,10 +823,6 @@ void Scene3::Update(double dt)
 			movement = true;
 			camera.position = oldcameraposition;
 			toggle = false;
-
-			cout << "u are now not in camera mode" << endl;
-
-			/// make sure camera mode dont exit and reenter
 		}
 
 
@@ -842,8 +832,6 @@ void Scene3::Update(double dt)
 
 			newcameraposition = camera.position;
 			oldcameraposition = camera.position;
-			cout << newcameraposition << endl;
-			cout << oldcameraposition << "locked old " << endl;
 			cam1 = true;
 
 		}
@@ -927,7 +915,6 @@ void Scene3::Dialogue(string filename)
 	while (std::getline(myfile, line))
 	{
 		new_line = line + "\n";
-		cout << new_line;
 		my_arr.push_back(new_line);
 	}
 }
@@ -1608,15 +1595,15 @@ void Scene3::Render()
 
 	if (enemy[0].enemy_attack(enemy, VtoP(camera.position), camera))
 	{
-		Died_Time = 20;
+		Died_Time = 50;
 		camera.Reset();
 	}
 	if (Died_Time > 0)
 	{
 		Died_Time -= 1;
-		RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0, 0), 10, 0, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0, 0), 3, 5, 5);
 	}
-	else if (Died_Time > 0)
+	else if (Died_Time < 0)
 	{
 		Died_Time = 0;
 	}
@@ -1701,7 +1688,6 @@ void Scene3::Map_Reading()
 		}
 		myfile.close();
 	}
-	else cout << "Unable to read Map!!" << endl;
 }
 
 

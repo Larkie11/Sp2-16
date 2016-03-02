@@ -15,7 +15,7 @@ A class for the bullets to define them in the game
 #include "Vector3.h"
 #include "Camera3.h"
 #include "CollisionDetector.h"
-
+#include "SharedData.h"
 #include <vector>
 
 using std::vector;

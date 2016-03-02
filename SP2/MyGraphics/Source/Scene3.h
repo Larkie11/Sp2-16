@@ -36,9 +36,6 @@ Renders the 3rd Scene for player to leave bomb in the middle of the temple
 #include <fstream>
 #include <sstream>
 
-
-using std::cout;
-using std::endl;
 using std::ifstream;
 using std::vector;
 using std::string;

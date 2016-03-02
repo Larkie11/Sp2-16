@@ -13,13 +13,12 @@ A class for the mouse the player using to define them in the game
 #include "Camera3.h"
 #include <Windows.h>
 #include <winuser.h>
-#include <iostream>
+
 #include <iomanip>
 #include <vector>
 
 using std::vector;
-using std::cout;
-using std::endl;
+
 
 /************************************************************/
 /*!

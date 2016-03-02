@@ -11,9 +11,8 @@ Variables that are accessible for other classes
 #define SHARED_DATA_H
 #include "irrklang.h"
 #include <string>
-#include <iostream>
 using std::string;
-using std::cout;
+
 
 /******************************************************************************/
 /*!

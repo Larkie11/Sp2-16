@@ -20,13 +20,9 @@ Renders Scene menu where player choses what option they want to choose (Play, in
 #include "Application.h"
 #include "MenuShop.h"
 #include "Sound.h"
-
 #include <vector>
-#include <iostream>
 #include <fstream>
 
-using std::cout;
-using std::endl;
 using std::ifstream;
 using std::vector;
 

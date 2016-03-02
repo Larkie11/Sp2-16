@@ -187,7 +187,7 @@ Main loop to run the game
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new SceneMenu;
+	Scene *scene = new Scene3;
 	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
 	scene->Init();

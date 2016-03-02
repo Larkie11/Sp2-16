@@ -13,10 +13,7 @@ A Class for the Bullet to define them in the game
 #include "Camera3.h"
 #include "CollisionDetector.h"
 #include <vector>
-#include <iostream>
 
-using std::cout;
-using std::endl;
 
 /************************************************************/
 /*!
@@ -153,9 +150,6 @@ bool Bullet::CollideWithEnemy(Enemy enemy[], vector<Bullet*>bullet_arr, Collisio
 				destoryBullet = true;
 			}
 		}
-
-		if (!destoryBullet)
-			cout << position.y << endl;
 
 		return destoryBullet;
 	}

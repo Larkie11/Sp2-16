@@ -104,7 +104,6 @@ bool Enemy::Quick_check()
 	}
 	else
 	{
-		cout << "Unable To Open Map" << endl;
 		return false;
 	}
 }

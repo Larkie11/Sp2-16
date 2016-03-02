@@ -664,7 +664,6 @@ void Scene2::Update(double dt)
 				{
 					SharedData::GetInstance()->mineral.quantity++;
 					oreMaterial_arr[i].hp--;
-					cout << "Mineral : " << SharedData::GetInstance()->mineral.quantity << endl;
 				}
 			}
 		}
@@ -692,7 +691,6 @@ void Scene2::Update(double dt)
 		if (startRMcoolDown)
 		{
 			rm_coolDown -= dt;
-			cout << rm_coolDown << endl;
 			if (rm_coolDown < 0)
 			{
 				oreMaterial_arr[i].isAlive = true;
@@ -793,22 +791,17 @@ void Scene2::Update(double dt)
 			camera.position = newcameraposition;   // teleports u there 
 			movement = false;
 			toggle = true;
-			cout << "u are now in camera mode" << endl;
 		}
 		else if (toggle == true && movement == false)
 		{
 			movement = true;
 			camera.position = oldcameraposition;
 			toggle = false;
-
-			cout << "u are now not in camera mode" << endl;
 		}
 		if (cam1 == false)
 		{
 			newcameraposition = camera.position;
 			oldcameraposition = camera.position;
-			cout << newcameraposition << endl;
-			cout << oldcameraposition << "locked old " << endl;
 			cam1 = true;
 		}
 		// toggle== false means normal mode haven toggle into camnera mode
@@ -887,7 +880,6 @@ void Scene2::Dialogue(string filename)
 	while (std::getline(myfile, line))
 	{
 		new_line = line + "\n";
-		cout << new_line;
 		my_arr.push_back(new_line);
 	}
 }
@@ -1657,15 +1649,15 @@ void Scene2::Render()
 
 	if (enemy[0].enemy_attack(enemy, VtoP(camera.position), camera))
 	{
-		Died_Time = 20;
+		Died_Time = 50;
 		camera.Reset();
 	}
 	if (Died_Time > 0)
 	{
 		Died_Time -= 1;
-		RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0, 0), 10, 0, 0);
+		RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0, 0), 3, 5, 5);
 	}
-	else if (Died_Time > 0)
+	else if (Died_Time < 0)
 	{
 		Died_Time = 0;
 	}
@@ -1750,7 +1742,7 @@ void Scene2::Map_Reading()
 		}
 		myfile.close();
 	}
-	else cout << "Unable to read Map!!" << endl;
+
 }
 
 /******************************************************************************/

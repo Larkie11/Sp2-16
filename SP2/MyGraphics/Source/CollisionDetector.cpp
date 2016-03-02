@@ -9,11 +9,8 @@ A Class for the CollisionDetector to define them and their in the game
 /************************************************************/
 
 #include "CollisionDetector.h"
-#include <iostream>
 
 using std::abs;
-using std::cout;
-using std::endl;
 
 /************************************************************/
 /*!
@@ -123,10 +120,10 @@ bool CollisionDetector::swordCollision(Enemy enemy[], Vector3 player)
 		Vector3 enemyVec = PtoV(enemyPos);
 
 		if (collideByDist(player, enemyVec) < 40)
-		{
-			cout << "YOU SLASHED THE ENEMY" << endl;
+		{	SharedData::GetInstance()->enemycounter++;
 			enemy[i].DamageReceived(100);
 			return true;
+		
 		}
 	}
 	return false;
