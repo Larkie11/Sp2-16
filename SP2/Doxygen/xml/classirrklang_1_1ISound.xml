@@ -437,26 +437,26 @@
     <detaileddescription>
 <para>The sound can be stopped, its volume or pan changed, effects added/removed and similar using this interface. Creating sounds is done using <ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">ISoundEngine::play2D()</ref> or <ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">ISoundEngine::play3D()</ref>. More informations about the source of a sound can be obtained from the <ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> interface. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="752">
+      <node id="741">
         <label>irrklang::IVirtualRefCounted</label>
         <link refid="classirrklang_1_1IVirtualRefCounted"/>
       </node>
-      <node id="751">
+      <node id="740">
         <label>irrklang::ISound</label>
         <link refid="classirrklang_1_1ISound"/>
-        <childnode refid="752" relation="public-inheritance">
+        <childnode refid="741" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="754">
+      <node id="743">
         <label>irrklang::IVirtualRefCounted</label>
         <link refid="classirrklang_1_1IVirtualRefCounted"/>
       </node>
-      <node id="753">
+      <node id="742">
         <label>irrklang::ISound</label>
         <link refid="classirrklang_1_1ISound"/>
-        <childnode refid="754" relation="public-inheritance">
+        <childnode refid="743" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

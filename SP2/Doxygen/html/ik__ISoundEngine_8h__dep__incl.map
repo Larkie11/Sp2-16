@@ -1,30 +1,34 @@
 <map id="MyGraphics/irrKlang&#45;1.5.0/include/ik_ISoundEngine.h" name="MyGraphics/irrKlang&#45;1.5.0/include/ik_ISoundEngine.h">
-<area shape="rect" id="node2" href="$irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1244,95,1403,136"/>
-<area shape="rect" id="node3" href="$ikpMP3_8cpp.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/ikpMP3.cpp" alt="" coords="1137,184,1285,240"/>
-<area shape="rect" id="node4" href="$SharedData_8h.html" title="Variables that are accessible for other classes. " alt="" coords="1139,363,1321,404"/>
-<area shape="rect" id="node18" href="$Sound_8h.html" title="MyGraphics/Source/Sound.h" alt="" coords="1995,199,2185,225"/>
-<area shape="rect" id="node5" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="2777,459,3008,486"/>
-<area shape="rect" id="node6" href="$Bullet_8cpp.html" title="MyGraphics/Source/Bullet.cpp" alt="" coords="223,459,421,486"/>
-<area shape="rect" id="node7" href="$Camera3_8cpp.html" title="MyGraphics/Source/Camera3.cpp" alt="" coords="446,459,665,486"/>
-<area shape="rect" id="node8" href="$CollisionDetector_8cpp.html" title="MyGraphics/Source/Collision\lDetector.cpp" alt="" coords="689,452,880,493"/>
-<area shape="rect" id="node9" href="$Cutscene_8cpp.html" title="Renders scene where player leaves in spaceship and temple explodes. " alt="" coords="1853,459,2074,486"/>
-<area shape="rect" id="node10" href="$NPC_8cpp.html" title="Checks if player is near and then show and allow the player to do something. " alt="" coords="5,459,199,486"/>
-<area shape="rect" id="node11" href="$Scene2_8cpp.html" title="Renders the 2nd scene for player to pick up eggs and access shop. " alt="" coords="1125,459,1335,486"/>
-<area shape="rect" id="node12" href="$Scene3_8cpp.html" title="MyGraphics/Source/Scene3.cpp" alt="" coords="1359,459,1570,486"/>
-<area shape="rect" id="node13" href="$SceneMenu_8cpp.html" title="MyGraphics/Source/SceneMenu.cpp" alt="" coords="1594,459,1829,486"/>
-<area shape="rect" id="node14" href="$SceneWin_8cpp.html" title="Renders the screen to show player win and how many enemies killed. " alt="" coords="2098,459,2325,486"/>
-<area shape="rect" id="node15" href="$Shop_8cpp.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="904,459,1100,486"/>
-<area shape="rect" id="node16" href="$SP2_8cpp.html" title="MyGraphics/Source/SP2.cpp" alt="" coords="2563,459,2753,486"/>
-<area shape="rect" id="node17" href="$StartCutScene_8cpp.html" title="MyGraphics/Source/StartCut\lScene.cpp" alt="" coords="2349,452,2538,493"/>
-<area shape="rect" id="node19" href="$StartCutScene_8h.html" title="MyGraphics/Source/StartCut\lScene.h" alt="" coords="2706,363,2895,404"/>
-<area shape="rect" id="node20" href="$NPC_8h.html" title="Checks if player is near and then show and allow the player to do something. " alt="" coords="1747,288,1926,315"/>
-<area shape="rect" id="node21" href="$SP2_8h.html" title="MyGraphics/Source/SP2.h" alt="" coords="2920,370,3097,397"/>
-<area shape="rect" id="node23" href="$Shop_8h.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="1345,370,1528,397"/>
-<area shape="rect" id="node24" href="$Scene2_8h.html" title="Renders the 2nd scene for player to pick up eggs and access shop. " alt="" coords="1552,370,1748,397"/>
-<area shape="rect" id="node25" href="$Scene3_8h.html" title="MyGraphics/Source/Scene3.h" alt="" coords="1772,370,1968,397"/>
-<area shape="rect" id="node26" href="$SceneMenu_8h.html" title="MyGraphics/Source/SceneMenu.h" alt="" coords="1993,370,2214,397"/>
-<area shape="rect" id="node27" href="$Cutscene_8h.html" title="Renders the cutscene where players bombs the place and leaves. " alt="" coords="2239,370,2445,397"/>
-<area shape="rect" id="node28" href="$SceneWin_8h.html" title="Renders the win screen for player. " alt="" coords="2469,370,2681,397"/>
-<area shape="rect" id="node29" href="$Sound_8cpp.html" title="Handles music and sound effect for the game using irrklang. " alt="" coords="2229,288,2431,315"/>
-<area shape="rect" id="node22" href="$Enemy_8cpp.html" title="MyGraphics/Source/Enemy.cpp" alt="" coords="3032,459,3239,486"/>
+<area shape="rect" id="node2" href="$irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1437,95,1596,136"/>
+<area shape="rect" id="node3" href="$ikpMP3_8cpp.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/ikpMP3.cpp" alt="" coords="1253,184,1401,240"/>
+<area shape="rect" id="node4" href="$SharedData_8h.html" title="Variables that are accessible for other classes. " alt="" coords="1425,191,1608,233"/>
+<area shape="rect" id="node28" href="$Sound_8h.html" title="Handles music and sound effect for the game using irrklang. " alt="" coords="1825,295,2014,322"/>
+<area shape="rect" id="node5" href="$Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="1739,556,1969,583"/>
+<area shape="rect" id="node6" href="$CollisionDetector_8h.html" title="A class for the collisions in the game to define them in the game. " alt="" coords="927,288,1117,329"/>
+<area shape="rect" id="node7" href="$Bullet_8h.html" title="A class for the bullets to define them in the game. " alt="" coords="437,385,623,411"/>
+<area shape="rect" id="node10" href="$SP2_8cpp.html" title="Renders the 1st Scene where player fixes spaceship. " alt="" coords="5,556,196,583"/>
+<area shape="rect" id="node12" href="$Scene2_8cpp.html" title="Renders the 2nd Scene for player to pick up eggs and access shop. " alt="" coords="221,556,431,583"/>
+<area shape="rect" id="node14" href="$Scene3_8cpp.html" title="Renders the 3rd Scene where player places bomb. " alt="" coords="455,556,666,583"/>
+<area shape="rect" id="node18" href="$Shop_8cpp.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="1508,556,1704,583"/>
+<area shape="rect" id="node19" href="$NPC_8cpp.html" title="Checks if player is near and then show and allow the player to do something. " alt="" coords="1364,474,1557,501"/>
+<area shape="rect" id="node23" href="$Camera3_8cpp.html" title="Player&#39;s camera and bounds. " alt="" coords="1481,295,1699,322"/>
+<area shape="rect" id="node24" href="$Cutscene_8cpp.html" title="Renders scene where player leaves in spaceship and temple explodes. " alt="" coords="2790,474,3011,501"/>
+<area shape="rect" id="node25" href="$SceneMenu_8cpp.html" title="Renders Scene menu where player choses what option they want to choose (Play, instructions, credits, quit) " alt="" coords="2439,474,2674,501"/>
+<area shape="rect" id="node26" href="$SceneWin_8cpp.html" title="Renders the screen to show player win and how many enemies killed. " alt="" coords="1891,474,2118,501"/>
+<area shape="rect" id="node27" href="$StartCutScene_8cpp.html" title="Renders the starting cutscene when player presses play. " alt="" coords="3097,467,3286,508"/>
+<area shape="rect" id="node15" href="$Bullet_8cpp.html" title="A Class for the Bullet to define them in the game. " alt="" coords="240,474,439,501"/>
+<area shape="rect" id="node16" href="$NPC_8h.html" title="Checks if player is near and then show and allow the player to do something. " alt="" coords="1206,385,1385,411"/>
+<area shape="rect" id="node17" href="$Shop_8h.html" title="Renders the scene where player can talk to the shopkeeper. " alt="" coords="1633,474,1816,501"/>
+<area shape="rect" id="node20" href="$rawMaterial_8h.html" title="A class for the raw material to define them in the game. " alt="" coords="913,385,1131,411"/>
+<area shape="rect" id="node22" href="$CollisionDetector_8cpp.html" title="A Class for the CollisionDetector to define them and their in the game. " alt="" coords="647,377,837,419"/>
+<area shape="rect" id="node8" href="$SP2_8h.html" title="Renders the 1st Scene where player collects spaceship parts and fixes spaceship. " alt="" coords="463,474,640,501"/>
+<area shape="rect" id="node11" href="$Scene2_8h.html" title="Renders the 2nd Scene for player to pick up eggs and access shop. " alt="" coords="924,474,1120,501"/>
+<area shape="rect" id="node13" href="$Scene3_8h.html" title="Renders the 3rd Scene for player to leave bomb in the middle of the temple. " alt="" coords="1144,474,1340,501"/>
+<area shape="rect" id="node9" href="$Enemy_8cpp.html" title="Contain all function code for enemy NPC. " alt="" coords="691,556,897,583"/>
+<area shape="rect" id="node21" href="$rawMatierial_8cpp.html" title="MyGraphics/Source/rawMatierial.cpp" alt="" coords="665,474,899,501"/>
+<area shape="rect" id="node29" href="$StartCutScene_8h.html" title="Scene rendering for starting cutscene. " alt="" coords="2969,377,3158,419"/>
+<area shape="rect" id="node30" href="$SceneMenu_8h.html" title="Renders Scene menu where player choses what option they want to choose (Play, instructions, credits, quit) " alt="" coords="2390,385,2611,411"/>
+<area shape="rect" id="node31" href="$Cutscene_8h.html" title="Renders the cutscene where players bombs the place and leaves. " alt="" coords="2687,385,2893,411"/>
+<area shape="rect" id="node32" href="$SceneWin_8h.html" title="Renders the win screen for player. " alt="" coords="1927,385,2139,411"/>
+<area shape="rect" id="node33" href="$Sound_8cpp.html" title="Handles music and sound effect for the game using irrklang. " alt="" coords="2163,385,2366,411"/>
 </map>

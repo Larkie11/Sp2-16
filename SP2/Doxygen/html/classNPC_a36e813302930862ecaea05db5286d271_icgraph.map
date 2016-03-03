@@ -1,5 +1,5 @@
 <map id="NPC::Door" name="NPC::Door">
-<area shape="rect" id="node2" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="147,5,243,32"/>
-<area shape="rect" id="node3" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="137,56,252,83"/>
-<area shape="rect" id="node4" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="137,107,252,133"/>
+<area shape="rect" id="node2" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="137,5,252,32"/>
+<area shape="rect" id="node3" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="147,56,243,83"/>
+<area shape="rect" id="node4" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="137,107,252,133"/>
 </map>

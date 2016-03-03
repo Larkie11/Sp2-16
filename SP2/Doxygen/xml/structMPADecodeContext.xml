@@ -347,27 +347,27 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="818">
+      <node id="804">
         <label>int32_t</label>
       </node>
-      <node id="816">
+      <node id="802">
         <label>int</label>
       </node>
-      <node id="817">
+      <node id="803">
         <label>uint8_t</label>
       </node>
-      <node id="814">
+      <node id="800">
         <label>MPADecodeContext</label>
         <link refid="structMPADecodeContext"/>
-        <childnode refid="815" relation="usage">
+        <childnode refid="801" relation="usage">
           <edgelabel>gb</edgelabel>
         </childnode>
-        <childnode refid="818" relation="usage">
+        <childnode refid="804" relation="usage">
           <edgelabel>mdct_buf</edgelabel>
           <edgelabel>synth_buf</edgelabel>
           <edgelabel>sb_samples</edgelabel>
         </childnode>
-        <childnode refid="816" relation="usage">
+        <childnode refid="802" relation="usage">
           <edgelabel>old_frame_size</edgelabel>
           <edgelabel>free_format_frame_size</edgelabel>
           <edgelabel>synth_buf_offset</edgelabel>
@@ -380,20 +380,20 @@
           <edgelabel>layer</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
-        <childnode refid="817" relation="usage">
+        <childnode refid="803" relation="usage">
           <edgelabel>inbuf_ptr</edgelabel>
           <edgelabel>inbuf1</edgelabel>
           <edgelabel>inbuf</edgelabel>
         </childnode>
       </node>
-      <node id="815">
+      <node id="801">
         <label>GetBitContext</label>
         <link refid="structGetBitContext"/>
-        <childnode refid="816" relation="usage">
+        <childnode refid="802" relation="usage">
           <edgelabel>size_in_bits</edgelabel>
           <edgelabel>index</edgelabel>
         </childnode>
-        <childnode refid="817" relation="usage">
+        <childnode refid="803" relation="usage">
           <edgelabel>buffer</edgelabel>
         </childnode>
       </node>

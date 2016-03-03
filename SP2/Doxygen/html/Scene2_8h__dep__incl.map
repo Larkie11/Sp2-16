@@ -1,4 +1,4 @@
 <map id="MyGraphics/Source/Scene2.h" name="MyGraphics/Source/Scene2.h">
-<area shape="rect" id="node2" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node3" href="$Scene2_8cpp.html" title="Renders the 2nd scene for player to pick up eggs and access shop. " alt="" coords="261,80,471,107"/>
+<area shape="rect" id="node2" href="$Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node3" href="$Scene2_8cpp.html" title="Renders the 2nd Scene for player to pick up eggs and access shop. " alt="" coords="261,80,471,107"/>
 </map>

@@ -47,31 +47,31 @@
     <detaileddescription>
 <para>Is used as parameter in <ref refid="classirrklang_1_1IAudioRecorder_1ae1d39c90335b96f95c050fc98c1bfac1" kindref="member">IAudioRecorder::startRecordingCustomHandledAudio</ref>. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="720">
+      <node id="709">
         <label>irrklang::ICapturedAudioDataReceiver</label>
         <link refid="classirrklang_1_1ICapturedAudioDataReceiver"/>
-        <childnode refid="721" relation="public-inheritance">
+        <childnode refid="710" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="721">
+      <node id="710">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="722">
+      <node id="711">
         <label>irrklang::ICapturedAudioDataReceiver</label>
         <link refid="classirrklang_1_1ICapturedAudioDataReceiver"/>
-        <childnode refid="723" relation="public-inheritance">
+        <childnode refid="712" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="724">
+      <node id="713">
         <label>int</label>
       </node>
-      <node id="723">
+      <node id="712">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
-        <childnode refid="724" relation="usage">
+        <childnode refid="713" relation="usage">
           <edgelabel>ReferenceCounter</edgelabel>
         </childnode>
       </node>

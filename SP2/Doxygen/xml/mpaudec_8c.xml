@@ -6,72 +6,72 @@
     <includes refid="mpegaudio_8h" local="yes">mpegaudio.h</includes>
     <includes refid="mpaudectab_8h" local="yes">mpaudectab.h</includes>
     <incdepgraph>
-      <node id="4548">
+      <node id="4777">
         <label>assert.h</label>
       </node>
-      <node id="4540">
+      <node id="4769">
         <label>stdlib.h</label>
       </node>
-      <node id="4550">
+      <node id="4779">
         <label>mpaudectab.h</label>
         <link refid="mpaudectab_8h"/>
       </node>
-      <node id="4545">
+      <node id="4774">
         <label>stddef.h</label>
       </node>
-      <node id="4542">
+      <node id="4771">
         <label>string.h</label>
       </node>
-      <node id="4544">
+      <node id="4773">
         <label>math.h</label>
       </node>
-      <node id="4538">
+      <node id="4767">
         <label>MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/decoder/mpaudec.c</label>
         <link refid="mpaudec.c"/>
-        <childnode refid="4539" relation="include">
+        <childnode refid="4768" relation="include">
         </childnode>
-        <childnode refid="4549" relation="include">
+        <childnode refid="4778" relation="include">
         </childnode>
-        <childnode refid="4550" relation="include">
+        <childnode refid="4779" relation="include">
         </childnode>
       </node>
-      <node id="4546">
+      <node id="4775">
         <label>mpaudec.h</label>
         <link refid="mpaudec_8h"/>
       </node>
-      <node id="4549">
+      <node id="4778">
         <label>mpegaudio.h</label>
         <link refid="mpegaudio_8h"/>
       </node>
-      <node id="4543">
+      <node id="4772">
         <label>ctype.h</label>
       </node>
-      <node id="4539">
+      <node id="4768">
         <label>internal.h</label>
         <link refid="internal_8h"/>
-        <childnode refid="4540" relation="include">
+        <childnode refid="4769" relation="include">
         </childnode>
-        <childnode refid="4541" relation="include">
+        <childnode refid="4770" relation="include">
         </childnode>
-        <childnode refid="4542" relation="include">
+        <childnode refid="4771" relation="include">
         </childnode>
-        <childnode refid="4543" relation="include">
+        <childnode refid="4772" relation="include">
         </childnode>
-        <childnode refid="4544" relation="include">
+        <childnode refid="4773" relation="include">
         </childnode>
-        <childnode refid="4545" relation="include">
+        <childnode refid="4774" relation="include">
         </childnode>
-        <childnode refid="4546" relation="include">
+        <childnode refid="4775" relation="include">
         </childnode>
-        <childnode refid="4547" relation="include">
+        <childnode refid="4776" relation="include">
         </childnode>
-        <childnode refid="4548" relation="include">
+        <childnode refid="4777" relation="include">
         </childnode>
       </node>
-      <node id="4541">
+      <node id="4770">
         <label>stdio.h</label>
       </node>
-      <node id="4547">
+      <node id="4776">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>

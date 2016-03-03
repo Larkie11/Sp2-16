@@ -1,10 +1,10 @@
 <map id="Scene" name="Scene">
 <area shape="rect" id="node2" href="$classCutscene.html" title="Meshes/booleans/floats for rendering and animation. " alt="" coords="5,80,83,107"/>
-<area shape="rect" id="node3" href="$classScene2.html" title="Initialize other class objects, meshes to render, booleans, floats and strings. " alt="" coords="107,80,173,107"/>
-<area shape="rect" id="node4" href="$classScene3.html" title="Scene3" alt="" coords="197,80,264,107"/>
-<area shape="rect" id="node5" href="$classSceneMenu.html" title="SceneMenu" alt="" coords="288,80,379,107"/>
+<area shape="rect" id="node3" href="$classScene2.html" title="Class objects, meshes to render, booleans, floats and strings. " alt="" coords="107,80,173,107"/>
+<area shape="rect" id="node4" href="$classScene3.html" title="Class objects, meshes to render, booleans, floats and strings. " alt="" coords="197,80,264,107"/>
+<area shape="rect" id="node5" href="$classSceneMenu.html" title="Class objects, meshes to render, booleans, floats and strings. " alt="" coords="288,80,379,107"/>
 <area shape="rect" id="node6" href="$classSceneWin.html" title="Mesh list, floats and booleans to render the win scene. " alt="" coords="403,80,485,107"/>
 <area shape="rect" id="node7" href="$classShop.html" title="Renders the shop scene with needed meshes and takes care of shop interactables. " alt="" coords="510,80,562,107"/>
-<area shape="rect" id="node8" href="$classSP2.html" title="SP2" alt="" coords="586,80,633,107"/>
-<area shape="rect" id="node9" href="$classStartCutScene.html" title="StartCutScene" alt="" coords="657,80,764,107"/>
+<area shape="rect" id="node8" href="$classSP2.html" title="Class objects, meshes to render, booleans, floats and strings. " alt="" coords="586,80,633,107"/>
+<area shape="rect" id="node9" href="$classStartCutScene.html" title="Scene rendering for starting cutscene. " alt="" coords="657,80,764,107"/>
 </map>

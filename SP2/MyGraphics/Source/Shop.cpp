@@ -727,14 +727,6 @@ The main render function for this scene, renders any text/meshes
 /******************************************************************************/
 void Shop::Render()
 {
-	std::ostringstream oss;
-	oss << "Camera X: " << camera.position.x;
-	string var = oss.str();
-
-	std::ostringstream oss1;
-	oss1 << "Camera Z: " << camera.position.z;
-	string var1 = oss1.str();
-
 	std::ostringstream ammoOSS;
 	std::ostringstream goldOSS;
 	std::ostringstream bombOSS;
@@ -748,7 +740,7 @@ void Shop::Render()
 	goldOSS << SharedData::GetInstance()->gold.quantity;
 	bombOSS << SharedData::GetInstance()->bomb.quantity;
 	oreOSS << SharedData::GetInstance()->mineral.quantity;
-	eggOSS << SharedData::GetInstance()->egg.quantity;
+	eggOSS << SharedData::GetInstance()->egg.quantity << "/5";
 	fpsOSS << "FPS : " << deltaTime;
 
 	nomoreOSS << "You have " << nomore;
@@ -899,13 +891,9 @@ void Shop::Render()
 			}
 		}
 	}
-	var.resize(16);
-	var1.resize(16);
-	Fps.resize(11);
-	RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 38);
-	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 37);
+	Fps.resize(8);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
-	int x = 38.5;
+	int x = 38;
 	int y = 14;
 	//All element for player inventory
 	RenderQuadOnScreen(meshList[GEO_AMMOICON], 2, x, y, 90, 1, 0, 0, 1);
@@ -914,11 +902,11 @@ void Shop::Render()
 	RenderQuadOnScreen(meshList[GEO_OREICON], 2, x, y - 9, 90, 1, 0, 0, 1);
 	RenderQuadOnScreen(meshList[GEO_BOMBICON], 2, x, y - 12, 90, 1, 0, 0, 1);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(0, 0, 1), 1.5, x + 11.5, y + 3.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(0, 0, 1), 1.5, x + 11.5, y - 0.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(0, 0, 1), 1.5, x + 11.5, y - 4.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(0, 0, 1), 1.5, x + 11.5, y - 8.5);
-	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(0, 0, 1), 1.5, x + 11.5, y - 12.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ammo, Color(1,0,0), 1.5, x + 12, y + 3.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], s_gold, Color(1, 0, 0), 1.5, x + 12, y - 0.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], egg, Color(1, 0, 0), 1.5, x + 12, y - 4.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(1, 0, 0), 1.5, x + 12, y - 8.5);
+	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 0, 0), 1.5, x + 12, y - 12.5);
 }
 /******************************************************************************/
 /*!

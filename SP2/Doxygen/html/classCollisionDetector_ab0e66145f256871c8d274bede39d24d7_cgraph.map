@@ -1,9 +1,9 @@
 <map id="CollisionDetector::swordCollision" name="CollisionDetector::swordCollision">
-<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="CollisionDetector::\lcollideByDist" alt="" coords="203,5,331,47"/>
-<area shape="rect" id="node3" href="$classEnemy.html#a52ec59a19c12a910ea9ba750010c6c4a" title="Enemy::DamageReceived" alt="" coords="181,71,352,98"/>
+<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="collideByDist(Vector3 object, Vector3 target) is a calculator function for CollisionDetector class..." alt="" coords="203,5,331,47"/>
+<area shape="rect" id="node3" href="$classEnemy.html#a52ec59a19c12a910ea9ba750010c6c4a" title="Reducing enemy hp based on attack " alt="" coords="181,71,352,98"/>
 <area shape="rect" id="node6" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="183,122,351,149"/>
-<area shape="rect" id="node7" href="$classCollisionDetector.html#ad3acbd851fc0aad3f07036dd26bcf239" title="CollisionDetector::PtoV" alt="" coords="188,173,345,199"/>
-<area shape="rect" id="node8" href="$classEnemy.html#aea4b20d7406b086406339215975eccfd" title="Enemy::Return_Position" alt="" coords="185,223,348,250"/>
-<area shape="rect" id="node4" href="$classEnemy.html#a7810e112cd0aa450590e575f10963829" title="Enemy::Quick_check" alt="" coords="404,46,551,73"/>
-<area shape="rect" id="node5" href="$classEnemy.html#a1e075bc2434b6a3ed91f1c1b0b01cfa2" title="Enemy::mode_Change" alt="" coords="400,97,555,123"/>
+<area shape="rect" id="node7" href="$classCollisionDetector.html#ad3acbd851fc0aad3f07036dd26bcf239" title="PtoV(Position V) is a convertor function for CollisionDetector class, where I convert the position va..." alt="" coords="188,173,345,199"/>
+<area shape="rect" id="node8" href="$classEnemy.html#aea4b20d7406b086406339215975eccfd" title="Return enemy position " alt="" coords="185,223,348,250"/>
+<area shape="rect" id="node4" href="$classEnemy.html#a7810e112cd0aa450590e575f10963829" title="Collision Detection with map " alt="" coords="404,46,551,73"/>
+<area shape="rect" id="node5" href="$classEnemy.html#a1e075bc2434b6a3ed91f1c1b0b01cfa2" title="Changing mode for the enemy " alt="" coords="400,97,555,123"/>
 </map>

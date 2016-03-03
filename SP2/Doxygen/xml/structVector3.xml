@@ -16,35 +16,32 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Common/Source/Vector3.h" line="27" column="1" bodyfile="Common/Source/Vector3.h" bodystart="27" bodyend="-1"/>
-        <referencedby refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" compoundref="Mouse_8cpp" startline="15" endline="19">Mouse::AssignePointToVector</referencedby>
+        <referencedby refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" compoundref="Mouse_8cpp" startline="64" endline="68">Mouse::AssignePointToVector</referencedby>
         <referencedby refid="classCutscene_1aa177f286bd430cb1b67ab6c1d08705dc" compoundref="Cutscene_8cpp" startline="495" endline="524">Cutscene::Character_Movement</referencedby>
-        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">StartCutScene::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1ad2556514da7c9e63a1c7ea4fc95f8cae" compoundref="SP2_8cpp" startline="414" endline="418">SP2::checkNear</referencedby>
-        <referencedby refid="classScene2_1a71a639a387bb2f157d48e96b95706c68" compoundref="Scene2_8cpp" startline="462" endline="466">Scene2::checkNear</referencedby>
-        <referencedby refid="classScene3_1a3c4025b5b602a88fcfcf31bad58ac384" compoundref="Scene3_8cpp" startline="405" endline="409">Scene3::checkNear</referencedby>
-        <referencedby refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</referencedby>
+        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="513" endline="542">StartCutScene::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a3c4025b5b602a88fcfcf31bad58ac384" compoundref="Scene3_8cpp" startline="469" endline="473">Scene3::checkNear</referencedby>
+        <referencedby refid="classSP2_1ad2556514da7c9e63a1c7ea4fc95f8cae" compoundref="SP2_8cpp" startline="474" endline="478">SP2::checkNear</referencedby>
+        <referencedby refid="classScene2_1a71a639a387bb2f157d48e96b95706c68" compoundref="Scene2_8cpp" startline="476" endline="480">Scene2::checkNear</referencedby>
+        <referencedby refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="82" endline="94">CollisionDetector::collideByDist</referencedby>
         <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
-        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="107">NPC::Door</referencedby>
+        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="102">NPC::Door</referencedby>
         <referencedby refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Dot</referencedby>
-        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1613" endline="1621">Scene2::Enemy_Updating</referencedby>
-        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1496" endline="1504">SP2::Enemy_Updating</referencedby>
-        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1494" endline="1502">Scene3::Enemy_Updating</referencedby>
-        <referencedby refid="classScene2_1aff0b7223bdd83eb79d9863d568b97cd0" compoundref="Scene2_8cpp" startline="1965" endline="1981">Scene2::EquipmentHolding</referencedby>
-        <referencedby refid="classSP2_1a1ce9a843e80cb028681abd79b9e1888d" compoundref="SP2_8cpp" startline="1478" endline="1490">SP2::EquipmentHolding</referencedby>
-        <referencedby refid="classScene3_1a364818696634a2b9b83ea21f0a453c61" compoundref="Scene3_8cpp" startline="1846" endline="1862">Scene3::EquipmentHolding</referencedby>
+        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1635" endline="1642">Scene3::Enemy_Updating</referencedby>
+        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1689" endline="1696">Scene2::Enemy_Updating</referencedby>
+        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1676" endline="1683">SP2::Enemy_Updating</referencedby>
         <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
         <referencedby refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</referencedby>
         <referencedby refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" compoundref="Vector3_8cpp" startline="287" endline="290">LengthSquared</referencedby>
         <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="118">LoadOBJ</referencedby>
-        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">Mouse::MouseUpdate</referencedby>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="95" endline="146">Mouse::MouseUpdate</referencedby>
         <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
         <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
-        <referencedby refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" compoundref="Scene2_8cpp" startline="1948" endline="1962">Scene2::ObjectsHolding</referencedby>
-        <referencedby refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" compoundref="SP2_8cpp" startline="1464" endline="1477">SP2::ObjectsHolding</referencedby>
-        <referencedby refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" compoundref="Scene3_8cpp" startline="1829" endline="1843">Scene3::ObjectsHolding</referencedby>
+        <referencedby refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" compoundref="Scene3_8cpp" startline="2017" endline="2031">Scene3::ObjectsHolding</referencedby>
+        <referencedby refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" compoundref="Scene2_8cpp" startline="2068" endline="2082">Scene2::ObjectsHolding</referencedby>
+        <referencedby refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" compoundref="SP2_8cpp" startline="1637" endline="1650">SP2::ObjectsHolding</referencedby>
         <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
         <referencedby refid="classMtx44_1a20fe7d5d35374ea122848a8778de25e6" compoundref="Mtx44_8cpp" startline="294" endline="300">Mtx44::operator*</referencedby>
         <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
@@ -58,18 +55,18 @@
         <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
         <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">SceneWin::Render</referencedby>
         <referencedby refid="classCutscene_1a74edfeb7d02dd7ee12e965c748ce422e" compoundref="Cutscene_8cpp" startline="402" endline="468">Cutscene::Render</referencedby>
-        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
-        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">StartCutScene::Render</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="728" endline="922">Shop::Render</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="410" endline="477">StartCutScene::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
         <referencedby refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Set</referencedby>
         <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
         <referencedby refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" compoundref="Vector3_8cpp" startline="79" endline="82">SetZero</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">NPC::Shop</referencedby>
         <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Camera::Update</referencedby>
-        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="93" endline="188">Camera3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
         <referencedby refid="Scene2_8cpp_1ac07446f8019674e7e66875dd6d25588d" compoundref="Scene2_8cpp" startline="26" endline="30">VtoP</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" prot="public" static="no" mutable="no">
@@ -84,39 +81,33 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Common/Source/Vector3.h" line="27" column="1" bodyfile="Common/Source/Vector3.h" bodystart="27" bodyend="-1"/>
-        <referencedby refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" compoundref="Mouse_8cpp" startline="15" endline="19">Mouse::AssignePointToVector</referencedby>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet::Bullet</referencedby>
+        <referencedby refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" compoundref="Mouse_8cpp" startline="64" endline="68">Mouse::AssignePointToVector</referencedby>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet::Bullet</referencedby>
         <referencedby refid="classCutscene_1aa177f286bd430cb1b67ab6c1d08705dc" compoundref="Cutscene_8cpp" startline="495" endline="524">Cutscene::Character_Movement</referencedby>
-        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">StartCutScene::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">Bullet::CollideWithEnemy</referencedby>
+        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="513" endline="542">StartCutScene::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
         <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
         <referencedby refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Dot</referencedby>
-        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1613" endline="1621">Scene2::Enemy_Updating</referencedby>
-        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1496" endline="1504">SP2::Enemy_Updating</referencedby>
-        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1494" endline="1502">Scene3::Enemy_Updating</referencedby>
-        <referencedby refid="classScene2_1aff0b7223bdd83eb79d9863d568b97cd0" compoundref="Scene2_8cpp" startline="1965" endline="1981">Scene2::EquipmentHolding</referencedby>
-        <referencedby refid="classSP2_1a1ce9a843e80cb028681abd79b9e1888d" compoundref="SP2_8cpp" startline="1478" endline="1490">SP2::EquipmentHolding</referencedby>
-        <referencedby refid="classScene3_1a364818696634a2b9b83ea21f0a453c61" compoundref="Scene3_8cpp" startline="1846" endline="1862">Scene3::EquipmentHolding</referencedby>
-        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</referencedby>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
+        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1635" endline="1642">Scene3::Enemy_Updating</referencedby>
+        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1689" endline="1696">Scene2::Enemy_Updating</referencedby>
+        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1676" endline="1683">SP2::Enemy_Updating</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
         <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
         <referencedby refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</referencedby>
         <referencedby refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" compoundref="Vector3_8cpp" startline="287" endline="290">LengthSquared</referencedby>
         <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="118">LoadOBJ</referencedby>
         <referencedby refid="classCutscene_1abb3efa0a3ae6936ee0d42f8103ba3332" compoundref="Cutscene_8cpp" startline="474" endline="485">Cutscene::Map_Rendering</referencedby>
-        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="395" endline="406">StartCutScene::Map_Rendering</referencedby>
-        <referencedby refid="classSP2_1a0c7e7b79660a3b66b8f424d77b31afd2" compoundref="SP2_8cpp" startline="1535" endline="1576">SP2::Map_Rendering</referencedby>
-        <referencedby refid="classScene2_1abe448426c8c2c0699bc3bef6f0c994b2" compoundref="Scene2_8cpp" startline="1652" endline="1689">Scene2::Map_Rendering</referencedby>
-        <referencedby refid="classScene3_1af1f2d1e196820303c4f34c276ca1c06c" compoundref="Scene3_8cpp" startline="1533" endline="1570">Scene3::Map_Rendering</referencedby>
-        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="21" endline="73">Mouse::MouseUpdate</referencedby>
+        <referencedby refid="classStartCutScene_1ac07eec3a74a66514014e66e74d6c4732" compoundref="StartCutScene_8cpp" startline="492" endline="503">StartCutScene::Map_Rendering</referencedby>
+        <referencedby refid="classSP2_1a0c7e7b79660a3b66b8f424d77b31afd2" compoundref="SP2_8cpp" startline="1743" endline="1784">SP2::Map_Rendering</referencedby>
+        <referencedby refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" compoundref="Mouse_8cpp" startline="95" endline="146">Mouse::MouseUpdate</referencedby>
         <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
         <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
-        <referencedby refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" compoundref="Scene2_8cpp" startline="1948" endline="1962">Scene2::ObjectsHolding</referencedby>
-        <referencedby refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" compoundref="SP2_8cpp" startline="1464" endline="1477">SP2::ObjectsHolding</referencedby>
-        <referencedby refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" compoundref="Scene3_8cpp" startline="1829" endline="1843">Scene3::ObjectsHolding</referencedby>
+        <referencedby refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" compoundref="Scene3_8cpp" startline="2017" endline="2031">Scene3::ObjectsHolding</referencedby>
+        <referencedby refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" compoundref="Scene2_8cpp" startline="2068" endline="2082">Scene2::ObjectsHolding</referencedby>
+        <referencedby refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" compoundref="SP2_8cpp" startline="1637" endline="1650">SP2::ObjectsHolding</referencedby>
         <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
         <referencedby refid="classMtx44_1a20fe7d5d35374ea122848a8778de25e6" compoundref="Mtx44_8cpp" startline="294" endline="300">Mtx44::operator*</referencedby>
         <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
@@ -130,19 +121,19 @@
         <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
         <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">SceneWin::Render</referencedby>
         <referencedby refid="classCutscene_1a74edfeb7d02dd7ee12e965c748ce422e" compoundref="Cutscene_8cpp" startline="402" endline="468">Cutscene::Render</referencedby>
-        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
-        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">StartCutScene::Render</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="728" endline="922">Shop::Render</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="410" endline="477">StartCutScene::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
         <referencedby refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Set</referencedby>
         <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
         <referencedby refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" compoundref="Vector3_8cpp" startline="79" endline="82">SetZero</referencedby>
         <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Camera::Update</referencedby>
-        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="93" endline="188">Camera3::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
         <referencedby refid="Scene2_8cpp_1ac07446f8019674e7e66875dd6d25588d" compoundref="Scene2_8cpp" startline="26" endline="30">VtoP</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" prot="public" static="no" mutable="no">
@@ -158,31 +149,28 @@
         </inbodydescription>
         <location file="Common/Source/Vector3.h" line="27" column="1" bodyfile="Common/Source/Vector3.h" bodystart="27" bodyend="-1"/>
         <referencedby refid="classCutscene_1aa177f286bd430cb1b67ab6c1d08705dc" compoundref="Cutscene_8cpp" startline="495" endline="524">Cutscene::Character_Movement</referencedby>
-        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">StartCutScene::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1ad2556514da7c9e63a1c7ea4fc95f8cae" compoundref="SP2_8cpp" startline="414" endline="418">SP2::checkNear</referencedby>
-        <referencedby refid="classScene2_1a71a639a387bb2f157d48e96b95706c68" compoundref="Scene2_8cpp" startline="462" endline="466">Scene2::checkNear</referencedby>
-        <referencedby refid="classScene3_1a3c4025b5b602a88fcfcf31bad58ac384" compoundref="Scene3_8cpp" startline="405" endline="409">Scene3::checkNear</referencedby>
-        <referencedby refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</referencedby>
+        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="513" endline="542">StartCutScene::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a3c4025b5b602a88fcfcf31bad58ac384" compoundref="Scene3_8cpp" startline="469" endline="473">Scene3::checkNear</referencedby>
+        <referencedby refid="classSP2_1ad2556514da7c9e63a1c7ea4fc95f8cae" compoundref="SP2_8cpp" startline="474" endline="478">SP2::checkNear</referencedby>
+        <referencedby refid="classScene2_1a71a639a387bb2f157d48e96b95706c68" compoundref="Scene2_8cpp" startline="476" endline="480">Scene2::checkNear</referencedby>
+        <referencedby refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="82" endline="94">CollisionDetector::collideByDist</referencedby>
         <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
         <referencedby refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Dot</referencedby>
-        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1613" endline="1621">Scene2::Enemy_Updating</referencedby>
-        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1496" endline="1504">SP2::Enemy_Updating</referencedby>
-        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1494" endline="1502">Scene3::Enemy_Updating</referencedby>
-        <referencedby refid="classScene2_1aff0b7223bdd83eb79d9863d568b97cd0" compoundref="Scene2_8cpp" startline="1965" endline="1981">Scene2::EquipmentHolding</referencedby>
-        <referencedby refid="classSP2_1a1ce9a843e80cb028681abd79b9e1888d" compoundref="SP2_8cpp" startline="1478" endline="1490">SP2::EquipmentHolding</referencedby>
-        <referencedby refid="classScene3_1a364818696634a2b9b83ea21f0a453c61" compoundref="Scene3_8cpp" startline="1846" endline="1862">Scene3::EquipmentHolding</referencedby>
+        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1635" endline="1642">Scene3::Enemy_Updating</referencedby>
+        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1689" endline="1696">Scene2::Enemy_Updating</referencedby>
+        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1676" endline="1683">SP2::Enemy_Updating</referencedby>
         <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
         <referencedby refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</referencedby>
         <referencedby refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" compoundref="Vector3_8cpp" startline="287" endline="290">LengthSquared</referencedby>
         <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="118">LoadOBJ</referencedby>
         <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
         <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
-        <referencedby refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" compoundref="Scene2_8cpp" startline="1948" endline="1962">Scene2::ObjectsHolding</referencedby>
-        <referencedby refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" compoundref="SP2_8cpp" startline="1464" endline="1477">SP2::ObjectsHolding</referencedby>
-        <referencedby refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" compoundref="Scene3_8cpp" startline="1829" endline="1843">Scene3::ObjectsHolding</referencedby>
+        <referencedby refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" compoundref="Scene3_8cpp" startline="2017" endline="2031">Scene3::ObjectsHolding</referencedby>
+        <referencedby refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" compoundref="Scene2_8cpp" startline="2068" endline="2082">Scene2::ObjectsHolding</referencedby>
+        <referencedby refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" compoundref="SP2_8cpp" startline="1637" endline="1650">SP2::ObjectsHolding</referencedby>
         <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
         <referencedby refid="classMtx44_1a20fe7d5d35374ea122848a8778de25e6" compoundref="Mtx44_8cpp" startline="294" endline="300">Mtx44::operator*</referencedby>
         <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
@@ -196,19 +184,19 @@
         <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
         <referencedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" compoundref="SceneWin_8cpp" startline="283" endline="305">SceneWin::Render</referencedby>
         <referencedby refid="classCutscene_1a74edfeb7d02dd7ee12e965c748ce422e" compoundref="Cutscene_8cpp" startline="402" endline="468">Cutscene::Render</referencedby>
-        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
-        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="322" endline="389">StartCutScene::Render</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="728" endline="922">Shop::Render</referencedby>
+        <referencedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b" compoundref="StartCutScene_8cpp" startline="410" endline="477">StartCutScene::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
         <referencedby refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Set</referencedby>
         <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
         <referencedby refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" compoundref="Vector3_8cpp" startline="79" endline="82">SetZero</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">NPC::Shop</referencedby>
-        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">NPC::Shop</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="93" endline="188">Camera3::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
         <referencedby refid="Scene2_8cpp_1ac07446f8019674e7e66875dd6d25588d" compoundref="Scene2_8cpp" startline="26" endline="30">VtoP</referencedby>
       </memberdef>
       </sectiondef>
@@ -383,15 +371,15 @@
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
         <referencedby refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</referencedby>
         <referencedby refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</referencedby>
         <referencedby refid="classMeshBuilder_1ada356c86bcb69adb5706e9d63d6c3d62" compoundref="MeshBuilder_8cpp" startline="341" endline="397">MeshBuilder::GenerateSpheres</referencedby>
         <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
         <referencedby refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" compoundref="Camera_8cpp" startline="21" endline="26">Camera::Reset</referencedby>
       </memberdef>
       <memberdef kind="function" id="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -807,10 +795,10 @@
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
-        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="107">NPC::Door</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">NPC::Scene1</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="102">NPC::Door</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">NPC::Scene1</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
@@ -842,13 +830,13 @@
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
         <referencedby refid="classCutscene_1aa177f286bd430cb1b67ab6c1d08705dc" compoundref="Cutscene_8cpp" startline="495" endline="524">Cutscene::Character_Movement</referencedby>
-        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="407" endline="436">StartCutScene::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a0aa59b4e75e00a6213ce70171327c121" compoundref="StartCutScene_8cpp" startline="513" endline="542">StartCutScene::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</referencedby>
         <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
-        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="42" endline="137">Camera3::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="93" endline="188">Camera3::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="structVector3_1a2da0f00c5529bced69763320dac9c414" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
@@ -889,7 +877,7 @@
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
-        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</referencedby>
       </memberdef>
       <memberdef kind="function" id="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
@@ -929,7 +917,7 @@
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
-        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</referencedby>
         <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
       </memberdef>
       </sectiondef>
@@ -998,13 +986,13 @@
     <detaileddescription>
 <para>Class <ref refid="structVector3" kindref="compound">Vector3</ref>: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="1170">
+      <node id="1150">
         <label>float</label>
       </node>
-      <node id="1169">
+      <node id="1149">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="1170" relation="usage">
+        <childnode refid="1150" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>

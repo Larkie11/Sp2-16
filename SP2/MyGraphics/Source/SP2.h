@@ -196,8 +196,8 @@ public:
 
 	char Map[20][20];
 	float Size = 15;
-	float Z_Displacement = 0;
-	float X_Displacement = -100;
+	float Z_Displacement;
+	float X_Displacement;
 	SP2();
 	~SP2();
 
@@ -228,9 +228,9 @@ private:
 	Mesh* meshList[NUM_GEOMETRY];
 
 	MS modelStack, viewStack, projectionStack;
-	float LSPEED = 10.f;
-	float moveSkyBoxZ = 91.f;
-	float moveSkyBoxX = 0.f;
+	float LSPEED;
+	float moveSkyBoxZ;
+	float moveSkyBoxX;
 	float potatoRotate;
 
 	Light light[8]; //shader max 8 lights
@@ -276,9 +276,9 @@ private:
 	int w_x;
 	int w_y;
 
-	bool robot1moved = false;
-	bool robot1rotate = false;
-	float robot1rotation = 0;
+	bool robot1moved;
+	bool robot1rotate;
+	float robot1rotation;
 
 	int Died_Time = 0;
 	Enemy enemy[5];
@@ -287,25 +287,25 @@ private:
 
 	void ObjectsHolding(Mesh*mesh, float size);
 	
-	float throwingdown = 0;
-	float throwingforward = 0;
-	float throwup = 0;
-	Vector3 newcameraposition = (0, 0, 0);
-	Vector3 oldcameraposition = (0, 0, 0);
-	bool throwbomb = false;
-	bool thrown = false;
-	bool toggle = false;
-	bool cam1 = false;
-	bool movement = true;
-	bool holdingcctv = false;
+	float throwingdown;
+	float throwingforward;
+	float throwup;
+	Vector3 newcameraposition;
+	Vector3 oldcameraposition;
+	bool throwbomb;
+	bool thrown;
+	bool toggle;
+	bool cam1;
+	bool movement;
+	bool holdingcctv;
 
 	//picking up space ship parts
-	bool pickupwing = false;
-	bool pickuprocket = false;
-	float followx = 0;
-	float followy = 0;
-	bool fixwing = false;
-	bool fixrocket = false;
+	bool pickupwing;
+	bool pickuprocket;
+	float followx;
+	float followy;
+	bool fixwing;
+	bool fixrocket;
 	float coolDownTime;
 	
 	string shop;
@@ -314,8 +314,6 @@ private:
 	void Map_Rendering();
 	void Character_Movement(float dt);
 
-
-	
 	float JumpTime;
 	float PressTime;
 

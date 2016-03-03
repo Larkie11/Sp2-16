@@ -1,5 +1,5 @@
 <map id="MyGraphics/Source/SP2.h" name="MyGraphics/Source/SP2.h">
-<area shape="rect" id="node2" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node3" href="$Enemy_8cpp.html" title="MyGraphics/Source/Enemy.cpp" alt="" coords="260,80,467,107"/>
-<area shape="rect" id="node4" href="$SP2_8cpp.html" title="MyGraphics/Source/SP2.cpp" alt="" coords="491,80,681,107"/>
+<area shape="rect" id="node2" href="$Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node3" href="$Enemy_8cpp.html" title="Contain all function code for enemy NPC. " alt="" coords="260,80,467,107"/>
+<area shape="rect" id="node4" href="$SP2_8cpp.html" title="Renders the 1st Scene where player fixes spaceship. " alt="" coords="491,80,681,107"/>
 </map>

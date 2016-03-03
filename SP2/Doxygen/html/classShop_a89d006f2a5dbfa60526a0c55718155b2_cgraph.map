@@ -5,7 +5,7 @@
 <area shape="rect" id="node11" href="$classMeshBuilder.html#a8fede2f411aebe5d41af99b51be7ed77" title="Generate the vertices of a quad; Use random color for each vertex Then generate the VBO/IBO and store..." alt="" coords="379,157,565,184"/>
 <area shape="rect" id="node13" href="$classMeshBuilder.html#a96d1a0ba39e026036abea6551a372d84" title="MeshBuilder::GenerateRepeatQuad" alt="" coords="359,208,585,235"/>
 <area shape="rect" id="node14" href="$classMeshBuilder.html#aac7c87881dbc08f8d41f2068e0f40c76" title="MeshBuilder::GenerateText" alt="" coords="382,259,562,285"/>
-<area shape="rect" id="node15" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Camera3::Init" alt="" coords="171,309,270,336"/>
+<area shape="rect" id="node15" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initializes player camera. " alt="" coords="171,309,270,336"/>
 <area shape="rect" id="node22" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="163,360,278,387"/>
 <area shape="rect" id="node23" href="$shader_8cpp.html#a833f10cca6a76fe34ae9efa23ac5e73c" title="LoadShaders" alt="" coords="171,411,270,437"/>
 <area shape="rect" id="node24" href="$LoadTGA_8cpp.html#a459a80ca6de67a1e3493bfb66ae317e4" title="LoadTGA" alt="" coords="183,461,259,488"/>

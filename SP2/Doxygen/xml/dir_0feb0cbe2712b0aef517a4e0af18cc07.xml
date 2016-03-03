@@ -34,8 +34,6 @@
     <innerfile refid="Mouse_8h">Mouse.h</innerfile>
     <innerfile refid="NPC_8cpp">NPC.cpp</innerfile>
     <innerfile refid="NPC_8h">NPC.h</innerfile>
-    <innerfile refid="Objects_8cpp">Objects.cpp</innerfile>
-    <innerfile refid="Objects_8h">Objects.h</innerfile>
     <innerfile refid="rawMaterial_8h">rawMaterial.h</innerfile>
     <innerfile refid="rawMatierial_8cpp">rawMatierial.cpp</innerfile>
     <innerfile refid="Scene_8h">Scene.h</innerfile>

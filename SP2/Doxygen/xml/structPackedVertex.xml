@@ -67,43 +67,43 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="854">
+      <node id="836">
         <label>Position</label>
         <link refid="structPosition"/>
-        <childnode refid="852" relation="usage">
+        <childnode refid="834" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
-      <node id="853">
+      <node id="835">
         <label>TexCoord</label>
         <link refid="structTexCoord"/>
-        <childnode refid="852" relation="usage">
+        <childnode refid="834" relation="usage">
           <edgelabel>u</edgelabel>
           <edgelabel>v</edgelabel>
         </childnode>
       </node>
-      <node id="852">
+      <node id="834">
         <label>float</label>
       </node>
-      <node id="850">
+      <node id="832">
         <label>PackedVertex</label>
         <link refid="structPackedVertex"/>
-        <childnode refid="851" relation="usage">
+        <childnode refid="833" relation="usage">
           <edgelabel>normal</edgelabel>
         </childnode>
-        <childnode refid="853" relation="usage">
+        <childnode refid="835" relation="usage">
           <edgelabel>uv</edgelabel>
         </childnode>
-        <childnode refid="854" relation="usage">
+        <childnode refid="836" relation="usage">
           <edgelabel>position</edgelabel>
         </childnode>
       </node>
-      <node id="851">
+      <node id="833">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="852" relation="usage">
+        <childnode refid="834" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>

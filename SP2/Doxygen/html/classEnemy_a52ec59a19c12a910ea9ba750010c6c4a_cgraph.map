@@ -1,4 +1,4 @@
 <map id="Enemy::DamageReceived" name="Enemy::DamageReceived">
-<area shape="rect" id="node2" href="$classEnemy.html#a1e075bc2434b6a3ed91f1c1b0b01cfa2" title="Enemy::mode_Change" alt="" coords="224,5,379,32"/>
-<area shape="rect" id="node3" href="$classEnemy.html#a7810e112cd0aa450590e575f10963829" title="Enemy::Quick_check" alt="" coords="228,56,375,83"/>
+<area shape="rect" id="node2" href="$classEnemy.html#a1e075bc2434b6a3ed91f1c1b0b01cfa2" title="Changing mode for the enemy " alt="" coords="224,5,379,32"/>
+<area shape="rect" id="node3" href="$classEnemy.html#a7810e112cd0aa450590e575f10963829" title="Collision Detection with map " alt="" coords="228,56,375,83"/>
 </map>

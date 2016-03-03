@@ -6,85 +6,85 @@
     <includes refid="CIrrKlangAudioStreamMP3_8h" local="yes">CIrrKlangAudioStreamMP3.h</includes>
     <includes local="no">string.h</includes>
     <incdepgraph>
-      <node id="4467">
+      <node id="4696">
         <label>ik_IRefCounted.h</label>
         <link refid="ik__IRefCounted_8h"/>
-        <childnode refid="4468" relation="include">
+        <childnode refid="4697" relation="include">
         </childnode>
       </node>
-      <node id="4473">
+      <node id="4702">
         <label>ik_SAudioStreamFormat.h</label>
         <link refid="ik__SAudioStreamFormat_8h"/>
-        <childnode refid="4467" relation="include">
+        <childnode refid="4696" relation="include">
         </childnode>
       </node>
-      <node id="4472">
+      <node id="4701">
         <label>ik_IAudioStream.h</label>
         <link refid="ik__IAudioStream_8h"/>
-        <childnode refid="4467" relation="include">
+        <childnode refid="4696" relation="include">
         </childnode>
-        <childnode refid="4473" relation="include">
+        <childnode refid="4702" relation="include">
         </childnode>
       </node>
-      <node id="4471">
+      <node id="4700">
         <label>CIrrKlangAudioStreamMP3.h</label>
         <link refid="CIrrKlangAudioStreamMP3_8h"/>
-        <childnode refid="4472" relation="include">
+        <childnode refid="4701" relation="include">
         </childnode>
-        <childnode refid="4470" relation="include">
+        <childnode refid="4699" relation="include">
         </childnode>
-        <childnode refid="4474" relation="include">
+        <childnode refid="4703" relation="include">
         </childnode>
-        <childnode refid="4475" relation="include">
+        <childnode refid="4704" relation="include">
         </childnode>
       </node>
-      <node id="4469">
+      <node id="4698">
         <label>wchar.h</label>
       </node>
-      <node id="4476">
+      <node id="4705">
         <label>string.h</label>
       </node>
-      <node id="4468">
+      <node id="4697">
         <label>ik_irrKlangTypes.h</label>
         <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="4469" relation="include">
+        <childnode refid="4698" relation="include">
         </childnode>
       </node>
-      <node id="4474">
+      <node id="4703">
         <label>vector</label>
       </node>
-      <node id="4466">
+      <node id="4695">
         <label>ik_IAudioStreamLoader.h</label>
         <link refid="ik__IAudioStreamLoader_8h"/>
-        <childnode refid="4467" relation="include">
+        <childnode refid="4696" relation="include">
         </childnode>
-        <childnode refid="4470" relation="include">
+        <childnode refid="4699" relation="include">
         </childnode>
       </node>
-      <node id="4475">
+      <node id="4704">
         <label>decoder/mpaudec.h</label>
         <link refid="mpaudec_8h"/>
       </node>
-      <node id="4464">
+      <node id="4693">
         <label>MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/CIrrKlangAudioStreamLoaderMP3.cpp</label>
         <link refid="CIrrKlangAudioStreamLoaderMP3.cpp"/>
-        <childnode refid="4465" relation="include">
+        <childnode refid="4694" relation="include">
         </childnode>
-        <childnode refid="4471" relation="include">
+        <childnode refid="4700" relation="include">
         </childnode>
-        <childnode refid="4476" relation="include">
+        <childnode refid="4705" relation="include">
         </childnode>
       </node>
-      <node id="4465">
+      <node id="4694">
         <label>CIrrKlangAudioStreamLoaderMP3.h</label>
         <link refid="CIrrKlangAudioStreamLoaderMP3_8h"/>
-        <childnode refid="4466" relation="include">
+        <childnode refid="4695" relation="include">
         </childnode>
       </node>
-      <node id="4470">
+      <node id="4699">
         <label>ik_IFileReader.h</label>
         <link refid="ik__IFileReader_8h"/>
-        <childnode refid="4467" relation="include">
+        <childnode refid="4696" relation="include">
         </childnode>
       </node>
     </incdepgraph>

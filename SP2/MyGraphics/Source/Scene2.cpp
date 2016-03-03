@@ -84,6 +84,8 @@ void Scene2::Init()
 
 	oreMaterial_arr[0].pos = Vector3(240, -21, 180);
 
+	Z_Displacement = 0;
+	X_Displacement = -100;
 	JumpTime = 0;
 	storyShow = true;
 	Dialogue("Text//RobotScene2.txt");
@@ -103,6 +105,36 @@ void Scene2::Init()
 	rm_coolDown = rm_coolDownLimit = 10;
 	startRMcoolDown = false;
 	weaponChoice = 1;
+
+	throwingdown = 0;
+	throwingforward = 0;
+	throwup = 0;
+	newcameraposition = (0, 0, 0);
+	oldcameraposition = (0, 0, 0);
+	throwbomb = false;
+	thrown = false;
+	toggle = false;
+	cam1 = false;
+	movement = true;
+
+	pickupegg1 = false;
+	pickupegg2 = false;
+	pickupegg3 = false;
+	pickupegg4 = false;
+	pickupegg5 = false;
+
+	pickupwing = false;
+	pickuprocket = false;
+	followx = 0;
+	followy = 0;
+	fixwing = false;
+	fixrocket = false;
+	doorinteract = true;
+
+	robot1moved = false;
+	robot1rotate = false;
+	robot1rotation = 0;
+	parts = 0;
 
 	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
 	storyPosition = 2.5;
@@ -1594,7 +1626,7 @@ void Scene2::Render()
 
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 0, 39);
 
 	glBlendFunc(1, 1);
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);

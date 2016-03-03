@@ -7,8 +7,8 @@
 <area shape="rect" id="node17" href="$Light_8h.html" title="Light.h" alt="" coords="101,80,162,107"/>
 <area shape="rect" id="node18" href="$Camera3_8h.html" title="Camera3.h" alt="" coords="223,155,309,181"/>
 <area shape="rect" id="node20" href="$Application_8h.html" title="Application.h" alt="" coords="556,80,653,107"/>
-<area shape="rect" id="node23" href="$MenuShop_8h.html" title="MenuShop.h" alt="" coords="677,80,772,107"/>
-<area shape="rect" id="node24" href="$Sound_8h.html" title="Sound.h" alt="" coords="796,80,867,107"/>
+<area shape="rect" id="node23" href="$MenuShop_8h.html" title="All the enums for shop/menu states. " alt="" coords="677,80,772,107"/>
+<area shape="rect" id="node24" href="$Sound_8h.html" title="Handles music and sound effect for the game using irrklang. " alt="" coords="796,80,867,107"/>
 <area shape="rect" id="node4" href="$MyMath_8h.html" title="Header file for math helper functions. " alt="" coords="367,379,447,405"/>
 <area shape="rect" id="node9" href="$Vector3_8h.html" title="Struct to define a 3D vector. " alt="" coords="228,304,307,331"/>
 <area shape="rect" id="node14" href="$Vertex_8h.html" title="Vertex.h" alt="" coords="124,229,195,256"/>

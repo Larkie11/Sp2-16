@@ -1,7 +1,9 @@
 <map id="irrklang::ISound::stop" name="irrklang::ISound::stop">
-<area shape="rect" id="node2" href="$classSound.html#aaaf67f7ba4482d8a07a122a1ec4ff965" title="Stop certain music when called. " alt="" coords="199,81,325,108"/>
+<area shape="rect" id="node2" href="$classSound.html#aaaf67f7ba4482d8a07a122a1ec4ff965" title="Stop certain music when called. " alt="" coords="199,132,325,159"/>
 <area shape="rect" id="node3" href="$classSceneWin.html#ae9b6232f0d97525ea3f26af4b1811a5b" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="373,5,504,32"/>
 <area shape="rect" id="node4" href="$classCutscene.html#ad0419ba77f29fa1707e56b9635a0addc" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="375,56,502,83"/>
 <area shape="rect" id="node5" href="$classShop.html#af915842cee6266631dc4f18abd95d854" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="388,107,489,133"/>
-<area shape="rect" id="node6" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="391,157,487,184"/>
+<area shape="rect" id="node6" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="381,157,496,184"/>
+<area shape="rect" id="node7" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="391,208,487,235"/>
+<area shape="rect" id="node8" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="381,259,496,285"/>
 </map>

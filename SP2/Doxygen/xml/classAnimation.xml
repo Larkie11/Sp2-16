@@ -15,10 +15,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="18" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="18" bodyend="-1"/>
-        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
-        <referencedby refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" compoundref="Animation_8cpp" startline="51" endline="75">Mine</referencedby>
-        <referencedby refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" compoundref="Animation_8cpp" startline="9" endline="33">Slash</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="35" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="23" endline="26">Animation</referencedby>
+        <referencedby refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" compoundref="Animation_8cpp" startline="150" endline="174">Mine</referencedby>
+        <referencedby refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" compoundref="Animation_8cpp" startline="62" endline="86">Slash</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -31,10 +31,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="19" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="19" bodyend="-1"/>
-        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
-        <referencedby refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" compoundref="Animation_8cpp" startline="51" endline="75">Mine</referencedby>
-        <referencedby refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" compoundref="Animation_8cpp" startline="9" endline="33">Slash</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="36" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="23" endline="26">Animation</referencedby>
+        <referencedby refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" compoundref="Animation_8cpp" startline="150" endline="174">Mine</referencedby>
+        <referencedby refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" compoundref="Animation_8cpp" startline="62" endline="86">Slash</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -47,8 +47,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="20" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="20" bodyend="-1"/>
-        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="37" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="23" endline="26">Animation</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -61,8 +61,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="21" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="21" bodyend="-1"/>
-        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="3" endline="6">Animation</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="38" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" compoundref="Animation_8cpp" startline="23" endline="26">Animation</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAnimation_1adeaa31f34e61ae2d9aec9f3b1328d1da" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="23" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="23" bodyend="-1"/>
+        <location file="MyGraphics/Source/Animation.h" line="40" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classAnimation_1a873241ab36c3f925b7466a324e0f82c3" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="24" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="24" bodyend="-1"/>
+        <location file="MyGraphics/Source/Animation.h" line="41" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -98,16 +98,16 @@
         <argsstring>()</argsstring>
         <name>Animation</name>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" kindref="member">Animation()</ref> is a constructor for animation class, where I set the default values needed for the methods. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="8" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="3" bodyend="6"/>
-        <references refid="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" compoundref="Animation_8h" startline="21">moveBack</references>
-        <references refid="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" compoundref="Animation_8h" startline="20">moveFront</references>
-        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="19">sliceDown</references>
-        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="18">sliceUp</references>
+        <location file="MyGraphics/Source/Animation.h" line="25" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="23" bodyend="26"/>
+        <references refid="classAnimation_1ae5ad8164e865e3843f881b34dc3de3e5" compoundref="Animation_8h" startline="38">moveBack</references>
+        <references refid="classAnimation_1a7367fa05ed9ec32aa125334e1d14228a" compoundref="Animation_8h" startline="37">moveFront</references>
+        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="36">sliceDown</references>
+        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="35">sliceUp</references>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a401b68793d4fbf48d481c030ee4b2a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -115,12 +115,12 @@
         <argsstring>()</argsstring>
         <name>~Animation</name>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classAnimation_1a401b68793d4fbf48d481c030ee4b2a16" kindref="member">~Animation()</ref> is the destructor for animation class. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="9" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="7" bodyend="7"/>
+        <location file="MyGraphics/Source/Animation.h" line="26" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="37" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -140,17 +140,39 @@
           <declname>start</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classAnimation_1a4ec41db92f52f5440846b59f63b4b617" kindref="member">Slash(double dt, float&amp; targetRotation, bool&amp; start)</ref>, Animates the player&apos;s slashing animation when using sword, by using sliceUp and sliceDown boolean to check if it completes the animation. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double that represents the delta time needed for calculation for the animation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetRotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float that represents the target&apos;s rotation that this function is using on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean that represents when the animation should start playing or stop. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="10" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="9" bodyend="33"/>
-        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="19">sliceDown</references>
-        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="18">sliceUp</references>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="27" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="62" bodyend="86"/>
+        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="36">sliceDown</references>
+        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="35">sliceUp</references>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1adc6488f1436096edbb58454315f04bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -170,15 +192,37 @@
           <declname>start</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classAnimation_1adc6488f1436096edbb58454315f04bed" kindref="member">Shoot(double dt, float&amp; targetRotation, bool&amp; start)</ref>, Animates the player&apos;s shooting animation when using gun, by checking if the gun has moved according to the recoils and using the boolean to check if it completes the animation. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double that represents the delta time needed for calculation for the animation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetTranslation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float that represents the target&apos;s translation that this function is using on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean that represents when the animation should start playing or stop. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="11" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="35" bodyend="49"/>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="28" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="111" bodyend="125"/>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -198,17 +242,39 @@
           <declname>start</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classAnimation_1a3226101ff2ac62bfab995e744dd4e04d" kindref="member">Mine(double dt, float&amp; targetRotation, bool&amp; start)</ref>, Animates the player&apos;s mining animation when using pick axe, by using sliceUp and sliceDown boolean to check if it completes the animation. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double that represents the delta time needed for calculation for the animation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetRotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float that represents the target&apos;s rotation that this function is using on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean that represents when the animation should start playing or stop. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="12" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="51" bodyend="75"/>
-        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="19">sliceDown</references>
-        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="18">sliceUp</references>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="29" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="150" bodyend="174"/>
+        <references refid="classAnimation_1a791ed2d3ca7d973f7c20f90404fc5964" compoundref="Animation_8h" startline="36">sliceDown</references>
+        <references refid="classAnimation_1a71ab985e9db29e34212516ddccc2972e" compoundref="Animation_8h" startline="35">sliceUp</references>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a0c16fd819ed0a965ef3f66f2c1957a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -228,15 +294,37 @@
           <declname>usingSword</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>moveSword(double dt, float&amp; targetTranslation, bool&amp; usingSword), Animates the player&apos;s changing to sword animation, by checking if the sword has move to certain position and using the boolean to check if the animations is completed. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double that represents the delta time needed for calculation for the animation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetTranslation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float that represents the target&apos;s translation that this function is using on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean that represents when the animation should start playing or stop. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="13" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="77" bodyend="96"/>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="30" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="199" bodyend="218"/>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a4acfd87b27928b8955a1d4679e7c1166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -256,15 +344,37 @@
           <declname>usingGun</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>moveGun(double dt, float&amp; targetTranslation, bool&amp; usingSword), Animates the player&apos;s changing to gun animation, by checking if the gun has move to certain position and using the boolean to check if the animations is completed. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double that represents the delta time needed for calculation for the animation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>targetTranslation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float that represents the target&apos;s translation that this function is using on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>usingGun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean that represents when the animation should start playing or stop. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="14" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="98" bodyend="117"/>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="31" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="243" bodyend="262"/>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a15100ed0ea6b8fcdbc3b6837be44f5e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -284,13 +394,35 @@
           <declname>playExplosion</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classAnimation_1a15100ed0ea6b8fcdbc3b6837be44f5e0" kindref="member">explosion(double dt, float&amp; explosionScale, bool&amp; playExplosion)</ref>, Animates the explosion animation, by checking if the explosion has scale up to certain scale and using the boolean to check if the animations is completed. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double that represents the delta time needed for calculation for the animation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>explosionScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float that represents the target&apos;s scale that this function is using on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>playExplosion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean that represents when the animation should start playing or stop. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="15" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="119" bodyend="130"/>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <location file="MyGraphics/Source/Animation.h" line="32" column="1" bodyfile="MyGraphics/Source/Animation.cpp" bodystart="287" bodyend="298"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAnimation_1a7bd2623cd7040e32837d7fb312d31790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -307,18 +439,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Animation.h" line="16" column="1"/>
+        <location file="MyGraphics/Source/Animation.h" line="33" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Defines a player&apos;s action in game and its methods. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Class Dweller: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="592">
+      <node id="582">
         <label>Animation</label>
         <link refid="classAnimation"/>
-        <childnode refid="593" relation="usage">
+        <childnode refid="583" relation="usage">
           <edgelabel>switchUp</edgelabel>
           <edgelabel>switchDown</edgelabel>
           <edgelabel>moveFront</edgelabel>
@@ -327,11 +459,11 @@
           <edgelabel>sliceUp</edgelabel>
         </childnode>
       </node>
-      <node id="593">
+      <node id="583">
         <label>bool</label>
       </node>
     </collaborationgraph>
-    <location file="MyGraphics/Source/Animation.h" line="6" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="5" bodyend="25"/>
+    <location file="MyGraphics/Source/Animation.h" line="23" column="1" bodyfile="MyGraphics/Source/Animation.h" bodystart="22" bodyend="42"/>
     <listofallmembers>
       <member refid="classAnimation_1a83f0a16cef7117f187ad596de38dd9d6" prot="public" virt="non-virtual"><scope>Animation</scope><name>Animation</name></member>
       <member refid="classAnimation_1a15100ed0ea6b8fcdbc3b6837be44f5e0" prot="public" virt="non-virtual"><scope>Animation</scope><name>explosion</name></member>

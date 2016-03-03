@@ -138,6 +138,7 @@ private:
 
 	float deltaTime;
 
+	float xtranslate, ytranslate;
 	float icon;
 	float icon2;
 	float menuIcon;

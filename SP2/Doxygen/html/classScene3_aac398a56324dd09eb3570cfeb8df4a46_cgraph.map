@@ -1,11 +1,8 @@
 <map id="Scene3::Enemy_Updating" name="Scene3::Enemy_Updating">
-<area shape="rect" id="node2" href="$classEnemy.html#a819ee9012f940e2c1c81064b1983c037" title="Enemy::enemy_attack" alt="" coords="239,5,393,32"/>
-<area shape="rect" id="node4" href="$classEnemy.html#a13a4b0c7f0300b80cdc924aea52ecaf7" title="Enemy::Enemy_movement" alt="" coords="227,56,405,83"/>
-<area shape="rect" id="node10" href="$Scene3_8cpp.html#ac07446f8019674e7e66875dd6d25588d" title="VtoP" alt="" coords="291,107,341,133"/>
-<area shape="rect" id="node3" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Camera3::Reset" alt="" coords="469,5,585,32"/>
-<area shape="rect" id="node5" href="$classEnemy.html#a5ee4dd60f6ce56952ff5d74e6777efd3" title="Enemy::mode_Action" alt="" coords="453,56,600,83"/>
-<area shape="rect" id="node7" href="$classEnemy.html#a49c6f489172cdc0d246fdeb08506eacd" title="Enemy::Movement" alt="" coords="461,107,592,133"/>
-<area shape="rect" id="node6" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="662,56,817,83"/>
-<area shape="rect" id="node8" href="$classEnemy.html#aa04b1e981e9910935e1a1df8524f5f18" title="Enemy::Collision_Detection" alt="" coords="648,107,831,133"/>
-<area shape="rect" id="node9" href="$classEnemy.html#ab87351b3b0661edb047cc2d0acdc8722" title="Enemy::Enemy_Collision" alt="" coords="879,107,1047,133"/>
+<area shape="rect" id="node2" href="$classEnemy.html#a13a4b0c7f0300b80cdc924aea52ecaf7" title="Deciding enemy speed based on their mode " alt="" coords="227,31,405,57"/>
+<area shape="rect" id="node3" href="$classEnemy.html#a5ee4dd60f6ce56952ff5d74e6777efd3" title="carrying out action decided by the enemy mode " alt="" coords="453,5,600,32"/>
+<area shape="rect" id="node5" href="$classEnemy.html#a49c6f489172cdc0d246fdeb08506eacd" title="Updating the enemy position based on their action and speed " alt="" coords="461,56,592,83"/>
+<area shape="rect" id="node4" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="662,5,817,32"/>
+<area shape="rect" id="node6" href="$classEnemy.html#aa04b1e981e9910935e1a1df8524f5f18" title="Full Collision Detection for enemy and player " alt="" coords="648,56,831,83"/>
+<area shape="rect" id="node7" href="$classEnemy.html#ab87351b3b0661edb047cc2d0acdc8722" title="Full Collision Detection for enemy and enemy " alt="" coords="879,56,1047,83"/>
 </map>

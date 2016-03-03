@@ -1,20 +1,20 @@
 <map id="Vector3::Set" name="Vector3::Set">
-<area shape="rect" id="node2" href="$classScene2.html#a56ffb6e0c1e4f046c73163f842868780" title="Scene2::Character_Movement" alt="" coords="163,31,359,57"/>
-<area shape="rect" id="node4" href="$classScene3.html#a97c70e9151bede5a2ea42b19b5098337" title="Scene3::Character_Movement" alt="" coords="163,107,359,133"/>
+<area shape="rect" id="node2" href="$classScene3.html#a97c70e9151bede5a2ea42b19b5098337" title="Platers controls for this scene. " alt="" coords="163,31,359,57"/>
+<area shape="rect" id="node4" href="$classScene2.html#a56ffb6e0c1e4f046c73163f842868780" title="Platers controls for this scene. " alt="" coords="163,107,359,133"/>
 <area shape="rect" id="node6" href="$classMeshBuilder.html#a8fede2f411aebe5d41af99b51be7ed77" title="Generate the vertices of a quad; Use random color for each vertex Then generate the VBO/IBO and store..." alt="" coords="168,259,355,285"/>
-<area shape="rect" id="node12" href="$classSP2.html#a8669c489b6a968f367a4610b254ac992" title="SP2::Init" alt="" coords="453,360,525,387"/>
-<area shape="rect" id="node13" href="$classScene2.html#ad452e11ff007a8a1a410284630eb6f12" title="Initializes for 2nd scene. " alt="" coords="443,411,534,437"/>
-<area shape="rect" id="node14" href="$classScene3.html#ae0fa7e48f701d3761d8c6ca01a334feb" title="Scene3::Init" alt="" coords="443,461,534,488"/>
+<area shape="rect" id="node12" href="$classScene3.html#ae0fa7e48f701d3761d8c6ca01a334feb" title="Initializes for 3rd scene. " alt="" coords="443,360,534,387"/>
+<area shape="rect" id="node13" href="$classSP2.html#a8669c489b6a968f367a4610b254ac992" title="Initializes for 1st scene. " alt="" coords="453,411,525,437"/>
+<area shape="rect" id="node14" href="$classScene2.html#ad452e11ff007a8a1a410284630eb6f12" title="Initializes for 2nd scene. " alt="" coords="443,461,534,488"/>
 <area shape="rect" id="node15" href="$classMeshBuilder.html#a96d1a0ba39e026036abea6551a372d84" title="MeshBuilder::GenerateRepeatQuad" alt="" coords="148,309,375,336"/>
 <area shape="rect" id="node16" href="$classMeshBuilder.html#ada356c86bcb69adb5706e9d63d6c3d62" title="MeshBuilder::GenerateSpheres" alt="" coords="160,512,363,539"/>
 <area shape="rect" id="node17" href="$classMeshBuilder.html#aac7c87881dbc08f8d41f2068e0f40c76" title="MeshBuilder::GenerateText" alt="" coords="171,208,351,235"/>
 <area shape="rect" id="node18" href="$classCamera.html#aa46f58b32270a571ab56dde4caca46db" title="Camera::Reset" alt="" coords="207,563,316,589"/>
-<area shape="rect" id="node3" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="431,5,546,32"/>
-<area shape="rect" id="node5" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="431,56,546,83"/>
-<area shape="rect" id="node7" href="$classSceneMenu.html#a04e7de51d1fdc121f602bde2cf5ee75b" title="SceneMenu::Init" alt="" coords="431,107,547,133"/>
-<area shape="rect" id="node8" href="$classSceneWin.html#afa3ef72645aba47196ba1b7ddc598bb6" title="Initializes for win scene, any booleans/strings/floats and meshes. " alt="" coords="435,157,542,184"/>
+<area shape="rect" id="node3" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="431,5,546,32"/>
+<area shape="rect" id="node5" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="431,56,546,83"/>
+<area shape="rect" id="node7" href="$classSceneWin.html#afa3ef72645aba47196ba1b7ddc598bb6" title="Initializes for win scene, any booleans/strings/floats and meshes. " alt="" coords="435,107,542,133"/>
+<area shape="rect" id="node8" href="$classSceneMenu.html#a04e7de51d1fdc121f602bde2cf5ee75b" title="Initializes for menu scene, any booleans/strings/floats and meshes. " alt="" coords="431,157,547,184"/>
 <area shape="rect" id="node9" href="$classCutscene.html#a847225fbd9e7e70feae0a7a87e5c8a17" title="Initializes for cutscene, meshes/floats/booleans. " alt="" coords="437,208,540,235"/>
 <area shape="rect" id="node10" href="$classShop.html#a89d006f2a5dbfa60526a0c55718155b2" title="Initializes for shop scene, any booleans/strings/floats and meshes. " alt="" coords="450,259,527,285"/>
-<area shape="rect" id="node11" href="$classStartCutScene.html#a982675447a165086a784db31ece4dbb1" title="StartCutScene::Init" alt="" coords="423,309,555,336"/>
+<area shape="rect" id="node11" href="$classStartCutScene.html#a982675447a165086a784db31ece4dbb1" title="Initializes for this cut scene. " alt="" coords="423,309,555,336"/>
 <area shape="rect" id="node19" href="$classCamera.html#a01f94c3543f56ede7af49dc778f19331" title="Camera::Camera" alt="" coords="429,563,549,589"/>
 </map>

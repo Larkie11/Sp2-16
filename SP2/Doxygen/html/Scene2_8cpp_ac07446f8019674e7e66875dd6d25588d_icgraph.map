@@ -1,5 +1,5 @@
 <map id="VtoP" name="VtoP">
-<area shape="rect" id="node2" href="$classScene2.html#a56ffb6e0c1e4f046c73163f842868780" title="Scene2::Character_Movement" alt="" coords="104,5,300,32"/>
-<area shape="rect" id="node4" href="$classScene2.html#a8025538657c7ab07416e743b0b37ca1c" title="Scene2::Enemy_Updating" alt="" coords="115,56,289,83"/>
-<area shape="rect" id="node3" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="348,31,463,57"/>
+<area shape="rect" id="node2" href="$classScene2.html#a56ffb6e0c1e4f046c73163f842868780" title="Platers controls for this scene. " alt="" coords="104,5,300,32"/>
+<area shape="rect" id="node4" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="145,56,259,83"/>
+<area shape="rect" id="node3" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="348,5,463,32"/>
 </map>

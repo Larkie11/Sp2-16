@@ -1,7 +1,7 @@
 <map id="Cutscene::Update" name="Cutscene::Update">
 <area shape="rect" id="node2" href="$classCutscene.html#aa177f286bd430cb1b67ab6c1d08705dc" title="Random camera shaking when explosion happens. " alt="" coords="180,167,321,209"/>
 <area shape="rect" id="node6" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="369,107,537,133"/>
-<area shape="rect" id="node7" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Camera3::Init" alt="" coords="201,65,300,92"/>
+<area shape="rect" id="node7" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initializes player camera. " alt="" coords="201,65,300,92"/>
 <area shape="rect" id="node11" href="$classSound.html#aaaf67f7ba4482d8a07a122a1ec4ff965" title="Stop certain music when called. " alt="" coords="187,241,314,268"/>
 <area shape="rect" id="node3" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="399,157,508,184"/>
 <area shape="rect" id="node5" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="376,208,531,235"/>

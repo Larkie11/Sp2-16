@@ -1,5 +1,5 @@
 <map id="NPC::Door" name="NPC::Door">
-<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="CollisionDetector::\lcollideByDist" alt="" coords="161,5,289,47"/>
+<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="collideByDist(Vector3 object, Vector3 target) is a calculator function for CollisionDetector class..." alt="" coords="161,5,289,47"/>
 <area shape="rect" id="node3" href="$structVector3.html#a71b1271deb064c65f9dc7dba638c5b57" title="Dot product of 2 vectors. " alt="" coords="177,71,272,98"/>
-<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="137,122,312,149"/>
+<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Check which key is presses. " alt="" coords="137,122,312,149"/>
 </map>

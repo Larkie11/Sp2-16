@@ -51,26 +51,26 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="699">
+      <node id="688">
         <label>HuffTable</label>
         <link refid="structHuffTable"/>
-        <childnode refid="700" relation="usage">
+        <childnode refid="689" relation="usage">
           <edgelabel>codes</edgelabel>
         </childnode>
-        <childnode refid="701" relation="usage">
+        <childnode refid="690" relation="usage">
           <edgelabel>bits</edgelabel>
         </childnode>
-        <childnode refid="702" relation="usage">
+        <childnode refid="691" relation="usage">
           <edgelabel>xsize</edgelabel>
         </childnode>
       </node>
-      <node id="702">
+      <node id="691">
         <label>int</label>
       </node>
-      <node id="701">
+      <node id="690">
         <label>const uint8_t *</label>
       </node>
-      <node id="700">
+      <node id="689">
         <label>const uint16_t *</label>
       </node>
     </collaborationgraph>

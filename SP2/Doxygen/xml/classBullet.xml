@@ -15,10 +15,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="17" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="17" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
-        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">CollideWithEnemy</referencedby>
-        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="34" endline="44">Update</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="34" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
+        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="82" endline="92">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1a1c2981247686929466f7537f6c5a1581" prot="public" static="no" mutable="no">
         <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
@@ -31,9 +30,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="18" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="18" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
-        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="34" endline="44">Update</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="35" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
+        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="82" endline="92">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -46,9 +45,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="20" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="20" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
-        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="34" endline="44">Update</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="37" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
+        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="82" endline="92">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -61,8 +60,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="21" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="21" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="38" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1a194ea6e237c00a04b735ccc01e95c118" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -76,9 +75,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="22" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="22" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
-        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="34" endline="44">Update</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="39" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
+        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="82" endline="92">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1a8669e4b4c08338b0d75396416346619d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -91,9 +90,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="23" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="23" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
-        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="34" endline="44">Update</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="40" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
+        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="82" endline="92">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1a88a7e152eefd331d199b5ab940167409" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -106,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="24" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="24" bodyend="-1"/>
+        <location file="MyGraphics/Source/Bullet.h" line="41" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -119,10 +118,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="25" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="25" bodyend="-1"/>
-        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="16" endline="27">Bullet</referencedby>
-        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">CollideWithEnemy</referencedby>
-        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="34" endline="44">Update</referencedby>
+        <location file="MyGraphics/Source/Bullet.h" line="42" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" compoundref="Bullet_8cpp" startline="44" endline="55">Bullet</referencedby>
+        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="138" endline="158">CollideWithEnemy</referencedby>
+        <referencedby refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" compoundref="Bullet_8cpp" startline="82" endline="92">Update</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -136,18 +135,26 @@
           <declname>dt</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" kindref="member">Update(double dt)</ref> is a update function for <ref refid="classBullet" kindref="compound">Bullet</ref> class, where I update the position values for the bullet that has been shot. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>damageTaken</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A double dt that represent the delta time in update. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="26" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="34" bodyend="44"/>
-        <references refid="classBullet_1a8669e4b4c08338b0d75396416346619d" compoundref="Bullet_8h" startline="23">b_distanceLimit</references>
-        <references refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" compoundref="Bullet_8h" startline="22">b_distanceTravel</references>
-        <references refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" compoundref="Bullet_8h" startline="20">b_Speed</references>
-        <references refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" compoundref="Bullet_8h" startline="25">destoryBullet</references>
-        <references refid="classBullet_1a1c2981247686929466f7537f6c5a1581" compoundref="Bullet_8h" startline="18">direction</references>
-        <references refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" compoundref="Bullet_8h" startline="17">position</references>
+        <location file="MyGraphics/Source/Bullet.h" line="43" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="82" bodyend="92"/>
+        <references refid="classBullet_1a8669e4b4c08338b0d75396416346619d" compoundref="Bullet_8h" startline="40">b_distanceLimit</references>
+        <references refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" compoundref="Bullet_8h" startline="39">b_distanceTravel</references>
+        <references refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" compoundref="Bullet_8h" startline="37">b_Speed</references>
+        <references refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" compoundref="Bullet_8h" startline="42">destoryBullet</references>
+        <references refid="classBullet_1a1c2981247686929466f7537f6c5a1581" compoundref="Bullet_8h" startline="35">direction</references>
+        <references refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" compoundref="Bullet_8h" startline="34">position</references>
       </memberdef>
       <memberdef kind="function" id="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
@@ -159,16 +166,25 @@
           <declname>V</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" kindref="member">PtoV(Position V)</ref> is a convertor function for <ref refid="classBullet" kindref="compound">Bullet</ref> class, where I convert the position values into a vector. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structPosition" kindref="compound">Position</ref> values that need to be convert to <ref refid="structVector3" kindref="compound">Vector3</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="structVector3" kindref="compound">Vector3</ref> that has been converted from a position </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="27" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="46" bodyend="50"/>
+        <location file="MyGraphics/Source/Bullet.h" line="44" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="109" bodyend="113"/>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="8">Position::y</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">CollideWithEnemy</referencedby>
+        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="138" endline="158">CollideWithEnemy</referencedby>
       </memberdef>
       <memberdef kind="function" id="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -189,21 +205,39 @@
           <declname>detectCollision</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>CollideWithEnemy(<ref refid="classEnemy" kindref="compound">Enemy</ref> enemy[], vector&lt;Bullet*&gt;bullet_arr, <ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref> detectCollision) is a function for <ref refid="classBullet" kindref="compound">Bullet</ref> class to calculate if each of the bullet in the scene did or did not collide with any enemy, if it didn&apos;t it will only travel a distance before it gets destoryed or if it hits an enemy it will get destoryed too. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enemy[]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="classEnemy" kindref="compound">Enemy</ref> array that consists of all the enemy inside the game,</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bullet_arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classBullet" kindref="compound">Bullet</ref> vector to store all the bullet in the game,</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>detectCollision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Collision detector that the scene are using to check distance and if 2 objects are collided together. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="28" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="52" bodyend="77"/>
-        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</references>
-        <references refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">Enemy::DamageReceived</references>
-        <references refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" compoundref="Bullet_8h" startline="25">destoryBullet</references>
-        <references refid="classSharedData_1a212c6461f83b5ab83e44118b34f52154" compoundref="SharedData_8h" startline="69">SharedData::enemycounter</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" compoundref="Bullet_8h" startline="17">position</references>
-        <references refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" compoundref="Bullet_8cpp" startline="46" endline="50">PtoV</references>
-        <references refid="classEnemy_1aea4b20d7406b086406339215975eccfd" compoundref="Enemy_8cpp" startline="230" endline="233">Enemy::Return_Position</references>
-        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <location file="MyGraphics/Source/Bullet.h" line="45" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="138" bodyend="158"/>
+        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="82" endline="94">CollisionDetector::collideByDist</references>
+        <references refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">Enemy::DamageReceived</references>
+        <references refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" compoundref="Bullet_8h" startline="42">destoryBullet</references>
+        <references refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" compoundref="Bullet_8cpp" startline="109" endline="113">PtoV</references>
+        <references refid="classEnemy_1aea4b20d7406b086406339215975eccfd" compoundref="Enemy_8cpp" startline="297" endline="300">Enemy::Return_Position</references>
       </memberdef>
       <memberdef kind="function" id="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -211,12 +245,12 @@
         <argsstring>()</argsstring>
         <name>Bullet</name>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet()</ref> is a constructor for <ref refid="classBullet" kindref="compound">Bullet</ref> class, where I set the default values needed for the methods. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="30" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="12" bodyend="15"/>
+        <location file="MyGraphics/Source/Bullet.h" line="47" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="28" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -228,22 +262,30 @@
           <declname>camera</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" kindref="member">Bullet(Camera3 camera)</ref> is an overloaded constructor for <ref refid="classBullet" kindref="compound">Bullet</ref> class, where I set the default values needed for the methods. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>damageTaken</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classCamera3" kindref="compound">Camera3</ref> class for the bullet to spawn from by taking the position, view and rotation of the player&apos;s camera. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="31" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="16" bodyend="27"/>
-        <references refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" compoundref="Bullet_8h" startline="21">b_Angle</references>
-        <references refid="classBullet_1a8669e4b4c08338b0d75396416346619d" compoundref="Bullet_8h" startline="23">b_distanceLimit</references>
-        <references refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" compoundref="Bullet_8h" startline="22">b_distanceTravel</references>
-        <references refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" compoundref="Bullet_8h" startline="20">b_Speed</references>
-        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
-        <references refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" compoundref="Bullet_8h" startline="25">destoryBullet</references>
-        <references refid="classBullet_1a1c2981247686929466f7537f6c5a1581" compoundref="Bullet_8h" startline="18">direction</references>
+        <location file="MyGraphics/Source/Bullet.h" line="48" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="44" bodyend="55"/>
+        <references refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" compoundref="Bullet_8h" startline="38">b_Angle</references>
+        <references refid="classBullet_1a8669e4b4c08338b0d75396416346619d" compoundref="Bullet_8h" startline="40">b_distanceLimit</references>
+        <references refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" compoundref="Bullet_8h" startline="39">b_distanceTravel</references>
+        <references refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" compoundref="Bullet_8h" startline="37">b_Speed</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="30">Camera3::cameraRotate</references>
+        <references refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" compoundref="Bullet_8h" startline="42">destoryBullet</references>
+        <references refid="classBullet_1a1c2981247686929466f7537f6c5a1581" compoundref="Bullet_8h" startline="35">direction</references>
         <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
-        <references refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" compoundref="Bullet_8h" startline="17">position</references>
-        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="20">Camera3::view</references>
+        <references refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" compoundref="Bullet_8h" startline="34">position</references>
+        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="31">Camera3::view</references>
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
       </memberdef>
       <memberdef kind="function" id="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -252,54 +294,54 @@
         <argsstring>()</argsstring>
         <name>~Bullet</name>
         <briefdescription>
-        </briefdescription>
+<para><ref refid="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" kindref="member">~Bullet()</ref> is the destructor for <ref refid="classBullet" kindref="compound">Bullet</ref> class. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Bullet.h" line="32" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="30" bodyend="32"/>
+        <location file="MyGraphics/Source/Bullet.h" line="49" column="1" bodyfile="MyGraphics/Source/Bullet.cpp" bodystart="66" bodyend="66"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Defines a player&apos;s bullet in game and its methods. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Class <ref refid="classBullet" kindref="compound">Bullet</ref>: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="602">
+      <node id="592">
         <label>float</label>
       </node>
-      <node id="601">
+      <node id="591">
         <label>Bullet</label>
         <link refid="classBullet"/>
-        <childnode refid="602" relation="usage">
+        <childnode refid="592" relation="usage">
           <edgelabel>b_damage</edgelabel>
           <edgelabel>b_distanceLimit</edgelabel>
           <edgelabel>b_distanceTravel</edgelabel>
           <edgelabel>b_Angle</edgelabel>
           <edgelabel>b_Speed</edgelabel>
         </childnode>
-        <childnode refid="603" relation="usage">
+        <childnode refid="593" relation="usage">
           <edgelabel>position</edgelabel>
           <edgelabel>direction</edgelabel>
         </childnode>
-        <childnode refid="604" relation="usage">
+        <childnode refid="594" relation="usage">
           <edgelabel>destoryBullet</edgelabel>
         </childnode>
       </node>
-      <node id="604">
+      <node id="594">
         <label>bool</label>
       </node>
-      <node id="603">
+      <node id="593">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="602" relation="usage">
+        <childnode refid="592" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="MyGraphics/Source/Bullet.h" line="14" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="13" bodyend="33"/>
+    <location file="MyGraphics/Source/Bullet.h" line="31" column="1" bodyfile="MyGraphics/Source/Bullet.h" bodystart="30" bodyend="50"/>
     <listofallmembers>
       <member refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" prot="public" virt="non-virtual"><scope>Bullet</scope><name>b_Angle</name></member>
       <member refid="classBullet_1a88a7e152eefd331d199b5ab940167409" prot="public" virt="non-virtual"><scope>Bullet</scope><name>b_damage</name></member>

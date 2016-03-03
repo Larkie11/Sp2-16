@@ -1,22 +1,22 @@
 <map id="Application::IsKeyPressed" name="Application::IsKeyPressed">
-<area shape="rect" id="node2" href="$classSP2.html#a1f7d44908238ba902bfcd6fb509ee079" title="SP2::Character_Movement" alt="" coords="237,5,415,32"/>
-<area shape="rect" id="node3" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="481,81,577,108"/>
-<area shape="rect" id="node4" href="$classScene2.html#a56ffb6e0c1e4f046c73163f842868780" title="Scene2::Character_Movement" alt="" coords="228,208,424,235"/>
+<area shape="rect" id="node2" href="$classScene3.html#a97c70e9151bede5a2ea42b19b5098337" title="Platers controls for this scene. " alt="" coords="228,5,424,32"/>
+<area shape="rect" id="node3" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="472,81,587,108"/>
+<area shape="rect" id="node4" href="$classScene2.html#a56ffb6e0c1e4f046c73163f842868780" title="Platers controls for this scene. " alt="" coords="228,208,424,235"/>
 <area shape="rect" id="node5" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="472,183,587,209"/>
-<area shape="rect" id="node6" href="$classScene3.html#a97c70e9151bede5a2ea42b19b5098337" title="Scene3::Character_Movement" alt="" coords="228,309,424,336"/>
-<area shape="rect" id="node7" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="472,284,587,311"/>
+<area shape="rect" id="node6" href="$classSP2.html#a1f7d44908238ba902bfcd6fb509ee079" title="Platers controls for this scene. " alt="" coords="237,309,415,336"/>
+<area shape="rect" id="node7" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="481,284,577,311"/>
 <area shape="rect" id="node8" href="$classNPC.html#a36e813302930862ecaea05db5286d271" title="Function that checks for door animation and collision. " alt="" coords="284,259,368,285"/>
 <area shape="rect" id="node9" href="$classSceneMenu.html#a119a0daee8a124bbe5cb408f9ce944b1" title="SceneMenu::mouseControl" alt="" coords="237,411,415,437"/>
-<area shape="rect" id="node10" href="$classApplication.html#aaf09cd6cb412086dc039e28cdb059f0d" title="Application::Run" alt="" coords="267,461,385,488"/>
-<area shape="rect" id="node12" href="$classNPC.html#ae2c01888b291a222da606b2ba6efbe84" title="All NPC interaction and sound effects for NPC. " alt="" coords="275,107,377,133"/>
+<area shape="rect" id="node10" href="$classApplication.html#aaf09cd6cb412086dc039e28cdb059f0d" title="Main loop to run the game. " alt="" coords="267,461,385,488"/>
+<area shape="rect" id="node12" href="$classNPC.html#ae2c01888b291a222da606b2ba6efbe84" title="All NPC interaction. " alt="" coords="275,107,377,133"/>
 <area shape="rect" id="node13" href="$classNPC.html#a151a32b216a01bbae169c51b77c7c408" title="Checks if player is near to the shop, and then allow certain interactions to happen (Like show shop s..." alt="" coords="283,664,369,691"/>
 <area shape="rect" id="node14" href="$classShop.html#af915842cee6266631dc4f18abd95d854" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="479,613,580,640"/>
 <area shape="rect" id="node15" href="$classShop.html#a9bf25bf857c3d2f12f2afd7d7e034422" title="Checks for if player is in each other the &quot;shop/buying/selling&quot; scene and show out the options player..." alt="" coords="259,715,393,741"/>
 <area shape="rect" id="node16" href="$classCamera.html#acc1741feb6d9da849ea4b6c12e0711e6" title="Camera::Update" alt="" coords="268,765,384,792"/>
-<area shape="rect" id="node17" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="265,512,387,539"/>
+<area shape="rect" id="node17" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Updates camera every scene. " alt="" coords="265,512,387,539"/>
 <area shape="rect" id="node18" href="$classSceneWin.html#ae9b6232f0d97525ea3f26af4b1811a5b" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="261,816,391,843"/>
-<area shape="rect" id="node19" href="$classSceneMenu.html#a6337296b63007ec335cadba8665d7d94" title="SceneMenu::UpdateMenu" alt="" coords="240,867,412,893"/>
-<area shape="rect" id="node20" href="$classSceneMenu.html#a422db583e22754ce8449f93aa40019f5" title="SceneMenu::userInput" alt="" coords="250,917,402,944"/>
+<area shape="rect" id="node19" href="$classSceneMenu.html#a6337296b63007ec335cadba8665d7d94" title="Handles all switch cases for menu. " alt="" coords="240,867,412,893"/>
+<area shape="rect" id="node20" href="$classSceneMenu.html#a422db583e22754ce8449f93aa40019f5" title="Handles user up and down input. " alt="" coords="250,917,402,944"/>
 <area shape="rect" id="node21" href="$classShop.html#a6c97c222063586a3493580f3aaea1065" title="Checks for player input in &quot;Shop/Buy/Selling&quot;. " alt="" coords="269,563,383,589"/>
 <area shape="rect" id="node11" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="504,461,555,488"/>
 </map>

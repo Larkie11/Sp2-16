@@ -63,6 +63,11 @@ void SceneMenu::Init()
 	//Sets the enum for option menu and menu scren
 	choose = menushop.STARTGAME;
 	Input = "Menu";
+	menu_pos = 5;
+
+	LSPEED = 10.f;
+	moveSkyBoxZ = 91.f;
+	moveSkyBoxX = 0.f;
 
 	sound.playMusic("Music//Music.mp3");
 	//Read the menu texts from text file
@@ -307,91 +312,6 @@ void SceneMenu::userInput()
 			}
 		}
 	}
-}
-//Handles user mouse input
-void SceneMenu::mouseControl()
-{
-	POINT p;
-	if (GetCursorPos(&p))
-	{
-		px = p.x;
-		py = p.y;
-	}
-	if (Input == "Menu")
-	{
-		if (px > SharedData::GetInstance()->width / 9.59 && px < SharedData::GetInstance()->width / 3.58)
-		{
-			if (py > SharedData::GetInstance()->height / 2.62 && py < SharedData::GetInstance()->height / 2.4)
-			{
-				choose = MenuShop::STARTGAME;
-				menuIcon = 117;
-				if (Application::IsKeyPressed(VK_LBUTTON))
-				{
-					my_arr[0] = "Loading Game";
-					SharedData::GetInstance()->stateCheck = true;
-					SharedData::GetInstance()->gameState = SharedData::GAME;
-				}
-			}
-			if (py > SharedData::GetInstance()->height / 2.397 && py < SharedData::GetInstance()->height / 2.22)
-			{
-				menuIcon = 111.5;
-				choose = MenuShop::CREDITS;
-				if (Application::IsKeyPressed(VK_LBUTTON))
-				{
-					menuIcon = 30.5;
-					Input = "Credits";
-					c_option = MenuShop::O_CREDIT;
-				}
-			}
-			if (py > SharedData::GetInstance()->height / 2.215 && py < SharedData::GetInstance()->height / 2.06)
-			{
-				menuIcon = 103.8;
-				choose = MenuShop::HELP;
-				if (Application::IsKeyPressed(VK_LBUTTON))
-				{
-					menuIcon = 30.5;
-					Input = "Help";
-					c_option = MenuShop::O_HELP;
-				}
-			}
-			if (py > SharedData::GetInstance()->height / 2.06 && py < SharedData::GetInstance()->height / 1.94)
-			{
-				menuIcon = 97.5;
-				choose = MenuShop::QUIT;
-				if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
-				{
-					SharedData::GetInstance()->gameState = SharedData::QUIT;
-				}
-			}
-		}
-	}
-
-	if (Input == "Credits")
-	{
-		if (px > SharedData::GetInstance()->width / 9.14 && px < SharedData::GetInstance()->width / 5.66 && py > SharedData::GetInstance()->height / 1.93  && py < SharedData::GetInstance()->height / 1.825)
-		{
-			if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
-			{
-				menushop.PressTime = deltaTime / 5;
-				Input = "Menu";
-				choose = MenuShop::STARTGAME;
-			}
-		}
-	}
-
-	if (Input == "Help")
-	{
-		if (px > SharedData::GetInstance()->width / 9.14 && px < SharedData::GetInstance()->width / 5.66 && py > SharedData::GetInstance()->height / 1.93 && py < SharedData::GetInstance()->height / 1.825)
-		{
-			if (Application::IsKeyPressed(VK_LBUTTON) && menushop.PressTime == 0)
-			{
-				menushop.PressTime = deltaTime / 5;
-				Input = "Menu";
-				choose = MenuShop::STARTGAME;
-			}
-		}
-	}
-
 }
 /******************************************************************************/
 /*!
@@ -678,8 +598,6 @@ void SceneMenu::Render()
 	}
 	Fps.resize(8);
 	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 1);
-	RenderTextOnScreen(meshList[GEO_TEXT], mouseX, Color(1, 1, 0), 1.5, 1, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], mouseY, Color(1, 1, 0), 1.5, 1, 3);
 }
 /******************************************************************************/
 /*!

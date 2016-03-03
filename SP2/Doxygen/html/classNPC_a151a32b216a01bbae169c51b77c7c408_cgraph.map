@@ -1,7 +1,7 @@
 <map id="NPC::Shop" name="NPC::Shop">
-<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="CollisionDetector::\lcollideByDist" alt="" coords="163,5,291,47"/>
+<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="collideByDist(Vector3 object, Vector3 target) is a calculator function for CollisionDetector class..." alt="" coords="163,5,291,47"/>
 <area shape="rect" id="node3" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="143,71,311,98"/>
-<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="140,122,315,149"/>
+<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Check which key is presses. " alt="" coords="140,122,315,149"/>
 <area shape="rect" id="node5" href="$classSound.html#aff890910a52b741e92134ee9c3c82408" title="Plays the sound effect no loop. " alt="" coords="173,173,282,199"/>
 <area shape="rect" id="node6" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="363,165,515,207"/>
 </map>

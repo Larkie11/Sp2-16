@@ -78,7 +78,7 @@ Initializes for 3rd scene
 /******************************************************************************/
 void Scene3::Init()
 {
-	 potatoRotate = 0;
+	potatoRotate = 0;
 	srand(time(NULL));
 	Map_Reading();
 
@@ -88,6 +88,10 @@ void Scene3::Init()
 	sound.playMusic("Music//Scene3.mp3");
 	SharedData::GetInstance()->gameScene = "Scene3";
 	PressTime = 0;
+
+	Z_Displacement = 0;
+	X_Displacement = -100;
+
 	On_Plane = false;
 	Plane.Set(350, -20, 0);
 	// Init VBO here
@@ -99,6 +103,32 @@ void Scene3::Init()
 	rm_coolDown = rm_coolDownLimit = 10;
 	startRMcoolDown = false;
 	weaponChoice = 1;
+
+	throwingdown = 0;
+	throwingforward = 0;
+	throwup = 0;
+	newcameraposition = (0, 0, 0);
+	oldcameraposition = (0, 0, 0);
+	throwbomb = false;
+	thrown = false;
+	toggle = false;
+	cam1 = false;
+	movement = true;
+	plantbomb = false;
+	doorinteract = true;
+	Speed = 0;
+	On_Plane = false;
+	Died_Time = 0;
+
+	robot1moved = false;
+	robot1rotate = false;
+	robot1rotation = 0;
+	parts = 0;
+
+	moveSkyBoxZ = 91.f;
+	moveSkyBoxX = 0.f;
+	followx = 0;
+	followy = 0;
 
 	gunTranslation = swordTranslation = pickAxeTranslation = swordRotation = pickAxeRotation = gunRotation = 0;
 	storyPosition = 2.5;
@@ -1560,7 +1590,7 @@ void Scene3::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], ore, Color(1, 0, 0), 1.5, x + 11.5, y - 9);
 	RenderTextOnScreen(meshList[GEO_TEXT], bomb, Color(1, 0, 0), 1.5, x + 11.5, y - 13);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 0, 39);
 
 	glBlendFunc(1, 1);
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);

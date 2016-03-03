@@ -4,25 +4,25 @@
     <compoundname>main.cpp</compoundname>
     <includes refid="Application_8h" local="yes">Application.h</includes>
     <incdepgraph>
-      <node id="5291">
+      <node id="5565">
         <label>windows.h</label>
       </node>
-      <node id="5290">
+      <node id="5564">
         <label>timer.h</label>
         <link refid="timer_8h"/>
-        <childnode refid="5291" relation="include">
+        <childnode refid="5565" relation="include">
         </childnode>
       </node>
-      <node id="5289">
+      <node id="5563">
         <label>Application.h</label>
         <link refid="Application_8h"/>
-        <childnode refid="5290" relation="include">
+        <childnode refid="5564" relation="include">
         </childnode>
       </node>
-      <node id="5288">
+      <node id="5562">
         <label>MyGraphics/Source/main.cpp</label>
         <link refid="main.cpp"/>
-        <childnode refid="5289" relation="include">
+        <childnode refid="5563" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -42,9 +42,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/main.cpp" line="5" column="1" bodyfile="MyGraphics/Source/main.cpp" bodystart="5" bodyend="11"/>
-        <references refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="182" endline="188">Application::Exit</references>
-        <references refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="60" endline="113">Application::Init</references>
-        <references refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</references>
+        <references refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="265" endline="271">Application::Exit</references>
+        <references refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="124" endline="177">Application::Init</references>
+        <references refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="187" endline="255">Application::Run</references>
       </memberdef>
       </sectiondef>
     <briefdescription>

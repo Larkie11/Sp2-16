@@ -1,4 +1,4 @@
 <map id="MyGraphics/Source/SceneMenu.h" name="MyGraphics/Source/SceneMenu.h">
-<area shape="rect" id="node2" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node3" href="$SceneMenu_8cpp.html" title="MyGraphics/Source/SceneMenu.cpp" alt="" coords="261,80,495,107"/>
+<area shape="rect" id="node2" href="$Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node3" href="$SceneMenu_8cpp.html" title="Renders Scene menu where player choses what option they want to choose (Play, instructions, credits, quit) " alt="" coords="261,80,495,107"/>
 </map>

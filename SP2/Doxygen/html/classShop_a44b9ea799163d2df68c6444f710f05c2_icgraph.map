@@ -1,5 +1,5 @@
 <map id="Shop::RenderMesh" name="Shop::RenderMesh">
 <area shape="rect" id="node2" href="$classShop.html#ae965cfdda5e2d6214a7daf7d300f2ff0" title="The main render function for this scene, renders any text/meshes. " alt="" coords="425,25,527,52"/>
-<area shape="rect" id="node3" href="$classShop.html#aee217c79bf37585efa133ac5a5b91316" title="Renders any meshList items/obj on the screen. " alt="" coords="187,25,377,52"/>
+<area shape="rect" id="node3" href="$classShop.html#aee217c79bf37585efa133ac5a5b91316" title="Renders obj and quads on screen. " alt="" coords="187,25,377,52"/>
 <area shape="rect" id="node4" href="$classShop.html#a8a70313590dea95a14f0f24001ca2c9d" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="209,76,355,102"/>
 </map>

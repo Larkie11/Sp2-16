@@ -50,15 +50,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="10" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="10" bodyend="-1"/>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" prot="public" static="no" mutable="no">
         <type><ref refid="structColor" kindref="compound">Color</ref></type>
@@ -72,9 +72,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="11" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="11" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -88,12 +88,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="12" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="12" bodyend="-1"/>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -107,9 +107,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="13" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="13" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -123,9 +123,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="13" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="13" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a79c8e47de58f131ff5403fc2d823cc21" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -139,9 +139,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="13" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="13" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" prot="public" static="no" mutable="no">
         <type><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref></type>
@@ -155,9 +155,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="28" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="28" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a6bd73eb0b27ef881f8442e20912d9258" prot="public" static="no" mutable="no">
         <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
@@ -171,12 +171,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="29" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="29" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1ad5c458221ba2e0102fdc079e911ff2fa" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -190,9 +190,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="30" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="30" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -206,9 +206,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="31" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="31" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -222,9 +222,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Light.h" line="32" column="1" bodyfile="MyGraphics/Source/Light.h" bodystart="32" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -249,28 +249,28 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="784">
+      <node id="773">
         <label>Position</label>
         <link refid="structPosition"/>
-        <childnode refid="782" relation="usage">
+        <childnode refid="771" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
-      <node id="781">
+      <node id="770">
         <label>LIGHT_TYPE</label>
       </node>
-      <node id="782">
+      <node id="771">
         <label>float</label>
       </node>
-      <node id="780">
+      <node id="769">
         <label>Light</label>
         <link refid="structLight"/>
-        <childnode refid="781" relation="usage">
+        <childnode refid="770" relation="usage">
           <edgelabel>type</edgelabel>
         </childnode>
-        <childnode refid="782" relation="usage">
+        <childnode refid="771" relation="usage">
           <edgelabel>exponent</edgelabel>
           <edgelabel>kL</edgelabel>
           <edgelabel>cosCutOff</edgelabel>
@@ -279,29 +279,29 @@
           <edgelabel>kC</edgelabel>
           <edgelabel>power</edgelabel>
         </childnode>
-        <childnode refid="783" relation="usage">
+        <childnode refid="772" relation="usage">
           <edgelabel>spotDirection</edgelabel>
         </childnode>
-        <childnode refid="784" relation="usage">
+        <childnode refid="773" relation="usage">
           <edgelabel>position</edgelabel>
         </childnode>
-        <childnode refid="785" relation="usage">
+        <childnode refid="774" relation="usage">
           <edgelabel>color</edgelabel>
         </childnode>
       </node>
-      <node id="785">
+      <node id="774">
         <label>Color</label>
         <link refid="structColor"/>
-        <childnode refid="782" relation="usage">
+        <childnode refid="771" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="783">
+      <node id="772">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="782" relation="usage">
+        <childnode refid="771" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>

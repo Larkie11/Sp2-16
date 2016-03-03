@@ -144,8 +144,8 @@ void Application::Init()
 	SharedData::GetInstance()->height = mode->height + 1;
 
 	//Change glfwGetPrimaryMonitor to null for windowed version, change width and height to your own liking (Example 1080, 768, null, null)
-	//m_window = glfwCreateWindow(SharedData::GetInstance()->width, SharedData::GetInstance()->height, "SPACE", glfwGetPrimaryMonitor(), nullptr);
-	m_window = glfwCreateWindow(1080, 768, "SPACE", NULL, nullptr);
+	m_window = glfwCreateWindow(SharedData::GetInstance()->width, SharedData::GetInstance()->height, "SPACE", glfwGetPrimaryMonitor(), nullptr);
+	//m_window = glfwCreateWindow(1080, 768, "SPACE", NULL, nullptr);
 	glfwSetCursorPos(m_window, SharedData::GetInstance()->width / 2, SharedData::GetInstance()->height / 2);
 
 	//If the window couldn't be created

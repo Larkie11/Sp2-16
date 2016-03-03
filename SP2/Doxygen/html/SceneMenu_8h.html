@@ -54,6 +54,9 @@
 <div class="title">SceneMenu.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Renders <a class="el" href="classScene.html">Scene</a> menu where player choses what option they want to choose (Play, instructions, credits, quit)  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Scene_8h_source.html">Scene.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Mtx44_8h_source.html">Mtx44.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Mesh_8h_source.html">Mesh.h</a>&quot;</code><br />
@@ -65,7 +68,6 @@
 <code>#include &quot;<a class="el" href="MenuShop_8h_source.html">MenuShop.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sound_8h_source.html">Sound.h</a>&quot;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SceneMenu.h:</div>
@@ -73,41 +75,41 @@ Include dependency graph for SceneMenu.h:</div>
 <div class="center"><img src="SceneMenu_8h__incl.png" border="0" usemap="#MyGraphics_2Source_2SceneMenu_8h" alt=""/></div>
 <map name="MyGraphics_2Source_2SceneMenu_8h" id="MyGraphics_2Source_2SceneMenu_8h">
 <area shape="rect" id="node2" href="Scene_8h.html" title="Scene.h" alt="" coords="5,80,76,107"/>
-<area shape="rect" id="node3" href="Mtx44_8h.html" title="Matrix 4 by 4 use for affine transformation. " alt="" coords="530,155,599,181"/>
-<area shape="rect" id="node11" href="Mesh_8h.html" title="Mesh.h" alt="" coords="492,80,557,107"/>
-<area shape="rect" id="node13" href="Material_8h.html" title="Material.h" alt="" coords="237,155,316,181"/>
-<area shape="rect" id="node15" href="MatrixStack_8h.html" title="Matrix Stack to replace openGL math function. " alt="" coords="365,80,468,107"/>
-<area shape="rect" id="node17" href="Light_8h.html" title="Light.h" alt="" coords="151,155,213,181"/>
-<area shape="rect" id="node18" href="Camera3_8h.html" title="Camera3.h" alt="" coords="341,155,426,181"/>
-<area shape="rect" id="node20" href="Application_8h.html" title="Application.h" alt="" coords="847,80,944,107"/>
-<area shape="rect" id="node23" href="MenuShop_8h.html" title="MenuShop.h" alt="" coords="633,80,728,107"/>
-<area shape="rect" id="node24" href="Sound_8h.html" title="Sound.h" alt="" coords="752,80,823,107"/>
-<area shape="rect" id="node4" href="MyMath_8h.html" title="Header file for math helper functions. " alt="" coords="441,379,521,405"/>
-<area shape="rect" id="node9" href="Vector3_8h.html" title="Struct to define a 3D vector. " alt="" coords="344,304,423,331"/>
-<area shape="rect" id="node14" href="Vertex_8h.html" title="Vertex.h" alt="" coords="241,229,312,256"/>
-<area shape="rect" id="node19" href="Camera_8h.html" title="Camera.h" alt="" coords="344,229,423,256"/>
-<area shape="rect" id="node21" href="timer_8h.html" title="timer.h" alt="" coords="2096,155,2159,181"/>
-<area shape="rect" id="node25" href="irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1509,155,1586,181"/>
-<area shape="rect" id="node26" href="ik__irrKlangTypes_8h.html" title="ik_irrKlangTypes.h" alt="" coords="1045,528,1175,555"/>
-<area shape="rect" id="node28" href="ik__vec3d_8h.html" title="ik_vec3d.h" alt="" coords="937,453,1019,480"/>
-<area shape="rect" id="node30" href="ik__IRefCounted_8h.html" title="ik_IRefCounted.h" alt="" coords="1898,453,2018,480"/>
-<area shape="rect" id="node31" href="ik__IVirtualRefCounted_8h.html" title="ik_IVirtualRefCounted.h" alt="" coords="1043,453,1201,480"/>
-<area shape="rect" id="node32" href="ik__ESoundOutputDrivers_8h.html" title="ik_ESoundOutputDrivers.h" alt="" coords="2075,229,2249,256"/>
-<area shape="rect" id="node33" href="ik__ESoundEngineOptions_8h.html" title="ik_ESoundEngineOptions.h" alt="" coords="2274,229,2455,256"/>
-<area shape="rect" id="node34" href="ik__EStreamModes_8h.html" title="ik_EStreamModes.h" alt="" coords="1117,379,1257,405"/>
-<area shape="rect" id="node35" href="ik__SAudioStreamFormat_8h.html" title="ik_SAudioStreamFormat.h" alt="" coords="1808,379,1983,405"/>
+<area shape="rect" id="node3" href="Mtx44_8h.html" title="Matrix 4 by 4 use for affine transformation. " alt="" coords="390,155,459,181"/>
+<area shape="rect" id="node11" href="Mesh_8h.html" title="Mesh.h" alt="" coords="432,80,497,107"/>
+<area shape="rect" id="node13" href="Material_8h.html" title="Material.h" alt="" coords="97,155,176,181"/>
+<area shape="rect" id="node15" href="MatrixStack_8h.html" title="Matrix Stack to replace openGL math function. " alt="" coords="253,80,356,107"/>
+<area shape="rect" id="node17" href="Light_8h.html" title="Light.h" alt="" coords="11,155,73,181"/>
+<area shape="rect" id="node18" href="Camera3_8h.html" title="Camera3.h" alt="" coords="201,155,286,181"/>
+<area shape="rect" id="node20" href="Application_8h.html" title="Application.h" alt="" coords="521,80,619,107"/>
+<area shape="rect" id="node23" href="MenuShop_8h.html" title="All the enums for shop/menu states. " alt="" coords="643,80,737,107"/>
+<area shape="rect" id="node24" href="Sound_8h.html" title="Handles music and sound effect for the game using irrklang. " alt="" coords="761,80,832,107"/>
+<area shape="rect" id="node4" href="MyMath_8h.html" title="Header file for math helper functions. " alt="" coords="335,379,415,405"/>
+<area shape="rect" id="node9" href="Vector3_8h.html" title="Struct to define a 3D vector. " alt="" coords="204,304,283,331"/>
+<area shape="rect" id="node14" href="Vertex_8h.html" title="Vertex.h" alt="" coords="101,229,172,256"/>
+<area shape="rect" id="node19" href="Camera_8h.html" title="Camera.h" alt="" coords="204,229,283,256"/>
+<area shape="rect" id="node21" href="timer_8h.html" title="timer.h" alt="" coords="516,155,579,181"/>
+<area shape="rect" id="node25" href="irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1526,155,1603,181"/>
+<area shape="rect" id="node26" href="ik__irrKlangTypes_8h.html" title="ik_irrKlangTypes.h" alt="" coords="1029,528,1159,555"/>
+<area shape="rect" id="node28" href="ik__vec3d_8h.html" title="ik_vec3d.h" alt="" coords="921,453,1003,480"/>
+<area shape="rect" id="node30" href="ik__IRefCounted_8h.html" title="ik_IRefCounted.h" alt="" coords="1850,453,1970,480"/>
+<area shape="rect" id="node31" href="ik__IVirtualRefCounted_8h.html" title="ik_IVirtualRefCounted.h" alt="" coords="1027,453,1185,480"/>
+<area shape="rect" id="node32" href="ik__ESoundOutputDrivers_8h.html" title="ik_ESoundOutputDrivers.h" alt="" coords="2424,229,2599,256"/>
+<area shape="rect" id="node33" href="ik__ESoundEngineOptions_8h.html" title="ik_ESoundEngineOptions.h" alt="" coords="2623,229,2805,256"/>
+<area shape="rect" id="node34" href="ik__EStreamModes_8h.html" title="ik_EStreamModes.h" alt="" coords="1101,379,1241,405"/>
+<area shape="rect" id="node35" href="ik__SAudioStreamFormat_8h.html" title="ik_SAudioStreamFormat.h" alt="" coords="1760,379,1935,405"/>
 <area shape="rect" id="node36" href="ik__ISoundEngine_8h.html" title="ik_ISoundEngine.h" alt="" coords="1115,229,1246,256"/>
-<area shape="rect" id="node37" href="ik__ISoundSource_8h.html" title="ik_ISoundSource.h" alt="" coords="1218,304,1349,331"/>
-<area shape="rect" id="node38" href="ik__ISound_8h.html" title="ik_ISound.h" alt="" coords="901,304,991,331"/>
-<area shape="rect" id="node39" href="ik__ISoundEffectControl_8h.html" title="ik_ISoundEffectControl.h" alt="" coords="776,379,940,405"/>
-<area shape="rect" id="node40" href="ik__IFileFactory_8h.html" title="ik_IFileFactory.h" alt="" coords="1373,304,1492,331"/>
-<area shape="rect" id="node41" href="ik__ISoundMixedOutputReceiver_8h.html" title="ik_ISoundMixedOutputReceiver.h" alt="" coords="1567,304,1781,331"/>
-<area shape="rect" id="node42" href="ik__IAudioStream_8h.html" title="ik_IAudioStream.h" alt="" coords="1805,304,1933,331"/>
-<area shape="rect" id="node43" href="ik__IAudioStreamLoader_8h.html" title="ik_IAudioStreamLoader.h" alt="" coords="1832,229,1999,256"/>
-<area shape="rect" id="node44" href="ik__IFileReader_8h.html" title="ik_IFileReader.h" alt="" coords="2333,304,2447,331"/>
-<area shape="rect" id="node45" href="ik__ISoundStopEventReceiver_8h.html" title="ik_ISoundStopEventReceiver.h" alt="" coords="2059,304,2257,331"/>
-<area shape="rect" id="node46" href="ik__ISoundDeviceList_8h.html" title="ik_ISoundDeviceList.h" alt="" coords="2374,379,2523,405"/>
-<area shape="rect" id="node47" href="ik__IAudioRecorder_8h.html" title="ik_IAudioRecorder.h" alt="" coords="1371,229,1510,256"/>
+<area shape="rect" id="node37" href="ik__ISoundSource_8h.html" title="ik_ISoundSource.h" alt="" coords="1202,304,1333,331"/>
+<area shape="rect" id="node38" href="ik__ISound_8h.html" title="ik_ISound.h" alt="" coords="885,304,975,331"/>
+<area shape="rect" id="node39" href="ik__ISoundEffectControl_8h.html" title="ik_ISoundEffectControl.h" alt="" coords="760,379,924,405"/>
+<area shape="rect" id="node40" href="ik__IFileFactory_8h.html" title="ik_IFileFactory.h" alt="" coords="1357,304,1476,331"/>
+<area shape="rect" id="node41" href="ik__ISoundMixedOutputReceiver_8h.html" title="ik_ISoundMixedOutputReceiver.h" alt="" coords="1602,304,1815,331"/>
+<area shape="rect" id="node42" href="ik__IAudioStream_8h.html" title="ik_IAudioStream.h" alt="" coords="1890,304,2018,331"/>
+<area shape="rect" id="node43" href="ik__IAudioStreamLoader_8h.html" title="ik_IAudioStreamLoader.h" alt="" coords="2131,229,2297,256"/>
+<area shape="rect" id="node44" href="ik__IFileReader_8h.html" title="ik_IFileReader.h" alt="" coords="2317,304,2431,331"/>
+<area shape="rect" id="node45" href="ik__ISoundStopEventReceiver_8h.html" title="ik_ISoundStopEventReceiver.h" alt="" coords="2043,304,2241,331"/>
+<area shape="rect" id="node46" href="ik__ISoundDeviceList_8h.html" title="ik_ISoundDeviceList.h" alt="" coords="2381,379,2530,405"/>
+<area shape="rect" id="node47" href="ik__IAudioRecorder_8h.html" title="ik_IAudioRecorder.h" alt="" coords="1338,229,1477,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -115,8 +117,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="SceneMenu_8h__dep__incl.png" border="0" usemap="#MyGraphics_2Source_2SceneMenu_8hdep" alt=""/></div>
 <map name="MyGraphics_2Source_2SceneMenu_8hdep" id="MyGraphics_2Source_2SceneMenu_8hdep">
-<area shape="rect" id="node2" href="Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node3" href="SceneMenu_8cpp.html" title="MyGraphics/Source/SceneMenu.cpp" alt="" coords="261,80,495,107"/>
+<area shape="rect" id="node2" href="Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node3" href="SceneMenu_8cpp.html" title="Renders Scene menu where player choses what option they want to choose (Play, instructions, credits, quit) " alt="" coords="261,80,495,107"/>
 </map>
 </div>
 </div>
@@ -125,9 +127,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneMenu.html">SceneMenu</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class objects, meshes to render, booleans, floats and strings.  <a href="classSceneMenu.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Renders <a class="el" href="classScene.html">Scene</a> menu where player choses what option they want to choose (Play, instructions, credits, quit) </p>
+<dl class="section author"><dt>Author</dt><dd>Mok Wei Min </dd></dl>
+<dl class="section user"><dt></dt><dd></dd></dl>
+
+<p>Definition in file <a class="el" href="SceneMenu_8h_source.html">SceneMenu.h</a>.</p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

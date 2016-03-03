@@ -17,15 +17,15 @@
         </inbodydescription>
         <location file="MyGraphics/Source/Material.h" line="17" column="1" bodyfile="MyGraphics/Source/Material.h" bodystart="17" bodyend="-1"/>
         <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="51" endline="154">StartCutScene::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" prot="public" static="no" mutable="no">
         <type><ref refid="structComponent" kindref="compound">Component</ref></type>
@@ -40,15 +40,15 @@
         </inbodydescription>
         <location file="MyGraphics/Source/Material.h" line="18" column="1" bodyfile="MyGraphics/Source/Material.h" bodystart="18" bodyend="-1"/>
         <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="51" endline="154">StartCutScene::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" prot="public" static="no" mutable="no">
         <type><ref refid="structComponent" kindref="compound">Component</ref></type>
@@ -63,15 +63,15 @@
         </inbodydescription>
         <location file="MyGraphics/Source/Material.h" line="19" column="1" bodyfile="MyGraphics/Source/Material.h" bodystart="19" bodyend="-1"/>
         <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="51" endline="154">StartCutScene::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -86,15 +86,15 @@
         </inbodydescription>
         <location file="MyGraphics/Source/Material.h" line="20" column="1" bodyfile="MyGraphics/Source/Material.h" bodystart="20" bodyend="-1"/>
         <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="51" endline="154">StartCutScene::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -118,28 +118,28 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="789">
+      <node id="778">
         <label>Component</label>
         <link refid="structComponent"/>
-        <childnode refid="788" relation="usage">
+        <childnode refid="777" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="787">
+      <node id="776">
         <label>Material</label>
         <link refid="structMaterial"/>
-        <childnode refid="788" relation="usage">
+        <childnode refid="777" relation="usage">
           <edgelabel>kShininess</edgelabel>
         </childnode>
-        <childnode refid="789" relation="usage">
+        <childnode refid="778" relation="usage">
           <edgelabel>kDiffuse</edgelabel>
           <edgelabel>kAmbient</edgelabel>
           <edgelabel>kSpecular</edgelabel>
         </childnode>
       </node>
-      <node id="788">
+      <node id="777">
         <label>float</label>
       </node>
     </collaborationgraph>

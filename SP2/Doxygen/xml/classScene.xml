@@ -43,14 +43,14 @@
         <definition>virtual void Scene::Init</definition>
         <argsstring>()=0</argsstring>
         <name>Init</name>
-        <reimplementedby refid="classSceneMenu_1a04e7de51d1fdc121f602bde2cf5ee75b">Init</reimplementedby>
         <reimplementedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6">Init</reimplementedby>
+        <reimplementedby refid="classSceneMenu_1a04e7de51d1fdc121f602bde2cf5ee75b">Init</reimplementedby>
         <reimplementedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17">Init</reimplementedby>
         <reimplementedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2">Init</reimplementedby>
         <reimplementedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1">Init</reimplementedby>
+        <reimplementedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb">Init</reimplementedby>
         <reimplementedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992">Init</reimplementedby>
         <reimplementedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12">Init</reimplementedby>
-        <reimplementedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb">Init</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -58,21 +58,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Scene.h" line="10" column="1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="187" endline="255">Application::Run</referencedby>
       </memberdef>
       <memberdef kind="function" id="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void Scene::Update</definition>
         <argsstring>(double dt)=0</argsstring>
         <name>Update</name>
-        <reimplementedby refid="classSceneMenu_1a98e02f179a5b8b9a2aa07bbd7ea0e925">Update</reimplementedby>
         <reimplementedby refid="classSceneWin_1ae9b6232f0d97525ea3f26af4b1811a5b">Update</reimplementedby>
+        <reimplementedby refid="classSceneMenu_1a98e02f179a5b8b9a2aa07bbd7ea0e925">Update</reimplementedby>
         <reimplementedby refid="classCutscene_1ad0419ba77f29fa1707e56b9635a0addc">Update</reimplementedby>
         <reimplementedby refid="classShop_1af915842cee6266631dc4f18abd95d854">Update</reimplementedby>
         <reimplementedby refid="classStartCutScene_1a35d5e6b0aa01adfe90bb233da4c55e86">Update</reimplementedby>
+        <reimplementedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1">Update</reimplementedby>
         <reimplementedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c">Update</reimplementedby>
         <reimplementedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6">Update</reimplementedby>
-        <reimplementedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1">Update</reimplementedby>
         <param>
           <type>double</type>
           <declname>dt</declname>
@@ -84,21 +84,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Scene.h" line="11" column="1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="187" endline="255">Application::Run</referencedby>
       </memberdef>
       <memberdef kind="function" id="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void Scene::Render</definition>
         <argsstring>()=0</argsstring>
         <name>Render</name>
-        <reimplementedby refid="classSceneMenu_1a60ea43185b14fce70f319b0a48dd4e79">Render</reimplementedby>
         <reimplementedby refid="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173">Render</reimplementedby>
+        <reimplementedby refid="classSceneMenu_1a60ea43185b14fce70f319b0a48dd4e79">Render</reimplementedby>
         <reimplementedby refid="classCutscene_1a74edfeb7d02dd7ee12e965c748ce422e">Render</reimplementedby>
         <reimplementedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0">Render</reimplementedby>
         <reimplementedby refid="classStartCutScene_1a38be415c2d752b8a334c8456434dca4b">Render</reimplementedby>
+        <reimplementedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143">Render</reimplementedby>
         <reimplementedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71">Render</reimplementedby>
         <reimplementedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4">Render</reimplementedby>
-        <reimplementedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143">Render</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -106,21 +106,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Scene.h" line="12" column="1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="187" endline="255">Application::Run</referencedby>
       </memberdef>
       <memberdef kind="function" id="classScene_1aae8e24654ef98c79961c2b804b12852c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void Scene::Exit</definition>
         <argsstring>()=0</argsstring>
         <name>Exit</name>
-        <reimplementedby refid="classSceneMenu_1aa067569e15dce49721fdeb50b555af2f">Exit</reimplementedby>
         <reimplementedby refid="classSceneWin_1afc8a5e5259775be90f08830e5f57ac79">Exit</reimplementedby>
+        <reimplementedby refid="classSceneMenu_1aa067569e15dce49721fdeb50b555af2f">Exit</reimplementedby>
         <reimplementedby refid="classCutscene_1abca18cf3ed8f733ee5bfb17f8fe0a5a5">Exit</reimplementedby>
         <reimplementedby refid="classShop_1a4421e06b07aab249cfd25f76e9719311">Exit</reimplementedby>
         <reimplementedby refid="classStartCutScene_1a201fce4a6e9377b95aa63bf38615b70b">Exit</reimplementedby>
+        <reimplementedby refid="classScene3_1a71f49cdf7e105d554c2c8f03b720cdc9">Exit</reimplementedby>
         <reimplementedby refid="classSP2_1a5b606cdfc77b243631fc130483527333">Exit</reimplementedby>
         <reimplementedby refid="classScene2_1ae4c94dab85cfe1e734af4e288060dec4">Exit</reimplementedby>
-        <reimplementedby refid="classScene3_1a71f49cdf7e105d554c2c8f03b720cdc9">Exit</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -128,7 +128,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/Scene.h" line="13" column="1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="115" endline="180">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="187" endline="255">Application::Run</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -136,56 +136,56 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="884">
+      <node id="866">
         <label>Shop</label>
         <link refid="classShop"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="886">
+      <node id="868">
         <label>StartCutScene</label>
         <link refid="classStartCutScene"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="880">
+      <node id="862">
         <label>Scene2</label>
         <link refid="classScene2"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="881">
+      <node id="863">
         <label>Scene3</label>
         <link refid="classScene3"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="883">
+      <node id="865">
         <label>SceneWin</label>
         <link refid="classSceneWin"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="878">
+      <node id="860">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="885">
+      <node id="867">
         <label>SP2</label>
         <link refid="classSP2"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="882">
+      <node id="864">
         <label>SceneMenu</label>
         <link refid="classSceneMenu"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="879">
+      <node id="861">
         <label>Cutscene</label>
         <link refid="classCutscene"/>
-        <childnode refid="878" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>

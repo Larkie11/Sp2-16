@@ -1,11 +1,9 @@
 <map id="Scene2::RenderMesh" name="Scene2::RenderMesh">
-<area shape="rect" id="node2" href="$classScene2.html#a8baecf53cfcdd00f85113c7c6ba6ec68" title="Scene2::Enemy_Rendering" alt="" coords="212,5,392,32"/>
-<area shape="rect" id="node3" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="452,208,567,235"/>
-<area shape="rect" id="node4" href="$classScene2.html#aff0b7223bdd83eb79d9863d568b97cd0" title="Scene2::EquipmentHolding" alt="" coords="213,107,391,133"/>
-<area shape="rect" id="node5" href="$classScene2.html#abe448426c8c2c0699bc3bef6f0c994b2" title="Scene2::Map_Rendering" alt="" coords="220,157,384,184"/>
-<area shape="rect" id="node6" href="$classScene2.html#af97ba4b11e3f2b908dfb0b54f865cd7f" title="Scene2::ObjectsHolding" alt="" coords="221,208,383,235"/>
-<area shape="rect" id="node7" href="$classScene2.html#ac985aad2013a92037243eb6800e3b847" title="Scene2::Plane_Rendering" alt="" coords="216,259,388,285"/>
-<area shape="rect" id="node8" href="$classScene2.html#aa9558d9a7351690943efadbc6d414005" title="Scene2::RenderObjects" alt="" coords="222,309,382,336"/>
-<area shape="rect" id="node9" href="$classScene2.html#a8cabb8b2edc17f61e88316eac4387daf" title="Renders meshlist/obj on screen. " alt="" coords="200,360,404,387"/>
-<area shape="rect" id="node10" href="$classScene2.html#af16926d5f54c54cf17220d68b743ceab" title="Renders skybox with rotation and scaling done. " alt="" coords="223,411,381,437"/>
+<area shape="rect" id="node2" href="$classScene2.html#a8baecf53cfcdd00f85113c7c6ba6ec68" title="Rendering Enemy In this scene. " alt="" coords="212,5,392,32"/>
+<area shape="rect" id="node3" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="452,157,567,184"/>
+<area shape="rect" id="node4" href="$classScene2.html#abe448426c8c2c0699bc3bef6f0c994b2" title="Rendering map based on Txt file for this scene. " alt="" coords="220,107,384,133"/>
+<area shape="rect" id="node5" href="$classScene2.html#af97ba4b11e3f2b908dfb0b54f865cd7f" title="hold objects or parts " alt="" coords="221,157,383,184"/>
+<area shape="rect" id="node6" href="$classScene2.html#ac985aad2013a92037243eb6800e3b847" title="Scene2::Plane_Rendering" alt="" coords="216,208,388,235"/>
+<area shape="rect" id="node7" href="$classScene2.html#a8cabb8b2edc17f61e88316eac4387daf" title="Renders meshlist/obj on screen. " alt="" coords="200,259,404,285"/>
+<area shape="rect" id="node8" href="$classScene2.html#af16926d5f54c54cf17220d68b743ceab" title="Renders skybox with rotation and scaling done. " alt="" coords="223,309,381,336"/>
 </map>

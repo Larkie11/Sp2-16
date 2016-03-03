@@ -66,7 +66,6 @@
     <member refid="classCamera3_1a3f3e636d3783560f23fbbdfcb30ee873" kind="variable"><name>minX</name></member>
     <member refid="classCamera3_1ab8677569db9ac82cff0ccf1e88ef236a" kind="variable"><name>maxZ</name></member>
     <member refid="classCamera3_1ab02e65f09cb7cefad9c33ccb216748e7" kind="variable"><name>minZ</name></member>
-    <member refid="classCamera3_1a978ca7363fed0c3ba1191a9d0837b72d" kind="variable"><name>door</name></member>
     <member refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" kind="function"><name>Camera3</name></member>
     <member refid="classCamera3_1a386fa089e2507622ef79675cd95efd69" kind="function"><name>~Camera3</name></member>
     <member refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" kind="function"><name>Init</name></member>
@@ -214,6 +213,7 @@
     <member refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" kind="variable"><name>canInteract</name></member>
     <member refid="structNPC_1_1DOT_1a43f8834f2ab49434068d1a102994eae0" kind="variable"><name>canGoThrough</name></member>
     <member refid="structNPC_1_1DOT_1ae2cacde2ef87e5080e0a9229ab080290" kind="variable"><name>Collision</name></member>
+    <member refid="structNPC_1_1DOT_1a1879a82ffcbc7cc054b91aabbb91fabc" kind="variable"><name>show</name></member>
     <member refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" kind="variable"><name>Nposition</name></member>
     <member refid="structNPC_1_1DOT_1aed31700ee9837a78817024847a7bdfca" kind="variable"><name>robot</name></member>
   </compound>
@@ -246,7 +246,7 @@
     <member refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" kind="function"><name>DamageReceived</name></member>
     <member refid="classEnemy_1aea4b20d7406b086406339215975eccfd" kind="function"><name>Return_Position</name></member>
     <member refid="classEnemy_1aa04b1e981e9910935e1a1df8524f5f18" kind="function"><name>Collision_Detection</name></member>
-    <member refid="classEnemy_1a819ee9012f940e2c1c81064b1983c037" kind="function"><name>enemy_attack</name></member>
+    <member refid="classEnemy_1a890c0d63a3ddc2ec65d8a0f7089e1579" kind="function"><name>enemy_attack</name></member>
   </compound>
   <compound refid="structGetBitContext" kind="struct"><name>GetBitContext</name>
     <member refid="structGetBitContext_1ad3bbe8f5d0b9e28a1070396fac5725d8" kind="variable"><name>buffer</name></member>
@@ -506,15 +506,11 @@
     <member refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715a32591e4f6fa7b4e3b73cf971e72ae4a4" kind="enumvalue"><name>SB_MAX</name></member>
     <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27" kind="enum"><name>SHOP_SELL</name></member>
     <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abeb6fdbe9a4848f27b4eb173e9f11aff" kind="enumvalue"><name>SS_AMMO</name></member>
-    <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27ab1749b88e8cc117d880010ee84a2a3d7" kind="enumvalue"><name>SS_BOMB</name></member>
+    <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abf757b0971083453f230da593b4a4465" kind="enumvalue"><name>SS_ORE</name></member>
     <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27acef92a3299a443c22c865621b5f6e427" kind="enumvalue"><name>SS_EGG</name></member>
     <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27a5c847c9a91360d16f6cd2f5f59d0c782" kind="enumvalue"><name>SS_BACK</name></member>
     <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27aaab9c55ce4ea62c6850d10351e20c63d" kind="enumvalue"><name>SS_MAX</name></member>
-    <member refid="classMenuShop_1ac79c9a4361fc04186da275a6e7ff5a36" kind="variable"><name>shopInput</name></member>
-    <member refid="classMenuShop_1a16d2d1a4f761c7aeb3ccfb51ed0e2ed8" kind="variable"><name>Input</name></member>
     <member refid="classMenuShop_1ad78cc43b96ef87e43d626e7e993489f3" kind="variable"><name>PressTime</name></member>
-    <member refid="classMenuShop_1ab857387a5c2cdc63b1b6bd7fc638d261" kind="variable"><name>s_option</name></member>
-    <member refid="classMenuShop_1a92361eb45d65ce4b79fd6dbdce192509" kind="variable"><name>s_buy</name></member>
     <member refid="classMenuShop_1ae5aae86c2a5cf12c66347787a4a3a0d8" kind="function"><name>MenuShop</name></member>
     <member refid="classMenuShop_1acddfeb27051c7413a32877debeb73b3b" kind="function"><name>~MenuShop</name></member>
   </compound>
@@ -573,6 +569,7 @@
     <member refid="classMouse_1a3cb65ae92353822a76957bbf461fac01" kind="function"><name>AssignePointToVector</name></member>
     <member refid="classMouse_1a2c9b67e0d34d23bd53abb7662e271a04" kind="function"><name>MouseUpdate</name></member>
     <member refid="classMouse_1ad63048fcac2af6f05281b4f2f070602c" kind="function"><name>MouseUpdate</name></member>
+    <member refid="classMouse_1aeb71baa32f54cc5b7aa074ec832ba9b1" kind="function"><name>Callback</name></member>
   </compound>
   <compound refid="structMPADecodeContext" kind="struct"><name>MPADecodeContext</name>
     <member refid="structMPADecodeContext_1a50261340d0c177c2c8f98e2929293118" kind="variable"><name>inbuf1</name></member>
@@ -648,6 +645,14 @@
     <member refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" kind="function"><name>SetToOrtho</name></member>
   </compound>
   <compound refid="classNPC" kind="class"><name>NPC</name>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3" kind="enum"><name>ROBOT</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a756ef8d0cb91ab77d6d99f8dbe662e57" kind="enumvalue"><name>None</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ad0259b8a4e80194d61a873d05af58600" kind="enumvalue"><name>ShowE</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab1b1e7f1c26850ae2ab57cda18cb7c14" kind="enumvalue"><name>Robot1</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a9702737696c1847b03e01284f4b6dfad" kind="enumvalue"><name>Robot1_1</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab0bc0662daf6a564d753056c784a80ae" kind="enumvalue"><name>Robot1_2</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a416fb767c4513930f4241d933f853452" kind="enumvalue"><name>Robot2</name></member>
+    <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a24c8fa04adad783d9a982b71784397ff" kind="enumvalue"><name>Robot3</name></member>
     <member refid="classNPC_1ae031c59118e339bc7b983d755270b3ed" kind="variable"><name>door</name></member>
     <member refid="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" kind="variable"><name>robot1</name></member>
     <member refid="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" kind="variable"><name>robot2</name></member>
@@ -664,11 +669,13 @@
     <member refid="classNPC_1ad5fbe58d73eda3c6dc184db36a86da1a" kind="variable"><name>egg4</name></member>
     <member refid="classNPC_1a65a4cff8745128f22b60e70181e71ac7" kind="variable"><name>egg5</name></member>
     <member refid="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" kind="variable"><name>bomb</name></member>
+    <member refid="classNPC_1ac39e89f19cd1880dcf23cedd5eebb0e8" kind="variable"><name>speech</name></member>
     <member refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" kind="variable"><name>detectCollision</name></member>
     <member refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" kind="variable"><name>interactDia</name></member>
     <member refid="classNPC_1acc292d328d6ed61ee652ba1e9371c490" kind="variable"><name>dialoguePlus</name></member>
     <member refid="classNPC_1a072b54dc68788df7544884e3a4631410" kind="variable"><name>coolDownTime</name></member>
     <member refid="classNPC_1a727cc5aef2e9753e0f094a7511afd321" kind="variable"><name>dialogue</name></member>
+    <member refid="classNPC_1aae1faf4fd2e3260935e67bb5b5de0e79" kind="variable"><name>robot</name></member>
     <member refid="classNPC_1ab8a82c886c19a301950fe033e7f27574" kind="variable"><name>moveFront</name></member>
     <member refid="classNPC_1ab2a347de5d84d055e740679379377436" kind="variable"><name>moveBack</name></member>
     <member refid="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" kind="variable"><name>robot3rotate</name></member>
@@ -683,15 +690,6 @@
     <member refid="classNPC_1a3e837aa5669c2fa5395e2b037bcadd5d" kind="function"><name>NPCmovement2</name></member>
     <member refid="classNPC_1a59b45912692304d555df9d6957046962" kind="function"><name>NPC</name></member>
     <member refid="classNPC_1a67c0caca129b56c82bb7ec8bce6be52b" kind="function"><name>~NPC</name></member>
-  </compound>
-  <compound refid="classObjects" kind="class"><name>Objects</name>
-    <member refid="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1" kind="enum"><name>OBJECTS</name></member>
-    <member refid="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1a26e1c41822a098cd1ebfc8b5997faa19" kind="enumvalue"><name>COKE</name></member>
-    <member refid="classObjects_1aa1235a35b2c8f2db3d22ee8c391cefd1a49635ad08b4a140a51f9b53faa26ccd1" kind="enumvalue"><name>VENDINGMACHINE</name></member>
-    <member refid="classObjects_1a62b1bae89c8d586d0537444dd708640d" kind="variable"><name>ItemType</name></member>
-    <member refid="classObjects_1a1e3d945e13a62c21a8f00e1f6f72ffe2" kind="variable"><name>position</name></member>
-    <member refid="classObjects_1a99a95835b9c3df255e18c5f2f50219de" kind="function"><name>Objects</name></member>
-    <member refid="classObjects_1a86a7e38eca3e25f52e1208965d1ea5b1" kind="function"><name>~Objects</name></member>
   </compound>
   <compound refid="structPackedVertex" kind="struct"><name>PackedVertex</name>
     <member refid="structPackedVertex_1adbd5c98e027ccce79a27381686efdb62" kind="variable"><name>position</name></member>
@@ -771,12 +769,16 @@
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0eab93f3e1c9dbe288ad582a593604d6e0a" kind="enumvalue"><name>GEO_CCTV</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0eadb3b035a80152fb7fe1a4cf428a6223b" kind="enumvalue"><name>GEO_EGG</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea30ce53fac98f5399b47b867108913307" kind="enumvalue"><name>GEO_BAG</name></member>
+    <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea84d711736ea3a12bc6bcc7ca8f091245" kind="enumvalue"><name>GEO_RING</name></member>
+    <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea91f4a92f2b7ca6f9cd277928d219f2fe" kind="enumvalue"><name>GEO_PRISM</name></member>
+    <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea8eb94e1cf208ddee372b6e3d3e535573" kind="enumvalue"><name>GEO_SPEHERE</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0eae33abc215ed4ed3151f76688c18d13e0" kind="enumvalue"><name>GEO_BULLET</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0eace4f26b6d4a7e21be6316d695b0bd302" kind="enumvalue"><name>GEO_ROBOTH</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea3d3020fdc01cd0a907cc80448586f9ea" kind="enumvalue"><name>GEO_ROBOTB</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea2e4aa99ab405e1905b9919ca22bcaefd" kind="enumvalue"><name>GEO_ROBOT</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea147164f5fb89578fd735592111e83f72" kind="enumvalue"><name>GEO_ROBOT1</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea552689471b0b5675689b6f034e51d035" kind="enumvalue"><name>GEO_ROBOT2</name></member>
+    <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea4123958ee6115c3934524998909be4ae" kind="enumvalue"><name>GEO_SPEECH</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea06b25553f7cba7386de8abaeb41bcdc1" kind="enumvalue"><name>GEO_MOONBALL</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea3cda4ecea89ba3400106bc5346e27cbb" kind="enumvalue"><name>GEO_PYRAMID</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea08acd1e1c43f08224195256d2ebf9a85" kind="enumvalue"><name>GEO_PYRAMIDNEW</name></member>
@@ -788,6 +790,7 @@
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea5a0d0a045319027df5f57fa5bba9fcd3" kind="enumvalue"><name>GEO_PLANEBODY</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea7191eebbb30832fd7ccbe17ca34972ab" kind="enumvalue"><name>GEO_PLANEWING</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea0e94a1ce54d5980dcb7ce4051212ab61" kind="enumvalue"><name>GEO_PLANEROCKET</name></member>
+    <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0eac79418fdeb6a8d2348dbc71b53462eb2" kind="enumvalue"><name>GEO_POTATO</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea357409d79b169186b79822a0e6e331bc" kind="enumvalue"><name>GEO_PICKAXE</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea2fa6d23de1285f6f0050ac2e8ca68c85" kind="enumvalue"><name>GEO_GUN</name></member>
     <member refid="classScene2_1a028873b2024a640768bebc50fb1b0b0ea6eba3c91c2b69979b1ab897e3722c96d" kind="enumvalue"><name>GEO_SWORD</name></member>
@@ -859,11 +862,6 @@
     <member refid="classScene2_1a49448a0d6704fdddc6be96a09c943d99a8ada3966fe2e770d8dc7437044504d91" kind="enumvalue"><name>U_TEXT_ENABLED</name></member>
     <member refid="classScene2_1a49448a0d6704fdddc6be96a09c943d99aaaecf4d2acaa1ee71bb325066a5f1b47" kind="enumvalue"><name>U_TEXT_COLOR</name></member>
     <member refid="classScene2_1a49448a0d6704fdddc6be96a09c943d99ae809848bc789a7dc95f96abb2d9475c5" kind="enumvalue"><name>U_TOTAL</name></member>
-    <member refid="classScene2_1a30be106829979781f8176863ac7c21c2" kind="enum"><name>Items</name></member>
-    <member refid="classScene2_1a30be106829979781f8176863ac7c21c2af816e784e51e9f31c349a582bbba7c7f" kind="enumvalue"><name>None</name></member>
-    <member refid="classScene2_1a30be106829979781f8176863ac7c21c2affdd23201fb865686c977bca42648f6a" kind="enumvalue"><name>SPACEWING</name></member>
-    <member refid="classScene2_1a30be106829979781f8176863ac7c21c2a8572bdfb4dd567eb61203d3354cf7fe2" kind="enumvalue"><name>SPACEROCKET</name></member>
-    <member refid="classScene2_1a30be106829979781f8176863ac7c21c2a95aa348e307e189b32ded254bc7481fe" kind="enumvalue"><name>Num_Object</name></member>
     <member refid="classScene2_1a77ddf5771fcc5b90f377717edd585886" kind="variable"><name>Map</name></member>
     <member refid="classScene2_1a65fb73ca9b021f4e63536811a207fdd7" kind="variable"><name>Size</name></member>
     <member refid="classScene2_1ad014392cbe451822a6d121217fc45b0b" kind="variable"><name>Z_Displacement</name></member>
@@ -878,6 +876,8 @@
     <member refid="classScene2_1af0e69b5c629db931858bb925ec54af63" kind="variable"><name>robot1moved</name></member>
     <member refid="classScene2_1a70928edf69231edc697b10889272bf31" kind="variable"><name>robot1rotate</name></member>
     <member refid="classScene2_1ae88e537b9791174fd1d6ad88c4a9caf9" kind="variable"><name>robot1rotation</name></member>
+    <member refid="classScene2_1a4a15934989f5443679ed1ef7d2266a28" kind="variable"><name>xtranslate</name></member>
+    <member refid="classScene2_1ae1a5418c73e4cfa96097e2d8d48f2506" kind="variable"><name>ytranslate</name></member>
     <member refid="classScene2_1a130e6364d71437adf9a6fe3510c83bfb" kind="variable"><name>parts</name></member>
     <member refid="classScene2_1a6839e77f4caa38f60b01a2d723bcc29a" kind="variable"><name>meshList</name></member>
     <member refid="classScene2_1a62add0a2b7cb1b7a478571518e3def83" kind="variable"><name>modelStack</name></member>
@@ -887,6 +887,7 @@
     <member refid="classScene2_1a2d579caa4f34a86f6a6d19a65fec79fb" kind="variable"><name>moveSkyBoxZ</name></member>
     <member refid="classScene2_1adad85ca9b5d3448d016a0e1b51a9f305" kind="variable"><name>moveSkyBoxX</name></member>
     <member refid="classScene2_1aa09de46904a1710bcf5c0904b8846d9b" kind="variable"><name>light</name></member>
+    <member refid="classScene2_1a10844479759fa62f50633585e859a00c" kind="variable"><name>potatoRotate</name></member>
     <member refid="classScene2_1ac6f40acf933813c8f623a5561b3c5db1" kind="variable"><name>new_line</name></member>
     <member refid="classScene2_1aa53fed98e1768fdf3090b5196efd3d01" kind="variable"><name>camera</name></member>
     <member refid="classScene2_1a452652d01ff1dea81a455828474a44c3" kind="variable"><name>my_arr</name></member>
@@ -902,7 +903,7 @@
     <member refid="classScene2_1ab0824b01ce5e51ee7e1b564e5f12c70a" kind="variable"><name>story</name></member>
     <member refid="classScene2_1a70d0074475e3b0dd5cf167a373d9e5a8" kind="variable"><name>deltaTime</name></member>
     <member refid="classScene2_1a8e556a3d9bbc5eb48233b70c737c9f21" kind="variable"><name>bullet</name></member>
-    <member refid="classScene2_1a442124e826b825c7c26f2c705048a7e8" kind="variable"><name>objects</name></member>
+    <member refid="classScene2_1ac6af5ae666075b061aa3bed19e62413e" kind="variable"><name>Died_Time</name></member>
     <member refid="classScene2_1a0a5c84f24064a5a3949d69b17aadd67c" kind="variable"><name>enemy</name></member>
     <member refid="classScene2_1a5106beaccd722d589298d2074dd7a2dd" kind="variable"><name>throwingdown</name></member>
     <member refid="classScene2_1a28da4ab67d146228363bf26b47118b17" kind="variable"><name>throwingforward</name></member>
@@ -928,9 +929,6 @@
     <member refid="classScene2_1aff86e3c43d787a4f19d07a76136d2001" kind="variable"><name>coolDownTime</name></member>
     <member refid="classScene2_1a281e16f32f25cf9746a340cbede960e0" kind="variable"><name>shop</name></member>
     <member refid="classScene2_1ae91f0d37ad13157e3f55146cff3afb62" kind="variable"><name>doorinteract</name></member>
-    <member refid="classScene2_1a0ce360c8e0dc61bd82f9ccb0161b5ebb" kind="variable"><name>object</name></member>
-    <member refid="classScene2_1ae8c3b61a08798d8463173f29aed4383f" kind="variable"><name>object_on_hand</name></member>
-    <member refid="classScene2_1aaf89ad49de313a5032a577f5b08914d4" kind="variable"><name>T_object_Num</name></member>
     <member refid="classScene2_1ae37db92575668b6cf6769a18b7f33e1d" kind="variable"><name>JumpTime</name></member>
     <member refid="classScene2_1ad9ed919c084d18bf0e16056eae661231" kind="variable"><name>PressTime</name></member>
     <member refid="classScene2_1a4fc7c1862292c322e1d8757b3e851530" kind="variable"><name>mouse</name></member>
@@ -977,8 +975,6 @@
     <member refid="classScene2_1a8baecf53cfcdd00f85113c7c6ba6ec68" kind="function"><name>Enemy_Rendering</name></member>
     <member refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" kind="function"><name>Enemy_Updating</name></member>
     <member refid="classScene2_1af97ba4b11e3f2b908dfb0b54f865cd7f" kind="function"><name>ObjectsHolding</name></member>
-    <member refid="classScene2_1aff0b7223bdd83eb79d9863d568b97cd0" kind="function"><name>EquipmentHolding</name></member>
-    <member refid="classScene2_1aa9558d9a7351690943efadbc6d414005" kind="function"><name>RenderObjects</name></member>
     <member refid="classScene2_1aa512e12ff4b4fbea4d4f6b177c9b4b58" kind="function"><name>Map_Reading</name></member>
     <member refid="classScene2_1abe448426c8c2c0699bc3bef6f0c994b2" kind="function"><name>Map_Rendering</name></member>
     <member refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" kind="function"><name>Character_Movement</name></member>
@@ -1029,6 +1025,7 @@
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bba4e7b8b553dc106d632eedc24bafdfd17" kind="enumvalue"><name>GEO_ROBOT</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bbac32659fc972820d32980d4e00ed0420a" kind="enumvalue"><name>GEO_ROBOT1</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bba2290694751ce09e3b042bb01c03ed208" kind="enumvalue"><name>GEO_ROBOT2</name></member>
+    <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bbaba6895c72af26abbd200e91ed8671469" kind="enumvalue"><name>GEO_SPEECH</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bbab8cb74f0bd987d69d30c1e23b1576482" kind="enumvalue"><name>GEO_MOONBALL</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bba4621441c8cdbe0af386426c82e904b71" kind="enumvalue"><name>GEO_PYRAMID</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bba9e41372e037775620171f29f495276a6" kind="enumvalue"><name>GEO_PYRAMIDNEW</name></member>
@@ -1046,6 +1043,7 @@
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bba5162b84f40668211a5d2e37aeabe9b1a" kind="enumvalue"><name>GEO_RMBIG</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bbace800f24324ce70a6f2db72e1629ae09" kind="enumvalue"><name>GEO_EXPLOSION</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bbae06195c4826977965f819742fb084f37" kind="enumvalue"><name>GEO_BULLETSKIN</name></member>
+    <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bbadf38337af64e0a67bf51457944298a99" kind="enumvalue"><name>GEO_POTATO</name></member>
     <member refid="classScene3_1a75fcef79ae2ae31b96eb6e5c05bc31bba1ad5cb92af0b709dbcfec51bd8288451" kind="enumvalue"><name>NUM_GEOMETRY</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41e" kind="enum"><name>UNIFORM_TYPE</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea593e45eaa1b10e3f8e427db73208ecb4" kind="enumvalue"><name>U_MVP</name></member>
@@ -1103,41 +1101,12 @@
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea447affcdce79ddf9eb851dc9da3db4b2" kind="enumvalue"><name>U_LIGHT3_COSCUTOFF</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ead8e5750128cc17c71326e791e0a785af" kind="enumvalue"><name>U_LIGHT3_COSINNER</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea82fbd711650905646b7e06da90eea26e" kind="enumvalue"><name>U_LIGHT3_EXPONENT</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ead801c2fd6de23447e1537f2222eeb01d" kind="enumvalue"><name>U_LIGHT4_POSITION</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eaa58f72077f5ef0285cbdcf27b28937ad" kind="enumvalue"><name>U_LIGHT4_COLOR</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea7d89b6829cd56bbab7a80e642e2c0c51" kind="enumvalue"><name>U_LIGHT4_POWER</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ead3bc4a5faf0f75b391175927efc5783b" kind="enumvalue"><name>U_LIGHT4_KC</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea6db22e4d441b066a0211a8e99955aaea" kind="enumvalue"><name>U_LIGHT4_KL</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea0b351b3e5e5c59eaaf7ee0b5b5b56f6b" kind="enumvalue"><name>U_LIGHT4_KQ</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eab7cb71ea69c444ff6dea3cfa8511a02d" kind="enumvalue"><name>U_LIGHT4ENABLED</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea03dcf830193408c95dadacc406e8921c" kind="enumvalue"><name>U_LIGHT4_TYPE</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea126a2373dc9658692abb0df022bb0149" kind="enumvalue"><name>U_LIGHT4_SPOTDIRECTION</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea1b47109d4f9e88132974e19de3216035" kind="enumvalue"><name>U_LIGHT4_COSCUTOFF</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eac6f41c736793ed96939731251588d464" kind="enumvalue"><name>U_LIGHT4_COSINNER</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea100fc4530907510d606d0f8ae308cb3a" kind="enumvalue"><name>U_LIGHT4_EXPONENT</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea5d03d5120101954b0220d1ef8e59f21e" kind="enumvalue"><name>U_LIGHT5_POSITION</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea05538dae8e352def67105a27df8a73dd" kind="enumvalue"><name>U_LIGHT5_COLOR</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eaa9dc51675cee4105cfd414856d44215e" kind="enumvalue"><name>U_LIGHT5_POWER</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea3d95a3807754d41d166508a2afb17e1d" kind="enumvalue"><name>U_LIGHT5_KC</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea98608caede76494cc0b1c390006c531c" kind="enumvalue"><name>U_LIGHT5_KL</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eadaeeaa6395d2207c6b73e22eb6a8a39c" kind="enumvalue"><name>U_LIGHT5_KQ</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eae85a3a11f05f08e71bd69e9b050c415d" kind="enumvalue"><name>U_LIGHT5ENABLED</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea887e2fb0f5287dfdcdfb44f7f8fa91ce" kind="enumvalue"><name>U_LIGHT5_TYPE</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea6485748412bc3dbc0f3bbdfebcad0fc8" kind="enumvalue"><name>U_LIGHT5_SPOTDIRECTION</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea8baa3118bc89ffcabc2c3fdeae72735c" kind="enumvalue"><name>U_LIGHT5_COSCUTOFF</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ead7cf085c14c505720a713ae3602ad511" kind="enumvalue"><name>U_LIGHT5_COSINNER</name></member>
-    <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eaeb209d8fbe18a5883e29da26cc5303ad" kind="enumvalue"><name>U_LIGHT5_EXPONENT</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea99eb5c5c333126b3b7928e281d410d20" kind="enumvalue"><name>U_NUMLIGHTS</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea8bdef2ed1e78171923d8831652f958ae" kind="enumvalue"><name>U_COLOR_TEXTURE_ENABLED</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41eafc34507fcfad37a9d7362cad7611ce33" kind="enumvalue"><name>U_COLOR_TEXTURE</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea52c28a83b688386e3616f43bc46a1ac8" kind="enumvalue"><name>U_TEXT_ENABLED</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea03e3559821f94b062544a06e46df6122" kind="enumvalue"><name>U_TEXT_COLOR</name></member>
     <member refid="classScene3_1a9b928ccb48c4d2f4ab587754e748d41ea35e2f91483c3edc466aa61525a778fdc" kind="enumvalue"><name>U_TOTAL</name></member>
-    <member refid="classScene3_1ac38271b84f3053f006c5e83c2fb83dc3" kind="enum"><name>Items</name></member>
-    <member refid="classScene3_1ac38271b84f3053f006c5e83c2fb83dc3ae42f58ffb3292bb82d4aa45f2e6f74d2" kind="enumvalue"><name>None</name></member>
-    <member refid="classScene3_1ac38271b84f3053f006c5e83c2fb83dc3a80f5e96f08d5b4c5d4cd878005048f03" kind="enumvalue"><name>SPACEWING</name></member>
-    <member refid="classScene3_1ac38271b84f3053f006c5e83c2fb83dc3a7d9d66455b01429c4926bfd7bb2d6b2d" kind="enumvalue"><name>SPACEROCKET</name></member>
-    <member refid="classScene3_1ac38271b84f3053f006c5e83c2fb83dc3a3228343a032b55598e4f342bfe2fc527" kind="enumvalue"><name>Num_Object</name></member>
     <member refid="classScene3_1a5c06d5468b353314869e9dd4b51d19cc" kind="variable"><name>Map</name></member>
     <member refid="classScene3_1af7910254ba6770f8c4edbe9a9dd51f77" kind="variable"><name>Size</name></member>
     <member refid="classScene3_1a2f68b4fb899497093cb07ddc1dfc5e94" kind="variable"><name>Z_Displacement</name></member>
@@ -1152,6 +1121,8 @@
     <member refid="classScene3_1a8f0d8afd6b982f3825831ee060e8e707" kind="variable"><name>robot1moved</name></member>
     <member refid="classScene3_1a91770160e55a3e88f2d8d6134e4eb841" kind="variable"><name>robot1rotate</name></member>
     <member refid="classScene3_1a8d196f7a38f0d8916503d26566eb13d0" kind="variable"><name>robot1rotation</name></member>
+    <member refid="classScene3_1a0fc84a73e8b6e332407faabc3d5af043" kind="variable"><name>xtranslate</name></member>
+    <member refid="classScene3_1ab9de1edbc398768b46f7f5e6b5a1ce03" kind="variable"><name>ytranslate</name></member>
     <member refid="classScene3_1a2ffa6e0cfd87782285bb915c1b884184" kind="variable"><name>parts</name></member>
     <member refid="classScene3_1aafc9c3608926f6279fae71dfdf43603b" kind="variable"><name>meshList</name></member>
     <member refid="classScene3_1a8f79eca9ea33ec4d521252aa1ddb1924" kind="variable"><name>modelStack</name></member>
@@ -1160,6 +1131,7 @@
     <member refid="classScene3_1a1bde75126c5a45cc132d0d783153e4b6" kind="variable"><name>LSPEED</name></member>
     <member refid="classScene3_1ada0c0c9be42477efe930202cd55a357a" kind="variable"><name>moveSkyBoxZ</name></member>
     <member refid="classScene3_1acf2e5fc05e7ac6465f1f21809273fb70" kind="variable"><name>moveSkyBoxX</name></member>
+    <member refid="classScene3_1a834cad6df35eab816847278435fce75a" kind="variable"><name>potatoRotate</name></member>
     <member refid="classScene3_1a4f9e5fe56099b75539af6e8446b6c55b" kind="variable"><name>light</name></member>
     <member refid="classScene3_1adee53ece9c3418822ebe0535be08f326" kind="variable"><name>new_line</name></member>
     <member refid="classScene3_1a3b86dbf7f17f458cec23fd74acac8d31" kind="variable"><name>camera</name></member>
@@ -1177,7 +1149,7 @@
     <member refid="classScene3_1a934cc343838e6ae3758a3bc186ced936" kind="variable"><name>story</name></member>
     <member refid="classScene3_1a9c5248d26b3dad1b3bca33527b264ab9" kind="variable"><name>deltaTime</name></member>
     <member refid="classScene3_1a6709a09ac20efa00703da4d9d46262cb" kind="variable"><name>bullet</name></member>
-    <member refid="classScene3_1af65e80b8f0d144c88bd0ccfe080ecf4e" kind="variable"><name>objects</name></member>
+    <member refid="classScene3_1aa225ef9a4433249211420b57fa045dbf" kind="variable"><name>Died_Time</name></member>
     <member refid="classScene3_1abd476282c8acfa248bc9d2f26981e9cf" kind="variable"><name>enemy</name></member>
     <member refid="classScene3_1a16becab154a91264cda8388118662ddf" kind="variable"><name>throwingdown</name></member>
     <member refid="classScene3_1a05e300747336ea6b07c4bfae0a5386d4" kind="variable"><name>throwingforward</name></member>
@@ -1195,9 +1167,6 @@
     <member refid="classScene3_1adb9aaf4200ee381e6e30564b7868867d" kind="variable"><name>coolDownTime</name></member>
     <member refid="classScene3_1a34f78078da12fc3846d5b1f64cf688c6" kind="variable"><name>shop</name></member>
     <member refid="classScene3_1ab95e61aadd2414ddda692fd628f8d93e" kind="variable"><name>doorinteract</name></member>
-    <member refid="classScene3_1a00d1d4d821eb2b90da48ee264d91390f" kind="variable"><name>object</name></member>
-    <member refid="classScene3_1a749feb1f36d955370db7754f0ab5abdd" kind="variable"><name>object_on_hand</name></member>
-    <member refid="classScene3_1acf36dec3e75a8f2df7a9c67a7784f5a3" kind="variable"><name>T_object_Num</name></member>
     <member refid="classScene3_1a8b1dffb4dae79ae977d464e9b61df435" kind="variable"><name>JumpTime</name></member>
     <member refid="classScene3_1a9a72487921f75adab5f0d81052403526" kind="variable"><name>PressTime</name></member>
     <member refid="classScene3_1a66a5e8b1fbf285f64ff8a2ecb90e5c6f" kind="variable"><name>mouse</name></member>
@@ -1243,8 +1212,6 @@
     <member refid="classScene3_1a649e21cf2fcfe323b8d599fce983747e" kind="function"><name>Enemy_Rendering</name></member>
     <member refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" kind="function"><name>Enemy_Updating</name></member>
     <member refid="classScene3_1a959fcbecbdad3db71f13f8e687684d9b" kind="function"><name>ObjectsHolding</name></member>
-    <member refid="classScene3_1a364818696634a2b9b83ea21f0a453c61" kind="function"><name>EquipmentHolding</name></member>
-    <member refid="classScene3_1a0b0ade1e830241e6a21737e883d74c58" kind="function"><name>RenderObjects</name></member>
     <member refid="classScene3_1a549a0925c504f561997955e0346c6878" kind="function"><name>Map_Reading</name></member>
     <member refid="classScene3_1af1f2d1e196820303c4f34c276ca1c06c" kind="function"><name>Map_Rendering</name></member>
     <member refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" kind="function"><name>Character_Movement</name></member>
@@ -1576,6 +1543,7 @@
     <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0ca0b8051239d8c7e01263d62073eca919e" kind="enumvalue"><name>GEO_ROBOT</name></member>
     <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0caaeb1f1d122316dbc31248a3d80533b2b" kind="enumvalue"><name>GEO_ROBOT1</name></member>
     <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0ca223fa49422fe973a3d1dc6ac722f7db7" kind="enumvalue"><name>GEO_ROBOT2</name></member>
+    <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0caa56321842e67b6de021f90862c23c80b" kind="enumvalue"><name>GEO_SPEECH</name></member>
     <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0ca35ebf115dfbdff660b0da66115049ae9" kind="enumvalue"><name>GEO_MOONBALL</name></member>
     <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0ca67971eb3942c72b575b7c415f4a587ca" kind="enumvalue"><name>GEO_PYRAMIDNEW</name></member>
     <member refid="classSP2_1ad60364d83f44504a7e99b5c28db91f0ca134727209bc08ab285abe1733429fa3c" kind="enumvalue"><name>GEO_PYRAMIDWALL</name></member>
@@ -1663,11 +1631,6 @@
     <member refid="classSP2_1ac3feab54d671016fbd83505de999eecea2054b79e1a8f4c9fa775e78b7aafa08a" kind="enumvalue"><name>U_TEXT_ENABLED</name></member>
     <member refid="classSP2_1ac3feab54d671016fbd83505de999eeceacef240215149972b316e36239acc2309" kind="enumvalue"><name>U_TEXT_COLOR</name></member>
     <member refid="classSP2_1ac3feab54d671016fbd83505de999eeceaf3656d468e7eedfe9195e0040dc42897" kind="enumvalue"><name>U_TOTAL</name></member>
-    <member refid="classSP2_1a9a84c686a4a4e2109394bda68312a9bb" kind="enum"><name>Items</name></member>
-    <member refid="classSP2_1a9a84c686a4a4e2109394bda68312a9bba8a27be41ea2acb2b7f4287bad11f483c" kind="enumvalue"><name>None</name></member>
-    <member refid="classSP2_1a9a84c686a4a4e2109394bda68312a9bbac028916ccdfa39e3f3432e7e89201b58" kind="enumvalue"><name>SPACEWING</name></member>
-    <member refid="classSP2_1a9a84c686a4a4e2109394bda68312a9bba09c8ef7a4bf6351acc48615d8c407a43" kind="enumvalue"><name>SPACEROCKET</name></member>
-    <member refid="classSP2_1a9a84c686a4a4e2109394bda68312a9bbac7d01bc8dfd1a681c0a8a0d0afad4ee7" kind="enumvalue"><name>Num_Object</name></member>
     <member refid="classSP2_1a6eb62ec9d7aaeadbc32e581fe1d14d71" kind="variable"><name>Map</name></member>
     <member refid="classSP2_1a1de14ba44963961dbbdc3af1510ae422" kind="variable"><name>Size</name></member>
     <member refid="classSP2_1a3f7d68851be399a1958e2a3ad66bee54" kind="variable"><name>Z_Displacement</name></member>
@@ -1695,6 +1658,8 @@
     <member refid="classSP2_1a5a3aaa6e148a7f6cde5ed0de12d2a989" kind="variable"><name>new_line</name></member>
     <member refid="classSP2_1a1361c13eb209c4034417f6b5e0cfb316" kind="variable"><name>camera</name></member>
     <member refid="classSP2_1a5cbcf3390d169275bb961622f8f5852e" kind="variable"><name>sound</name></member>
+    <member refid="classSP2_1a0e0bde930c0b77b60b22093fc36aca4b" kind="variable"><name>xtranslate</name></member>
+    <member refid="classSP2_1a43f834f76de84ef14a8d8173b9e629f8" kind="variable"><name>ytranslate</name></member>
     <member refid="classSP2_1a352ea4fe0ba30435930cf25aa9d1390b" kind="variable"><name>my_arr</name></member>
     <member refid="classSP2_1afa0e3f63fec409d1d1f7c876194874ef" kind="variable"><name>bullet_arr</name></member>
     <member refid="classSP2_1a98838ed3f3a364be484fec1f3eb5bf72" kind="variable"><name>RobotPosition1</name></member>
@@ -1708,7 +1673,6 @@
     <member refid="classSP2_1a641a1ceda70d257ac7a1c364023da9f2" kind="variable"><name>story</name></member>
     <member refid="classSP2_1aa516848bd9c36fd8f763299218b5ad13" kind="variable"><name>deltaTime</name></member>
     <member refid="classSP2_1af609417badc1ead7f8514fcff753cd28" kind="variable"><name>bullet</name></member>
-    <member refid="classSP2_1acd884475a0fe86346d3a9e120a642cc0" kind="variable"><name>objects</name></member>
     <member refid="classSP2_1ae3675ad4c65ee5d3aab69c257eb585ce" kind="variable"><name>x</name></member>
     <member refid="classSP2_1a36dbd0dcfb16edceab4bca1a6775f41e" kind="variable"><name>y</name></member>
     <member refid="classSP2_1a10b6d845d9bab903684e4bed630c14f6" kind="variable"><name>w_x</name></member>
@@ -1716,6 +1680,7 @@
     <member refid="classSP2_1ae6599889d38c25a4ad58e1f97682b8bd" kind="variable"><name>robot1moved</name></member>
     <member refid="classSP2_1a608fc5c382e275357f561bd2808aab07" kind="variable"><name>robot1rotate</name></member>
     <member refid="classSP2_1a794d710a26a02f6e93139f0fa450e0f3" kind="variable"><name>robot1rotation</name></member>
+    <member refid="classSP2_1a51c2df636f46e14cbde8eff2275204c2" kind="variable"><name>Died_Time</name></member>
     <member refid="classSP2_1ac29e1eccc088d6251d97cb61aa491a33" kind="variable"><name>enemy</name></member>
     <member refid="classSP2_1a6fc4b2dd467fc2731da148cc1a816915" kind="variable"><name>throwingdown</name></member>
     <member refid="classSP2_1aa06cf8ef103e528c5e99c8f97672f32c" kind="variable"><name>throwingforward</name></member>
@@ -1736,9 +1701,6 @@
     <member refid="classSP2_1ab8a5e0398b68cc723497f6f6f4868c6b" kind="variable"><name>fixrocket</name></member>
     <member refid="classSP2_1aa58cbd24ca6974fcab6fe413aa5bf45c" kind="variable"><name>coolDownTime</name></member>
     <member refid="classSP2_1a3722539a4d3b6f0ef4f942ecaf4035d4" kind="variable"><name>shop</name></member>
-    <member refid="classSP2_1a16ee3e53ffc52535aa8ab21389de54fc" kind="variable"><name>object</name></member>
-    <member refid="classSP2_1a19bd99591377448266f8f993da243490" kind="variable"><name>object_on_hand</name></member>
-    <member refid="classSP2_1af2b8a05c3da2922895d3bd4f242529e3" kind="variable"><name>T_object_Num</name></member>
     <member refid="classSP2_1a65936ee8babaa6f9887be1bad68b9fbb" kind="variable"><name>JumpTime</name></member>
     <member refid="classSP2_1a6715370ca3941cd5a2be83a8984e7166" kind="variable"><name>PressTime</name></member>
     <member refid="classSP2_1aaeb43de44adcf68bf982f249652f3cce" kind="variable"><name>mouse</name></member>
@@ -1783,8 +1745,6 @@
     <member refid="classSP2_1a9bdb8c234fabdb3b8eed38968a299d3c" kind="function"><name>Enemy_Rendering</name></member>
     <member refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" kind="function"><name>Enemy_Updating</name></member>
     <member refid="classSP2_1a9cc79a380997c742a6004cfbf6d528fe" kind="function"><name>ObjectsHolding</name></member>
-    <member refid="classSP2_1a1ce9a843e80cb028681abd79b9e1888d" kind="function"><name>EquipmentHolding</name></member>
-    <member refid="classSP2_1af258eea58952b4e319c9c7a40a391587" kind="function"><name>RenderObjects</name></member>
     <member refid="classSP2_1ae2343a18ccbe2307d7c174cf543450c0" kind="function"><name>Map_Reading</name></member>
     <member refid="classSP2_1a0c7e7b79660a3b66b8f424d77b31afd2" kind="function"><name>Map_Rendering</name></member>
     <member refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" kind="function"><name>Character_Movement</name></member>
@@ -2502,10 +2462,6 @@
   <compound refid="NPC_8cpp" kind="file"><name>NPC.cpp</name>
   </compound>
   <compound refid="NPC_8h" kind="file"><name>NPC.h</name>
-  </compound>
-  <compound refid="Objects_8cpp" kind="file"><name>Objects.cpp</name>
-  </compound>
-  <compound refid="Objects_8h" kind="file"><name>Objects.h</name>
   </compound>
   <compound refid="rawMaterial_8h" kind="file"><name>rawMaterial.h</name>
   </compound>

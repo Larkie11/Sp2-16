@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$classStopWatch.html#ac8be1626396d1a5ca414f74349d59eb2" title="StopWatch::getElapsedTime" alt="" coords="171,56,359,83"/>
 <area shape="rect" id="node5" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="181,107,349,133"/>
 <area shape="rect" id="node6" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="223,157,307,184"/>
-<area shape="rect" id="node7" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="177,208,352,235"/>
+<area shape="rect" id="node7" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Check which key is presses. " alt="" coords="177,208,352,235"/>
 <area shape="rect" id="node8" href="$classScene.html#ae24d21e12b34839994ad265662ea24d7" title="Scene::Render" alt="" coords="211,259,319,285"/>
 <area shape="rect" id="node9" href="$classStopWatch.html#a23301f735a2e3190435e39c9fd70cdf2" title="StopWatch::startTimer" alt="" coords="188,309,341,336"/>
 <area shape="rect" id="node10" href="$classScene.html#af5c6bcf2185087fb32c27fb8f6a18d91" title="Scene::Update" alt="" coords="211,360,319,387"/>

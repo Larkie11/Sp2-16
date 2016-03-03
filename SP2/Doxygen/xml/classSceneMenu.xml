@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="27" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="26" bodyend="41"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="38" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="37" bodyend="52"/>
       </memberdef>
       <memberdef kind="enum" id="classSceneMenu_1a1499b6388b8f3e3338eec48ea78d871e" prot="private" static="no">
         <name>UNIFORM_TYPE</name>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="44" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="43" bodyend="57"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="55" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="54" bodyend="68"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -215,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="72" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="72" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="83" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a4b2424bfee8cca2ca3efe9f1608c849b" prot="private" static="no" mutable="no">
         <type>unsigned</type>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="73" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="73" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="84" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a697884e40192595da34acb28db5c5676" prot="private" static="no" mutable="no">
         <type>unsigned</type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="74" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="74" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="85" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a9cc4b9a8b366b271aa237b0915d8233e" prot="private" static="no" mutable="no">
         <type>unsigned</type>
@@ -254,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="75" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="75" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="86" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1af6607e1bd07a4a8718c8f81fff2238e6" prot="private" static="no" mutable="no">
         <type>unsigned</type>
@@ -267,7 +267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="76" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="76" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="87" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a1fcdc50eae37c55e3f68ae598de064b7" prot="private" static="no" mutable="no">
         <type>unsigned</type>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="77" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="77" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="88" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1afa4148afd46cd80de67d7c8474e679d6" prot="private" static="no" mutable="no">
         <type><ref refid="classMenuShop" kindref="compound">MenuShop</ref></type>
@@ -293,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="79" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="79" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="90" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a906823fb179855f8da5fac5596dece71" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -306,7 +306,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="81" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="81" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="92" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a8f15c2b1ccbd0ec4364458f649134c78" prot="private" static="no" mutable="no">
         <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
@@ -319,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="82" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="82" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="93" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a05e7c0da6c6742eb125216ac54e46bd7" prot="private" static="no" mutable="no">
         <type><ref refid="classMS" kindref="compound">MS</ref></type>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="84" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="84" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="95" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a75ea8065e86cc93286a8292ecb94c49f" prot="private" static="no" mutable="no">
         <type><ref refid="classMS" kindref="compound">MS</ref></type>
@@ -345,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="84" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="84" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="95" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a07679faf8c028c9409c144a037b529ea" prot="private" static="no" mutable="no">
         <type><ref refid="classMS" kindref="compound">MS</ref></type>
@@ -358,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="84" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="84" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="95" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a08ebd18419d09d131cb1b9aaa6371db5" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -372,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="85" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="85" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="96" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a74a48847856cc29b5a10c46cf11484d8" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -386,7 +386,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="86" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="86" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="97" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a20022610385e4f211d74797704ea0ee8" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -400,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="87" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="87" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="98" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a113b8d1c0e31279c7f7a2cc3c601afe2" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -414,7 +414,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="94" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="94" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="105" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a3fd27d370a4de6a7d6973b5a057b39ec" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -428,7 +428,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="95" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="95" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="106" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a137eb5b32aac34e93a3f41a859724ec8" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -442,7 +442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="96" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="96" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="107" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a40af82163710d273f72e40d3869b4b70" prot="private" static="no" mutable="no">
         <type>string</type>
@@ -455,7 +455,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="97" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="97" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="108" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a51f8da3c53b028183f53aa53ed8a56c4" prot="private" static="no" mutable="no">
         <type><ref refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8" kindref="member">MenuShop::MENU</ref></type>
@@ -468,7 +468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="98" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="98" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="109" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a8ca971c4f3254ae2a68d29cf1799c495" prot="private" static="no" mutable="no">
         <type><ref refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8" kindref="member">MenuShop::OPTION</ref></type>
@@ -481,7 +481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="99" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="99" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="110" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1aafa9b557ade19e848d8bdb2ecfed79ca" prot="private" static="no" mutable="no">
         <type><ref refid="classApplication" kindref="compound">Application</ref></type>
@@ -494,7 +494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="101" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="101" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="112" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a55d201fde6c654c911b6e20fada6d098" prot="private" static="no" mutable="no">
         <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
@@ -507,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="102" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="102" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="113" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1aa029ba91f40ef82d529177d6ecf506f4" prot="private" static="no" mutable="no">
         <type><ref refid="classSound" kindref="compound">Sound</ref></type>
@@ -520,7 +520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="105" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="105" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="116" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a8c83a7aed1d0fcbba41a76feb5e5d2c1" prot="private" static="no" mutable="no">
         <type><ref refid="structColor" kindref="compound">Color</ref></type>
@@ -533,7 +533,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="107" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="107" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="118" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1ad6c13ec289d1e6bf2d4688e4bb73decc" prot="private" static="no" mutable="no">
         <type><ref refid="structColor" kindref="compound">Color</ref></type>
@@ -546,7 +546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="108" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="108" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="119" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a77143db8d50458ad0647c626840084cd" prot="private" static="no" mutable="no">
         <type><ref refid="structColor" kindref="compound">Color</ref></type>
@@ -559,7 +559,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="109" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="109" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="120" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a6233466ee9a9097fe1815d330e7defc0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -572,7 +572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="110" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="110" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="121" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1af578b33d5d79d7c1f1b7772e2ad03dcf" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -585,7 +585,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="111" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="111" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="122" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1ac0f84b244ba7f31f282555f6f26edd80" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -598,7 +598,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="113" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="113" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="124" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a6b89f93d4662a9294b10f425298a9323" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -611,7 +611,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="114" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="114" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="125" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a3589b43a454d6d25664406873336a582" prot="private" static="no" mutable="no">
         <type>string</type>
@@ -624,7 +624,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="116" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="116" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="127" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a5906f5584da6ba1ec66d7b75d934b843" prot="private" static="no" mutable="no">
         <type>string</type>
@@ -637,7 +637,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="117" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="117" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="128" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a3686eaa9fcfda31f23c9737d0f5caccf" prot="private" static="no" mutable="no">
         <type>vector&lt; string &gt;</type>
@@ -650,7 +650,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="118" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="118" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="129" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a49511fba3969bdd6eb36aff4108e39a5" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -663,7 +663,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="119" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="119" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="130" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1af718e9f63bb5bae3506b2631064d9a19" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -677,7 +677,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="124" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="124" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="135" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a826255c4e379b513c4101776bded8514" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -690,7 +690,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="125" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="125" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="136" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a85ce070757a126a70e329c7a5cf50786" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -703,7 +703,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="126" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="126" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="137" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a84c6233b40e62fb49ff4050f3c8103d9" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -716,7 +716,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="127" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="127" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="138" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="138" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSceneMenu_1a03d680440c305c881632636a2e624fce" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -729,7 +729,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="128" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="128" bodyend="-1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="139" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="139" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -739,12 +739,21 @@
         <argsstring>()</argsstring>
         <name>SceneMenu</name>
         <briefdescription>
-        </briefdescription>
+<para>Default constructor. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="61" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="16" bodyend="18"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="72" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="33" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a077293dadcb11b643337fc8d28303e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -752,12 +761,21 @@
         <argsstring>()</argsstring>
         <name>~SceneMenu</name>
         <briefdescription>
-        </briefdescription>
+<para>Default destructor. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="62" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="19" bodyend="21"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="73" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="45" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a04e7de51d1fdc121f602bde2cf5ee75b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -766,12 +784,21 @@
         <name>Init</name>
         <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
         <briefdescription>
-        </briefdescription>
+<para>Initializes for menu scene, any booleans/strings/floats and meshes. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="64" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="22" bodyend="103"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="75" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="57" bodyend="131"/>
         <references refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</references>
         <references refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</references>
         <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</references>
@@ -790,12 +817,21 @@
           <declname>dt</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Updates the scene every frame. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="65" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="338" bodyend="361"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="76" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="405" bodyend="427"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a60ea43185b14fce70f319b0a48dd4e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -804,12 +840,21 @@
         <name>Render</name>
         <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
         <briefdescription>
-        </briefdescription>
+<para>Main rendering. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="66" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="487" bodyend="554"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="77" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="616" bodyend="683"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1aa067569e15dce49721fdeb50b555af2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -818,12 +863,21 @@
         <name>Exit</name>
         <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
         <briefdescription>
-        </briefdescription>
+<para>Exits the scene and delete. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="67" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="555" bodyend="559"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="78" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="693" bodyend="697"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -841,12 +895,21 @@
           <declname>enableLight</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Renders mesh. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="70" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="375" bodyend="399"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="81" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="457" bodyend="481"/>
         <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
         <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
         <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
@@ -857,24 +920,33 @@
         <argsstring>()</argsstring>
         <name>UpdateMenu</name>
         <briefdescription>
-        </briefdescription>
+<para>Handles all switch cases for menu. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="78" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="121" bodyend="221"/>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aa739958be5990b81142729deded75794" compoundref="MenuShop_8h" startline="18">MenuShop::CREDITS</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bae0fc3e56dcec516055b634ccf34e6f71" compoundref="SharedData_8h" startline="36">SharedData::G_CUTSCENE</references>
-        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aac1bed297a017f1f173e3ed3a58fc100" compoundref="MenuShop_8h" startline="19">MenuShop::HELP</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a3484bc4cd00469b0f71aaef260ed6f6a" compoundref="MenuShop_8h" startline="26">MenuShop::O_CREDIT</references>
-        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a4c4118ce5fd3bb535ed1edab641b3896" compoundref="MenuShop_8h" startline="27">MenuShop::O_HELP</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0926bc3bd6414ec8ccc181f9d6bf5c94" compoundref="MenuShop_8h" startline="20">MenuShop::QUIT</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" compoundref="SharedData_8h" startline="43">SharedData::QUIT</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" compoundref="MenuShop_8h" startline="17">MenuShop::STARTGAME</references>
-        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+        <location file="MyGraphics/Source/SceneMenu.h" line="89" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="171" bodyend="271"/>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aa739958be5990b81142729deded75794" compoundref="MenuShop_8h" startline="30">MenuShop::CREDITS</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bae0fc3e56dcec516055b634ccf34e6f71" compoundref="SharedData_8h" startline="35">SharedData::G_CUTSCENE</references>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="52">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aac1bed297a017f1f173e3ed3a58fc100" compoundref="MenuShop_8h" startline="31">MenuShop::HELP</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a3484bc4cd00469b0f71aaef260ed6f6a" compoundref="MenuShop_8h" startline="38">MenuShop::O_CREDIT</references>
+        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a4c4118ce5fd3bb535ed1edab641b3896" compoundref="MenuShop_8h" startline="39">MenuShop::O_HELP</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0926bc3bd6414ec8ccc181f9d6bf5c94" compoundref="MenuShop_8h" startline="32">MenuShop::QUIT</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" compoundref="SharedData_8h" startline="42">SharedData::QUIT</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" compoundref="MenuShop_8h" startline="29">MenuShop::STARTGAME</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="59">SharedData::stateCheck</references>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -894,12 +966,21 @@
           <declname>color</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Renders text. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="89" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="400" bodyend="424"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="100" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="491" bodyend="515"/>
         <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
         <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
         <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
@@ -936,12 +1017,21 @@
           <declname>y</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Renders text on screen. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="90" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="425" bodyend="468"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="101" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="525" bodyend="568"/>
         <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
         <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="21">Color::r</references>
         <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="44" endline="85">Mesh::Render</references>
@@ -991,12 +1081,62 @@
           <declname>z</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Renders obj and quads on screen. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Takes in which mesh to render out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale of the mesh to render out </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+<parametername>y</parametername>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotate</parametername>
+<parametername>rx</parametername>
+<parametername>ry</parametername>
+<parametername>rz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The degree to rotate and which one to rotate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Z layering of the quad/obj</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="91" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="469" bodyend="486"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="102" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="589" bodyend="606"/>
         <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a247bb1c4ebd004e0a26f316ddf8684fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1010,7 +1150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="92" column="1"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="103" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a82afd3f287dd6225a72f7333d4c30388" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1022,12 +1162,21 @@
           <declname>filename</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Pushes in the shop scene into array from text file, allows easy changes. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="93" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="363" bodyend="374"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="104" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="437" bodyend="447"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1aa174dd13c4951c065465b6cd3ca257d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1043,12 +1192,36 @@
           <declname>color</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Setting color for when player presses up and down to each color in array. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>which</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array number in color to change</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pass in which color to change</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="103" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="105" bodyend="119"/>
+        <location file="MyGraphics/Source/SceneMenu.h" line="114" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="147" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a422db583e22754ce8449f93aa40019f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1056,16 +1229,25 @@
         <argsstring>()</argsstring>
         <name>userInput</name>
         <briefdescription>
-        </briefdescription>
+<para>Handles user up and down input. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="121" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="223" bodyend="252"/>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0b07dd4f164a54608e0cc962a860ec1b" compoundref="MenuShop_8h" startline="21">MenuShop::MAX</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" compoundref="MenuShop_8h" startline="17">MenuShop::STARTGAME</references>
+        <location file="MyGraphics/Source/SceneMenu.h" line="132" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="281" bodyend="310"/>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0b07dd4f164a54608e0cc962a860ec1b" compoundref="MenuShop_8h" startline="33">MenuShop::MAX</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" compoundref="MenuShop_8h" startline="29">MenuShop::STARTGAME</references>
       </memberdef>
       <memberdef kind="function" id="classSceneMenu_1a119a0daee8a124bbe5cb408f9ce944b1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1078,169 +1260,156 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/SceneMenu.h" line="122" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="254" bodyend="337"/>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aa739958be5990b81142729deded75794" compoundref="MenuShop_8h" startline="18">MenuShop::CREDITS</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba779ebe0a34809ed51d63a96e6b1d7531" compoundref="SharedData_8h" startline="37">SharedData::GAME</references>
-        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aac1bed297a017f1f173e3ed3a58fc100" compoundref="MenuShop_8h" startline="19">MenuShop::HELP</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a3484bc4cd00469b0f71aaef260ed6f6a" compoundref="MenuShop_8h" startline="26">MenuShop::O_CREDIT</references>
-        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a4c4118ce5fd3bb535ed1edab641b3896" compoundref="MenuShop_8h" startline="27">MenuShop::O_HELP</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0926bc3bd6414ec8ccc181f9d6bf5c94" compoundref="MenuShop_8h" startline="20">MenuShop::QUIT</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" compoundref="SharedData_8h" startline="43">SharedData::QUIT</references>
-        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" compoundref="MenuShop_8h" startline="17">MenuShop::STARTGAME</references>
-        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+        <location file="MyGraphics/Source/SceneMenu.h" line="133" column="1" bodyfile="MyGraphics/Source/SceneMenu.cpp" bodystart="312" bodyend="395"/>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aa739958be5990b81142729deded75794" compoundref="MenuShop_8h" startline="30">MenuShop::CREDITS</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba779ebe0a34809ed51d63a96e6b1d7531" compoundref="SharedData_8h" startline="36">SharedData::GAME</references>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="52">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aac1bed297a017f1f173e3ed3a58fc100" compoundref="MenuShop_8h" startline="31">MenuShop::HELP</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a3484bc4cd00469b0f71aaef260ed6f6a" compoundref="MenuShop_8h" startline="38">MenuShop::O_CREDIT</references>
+        <references refid="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8a4c4118ce5fd3bb535ed1edab641b3896" compoundref="MenuShop_8h" startline="39">MenuShop::O_HELP</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0926bc3bd6414ec8ccc181f9d6bf5c94" compoundref="MenuShop_8h" startline="32">MenuShop::QUIT</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12d7bef11100ab736f263aec3c7b0ee5" compoundref="SharedData_8h" startline="42">SharedData::QUIT</references>
+        <references refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" compoundref="MenuShop_8h" startline="29">MenuShop::STARTGAME</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="59">SharedData::stateCheck</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Class objects, meshes to render, booleans, floats and strings. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Class <ref refid="classSceneMenu" kindref="compound">SceneMenu</ref>: </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="973">
+      <node id="955">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="972">
+      <node id="954">
         <label>SceneMenu</label>
         <link refid="classSceneMenu"/>
-        <childnode refid="973" relation="public-inheritance">
+        <childnode refid="955" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="995">
+      <node id="977">
         <label>irrklang::IVirtualRefCounted</label>
         <link refid="classirrklang_1_1IVirtualRefCounted"/>
       </node>
-      <node id="986">
+      <node id="967">
         <label>stack&lt; Mtx44 &gt;</label>
       </node>
-      <node id="991">
+      <node id="973">
         <label>Sound</label>
         <link refid="classSound"/>
-        <childnode refid="992" relation="usage">
+        <childnode refid="974" relation="usage">
           <edgelabel>musicEngine</edgelabel>
         </childnode>
-        <childnode refid="994" relation="usage">
+        <childnode refid="976" relation="usage">
           <edgelabel>SoundEffect</edgelabel>
           <edgelabel>Song</edgelabel>
         </childnode>
       </node>
-      <node id="999">
+      <node id="981">
         <label>Component</label>
         <link refid="structComponent"/>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="1002">
+      <node id="984">
         <label>MenuShop</label>
         <link refid="classMenuShop"/>
-        <childnode refid="1003" relation="usage">
-          <edgelabel>s_option</edgelabel>
-        </childnode>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>PressTime</edgelabel>
         </childnode>
-        <childnode refid="1004" relation="usage">
-          <edgelabel>s_buy</edgelabel>
-        </childnode>
-        <childnode refid="990" relation="usage">
-          <edgelabel>Input</edgelabel>
-          <edgelabel>shopInput</edgelabel>
-        </childnode>
       </node>
-      <node id="989">
+      <node id="970">
         <label>vector&lt; string &gt;</label>
       </node>
-      <node id="997">
+      <node id="979">
         <label>Mesh</label>
         <link refid="classMesh"/>
-        <childnode refid="998" relation="usage">
+        <childnode refid="980" relation="usage">
           <edgelabel>material</edgelabel>
         </childnode>
-        <childnode refid="1000" relation="usage">
+        <childnode refid="982" relation="usage">
           <edgelabel>mode</edgelabel>
         </childnode>
-        <childnode refid="990" relation="usage">
+        <childnode refid="971" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="1001" relation="usage">
+        <childnode refid="983" relation="usage">
           <edgelabel>textureID</edgelabel>
           <edgelabel>indexBuffer</edgelabel>
           <edgelabel>indexSize</edgelabel>
           <edgelabel>vertexBuffer</edgelabel>
         </childnode>
       </node>
-      <node id="992">
+      <node id="974">
         <label>irrklang::ISoundEngine</label>
         <link refid="classirrklang_1_1ISoundEngine"/>
-        <childnode refid="993" relation="public-inheritance">
+        <childnode refid="975" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1000">
+      <node id="982">
         <label>DRAW_MODE</label>
       </node>
-      <node id="977">
+      <node id="959">
         <label>Camera</label>
         <link refid="classCamera"/>
-        <childnode refid="978" relation="usage">
+        <childnode refid="960" relation="usage">
           <edgelabel>target</edgelabel>
           <edgelabel>position</edgelabel>
           <edgelabel>up</edgelabel>
         </childnode>
       </node>
-      <node id="990">
+      <node id="971">
         <label>string</label>
       </node>
-      <node id="998">
+      <node id="980">
         <label>Material</label>
         <link refid="structMaterial"/>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>kShininess</edgelabel>
         </childnode>
-        <childnode refid="999" relation="usage">
+        <childnode refid="981" relation="usage">
           <edgelabel>kDiffuse</edgelabel>
           <edgelabel>kAmbient</edgelabel>
           <edgelabel>kSpecular</edgelabel>
         </childnode>
       </node>
-      <node id="979">
+      <node id="961">
         <label>float</label>
       </node>
-      <node id="985">
+      <node id="966">
         <label>MS</label>
         <link refid="classMS"/>
-        <childnode refid="986" relation="usage">
+        <childnode refid="967" relation="usage">
           <edgelabel>ms</edgelabel>
         </childnode>
       </node>
-      <node id="1003">
-        <label>SHOP_OPTION</label>
-      </node>
-      <node id="975">
+      <node id="957">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="988">
+      <node id="969">
         <label>MENU</label>
       </node>
-      <node id="994">
+      <node id="976">
         <label>irrklang::ISound</label>
         <link refid="classirrklang_1_1ISound"/>
-        <childnode refid="995" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="976">
-        <label>Camera3</label>
-        <link refid="classCamera3"/>
         <childnode refid="977" relation="public-inheritance">
         </childnode>
-        <childnode refid="979" relation="usage">
+      </node>
+      <node id="958">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="959" relation="public-inheritance">
+        </childnode>
+        <childnode refid="961" relation="usage">
           <edgelabel>cameraSpeed</edgelabel>
           <edgelabel>maxCameraX</edgelabel>
           <edgelabel>maxX</edgelabel>
@@ -1248,32 +1417,29 @@
           <edgelabel>maxZ</edgelabel>
           <edgelabel>minZ</edgelabel>
         </childnode>
-        <childnode refid="978" relation="usage">
+        <childnode refid="960" relation="usage">
           <edgelabel>defaultTarget</edgelabel>
           <edgelabel>defaultPosition</edgelabel>
           <edgelabel>view</edgelabel>
           <edgelabel>defaultUp</edgelabel>
           <edgelabel>cameraRotate</edgelabel>
         </childnode>
-        <childnode refid="980" relation="usage">
-          <edgelabel>door</edgelabel>
-        </childnode>
       </node>
-      <node id="987">
+      <node id="968">
         <label>int</label>
       </node>
-      <node id="974">
+      <node id="956">
         <label>SceneMenu</label>
         <link refid="classSceneMenu"/>
-        <childnode refid="975" relation="public-inheritance">
+        <childnode refid="957" relation="public-inheritance">
         </childnode>
-        <childnode refid="976" relation="usage">
+        <childnode refid="958" relation="usage">
           <edgelabel>camera</edgelabel>
         </childnode>
-        <childnode refid="981" relation="usage">
+        <childnode refid="962" relation="usage">
           <edgelabel>app</edgelabel>
         </childnode>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>deltaTime</edgelabel>
           <edgelabel>icon2</edgelabel>
           <edgelabel>menuIcon</edgelabel>
@@ -1284,27 +1450,27 @@
           <edgelabel>moveSkyBoxZ</edgelabel>
           <edgelabel>LSPEED</edgelabel>
         </childnode>
-        <childnode refid="985" relation="usage">
+        <childnode refid="966" relation="usage">
           <edgelabel>projectionStack</edgelabel>
           <edgelabel>modelStack</edgelabel>
           <edgelabel>viewStack</edgelabel>
         </childnode>
-        <childnode refid="987" relation="usage">
+        <childnode refid="968" relation="usage">
           <edgelabel>px</edgelabel>
           <edgelabel>py</edgelabel>
         </childnode>
-        <childnode refid="988" relation="usage">
+        <childnode refid="969" relation="usage">
           <edgelabel>choose</edgelabel>
         </childnode>
-        <childnode refid="989" relation="usage">
+        <childnode refid="970" relation="usage">
           <edgelabel>my_arr</edgelabel>
         </childnode>
-        <childnode refid="990" relation="usage">
+        <childnode refid="971" relation="usage">
           <edgelabel>new_line</edgelabel>
           <edgelabel>Input</edgelabel>
           <edgelabel>color</edgelabel>
         </childnode>
-        <childnode refid="980" relation="usage">
+        <childnode refid="972" relation="usage">
           <edgelabel>instructions</edgelabel>
           <edgelabel>Options</edgelabel>
           <edgelabel>exitGame</edgelabel>
@@ -1312,16 +1478,16 @@
           <edgelabel>credits</edgelabel>
           <edgelabel>Menu</edgelabel>
         </childnode>
-        <childnode refid="991" relation="usage">
+        <childnode refid="973" relation="usage">
           <edgelabel>sound</edgelabel>
         </childnode>
-        <childnode refid="996" relation="usage">
+        <childnode refid="978" relation="usage">
           <edgelabel>c_option</edgelabel>
         </childnode>
-        <childnode refid="997" relation="usage">
+        <childnode refid="979" relation="usage">
           <edgelabel>meshList</edgelabel>
         </childnode>
-        <childnode refid="1001" relation="usage">
+        <childnode refid="983" relation="usage">
           <edgelabel>m_indexBuffer</edgelabel>
           <edgelabel>m_parameters</edgelabel>
           <edgelabel>m_colorBuffer</edgelabel>
@@ -1329,83 +1495,80 @@
           <edgelabel>m_programID</edgelabel>
           <edgelabel>m_vertexArrayID</edgelabel>
         </childnode>
-        <childnode refid="1002" relation="usage">
+        <childnode refid="984" relation="usage">
           <edgelabel>menushop</edgelabel>
         </childnode>
-        <childnode refid="1005" relation="usage">
+        <childnode refid="985" relation="usage">
           <edgelabel>colorA</edgelabel>
           <edgelabel>colorBlue</edgelabel>
           <edgelabel>colorNormal</edgelabel>
         </childnode>
       </node>
-      <node id="996">
+      <node id="978">
         <label>OPTION</label>
       </node>
-      <node id="981">
+      <node id="962">
         <label>Application</label>
         <link refid="classApplication"/>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>width</edgelabel>
           <edgelabel>height</edgelabel>
         </childnode>
-        <childnode refid="982" relation="usage">
+        <childnode refid="963" relation="usage">
           <edgelabel>m_timer</edgelabel>
         </childnode>
       </node>
-      <node id="1005">
+      <node id="985">
         <label>Color</label>
         <link refid="structColor"/>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="984">
+      <node id="965">
         <label>LARGE_INTEGER</label>
       </node>
-      <node id="982">
+      <node id="963">
         <label>StopWatch</label>
         <link refid="classStopWatch"/>
-        <childnode refid="983" relation="usage">
+        <childnode refid="964" relation="usage">
           <edgelabel>wTimerRes</edgelabel>
         </childnode>
-        <childnode refid="984" relation="usage">
+        <childnode refid="965" relation="usage">
           <edgelabel>frequency</edgelabel>
           <edgelabel>currTime</edgelabel>
           <edgelabel>prevTime</edgelabel>
         </childnode>
       </node>
-      <node id="993">
+      <node id="975">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
-        <childnode refid="987" relation="usage">
+        <childnode refid="968" relation="usage">
           <edgelabel>ReferenceCounter</edgelabel>
         </childnode>
       </node>
-      <node id="1001">
+      <node id="983">
         <label>unsigned</label>
       </node>
-      <node id="980">
+      <node id="972">
         <label>bool</label>
       </node>
-      <node id="1004">
-        <label>SHOP_BUY</label>
-      </node>
-      <node id="983">
+      <node id="964">
         <label>UINT</label>
       </node>
-      <node id="978">
+      <node id="960">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="979" relation="usage">
+        <childnode refid="961" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="MyGraphics/Source/SceneMenu.h" line="25" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="24" bodyend="129"/>
+    <location file="MyGraphics/Source/SceneMenu.h" line="36" column="1" bodyfile="MyGraphics/Source/SceneMenu.h" bodystart="35" bodyend="140"/>
     <listofallmembers>
       <member refid="classSceneMenu_1aafa9b557ade19e848d8bdb2ecfed79ca" prot="private" virt="non-virtual"><scope>SceneMenu</scope><name>app</name></member>
       <member refid="classSceneMenu_1a8ca971c4f3254ae2a68d29cf1799c495" prot="private" virt="non-virtual"><scope>SceneMenu</scope><name>c_option</name></member>

@@ -1,7 +1,7 @@
 <map id="SceneWin::Init" name="SceneWin::Init">
 <area shape="rect" id="node2" href="$classMeshBuilder.html#a8fede2f411aebe5d41af99b51be7ed77" title="Generate the vertices of a quad; Use random color for each vertex Then generate the VBO/IBO and store..." alt="" coords="160,107,347,133"/>
 <area shape="rect" id="node7" href="$classMeshBuilder.html#aac7c87881dbc08f8d41f2068e0f40c76" title="MeshBuilder::GenerateText" alt="" coords="163,56,343,83"/>
-<area shape="rect" id="node8" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Camera3::Init" alt="" coords="204,239,303,265"/>
+<area shape="rect" id="node8" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initializes player camera. " alt="" coords="204,239,303,265"/>
 <area shape="rect" id="node15" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="196,289,311,316"/>
 <area shape="rect" id="node16" href="$shader_8cpp.html#a833f10cca6a76fe34ae9efa23ac5e73c" title="LoadShaders" alt="" coords="204,340,303,367"/>
 <area shape="rect" id="node17" href="$LoadTGA_8cpp.html#a459a80ca6de67a1e3493bfb66ae317e4" title="LoadTGA" alt="" coords="215,391,291,417"/>

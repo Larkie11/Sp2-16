@@ -4,13 +4,13 @@
     <compoundname>mpaudectab.h</compoundname>
     <includedby refid="mpaudec_8c" local="yes">MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/decoder/mpaudec.c</includedby>
     <invincdepgraph>
-      <node id="4561">
+      <node id="4790">
         <label>MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/decoder/mpaudectab.h</label>
         <link refid="mpaudectab.h"/>
-        <childnode refid="4562" relation="include">
+        <childnode refid="4791" relation="include">
         </childnode>
       </node>
-      <node id="4562">
+      <node id="4791">
         <label>MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/decoder/mpaudec.c</label>
         <link refid="mpaudec_8c"/>
       </node>

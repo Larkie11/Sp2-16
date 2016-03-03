@@ -21,263 +21,260 @@
     <includedby refid="Scene3_8cpp" local="yes">MyGraphics/Source/Scene3.cpp</includedby>
     <includedby refid="SceneMenu_8cpp" local="yes">MyGraphics/Source/SceneMenu.cpp</includedby>
     <includedby refid="SceneWin_8cpp" local="yes">MyGraphics/Source/SceneWin.cpp</includedby>
-    <includedby refid="SP2_8cpp" local="yes">MyGraphics/Source/SP2.cpp</includedby>
     <includedby refid="StartCutScene_8cpp" local="yes">MyGraphics/Source/StartCutScene.cpp</includedby>
     <incdepgraph>
-      <node id="3419">
+      <node id="3568">
         <label>cmath</label>
       </node>
-      <node id="3420">
+      <node id="3569">
         <label>exception</label>
       </node>
-      <node id="3421">
+      <node id="3570">
         <label>ctime</label>
       </node>
-      <node id="3417">
+      <node id="3566">
         <label>Common/Source/Mtx44.h</label>
         <link refid="Mtx44.h"/>
-        <childnode refid="3418" relation="include">
+        <childnode refid="3567" relation="include">
         </childnode>
-        <childnode refid="3423" relation="include">
+        <childnode refid="3572" relation="include">
         </childnode>
       </node>
-      <node id="3422">
+      <node id="3571">
         <label>cstdlib</label>
       </node>
-      <node id="3424">
+      <node id="3573">
         <label>iostream</label>
       </node>
-      <node id="3418">
+      <node id="3567">
         <label>MyMath.h</label>
         <link refid="MyMath_8h"/>
-        <childnode refid="3419" relation="include">
+        <childnode refid="3568" relation="include">
         </childnode>
-        <childnode refid="3420" relation="include">
+        <childnode refid="3569" relation="include">
         </childnode>
-        <childnode refid="3421" relation="include">
+        <childnode refid="3570" relation="include">
         </childnode>
-        <childnode refid="3422" relation="include">
+        <childnode refid="3571" relation="include">
         </childnode>
       </node>
-      <node id="3423">
+      <node id="3572">
         <label>Vector3.h</label>
         <link refid="Vector3_8h"/>
-        <childnode refid="3418" relation="include">
+        <childnode refid="3567" relation="include">
         </childnode>
-        <childnode refid="3424" relation="include">
+        <childnode refid="3573" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3436">
+      <node id="3585">
         <label>MyGraphics/Source/Shop.h</label>
         <link refid="Shop_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3437" relation="include">
+        <childnode refid="3586" relation="include">
         </childnode>
       </node>
-      <node id="3444">
+      <node id="3593">
         <label>MyGraphics/Source/SceneWin.h</label>
         <link refid="SceneWin_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3445" relation="include">
+        <childnode refid="3594" relation="include">
         </childnode>
       </node>
-      <node id="3442">
+      <node id="3591">
         <label>MyGraphics/Source/Cutscene.h</label>
         <link refid="Cutscene_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3443" relation="include">
+        <childnode refid="3592" relation="include">
         </childnode>
       </node>
-      <node id="3443">
+      <node id="3592">
         <label>MyGraphics/Source/Cutscene.cpp</label>
         <link refid="Cutscene_8cpp"/>
       </node>
-      <node id="3435">
+      <node id="3584">
         <label>MyGraphics/Source/SceneMenu.cpp</label>
         <link refid="SceneMenu_8cpp"/>
       </node>
-      <node id="3450">
+      <node id="3599">
         <label>MyGraphics/Source/Camera3.cpp</label>
         <link refid="Camera3_8cpp"/>
       </node>
-      <node id="3439">
+      <node id="3588">
         <label>MyGraphics/Source/Scene2.cpp</label>
         <link refid="Scene2_8cpp"/>
       </node>
-      <node id="3441">
+      <node id="3590">
         <label>MyGraphics/Source/Scene3.cpp</label>
         <link refid="Scene3_8cpp"/>
       </node>
-      <node id="3437">
+      <node id="3586">
         <label>MyGraphics/Source/Shop.cpp</label>
         <link refid="Shop_8cpp"/>
       </node>
-      <node id="3440">
+      <node id="3589">
         <label>MyGraphics/Source/Scene3.h</label>
         <link refid="Scene3_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3441" relation="include">
+        <childnode refid="3590" relation="include">
         </childnode>
       </node>
-      <node id="3432">
+      <node id="3581">
         <label>MyGraphics/Source/Enemy.cpp</label>
         <link refid="Enemy_8cpp"/>
       </node>
-      <node id="3431">
+      <node id="3580">
         <label>MyGraphics/Source/SP2.h</label>
         <link refid="SP2_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3432" relation="include">
+        <childnode refid="3581" relation="include">
         </childnode>
-        <childnode refid="3433" relation="include">
+        <childnode refid="3582" relation="include">
         </childnode>
       </node>
-      <node id="3448">
+      <node id="3597">
         <label>MyGraphics/Source/Utility.cpp</label>
         <link refid="Utility_8cpp"/>
       </node>
-      <node id="3446">
+      <node id="3595">
         <label>Common/Source/Mtx44.cpp</label>
         <link refid="Mtx44_8cpp"/>
       </node>
-      <node id="3425">
+      <node id="3574">
         <label>Common/Source/Mtx44.h</label>
         <link refid="Mtx44.h"/>
-        <childnode refid="3426" relation="include">
+        <childnode refid="3575" relation="include">
         </childnode>
-        <childnode refid="3446" relation="include">
+        <childnode refid="3595" relation="include">
         </childnode>
-        <childnode refid="3447" relation="include">
+        <childnode refid="3596" relation="include">
         </childnode>
-        <childnode refid="3428" relation="include">
+        <childnode refid="3577" relation="include">
         </childnode>
-        <childnode refid="3431" relation="include">
+        <childnode refid="3580" relation="include">
         </childnode>
-        <childnode refid="3434" relation="include">
+        <childnode refid="3583" relation="include">
         </childnode>
-        <childnode refid="3436" relation="include">
+        <childnode refid="3585" relation="include">
         </childnode>
-        <childnode refid="3438" relation="include">
+        <childnode refid="3587" relation="include">
         </childnode>
-        <childnode refid="3440" relation="include">
+        <childnode refid="3589" relation="include">
         </childnode>
-        <childnode refid="3442" relation="include">
+        <childnode refid="3591" relation="include">
         </childnode>
-        <childnode refid="3444" relation="include">
+        <childnode refid="3593" relation="include">
         </childnode>
-        <childnode refid="3449" relation="include">
+        <childnode refid="3598" relation="include">
         </childnode>
-        <childnode refid="3450" relation="include">
+        <childnode refid="3599" relation="include">
         </childnode>
-        <childnode refid="3443" relation="include">
+        <childnode refid="3592" relation="include">
         </childnode>
-        <childnode refid="3441" relation="include">
+        <childnode refid="3590" relation="include">
         </childnode>
-        <childnode refid="3435" relation="include">
+        <childnode refid="3584" relation="include">
         </childnode>
-        <childnode refid="3445" relation="include">
+        <childnode refid="3594" relation="include">
         </childnode>
-        <childnode refid="3433" relation="include">
-        </childnode>
-        <childnode refid="3430" relation="include">
+        <childnode refid="3579" relation="include">
         </childnode>
       </node>
-      <node id="3434">
+      <node id="3583">
         <label>MyGraphics/Source/SceneMenu.h</label>
         <link refid="SceneMenu_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3435" relation="include">
+        <childnode refid="3584" relation="include">
         </childnode>
       </node>
-      <node id="3447">
+      <node id="3596">
         <label>MyGraphics/Source/Utility.h</label>
         <link refid="Utility_8h"/>
-        <childnode refid="3428" relation="include">
+        <childnode refid="3577" relation="include">
         </childnode>
-        <childnode refid="3431" relation="include">
+        <childnode refid="3580" relation="include">
         </childnode>
-        <childnode refid="3436" relation="include">
+        <childnode refid="3585" relation="include">
         </childnode>
-        <childnode refid="3438" relation="include">
+        <childnode refid="3587" relation="include">
         </childnode>
-        <childnode refid="3440" relation="include">
+        <childnode refid="3589" relation="include">
         </childnode>
-        <childnode refid="3442" relation="include">
+        <childnode refid="3591" relation="include">
         </childnode>
-        <childnode refid="3435" relation="include">
+        <childnode refid="3584" relation="include">
         </childnode>
-        <childnode refid="3445" relation="include">
+        <childnode refid="3594" relation="include">
         </childnode>
-        <childnode refid="3448" relation="include">
+        <childnode refid="3597" relation="include">
         </childnode>
       </node>
-      <node id="3430">
+      <node id="3579">
         <label>MyGraphics/Source/StartCutScene.cpp</label>
         <link refid="StartCutScene_8cpp"/>
       </node>
-      <node id="3449">
+      <node id="3598">
         <label>MyGraphics/Source/Camera.cpp</label>
         <link refid="Camera_8cpp"/>
       </node>
-      <node id="3445">
+      <node id="3594">
         <label>MyGraphics/Source/SceneWin.cpp</label>
         <link refid="SceneWin_8cpp"/>
       </node>
-      <node id="3429">
+      <node id="3578">
         <label>MyGraphics/Source/Application.cpp</label>
         <link refid="Application_8cpp"/>
       </node>
-      <node id="3426">
+      <node id="3575">
         <label>Common/Source/MatrixStack.h</label>
         <link refid="MatrixStack_8h"/>
-        <childnode refid="3427" relation="include">
+        <childnode refid="3576" relation="include">
         </childnode>
-        <childnode refid="3428" relation="include">
+        <childnode refid="3577" relation="include">
         </childnode>
-        <childnode refid="3431" relation="include">
+        <childnode refid="3580" relation="include">
         </childnode>
-        <childnode refid="3434" relation="include">
+        <childnode refid="3583" relation="include">
         </childnode>
-        <childnode refid="3436" relation="include">
+        <childnode refid="3585" relation="include">
         </childnode>
-        <childnode refid="3438" relation="include">
+        <childnode refid="3587" relation="include">
         </childnode>
-        <childnode refid="3440" relation="include">
+        <childnode refid="3589" relation="include">
         </childnode>
-        <childnode refid="3442" relation="include">
+        <childnode refid="3591" relation="include">
         </childnode>
-        <childnode refid="3444" relation="include">
+        <childnode refid="3593" relation="include">
         </childnode>
       </node>
-      <node id="3438">
+      <node id="3587">
         <label>MyGraphics/Source/Scene2.h</label>
         <link refid="Scene2_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3439" relation="include">
+        <childnode refid="3588" relation="include">
         </childnode>
       </node>
-      <node id="3428">
+      <node id="3577">
         <label>MyGraphics/Source/StartCutScene.h</label>
         <link refid="StartCutScene_8h"/>
-        <childnode refid="3429" relation="include">
+        <childnode refid="3578" relation="include">
         </childnode>
-        <childnode refid="3430" relation="include">
+        <childnode refid="3579" relation="include">
         </childnode>
       </node>
-      <node id="3433">
+      <node id="3582">
         <label>MyGraphics/Source/SP2.cpp</label>
         <link refid="SP2_8cpp"/>
       </node>
-      <node id="3427">
+      <node id="3576">
         <label>Common/Source/MatrixStack.cpp</label>
         <link refid="MatrixStack_8cpp"/>
       </node>

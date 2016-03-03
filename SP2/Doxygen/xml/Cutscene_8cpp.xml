@@ -9,436 +9,432 @@
     <includes refid="LoadTGA_8h" local="yes">LoadTGA.h</includes>
     <includes refid="SharedData_8h" local="yes">SharedData.h</includes>
     <incdepgraph>
-      <node id="5031">
+      <node id="5305">
         <label>ik_IRefCounted.h</label>
         <link refid="ik__IRefCounted_8h"/>
-        <childnode refid="5027" relation="include">
+        <childnode refid="5301" relation="include">
         </childnode>
       </node>
-      <node id="5029">
+      <node id="5303">
         <label>ik_vec3d.h</label>
         <link refid="ik__vec3d_8h"/>
-        <childnode refid="5030" relation="include">
+        <childnode refid="5304" relation="include">
         </childnode>
-        <childnode refid="5027" relation="include">
+        <childnode refid="5301" relation="include">
         </childnode>
       </node>
-      <node id="5059">
+      <node id="5333">
         <label>iomanip</label>
       </node>
-      <node id="5056">
+      <node id="5330">
         <label>Mouse.h</label>
         <link refid="Mouse_8h"/>
-        <childnode refid="5052" relation="include">
+        <childnode refid="5326" relation="include">
         </childnode>
-        <childnode refid="5057" relation="include">
+        <childnode refid="5331" relation="include">
         </childnode>
-        <childnode refid="5058" relation="include">
+        <childnode refid="5332" relation="include">
         </childnode>
-        <childnode refid="5021" relation="include">
+        <childnode refid="5333" relation="include">
         </childnode>
-        <childnode refid="5059" relation="include">
-        </childnode>
-        <childnode refid="5060" relation="include">
+        <childnode refid="5334" relation="include">
         </childnode>
       </node>
-      <node id="5040">
+      <node id="5314">
         <label>ik_ISoundEffectControl.h</label>
         <link refid="ik__ISoundEffectControl_8h"/>
-        <childnode refid="5032" relation="include">
+        <childnode refid="5306" relation="include">
         </childnode>
-        <childnode refid="5029" relation="include">
+        <childnode refid="5303" relation="include">
         </childnode>
       </node>
-      <node id="5051">
+      <node id="5325">
         <label>windows.h</label>
       </node>
-      <node id="5039">
+      <node id="5313">
         <label>ik_ISound.h</label>
         <link refid="ik__ISound_8h"/>
-        <childnode refid="5032" relation="include">
+        <childnode refid="5306" relation="include">
         </childnode>
-        <childnode refid="5040" relation="include">
+        <childnode refid="5314" relation="include">
         </childnode>
-        <childnode refid="5029" relation="include">
+        <childnode refid="5303" relation="include">
         </childnode>
       </node>
-      <node id="5061">
+      <node id="5335">
         <label>shader.hpp</label>
         <link refid="shader_8hpp"/>
       </node>
-      <node id="5009">
+      <node id="5283">
         <label>Cutscene.h</label>
         <link refid="Cutscene_8h"/>
-        <childnode refid="5010" relation="include">
+        <childnode refid="5284" relation="include">
         </childnode>
-        <childnode refid="5022" relation="include">
+        <childnode refid="5296" relation="include">
         </childnode>
-        <childnode refid="5024" relation="include">
+        <childnode refid="5298" relation="include">
         </childnode>
-        <childnode refid="5023" relation="include">
+        <childnode refid="5297" relation="include">
         </childnode>
-        <childnode refid="5016" relation="include">
+        <childnode refid="5290" relation="include">
         </childnode>
-        <childnode refid="5013" relation="include">
+        <childnode refid="5287" relation="include">
         </childnode>
-        <childnode refid="5025" relation="include">
+        <childnode refid="5299" relation="include">
         </childnode>
-        <childnode refid="5049" relation="include">
+        <childnode refid="5323" relation="include">
         </childnode>
-        <childnode refid="5052" relation="include">
+        <childnode refid="5326" relation="include">
         </childnode>
-        <childnode refid="5011" relation="include">
+        <childnode refid="5285" relation="include">
         </childnode>
-        <childnode refid="5054" relation="include">
+        <childnode refid="5328" relation="include">
         </childnode>
-        <childnode refid="5056" relation="include">
+        <childnode refid="5330" relation="include">
         </childnode>
       </node>
-      <node id="5007">
+      <node id="5281">
         <label>MyGraphics/Source/Cutscene.cpp</label>
         <link refid="Cutscene.cpp"/>
-        <childnode refid="5008" relation="include">
+        <childnode refid="5282" relation="include">
         </childnode>
-        <childnode refid="5009" relation="include">
+        <childnode refid="5283" relation="include">
         </childnode>
-        <childnode refid="5061" relation="include">
+        <childnode refid="5335" relation="include">
         </childnode>
-        <childnode refid="5023" relation="include">
+        <childnode refid="5297" relation="include">
         </childnode>
-        <childnode refid="5062" relation="include">
+        <childnode refid="5336" relation="include">
         </childnode>
-        <childnode refid="5064" relation="include">
+        <childnode refid="5338" relation="include">
         </childnode>
       </node>
-      <node id="5048">
+      <node id="5322">
         <label>ik_IAudioRecorder.h</label>
         <link refid="ik__IAudioRecorder_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5038" relation="include">
+        <childnode refid="5312" relation="include">
         </childnode>
       </node>
-      <node id="5057">
+      <node id="5331">
         <label>Windows.h</label>
       </node>
-      <node id="5017">
+      <node id="5291">
         <label>cmath</label>
       </node>
-      <node id="5026">
+      <node id="5300">
         <label>irrKlang.h</label>
         <link refid="irrKlang_8h"/>
-        <childnode refid="5027" relation="include">
+        <childnode refid="5301" relation="include">
         </childnode>
-        <childnode refid="5029" relation="include">
+        <childnode refid="5303" relation="include">
         </childnode>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5032" relation="include">
+        <childnode refid="5306" relation="include">
         </childnode>
-        <childnode refid="5033" relation="include">
+        <childnode refid="5307" relation="include">
         </childnode>
-        <childnode refid="5034" relation="include">
+        <childnode refid="5308" relation="include">
         </childnode>
-        <childnode refid="5035" relation="include">
+        <childnode refid="5309" relation="include">
         </childnode>
-        <childnode refid="5036" relation="include">
+        <childnode refid="5310" relation="include">
         </childnode>
-        <childnode refid="5037" relation="include">
+        <childnode refid="5311" relation="include">
         </childnode>
-        <childnode refid="5038" relation="include">
+        <childnode refid="5312" relation="include">
         </childnode>
-        <childnode refid="5039" relation="include">
+        <childnode refid="5313" relation="include">
         </childnode>
-        <childnode refid="5043" relation="include">
+        <childnode refid="5317" relation="include">
         </childnode>
-        <childnode refid="5044" relation="include">
+        <childnode refid="5318" relation="include">
         </childnode>
-        <childnode refid="5040" relation="include">
+        <childnode refid="5314" relation="include">
         </childnode>
-        <childnode refid="5046" relation="include">
+        <childnode refid="5320" relation="include">
         </childnode>
-        <childnode refid="5041" relation="include">
+        <childnode refid="5315" relation="include">
         </childnode>
-        <childnode refid="5045" relation="include">
+        <childnode refid="5319" relation="include">
         </childnode>
-        <childnode refid="5047" relation="include">
+        <childnode refid="5321" relation="include">
         </childnode>
-        <childnode refid="5048" relation="include">
+        <childnode refid="5322" relation="include">
         </childnode>
-        <childnode refid="5042" relation="include">
+        <childnode refid="5316" relation="include">
         </childnode>
       </node>
-      <node id="5008">
+      <node id="5282">
         <label>GL\glew.h</label>
       </node>
-      <node id="5012">
+      <node id="5286">
         <label>string</label>
       </node>
-      <node id="5063">
+      <node id="5337">
         <label>GL/glew.h</label>
       </node>
-      <node id="5053">
+      <node id="5327">
         <label>Camera.h</label>
         <link refid="Camera_8h"/>
-        <childnode refid="5015" relation="include">
+        <childnode refid="5289" relation="include">
         </childnode>
       </node>
-      <node id="5024">
+      <node id="5298">
         <label>Scene.h</label>
         <link refid="Scene_8h"/>
       </node>
-      <node id="5036">
+      <node id="5310">
         <label>ik_SAudioStreamFormat.h</label>
         <link refid="ik__SAudioStreamFormat_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
       </node>
-      <node id="5018">
+      <node id="5292">
         <label>exception</label>
       </node>
-      <node id="5010">
+      <node id="5284">
         <label>MeshBuilder.h</label>
         <link refid="MeshBuilder_8h"/>
-        <childnode refid="5011" relation="include">
+        <childnode refid="5285" relation="include">
         </childnode>
-        <childnode refid="5014" relation="include">
+        <childnode refid="5288" relation="include">
         </childnode>
       </node>
-      <node id="5035">
+      <node id="5309">
         <label>ik_EStreamModes.h</label>
         <link refid="ik__EStreamModes_8h"/>
       </node>
-      <node id="5038">
+      <node id="5312">
         <label>ik_ISoundSource.h</label>
         <link refid="ik__ISoundSource_8h"/>
-        <childnode refid="5032" relation="include">
+        <childnode refid="5306" relation="include">
         </childnode>
-        <childnode refid="5029" relation="include">
+        <childnode refid="5303" relation="include">
         </childnode>
-        <childnode refid="5035" relation="include">
+        <childnode refid="5309" relation="include">
         </childnode>
-        <childnode refid="5036" relation="include">
+        <childnode refid="5310" relation="include">
         </childnode>
       </node>
-      <node id="5043">
+      <node id="5317">
         <label>ik_IAudioStream.h</label>
         <link refid="ik__IAudioStream_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5036" relation="include">
+        <childnode refid="5310" relation="include">
         </childnode>
       </node>
-      <node id="5034">
+      <node id="5308">
         <label>ik_ESoundEngineOptions.h</label>
         <link refid="ik__ESoundEngineOptions_8h"/>
       </node>
-      <node id="5064">
+      <node id="5338">
         <label>SharedData.h</label>
         <link refid="SharedData_8h"/>
-        <childnode refid="5026" relation="include">
+        <childnode refid="5300" relation="include">
         </childnode>
-        <childnode refid="5012" relation="include">
-        </childnode>
-        <childnode refid="5021" relation="include">
+        <childnode refid="5286" relation="include">
         </childnode>
       </node>
-      <node id="5052">
+      <node id="5326">
         <label>Camera3.h</label>
         <link refid="Camera3_8h"/>
-        <childnode refid="5053" relation="include">
+        <childnode refid="5327" relation="include">
         </childnode>
-        <childnode refid="5016" relation="include">
+        <childnode refid="5290" relation="include">
         </childnode>
       </node>
-      <node id="5047">
+      <node id="5321">
         <label>ik_ISoundDeviceList.h</label>
         <link refid="ik__ISoundDeviceList_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
       </node>
-      <node id="5028">
+      <node id="5302">
         <label>wchar.h</label>
       </node>
-      <node id="5050">
+      <node id="5324">
         <label>timer.h</label>
         <link refid="timer_8h"/>
-        <childnode refid="5051" relation="include">
+        <childnode refid="5325" relation="include">
         </childnode>
       </node>
-      <node id="5019">
+      <node id="5293">
         <label>ctime</label>
       </node>
-      <node id="5014">
+      <node id="5288">
         <label>Vertex.h</label>
         <link refid="Vertex_8h"/>
-        <childnode refid="5015" relation="include">
+        <childnode refid="5289" relation="include">
         </childnode>
       </node>
-      <node id="5027">
+      <node id="5301">
         <label>ik_irrKlangTypes.h</label>
         <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="5028" relation="include">
+        <childnode refid="5302" relation="include">
         </childnode>
       </node>
-      <node id="5011">
+      <node id="5285">
         <label>Mesh.h</label>
         <link refid="Mesh_8h"/>
-        <childnode refid="5012" relation="include">
+        <childnode refid="5286" relation="include">
         </childnode>
-        <childnode refid="5013" relation="include">
+        <childnode refid="5287" relation="include">
         </childnode>
       </node>
-      <node id="5058">
+      <node id="5332">
         <label>winuser.h</label>
       </node>
-      <node id="5023">
+      <node id="5297">
         <label>Mtx44.h</label>
         <link refid="Mtx44_8h"/>
-        <childnode refid="5016" relation="include">
+        <childnode refid="5290" relation="include">
         </childnode>
-        <childnode refid="5015" relation="include">
+        <childnode refid="5289" relation="include">
         </childnode>
       </node>
-      <node id="5060">
+      <node id="5334">
         <label>vector</label>
       </node>
-      <node id="5055">
+      <node id="5329">
         <label>stack</label>
       </node>
-      <node id="5044">
+      <node id="5318">
         <label>ik_IAudioStreamLoader.h</label>
         <link refid="ik__IAudioStreamLoader_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5045" relation="include">
+        <childnode refid="5319" relation="include">
         </childnode>
       </node>
-      <node id="5033">
+      <node id="5307">
         <label>ik_ESoundOutputDrivers.h</label>
         <link refid="ik__ESoundOutputDrivers_8h"/>
       </node>
-      <node id="5041">
+      <node id="5315">
         <label>ik_IFileFactory.h</label>
         <link refid="ik__IFileFactory_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
       </node>
-      <node id="5049">
+      <node id="5323">
         <label>Application.h</label>
         <link refid="Application_8h"/>
-        <childnode refid="5050" relation="include">
+        <childnode refid="5324" relation="include">
         </childnode>
       </node>
-      <node id="5062">
+      <node id="5336">
         <label>LoadTGA.h</label>
         <link refid="LoadTGA_8h"/>
-        <childnode refid="5063" relation="include">
+        <childnode refid="5337" relation="include">
         </childnode>
       </node>
-      <node id="5022">
+      <node id="5296">
         <label>Utility.h</label>
         <link refid="Utility_8h"/>
-        <childnode refid="5014" relation="include">
+        <childnode refid="5288" relation="include">
         </childnode>
-        <childnode refid="5023" relation="include">
+        <childnode refid="5297" relation="include">
         </childnode>
       </node>
-      <node id="5013">
+      <node id="5287">
         <label>Material.h</label>
         <link refid="Material_8h"/>
-        <childnode refid="5014" relation="include">
+        <childnode refid="5288" relation="include">
         </childnode>
       </node>
-      <node id="5030">
+      <node id="5304">
         <label>math.h</label>
       </node>
-      <node id="5025">
+      <node id="5299">
         <label>Sound.h</label>
         <link refid="Sound_8h"/>
-        <childnode refid="5026" relation="include">
+        <childnode refid="5300" relation="include">
         </childnode>
-        <childnode refid="5012" relation="include">
+        <childnode refid="5286" relation="include">
         </childnode>
       </node>
-      <node id="5020">
+      <node id="5294">
         <label>cstdlib</label>
       </node>
-      <node id="5054">
+      <node id="5328">
         <label>MatrixStack.h</label>
         <link refid="MatrixStack_8h"/>
-        <childnode refid="5055" relation="include">
+        <childnode refid="5329" relation="include">
         </childnode>
-        <childnode refid="5023" relation="include">
+        <childnode refid="5297" relation="include">
         </childnode>
       </node>
-      <node id="5021">
+      <node id="5295">
         <label>iostream</label>
       </node>
-      <node id="5016">
+      <node id="5290">
         <label>MyMath.h</label>
         <link refid="MyMath_8h"/>
-        <childnode refid="5017" relation="include">
+        <childnode refid="5291" relation="include">
         </childnode>
-        <childnode refid="5018" relation="include">
+        <childnode refid="5292" relation="include">
         </childnode>
-        <childnode refid="5019" relation="include">
+        <childnode refid="5293" relation="include">
         </childnode>
-        <childnode refid="5020" relation="include">
+        <childnode refid="5294" relation="include">
         </childnode>
       </node>
-      <node id="5032">
+      <node id="5306">
         <label>ik_IVirtualRefCounted.h</label>
         <link refid="ik__IVirtualRefCounted_8h"/>
-        <childnode refid="5027" relation="include">
+        <childnode refid="5301" relation="include">
         </childnode>
       </node>
-      <node id="5037">
+      <node id="5311">
         <label>ik_ISoundEngine.h</label>
         <link refid="ik__ISoundEngine_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5029" relation="include">
+        <childnode refid="5303" relation="include">
         </childnode>
-        <childnode refid="5038" relation="include">
+        <childnode refid="5312" relation="include">
         </childnode>
-        <childnode refid="5039" relation="include">
+        <childnode refid="5313" relation="include">
         </childnode>
-        <childnode refid="5035" relation="include">
+        <childnode refid="5309" relation="include">
         </childnode>
-        <childnode refid="5041" relation="include">
+        <childnode refid="5315" relation="include">
         </childnode>
-        <childnode refid="5042" relation="include">
+        <childnode refid="5316" relation="include">
         </childnode>
       </node>
-      <node id="5042">
+      <node id="5316">
         <label>ik_ISoundMixedOutputReceiver.h</label>
         <link refid="ik__ISoundMixedOutputReceiver_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5036" relation="include">
+        <childnode refid="5310" relation="include">
         </childnode>
       </node>
-      <node id="5046">
+      <node id="5320">
         <label>ik_ISoundStopEventReceiver.h</label>
         <link refid="ik__ISoundStopEventReceiver_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
-        <childnode refid="5036" relation="include">
+        <childnode refid="5310" relation="include">
         </childnode>
       </node>
-      <node id="5045">
+      <node id="5319">
         <label>ik_IFileReader.h</label>
         <link refid="ik__IFileReader_8h"/>
-        <childnode refid="5031" relation="include">
+        <childnode refid="5305" relation="include">
         </childnode>
       </node>
-      <node id="5015">
+      <node id="5289">
         <label>Vector3.h</label>
         <link refid="Vector3_8h"/>
-        <childnode refid="5016" relation="include">
+        <childnode refid="5290" relation="include">
         </childnode>
-        <childnode refid="5021" relation="include">
+        <childnode refid="5295" relation="include">
         </childnode>
       </node>
     </incdepgraph>

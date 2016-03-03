@@ -1,23 +1,25 @@
 <map id="SP2::Render" name="SP2::Render">
-<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="CollisionDetector::\lcollideByDist" alt="" coords="178,5,306,47"/>
+<area shape="rect" id="node2" href="$classCollisionDetector.html#a13df8507ea4f51306e628628462b8bbc" title="collideByDist(Vector3 object, Vector3 target) is a calculator function for CollisionDetector class..." alt="" coords="178,5,306,47"/>
 <area shape="rect" id="node3" href="$structVector3.html#a71b1271deb064c65f9dc7dba638c5b57" title="Dot product of 2 vectors. " alt="" coords="195,71,289,98"/>
-<area shape="rect" id="node4" href="$classSP2.html#a9bdb8c234fabdb3b8eed38968a299d3c" title="SP2::Enemy_Rendering" alt="" coords="161,477,323,503"/>
+<area shape="rect" id="node4" href="$classSP2.html#a9bdb8c234fabdb3b8eed38968a299d3c" title="Rendering Enemy In this scene. " alt="" coords="161,477,323,503"/>
 <area shape="rect" id="node5" href="$classMS.html#aac22e39d0ac437fcb85403a9f0a7a25f" title="Pop the top matrix on the matrix stack. " alt="" coords="409,375,519,402"/>
 <area shape="rect" id="node6" href="$classMS.html#a9fb4fff5036f3f197b893f9a579c97b2" title="Make a copy of the top matrix on the matrix stack and push it on top. " alt="" coords="406,325,522,351"/>
 <area shape="rect" id="node7" href="$classSP2.html#a87c33349b172e206bda7f1c03250b619" title="SP2::RenderMesh" alt="" coords="400,274,528,301"/>
 <area shape="rect" id="node8" href="$classMS.html#a21291d7fb488f63c589bdc9bd620ba58" title="Return the top matrix on the matrix stack. " alt="" coords="639,730,710,757"/>
 <area shape="rect" id="node16" href="$classMS.html#a52109795de960e24663b315e9128533f" title="Multiply the top matrix with a scale matrix based on the following parameters. " alt="" coords="423,426,505,453"/>
 <area shape="rect" id="node20" href="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a" title="Multiply the top matrix with a translation matrix based on the following parameters. " alt="" coords="413,477,515,503"/>
-<area shape="rect" id="node22" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="158,933,326,959"/>
+<area shape="rect" id="node22" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="158,919,326,946"/>
 <area shape="rect" id="node23" href="$classMS.html#a77c5f7e4a21ea48dcf902a7ff6824a11" title="Replace the top matrix with an identity matrix. " alt="" coords="404,781,524,807"/>
-<area shape="rect" id="node24" href="$classMS.html#a2638cd3249260877cc31329978fb6b38" title="Setup lookat matrix and push to matrix stack. " alt="" coords="197,882,287,909"/>
-<area shape="rect" id="node30" href="$classSP2.html#a0c7e7b79660a3b66b8f424d77b31afd2" title="SP2::Map_Rendering" alt="" coords="169,375,315,402"/>
+<area shape="rect" id="node24" href="$classMS.html#a2638cd3249260877cc31329978fb6b38" title="Setup lookat matrix and push to matrix stack. " alt="" coords="197,869,287,895"/>
+<area shape="rect" id="node30" href="$classSP2.html#a0c7e7b79660a3b66b8f424d77b31afd2" title="Rendering map based on Txt file for this scene. " alt="" coords="169,325,315,351"/>
 <area shape="rect" id="node31" href="$classMS.html#a6ce592114042b920b648bca5519690cd" title="Multiply the top matrix with a rotation matrix based on the following parameters. ..." alt="" coords="420,223,508,250"/>
-<area shape="rect" id="node33" href="$classSP2.html#a9cc79a380997c742a6004cfbf6d528fe" title="SP2::ObjectsHolding" alt="" coords="171,274,313,301"/>
+<area shape="rect" id="node33" href="$classSP2.html#a9cc79a380997c742a6004cfbf6d528fe" title="hold objects or parts " alt="" coords="171,375,313,402"/>
 <area shape="rect" id="node34" href="$classSP2.html#a866289dccc0d7ff85839a000568c986c" title="Renders obj and quads on screen. " alt="" coords="149,527,335,554"/>
-<area shape="rect" id="node38" href="$classSP2.html#a75139f304295fd0bfbf91080b49bc10c" title="SP2::RenderSkybox" alt="" coords="172,325,312,351"/>
-<area shape="rect" id="node39" href="$classSP2.html#ab642469a9e89925dafd3055a79b65cda" title="SP2::RenderTextOnScreen" alt="" coords="153,679,331,706"/>
-<area shape="rect" id="node15" href="$classEnemy.html#aea4b20d7406b086406339215975eccfd" title="Enemy::Return_Position" alt="" coords="383,527,545,554"/>
+<area shape="rect" id="node38" href="$classSP2.html#a75139f304295fd0bfbf91080b49bc10c" title="SP2::RenderSkybox" alt="" coords="172,274,312,301"/>
+<area shape="rect" id="node39" href="$classSP2.html#ab642469a9e89925dafd3055a79b65cda" title="Text on screen rendering function. " alt="" coords="153,679,331,706"/>
+<area shape="rect" id="node40" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Resets camera when needed. " alt="" coords="184,970,300,997"/>
+<area shape="rect" id="node41" href="$SP2_8cpp.html#ac07446f8019674e7e66875dd6d25588d" title="Vector3 to x and y and z. " alt="" coords="217,1021,267,1047"/>
+<area shape="rect" id="node15" href="$classEnemy.html#aea4b20d7406b086406339215975eccfd" title="Return enemy position " alt="" coords="383,527,545,554"/>
 <area shape="rect" id="node9" href="$classMtx44.html#aac1ba21ddfc5f3c24baa4f58d9c5c256" title="Return a new matrix that is an inverse. " alt="" coords="611,274,738,301"/>
 <area shape="rect" id="node11" href="$classMtx44.html#aebb16a0329c5237e314af0d75d8081fd" title="Return a new matrix that is a transpose of this matrix. " alt="" coords="601,325,748,351"/>
 <area shape="rect" id="node14" href="$classMesh.html#a75e66bcd90c09492676a4cfe5b23c3af" title="OpenGL render code. " alt="" coords="623,514,726,541"/>

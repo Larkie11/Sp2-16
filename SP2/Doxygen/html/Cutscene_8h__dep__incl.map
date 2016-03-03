@@ -1,4 +1,4 @@
 <map id="MyGraphics/Source/Cutscene.h" name="MyGraphics/Source/Cutscene.h">
-<area shape="rect" id="node2" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node2" href="$Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="5,80,236,107"/>
 <area shape="rect" id="node3" href="$Cutscene_8cpp.html" title="Renders scene where player leaves in spaceship and temple explodes. " alt="" coords="261,80,482,107"/>
 </map>

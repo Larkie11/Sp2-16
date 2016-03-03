@@ -22,30 +22,29 @@
         <referencedby refid="classMtx44_1a135dfd76460c4ad2678258807dd0c078" compoundref="Mtx44_8cpp" startline="208" endline="214">operator*</referencedby>
         <referencedby refid="classMtx44_1abcdecb3276c18f29847eb8864b809fa5" compoundref="Mtx44_8cpp" startline="227" endline="246">operator+</referencedby>
         <referencedby refid="classMtx44_1aca2d9f316d39c9baa4e439219c1a6447" compoundref="Mtx44_8cpp" startline="259" endline="263">operator=</referencedby>
-        <referencedby refid="classSceneMenu_1a073af09ab7ae7f2429c78b3e94998a5e" compoundref="SceneMenu_8cpp" startline="375" endline="399">SceneMenu::RenderMesh</referencedby>
         <referencedby refid="classSceneWin_1a1d0203d7572330b1357c5dc60065e002" compoundref="SceneWin_8cpp" startline="133" endline="157">SceneWin::RenderMesh</referencedby>
+        <referencedby refid="classSceneMenu_1a073af09ab7ae7f2429c78b3e94998a5e" compoundref="SceneMenu_8cpp" startline="457" endline="481">SceneMenu::RenderMesh</referencedby>
         <referencedby refid="classCutscene_1ae0aa6fd5192b43cc2a986d51dc001a3c" compoundref="Cutscene_8cpp" startline="212" endline="236">Cutscene::RenderMesh</referencedby>
-        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="554" endline="577">Shop::RenderMesh</referencedby>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
-        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="400" endline="424">SceneMenu::RenderText</referencedby>
+        <referencedby refid="classShop_1a44b9ea799163d2df68c6444f710f05c2" compoundref="Shop_8cpp" startline="535" endline="558">Shop::RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
         <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">SceneWin::RenderText</referencedby>
+        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="491" endline="515">SceneMenu::RenderText</referencedby>
         <referencedby refid="classCutscene_1a4a1affd3851f94cf875edef8736f5feb" compoundref="Cutscene_8cpp" startline="246" endline="270">Cutscene::RenderText</referencedby>
-        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">Shop::RenderText</referencedby>
-        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">StartCutScene::RenderText</referencedby>
-        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="867" endline="892">SP2::RenderText</referencedby>
-        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="935" endline="960">Scene2::RenderText</referencedby>
-        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="890" endline="915">Scene3::RenderText</referencedby>
-        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="425" endline="468">SceneMenu::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="251" endline="276">StartCutScene::RenderText</referencedby>
+        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="979" endline="1004">Scene3::RenderText</referencedby>
+        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="963" endline="998">SP2::RenderText</referencedby>
+        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="944" endline="969">Scene2::RenderText</referencedby>
         <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">SceneWin::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="525" endline="568">SceneMenu::RenderTextOnScreen</referencedby>
         <referencedby refid="classCutscene_1a919fee73f4a423e75aab5bfc5668d051" compoundref="Cutscene_8cpp" startline="280" endline="323">Cutscene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">Shop::RenderTextOnScreen</referencedby>
-        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">StartCutScene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="893" endline="937">SP2::RenderTextOnScreen</referencedby>
-        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="970" endline="1014">Scene2::RenderTextOnScreen</referencedby>
-        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="916" endline="960">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="568" endline="611">Shop::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="286" endline="330">StartCutScene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="1014" endline="1067">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="1008" endline="1061">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="979" endline="1032">Scene2::RenderTextOnScreen</referencedby>
         <referencedby refid="classMtx44_1a3ac8a0afd66412e15e4246474b893da2" compoundref="Mtx44_8cpp" startline="74" endline="77">SetToIdentity</referencedby>
         <referencedby refid="classMtx44_1a04c49a922f8e8ffcb57a90c6ce955600" compoundref="Mtx44_8cpp" startline="356" endline="361">SetToScale</referencedby>
         <referencedby refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">SetToTranslation</referencedby>
@@ -296,10 +295,10 @@
         </inbodydescription>
         <location file="Common/Source/Mtx44.h" line="33" column="1" bodyfile="Common/Source/Mtx44.cpp" bodystart="123" bodyend="127"/>
         <references refid="classMtx44_1a6c95e149e42cba381918782a93f8a68b" compoundref="Mtx44_8cpp" startline="97" endline="101">Transpose</references>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMtx44_1aac1ba21ddfc5f3c24baa4f58d9c5c256" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classMtx44" kindref="compound">Mtx44</ref></type>
@@ -326,10 +325,10 @@
         <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">a</references>
         <references refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" compoundref="MyMath_8h" startline="27">Math::EPSILON</references>
         <references refid="namespaceMath_1ac91173ab2efdf7313fe7aaeb6cb44cf6" compoundref="MyMath_8h" startline="33" endline="36">Math::FAbs</references>
-        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="149" endline="188">StartCutScene::RenderMesh</referencedby>
-        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="827" endline="866">SP2::RenderMesh</referencedby>
-        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="886" endline="925">Scene2::RenderMesh</referencedby>
-        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="850" endline="889">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classStartCutScene_1af2186277e8bb519ed6efba3715d1bc05" compoundref="StartCutScene_8cpp" startline="202" endline="241">StartCutScene::RenderMesh</referencedby>
+        <referencedby refid="classScene3_1a84426c6726581e840b9400e189004f2e" compoundref="Scene3_8cpp" startline="930" endline="969">Scene3::RenderMesh</referencedby>
+        <referencedby refid="classSP2_1a87c33349b172e206bda7f1c03250b619" compoundref="SP2_8cpp" startline="914" endline="953">SP2::RenderMesh</referencedby>
+        <referencedby refid="classScene2_1a55f665aa07ead3febf5b968af38c58af" compoundref="Scene2_8cpp" startline="895" endline="934">Scene2::RenderMesh</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMtx44_1a135dfd76460c4ad2678258807dd0c078" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classMtx44" kindref="compound">Mtx44</ref></type>
@@ -639,22 +638,21 @@
         <location file="Common/Source/Mtx44.h" line="42" column="1" bodyfile="Common/Source/Mtx44.cpp" bodystart="376" bodyend="381"/>
         <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">a</references>
         <references refid="classMtx44_1a3ac8a0afd66412e15e4246474b893da2" compoundref="Mtx44_8cpp" startline="74" endline="77">SetToIdentity</references>
-        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="400" endline="424">SceneMenu::RenderText</referencedby>
         <referencedby refid="classSceneWin_1ace448a57bd7f73ee47a21a987766d7c6" compoundref="SceneWin_8cpp" startline="168" endline="192">SceneWin::RenderText</referencedby>
+        <referencedby refid="classSceneMenu_1ade66afd2b6b0dc67e5ebde93b7c90177" compoundref="SceneMenu_8cpp" startline="491" endline="515">SceneMenu::RenderText</referencedby>
         <referencedby refid="classCutscene_1a4a1affd3851f94cf875edef8736f5feb" compoundref="Cutscene_8cpp" startline="246" endline="270">Cutscene::RenderText</referencedby>
-        <referencedby refid="classShop_1a072a64331229d665e80c1b6d2efc19d7" compoundref="Shop_8cpp" startline="587" endline="611">Shop::RenderText</referencedby>
-        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="189" endline="214">StartCutScene::RenderText</referencedby>
-        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="867" endline="892">SP2::RenderText</referencedby>
-        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="935" endline="960">Scene2::RenderText</referencedby>
-        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="890" endline="915">Scene3::RenderText</referencedby>
-        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="425" endline="468">SceneMenu::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1ac5844dc7ff18fc48b13b9823033f34bd" compoundref="StartCutScene_8cpp" startline="251" endline="276">StartCutScene::RenderText</referencedby>
+        <referencedby refid="classScene3_1a84db2c4b2785499f28864a0a0afa9be3" compoundref="Scene3_8cpp" startline="979" endline="1004">Scene3::RenderText</referencedby>
+        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="963" endline="998">SP2::RenderText</referencedby>
+        <referencedby refid="classScene2_1ab76c717d54b323ba0953f11469747cb6" compoundref="Scene2_8cpp" startline="944" endline="969">Scene2::RenderText</referencedby>
         <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">SceneWin::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="525" endline="568">SceneMenu::RenderTextOnScreen</referencedby>
         <referencedby refid="classCutscene_1a919fee73f4a423e75aab5bfc5668d051" compoundref="Cutscene_8cpp" startline="280" endline="323">Cutscene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">Shop::RenderTextOnScreen</referencedby>
-        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">StartCutScene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="893" endline="937">SP2::RenderTextOnScreen</referencedby>
-        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="970" endline="1014">Scene2::RenderTextOnScreen</referencedby>
-        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="916" endline="960">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="568" endline="611">Shop::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="286" endline="330">StartCutScene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="1014" endline="1067">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="1008" endline="1061">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="979" endline="1032">Scene2::RenderTextOnScreen</referencedby>
         <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">SetToLookAt</referencedby>
         <referencedby refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</referencedby>
       </memberdef>
@@ -919,14 +917,14 @@
         <location file="Common/Source/Mtx44.h" line="47" column="1" bodyfile="Common/Source/Mtx44.cpp" bodystart="466" bodyend="472"/>
         <references refid="classMtx44_1a1b985913080679da29ff94217935b3c7" compoundref="Mtx44_8cpp" startline="22" endline="39">Mtx44</references>
         <references refid="namespaceMath_1af8c064b6b688407b9999ee677efd715d" compoundref="MyMath_8h" startline="28">Math::PI</references>
-        <referencedby refid="classSceneMenu_1a04e7de51d1fdc121f602bde2cf5ee75b" compoundref="SceneMenu_8cpp" startline="22" endline="103">SceneMenu::Init</referencedby>
         <referencedby refid="classSceneWin_1afa3ef72645aba47196ba1b7ddc598bb6" compoundref="SceneWin_8cpp" startline="53" endline="105">SceneWin::Init</referencedby>
+        <referencedby refid="classSceneMenu_1a04e7de51d1fdc121f602bde2cf5ee75b" compoundref="SceneMenu_8cpp" startline="57" endline="131">SceneMenu::Init</referencedby>
         <referencedby refid="classCutscene_1a847225fbd9e7e70feae0a7a87e5c8a17" compoundref="Cutscene_8cpp" startline="51" endline="156">Cutscene::Init</referencedby>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="16" endline="119">StartCutScene::Init</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classStartCutScene_1a982675447a165086a784db31ece4dbb1" compoundref="StartCutScene_8cpp" startline="51" endline="154">StartCutScene::Init</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1008,20 +1006,20 @@
         </inbodydescription>
         <location file="Common/Source/Mtx44.h" line="48" column="1" bodyfile="Common/Source/Mtx44.cpp" bodystart="492" bodyend="497"/>
         <references refid="classMtx44_1a1b985913080679da29ff94217935b3c7" compoundref="Mtx44_8cpp" startline="22" endline="39">Mtx44</references>
-        <referencedby refid="classSceneMenu_1a09a82df0dea65be23b71193c3cf36a3e" compoundref="SceneMenu_8cpp" startline="469" endline="486">SceneMenu::RenderQuadOnScreen</referencedby>
         <referencedby refid="classSceneWin_1a6844be0f7534c18a340a34c66bf54b6a" compoundref="SceneWin_8cpp" startline="256" endline="273">SceneWin::RenderQuadOnScreen</referencedby>
-        <referencedby refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="674" endline="691">Shop::RenderQuadOnScreen</referencedby>
-        <referencedby refid="classSP2_1a866289dccc0d7ff85839a000568c986c" compoundref="SP2_8cpp" startline="958" endline="975">SP2::RenderQuadOnScreen</referencedby>
-        <referencedby refid="classScene2_1a8cabb8b2edc17f61e88316eac4387daf" compoundref="Scene2_8cpp" startline="1035" endline="1052">Scene2::RenderQuadOnScreen</referencedby>
-        <referencedby refid="classScene3_1a6728ea1a081d6d040deec4f4885fb4bc" compoundref="Scene3_8cpp" startline="962" endline="979">Scene3::RenderQuadOnScreen</referencedby>
-        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="425" endline="468">SceneMenu::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneMenu_1a09a82df0dea65be23b71193c3cf36a3e" compoundref="SceneMenu_8cpp" startline="589" endline="606">SceneMenu::RenderQuadOnScreen</referencedby>
+        <referencedby refid="classShop_1aee217c79bf37585efa133ac5a5b91316" compoundref="Shop_8cpp" startline="632" endline="649">Shop::RenderQuadOnScreen</referencedby>
+        <referencedby refid="classScene3_1a6728ea1a081d6d040deec4f4885fb4bc" compoundref="Scene3_8cpp" startline="1088" endline="1105">Scene3::RenderQuadOnScreen</referencedby>
+        <referencedby refid="classSP2_1a866289dccc0d7ff85839a000568c986c" compoundref="SP2_8cpp" startline="1082" endline="1099">SP2::RenderQuadOnScreen</referencedby>
+        <referencedby refid="classScene2_1a8cabb8b2edc17f61e88316eac4387daf" compoundref="Scene2_8cpp" startline="1053" endline="1070">Scene2::RenderQuadOnScreen</referencedby>
         <referencedby refid="classSceneWin_1ad3220db21bf7d69adf528d7eedac5a06" compoundref="SceneWin_8cpp" startline="203" endline="246">SceneWin::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneMenu_1a7d1cfaa95d888c59a988b48f3cde0b9b" compoundref="SceneMenu_8cpp" startline="525" endline="568">SceneMenu::RenderTextOnScreen</referencedby>
         <referencedby refid="classCutscene_1a919fee73f4a423e75aab5bfc5668d051" compoundref="Cutscene_8cpp" startline="280" endline="323">Cutscene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="621" endline="664">Shop::RenderTextOnScreen</referencedby>
-        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="215" endline="259">StartCutScene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="893" endline="937">SP2::RenderTextOnScreen</referencedby>
-        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="970" endline="1014">Scene2::RenderTextOnScreen</referencedby>
-        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="916" endline="960">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classShop_1ab16118f0e0243b85a40d728dd6a703ec" compoundref="Shop_8cpp" startline="568" endline="611">Shop::RenderTextOnScreen</referencedby>
+        <referencedby refid="classStartCutScene_1a73d65f979f798b6f73ef11063501bd87" compoundref="StartCutScene_8cpp" startline="286" endline="330">StartCutScene::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene3_1aa5109ecb72017381b9035c25661c321d" compoundref="Scene3_8cpp" startline="1014" endline="1067">Scene3::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="1008" endline="1061">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classScene2_1ace786436afce93fd5b6c903299b7d3c3" compoundref="Scene2_8cpp" startline="979" endline="1032">Scene2::RenderTextOnScreen</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1029,13 +1027,13 @@
     <detaileddescription>
 <para>Class <ref refid="classMtx44" kindref="compound">Mtx44</ref>: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="828">
+      <node id="814">
         <label>float</label>
       </node>
-      <node id="827">
+      <node id="813">
         <label>Mtx44</label>
         <link refid="classMtx44"/>
-        <childnode refid="828" relation="usage">
+        <childnode refid="814" relation="usage">
           <edgelabel>a</edgelabel>
         </childnode>
       </node>

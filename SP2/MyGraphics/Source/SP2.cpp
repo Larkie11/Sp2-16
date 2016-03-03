@@ -89,6 +89,35 @@ void SP2::Init()
 	PressTime = 0;
 	JumpTime = 0;
 
+	Z_Displacement = 0;
+	X_Displacement = -100;
+
+	LSPEED = 10.f;
+	moveSkyBoxZ = 91.f;
+	moveSkyBoxX = 0.f;
+	robot1moved = false;
+	robot1rotate = false;
+	robot1rotation = 0;
+
+	throwingdown = 0;
+	throwingforward = 0;
+	throwup = 0;
+	newcameraposition = (0, 0, 0);
+	oldcameraposition = (0, 0, 0);
+	throwbomb = false;
+	thrown = false;
+	toggle = false;
+	cam1 = false;
+	movement = true;
+	holdingcctv = false;
+
+	pickupwing = false;
+	pickuprocket = false;
+	followx = 0;
+	followy = 0;
+	fixwing = false;
+	fixrocket = false;
+
 	//Icon location145869
 	x = 38.5;
 	y = 14;
@@ -1566,8 +1595,8 @@ void SP2::Render()
 	
 	/*RenderTextOnScreen(meshList[GEO_TEXT], var, Color(1, 1, 0), 1.5, 1, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], var1, Color(1, 1, 0), 1.5, 1, 2);*/
-	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 1, 39);
-	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 1, 37);
+	RenderTextOnScreen(meshList[GEO_TEXT], Fps, Color(1, 1, 0), 1.5, 0, 39);
+	RenderTextOnScreen(meshList[GEO_TEXT], partscount, Color(1, 1, 0), 1.5, 0, 37);
 	glBlendFunc(1, 1);
 	RenderQuadOnScreen(meshList[GEO_STORY1], 10, 4, storyPosition, 90, 1, 0, 0, 0);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

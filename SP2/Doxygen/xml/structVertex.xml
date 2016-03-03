@@ -80,55 +80,55 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1176">
+      <node id="1156">
         <label>Position</label>
         <link refid="structPosition"/>
-        <childnode refid="1174" relation="usage">
+        <childnode refid="1154" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
-      <node id="1173">
+      <node id="1153">
         <label>TexCoord</label>
         <link refid="structTexCoord"/>
-        <childnode refid="1174" relation="usage">
+        <childnode refid="1154" relation="usage">
           <edgelabel>u</edgelabel>
           <edgelabel>v</edgelabel>
         </childnode>
       </node>
-      <node id="1172">
+      <node id="1152">
         <label>Vertex</label>
         <link refid="structVertex"/>
-        <childnode refid="1173" relation="usage">
+        <childnode refid="1153" relation="usage">
           <edgelabel>texCoord</edgelabel>
         </childnode>
-        <childnode refid="1175" relation="usage">
+        <childnode refid="1155" relation="usage">
           <edgelabel>normal</edgelabel>
         </childnode>
-        <childnode refid="1176" relation="usage">
+        <childnode refid="1156" relation="usage">
           <edgelabel>pos</edgelabel>
         </childnode>
-        <childnode refid="1177" relation="usage">
+        <childnode refid="1157" relation="usage">
           <edgelabel>color</edgelabel>
         </childnode>
       </node>
-      <node id="1174">
+      <node id="1154">
         <label>float</label>
       </node>
-      <node id="1177">
+      <node id="1157">
         <label>Color</label>
         <link refid="structColor"/>
-        <childnode refid="1174" relation="usage">
+        <childnode refid="1154" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="1175">
+      <node id="1155">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="1174" relation="usage">
+        <childnode refid="1154" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>

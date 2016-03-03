@@ -1109,31 +1109,31 @@
     <detaileddescription>
 <para>This is the main interface of irrKlang. You usually would create this using the <ref refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c" kindref="member">createIrrKlangDevice()</ref> function. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="762">
+      <node id="751">
         <label>irrklang::ISoundEngine</label>
         <link refid="classirrklang_1_1ISoundEngine"/>
-        <childnode refid="763" relation="public-inheritance">
+        <childnode refid="752" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="763">
+      <node id="752">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="764">
+      <node id="753">
         <label>irrklang::ISoundEngine</label>
         <link refid="classirrklang_1_1ISoundEngine"/>
-        <childnode refid="765" relation="public-inheritance">
+        <childnode refid="754" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="766">
+      <node id="755">
         <label>int</label>
       </node>
-      <node id="765">
+      <node id="754">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
-        <childnode refid="766" relation="usage">
+        <childnode refid="755" relation="usage">
           <edgelabel>ReferenceCounter</edgelabel>
         </childnode>
       </node>

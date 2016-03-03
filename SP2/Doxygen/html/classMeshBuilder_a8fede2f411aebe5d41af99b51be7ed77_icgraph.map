@@ -1,10 +1,10 @@
 <map id="MeshBuilder::GenerateQuad" name="MeshBuilder::GenerateQuad">
-<area shape="rect" id="node2" href="$classSceneMenu.html#a04e7de51d1fdc121f602bde2cf5ee75b" title="SceneMenu::Init" alt="" coords="248,5,364,32"/>
-<area shape="rect" id="node3" href="$classSceneWin.html#afa3ef72645aba47196ba1b7ddc598bb6" title="Initializes for win scene, any booleans/strings/floats and meshes. " alt="" coords="253,56,359,83"/>
+<area shape="rect" id="node2" href="$classSceneWin.html#afa3ef72645aba47196ba1b7ddc598bb6" title="Initializes for win scene, any booleans/strings/floats and meshes. " alt="" coords="253,5,359,32"/>
+<area shape="rect" id="node3" href="$classSceneMenu.html#a04e7de51d1fdc121f602bde2cf5ee75b" title="Initializes for menu scene, any booleans/strings/floats and meshes. " alt="" coords="248,56,364,83"/>
 <area shape="rect" id="node4" href="$classCutscene.html#a847225fbd9e7e70feae0a7a87e5c8a17" title="Initializes for cutscene, meshes/floats/booleans. " alt="" coords="255,107,357,133"/>
 <area shape="rect" id="node5" href="$classShop.html#a89d006f2a5dbfa60526a0c55718155b2" title="Initializes for shop scene, any booleans/strings/floats and meshes. " alt="" coords="267,157,345,184"/>
-<area shape="rect" id="node6" href="$classStartCutScene.html#a982675447a165086a784db31ece4dbb1" title="StartCutScene::Init" alt="" coords="240,208,372,235"/>
-<area shape="rect" id="node7" href="$classSP2.html#a8669c489b6a968f367a4610b254ac992" title="SP2::Init" alt="" coords="270,259,342,285"/>
-<area shape="rect" id="node8" href="$classScene2.html#ad452e11ff007a8a1a410284630eb6f12" title="Initializes for 2nd scene. " alt="" coords="261,309,351,336"/>
-<area shape="rect" id="node9" href="$classScene3.html#ae0fa7e48f701d3761d8c6ca01a334feb" title="Scene3::Init" alt="" coords="261,360,351,387"/>
+<area shape="rect" id="node6" href="$classStartCutScene.html#a982675447a165086a784db31ece4dbb1" title="Initializes for this cut scene. " alt="" coords="240,208,372,235"/>
+<area shape="rect" id="node7" href="$classScene3.html#ae0fa7e48f701d3761d8c6ca01a334feb" title="Initializes for 3rd scene. " alt="" coords="261,259,351,285"/>
+<area shape="rect" id="node8" href="$classSP2.html#a8669c489b6a968f367a4610b254ac992" title="Initializes for 1st scene. " alt="" coords="270,309,342,336"/>
+<area shape="rect" id="node9" href="$classScene2.html#ad452e11ff007a8a1a410284630eb6f12" title="Initializes for 2nd scene. " alt="" coords="261,360,351,387"/>
 </map>

@@ -189,8 +189,8 @@ public:
 
 	char Map[20][20];
 	float Size = 15;
-	float Z_Displacement = 0;
-	float X_Displacement = -100;
+	float Z_Displacement;
+	float X_Displacement;
 	Scene3();
 	~Scene3();
 
@@ -211,19 +211,19 @@ private:
 	void UpdateMenu();
 
 	NPC npc;
-	bool robot1moved = false;
-	bool robot1rotate = false;
-	float robot1rotation = 0;
+	bool robot1moved;
+	bool robot1rotate;
+	float robot1rotation;
 	float xtranslate, ytranslate;
-	int parts = 0;
+	int parts;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
 
 	MS modelStack, viewStack, projectionStack;
 	float LSPEED = 10.f;
-	float moveSkyBoxZ = 91.f;
-	float moveSkyBoxX = 0.f;
+	float moveSkyBoxZ;
+	float moveSkyBoxX;
 	float potatoRotate;
 
 	Light light[8]; //shader max 8 lights
@@ -258,37 +258,35 @@ private:
 	float deltaTime;
 	Bullet bullet;
 
-	int Died_Time = 0;
+	int Died_Time;
 	Enemy enemy[5];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 
 	void ObjectsHolding(Mesh*mesh, float size);
 
-	float throwingdown = 0;
-	float throwingforward = 0;
-	float throwup = 0;
-	Vector3 newcameraposition = (0, 0, 0);
-	Vector3 oldcameraposition = (0, 0, 0);
-	bool throwbomb = false;
-	bool thrown = false;
-	bool toggle = false;
-	bool cam1 = false;
-	bool movement = true;
-	bool plantbomb = false;
+	float throwingdown;
+	float throwingforward;
+	float throwup;
+	Vector3 newcameraposition;
+	Vector3 oldcameraposition;
+	bool throwbomb;
+	bool thrown;
+	bool toggle;
+	bool cam1;
+	bool movement;
+	bool plantbomb;
 
 	//picking up space ship parts
-	float followx = 0;
-	float followy = 0;
+	float followx;
+	float followy;
 	float coolDownTime;
 	string shop;
-	bool doorinteract = true;
+	bool doorinteract;
 
 	void Map_Reading();
 	void Map_Rendering();
 	void Character_Movement(float dt);
-
-	
 
 	float JumpTime;
 	float PressTime;
@@ -296,8 +294,8 @@ private:
 	Mouse mouse;
 	CollisionDetector detectCollision;
 
-	bool On_Plane = false;
-	float Speed = 0;
+	bool On_Plane;
+	float Speed;
 	Position Plane;
 	void Plane_Rendering();
 

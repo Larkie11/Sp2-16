@@ -93,9 +93,9 @@ private:
 	Mesh* meshList[NUM_GEOMETRY];
 
 	MS modelStack, viewStack, projectionStack;
-	float LSPEED = 10.f;
-	float moveSkyBoxZ = 91.f;
-	float moveSkyBoxX = 0.f;
+	float LSPEED;
+	float moveSkyBoxZ;
+	float moveSkyBoxX;
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
@@ -130,9 +130,8 @@ private:
 	float deltaTime;
 
 	void userInput();
-	void mouseControl();
 
-	float menu_pos = 5;
+	float menu_pos;
 	float icon;
 	float icon2;
 	float rotateCoke;

@@ -4,6 +4,68 @@
     <compoundname>NPC</compoundname>
     <includes refid="NPC_8h" local="no">NPC.h</includes>
     <innerclass refid="structNPC_1_1DOT" prot="private">NPC::DOT</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3" prot="private" static="no">
+        <name>ROBOT</name>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a756ef8d0cb91ab77d6d99f8dbe662e57" prot="private">
+          <name>None</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ad0259b8a4e80194d61a873d05af58600" prot="private">
+          <name>ShowE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab1b1e7f1c26850ae2ab57cda18cb7c14" prot="private">
+          <name>Robot1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a9702737696c1847b03e01284f4b6dfad" prot="private">
+          <name>Robot1_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab0bc0662daf6a564d753056c784a80ae" prot="private">
+          <name>Robot1_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a416fb767c4513930f4241d933f853452" prot="private">
+          <name>Robot2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a24c8fa04adad783d9a982b71784397ff" prot="private">
+          <name>Robot3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="31" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="30" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classNPC_1ae031c59118e339bc7b983d755270b3ed" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -16,20 +78,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="42" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="42" bodyend="-1"/>
-        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1577" endline="1765">SP2::Character_Movement</referencedby>
-        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1690" endline="1932">Scene2::Character_Movement</referencedby>
-        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1571" endline="1813">Scene3::Character_Movement</referencedby>
-        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="107">Door</referencedby>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="54" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classScene3_1a97c70e9151bede5a2ea42b19b5098337" compoundref="Scene3_8cpp" startline="1754" endline="1997">Scene3::Character_Movement</referencedby>
+        <referencedby refid="classScene2_1a56ffb6e0c1e4f046c73163f842868780" compoundref="Scene2_8cpp" startline="1808" endline="2048">Scene2::Character_Movement</referencedby>
+        <referencedby refid="classSP2_1a1f7d44908238ba902bfcd6fb509ee079" compoundref="SP2_8cpp" startline="1796" endline="1980">SP2::Character_Movement</referencedby>
+        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="102">Door</referencedby>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -42,17 +104,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="43" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="43" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="55" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -65,14 +127,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="44" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="44" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="56" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a85d74e45c09b9682b51c8de0be2b86e8" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -85,17 +147,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="45" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="45" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="57" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1aa66dc59a5b8d5c3f6f167b30accbfdd3" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -108,12 +170,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="46" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="46" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="58" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a393fc83597650a8ac9e8a7ce41bdb73b" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -126,10 +188,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="47" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="47" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="59" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a62229900f73556ef0e63491651811bf8" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -142,10 +204,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="48" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="48" bodyend="-1"/>
-        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="26" endline="409">SP2::Init</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="60" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="77" endline="457">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a265b0c5463e405764e127013956bafe8" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -158,11 +220,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="49" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="49" bodyend="-1"/>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
-        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="61" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="728" endline="922">Shop::Render</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="462" endline="505">Shop::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -175,10 +237,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="50" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="50" bodyend="-1"/>
-        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="184">Shop::Init</referencedby>
-        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="62" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classShop_1a89d006f2a5dbfa60526a0c55718155b2" compoundref="Shop_8cpp" startline="51" endline="183">Shop::Init</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="728" endline="922">Shop::Render</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a87b08e0f34557711ef21bb042fa5510e" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -191,13 +253,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="51" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="51" bodyend="-1"/>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="63" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1aae7da60114eed97a8cab60efb9c774bb" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -210,10 +272,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="52" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="52" bodyend="-1"/>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="64" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1ab0a53022b2f32c23623fdc49f8270b71" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -226,10 +288,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="53" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="53" bodyend="-1"/>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="65" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1ad960bb15d983e36d98cdd8a3a3ebdaa7" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -242,10 +304,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="54" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="54" bodyend="-1"/>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="66" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1ad5fbe58d73eda3c6dc184db36a86da1a" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -258,10 +320,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="55" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="55" bodyend="-1"/>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="67" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a65a4cff8745128f22b60e70181e71ac7" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -274,10 +336,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="56" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="56" bodyend="-1"/>
-        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="445">Scene2::Init</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="68" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classScene2_1ad452e11ff007a8a1a410284630eb6f12" compoundref="Scene2_8cpp" startline="78" endline="459">Scene2::Init</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" prot="public" static="no" mutable="no">
         <type><ref refid="structNPC_1_1DOT" kindref="compound">DOT</ref></type>
@@ -290,11 +352,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="57" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="57" bodyend="-1"/>
-        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="26" endline="400">Scene3::Init</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="69" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classScene3_1ae0fa7e48f701d3761d8c6ca01a334feb" compoundref="Scene3_8cpp" startline="79" endline="451">Scene3::Init</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1ac39e89f19cd1880dcf23cedd5eebb0e8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NPC::speech</definition>
+        <argsstring></argsstring>
+        <name>speech</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="71" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" prot="public" static="no" mutable="no">
         <type><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref></type>
@@ -307,10 +386,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="59" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="59" bodyend="-1"/>
-        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="107">Door</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="72" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="102">Door</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -323,17 +402,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="60" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="60" bodyend="-1"/>
-        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="107">Door</referencedby>
-        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="770" endline="964">Shop::Render</referencedby>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="73" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classNPC_1a36e813302930862ecaea05db5286d271" compoundref="NPC_8cpp" startline="51" endline="102">Door</referencedby>
+        <referencedby refid="classShop_1ae965cfdda5e2d6214a7daf7d300f2ff0" compoundref="Shop_8cpp" startline="728" endline="922">Shop::Render</referencedby>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1acc292d328d6ed61ee652ba1e9371c490" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -347,14 +426,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="61" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="61" bodyend="-1"/>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="74" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a072b54dc68788df7544884e3a4631410" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -367,8 +446,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="62" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="62" bodyend="-1"/>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="75" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a727cc5aef2e9753e0f094a7511afd321" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -381,11 +459,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="63" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="63" bodyend="-1"/>
-        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1038" endline="1455">SP2::Render</referencedby>
-        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1131" endline="1598">Scene2::Render</referencedby>
-        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1042" endline="1487">Scene3::Render</referencedby>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="76" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classScene3_1aca22983af978d16e380bf5ca4ceab143" compoundref="Scene3_8cpp" startline="1184" endline="1610">Scene3::Render</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1178" endline="1621">SP2::Render</referencedby>
+        <referencedby refid="classScene2_1ac035da5e87c59e6b1828ceec8193cea4" compoundref="Scene2_8cpp" startline="1149" endline="1664">Scene2::Render</referencedby>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1aae1faf4fd2e3260935e67bb5b5de0e79" prot="public" static="no" mutable="no">
+        <type><ref refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3" kindref="member">ROBOT</ref></type>
+        <definition>ROBOT NPC::robot</definition>
+        <argsstring></argsstring>
+        <name>robot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="77" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1ab8a82c886c19a301950fe033e7f27574" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -398,7 +490,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="64" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="64" bodyend="-1"/>
+        <location file="MyGraphics/Source/NPC.h" line="78" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="78" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1ab2a347de5d84d055e740679379377436" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -411,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="65" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="65" bodyend="-1"/>
+        <location file="MyGraphics/Source/NPC.h" line="79" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -424,8 +516,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="66" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="66" bodyend="-1"/>
-        <referencedby refid="classNPC_1a54669bd593dce1ca5fb994e11f5da8be" compoundref="NPC_8cpp" startline="292" endline="312">NPCmovement</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="80" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classNPC_1a54669bd593dce1ca5fb994e11f5da8be" compoundref="NPC_8cpp" startline="322" endline="342">NPCmovement</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1ab80b828ce8758d633fdd679b8732f7c5" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -438,8 +530,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="67" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="67" bodyend="-1"/>
-        <referencedby refid="classNPC_1a3e837aa5669c2fa5395e2b037bcadd5d" compoundref="NPC_8cpp" startline="328" endline="349">NPCmovement2</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="81" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classNPC_1a3e837aa5669c2fa5395e2b037bcadd5d" compoundref="NPC_8cpp" startline="358" endline="379">NPCmovement2</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -452,9 +544,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="68" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="68" bodyend="-1"/>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
-        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="82" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="462" endline="505">Shop::Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" prot="public" static="no" mutable="no">
         <type><ref refid="classSound" kindref="compound">Sound</ref></type>
@@ -467,9 +559,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="69" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="69" bodyend="-1"/>
-        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="122" endline="202">Scene1</referencedby>
-        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="217" endline="277">Shop</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="83" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" compoundref="NPC_8cpp" startline="117" endline="232">Scene1</referencedby>
+        <referencedby refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" compoundref="NPC_8cpp" startline="247" endline="307">Shop</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -487,7 +579,7 @@
           <declname>dt</declname>
         </param>
         <briefdescription>
-<para>All <ref refid="classNPC" kindref="compound">NPC</ref> interaction and sound effects for <ref refid="classNPC" kindref="compound">NPC</ref>. </para>        </briefdescription>
+<para>All <ref refid="classNPC" kindref="compound">NPC</ref> interaction. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -516,28 +608,37 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="70" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="122" bodyend="202"/>
-        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="33">NPC::DOT::canInteract</references>
-        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</references>
-        <references refid="classNPC_1a072b54dc68788df7544884e3a4631410" compoundref="NPC_8h" startline="62">coolDownTime</references>
-        <references refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" compoundref="NPC_8h" startline="59">detectCollision</references>
-        <references refid="classNPC_1a727cc5aef2e9753e0f094a7511afd321" compoundref="NPC_8h" startline="63">dialogue</references>
-        <references refid="classNPC_1acc292d328d6ed61ee652ba1e9371c490" compoundref="NPC_8h" startline="61">dialoguePlus</references>
+        <location file="MyGraphics/Source/NPC.h" line="84" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="117" bodyend="232"/>
+        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="43">NPC::DOT::canInteract</references>
+        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="82" endline="94">CollisionDetector::collideByDist</references>
+        <references refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" compoundref="NPC_8h" startline="72">detectCollision</references>
+        <references refid="classNPC_1a727cc5aef2e9753e0f094a7511afd321" compoundref="NPC_8h" startline="76">dialogue</references>
+        <references refid="classNPC_1acc292d328d6ed61ee652ba1e9371c490" compoundref="NPC_8h" startline="74">dialoguePlus</references>
         <references refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Vector3::Dot</references>
-        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="60">interactDia</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="36">NPC::DOT::Nposition</references>
+        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="73">interactDia</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a756ef8d0cb91ab77d6d99f8dbe662e57" compoundref="NPC_8h" startline="32">None</references>
+        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="47">NPC::DOT::Nposition</references>
         <references refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">Sound::playSE</references>
         <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
-        <references refid="structNPC_1_1DOT_1aed31700ee9837a78817024847a7bdfca" compoundref="NPC_8h" startline="37">NPC::DOT::robot</references>
-        <references refid="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" compoundref="NPC_8h" startline="43">robot1</references>
-        <references refid="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" compoundref="NPC_8h" startline="44">robot2</references>
-        <references refid="classNPC_1a85d74e45c09b9682b51c8de0be2b86e8" compoundref="NPC_8h" startline="45">robot3</references>
-        <references refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" compoundref="NPC_8h" startline="69">sound</references>
-        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="20">Camera3::view</references>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <references refid="structNPC_1_1DOT_1aed31700ee9837a78817024847a7bdfca" compoundref="NPC_8h" startline="48">NPC::DOT::robot</references>
+        <references refid="classNPC_1aae1faf4fd2e3260935e67bb5b5de0e79" compoundref="NPC_8h" startline="77">robot</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab1b1e7f1c26850ae2ab57cda18cb7c14" compoundref="NPC_8h" startline="34">Robot1</references>
+        <references refid="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" compoundref="NPC_8h" startline="55">robot1</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a9702737696c1847b03e01284f4b6dfad" compoundref="NPC_8h" startline="35">Robot1_1</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab0bc0662daf6a564d753056c784a80ae" compoundref="NPC_8h" startline="36">Robot1_2</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a416fb767c4513930f4241d933f853452" compoundref="NPC_8h" startline="37">Robot2</references>
+        <references refid="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" compoundref="NPC_8h" startline="56">robot2</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a24c8fa04adad783d9a982b71784397ff" compoundref="NPC_8h" startline="38">Robot3</references>
+        <references refid="classNPC_1a85d74e45c09b9682b51c8de0be2b86e8" compoundref="NPC_8h" startline="57">robot3</references>
+        <references refid="structNPC_1_1DOT_1a1879a82ffcbc7cc054b91aabbb91fabc" compoundref="NPC_8h" startline="46">NPC::DOT::show</references>
+        <references refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ad0259b8a4e80194d61a873d05af58600" compoundref="NPC_8h" startline="33">ShowE</references>
+        <references refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" compoundref="NPC_8h" startline="83">sound</references>
+        <references refid="classNPC_1ac39e89f19cd1880dcf23cedd5eebb0e8" compoundref="NPC_8h" startline="71">speech</references>
+        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="31">Camera3::view</references>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a42cb3233dc7befff196bd9d08eb6cacf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -558,7 +659,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="71" column="1"/>
+        <location file="MyGraphics/Source/NPC.h" line="85" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a36e813302930862ecaea05db5286d271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -603,24 +704,24 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="72" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="51" bodyend="107"/>
-        <references refid="structNPC_1_1DOT_1a43f8834f2ab49434068d1a102994eae0" compoundref="NPC_8h" startline="34">NPC::DOT::canGoThrough</references>
-        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="33">NPC::DOT::canInteract</references>
-        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</references>
-        <references refid="structNPC_1_1DOT_1ae2cacde2ef87e5080e0a9229ab080290" compoundref="NPC_8h" startline="35">NPC::DOT::Collision</references>
-        <references refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" compoundref="NPC_8h" startline="59">detectCollision</references>
-        <references refid="classNPC_1ae031c59118e339bc7b983d755270b3ed" compoundref="NPC_8h" startline="42">door</references>
+        <location file="MyGraphics/Source/NPC.h" line="86" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="51" bodyend="102"/>
+        <references refid="structNPC_1_1DOT_1a43f8834f2ab49434068d1a102994eae0" compoundref="NPC_8h" startline="44">NPC::DOT::canGoThrough</references>
+        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="43">NPC::DOT::canInteract</references>
+        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="82" endline="94">CollisionDetector::collideByDist</references>
+        <references refid="structNPC_1_1DOT_1ae2cacde2ef87e5080e0a9229ab080290" compoundref="NPC_8h" startline="45">NPC::DOT::Collision</references>
+        <references refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" compoundref="NPC_8h" startline="72">detectCollision</references>
+        <references refid="classNPC_1ae031c59118e339bc7b983d755270b3ed" compoundref="NPC_8h" startline="54">door</references>
         <references refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Vector3::Dot</references>
-        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="60">interactDia</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="structNPC_1_1DOT_1a7fc79b24f05ce5144cc3b1dc63731f1e" compoundref="NPC_8h" startline="32">NPC::DOT::negativeDotProduct</references>
-        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="36">NPC::DOT::Nposition</references>
+        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="73">interactDia</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="structNPC_1_1DOT_1a7fc79b24f05ce5144cc3b1dc63731f1e" compoundref="NPC_8h" startline="42">NPC::DOT::negativeDotProduct</references>
+        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="47">NPC::DOT::Nposition</references>
         <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
-        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="20">Camera3::view</references>
+        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="31">Camera3::view</references>
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
-        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="410" endline="836">Scene3::Update</referencedby>
+        <referencedby refid="classScene3_1ac6aee0665d9f41f4a009fdcb29ac40f1" compoundref="Scene3_8cpp" startline="483" endline="897">Scene3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a151a32b216a01bbae169c51b77c7c408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -665,31 +766,31 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="73" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="217" bodyend="277"/>
-        <references refid="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" compoundref="NPC_8h" startline="57">bomb</references>
-        <references refid="classSharedData_1ac789ec12fe814d50b8b24bbe65c3ef62" compoundref="SharedData_8h" startline="64">SharedData::bomb</references>
-        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="33">NPC::DOT::canInteract</references>
-        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="19" endline="31">CollisionDetector::collideByDist</references>
-        <references refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" compoundref="NPC_8h" startline="59">detectCollision</references>
-        <references refid="classSharedData_1a7e8c368c5192d3f846b2fcac7dac2a77" compoundref="SharedData_8h" startline="54">SharedData::gameScene</references>
-        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="60">interactDia</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="36">NPC::DOT::Nposition</references>
+        <location file="MyGraphics/Source/NPC.h" line="87" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="247" bodyend="307"/>
+        <references refid="classSharedData_1ac789ec12fe814d50b8b24bbe65c3ef62" compoundref="SharedData_8h" startline="63">SharedData::bomb</references>
+        <references refid="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" compoundref="NPC_8h" startline="69">bomb</references>
+        <references refid="structNPC_1_1DOT_1a20da18014c9f9ef2ed3ec2c00fd8eb69" compoundref="NPC_8h" startline="43">NPC::DOT::canInteract</references>
+        <references refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" compoundref="CollisionDetector_8cpp" startline="82" endline="94">CollisionDetector::collideByDist</references>
+        <references refid="classNPC_1afa1934bfd8ae4bc135a8d09ed4703c7d" compoundref="NPC_8h" startline="72">detectCollision</references>
+        <references refid="classSharedData_1a7e8c368c5192d3f846b2fcac7dac2a77" compoundref="SharedData_8h" startline="53">SharedData::gameScene</references>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="52">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
+        <references refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" compoundref="NPC_8h" startline="73">interactDia</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="structNPC_1_1DOT_1a66f90bb157a82a7ba3aeeb8f8170f4eb" compoundref="NPC_8h" startline="47">NPC::DOT::Nposition</references>
         <references refid="classSound_1aff890910a52b741e92134ee9c3c82408" compoundref="Sound_8cpp" startline="48" endline="51">Sound::playSE</references>
         <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
-        <references refid="structSharedData_1_1INVENTORY_1add1e00847ed9b01f99d8b71b42b44ff2" compoundref="SharedData_8h" startline="31">SharedData::INVENTORY::quantity</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12559547ceddc6681610499196ae63a9" compoundref="SharedData_8h" startline="38">SharedData::SCENE2</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bac54d14bd2c7e410718c56fe1930ad437" compoundref="SharedData_8h" startline="39">SharedData::SCENE3</references>
-        <references refid="classNPC_1a265b0c5463e405764e127013956bafe8" compoundref="NPC_8h" startline="49">seller</references>
-        <references refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" compoundref="NPC_8h" startline="69">sound</references>
-        <references refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" compoundref="NPC_8h" startline="50">spaceDoor</references>
-        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
-        <references refid="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" compoundref="NPC_8h" startline="68">stopMusic</references>
+        <references refid="structSharedData_1_1INVENTORY_1add1e00847ed9b01f99d8b71b42b44ff2" compoundref="SharedData_8h" startline="30">SharedData::INVENTORY::quantity</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba12559547ceddc6681610499196ae63a9" compoundref="SharedData_8h" startline="37">SharedData::SCENE2</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bac54d14bd2c7e410718c56fe1930ad437" compoundref="SharedData_8h" startline="38">SharedData::SCENE3</references>
+        <references refid="classNPC_1a265b0c5463e405764e127013956bafe8" compoundref="NPC_8h" startline="61">seller</references>
+        <references refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" compoundref="NPC_8h" startline="83">sound</references>
+        <references refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" compoundref="NPC_8h" startline="62">spaceDoor</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="59">SharedData::stateCheck</references>
+        <references refid="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" compoundref="NPC_8h" startline="82">stopMusic</references>
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
-        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="481" endline="523">Shop::Update</referencedby>
+        <referencedby refid="classShop_1af915842cee6266631dc4f18abd95d854" compoundref="Shop_8cpp" startline="462" endline="505">Shop::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a54669bd593dce1ca5fb994e11f5da8be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -734,10 +835,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="74" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="292" bodyend="312"/>
-        <references refid="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" compoundref="NPC_8h" startline="66">robot3rotate</references>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="88" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="322" bodyend="342"/>
+        <references refid="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" compoundref="NPC_8h" startline="80">robot3rotate</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a3e837aa5669c2fa5395e2b037bcadd5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -782,10 +883,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="75" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="328" bodyend="349"/>
-        <references refid="classNPC_1ab80b828ce8758d633fdd679b8732f7c5" compoundref="NPC_8h" startline="67">robot1moved</references>
-        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="419" endline="813">SP2::Update</referencedby>
-        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="476" endline="852">Scene2::Update</referencedby>
+        <location file="MyGraphics/Source/NPC.h" line="89" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="358" bodyend="379"/>
+        <references refid="classNPC_1ab80b828ce8758d633fdd679b8732f7c5" compoundref="NPC_8h" startline="81">robot1moved</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="488" endline="881">SP2::Update</referencedby>
+        <referencedby refid="classScene2_1a26d9fb1c36b04d8b3dac98740f7f77e6" compoundref="Scene2_8cpp" startline="490" endline="862">Scene2::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a59b45912692304d555df9d6957046962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -807,7 +908,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="76" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="22" bodyend="24"/>
+        <location file="MyGraphics/Source/NPC.h" line="90" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="22" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classNPC_1a67c0caca129b56c82bb7ec8bce6be52b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -829,7 +930,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/NPC.h" line="77" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="34" bodyend="36"/>
+        <location file="MyGraphics/Source/NPC.h" line="91" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="34" bodyend="36"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -837,31 +938,34 @@
     <detaileddescription>
 <para>Class <ref refid="classNPC" kindref="compound">NPC</ref>: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="843">
+      <node id="830">
         <label>irrklang::IVirtualRefCounted</label>
         <link refid="classirrklang_1_1IVirtualRefCounted"/>
       </node>
-      <node id="839">
+      <node id="826">
         <label>Sound</label>
         <link refid="classSound"/>
-        <childnode refid="840" relation="usage">
+        <childnode refid="827" relation="usage">
           <edgelabel>musicEngine</edgelabel>
         </childnode>
-        <childnode refid="842" relation="usage">
+        <childnode refid="829" relation="usage">
           <edgelabel>SoundEffect</edgelabel>
           <edgelabel>Song</edgelabel>
         </childnode>
       </node>
-      <node id="830">
+      <node id="816">
         <label>NPC</label>
         <link refid="classNPC"/>
-        <childnode refid="831" relation="usage">
+        <childnode refid="817" relation="usage">
           <edgelabel>coolDownTime</edgelabel>
         </childnode>
-        <childnode refid="832" relation="usage">
+        <childnode refid="818" relation="usage">
           <edgelabel>detectCollision</edgelabel>
         </childnode>
-        <childnode refid="834" relation="usage">
+        <childnode refid="820" relation="usage">
+          <edgelabel>robot</edgelabel>
+        </childnode>
+        <childnode refid="821" relation="usage">
           <edgelabel>egg2</edgelabel>
           <edgelabel>spacerocket</edgelabel>
           <edgelabel>egg3</edgelabel>
@@ -874,94 +978,99 @@
           <edgelabel>spacewing</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
-        <childnode refid="838" relation="usage">
+        <childnode refid="825" relation="usage">
           <edgelabel>dialogue</edgelabel>
           <edgelabel>dialoguePlus</edgelabel>
         </childnode>
-        <childnode refid="837" relation="usage">
+        <childnode refid="823" relation="usage">
+          <edgelabel>interactDia</edgelabel>
+        </childnode>
+        <childnode refid="824" relation="usage">
           <edgelabel>robot3rotate</edgelabel>
+          <edgelabel>speech</edgelabel>
           <edgelabel>moveFront</edgelabel>
           <edgelabel>robot1moved</edgelabel>
           <edgelabel>moveBack</edgelabel>
           <edgelabel>stopMusic</edgelabel>
         </childnode>
-        <childnode refid="836" relation="usage">
-          <edgelabel>interactDia</edgelabel>
-        </childnode>
-        <childnode refid="839" relation="usage">
+        <childnode refid="826" relation="usage">
           <edgelabel>sound</edgelabel>
         </childnode>
       </node>
-      <node id="840">
+      <node id="827">
         <label>irrklang::ISoundEngine</label>
         <link refid="classirrklang_1_1ISoundEngine"/>
-        <childnode refid="841" relation="public-inheritance">
+        <childnode refid="828" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="836">
+      <node id="823">
         <label>string</label>
       </node>
-      <node id="833">
+      <node id="819">
         <label>float</label>
       </node>
-      <node id="842">
+      <node id="829">
         <label>irrklang::ISound</label>
         <link refid="classirrklang_1_1ISound"/>
-        <childnode refid="843" relation="public-inheritance">
+        <childnode refid="830" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="834">
+      <node id="821">
         <label>NPC::DOT</label>
         <link refid="structNPC_1_1DOT"/>
-        <childnode refid="835" relation="usage">
+        <childnode refid="822" relation="usage">
           <edgelabel>Nposition</edgelabel>
         </childnode>
-        <childnode refid="836" relation="usage">
+        <childnode refid="823" relation="usage">
           <edgelabel>robot</edgelabel>
         </childnode>
-        <childnode refid="837" relation="usage">
+        <childnode refid="824" relation="usage">
           <edgelabel>Collision</edgelabel>
           <edgelabel>negativeDotProduct</edgelabel>
           <edgelabel>canGoThrough</edgelabel>
           <edgelabel>canInteract</edgelabel>
+          <edgelabel>show</edgelabel>
         </childnode>
       </node>
-      <node id="838">
+      <node id="825">
         <label>int</label>
       </node>
-      <node id="831">
+      <node id="817">
         <label>double</label>
       </node>
-      <node id="841">
+      <node id="820">
+        <label>ROBOT</label>
+      </node>
+      <node id="828">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
-        <childnode refid="838" relation="usage">
+        <childnode refid="825" relation="usage">
           <edgelabel>ReferenceCounter</edgelabel>
         </childnode>
       </node>
-      <node id="837">
+      <node id="824">
         <label>bool</label>
       </node>
-      <node id="832">
+      <node id="818">
         <label>CollisionDetector</label>
         <link refid="classCollisionDetector"/>
-        <childnode refid="833" relation="usage">
+        <childnode refid="819" relation="usage">
           <edgelabel>diffInZ</edgelabel>
           <edgelabel>dist</edgelabel>
           <edgelabel>diffInX</edgelabel>
         </childnode>
       </node>
-      <node id="835">
+      <node id="822">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="833" relation="usage">
+        <childnode refid="819" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="MyGraphics/Source/NPC.h" line="29" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="28" bodyend="78"/>
+    <location file="MyGraphics/Source/NPC.h" line="29" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="28" bodyend="92"/>
     <listofallmembers>
       <member refid="classNPC_1a76aa2b1785dfdd9b68eed377023a9850" prot="public" virt="non-virtual"><scope>NPC</scope><name>bomb</name></member>
       <member refid="classNPC_1a072b54dc68788df7544884e3a4631410" prot="public" virt="non-virtual"><scope>NPC</scope><name>coolDownTime</name></member>
@@ -978,24 +1087,34 @@
       <member refid="classNPC_1a81209d953cf1bdc3b5e53dd5bcb0aecf" prot="public" virt="non-virtual"><scope>NPC</scope><name>interactDia</name></member>
       <member refid="classNPC_1ab2a347de5d84d055e740679379377436" prot="public" virt="non-virtual"><scope>NPC</scope><name>moveBack</name></member>
       <member refid="classNPC_1ab8a82c886c19a301950fe033e7f27574" prot="public" virt="non-virtual"><scope>NPC</scope><name>moveFront</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a756ef8d0cb91ab77d6d99f8dbe662e57" prot="private" virt="non-virtual"><scope>NPC</scope><name>None</name></member>
       <member refid="classNPC_1a59b45912692304d555df9d6957046962" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPC</name></member>
       <member refid="classNPC_1a54669bd593dce1ca5fb994e11f5da8be" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPCmovement</name></member>
       <member refid="classNPC_1a3e837aa5669c2fa5395e2b037bcadd5d" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPCmovement2</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3" prot="private" virt="non-virtual"><scope>NPC</scope><name>ROBOT</name></member>
+      <member refid="classNPC_1aae1faf4fd2e3260935e67bb5b5de0e79" prot="public" virt="non-virtual"><scope>NPC</scope><name>robot</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab1b1e7f1c26850ae2ab57cda18cb7c14" prot="private" virt="non-virtual"><scope>NPC</scope><name>Robot1</name></member>
       <member refid="classNPC_1a3c8cf573ba6b15fcd621ce92390a0538" prot="public" virt="non-virtual"><scope>NPC</scope><name>robot1</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a9702737696c1847b03e01284f4b6dfad" prot="private" virt="non-virtual"><scope>NPC</scope><name>Robot1_1</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ab0bc0662daf6a564d753056c784a80ae" prot="private" virt="non-virtual"><scope>NPC</scope><name>Robot1_2</name></member>
       <member refid="classNPC_1ab80b828ce8758d633fdd679b8732f7c5" prot="public" virt="non-virtual"><scope>NPC</scope><name>robot1moved</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a416fb767c4513930f4241d933f853452" prot="private" virt="non-virtual"><scope>NPC</scope><name>Robot2</name></member>
       <member refid="classNPC_1a2c56f51559604c2e2a260c0dbe7a0202" prot="public" virt="non-virtual"><scope>NPC</scope><name>robot2</name></member>
       <member refid="classNPC_1a85d74e45c09b9682b51c8de0be2b86e8" prot="public" virt="non-virtual"><scope>NPC</scope><name>robot3</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3a24c8fa04adad783d9a982b71784397ff" prot="private" virt="non-virtual"><scope>NPC</scope><name>Robot3</name></member>
       <member refid="classNPC_1a0ceed2c5862b7bec24ad35f805c7ca46" prot="public" virt="non-virtual"><scope>NPC</scope><name>robot3rotate</name></member>
       <member refid="classNPC_1ae2c01888b291a222da606b2ba6efbe84" prot="public" virt="non-virtual"><scope>NPC</scope><name>Scene1</name></member>
       <member refid="classNPC_1a42cb3233dc7befff196bd9d08eb6cacf" prot="public" virt="non-virtual"><scope>NPC</scope><name>Scene2</name></member>
       <member refid="classNPC_1a265b0c5463e405764e127013956bafe8" prot="public" virt="non-virtual"><scope>NPC</scope><name>seller</name></member>
       <member refid="classNPC_1a151a32b216a01bbae169c51b77c7c408" prot="public" virt="non-virtual"><scope>NPC</scope><name>Shop</name></member>
+      <member refid="classNPC_1a0adb4b7c1090b2c4aed1851b491176b3ad0259b8a4e80194d61a873d05af58600" prot="private" virt="non-virtual"><scope>NPC</scope><name>ShowE</name></member>
       <member refid="classNPC_1a5f9219c6ceee4d035c874fabdc9bc2ba" prot="public" virt="non-virtual"><scope>NPC</scope><name>sound</name></member>
       <member refid="classNPC_1aa66dc59a5b8d5c3f6f167b30accbfdd3" prot="public" virt="non-virtual"><scope>NPC</scope><name>spacebody</name></member>
       <member refid="classNPC_1a6bd38e16d1887623204d1f0e6b817d7a" prot="public" virt="non-virtual"><scope>NPC</scope><name>spaceDoor</name></member>
       <member refid="classNPC_1a62229900f73556ef0e63491651811bf8" prot="public" virt="non-virtual"><scope>NPC</scope><name>spacerocket</name></member>
       <member refid="classNPC_1a87b08e0f34557711ef21bb042fa5510e" prot="public" virt="non-virtual"><scope>NPC</scope><name>spaceShip</name></member>
       <member refid="classNPC_1a393fc83597650a8ac9e8a7ce41bdb73b" prot="public" virt="non-virtual"><scope>NPC</scope><name>spacewing</name></member>
+      <member refid="classNPC_1ac39e89f19cd1880dcf23cedd5eebb0e8" prot="public" virt="non-virtual"><scope>NPC</scope><name>speech</name></member>
       <member refid="classNPC_1a69dff818bcd2bab28f3301d3b11e3601" prot="public" virt="non-virtual"><scope>NPC</scope><name>stopMusic</name></member>
       <member refid="classNPC_1a67c0caca129b56c82bb7ec8bce6be52b" prot="public" virt="non-virtual"><scope>NPC</scope><name>~NPC</name></member>
     </listofallmembers>

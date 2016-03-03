@@ -4,60 +4,60 @@
     <compoundname>bits.c</compoundname>
     <includes refid="internal_8h" local="yes">internal.h</includes>
     <incdepgraph>
-      <node id="4523">
+      <node id="4752">
         <label>assert.h</label>
       </node>
-      <node id="4515">
+      <node id="4744">
         <label>stdlib.h</label>
       </node>
-      <node id="4513">
+      <node id="4742">
         <label>MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/decoder/bits.c</label>
         <link refid="bits.c"/>
-        <childnode refid="4514" relation="include">
+        <childnode refid="4743" relation="include">
         </childnode>
       </node>
-      <node id="4520">
+      <node id="4749">
         <label>stddef.h</label>
       </node>
-      <node id="4517">
+      <node id="4746">
         <label>string.h</label>
       </node>
-      <node id="4519">
+      <node id="4748">
         <label>math.h</label>
       </node>
-      <node id="4521">
+      <node id="4750">
         <label>mpaudec.h</label>
         <link refid="mpaudec_8h"/>
       </node>
-      <node id="4518">
+      <node id="4747">
         <label>ctype.h</label>
       </node>
-      <node id="4514">
+      <node id="4743">
         <label>internal.h</label>
         <link refid="internal_8h"/>
-        <childnode refid="4515" relation="include">
+        <childnode refid="4744" relation="include">
         </childnode>
-        <childnode refid="4516" relation="include">
+        <childnode refid="4745" relation="include">
         </childnode>
-        <childnode refid="4517" relation="include">
+        <childnode refid="4746" relation="include">
         </childnode>
-        <childnode refid="4518" relation="include">
+        <childnode refid="4747" relation="include">
         </childnode>
-        <childnode refid="4519" relation="include">
+        <childnode refid="4748" relation="include">
         </childnode>
-        <childnode refid="4520" relation="include">
+        <childnode refid="4749" relation="include">
         </childnode>
-        <childnode refid="4521" relation="include">
+        <childnode refid="4750" relation="include">
         </childnode>
-        <childnode refid="4522" relation="include">
+        <childnode refid="4751" relation="include">
         </childnode>
-        <childnode refid="4523" relation="include">
+        <childnode refid="4752" relation="include">
         </childnode>
       </node>
-      <node id="4516">
+      <node id="4745">
         <label>stdio.h</label>
       </node>
-      <node id="4522">
+      <node id="4751">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>

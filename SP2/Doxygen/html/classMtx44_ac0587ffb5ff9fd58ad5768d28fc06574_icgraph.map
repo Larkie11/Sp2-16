@@ -1,30 +1,29 @@
 <map id="Mtx44::SetToRotation" name="Mtx44::SetToRotation">
-<area shape="rect" id="node2" href="$classMS.html#a6ce592114042b920b648bca5519690cd" title="Multiply the top matrix with a rotation matrix based on the following parameters. ..." alt="" coords="201,639,289,665"/>
-<area shape="rect" id="node3" href="$classScene2.html#aff0b7223bdd83eb79d9863d568b97cd0" title="Scene2::EquipmentHolding" alt="" coords="358,5,537,32"/>
-<area shape="rect" id="node4" href="$classSP2.html#a1ce9a843e80cb028681abd79b9e1888d" title="SP2::EquipmentHolding" alt="" coords="367,56,527,83"/>
-<area shape="rect" id="node5" href="$classScene3.html#a364818696634a2b9b83ea21f0a453c61" title="Scene3::EquipmentHolding" alt="" coords="358,107,537,133"/>
-<area shape="rect" id="node6" href="$classSP2.html#a0c7e7b79660a3b66b8f424d77b31afd2" title="SP2::Map_Rendering" alt="" coords="375,157,520,184"/>
-<area shape="rect" id="node7" href="$classSP2.html#a90159ea511cadcc99364c6f75d108a71" title="SP2::Render" alt="" coords="635,309,731,336"/>
-<area shape="rect" id="node8" href="$classScene2.html#af97ba4b11e3f2b908dfb0b54f865cd7f" title="Scene2::ObjectsHolding" alt="" coords="366,259,529,285"/>
-<area shape="rect" id="node9" href="$classSP2.html#a9cc79a380997c742a6004cfbf6d528fe" title="SP2::ObjectsHolding" alt="" coords="376,309,519,336"/>
-<area shape="rect" id="node10" href="$classScene3.html#a959fcbecbdad3db71f13f8e687684d9b" title="Scene3::ObjectsHolding" alt="" coords="366,360,529,387"/>
-<area shape="rect" id="node11" href="$classScene2.html#ac985aad2013a92037243eb6800e3b847" title="Scene2::Plane_Rendering" alt="" coords="361,512,533,539"/>
-<area shape="rect" id="node12" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="626,588,741,615"/>
-<area shape="rect" id="node13" href="$classScene3.html#a48c3a0f44609c29629d5a9da45603c81" title="Scene3::Plane_Rendering" alt="" coords="361,715,533,741"/>
-<area shape="rect" id="node14" href="$classScene3.html#aca22983af978d16e380bf5ca4ceab143" title="Scene3::Render" alt="" coords="626,791,741,817"/>
-<area shape="rect" id="node15" href="$classCutscene.html#a74edfeb7d02dd7ee12e965c748ce422e" title="The main render function for this scene, renders any text/meshes. " alt="" coords="620,943,747,969"/>
-<area shape="rect" id="node16" href="$classShop.html#ae965cfdda5e2d6214a7daf7d300f2ff0" title="The main render function for this scene, renders any text/meshes. " alt="" coords="633,1069,734,1096"/>
-<area shape="rect" id="node17" href="$classStartCutScene.html#a38be415c2d752b8a334c8456434dca4b" title="StartCutScene::Render" alt="" coords="605,1196,761,1223"/>
-<area shape="rect" id="node18" href="$classSceneWin.html#a6844be0f7534c18a340a34c66bf54b6a" title="Renders any meshList items/obj on the screen. " alt="" coords="337,1272,557,1299"/>
-<area shape="rect" id="node20" href="$classShop.html#aee217c79bf37585efa133ac5a5b91316" title="Renders any meshList items/obj on the screen. " alt="" coords="352,1069,543,1096"/>
-<area shape="rect" id="node21" href="$classSP2.html#a866289dccc0d7ff85839a000568c986c" title="Renders obj and quads on screen. " alt="" coords="355,411,540,437"/>
-<area shape="rect" id="node22" href="$classScene2.html#a8cabb8b2edc17f61e88316eac4387daf" title="Renders meshlist/obj on screen. " alt="" coords="345,613,549,640"/>
-<area shape="rect" id="node23" href="$classScene3.html#a6728ea1a081d6d040deec4f4885fb4bc" title="Scene3::RenderQuadOnScreen" alt="" coords="345,816,549,843"/>
-<area shape="rect" id="node24" href="$classCutscene.html#abeaf976101abfa253930359943d03004" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="362,968,533,995"/>
-<area shape="rect" id="node25" href="$classShop.html#a8a70313590dea95a14f0f24001ca2c9d" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="375,1120,520,1147"/>
-<area shape="rect" id="node26" href="$classStartCutScene.html#a468cad6c3f1fa2defe987e3b36d4d7c2" title="StartCutScene::RenderSkybox" alt="" coords="347,1221,547,1248"/>
-<area shape="rect" id="node27" href="$classSP2.html#a75139f304295fd0bfbf91080b49bc10c" title="SP2::RenderSkybox" alt="" coords="377,461,517,488"/>
-<area shape="rect" id="node28" href="$classScene2.html#af16926d5f54c54cf17220d68b743ceab" title="Renders skybox with rotation and scaling done. " alt="" coords="368,664,527,691"/>
-<area shape="rect" id="node29" href="$classScene3.html#a9912da19680f150a347f1095aea20aee" title="Scene3::RenderSkybox" alt="" coords="368,867,527,893"/>
-<area shape="rect" id="node19" href="$classSceneWin.html#a9b31ed13d4a3859657d7b8ea695ed173" title="The main render function for this scene, renders any text/meshes. " alt="" coords="618,1272,749,1299"/>
+<area shape="rect" id="node2" href="$classMS.html#a6ce592114042b920b648bca5519690cd" title="Multiply the top matrix with a rotation matrix based on the following parameters. ..." alt="" coords="201,613,289,640"/>
+<area shape="rect" id="node3" href="$classScene3.html#af1f2d1e196820303c4f34c276ca1c06c" title="Rendering map based on Txt file for this scene. " alt="" coords="365,5,529,32"/>
+<area shape="rect" id="node4" href="$classScene3.html#aca22983af978d16e380bf5ca4ceab143" title="Main rendering function. " alt="" coords="626,107,741,133"/>
+<area shape="rect" id="node5" href="$classScene2.html#abe448426c8c2c0699bc3bef6f0c994b2" title="Rendering map based on Txt file for this scene. " alt="" coords="365,461,529,488"/>
+<area shape="rect" id="node6" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="626,461,741,488"/>
+<area shape="rect" id="node7" href="$classSP2.html#a0c7e7b79660a3b66b8f424d77b31afd2" title="Rendering map based on Txt file for this scene. " alt="" coords="375,816,520,843"/>
+<area shape="rect" id="node8" href="$classSP2.html#a90159ea511cadcc99364c6f75d108a71" title="Main rendering function. " alt="" coords="635,715,731,741"/>
+<area shape="rect" id="node9" href="$classScene3.html#a959fcbecbdad3db71f13f8e687684d9b" title="hold objects or parts " alt="" coords="366,309,529,336"/>
+<area shape="rect" id="node10" href="$classScene2.html#af97ba4b11e3f2b908dfb0b54f865cd7f" title="hold objects or parts " alt="" coords="366,360,529,387"/>
+<area shape="rect" id="node11" href="$classSP2.html#a9cc79a380997c742a6004cfbf6d528fe" title="hold objects or parts " alt="" coords="376,664,519,691"/>
+<area shape="rect" id="node12" href="$classScene3.html#a48c3a0f44609c29629d5a9da45603c81" title="Scene3::Plane_Rendering" alt="" coords="361,107,533,133"/>
+<area shape="rect" id="node13" href="$classScene2.html#ac985aad2013a92037243eb6800e3b847" title="Scene2::Plane_Rendering" alt="" coords="361,563,533,589"/>
+<area shape="rect" id="node14" href="$classCutscene.html#a74edfeb7d02dd7ee12e965c748ce422e" title="The main render function for this scene, renders any text/meshes. " alt="" coords="620,892,747,919"/>
+<area shape="rect" id="node15" href="$classShop.html#ae965cfdda5e2d6214a7daf7d300f2ff0" title="The main render function for this scene, renders any text/meshes. " alt="" coords="633,1019,734,1045"/>
+<area shape="rect" id="node16" href="$classStartCutScene.html#a38be415c2d752b8a334c8456434dca4b" title="Main rendering. " alt="" coords="605,1145,761,1172"/>
+<area shape="rect" id="node17" href="$classSceneWin.html#a6844be0f7534c18a340a34c66bf54b6a" title="Renders any meshList items/obj on the screen. " alt="" coords="337,1221,557,1248"/>
+<area shape="rect" id="node19" href="$classShop.html#aee217c79bf37585efa133ac5a5b91316" title="Renders obj and quads on screen. " alt="" coords="352,1069,543,1096"/>
+<area shape="rect" id="node20" href="$classScene3.html#a6728ea1a081d6d040deec4f4885fb4bc" title="Renders meshlist/obj on screen. " alt="" coords="345,157,549,184"/>
+<area shape="rect" id="node21" href="$classSP2.html#a866289dccc0d7ff85839a000568c986c" title="Renders obj and quads on screen. " alt="" coords="355,715,540,741"/>
+<area shape="rect" id="node22" href="$classScene2.html#a8cabb8b2edc17f61e88316eac4387daf" title="Renders meshlist/obj on screen. " alt="" coords="345,259,549,285"/>
+<area shape="rect" id="node23" href="$classCutscene.html#abeaf976101abfa253930359943d03004" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="362,867,533,893"/>
+<area shape="rect" id="node24" href="$classShop.html#a8a70313590dea95a14f0f24001ca2c9d" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="375,968,520,995"/>
+<area shape="rect" id="node25" href="$classStartCutScene.html#a468cad6c3f1fa2defe987e3b36d4d7c2" title="Renders skybox with scaling and rotation done. " alt="" coords="347,1120,547,1147"/>
+<area shape="rect" id="node26" href="$classScene3.html#a9912da19680f150a347f1095aea20aee" title="Renders skybox with rotation and scaling done. " alt="" coords="368,208,527,235"/>
+<area shape="rect" id="node27" href="$classSP2.html#a75139f304295fd0bfbf91080b49bc10c" title="SP2::RenderSkybox" alt="" coords="377,765,517,792"/>
+<area shape="rect" id="node28" href="$classScene2.html#af16926d5f54c54cf17220d68b743ceab" title="Renders skybox with rotation and scaling done. " alt="" coords="368,411,527,437"/>
+<area shape="rect" id="node18" href="$classSceneWin.html#a9b31ed13d4a3859657d7b8ea695ed173" title="The main render function for this scene, renders any text/meshes. " alt="" coords="618,1221,749,1248"/>
 </map>

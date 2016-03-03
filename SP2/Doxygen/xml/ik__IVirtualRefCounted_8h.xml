@@ -8,278 +8,322 @@
     <includedby refid="ik__ISoundEffectControl_8h" local="yes">MyGraphics/irrKlang-1.5.0/include/ik_ISoundEffectControl.h</includedby>
     <includedby refid="irrKlang_8h" local="yes">MyGraphics/irrKlang-1.5.0/include/irrKlang.h</includedby>
     <incdepgraph>
-      <node id="4298">
+      <node id="4511">
         <label>wchar.h</label>
       </node>
-      <node id="4297">
+      <node id="4510">
         <label>ik_irrKlangTypes.h</label>
         <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="4298" relation="include">
+        <childnode refid="4511" relation="include">
         </childnode>
       </node>
-      <node id="4296">
+      <node id="4509">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_IVirtualRefCounted.h</label>
         <link refid="ik_IVirtualRefCounted.h"/>
-        <childnode refid="4297" relation="include">
+        <childnode refid="4510" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4323">
+      <node id="4530">
         <label>MyGraphics/Source/Shop.h</label>
         <link refid="Shop_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4315" relation="include">
+        <childnode refid="4531" relation="include">
         </childnode>
       </node>
-      <node id="4308">
+      <node id="4535">
         <label>MyGraphics/Source/CollisionDetector.cpp</label>
         <link refid="CollisionDetector_8cpp"/>
       </node>
-      <node id="4332">
+      <node id="4549">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_ISoundEffectControl.h</label>
         <link refid="ik__ISoundEffectControl_8h"/>
-        <childnode refid="4331" relation="include">
+        <childnode refid="4548" relation="include">
         </childnode>
-        <childnode refid="4302" relation="include">
+        <childnode refid="4515" relation="include">
         </childnode>
       </node>
-      <node id="4328">
+      <node id="4545">
         <label>MyGraphics/Source/SceneWin.h</label>
         <link refid="SceneWin_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4314" relation="include">
+        <childnode refid="4539" relation="include">
         </childnode>
       </node>
-      <node id="4331">
+      <node id="4548">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_ISound.h</label>
         <link refid="ik__ISound_8h"/>
-        <childnode refid="4330" relation="include">
+        <childnode refid="4547" relation="include">
         </childnode>
-        <childnode refid="4302" relation="include">
+        <childnode refid="4515" relation="include">
         </childnode>
       </node>
-      <node id="4327">
+      <node id="4534">
+        <label>MyGraphics/Source/rawMatierial.cpp</label>
+        <link refid="rawMatierial_8cpp"/>
+      </node>
+      <node id="4544">
         <label>MyGraphics/Source/Cutscene.h</label>
         <link refid="Cutscene_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4309" relation="include">
+        <childnode refid="4537" relation="include">
         </childnode>
       </node>
-      <node id="4309">
+      <node id="4537">
         <label>MyGraphics/Source/Cutscene.cpp</label>
         <link refid="Cutscene_8cpp"/>
       </node>
-      <node id="4301">
+      <node id="4514">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_IAudioRecorder.h</label>
         <link refid="ik__IAudioRecorder_8h"/>
-        <childnode refid="4302" relation="include">
+        <childnode refid="4515" relation="include">
         </childnode>
       </node>
-      <node id="4302">
+      <node id="4515">
         <label>MyGraphics/irrKlang-1.5.0/include/irrKlang.h</label>
         <link refid="irrKlang_8h"/>
-        <childnode refid="4303" relation="include">
+        <childnode refid="4516" relation="include">
         </childnode>
-        <childnode refid="4304" relation="include">
+        <childnode refid="4517" relation="include">
         </childnode>
-        <childnode refid="4318" relation="include">
+        <childnode refid="4541" relation="include">
         </childnode>
       </node>
-      <node id="4313">
+      <node id="4520">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet_8h"/>
+        <childnode refid="4521" relation="include">
+        </childnode>
+        <childnode refid="4524" relation="include">
+        </childnode>
+        <childnode refid="4526" relation="include">
+        </childnode>
+        <childnode refid="4528" relation="include">
+        </childnode>
+      </node>
+      <node id="4538">
         <label>MyGraphics/Source/SceneMenu.cpp</label>
         <link refid="SceneMenu_8cpp"/>
       </node>
-      <node id="4307">
+      <node id="4536">
         <label>MyGraphics/Source/Camera3.cpp</label>
         <link refid="Camera3_8cpp"/>
       </node>
-      <node id="4311">
+      <node id="4525">
         <label>MyGraphics/Source/Scene2.cpp</label>
         <link refid="Scene2_8cpp"/>
       </node>
-      <node id="4312">
+      <node id="4527">
         <label>MyGraphics/Source/Scene3.cpp</label>
         <link refid="Scene3_8cpp"/>
       </node>
-      <node id="4315">
+      <node id="4531">
         <label>MyGraphics/Source/Shop.cpp</label>
         <link refid="Shop_8cpp"/>
       </node>
-      <node id="4300">
+      <node id="4513">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_ISoundSource.h</label>
         <link refid="ik__ISoundSource_8h"/>
-        <childnode refid="4301" relation="include">
+        <childnode refid="4514" relation="include">
         </childnode>
-        <childnode refid="4330" relation="include">
+        <childnode refid="4547" relation="include">
         </childnode>
-        <childnode refid="4302" relation="include">
+        <childnode refid="4515" relation="include">
         </childnode>
       </node>
-      <node id="4306">
+      <node id="4528">
         <label>MyGraphics/Source/Bullet.cpp</label>
         <link refid="Bullet_8cpp"/>
       </node>
-      <node id="4304">
+      <node id="4517">
         <label>MyGraphics/Source/SharedData.h</label>
         <link refid="SharedData_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4306" relation="include">
+        <childnode refid="4519" relation="include">
         </childnode>
-        <childnode refid="4307" relation="include">
+        <childnode refid="4520" relation="include">
         </childnode>
-        <childnode refid="4308" relation="include">
+        <childnode refid="4536" relation="include">
         </childnode>
-        <childnode refid="4309" relation="include">
+        <childnode refid="4537" relation="include">
         </childnode>
-        <childnode refid="4310" relation="include">
+        <childnode refid="4532" relation="include">
         </childnode>
-        <childnode refid="4311" relation="include">
+        <childnode refid="4525" relation="include">
         </childnode>
-        <childnode refid="4312" relation="include">
+        <childnode refid="4527" relation="include">
         </childnode>
-        <childnode refid="4313" relation="include">
+        <childnode refid="4538" relation="include">
         </childnode>
-        <childnode refid="4314" relation="include">
+        <childnode refid="4539" relation="include">
         </childnode>
-        <childnode refid="4315" relation="include">
+        <childnode refid="4531" relation="include">
         </childnode>
-        <childnode refid="4316" relation="include">
+        <childnode refid="4523" relation="include">
         </childnode>
-        <childnode refid="4317" relation="include">
+        <childnode refid="4540" relation="include">
         </childnode>
       </node>
-      <node id="4325">
+      <node id="4526">
         <label>MyGraphics/Source/Scene3.h</label>
         <link refid="Scene3_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4312" relation="include">
+        <childnode refid="4527" relation="include">
         </childnode>
       </node>
-      <node id="4322">
+      <node id="4522">
         <label>MyGraphics/Source/Enemy.cpp</label>
         <link refid="Enemy_8cpp"/>
       </node>
-      <node id="4321">
+      <node id="4521">
         <label>MyGraphics/Source/SP2.h</label>
         <link refid="SP2_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4322" relation="include">
+        <childnode refid="4522" relation="include">
         </childnode>
-        <childnode refid="4316" relation="include">
+        <childnode refid="4523" relation="include">
         </childnode>
       </node>
-      <node id="4326">
+      <node id="4519">
+        <label>MyGraphics/Source/CollisionDetector.h</label>
+        <link refid="CollisionDetector_8h"/>
+        <childnode refid="4520" relation="include">
+        </childnode>
+        <childnode refid="4529" relation="include">
+        </childnode>
+        <childnode refid="4533" relation="include">
+        </childnode>
+        <childnode refid="4530" relation="include">
+        </childnode>
+        <childnode refid="4528" relation="include">
+        </childnode>
+        <childnode refid="4535" relation="include">
+        </childnode>
+      </node>
+      <node id="4543">
         <label>MyGraphics/Source/SceneMenu.h</label>
         <link refid="SceneMenu_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4313" relation="include">
+        <childnode refid="4538" relation="include">
         </childnode>
       </node>
-      <node id="4329">
+      <node id="4546">
         <label>MyGraphics/Source/Sound.cpp</label>
         <link refid="Sound_8cpp"/>
       </node>
-      <node id="4317">
+      <node id="4540">
         <label>MyGraphics/Source/StartCutScene.cpp</label>
         <link refid="StartCutScene_8cpp"/>
       </node>
-      <node id="4310">
+      <node id="4532">
         <label>MyGraphics/Source/NPC.cpp</label>
         <link refid="NPC_8cpp"/>
       </node>
-      <node id="4314">
+      <node id="4539">
         <label>MyGraphics/Source/SceneWin.cpp</label>
         <link refid="SceneWin_8cpp"/>
       </node>
-      <node id="4318">
+      <node id="4541">
         <label>MyGraphics/Source/Sound.h</label>
         <link refid="Sound_8h"/>
-        <childnode refid="4319" relation="include">
+        <childnode refid="4542" relation="include">
         </childnode>
-        <childnode refid="4320" relation="include">
+        <childnode refid="4529" relation="include">
         </childnode>
-        <childnode refid="4321" relation="include">
+        <childnode refid="4521" relation="include">
         </childnode>
-        <childnode refid="4326" relation="include">
+        <childnode refid="4543" relation="include">
         </childnode>
-        <childnode refid="4323" relation="include">
+        <childnode refid="4530" relation="include">
         </childnode>
-        <childnode refid="4324" relation="include">
+        <childnode refid="4524" relation="include">
         </childnode>
-        <childnode refid="4325" relation="include">
+        <childnode refid="4526" relation="include">
         </childnode>
-        <childnode refid="4327" relation="include">
+        <childnode refid="4544" relation="include">
         </childnode>
-        <childnode refid="4328" relation="include">
+        <childnode refid="4545" relation="include">
         </childnode>
-        <childnode refid="4329" relation="include">
+        <childnode refid="4546" relation="include">
         </childnode>
       </node>
-      <node id="4305">
+      <node id="4518">
         <label>MyGraphics/Source/Application.cpp</label>
         <link refid="Application_8cpp"/>
       </node>
-      <node id="4324">
+      <node id="4533">
+        <label>MyGraphics/Source/rawMaterial.h</label>
+        <link refid="rawMaterial_8h"/>
+        <childnode refid="4521" relation="include">
+        </childnode>
+        <childnode refid="4524" relation="include">
+        </childnode>
+        <childnode refid="4526" relation="include">
+        </childnode>
+        <childnode refid="4534" relation="include">
+        </childnode>
+      </node>
+      <node id="4524">
         <label>MyGraphics/Source/Scene2.h</label>
         <link refid="Scene2_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4311" relation="include">
+        <childnode refid="4525" relation="include">
         </childnode>
       </node>
-      <node id="4319">
+      <node id="4542">
         <label>MyGraphics/Source/StartCutScene.h</label>
         <link refid="StartCutScene_8h"/>
-        <childnode refid="4305" relation="include">
+        <childnode refid="4518" relation="include">
         </childnode>
-        <childnode refid="4317" relation="include">
+        <childnode refid="4540" relation="include">
         </childnode>
       </node>
-      <node id="4299">
+      <node id="4512">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_IVirtualRefCounted.h</label>
         <link refid="ik_IVirtualRefCounted.h"/>
-        <childnode refid="4300" relation="include">
+        <childnode refid="4513" relation="include">
         </childnode>
-        <childnode refid="4331" relation="include">
+        <childnode refid="4548" relation="include">
         </childnode>
-        <childnode refid="4332" relation="include">
+        <childnode refid="4549" relation="include">
         </childnode>
-        <childnode refid="4302" relation="include">
+        <childnode refid="4515" relation="include">
         </childnode>
       </node>
-      <node id="4320">
+      <node id="4529">
         <label>MyGraphics/Source/NPC.h</label>
         <link refid="NPC_8h"/>
-        <childnode refid="4321" relation="include">
+        <childnode refid="4521" relation="include">
         </childnode>
-        <childnode refid="4323" relation="include">
+        <childnode refid="4530" relation="include">
         </childnode>
-        <childnode refid="4324" relation="include">
+        <childnode refid="4524" relation="include">
         </childnode>
-        <childnode refid="4325" relation="include">
+        <childnode refid="4526" relation="include">
         </childnode>
-        <childnode refid="4310" relation="include">
+        <childnode refid="4532" relation="include">
         </childnode>
       </node>
-      <node id="4316">
+      <node id="4523">
         <label>MyGraphics/Source/SP2.cpp</label>
         <link refid="SP2_8cpp"/>
       </node>
-      <node id="4330">
+      <node id="4547">
         <label>MyGraphics/irrKlang-1.5.0/include/ik_ISoundEngine.h</label>
         <link refid="ik__ISoundEngine_8h"/>
-        <childnode refid="4302" relation="include">
+        <childnode refid="4515" relation="include">
         </childnode>
       </node>
-      <node id="4303">
+      <node id="4516">
         <label>MyGraphics/irrKlang-1.5.0/plugins/ikpMP3/ikpMP3.cpp</label>
         <link refid="ikpMP3_8cpp"/>
       </node>

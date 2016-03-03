@@ -1,63 +1,56 @@
 <map id="Mtx44::SetToIdentity" name="Mtx44::SetToIdentity">
-<area shape="rect" id="node2" href="$classMS.html#a77c5f7e4a21ea48dcf902a7ff6824a11" title="Replace the top matrix with an identity matrix. " alt="" coords="458,484,578,510"/>
-<area shape="rect" id="node22" href="$classMS.html#adddd1194f4978eab6618be6a22ed8e48" title="MS default constructor. " alt="" coords="242,1370,313,1397"/>
-<area shape="rect" id="node23" href="$classMtx44.html#a04c49a922f8e8ffcb57a90c6ce955600" title="Set this matrix to a scaling matrix with scale factors sx, sy and sz. " alt="" coords="211,1421,344,1448"/>
-<area shape="rect" id="node50" href="$classMtx44.html#a0cc88cc5c648da14effba480c4d2ac70" title="Set this matrix to a translation matrix with translation of (x, y, z) " alt="" coords="196,1624,359,1650"/>
-<area shape="rect" id="node3" href="$classSceneWin.html#a9b31ed13d4a3859657d7b8ea695ed173" title="The main render function for this scene, renders any text/meshes. " alt="" coords="958,382,1089,409"/>
-<area shape="rect" id="node4" href="$classCutscene.html#a74edfeb7d02dd7ee12e965c748ce422e" title="The main render function for this scene, renders any text/meshes. " alt="" coords="960,2534,1087,2561"/>
-<area shape="rect" id="node5" href="$classShop.html#ae965cfdda5e2d6214a7daf7d300f2ff0" title="The main render function for this scene, renders any text/meshes. " alt="" coords="973,712,1074,738"/>
-<area shape="rect" id="node6" href="$classStartCutScene.html#a38be415c2d752b8a334c8456434dca4b" title="StartCutScene::Render" alt="" coords="945,2248,1101,2274"/>
-<area shape="rect" id="node7" href="$classSP2.html#a90159ea511cadcc99364c6f75d108a71" title="SP2::Render" alt="" coords="975,1548,1071,1574"/>
-<area shape="rect" id="node8" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="966,2197,1081,2224"/>
-<area shape="rect" id="node9" href="$classScene3.html#aca22983af978d16e380bf5ca4ceab143" title="Scene3::Render" alt="" coords="966,1750,1081,1777"/>
-<area shape="rect" id="node10" href="$classSceneWin.html#a6844be0f7534c18a340a34c66bf54b6a" title="Renders any meshList items/obj on the screen. " alt="" coords="677,509,897,536"/>
-<area shape="rect" id="node11" href="$classShop.html#aee217c79bf37585efa133ac5a5b91316" title="Renders any meshList items/obj on the screen. " alt="" coords="692,661,883,688"/>
-<area shape="rect" id="node12" href="$classSP2.html#a866289dccc0d7ff85839a000568c986c" title="Renders obj and quads on screen. " alt="" coords="695,813,880,840"/>
-<area shape="rect" id="node13" href="$classScene2.html#a8cabb8b2edc17f61e88316eac4387daf" title="Renders meshlist/obj on screen. " alt="" coords="685,1016,889,1042"/>
-<area shape="rect" id="node14" href="$classScene3.html#a6728ea1a081d6d040deec4f4885fb4bc" title="Scene3::RenderQuadOnScreen" alt="" coords="685,914,889,941"/>
-<area shape="rect" id="node15" href="$classSceneWin.html#ad3220db21bf7d69adf528d7eedac5a06" title="Renders text on screen in the game. " alt="" coords="680,256,895,282"/>
+<area shape="rect" id="node2" href="$classMS.html#a77c5f7e4a21ea48dcf902a7ff6824a11" title="Replace the top matrix with an identity matrix. " alt="" coords="458,490,578,517"/>
+<area shape="rect" id="node22" href="$classMS.html#adddd1194f4978eab6618be6a22ed8e48" title="MS default constructor. " alt="" coords="242,1285,313,1312"/>
+<area shape="rect" id="node23" href="$classMtx44.html#a04c49a922f8e8ffcb57a90c6ce955600" title="Set this matrix to a scaling matrix with scale factors sx, sy and sz. " alt="" coords="211,1234,344,1261"/>
+<area shape="rect" id="node44" href="$classMtx44.html#a0cc88cc5c648da14effba480c4d2ac70" title="Set this matrix to a translation matrix with translation of (x, y, z) " alt="" coords="196,1184,359,1210"/>
+<area shape="rect" id="node3" href="$classSceneWin.html#a9b31ed13d4a3859657d7b8ea695ed173" title="The main render function for this scene, renders any text/meshes. " alt="" coords="958,390,1089,417"/>
+<area shape="rect" id="node4" href="$classCutscene.html#a74edfeb7d02dd7ee12e965c748ce422e" title="The main render function for this scene, renders any text/meshes. " alt="" coords="960,2197,1087,2224"/>
+<area shape="rect" id="node5" href="$classShop.html#ae965cfdda5e2d6214a7daf7d300f2ff0" title="The main render function for this scene, renders any text/meshes. " alt="" coords="973,677,1074,704"/>
+<area shape="rect" id="node6" href="$classStartCutScene.html#a38be415c2d752b8a334c8456434dca4b" title="Main rendering. " alt="" coords="945,778,1101,805"/>
+<area shape="rect" id="node7" href="$classScene3.html#aca22983af978d16e380bf5ca4ceab143" title="Main rendering function. " alt="" coords="966,1926,1081,1953"/>
+<area shape="rect" id="node8" href="$classSP2.html#a90159ea511cadcc99364c6f75d108a71" title="Main rendering function. " alt="" coords="975,1318,1071,1345"/>
+<area shape="rect" id="node9" href="$classScene2.html#ac035da5e87c59e6b1828ceec8193cea4" title="Main rendering function. " alt="" coords="966,1640,1081,1666"/>
+<area shape="rect" id="node10" href="$classSceneWin.html#a6844be0f7534c18a340a34c66bf54b6a" title="Renders any meshList items/obj on the screen. " alt="" coords="677,576,897,602"/>
+<area shape="rect" id="node11" href="$classShop.html#aee217c79bf37585efa133ac5a5b91316" title="Renders obj and quads on screen. " alt="" coords="692,626,883,653"/>
+<area shape="rect" id="node12" href="$classScene3.html#a6728ea1a081d6d040deec4f4885fb4bc" title="Renders meshlist/obj on screen. " alt="" coords="685,1184,889,1210"/>
+<area shape="rect" id="node13" href="$classSP2.html#a866289dccc0d7ff85839a000568c986c" title="Renders obj and quads on screen. " alt="" coords="695,930,880,957"/>
+<area shape="rect" id="node14" href="$classScene2.html#a8cabb8b2edc17f61e88316eac4387daf" title="Renders meshlist/obj on screen. " alt="" coords="685,981,889,1008"/>
+<area shape="rect" id="node15" href="$classSceneWin.html#ad3220db21bf7d69adf528d7eedac5a06" title="Renders text on screen in the game. " alt="" coords="680,205,895,232"/>
 <area shape="rect" id="node16" href="$classCutscene.html#a919fee73f4a423e75aab5bfc5668d051" title="Renders text on screen. " alt="" coords="683,458,892,485"/>
-<area shape="rect" id="node17" href="$classShop.html#ab16118f0e0243b85a40d728dd6a703ec" title="Renders text on screen in the game. " alt="" coords="695,306,879,333"/>
-<area shape="rect" id="node18" href="$classStartCutScene.html#a73d65f979f798b6f73ef11063501bd87" title="StartCutScene::RenderText\lOnScreen" alt="" coords="697,1827,878,1868"/>
-<area shape="rect" id="node19" href="$classSP2.html#ab642469a9e89925dafd3055a79b65cda" title="SP2::RenderTextOnScreen" alt="" coords="698,560,877,586"/>
-<area shape="rect" id="node20" href="$classScene2.html#ace786436afce93fd5b6c903299b7d3c3" title="Text on screen rendering function. " alt="" coords="688,1893,887,1920"/>
-<area shape="rect" id="node21" href="$classScene3.html#aa5109ecb72017381b9035c25661c321d" title="Scene3::RenderTextOnScreen" alt="" coords="688,610,887,637"/>
-<area shape="rect" id="node24" href="$classMS.html#a52109795de960e24663b315e9128533f" title="Multiply the top matrix with a scale matrix based on the following parameters. " alt="" coords="477,1421,559,1448"/>
-<area shape="rect" id="node25" href="$classScene2.html#a8baecf53cfcdd00f85113c7c6ba6ec68" title="Scene2::Enemy_Rendering" alt="" coords="697,2501,877,2528"/>
-<area shape="rect" id="node26" href="$classSP2.html#a9bdb8c234fabdb3b8eed38968a299d3c" title="SP2::Enemy_Rendering" alt="" coords="707,1522,868,1549"/>
-<area shape="rect" id="node27" href="$classScene3.html#a649e21cf2fcfe323b8d599fce983747e" title="Scene3::Enemy_Rendering" alt="" coords="697,1725,877,1752"/>
-<area shape="rect" id="node28" href="$classScene2.html#aff0b7223bdd83eb79d9863d568b97cd0" title="Scene2::EquipmentHolding" alt="" coords="698,1370,877,1397"/>
-<area shape="rect" id="node29" href="$classSP2.html#a1ce9a843e80cb028681abd79b9e1888d" title="SP2::EquipmentHolding" alt="" coords="707,1421,867,1448"/>
-<area shape="rect" id="node30" href="$classScene3.html#a364818696634a2b9b83ea21f0a453c61" title="Scene3::EquipmentHolding" alt="" coords="698,1944,877,1970"/>
-<area shape="rect" id="node31" href="$classCutscene.html#abb3efa0a3ae6936ee0d42f8103ba3332" title="Cutscene::Map_Rendering" alt="" coords="700,2770,875,2797"/>
-<area shape="rect" id="node32" href="$classStartCutScene.html#ac07eec3a74a66514014e66e74d6c4732" title="StartCutScene::Map\l_Rendering" alt="" coords="717,2552,857,2594"/>
-<area shape="rect" id="node33" href="$classSP2.html#a0c7e7b79660a3b66b8f424d77b31afd2" title="SP2::Map_Rendering" alt="" coords="715,1573,860,1600"/>
-<area shape="rect" id="node34" href="$classScene2.html#abe448426c8c2c0699bc3bef6f0c994b2" title="Scene2::Map_Rendering" alt="" coords="705,2349,869,2376"/>
-<area shape="rect" id="node35" href="$classScene3.html#af1f2d1e196820303c4f34c276ca1c06c" title="Scene3::Map_Rendering" alt="" coords="705,1776,869,1802"/>
-<area shape="rect" id="node36" href="$classScene2.html#af97ba4b11e3f2b908dfb0b54f865cd7f" title="Scene2::ObjectsHolding" alt="" coords="706,1994,869,2021"/>
-<area shape="rect" id="node37" href="$classSP2.html#a9cc79a380997c742a6004cfbf6d528fe" title="SP2::ObjectsHolding" alt="" coords="716,1624,859,1650"/>
-<area shape="rect" id="node38" href="$classScene3.html#a959fcbecbdad3db71f13f8e687684d9b" title="Scene3::ObjectsHolding" alt="" coords="706,1168,869,1194"/>
-<area shape="rect" id="node39" href="$classScene2.html#ac985aad2013a92037243eb6800e3b847" title="Scene2::Plane_Rendering" alt="" coords="701,2298,873,2325"/>
-<area shape="rect" id="node40" href="$classScene3.html#a48c3a0f44609c29629d5a9da45603c81" title="Scene3::Plane_Rendering" alt="" coords="701,2045,873,2072"/>
-<area shape="rect" id="node41" href="$classScene2.html#aa9558d9a7351690943efadbc6d414005" title="Scene2::RenderObjects" alt="" coords="707,1218,867,1245"/>
-<area shape="rect" id="node42" href="$classSP2.html#af258eea58952b4e319c9c7a40a391587" title="SP2::RenderObjects" alt="" coords="717,1269,858,1296"/>
-<area shape="rect" id="node43" href="$classScene3.html#a0b0ade1e830241e6a21737e883d74c58" title="Scene3::RenderObjects" alt="" coords="707,1320,867,1346"/>
-<area shape="rect" id="node44" href="$classCutscene.html#abeaf976101abfa253930359943d03004" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="702,2821,873,2848"/>
-<area shape="rect" id="node45" href="$classShop.html#a8a70313590dea95a14f0f24001ca2c9d" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="715,1472,860,1498"/>
-<area shape="rect" id="node46" href="$classStartCutScene.html#a468cad6c3f1fa2defe987e3b36d4d7c2" title="StartCutScene::RenderSkybox" alt="" coords="687,2669,887,2696"/>
-<area shape="rect" id="node47" href="$classSP2.html#a75139f304295fd0bfbf91080b49bc10c" title="SP2::RenderSkybox" alt="" coords="717,1674,857,1701"/>
-<area shape="rect" id="node48" href="$classScene2.html#af16926d5f54c54cf17220d68b743ceab" title="Renders skybox with rotation and scaling done. " alt="" coords="708,2400,867,2426"/>
-<area shape="rect" id="node49" href="$classScene3.html#a9912da19680f150a347f1095aea20aee" title="Scene3::RenderSkybox" alt="" coords="708,2248,867,2274"/>
-<area shape="rect" id="node51" href="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a" title="Multiply the top matrix with a translation matrix based on the following parameters. " alt="" coords="467,1674,569,1701"/>
-<area shape="rect" id="node52" href="$classMtx44.html#a7c3d2d30d9ed5bfca2ba97d0e570930f" title="Set matrix to be a lookat matrix. " alt="" coords="447,1522,589,1549"/>
-<area shape="rect" id="node54" href="$classCutscene.html#a4a1affd3851f94cf875edef8736f5feb" title="Renders text. " alt="" coords="443,1877,593,1904"/>
-<area shape="rect" id="node55" href="$classScene2.html#ab76c717d54b323ba0953f11469747cb6" title="Text rendering function. " alt="" coords="448,1928,588,1954"/>
-<area shape="rect" id="node56" href="$classScene3.html#a84db2c4b2785499f28864a0a0afa9be3" title="Scene3::RenderText" alt="" coords="448,1978,588,2005"/>
-<area shape="rect" id="node57" href="$classSceneMenu.html#ade66afd2b6b0dc67e5ebde93b7c90177" title="SceneMenu::RenderText" alt="" coords="435,2029,601,2056"/>
-<area shape="rect" id="node58" href="$classSceneMenu.html#a7d1cfaa95d888c59a988b48f3cde0b9b" title="SceneMenu::RenderTextOnScreen" alt="" coords="407,2080,629,2106"/>
-<area shape="rect" id="node59" href="$classSceneWin.html#ace448a57bd7f73ee47a21a987766d7c6" title="Renders text in the game. " alt="" coords="440,1472,596,1498"/>
-<area shape="rect" id="node60" href="$classShop.html#a072a64331229d665e80c1b6d2efc19d7" title="Renders text in the game. " alt="" coords="455,1573,581,1600"/>
-<area shape="rect" id="node61" href="$classSP2.html#ab49c40d25cc25c6272e7943708a1867e" title="SP2::RenderText" alt="" coords="457,1624,579,1650"/>
-<area shape="rect" id="node62" href="$classStartCutScene.html#ac5844dc7ff18fc48b13b9823033f34bd" title="StartCutScene::RenderText" alt="" coords="427,1725,609,1752"/>
-<area shape="rect" id="node53" href="$classMS.html#a2638cd3249260877cc31329978fb6b38" title="Setup lookat matrix and push to matrix stack. " alt="" coords="742,2197,833,2224"/>
+<area shape="rect" id="node17" href="$classShop.html#ab16118f0e0243b85a40d728dd6a703ec" title="Renders text on screen in the game. " alt="" coords="695,256,879,282"/>
+<area shape="rect" id="node18" href="$classStartCutScene.html#a73d65f979f798b6f73ef11063501bd87" title="Renders text on screen. " alt="" coords="697,510,878,551"/>
+<area shape="rect" id="node19" href="$classScene3.html#aa5109ecb72017381b9035c25661c321d" title="Text on screen rendering function. " alt="" coords="688,1234,887,1261"/>
+<area shape="rect" id="node20" href="$classSP2.html#ab642469a9e89925dafd3055a79b65cda" title="Text on screen rendering function. " alt="" coords="698,829,877,856"/>
+<area shape="rect" id="node21" href="$classScene2.html#ace786436afce93fd5b6c903299b7d3c3" title="Text on screen rendering function. " alt="" coords="688,1082,887,1109"/>
+<area shape="rect" id="node24" href="$classMS.html#a52109795de960e24663b315e9128533f" title="Multiply the top matrix with a scale matrix based on the following parameters. " alt="" coords="477,1648,559,1674"/>
+<area shape="rect" id="node25" href="$classScene3.html#a649e21cf2fcfe323b8d599fce983747e" title="Rendering Enemy In this scene. " alt="" coords="697,2162,877,2189"/>
+<area shape="rect" id="node26" href="$classScene2.html#a8baecf53cfcdd00f85113c7c6ba6ec68" title="Rendering Enemy In this scene. " alt="" coords="697,1909,877,1936"/>
+<area shape="rect" id="node27" href="$classSP2.html#a9bdb8c234fabdb3b8eed38968a299d3c" title="Rendering Enemy In this scene. " alt="" coords="707,1706,868,1733"/>
+<area shape="rect" id="node28" href="$classCutscene.html#abb3efa0a3ae6936ee0d42f8103ba3332" title="Cutscene::Map_Rendering" alt="" coords="700,2416,875,2442"/>
+<area shape="rect" id="node29" href="$classStartCutScene.html#ac07eec3a74a66514014e66e74d6c4732" title="StartCutScene::Map\l_Rendering" alt="" coords="717,1336,857,1378"/>
+<area shape="rect" id="node30" href="$classScene3.html#af1f2d1e196820303c4f34c276ca1c06c" title="Rendering map based on Txt file for this scene. " alt="" coords="705,2213,869,2240"/>
+<area shape="rect" id="node31" href="$classScene2.html#abe448426c8c2c0699bc3bef6f0c994b2" title="Rendering map based on Txt file for this scene. " alt="" coords="705,2061,869,2088"/>
+<area shape="rect" id="node32" href="$classSP2.html#a0c7e7b79660a3b66b8f424d77b31afd2" title="Rendering map based on Txt file for this scene. " alt="" coords="715,1757,860,1784"/>
+<area shape="rect" id="node33" href="$classScene3.html#a959fcbecbdad3db71f13f8e687684d9b" title="hold objects or parts " alt="" coords="706,1453,869,1480"/>
+<area shape="rect" id="node34" href="$classScene2.html#af97ba4b11e3f2b908dfb0b54f865cd7f" title="hold objects or parts " alt="" coords="706,1504,869,1530"/>
+<area shape="rect" id="node35" href="$classSP2.html#a9cc79a380997c742a6004cfbf6d528fe" title="hold objects or parts " alt="" coords="716,1808,859,1834"/>
+<area shape="rect" id="node36" href="$classScene3.html#a48c3a0f44609c29629d5a9da45603c81" title="Scene3::Plane_Rendering" alt="" coords="701,2314,873,2341"/>
+<area shape="rect" id="node37" href="$classScene2.html#ac985aad2013a92037243eb6800e3b847" title="Scene2::Plane_Rendering" alt="" coords="701,1960,873,1986"/>
+<area shape="rect" id="node38" href="$classCutscene.html#abeaf976101abfa253930359943d03004" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="702,2466,873,2493"/>
+<area shape="rect" id="node39" href="$classShop.html#a8a70313590dea95a14f0f24001ca2c9d" title="Renders the skybox on screen with rotation, scaling done. " alt="" coords="715,1285,860,1312"/>
+<area shape="rect" id="node40" href="$classStartCutScene.html#a468cad6c3f1fa2defe987e3b36d4d7c2" title="Renders skybox with scaling and rotation done. " alt="" coords="687,1605,887,1632"/>
+<area shape="rect" id="node41" href="$classScene3.html#a9912da19680f150a347f1095aea20aee" title="Renders skybox with rotation and scaling done. " alt="" coords="708,2365,867,2392"/>
+<area shape="rect" id="node42" href="$classSP2.html#a75139f304295fd0bfbf91080b49bc10c" title="SP2::RenderSkybox" alt="" coords="717,1858,857,1885"/>
+<area shape="rect" id="node43" href="$classScene2.html#af16926d5f54c54cf17220d68b743ceab" title="Renders skybox with rotation and scaling done. " alt="" coords="708,2010,867,2037"/>
+<area shape="rect" id="node45" href="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a" title="Multiply the top matrix with a translation matrix based on the following parameters. " alt="" coords="467,1133,569,1160"/>
+<area shape="rect" id="node46" href="$classMtx44.html#a7c3d2d30d9ed5bfca2ba97d0e570930f" title="Set matrix to be a lookat matrix. " alt="" coords="447,778,589,805"/>
+<area shape="rect" id="node48" href="$classCutscene.html#a4a1affd3851f94cf875edef8736f5feb" title="Renders text. " alt="" coords="443,1336,593,1362"/>
+<area shape="rect" id="node49" href="$classScene2.html#ab76c717d54b323ba0953f11469747cb6" title="Text rendering function. " alt="" coords="448,1386,588,1413"/>
+<area shape="rect" id="node50" href="$classScene3.html#a84db2c4b2785499f28864a0a0afa9be3" title="Text rendering function. " alt="" coords="448,1437,588,1464"/>
+<area shape="rect" id="node51" href="$classSceneMenu.html#ade66afd2b6b0dc67e5ebde93b7c90177" title="Renders text. " alt="" coords="435,1488,601,1514"/>
+<area shape="rect" id="node52" href="$classSceneMenu.html#a7d1cfaa95d888c59a988b48f3cde0b9b" title="Renders text on screen. " alt="" coords="407,1538,629,1565"/>
+<area shape="rect" id="node53" href="$classSceneWin.html#ace448a57bd7f73ee47a21a987766d7c6" title="Renders text in the game. " alt="" coords="440,1589,596,1616"/>
+<area shape="rect" id="node54" href="$classSP2.html#ab49c40d25cc25c6272e7943708a1867e" title="Text rendering function. " alt="" coords="457,1082,579,1109"/>
+<area shape="rect" id="node55" href="$classStartCutScene.html#ac5844dc7ff18fc48b13b9823033f34bd" title="Renders text for scene. " alt="" coords="427,1184,609,1210"/>
+<area shape="rect" id="node47" href="$classMS.html#a2638cd3249260877cc31329978fb6b38" title="Setup lookat matrix and push to matrix stack. " alt="" coords="742,778,833,805"/>
 </map>

@@ -53,6 +53,9 @@
 </div><!--header-->
 <div class="contents">
 
+<p>Defines a player's action in game and its methods.  
+ <a href="classAnimation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Animation_8h_source.html">Animation.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Animation:</div>
@@ -63,20 +66,28 @@ Collaboration diagram for Animation:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a83f0a16cef7117f187ad596de38dd9d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a83f0a16cef7117f187ad596de38dd9d6">Animation</a> ()</td></tr>
+<tr class="memdesc:a83f0a16cef7117f187ad596de38dd9d6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimation.html#a83f0a16cef7117f187ad596de38dd9d6" title="Animation() is a constructor for animation class, where I set the default values needed for the metho...">Animation()</a> is a constructor for animation class, where I set the default values needed for the methods.  <a href="#a83f0a16cef7117f187ad596de38dd9d6">More...</a><br /></td></tr>
 <tr class="separator:a83f0a16cef7117f187ad596de38dd9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a401b68793d4fbf48d481c030ee4b2a16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a401b68793d4fbf48d481c030ee4b2a16">~Animation</a> ()</td></tr>
+<tr class="memdesc:a401b68793d4fbf48d481c030ee4b2a16"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimation.html#a401b68793d4fbf48d481c030ee4b2a16" title="~Animation() is the destructor for animation class. ">~Animation()</a> is the destructor for animation class.  <a href="#a401b68793d4fbf48d481c030ee4b2a16">More...</a><br /></td></tr>
 <tr class="separator:a401b68793d4fbf48d481c030ee4b2a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ec41db92f52f5440846b59f63b4b617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a4ec41db92f52f5440846b59f63b4b617">Slash</a> (double dt, float &amp;targetRotation, bool &amp;start)</td></tr>
+<tr class="memdesc:a4ec41db92f52f5440846b59f63b4b617"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimation.html#a4ec41db92f52f5440846b59f63b4b617" title="Slash(double dt, float& targetRotation, bool& start), Animates the player&#39;s slashing animation when using swo...">Slash(double dt, float&amp; targetRotation, bool&amp; start)</a>, Animates the player's slashing animation when using sword, by using sliceUp and sliceDown boolean to check if it completes the animation.  <a href="#a4ec41db92f52f5440846b59f63b4b617">More...</a><br /></td></tr>
 <tr class="separator:a4ec41db92f52f5440846b59f63b4b617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc6488f1436096edbb58454315f04bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#adc6488f1436096edbb58454315f04bed">Shoot</a> (double dt, float &amp;targetTranslation, bool &amp;start)</td></tr>
+<tr class="memdesc:adc6488f1436096edbb58454315f04bed"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimation.html#adc6488f1436096edbb58454315f04bed" title="Shoot(double dt, float& targetRotation, bool& start), Animates the player&#39;s shooting animation when using gun...">Shoot(double dt, float&amp; targetRotation, bool&amp; start)</a>, Animates the player's shooting animation when using gun, by checking if the gun has moved according to the recoils and using the boolean to check if it completes the animation.  <a href="#adc6488f1436096edbb58454315f04bed">More...</a><br /></td></tr>
 <tr class="separator:adc6488f1436096edbb58454315f04bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3226101ff2ac62bfab995e744dd4e04d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a3226101ff2ac62bfab995e744dd4e04d">Mine</a> (double dt, float &amp;targetRotation, bool &amp;start)</td></tr>
+<tr class="memdesc:a3226101ff2ac62bfab995e744dd4e04d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimation.html#a3226101ff2ac62bfab995e744dd4e04d" title="Mine(double dt, float& targetRotation, bool& start), Animates the player&#39;s mining animation when using pick a...">Mine(double dt, float&amp; targetRotation, bool&amp; start)</a>, Animates the player's mining animation when using pick axe, by using sliceUp and sliceDown boolean to check if it completes the animation.  <a href="#a3226101ff2ac62bfab995e744dd4e04d">More...</a><br /></td></tr>
 <tr class="separator:a3226101ff2ac62bfab995e744dd4e04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c16fd819ed0a965ef3f66f2c1957a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a0c16fd819ed0a965ef3f66f2c1957a1b">moveSword</a> (double dt, float &amp;targetTranslation, bool usingSword)</td></tr>
+<tr class="memdesc:a0c16fd819ed0a965ef3f66f2c1957a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">moveSword(double dt, float&amp; targetTranslation, bool&amp; usingSword), Animates the player's changing to sword animation, by checking if the sword has move to certain position and using the boolean to check if the animations is completed.  <a href="#a0c16fd819ed0a965ef3f66f2c1957a1b">More...</a><br /></td></tr>
 <tr class="separator:a0c16fd819ed0a965ef3f66f2c1957a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4acfd87b27928b8955a1d4679e7c1166"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a4acfd87b27928b8955a1d4679e7c1166">moveGun</a> (double dt, float &amp;targetTranslation, bool usingGun)</td></tr>
+<tr class="memdesc:a4acfd87b27928b8955a1d4679e7c1166"><td class="mdescLeft">&#160;</td><td class="mdescRight">moveGun(double dt, float&amp; targetTranslation, bool&amp; usingSword), Animates the player's changing to gun animation, by checking if the gun has move to certain position and using the boolean to check if the animations is completed.  <a href="#a4acfd87b27928b8955a1d4679e7c1166">More...</a><br /></td></tr>
 <tr class="separator:a4acfd87b27928b8955a1d4679e7c1166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15100ed0ea6b8fcdbc3b6837be44f5e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a15100ed0ea6b8fcdbc3b6837be44f5e0">explosion</a> (double dt, float &amp;explosionScale, bool &amp;playExplosion)</td></tr>
+<tr class="memdesc:a15100ed0ea6b8fcdbc3b6837be44f5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimation.html#a15100ed0ea6b8fcdbc3b6837be44f5e0" title="explosion(double dt, float& explosionScale, bool& playExplosion), Animates the explosion animation...">explosion(double dt, float&amp; explosionScale, bool&amp; playExplosion)</a>, Animates the explosion animation, by checking if the explosion has scale up to certain scale and using the boolean to check if the animations is completed.  <a href="#a15100ed0ea6b8fcdbc3b6837be44f5e0">More...</a><br /></td></tr>
 <tr class="separator:a15100ed0ea6b8fcdbc3b6837be44f5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bd2623cd7040e32837d7fb312d31790"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimation.html#a7bd2623cd7040e32837d7fb312d31790">Update</a> (double dt)</td></tr>
 <tr class="separator:a7bd2623cd7040e32837d7fb312d31790"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,8 +108,10 @@ Data Fields</h2></td></tr>
 <tr class="separator:a873241ab36c3f925b7466a324e0f82c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00005">5</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<div class="textblock"><p>Defines a player's action in game and its methods. </p>
+<p>Class Dweller: </p>
+
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00022">22</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a83f0a16cef7117f187ad596de38dd9d6"></a>
 <div class="memitem">
@@ -113,9 +126,11 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00003">3</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p><a class="el" href="classAnimation.html#a83f0a16cef7117f187ad596de38dd9d6" title="Animation() is a constructor for animation class, where I set the default values needed for the metho...">Animation()</a> is a constructor for animation class, where I set the default values needed for the methods. </p>
 
-<p>References <a class="el" href="Animation_8h_source.html#l00021">moveBack</a>, <a class="el" href="Animation_8h_source.html#l00020">moveFront</a>, <a class="el" href="Animation_8h_source.html#l00019">sliceDown</a>, and <a class="el" href="Animation_8h_source.html#l00018">sliceUp</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00023">23</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+
+<p>References <a class="el" href="Animation_8h_source.html#l00038">moveBack</a>, <a class="el" href="Animation_8h_source.html#l00037">moveFront</a>, <a class="el" href="Animation_8h_source.html#l00036">sliceDown</a>, and <a class="el" href="Animation_8h_source.html#l00035">sliceUp</a>.</p>
 
 </div>
 </div>
@@ -132,7 +147,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00007">7</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p><a class="el" href="classAnimation.html#a401b68793d4fbf48d481c030ee4b2a16" title="~Animation() is the destructor for animation class. ">~Animation()</a> is the destructor for animation class. </p>
+
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00037">37</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
 
 </div>
 </div>
@@ -167,16 +184,26 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00119">119</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p><a class="el" href="classAnimation.html#a15100ed0ea6b8fcdbc3b6837be44f5e0" title="explosion(double dt, float& explosionScale, bool& playExplosion), Animates the explosion animation...">explosion(double dt, float&amp; explosionScale, bool&amp; playExplosion)</a>, Animates the explosion animation, by checking if the explosion has scale up to certain scale and using the boolean to check if the animations is completed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>A double that represents the delta time needed for calculation for the animation.</td></tr>
+    <tr><td class="paramname">explosionScale</td><td>A float that represents the target's scale that this function is using on.</td></tr>
+    <tr><td class="paramname">playExplosion</td><td>A boolean that represents when the animation should start playing or stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00419">SP2::Update()</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00287">287</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00488">SP2::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnimation_a15100ed0ea6b8fcdbc3b6837be44f5e0_icgraph.png" border="0" usemap="#classAnimation_a15100ed0ea6b8fcdbc3b6837be44f5e0_icgraph" alt=""/></div>
 <map name="classAnimation_a15100ed0ea6b8fcdbc3b6837be44f5e0_icgraph" id="classAnimation_a15100ed0ea6b8fcdbc3b6837be44f5e0_icgraph">
-<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="196,5,292,32"/>
+<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="196,5,292,32"/>
 </map>
 </div>
 </p>
@@ -213,20 +240,30 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00051">51</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p><a class="el" href="classAnimation.html#a3226101ff2ac62bfab995e744dd4e04d" title="Mine(double dt, float& targetRotation, bool& start), Animates the player&#39;s mining animation when using pick a...">Mine(double dt, float&amp; targetRotation, bool&amp; start)</a>, Animates the player's mining animation when using pick axe, by using sliceUp and sliceDown boolean to check if it completes the animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>A double that represents the delta time needed for calculation for the animation.</td></tr>
+    <tr><td class="paramname">targetRotation</td><td>A float that represents the target's rotation that this function is using on.</td></tr>
+    <tr><td class="paramname">start</td><td>A boolean that represents when the animation should start playing or stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="Animation_8h_source.html#l00019">sliceDown</a>, and <a class="el" href="Animation_8h_source.html#l00018">sliceUp</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00150">150</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00419">SP2::Update()</a>, <a class="el" href="Scene2_8cpp_source.html#l00476">Scene2::Update()</a>, and <a class="el" href="Scene3_8cpp_source.html#l00410">Scene3::Update()</a>.</p>
+<p>References <a class="el" href="Animation_8h_source.html#l00036">sliceDown</a>, and <a class="el" href="Animation_8h_source.html#l00035">sliceUp</a>.</p>
+
+<p>Referenced by <a class="el" href="Scene3_8cpp_source.html#l00483">Scene3::Update()</a>, <a class="el" href="SP2_8cpp_source.html#l00488">SP2::Update()</a>, and <a class="el" href="Scene2_8cpp_source.html#l00490">Scene2::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnimation_a3226101ff2ac62bfab995e744dd4e04d_icgraph.png" border="0" usemap="#classAnimation_a3226101ff2ac62bfab995e744dd4e04d_icgraph" alt=""/></div>
 <map name="classAnimation_a3226101ff2ac62bfab995e744dd4e04d_icgraph" id="classAnimation_a3226101ff2ac62bfab995e744dd4e04d_icgraph">
-<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="179,5,275,32"/>
-<area shape="rect" id="node3" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="169,56,284,83"/>
-<area shape="rect" id="node4" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="169,107,284,133"/>
+<area shape="rect" id="node2" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="169,5,284,32"/>
+<area shape="rect" id="node3" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="179,56,275,83"/>
+<area shape="rect" id="node4" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="169,107,284,133"/>
 </map>
 </div>
 </p>
@@ -263,18 +300,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00098">98</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p>moveGun(double dt, float&amp; targetTranslation, bool&amp; usingSword), Animates the player's changing to gun animation, by checking if the gun has move to certain position and using the boolean to check if the animations is completed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>A double that represents the delta time needed for calculation for the animation.</td></tr>
+    <tr><td class="paramname">targetTranslation</td><td>A float that represents the target's translation that this function is using on.</td></tr>
+    <tr><td class="paramname">usingGun</td><td>A boolean that represents when the animation should start playing or stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00419">SP2::Update()</a>, <a class="el" href="Scene2_8cpp_source.html#l00476">Scene2::Update()</a>, and <a class="el" href="Scene3_8cpp_source.html#l00410">Scene3::Update()</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00243">243</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Scene3_8cpp_source.html#l00483">Scene3::Update()</a>, <a class="el" href="SP2_8cpp_source.html#l00488">SP2::Update()</a>, and <a class="el" href="Scene2_8cpp_source.html#l00490">Scene2::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnimation_a4acfd87b27928b8955a1d4679e7c1166_icgraph.png" border="0" usemap="#classAnimation_a4acfd87b27928b8955a1d4679e7c1166_icgraph" alt=""/></div>
 <map name="classAnimation_a4acfd87b27928b8955a1d4679e7c1166_icgraph" id="classAnimation_a4acfd87b27928b8955a1d4679e7c1166_icgraph">
-<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="205,5,301,32"/>
-<area shape="rect" id="node3" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="196,56,311,83"/>
-<area shape="rect" id="node4" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="196,107,311,133"/>
+<area shape="rect" id="node2" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="196,5,311,32"/>
+<area shape="rect" id="node3" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="205,56,301,83"/>
+<area shape="rect" id="node4" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="196,107,311,133"/>
 </map>
 </div>
 </p>
@@ -311,18 +358,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00077">77</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p>moveSword(double dt, float&amp; targetTranslation, bool&amp; usingSword), Animates the player's changing to sword animation, by checking if the sword has move to certain position and using the boolean to check if the animations is completed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>A double that represents the delta time needed for calculation for the animation.</td></tr>
+    <tr><td class="paramname">targetTranslation</td><td>A float that represents the target's translation that this function is using on.</td></tr>
+    <tr><td class="paramname">start</td><td>A boolean that represents when the animation should start playing or stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00419">SP2::Update()</a>, <a class="el" href="Scene2_8cpp_source.html#l00476">Scene2::Update()</a>, and <a class="el" href="Scene3_8cpp_source.html#l00410">Scene3::Update()</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00199">199</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Scene3_8cpp_source.html#l00483">Scene3::Update()</a>, <a class="el" href="SP2_8cpp_source.html#l00488">SP2::Update()</a>, and <a class="el" href="Scene2_8cpp_source.html#l00490">Scene2::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnimation_a0c16fd819ed0a965ef3f66f2c1957a1b_icgraph.png" border="0" usemap="#classAnimation_a0c16fd819ed0a965ef3f66f2c1957a1b_icgraph" alt=""/></div>
 <map name="classAnimation_a0c16fd819ed0a965ef3f66f2c1957a1b_icgraph" id="classAnimation_a0c16fd819ed0a965ef3f66f2c1957a1b_icgraph">
-<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="217,5,313,32"/>
-<area shape="rect" id="node3" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="208,56,323,83"/>
-<area shape="rect" id="node4" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="208,107,323,133"/>
+<area shape="rect" id="node2" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="208,5,323,32"/>
+<area shape="rect" id="node3" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="217,56,313,83"/>
+<area shape="rect" id="node4" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="208,107,323,133"/>
 </map>
 </div>
 </p>
@@ -359,18 +416,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00035">35</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p><a class="el" href="classAnimation.html#adc6488f1436096edbb58454315f04bed" title="Shoot(double dt, float& targetRotation, bool& start), Animates the player&#39;s shooting animation when using gun...">Shoot(double dt, float&amp; targetRotation, bool&amp; start)</a>, Animates the player's shooting animation when using gun, by checking if the gun has moved according to the recoils and using the boolean to check if it completes the animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>A double that represents the delta time needed for calculation for the animation.</td></tr>
+    <tr><td class="paramname">targetTranslation</td><td>A float that represents the target's translation that this function is using on.</td></tr>
+    <tr><td class="paramname">start</td><td>A boolean that represents when the animation should start playing or stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00419">SP2::Update()</a>, <a class="el" href="Scene2_8cpp_source.html#l00476">Scene2::Update()</a>, and <a class="el" href="Scene3_8cpp_source.html#l00410">Scene3::Update()</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00111">111</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Scene3_8cpp_source.html#l00483">Scene3::Update()</a>, <a class="el" href="SP2_8cpp_source.html#l00488">SP2::Update()</a>, and <a class="el" href="Scene2_8cpp_source.html#l00490">Scene2::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnimation_adc6488f1436096edbb58454315f04bed_icgraph.png" border="0" usemap="#classAnimation_adc6488f1436096edbb58454315f04bed_icgraph" alt=""/></div>
 <map name="classAnimation_adc6488f1436096edbb58454315f04bed_icgraph" id="classAnimation_adc6488f1436096edbb58454315f04bed_icgraph">
-<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="185,5,281,32"/>
-<area shape="rect" id="node3" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="176,56,291,83"/>
-<area shape="rect" id="node4" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="176,107,291,133"/>
+<area shape="rect" id="node2" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="176,5,291,32"/>
+<area shape="rect" id="node3" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="185,56,281,83"/>
+<area shape="rect" id="node4" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="176,107,291,133"/>
 </map>
 </div>
 </p>
@@ -407,20 +474,30 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00009">9</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
+<p><a class="el" href="classAnimation.html#a4ec41db92f52f5440846b59f63b4b617" title="Slash(double dt, float& targetRotation, bool& start), Animates the player&#39;s slashing animation when using swo...">Slash(double dt, float&amp; targetRotation, bool&amp; start)</a>, Animates the player's slashing animation when using sword, by using sliceUp and sliceDown boolean to check if it completes the animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>A double that represents the delta time needed for calculation for the animation.</td></tr>
+    <tr><td class="paramname">targetRotation</td><td>A float that represents the target's rotation that this function is using on.</td></tr>
+    <tr><td class="paramname">start</td><td>A boolean that represents when the animation should start playing or stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="Animation_8h_source.html#l00019">sliceDown</a>, and <a class="el" href="Animation_8h_source.html#l00018">sliceUp</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8cpp_source.html#l00062">62</a> of file <a class="el" href="Animation_8cpp_source.html">Animation.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="SP2_8cpp_source.html#l00419">SP2::Update()</a>, <a class="el" href="Scene2_8cpp_source.html#l00476">Scene2::Update()</a>, and <a class="el" href="Scene3_8cpp_source.html#l00410">Scene3::Update()</a>.</p>
+<p>References <a class="el" href="Animation_8h_source.html#l00036">sliceDown</a>, and <a class="el" href="Animation_8h_source.html#l00035">sliceUp</a>.</p>
+
+<p>Referenced by <a class="el" href="Scene3_8cpp_source.html#l00483">Scene3::Update()</a>, <a class="el" href="SP2_8cpp_source.html#l00488">SP2::Update()</a>, and <a class="el" href="Scene2_8cpp_source.html#l00490">Scene2::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnimation_a4ec41db92f52f5440846b59f63b4b617_icgraph.png" border="0" usemap="#classAnimation_a4ec41db92f52f5440846b59f63b4b617_icgraph" alt=""/></div>
 <map name="classAnimation_a4ec41db92f52f5440846b59f63b4b617_icgraph" id="classAnimation_a4ec41db92f52f5440846b59f63b4b617_icgraph">
-<area shape="rect" id="node2" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="184,5,280,32"/>
-<area shape="rect" id="node3" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="175,56,289,83"/>
-<area shape="rect" id="node4" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="175,107,289,133"/>
+<area shape="rect" id="node2" href="classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="175,5,289,32"/>
+<area shape="rect" id="node3" href="classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="184,56,280,83"/>
+<area shape="rect" id="node4" href="classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="175,107,289,133"/>
 </map>
 </div>
 </p>
@@ -454,9 +531,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00021">21</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00038">38</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00003">Animation()</a>.</p>
+<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00023">Animation()</a>.</p>
 
 </div>
 </div>
@@ -470,9 +547,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00020">20</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00037">37</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00003">Animation()</a>.</p>
+<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00023">Animation()</a>.</p>
 
 </div>
 </div>
@@ -486,9 +563,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00019">19</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00036">36</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00003">Animation()</a>, <a class="el" href="Animation_8cpp_source.html#l00051">Mine()</a>, and <a class="el" href="Animation_8cpp_source.html#l00009">Slash()</a>.</p>
+<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00023">Animation()</a>, <a class="el" href="Animation_8cpp_source.html#l00150">Mine()</a>, and <a class="el" href="Animation_8cpp_source.html#l00062">Slash()</a>.</p>
 
 </div>
 </div>
@@ -502,9 +579,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00018">18</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00035">35</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00003">Animation()</a>, <a class="el" href="Animation_8cpp_source.html#l00051">Mine()</a>, and <a class="el" href="Animation_8cpp_source.html#l00009">Slash()</a>.</p>
+<p>Referenced by <a class="el" href="Animation_8cpp_source.html#l00023">Animation()</a>, <a class="el" href="Animation_8cpp_source.html#l00150">Mine()</a>, and <a class="el" href="Animation_8cpp_source.html#l00062">Slash()</a>.</p>
 
 </div>
 </div>
@@ -518,7 +595,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00023">23</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00040">40</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 
 </div>
 </div>
@@ -532,7 +609,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Animation_8h_source.html#l00024">24</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
+<p>Definition at line <a class="el" href="Animation_8h_source.html#l00041">41</a> of file <a class="el" href="Animation_8h_source.html">Animation.h</a>.</p>
 
 </div>
 </div>

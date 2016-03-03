@@ -203,8 +203,8 @@ public:
 
 	char Map[20][20];
 	float Size = 15;
-	float Z_Displacement = 0;
-	float X_Displacement = -100;
+	float Z_Displacement;
+	float X_Displacement;
 	Scene2();
 	~Scene2();
 
@@ -225,23 +225,23 @@ private:
 	void UpdateMenu();
 
 	NPC npc;
-	bool robot1moved = false;
-	bool robot1rotate = false;
-	float robot1rotation = 0;
+	bool robot1moved;
+	bool robot1rotate;
+	float robot1rotation;
 	float xtranslate;
 	float ytranslate;
-	int parts = 0;
+	int parts;
 
 	//Array of meshes
 	Mesh* meshList[NUM_GEOMETRY];
 
 	MS modelStack, viewStack, projectionStack;
 	float LSPEED = 10.f;
-	float moveSkyBoxZ = 91.f;
-	float moveSkyBoxX = 0.f;
+	float moveSkyBoxZ;
+	float moveSkyBoxX;
+	float potatoRotate;
 	
 	Light light[8]; //shader max 8 lights
-	float potatoRotate;
 
 	void RenderSkybox();
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -272,39 +272,38 @@ private:
 	float deltaTime;
 	Bullet bullet;
 
-	int Died_Time = 0;
+	int Died_Time;
 	Enemy enemy[5];
 	void Enemy_Rendering();
 	void Enemy_Updating(float dt);
 
 	void ObjectsHolding(Mesh*mesh, float size);
-	
-	float throwingdown = 0;
-	float throwingforward = 0;
-	float throwup = 0;
-	Vector3 newcameraposition = (0, 0, 0);
-	Vector3 oldcameraposition = (0, 0, 0);
-	bool throwbomb = false;
-	bool thrown = false;
-	bool toggle = false;
-	bool cam1 = false;
-	bool movement = true;
-	bool pickupegg1 = false;
-	bool pickupegg2 = false;
-	bool pickupegg3 = false;
-	bool pickupegg4 = false;
-	bool pickupegg5 = false;
+	float throwingdown;
+	float throwingforward;
+	float throwup;
+	Vector3 newcameraposition;
+	Vector3 oldcameraposition;
+	bool throwbomb;
+	bool thrown;
+	bool toggle;
+	bool cam1;
+	bool movement;
+	bool pickupegg1;
+	bool pickupegg2;
+	bool pickupegg3;
+	bool pickupegg4;
+	bool pickupegg5;
 
 	//picking up space ship parts
-	bool pickupwing = false;
-	bool pickuprocket = false;
-	float followx = 0;
-	float followy = 0;
-	bool fixwing = false;
-	bool fixrocket = false;
+	bool pickupwing;
+	bool pickuprocket;
+	float followx;
+	float followy;
+	bool fixwing;
+	bool fixrocket;
 	float coolDownTime;
 	string shop;
-	bool doorinteract = true;
+	bool doorinteract;
 
 	void Map_Reading();
 	void Map_Rendering();

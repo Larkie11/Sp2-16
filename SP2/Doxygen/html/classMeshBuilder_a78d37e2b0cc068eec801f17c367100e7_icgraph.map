@@ -1,5 +1,5 @@
 <map id="MeshBuilder::GenerateAxes" name="MeshBuilder::GenerateAxes">
 <area shape="rect" id="node2" href="$classShop.html#a89d006f2a5dbfa60526a0c55718155b2" title="Initializes for shop scene, any booleans/strings/floats and meshes. " alt="" coords="245,5,323,32"/>
-<area shape="rect" id="node3" href="$classScene2.html#ad452e11ff007a8a1a410284630eb6f12" title="Initializes for 2nd scene. " alt="" coords="239,56,329,83"/>
-<area shape="rect" id="node4" href="$classScene3.html#ae0fa7e48f701d3761d8c6ca01a334feb" title="Scene3::Init" alt="" coords="239,107,329,133"/>
+<area shape="rect" id="node3" href="$classScene3.html#ae0fa7e48f701d3761d8c6ca01a334feb" title="Initializes for 3rd scene. " alt="" coords="239,56,329,83"/>
+<area shape="rect" id="node4" href="$classScene2.html#ad452e11ff007a8a1a410284630eb6f12" title="Initializes for 2nd scene. " alt="" coords="239,107,329,133"/>
 </map>

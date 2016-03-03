@@ -719,7 +719,7 @@
         </inbodydescription>
         <location file="MyGraphics/Source/Cutscene.h" line="94" column="1" bodyfile="MyGraphics/Source/Cutscene.cpp" bodystart="51" bodyend="156"/>
         <references refid="classCutscene_1a91024b8158662a7e29ca71482bb8054c" compoundref="Cutscene_8h" startline="119">camera</references>
-        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="30">Camera3::cameraRotate</references>
         <references refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="398" endline="423">MeshBuilder::GenerateOBJ</references>
         <references refid="classMeshBuilder_1a8fede2f411aebe5d41af99b51be7ed77" compoundref="MeshBuilder_8cpp" startline="107" endline="173">MeshBuilder::GenerateQuad</references>
         <references refid="classMeshBuilder_1a96d1a0ba39e026036abea6551a372d84" compoundref="MeshBuilder_8cpp" startline="174" endline="240">MeshBuilder::GenerateRepeatQuad</references>
@@ -739,7 +739,7 @@
         <references refid="classCutscene_1ad6992389dd3c482c63132954b56be7d2a568216bc10d7bf1ef1ab29d15e25963b" compoundref="Cutscene_8h" startline="52">GEO_TEXT</references>
         <references refid="classCutscene_1ad6992389dd3c482c63132954b56be7d2a694cf5c73762724f56b698394903e0e0" compoundref="Cutscene_8h" startline="41">GEO_THRUSTER</references>
         <references refid="classCutscene_1ad6992389dd3c482c63132954b56be7d2ae2c4fafe2b3233d20f4dd15b515aa2f8" compoundref="Cutscene_8h" startline="46">GEO_TOP1</references>
-        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</references>
         <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="17">Material::kAmbient</references>
         <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="18">Material::kDiffuse</references>
         <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="20">Material::kShininess</references>
@@ -799,20 +799,20 @@
         <location file="MyGraphics/Source/Cutscene.h" line="95" column="1" bodyfile="MyGraphics/Source/Cutscene.cpp" bodystart="166" bodyend="201"/>
         <references refid="classCutscene_1a351ec43ec2133f7870977568e473857b" compoundref="Cutscene_8h" startline="130">blowUp</references>
         <references refid="classCutscene_1a91024b8158662a7e29ca71482bb8054c" compoundref="Cutscene_8h" startline="119">camera</references>
-        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="30">Camera3::cameraRotate</references>
         <references refid="classCutscene_1aa177f286bd430cb1b67ab6c1d08705dc" compoundref="Cutscene_8cpp" startline="495" endline="524">Character_Movement</references>
         <references refid="classCutscene_1a65f8f5044717e9545b9ed881f82d8811" compoundref="Cutscene_8h" startline="131">explosionScale</references>
-        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</references>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="52">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</references>
         <references refid="classCutscene_1a5004956683ea7fa05b4394e7d72e7fce" compoundref="Cutscene_8h" startline="126">planePos</references>
         <references refid="classCutscene_1ab0cf4528fedf9ee39b070cd97f38c09f" compoundref="Cutscene_8h" startline="127">planePos2</references>
         <references refid="classCutscene_1a1fbc7be75612c8278cbb5e77766157e7" compoundref="Cutscene_8h" startline="129">randNum</references>
         <references refid="classCutscene_1af87b9f143eeb9bb8fb3a8ea59f177725" compoundref="Cutscene_8h" startline="125">sound</references>
-        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="59">SharedData::stateCheck</references>
         <references refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" compoundref="Sound_8cpp" startline="64" endline="67">Sound::stopMusic</references>
         <references refid="classCutscene_1abf873f26521a7469d6cc70b12b87508c" compoundref="Cutscene_8h" startline="132">thrusterScale</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba90ea93156d3af904699969de05941e85" compoundref="SharedData_8h" startline="42">SharedData::WIN</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5ba90ea93156d3af904699969de05941e85" compoundref="SharedData_8h" startline="41">SharedData::WIN</references>
       </memberdef>
       <memberdef kind="function" id="classCutscene_1a74edfeb7d02dd7ee12e965c748ce422e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1203,15 +1203,15 @@
         </inbodydescription>
         <location file="MyGraphics/Source/Cutscene.h" line="123" column="1" bodyfile="MyGraphics/Source/Cutscene.cpp" bodystart="495" bodyend="524"/>
         <references refid="classCutscene_1a91024b8158662a7e29ca71482bb8054c" compoundref="Cutscene_8h" startline="119">camera</references>
-        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="19">Camera3::cameraRotate</references>
+        <references refid="classCamera3_1a68291054f1f54beded4ec189e4820408" compoundref="Camera3_8h" startline="30">Camera3::cameraRotate</references>
         <references refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Vector3::Cross</references>
-        <references refid="classCamera3_1a089366725666df811a969aca24168cb6" compoundref="Camera3_8h" startline="18">Camera3::defaultUp</references>
+        <references refid="classCamera3_1a089366725666df811a969aca24168cb6" compoundref="Camera3_8h" startline="29">Camera3::defaultUp</references>
         <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
         <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
         <references refid="classCutscene_1a1fbc7be75612c8278cbb5e77766157e7" compoundref="Cutscene_8h" startline="129">randNum</references>
         <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
         <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
-        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="20">Camera3::view</references>
+        <references refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" compoundref="Camera3_8h" startline="31">Camera3::view</references>
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
@@ -1223,123 +1223,123 @@
     <detaileddescription>
 <para>Class <ref refid="classCutscene" kindref="compound">Cutscene</ref>: </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="651">
+      <node id="640">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="650">
+      <node id="639">
         <label>Cutscene</label>
         <link refid="classCutscene"/>
-        <childnode refid="651" relation="public-inheritance">
+        <childnode refid="640" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="667">
+      <node id="656">
         <label>irrklang::IVirtualRefCounted</label>
         <link refid="classirrklang_1_1IVirtualRefCounted"/>
       </node>
-      <node id="661">
+      <node id="649">
         <label>stack&lt; Mtx44 &gt;</label>
       </node>
-      <node id="663">
+      <node id="652">
         <label>Sound</label>
         <link refid="classSound"/>
-        <childnode refid="664" relation="usage">
+        <childnode refid="653" relation="usage">
           <edgelabel>musicEngine</edgelabel>
         </childnode>
-        <childnode refid="666" relation="usage">
+        <childnode refid="655" relation="usage">
           <edgelabel>SoundEffect</edgelabel>
           <edgelabel>Song</edgelabel>
         </childnode>
       </node>
-      <node id="670">
+      <node id="659">
         <label>Component</label>
         <link refid="structComponent"/>
-        <childnode refid="657" relation="usage">
+        <childnode refid="646" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="668">
+      <node id="657">
         <label>Mesh</label>
         <link refid="classMesh"/>
-        <childnode refid="669" relation="usage">
+        <childnode refid="658" relation="usage">
           <edgelabel>material</edgelabel>
         </childnode>
-        <childnode refid="671" relation="usage">
+        <childnode refid="660" relation="usage">
           <edgelabel>mode</edgelabel>
         </childnode>
-        <childnode refid="672" relation="usage">
+        <childnode refid="661" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="673" relation="usage">
+        <childnode refid="662" relation="usage">
           <edgelabel>textureID</edgelabel>
           <edgelabel>indexBuffer</edgelabel>
           <edgelabel>indexSize</edgelabel>
           <edgelabel>vertexBuffer</edgelabel>
         </childnode>
       </node>
-      <node id="664">
+      <node id="653">
         <label>irrklang::ISoundEngine</label>
         <link refid="classirrklang_1_1ISoundEngine"/>
-        <childnode refid="665" relation="public-inheritance">
+        <childnode refid="654" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="671">
+      <node id="660">
         <label>DRAW_MODE</label>
       </node>
-      <node id="655">
+      <node id="644">
         <label>Camera</label>
         <link refid="classCamera"/>
-        <childnode refid="656" relation="usage">
+        <childnode refid="645" relation="usage">
           <edgelabel>target</edgelabel>
           <edgelabel>position</edgelabel>
           <edgelabel>up</edgelabel>
         </childnode>
       </node>
-      <node id="672">
+      <node id="661">
         <label>string</label>
       </node>
-      <node id="669">
+      <node id="658">
         <label>Material</label>
         <link refid="structMaterial"/>
-        <childnode refid="657" relation="usage">
+        <childnode refid="646" relation="usage">
           <edgelabel>kShininess</edgelabel>
         </childnode>
-        <childnode refid="670" relation="usage">
+        <childnode refid="659" relation="usage">
           <edgelabel>kDiffuse</edgelabel>
           <edgelabel>kAmbient</edgelabel>
           <edgelabel>kSpecular</edgelabel>
         </childnode>
       </node>
-      <node id="657">
+      <node id="646">
         <label>float</label>
       </node>
-      <node id="660">
+      <node id="648">
         <label>MS</label>
         <link refid="classMS"/>
-        <childnode refid="661" relation="usage">
+        <childnode refid="649" relation="usage">
           <edgelabel>ms</edgelabel>
         </childnode>
       </node>
-      <node id="653">
+      <node id="642">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="666">
+      <node id="655">
         <label>irrklang::ISound</label>
         <link refid="classirrklang_1_1ISound"/>
-        <childnode refid="667" relation="public-inheritance">
+        <childnode refid="656" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="654">
+      <node id="643">
         <label>Camera3</label>
         <link refid="classCamera3"/>
-        <childnode refid="655" relation="public-inheritance">
+        <childnode refid="644" relation="public-inheritance">
         </childnode>
-        <childnode refid="657" relation="usage">
+        <childnode refid="646" relation="usage">
           <edgelabel>cameraSpeed</edgelabel>
           <edgelabel>maxCameraX</edgelabel>
           <edgelabel>maxX</edgelabel>
@@ -1347,29 +1347,26 @@
           <edgelabel>maxZ</edgelabel>
           <edgelabel>minZ</edgelabel>
         </childnode>
-        <childnode refid="656" relation="usage">
+        <childnode refid="645" relation="usage">
           <edgelabel>defaultTarget</edgelabel>
           <edgelabel>defaultPosition</edgelabel>
           <edgelabel>view</edgelabel>
           <edgelabel>defaultUp</edgelabel>
           <edgelabel>cameraRotate</edgelabel>
         </childnode>
-        <childnode refid="658" relation="usage">
-          <edgelabel>door</edgelabel>
-        </childnode>
       </node>
-      <node id="662">
+      <node id="650">
         <label>int</label>
       </node>
-      <node id="652">
+      <node id="641">
         <label>Cutscene</label>
         <link refid="classCutscene"/>
-        <childnode refid="653" relation="public-inheritance">
+        <childnode refid="642" relation="public-inheritance">
         </childnode>
-        <childnode refid="654" relation="usage">
+        <childnode refid="643" relation="usage">
           <edgelabel>camera</edgelabel>
         </childnode>
-        <childnode refid="657" relation="usage">
+        <childnode refid="646" relation="usage">
           <edgelabel>Size</edgelabel>
           <edgelabel>planePos</edgelabel>
           <edgelabel>explosionScale</edgelabel>
@@ -1378,28 +1375,28 @@
           <edgelabel>thrusterScale</edgelabel>
           <edgelabel>X_Displacement</edgelabel>
         </childnode>
-        <childnode refid="659" relation="usage">
+        <childnode refid="647" relation="usage">
           <edgelabel>Map</edgelabel>
         </childnode>
-        <childnode refid="660" relation="usage">
+        <childnode refid="648" relation="usage">
           <edgelabel>projectionStack</edgelabel>
           <edgelabel>modelStack</edgelabel>
           <edgelabel>viewStack</edgelabel>
         </childnode>
-        <childnode refid="662" relation="usage">
+        <childnode refid="650" relation="usage">
           <edgelabel>randNum</edgelabel>
           <edgelabel>cameraShake</edgelabel>
         </childnode>
-        <childnode refid="658" relation="usage">
+        <childnode refid="651" relation="usage">
           <edgelabel>blowUp</edgelabel>
         </childnode>
-        <childnode refid="663" relation="usage">
+        <childnode refid="652" relation="usage">
           <edgelabel>sound</edgelabel>
         </childnode>
-        <childnode refid="668" relation="usage">
+        <childnode refid="657" relation="usage">
           <edgelabel>meshList</edgelabel>
         </childnode>
-        <childnode refid="673" relation="usage">
+        <childnode refid="662" relation="usage">
           <edgelabel>m_indexBuffer</edgelabel>
           <edgelabel>m_parameters</edgelabel>
           <edgelabel>m_colorBuffer</edgelabel>
@@ -1408,26 +1405,26 @@
           <edgelabel>m_vertexArrayID</edgelabel>
         </childnode>
       </node>
-      <node id="665">
+      <node id="654">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
-        <childnode refid="662" relation="usage">
+        <childnode refid="650" relation="usage">
           <edgelabel>ReferenceCounter</edgelabel>
         </childnode>
       </node>
-      <node id="673">
+      <node id="662">
         <label>unsigned</label>
       </node>
-      <node id="658">
+      <node id="651">
         <label>bool</label>
       </node>
-      <node id="659">
+      <node id="647">
         <label>char</label>
       </node>
-      <node id="656">
+      <node id="645">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="657" relation="usage">
+        <childnode refid="646" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>

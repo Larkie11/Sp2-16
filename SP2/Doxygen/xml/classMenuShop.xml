@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="15" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="14" bodyend="22"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="27" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="26" bodyend="34"/>
       </memberdef>
       <memberdef kind="enum" id="classMenuShop_1ac92d4bb81d8cfb85f3a39b8917cb09e8" prot="public" static="no">
         <name>OPTION</name>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="24" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="23" bodyend="29"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="36" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="35" bodyend="41"/>
       </memberdef>
       <memberdef kind="enum" id="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401" prot="public" static="no">
         <name>SHOP_OPTION</name>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="31" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="30" bodyend="36"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="43" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="42" bodyend="48"/>
       </memberdef>
       <memberdef kind="enum" id="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715" prot="public" static="no">
         <name>SHOP_BUY</name>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="38" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="37" bodyend="43"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="50" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="49" bodyend="55"/>
       </memberdef>
       <memberdef kind="enum" id="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27" prot="public" static="no">
         <name>SHOP_SELL</name>
@@ -180,8 +180,8 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27ab1749b88e8cc117d880010ee84a2a3d7" prot="public">
-          <name>SS_BOMB</name>
+        <enumvalue id="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abf757b0971083453f230da593b4a4465" prot="public">
+          <name>SS_ORE</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -214,36 +214,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="46" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="45" bodyend="52"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="58" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="57" bodyend="64"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classMenuShop_1ac79c9a4361fc04186da275a6e7ff5a36" prot="public" static="no" mutable="no">
-        <type>string</type>
-        <definition>string MenuShop::shopInput</definition>
-        <argsstring></argsstring>
-        <name>shopInput</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="11" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classMenuShop_1a16d2d1a4f761c7aeb3ccfb51ed0e2ed8" prot="public" static="no" mutable="no">
-        <type>string</type>
-        <definition>string MenuShop::Input</definition>
-        <argsstring></argsstring>
-        <name>Input</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="12" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="12" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="classMenuShop_1ad78cc43b96ef87e43d626e7e993489f3" prot="public" static="no" mutable="no">
         <type>float</type>
         <definition>float MenuShop::PressTime</definition>
@@ -256,33 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="13" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="13" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classMenuShop_1ab857387a5c2cdc63b1b6bd7fc638d261" prot="public" static="no" mutable="no">
-        <type><ref refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401" kindref="member">SHOP_OPTION</ref></type>
-        <definition>SHOP_OPTION MenuShop::s_option</definition>
-        <argsstring></argsstring>
-        <name>s_option</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="54" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="54" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classMenuShop_1a92361eb45d65ce4b79fd6dbdce192509" prot="public" static="no" mutable="no">
-        <type><ref refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715" kindref="member">SHOP_BUY</ref></type>
-        <definition>SHOP_BUY MenuShop::s_buy</definition>
-        <argsstring></argsstring>
-        <name>s_buy</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="55" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="55" bodyend="-1"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="25" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -297,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="56" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="56" bodyend="56"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="66" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classMenuShop_1acddfeb27051c7413a32877debeb73b3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -310,49 +258,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/MenuShop.h" line="57" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="57" bodyend="57"/>
+        <location file="MyGraphics/Source/MenuShop.h" line="67" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="67" bodyend="67"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para><ref refid="classShop" kindref="compound">Shop</ref> enums/Menu enums. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Class <ref refid="classMenuShop" kindref="compound">MenuShop</ref>: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="791">
+      <node id="780">
         <label>MenuShop</label>
         <link refid="classMenuShop"/>
-        <childnode refid="792" relation="usage">
-          <edgelabel>s_option</edgelabel>
-        </childnode>
-        <childnode refid="793" relation="usage">
+        <childnode refid="781" relation="usage">
           <edgelabel>PressTime</edgelabel>
         </childnode>
-        <childnode refid="794" relation="usage">
-          <edgelabel>s_buy</edgelabel>
-        </childnode>
-        <childnode refid="795" relation="usage">
-          <edgelabel>Input</edgelabel>
-          <edgelabel>shopInput</edgelabel>
-        </childnode>
       </node>
-      <node id="795">
-        <label>string</label>
-      </node>
-      <node id="793">
+      <node id="781">
         <label>float</label>
       </node>
-      <node id="792">
-        <label>SHOP_OPTION</label>
-      </node>
-      <node id="794">
-        <label>SHOP_BUY</label>
-      </node>
     </collaborationgraph>
-    <location file="MyGraphics/Source/MenuShop.h" line="9" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="8" bodyend="58"/>
+    <location file="MyGraphics/Source/MenuShop.h" line="23" column="1" bodyfile="MyGraphics/Source/MenuShop.h" bodystart="22" bodyend="68"/>
     <listofallmembers>
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aa739958be5990b81142729deded75794" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>CREDITS</name></member>
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8aac1bed297a017f1f173e3ed3a58fc100" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>HELP</name></member>
-      <member refid="classMenuShop_1a16d2d1a4f761c7aeb3ccfb51ed0e2ed8" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>Input</name></member>
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0b07dd4f164a54608e0cc962a860ec1b" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>MAX</name></member>
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>MENU</name></member>
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a574714ca58e5be557465efcc188f7781" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>MENU1</name></member>
@@ -366,9 +294,7 @@
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a0926bc3bd6414ec8ccc181f9d6bf5c94" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>QUIT</name></member>
       <member refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401a54cb956e6fb04e7327457213b490274e" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>S_BACK</name></member>
       <member refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401ac82245c595b5ff634d436d3582b81cad" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>S_BUY</name></member>
-      <member refid="classMenuShop_1a92361eb45d65ce4b79fd6dbdce192509" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>s_buy</name></member>
       <member refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401a4fb96b41a53308170456dcb0f99a5a77" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>S_MAX</name></member>
-      <member refid="classMenuShop_1ab857387a5c2cdc63b1b6bd7fc638d261" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>s_option</name></member>
       <member refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401ade4b78fb584d8bbe1767571af4df46a5" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>S_SELL</name></member>
       <member refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715aba7172cbc2c716995a58448aeeb566a0" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SB_AMMO</name></member>
       <member refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715a3cba574f16350ad139cbbece7c8922e0" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SB_BACK</name></member>
@@ -377,12 +303,11 @@
       <member refid="classMenuShop_1a4bcca03d242709168e5f0aa05fa66715" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SHOP_BUY</name></member>
       <member refid="classMenuShop_1a1d6d96d1660d024f1726d9e32d207401" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SHOP_OPTION</name></member>
       <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SHOP_SELL</name></member>
-      <member refid="classMenuShop_1ac79c9a4361fc04186da275a6e7ff5a36" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>shopInput</name></member>
       <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abeb6fdbe9a4848f27b4eb173e9f11aff" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SS_AMMO</name></member>
       <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27a5c847c9a91360d16f6cd2f5f59d0c782" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SS_BACK</name></member>
-      <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27ab1749b88e8cc117d880010ee84a2a3d7" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SS_BOMB</name></member>
       <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27acef92a3299a443c22c865621b5f6e427" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SS_EGG</name></member>
       <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27aaab9c55ce4ea62c6850d10351e20c63d" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SS_MAX</name></member>
+      <member refid="classMenuShop_1ae7c5d2cbe468c2e4726b60fd308f0f27abf757b0971083453f230da593b4a4465" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>SS_ORE</name></member>
       <member refid="classMenuShop_1a6b039d37f54761026f80620cad41dec8a24ec3cf1ab0ae9b16da7582c6d6bd30a" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>STARTGAME</name></member>
       <member refid="classMenuShop_1acddfeb27051c7413a32877debeb73b3b" prot="public" virt="non-virtual"><scope>MenuShop</scope><name>~MenuShop</name></member>
     </listofallmembers>

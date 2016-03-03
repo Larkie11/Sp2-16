@@ -7,413 +7,418 @@
     <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
     <includes refid="CollisionDetector_8h" local="yes">CollisionDetector.h</includes>
     <includes local="no">vector</includes>
-    <includes local="no">iostream</includes>
-    <includes refid="SharedData_8h" local="yes">SharedData.h</includes>
     <incdepgraph>
-      <node id="4755">
+      <node id="4982">
         <label>ik_IRefCounted.h</label>
         <link refid="ik__IRefCounted_8h"/>
-        <childnode refid="4751" relation="include">
+        <childnode refid="4978" relation="include">
         </childnode>
       </node>
-      <node id="4753">
+      <node id="4980">
         <label>ik_vec3d.h</label>
         <link refid="ik__vec3d_8h"/>
-        <childnode refid="4754" relation="include">
+        <childnode refid="4981" relation="include">
         </childnode>
-        <childnode refid="4751" relation="include">
+        <childnode refid="4978" relation="include">
         </childnode>
       </node>
-      <node id="4764">
+      <node id="4991">
         <label>ik_ISoundEffectControl.h</label>
         <link refid="ik__ISoundEffectControl_8h"/>
-        <childnode refid="4756" relation="include">
+        <childnode refid="4983" relation="include">
         </childnode>
-        <childnode refid="4753" relation="include">
+        <childnode refid="4980" relation="include">
         </childnode>
       </node>
-      <node id="4763">
+      <node id="4990">
         <label>ik_ISound.h</label>
         <link refid="ik__ISound_8h"/>
-        <childnode refid="4756" relation="include">
+        <childnode refid="4983" relation="include">
         </childnode>
-        <childnode refid="4764" relation="include">
+        <childnode refid="4991" relation="include">
         </childnode>
-        <childnode refid="4753" relation="include">
+        <childnode refid="4980" relation="include">
         </childnode>
       </node>
-      <node id="4772">
+      <node id="4999">
         <label>ik_IAudioRecorder.h</label>
         <link refid="ik__IAudioRecorder_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4762" relation="include">
+        <childnode refid="4989" relation="include">
         </childnode>
       </node>
-      <node id="4740">
+      <node id="4968">
         <label>cmath</label>
       </node>
-      <node id="4750">
+      <node id="4977">
         <label>irrklang.h</label>
         <link refid="irrKlang_8h"/>
-        <childnode refid="4751" relation="include">
+        <childnode refid="4978" relation="include">
         </childnode>
-        <childnode refid="4753" relation="include">
+        <childnode refid="4980" relation="include">
         </childnode>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4756" relation="include">
+        <childnode refid="4983" relation="include">
         </childnode>
-        <childnode refid="4757" relation="include">
+        <childnode refid="4984" relation="include">
         </childnode>
-        <childnode refid="4758" relation="include">
+        <childnode refid="4985" relation="include">
         </childnode>
-        <childnode refid="4759" relation="include">
+        <childnode refid="4986" relation="include">
         </childnode>
-        <childnode refid="4760" relation="include">
+        <childnode refid="4987" relation="include">
         </childnode>
-        <childnode refid="4761" relation="include">
+        <childnode refid="4988" relation="include">
         </childnode>
-        <childnode refid="4762" relation="include">
+        <childnode refid="4989" relation="include">
         </childnode>
-        <childnode refid="4763" relation="include">
+        <childnode refid="4990" relation="include">
         </childnode>
-        <childnode refid="4767" relation="include">
+        <childnode refid="4994" relation="include">
         </childnode>
-        <childnode refid="4768" relation="include">
+        <childnode refid="4995" relation="include">
         </childnode>
-        <childnode refid="4764" relation="include">
+        <childnode refid="4991" relation="include">
         </childnode>
-        <childnode refid="4770" relation="include">
+        <childnode refid="4997" relation="include">
         </childnode>
-        <childnode refid="4765" relation="include">
+        <childnode refid="4992" relation="include">
         </childnode>
-        <childnode refid="4769" relation="include">
+        <childnode refid="4996" relation="include">
         </childnode>
-        <childnode refid="4771" relation="include">
+        <childnode refid="4998" relation="include">
         </childnode>
-        <childnode refid="4772" relation="include">
+        <childnode refid="4999" relation="include">
         </childnode>
-        <childnode refid="4766" relation="include">
+        <childnode refid="4993" relation="include">
         </childnode>
       </node>
-      <node id="4735">
+      <node id="4963">
         <label>Bullet.h</label>
         <link refid="Bullet_8h"/>
-        <childnode refid="4736" relation="include">
+        <childnode refid="4964" relation="include">
         </childnode>
-        <childnode refid="4738" relation="include">
+        <childnode refid="4966" relation="include">
         </childnode>
-        <childnode refid="4745" relation="include">
+        <childnode refid="4973" relation="include">
         </childnode>
-        <childnode refid="4747" relation="include">
+        <childnode refid="4975" relation="include">
         </childnode>
-        <childnode refid="4748" relation="include">
+        <childnode refid="4976" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
         </childnode>
       </node>
-      <node id="4773">
+      <node id="5000">
         <label>string</label>
       </node>
-      <node id="4746">
+      <node id="4974">
         <label>Camera.h</label>
         <link refid="Camera_8h"/>
-        <childnode refid="4738" relation="include">
+        <childnode refid="4966" relation="include">
         </childnode>
       </node>
-      <node id="4760">
+      <node id="4987">
         <label>ik_SAudioStreamFormat.h</label>
         <link refid="ik__SAudioStreamFormat_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
       </node>
-      <node id="4741">
+      <node id="4969">
         <label>exception</label>
       </node>
-      <node id="4759">
+      <node id="4986">
         <label>ik_EStreamModes.h</label>
         <link refid="ik__EStreamModes_8h"/>
       </node>
-      <node id="4762">
+      <node id="4989">
         <label>ik_ISoundSource.h</label>
         <link refid="ik__ISoundSource_8h"/>
-        <childnode refid="4756" relation="include">
+        <childnode refid="4983" relation="include">
         </childnode>
-        <childnode refid="4753" relation="include">
+        <childnode refid="4980" relation="include">
         </childnode>
-        <childnode refid="4759" relation="include">
+        <childnode refid="4986" relation="include">
         </childnode>
-        <childnode refid="4760" relation="include">
+        <childnode refid="4987" relation="include">
         </childnode>
       </node>
-      <node id="4734">
+      <node id="4962">
         <label>MyGraphics/Source/Bullet.cpp</label>
         <link refid="Bullet.cpp"/>
-        <childnode refid="4735" relation="include">
+        <childnode refid="4963" relation="include">
         </childnode>
-        <childnode refid="4736" relation="include">
+        <childnode refid="4964" relation="include">
         </childnode>
-        <childnode refid="4745" relation="include">
+        <childnode refid="4973" relation="include">
         </childnode>
-        <childnode refid="4747" relation="include">
+        <childnode refid="4975" relation="include">
         </childnode>
-        <childnode refid="4748" relation="include">
-        </childnode>
-        <childnode refid="4744" relation="include">
-        </childnode>
-        <childnode refid="4749" relation="include">
+        <childnode refid="5001" relation="include">
         </childnode>
       </node>
-      <node id="4767">
+      <node id="4994">
         <label>ik_IAudioStream.h</label>
         <link refid="ik__IAudioStream_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4760" relation="include">
+        <childnode refid="4987" relation="include">
         </childnode>
       </node>
-      <node id="4758">
+      <node id="4985">
         <label>ik_ESoundEngineOptions.h</label>
         <link refid="ik__ESoundEngineOptions_8h"/>
       </node>
-      <node id="4736">
+      <node id="4964">
         <label>Enemy.h</label>
         <link refid="Enemy_8h"/>
-        <childnode refid="4737" relation="include">
+        <childnode refid="4965" relation="include">
         </childnode>
-        <childnode refid="4745" relation="include">
+        <childnode refid="4973" relation="include">
         </childnode>
       </node>
-      <node id="4749">
+      <node id="4976">
         <label>SharedData.h</label>
         <link refid="SharedData_8h"/>
-        <childnode refid="4750" relation="include">
+        <childnode refid="4977" relation="include">
         </childnode>
-        <childnode refid="4773" relation="include">
-        </childnode>
-        <childnode refid="4744" relation="include">
+        <childnode refid="5000" relation="include">
         </childnode>
       </node>
-      <node id="4745">
+      <node id="4973">
         <label>Camera3.h</label>
         <link refid="Camera3_8h"/>
-        <childnode refid="4746" relation="include">
+        <childnode refid="4974" relation="include">
         </childnode>
-        <childnode refid="4739" relation="include">
+        <childnode refid="4967" relation="include">
         </childnode>
       </node>
-      <node id="4771">
+      <node id="4998">
         <label>ik_ISoundDeviceList.h</label>
         <link refid="ik__ISoundDeviceList_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
       </node>
-      <node id="4752">
+      <node id="4979">
         <label>wchar.h</label>
       </node>
-      <node id="4747">
+      <node id="4975">
         <label>CollisionDetector.h</label>
         <link refid="CollisionDetector_8h"/>
-        <childnode refid="4739" relation="include">
+        <childnode refid="4967" relation="include">
         </childnode>
-        <childnode refid="4736" relation="include">
+        <childnode refid="4964" relation="include">
         </childnode>
-        <childnode refid="4738" relation="include">
+        <childnode refid="4966" relation="include">
+        </childnode>
+        <childnode refid="4976" relation="include">
         </childnode>
       </node>
-      <node id="4742">
+      <node id="4970">
         <label>ctime</label>
       </node>
-      <node id="4737">
+      <node id="4965">
         <label>Vertex.h</label>
         <link refid="Vertex_8h"/>
-        <childnode refid="4738" relation="include">
+        <childnode refid="4966" relation="include">
         </childnode>
       </node>
-      <node id="4751">
+      <node id="4978">
         <label>ik_irrKlangTypes.h</label>
         <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="4752" relation="include">
+        <childnode refid="4979" relation="include">
         </childnode>
       </node>
-      <node id="4748">
+      <node id="5001">
         <label>vector</label>
       </node>
-      <node id="4768">
+      <node id="4995">
         <label>ik_IAudioStreamLoader.h</label>
         <link refid="ik__IAudioStreamLoader_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4769" relation="include">
+        <childnode refid="4996" relation="include">
         </childnode>
       </node>
-      <node id="4757">
+      <node id="4984">
         <label>ik_ESoundOutputDrivers.h</label>
         <link refid="ik__ESoundOutputDrivers_8h"/>
       </node>
-      <node id="4765">
+      <node id="4992">
         <label>ik_IFileFactory.h</label>
         <link refid="ik__IFileFactory_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
       </node>
-      <node id="4754">
+      <node id="4981">
         <label>math.h</label>
       </node>
-      <node id="4743">
+      <node id="4971">
         <label>cstdlib</label>
       </node>
-      <node id="4744">
+      <node id="4972">
         <label>iostream</label>
       </node>
-      <node id="4739">
+      <node id="4967">
         <label>MyMath.h</label>
         <link refid="MyMath_8h"/>
-        <childnode refid="4740" relation="include">
+        <childnode refid="4968" relation="include">
         </childnode>
-        <childnode refid="4741" relation="include">
+        <childnode refid="4969" relation="include">
         </childnode>
-        <childnode refid="4742" relation="include">
+        <childnode refid="4970" relation="include">
         </childnode>
-        <childnode refid="4743" relation="include">
+        <childnode refid="4971" relation="include">
         </childnode>
       </node>
-      <node id="4756">
+      <node id="4983">
         <label>ik_IVirtualRefCounted.h</label>
         <link refid="ik__IVirtualRefCounted_8h"/>
-        <childnode refid="4751" relation="include">
+        <childnode refid="4978" relation="include">
         </childnode>
       </node>
-      <node id="4761">
+      <node id="4988">
         <label>ik_ISoundEngine.h</label>
         <link refid="ik__ISoundEngine_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4753" relation="include">
+        <childnode refid="4980" relation="include">
         </childnode>
-        <childnode refid="4762" relation="include">
+        <childnode refid="4989" relation="include">
         </childnode>
-        <childnode refid="4763" relation="include">
+        <childnode refid="4990" relation="include">
         </childnode>
-        <childnode refid="4759" relation="include">
+        <childnode refid="4986" relation="include">
         </childnode>
-        <childnode refid="4765" relation="include">
+        <childnode refid="4992" relation="include">
         </childnode>
-        <childnode refid="4766" relation="include">
+        <childnode refid="4993" relation="include">
         </childnode>
       </node>
-      <node id="4766">
+      <node id="4993">
         <label>ik_ISoundMixedOutputReceiver.h</label>
         <link refid="ik__ISoundMixedOutputReceiver_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4760" relation="include">
+        <childnode refid="4987" relation="include">
         </childnode>
       </node>
-      <node id="4770">
+      <node id="4997">
         <label>ik_ISoundStopEventReceiver.h</label>
         <link refid="ik__ISoundStopEventReceiver_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
-        <childnode refid="4760" relation="include">
+        <childnode refid="4987" relation="include">
         </childnode>
       </node>
-      <node id="4769">
+      <node id="4996">
         <label>ik_IFileReader.h</label>
         <link refid="ik__IFileReader_8h"/>
-        <childnode refid="4755" relation="include">
+        <childnode refid="4982" relation="include">
         </childnode>
       </node>
-      <node id="4738">
+      <node id="4966">
         <label>Vector3.h</label>
         <link refid="Vector3_8h"/>
-        <childnode refid="4739" relation="include">
+        <childnode refid="4967" relation="include">
         </childnode>
-        <childnode refid="4744" relation="include">
+        <childnode refid="4972" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <briefdescription>
-    </briefdescription>
+<para>A Class for the <ref refid="classBullet" kindref="compound">Bullet</ref> to define them in the game. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para><simplesect kind="author"><para>Heng Soon Yap </para></simplesect>
+<simplesect kind="par"><title>email:Romeoyap@hotmail.com</title><para></para></simplesect>
+</para>    </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Bullet_8h" kindref="compound">Bullet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CollisionDetector_8h" kindref="compound">CollisionDetector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SharedData_8h" kindref="compound">SharedData.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cout;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::endl;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12" refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" refkind="member"><highlight class="normal"><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet::Bullet</ref>()</highlight></codeline>
-<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="16" refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" refkind="member"><highlight class="normal"><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet::Bullet</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera)</highlight></codeline>
-<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" kindref="member">b_Speed</ref><sp/>=<sp/>100;<sp/></highlight><highlight class="comment">//was<sp/>500</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>the<sp/>position<sp/>out<sp/>of<sp/>scene<sp/>1st</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" kindref="member">position</ref><sp/>=<sp/>camera.<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a1c2981247686929466f7537f6c5a1581" kindref="member">direction</ref><sp/>=<sp/>camera.<ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref>;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" kindref="member">b_Angle</ref><sp/>=<sp/>camera.<ref refid="classCamera3_1a68291054f1f54beded4ec189e4820408" kindref="member">cameraRotate</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref>;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a8669e4b4c08338b0d75396416346619d" kindref="member">b_distanceLimit</ref><sp/>=<sp/>6;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Bullet_8h" kindref="compound">Bullet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CollisionDetector_8h" kindref="compound">CollisionDetector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" refkind="member"><highlight class="normal"><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet::Bullet</ref>(){}</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" refkind="member"><highlight class="normal"><ref refid="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" kindref="member">Bullet::~Bullet</ref>()</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" kindref="member">Bullet::Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Bullet<sp/>travel<sp/>distance</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" kindref="member">position</ref><sp/>+=<sp/><ref refid="classBullet_1a1c2981247686929466f7537f6c5a1581" kindref="member">direction</ref><sp/>*<sp/><ref refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" kindref="member">b_Speed</ref><sp/>*<sp/>dt;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>+=<sp/>dt;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>&gt;<sp/><ref refid="classBullet_1a8669e4b4c08338b0d75396416346619d" kindref="member">b_distanceLimit</ref>)</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref>;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46" refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" refkind="member"><highlight class="normal"><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" kindref="member">Bullet::PtoV</ref>(<ref refid="structPosition" kindref="compound">Position</ref><sp/>V)</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>P<sp/>=<sp/>{<sp/>V.<ref refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" kindref="member">x</ref>,<sp/>V.<ref refid="structPosition_1a54a6182b5f7539295b32255808897d3f" kindref="member">y</ref>,<sp/>V.<ref refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" kindref="member">z</ref><sp/>};</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>P;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52" refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" kindref="member">Bullet::CollideWithEnemy</ref>(<ref refid="classEnemy" kindref="compound">Enemy</ref><sp/>enemy[],<sp/>vector&lt;Bullet*&gt;bullet_arr,<sp/><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref><sp/>detectCollision)</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(vector&lt;Bullet*&gt;::iterator<sp/>iter<sp/>=<sp/>bullet_arr.begin();<sp/>iter<sp/>!=<sp/>bullet_arr.end();)</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>i++)</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structPosition" kindref="compound">Position</ref><sp/>enemyPos<sp/>=<sp/>enemy[i].<ref refid="classEnemy_1aea4b20d7406b086406339215975eccfd" kindref="member">Return_Position</ref>();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>enemyVec<sp/>=<sp/><ref refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" kindref="member">PtoV</ref>(enemyPos);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(detectCollision.<ref refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" kindref="member">collideByDist</ref>((*iter)-&gt;position,<sp/>enemyVec)<sp/>&lt;<sp/>35)</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;COLLIDED<sp/>WITH<sp/>ENEMY&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enemy[i].<ref refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" kindref="member">DamageReceived</ref>(<sp/>30);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" kindref="member">SharedData::GetInstance</ref>()-&gt;<ref refid="classSharedData_1a212c6461f83b5ab83e44118b34f52154" kindref="member">enemycounter</ref>++;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref>)</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/><ref refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" kindref="member">position</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref>;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classBullet_1af4f3eb8a2ec77aa6e703d8873cc56280" refkind="member"><highlight class="normal"><ref refid="classBullet_1acd7befc0bc18907cc1d871d37bbdddeb" kindref="member">Bullet::Bullet</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>camera)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" kindref="member">b_Speed</ref><sp/>=<sp/>100;<sp/></highlight><highlight class="comment">//was<sp/>500</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>the<sp/>position<sp/>out<sp/>of<sp/>scene<sp/>1st</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" kindref="member">position</ref><sp/>=<sp/>camera.<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a1c2981247686929466f7537f6c5a1581" kindref="member">direction</ref><sp/>=<sp/>camera.<ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a0911909ed3279e9860a2b1a80f11fcee" kindref="member">b_Angle</ref><sp/>=<sp/>camera.<ref refid="classCamera3_1a68291054f1f54beded4ec189e4820408" kindref="member">cameraRotate</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a8669e4b4c08338b0d75396416346619d" kindref="member">b_distanceLimit</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" refkind="member"><highlight class="normal"><ref refid="classBullet_1aaeb5cb41d7db89f49007b08b41f1bfcf" kindref="member">Bullet::~Bullet</ref>(){}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a752137a963e8d8f8e2a923fc992614b2" kindref="member">Bullet::Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Bullet<sp/>travel<sp/>distance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1af58976279c0c1bb9d07704ba2b78c4de" kindref="member">position</ref><sp/>+=<sp/><ref refid="classBullet_1a1c2981247686929466f7537f6c5a1581" kindref="member">direction</ref><sp/>*<sp/><ref refid="classBullet_1a732133de53e2dcf68f0a0923a9cb1c9e" kindref="member">b_Speed</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>+=<sp/>dt;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBullet_1a194ea6e237c00a04b735ccc01e95c118" kindref="member">b_distanceTravel</ref><sp/>&gt;<sp/><ref refid="classBullet_1a8669e4b4c08338b0d75396416346619d" kindref="member">b_distanceLimit</ref>)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" refkind="member"><highlight class="normal"><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" kindref="member">Bullet::PtoV</ref>(<ref refid="structPosition" kindref="compound">Position</ref><sp/>V)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>P<sp/>=<sp/>{<sp/>V.<ref refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" kindref="member">x</ref>,<sp/>V.<ref refid="structPosition_1a54a6182b5f7539295b32255808897d3f" kindref="member">y</ref>,<sp/>V.<ref refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" kindref="member">z</ref><sp/>};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>P;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/************************************************************/</highlight></codeline>
+<codeline lineno="136"><highlight class="comment">/************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" kindref="member">Bullet::CollideWithEnemy</ref>(<ref refid="classEnemy" kindref="compound">Enemy</ref><sp/>enemy[],<sp/>vector&lt;Bullet*&gt;bullet_arr,<sp/><ref refid="classCollisionDetector" kindref="compound">CollisionDetector</ref><sp/>detectCollision)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(vector&lt;Bullet*&gt;::iterator<sp/>iter<sp/>=<sp/>bullet_arr.begin();<sp/>iter<sp/>!=<sp/>bullet_arr.end();)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>i++)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structPosition" kindref="compound">Position</ref><sp/>enemyPos<sp/>=<sp/>enemy[i].<ref refid="classEnemy_1aea4b20d7406b086406339215975eccfd" kindref="member">Return_Position</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>enemyVec<sp/>=<sp/><ref refid="classBullet_1a6f7856ab8e59c2ba37d5b71e6b76ecdf" kindref="member">PtoV</ref>(enemyPos);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(detectCollision.<ref refid="classCollisionDetector_1a13df8507ea4f51306e628628462b8bbc" kindref="member">collideByDist</ref>((*iter)-&gt;position,<sp/>enemyVec)<sp/>&lt;<sp/>35)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enemy[i].<ref refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" kindref="member">DamageReceived</ref>(30);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classBullet_1aa2dcfea030e20d58f49aed9f207f5ca4" kindref="member">destoryBullet</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="MyGraphics/Source/Bullet.cpp"/>
   </compounddef>

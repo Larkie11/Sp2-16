@@ -10,7 +10,6 @@
     <includedby refid="Enemy_8h" local="yes">MyGraphics/Source/Enemy.h</includedby>
     <includedby refid="Bullet_8h" local="yes">MyGraphics/Source/Bullet.h</includedby>
     <includedby refid="NPC_8h" local="yes">MyGraphics/Source/NPC.h</includedby>
-    <includedby refid="Objects_8h" local="yes">MyGraphics/Source/Objects.h</includedby>
     <includedby refid="SceneMenu_8h" local="yes">MyGraphics/Source/SceneMenu.h</includedby>
     <includedby refid="Shop_8h" local="yes">MyGraphics/Source/Shop.h</includedby>
     <includedby refid="Scene2_8h" local="yes">MyGraphics/Source/Scene2.h</includedby>
@@ -21,326 +20,308 @@
     <includedby refid="Camera3_8cpp" local="yes">MyGraphics/Source/Camera3.cpp</includedby>
     <includedby refid="Mouse_8cpp" local="yes">MyGraphics/Source/Mouse.cpp</includedby>
     <incdepgraph>
-      <node id="4900">
+      <node id="5151">
         <label>cmath</label>
       </node>
-      <node id="4897">
+      <node id="5148">
         <label>Camera.h</label>
         <link refid="Camera_8h"/>
-        <childnode refid="4898" relation="include">
+        <childnode refid="5149" relation="include">
         </childnode>
       </node>
-      <node id="4901">
+      <node id="5152">
         <label>exception</label>
       </node>
-      <node id="4896">
+      <node id="5147">
         <label>MyGraphics/Source/Camera3.h</label>
         <link refid="Camera3.h"/>
-        <childnode refid="4897" relation="include">
+        <childnode refid="5148" relation="include">
         </childnode>
-        <childnode refid="4899" relation="include">
+        <childnode refid="5150" relation="include">
         </childnode>
       </node>
-      <node id="4902">
+      <node id="5153">
         <label>ctime</label>
       </node>
-      <node id="4903">
+      <node id="5154">
         <label>cstdlib</label>
       </node>
-      <node id="4904">
+      <node id="5155">
         <label>iostream</label>
       </node>
-      <node id="4899">
+      <node id="5150">
         <label>MyMath.h</label>
         <link refid="MyMath_8h"/>
-        <childnode refid="4900" relation="include">
+        <childnode refid="5151" relation="include">
         </childnode>
-        <childnode refid="4901" relation="include">
+        <childnode refid="5152" relation="include">
         </childnode>
-        <childnode refid="4902" relation="include">
+        <childnode refid="5153" relation="include">
         </childnode>
-        <childnode refid="4903" relation="include">
+        <childnode refid="5154" relation="include">
         </childnode>
       </node>
-      <node id="4898">
+      <node id="5149">
         <label>Vector3.h</label>
         <link refid="Vector3_8h"/>
-        <childnode refid="4899" relation="include">
+        <childnode refid="5150" relation="include">
         </childnode>
-        <childnode refid="4904" relation="include">
+        <childnode refid="5155" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4913">
+      <node id="5164">
         <label>MyGraphics/Source/Shop.h</label>
         <link refid="Shop_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4914" relation="include">
+        <childnode refid="5165" relation="include">
         </childnode>
       </node>
-      <node id="4930">
+      <node id="5181">
         <label>MyGraphics/Source/CollisionDetector.cpp</label>
         <link refid="CollisionDetector_8cpp"/>
       </node>
-      <node id="4909">
+      <node id="5160">
         <label>MyGraphics/Source/Mouse.h</label>
         <link refid="Mouse_8h"/>
-        <childnode refid="4906" relation="include">
+        <childnode refid="5157" relation="include">
         </childnode>
-        <childnode refid="4910" relation="include">
+        <childnode refid="5161" relation="include">
         </childnode>
-        <childnode refid="4913" relation="include">
+        <childnode refid="5164" relation="include">
         </childnode>
-        <childnode refid="4915" relation="include">
+        <childnode refid="5166" relation="include">
         </childnode>
-        <childnode refid="4917" relation="include">
+        <childnode refid="5168" relation="include">
         </childnode>
-        <childnode refid="4919" relation="include">
+        <childnode refid="5170" relation="include">
         </childnode>
-        <childnode refid="4921" relation="include">
+        <childnode refid="5172" relation="include">
         </childnode>
       </node>
-      <node id="4935">
+      <node id="5184">
         <label>MyGraphics/Source/SceneWin.h</label>
         <link refid="SceneWin_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4936" relation="include">
+        <childnode refid="5185" relation="include">
         </childnode>
       </node>
-      <node id="4929">
+      <node id="5180">
         <label>MyGraphics/Source/rawMatierial.cpp</label>
         <link refid="rawMatierial_8cpp"/>
       </node>
-      <node id="4919">
+      <node id="5170">
         <label>MyGraphics/Source/Cutscene.h</label>
         <link refid="Cutscene_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4920" relation="include">
+        <childnode refid="5171" relation="include">
         </childnode>
       </node>
-      <node id="4920">
+      <node id="5171">
         <label>MyGraphics/Source/Cutscene.cpp</label>
         <link refid="Cutscene_8cpp"/>
       </node>
-      <node id="4923">
+      <node id="5174">
         <label>MyGraphics/Source/Bullet.h</label>
         <link refid="Bullet_8h"/>
-        <childnode refid="4910" relation="include">
+        <childnode refid="5161" relation="include">
         </childnode>
-        <childnode refid="4915" relation="include">
+        <childnode refid="5166" relation="include">
         </childnode>
-        <childnode refid="4917" relation="include">
+        <childnode refid="5168" relation="include">
         </childnode>
-        <childnode refid="4924" relation="include">
+        <childnode refid="5175" relation="include">
         </childnode>
       </node>
-      <node id="4934">
+      <node id="5183">
         <label>MyGraphics/Source/SceneMenu.cpp</label>
         <link refid="SceneMenu_8cpp"/>
       </node>
-      <node id="4937">
+      <node id="5186">
         <label>MyGraphics/Source/Camera3.cpp</label>
         <link refid="Camera3_8cpp"/>
       </node>
-      <node id="4916">
+      <node id="5167">
         <label>MyGraphics/Source/Scene2.cpp</label>
         <link refid="Scene2_8cpp"/>
       </node>
-      <node id="4918">
+      <node id="5169">
         <label>MyGraphics/Source/Scene3.cpp</label>
         <link refid="Scene3_8cpp"/>
       </node>
-      <node id="4914">
+      <node id="5165">
         <label>MyGraphics/Source/Shop.cpp</label>
         <link refid="Shop_8cpp"/>
       </node>
-      <node id="4924">
+      <node id="5175">
         <label>MyGraphics/Source/Bullet.cpp</label>
         <link refid="Bullet_8cpp"/>
       </node>
-      <node id="4922">
+      <node id="5173">
         <label>MyGraphics/Source/Enemy.h</label>
         <link refid="Enemy_8h"/>
-        <childnode refid="4923" relation="include">
+        <childnode refid="5174" relation="include">
         </childnode>
-        <childnode refid="4925" relation="include">
+        <childnode refid="5176" relation="include">
         </childnode>
-        <childnode refid="4910" relation="include">
+        <childnode refid="5161" relation="include">
         </childnode>
-        <childnode refid="4915" relation="include">
+        <childnode refid="5166" relation="include">
         </childnode>
-        <childnode refid="4917" relation="include">
+        <childnode refid="5168" relation="include">
         </childnode>
-        <childnode refid="4924" relation="include">
+        <childnode refid="5175" relation="include">
         </childnode>
-        <childnode refid="4911" relation="include">
+        <childnode refid="5162" relation="include">
         </childnode>
       </node>
-      <node id="4905">
+      <node id="5156">
         <label>MyGraphics/Source/Camera3.h</label>
         <link refid="Camera3.h"/>
-        <childnode refid="4906" relation="include">
+        <childnode refid="5157" relation="include">
         </childnode>
-        <childnode refid="4909" relation="include">
+        <childnode refid="5160" relation="include">
         </childnode>
-        <childnode refid="4910" relation="include">
+        <childnode refid="5161" relation="include">
         </childnode>
-        <childnode refid="4922" relation="include">
+        <childnode refid="5173" relation="include">
         </childnode>
-        <childnode refid="4923" relation="include">
+        <childnode refid="5174" relation="include">
         </childnode>
-        <childnode refid="4926" relation="include">
+        <childnode refid="5177" relation="include">
         </childnode>
-        <childnode refid="4931" relation="include">
+        <childnode refid="5182" relation="include">
         </childnode>
-        <childnode refid="4933" relation="include">
+        <childnode refid="5164" relation="include">
         </childnode>
-        <childnode refid="4913" relation="include">
+        <childnode refid="5166" relation="include">
         </childnode>
-        <childnode refid="4915" relation="include">
+        <childnode refid="5168" relation="include">
         </childnode>
-        <childnode refid="4917" relation="include">
+        <childnode refid="5170" relation="include">
         </childnode>
-        <childnode refid="4919" relation="include">
+        <childnode refid="5184" relation="include">
         </childnode>
-        <childnode refid="4935" relation="include">
+        <childnode refid="5175" relation="include">
         </childnode>
-        <childnode refid="4924" relation="include">
+        <childnode refid="5186" relation="include">
         </childnode>
-        <childnode refid="4937" relation="include">
-        </childnode>
-        <childnode refid="4921" relation="include">
+        <childnode refid="5172" relation="include">
         </childnode>
       </node>
-      <node id="4917">
+      <node id="5168">
         <label>MyGraphics/Source/Scene3.h</label>
         <link refid="Scene3_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4918" relation="include">
+        <childnode refid="5169" relation="include">
         </childnode>
       </node>
-      <node id="4911">
+      <node id="5162">
         <label>MyGraphics/Source/Enemy.cpp</label>
         <link refid="Enemy_8cpp"/>
       </node>
-      <node id="4910">
+      <node id="5161">
         <label>MyGraphics/Source/SP2.h</label>
         <link refid="SP2_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4911" relation="include">
+        <childnode refid="5162" relation="include">
         </childnode>
-        <childnode refid="4912" relation="include">
+        <childnode refid="5163" relation="include">
         </childnode>
       </node>
-      <node id="4925">
+      <node id="5176">
         <label>MyGraphics/Source/CollisionDetector.h</label>
         <link refid="CollisionDetector_8h"/>
-        <childnode refid="4923" relation="include">
+        <childnode refid="5174" relation="include">
         </childnode>
-        <childnode refid="4926" relation="include">
+        <childnode refid="5177" relation="include">
         </childnode>
-        <childnode refid="4928" relation="include">
+        <childnode refid="5179" relation="include">
         </childnode>
-        <childnode refid="4913" relation="include">
+        <childnode refid="5164" relation="include">
         </childnode>
-        <childnode refid="4924" relation="include">
+        <childnode refid="5175" relation="include">
         </childnode>
-        <childnode refid="4930" relation="include">
-        </childnode>
-      </node>
-      <node id="4932">
-        <label>MyGraphics/Source/Objects.cpp</label>
-        <link refid="Objects_8cpp"/>
-      </node>
-      <node id="4931">
-        <label>MyGraphics/Source/Objects.h</label>
-        <link refid="Objects_8h"/>
-        <childnode refid="4910" relation="include">
-        </childnode>
-        <childnode refid="4915" relation="include">
-        </childnode>
-        <childnode refid="4917" relation="include">
-        </childnode>
-        <childnode refid="4932" relation="include">
+        <childnode refid="5181" relation="include">
         </childnode>
       </node>
-      <node id="4933">
+      <node id="5182">
         <label>MyGraphics/Source/SceneMenu.h</label>
         <link refid="SceneMenu_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4934" relation="include">
+        <childnode refid="5183" relation="include">
         </childnode>
       </node>
-      <node id="4908">
+      <node id="5159">
         <label>MyGraphics/Source/StartCutScene.cpp</label>
         <link refid="StartCutScene_8cpp"/>
       </node>
-      <node id="4927">
+      <node id="5178">
         <label>MyGraphics/Source/NPC.cpp</label>
         <link refid="NPC_8cpp"/>
       </node>
-      <node id="4936">
+      <node id="5185">
         <label>MyGraphics/Source/SceneWin.cpp</label>
         <link refid="SceneWin_8cpp"/>
       </node>
-      <node id="4921">
+      <node id="5172">
         <label>MyGraphics/Source/Mouse.cpp</label>
         <link refid="Mouse_8cpp"/>
       </node>
-      <node id="4907">
+      <node id="5158">
         <label>MyGraphics/Source/Application.cpp</label>
         <link refid="Application_8cpp"/>
       </node>
-      <node id="4928">
+      <node id="5179">
         <label>MyGraphics/Source/rawMaterial.h</label>
         <link refid="rawMaterial_8h"/>
-        <childnode refid="4910" relation="include">
+        <childnode refid="5161" relation="include">
         </childnode>
-        <childnode refid="4915" relation="include">
+        <childnode refid="5166" relation="include">
         </childnode>
-        <childnode refid="4917" relation="include">
+        <childnode refid="5168" relation="include">
         </childnode>
-        <childnode refid="4929" relation="include">
+        <childnode refid="5180" relation="include">
         </childnode>
       </node>
-      <node id="4915">
+      <node id="5166">
         <label>MyGraphics/Source/Scene2.h</label>
         <link refid="Scene2_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4916" relation="include">
+        <childnode refid="5167" relation="include">
         </childnode>
       </node>
-      <node id="4906">
+      <node id="5157">
         <label>MyGraphics/Source/StartCutScene.h</label>
         <link refid="StartCutScene_8h"/>
-        <childnode refid="4907" relation="include">
+        <childnode refid="5158" relation="include">
         </childnode>
-        <childnode refid="4908" relation="include">
+        <childnode refid="5159" relation="include">
         </childnode>
       </node>
-      <node id="4926">
+      <node id="5177">
         <label>MyGraphics/Source/NPC.h</label>
         <link refid="NPC_8h"/>
-        <childnode refid="4910" relation="include">
+        <childnode refid="5161" relation="include">
         </childnode>
-        <childnode refid="4913" relation="include">
+        <childnode refid="5164" relation="include">
         </childnode>
-        <childnode refid="4915" relation="include">
+        <childnode refid="5166" relation="include">
         </childnode>
-        <childnode refid="4917" relation="include">
+        <childnode refid="5168" relation="include">
         </childnode>
-        <childnode refid="4927" relation="include">
+        <childnode refid="5178" relation="include">
         </childnode>
       </node>
-      <node id="4912">
+      <node id="5163">
         <label>MyGraphics/Source/SP2.cpp</label>
         <link refid="SP2_8cpp"/>
       </node>
@@ -351,43 +332,42 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>CAMERA_3_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CAMERA_3_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera_8h" kindref="compound">Camera.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MyMath_8h" kindref="compound">MyMath.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>;</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9" refid="classCamera3" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classCamera" kindref="compound">Camera</ref></highlight></codeline>
-<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Vector3<sp/>position;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Vector3<sp/>target;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Vector3<sp/>up;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************<sp/>/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CAMERA_3_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CAMERA_3_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera_8h" kindref="compound">Camera.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MyMath_8h" kindref="compound">MyMath.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" kindref="member">defaultPosition</ref>;</highlight></codeline>
-<codeline lineno="17" refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" kindref="member">defaultTarget</ref>;</highlight></codeline>
-<codeline lineno="18" refid="classCamera3_1a089366725666df811a969aca24168cb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a089366725666df811a969aca24168cb6" kindref="member">defaultUp</ref>;</highlight></codeline>
-<codeline lineno="19" refid="classCamera3_1a68291054f1f54beded4ec189e4820408" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a68291054f1f54beded4ec189e4820408" kindref="member">cameraRotate</ref>;</highlight></codeline>
-<codeline lineno="20" refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref>;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" kindref="member">Camera3</ref>();</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a386fa089e2507622ef79675cd95efd69" kindref="member">~Camera3</ref>();</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" kindref="member">Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref>);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" kindref="member">Reset</ref>();</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="classCamera3_1a886c9d6f2a31701fb6c7e31ea185ab86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a886c9d6f2a31701fb6c7e31ea185ab86" kindref="member">maxCameraX</ref>;</highlight></codeline>
-<codeline lineno="29" refid="classCamera3_1a52473677e141709e23b21656ce0d6d06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a52473677e141709e23b21656ce0d6d06" kindref="member">cameraSpeed</ref>;</highlight></codeline>
-<codeline lineno="30" refid="classCamera3_1a8cd72a7b6d68c213e09f49b3854ee539" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a8cd72a7b6d68c213e09f49b3854ee539" kindref="member">maxX</ref>;</highlight></codeline>
-<codeline lineno="31" refid="classCamera3_1a3f3e636d3783560f23fbbdfcb30ee873" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a3f3e636d3783560f23fbbdfcb30ee873" kindref="member">minX</ref>;</highlight></codeline>
-<codeline lineno="32" refid="classCamera3_1ab8677569db9ac82cff0ccf1e88ef236a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1ab8677569db9ac82cff0ccf1e88ef236a" kindref="member">maxZ</ref>;</highlight></codeline>
-<codeline lineno="33" refid="classCamera3_1ab02e65f09cb7cefad9c33ccb216748e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1ab02e65f09cb7cefad9c33ccb216748e7" kindref="member">minZ</ref>;</highlight></codeline>
-<codeline lineno="34" refid="classCamera3_1a978ca7363fed0c3ba1191a9d0837b72d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a978ca7363fed0c3ba1191a9d0837b72d" kindref="member">door</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classCamera3" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classCamera" kindref="compound">Camera</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" kindref="member">defaultPosition</ref>;</highlight></codeline>
+<codeline lineno="28" refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" kindref="member">defaultTarget</ref>;</highlight></codeline>
+<codeline lineno="29" refid="classCamera3_1a089366725666df811a969aca24168cb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a089366725666df811a969aca24168cb6" kindref="member">defaultUp</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classCamera3_1a68291054f1f54beded4ec189e4820408" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a68291054f1f54beded4ec189e4820408" kindref="member">cameraRotate</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" kindref="member">Camera3</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a386fa089e2507622ef79675cd95efd69" kindref="member">~Camera3</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" kindref="member">Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classCamera3_1a886c9d6f2a31701fb6c7e31ea185ab86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a886c9d6f2a31701fb6c7e31ea185ab86" kindref="member">maxCameraX</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classCamera3_1a52473677e141709e23b21656ce0d6d06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a52473677e141709e23b21656ce0d6d06" kindref="member">cameraSpeed</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classCamera3_1a8cd72a7b6d68c213e09f49b3854ee539" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a8cd72a7b6d68c213e09f49b3854ee539" kindref="member">maxX</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classCamera3_1a3f3e636d3783560f23fbbdfcb30ee873" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a3f3e636d3783560f23fbbdfcb30ee873" kindref="member">minX</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classCamera3_1ab8677569db9ac82cff0ccf1e88ef236a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1ab8677569db9ac82cff0ccf1e88ef236a" kindref="member">maxZ</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classCamera3_1ab02e65f09cb7cefad9c33ccb216748e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1ab02e65f09cb7cefad9c33ccb216748e7" kindref="member">minZ</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="MyGraphics/Source/Camera3.h"/>
   </compounddef>

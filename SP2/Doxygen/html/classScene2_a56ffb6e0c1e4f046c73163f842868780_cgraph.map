@@ -2,9 +2,10 @@
 <area shape="rect" id="node2" href="$classScene2.html#a71a639a387bb2f157d48e96b95706c68" title="Camera position and item distance. " alt="" coords="269,5,405,32"/>
 <area shape="rect" id="node3" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="282,56,391,83"/>
 <area shape="rect" id="node5" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="259,107,414,133"/>
-<area shape="rect" id="node6" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="249,157,424,184"/>
-<area shape="rect" id="node7" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Camera3::Reset" alt="" coords="279,208,395,235"/>
-<area shape="rect" id="node8" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="289,259,384,285"/>
-<area shape="rect" id="node9" href="$Scene2_8cpp.html#ac07446f8019674e7e66875dd6d25588d" title="Vector3 to x and y and z. " alt="" coords="311,309,362,336"/>
+<area shape="rect" id="node6" href="$classSharedData.html#ad005c9f90d690bb13e2cf35697380aac" title="SharedData::GetInstance" alt="" coords="253,157,421,184"/>
+<area shape="rect" id="node7" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Check which key is presses. " alt="" coords="249,208,424,235"/>
+<area shape="rect" id="node8" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Resets camera when needed. " alt="" coords="279,259,395,285"/>
+<area shape="rect" id="node9" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="289,309,384,336"/>
+<area shape="rect" id="node10" href="$Scene2_8cpp.html#ac07446f8019674e7e66875dd6d25588d" title="Vector3 to x and y and z. " alt="" coords="311,360,362,387"/>
 <area shape="rect" id="node4" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="472,56,592,83"/>
 </map>

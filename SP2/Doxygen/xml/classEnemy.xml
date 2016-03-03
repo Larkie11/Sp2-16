@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="17" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="16" bodyend="31"/>
+        <location file="MyGraphics/Source/Enemy.h" line="34" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="33" bodyend="48"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -90,11 +90,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="9" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="9" bodyend="-1"/>
-        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">DamageReceived</referencedby>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
-        <referencedby refid="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" compoundref="Enemy_8cpp" startline="79" endline="93">mode_Change</referencedby>
-        <referencedby refid="classEnemy_1a5eebb88922ee4e242d466255b97b39f8" compoundref="Enemy_8cpp" startline="236" endline="239">Return_HP</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="26" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">DamageReceived</referencedby>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
+        <referencedby refid="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" compoundref="Enemy_8cpp" startline="119" endline="133">mode_Change</referencedby>
+        <referencedby refid="classEnemy_1a5eebb88922ee4e242d466255b97b39f8" compoundref="Enemy_8cpp" startline="311" endline="314">Return_HP</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classEnemy_1abef55da80a281833a745f3efd876316f" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -107,8 +107,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="10" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="10" bodyend="-1"/>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="27" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" prot="private" static="no" mutable="no">
         <type>signed int</type>
@@ -121,11 +121,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="11" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="11" bodyend="-1"/>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
-        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="241" endline="255">Enemy_movement</referencedby>
-        <referencedby refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="114" endline="228">mode_Action</referencedby>
-        <referencedby refid="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" compoundref="Enemy_8cpp" startline="79" endline="93">mode_Change</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="28" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
+        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="325" endline="339">Enemy_movement</referencedby>
+        <referencedby refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="172" endline="286">mode_Action</referencedby>
+        <referencedby refid="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" compoundref="Enemy_8cpp" startline="119" endline="133">mode_Change</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classEnemy_1af208804217fd225c2ff8824e81cc2e64" prot="private" static="no" mutable="no">
         <type><ref refid="structPosition" kindref="compound">Position</ref></type>
@@ -138,14 +138,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="12" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="12" bodyend="-1"/>
-        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">DamageReceived</referencedby>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
-        <referencedby refid="classEnemy_1a819ee9012f940e2c1c81064b1983c037" compoundref="Enemy_8cpp" startline="387" endline="407">enemy_attack</referencedby>
-        <referencedby refid="classEnemy_1ab87351b3b0661edb047cc2d0acdc8722" compoundref="Enemy_8cpp" startline="361" endline="385">Enemy_Collision</referencedby>
-        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="241" endline="255">Enemy_movement</referencedby>
-        <referencedby refid="classEnemy_1a7810e112cd0aa450590e575f10963829" compoundref="Enemy_8cpp" startline="26" endline="77">Quick_check</referencedby>
-        <referencedby refid="classEnemy_1aea4b20d7406b086406339215975eccfd" compoundref="Enemy_8cpp" startline="230" endline="233">Return_Position</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="29" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">DamageReceived</referencedby>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
+        <referencedby refid="classEnemy_1a890c0d63a3ddc2ec65d8a0f7089e1579" compoundref="Enemy_8cpp" startline="507" endline="528">enemy_attack</referencedby>
+        <referencedby refid="classEnemy_1ab87351b3b0661edb047cc2d0acdc8722" compoundref="Enemy_8cpp" startline="472" endline="496">Enemy_Collision</referencedby>
+        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="325" endline="339">Enemy_movement</referencedby>
+        <referencedby refid="classEnemy_1a7810e112cd0aa450590e575f10963829" compoundref="Enemy_8cpp" startline="59" endline="109">Quick_check</referencedby>
+        <referencedby refid="classEnemy_1aea4b20d7406b086406339215975eccfd" compoundref="Enemy_8cpp" startline="297" endline="300">Return_Position</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" prot="private" static="no" mutable="no">
         <type><ref refid="structPosition" kindref="compound">Position</ref></type>
@@ -158,11 +158,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="13" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="13" bodyend="-1"/>
-        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">DamageReceived</referencedby>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
-        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="241" endline="255">Enemy_movement</referencedby>
-        <referencedby refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="114" endline="228">mode_Action</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="30" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">DamageReceived</referencedby>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
+        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="325" endline="339">Enemy_movement</referencedby>
+        <referencedby refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="172" endline="286">mode_Action</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" prot="private" static="no" mutable="no">
         <type><ref refid="structPosition" kindref="compound">Position</ref></type>
@@ -175,10 +175,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="14" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="14" bodyend="-1"/>
-        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">DamageReceived</referencedby>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
-        <referencedby refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="114" endline="228">mode_Action</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="31" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">DamageReceived</referencedby>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
+        <referencedby refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="172" endline="286">mode_Action</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -192,28 +192,37 @@
           <declname>Camera</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>carrying out action decided by the enemy mode <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="33" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="114" bodyend="228"/>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a62de6e0a260a989dbc8e32a3da075c11" compoundref="Enemy_8h" startline="20">assassination</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6ab5812cbf9f894e1dc1a7d07110e1b619" compoundref="Enemy_8h" startline="29">charge</references>
-        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="11">Current_modetype</references>
+        <location file="MyGraphics/Source/Enemy.h" line="50" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="172" bodyend="286"/>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a62de6e0a260a989dbc8e32a3da075c11" compoundref="Enemy_8h" startline="37">assassination</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6ab5812cbf9f894e1dc1a7d07110e1b619" compoundref="Enemy_8h" startline="46">charge</references>
+        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="28">Current_modetype</references>
         <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a3d7eafae0713864f630b0392f94bff55" compoundref="Enemy_8h" startline="21">explore</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a81591446bf1a8ccfc679bbf78b3fcded" compoundref="Enemy_8h" startline="23">fake_attack</references>
-        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="13">Ground</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a57aea6176bc23569162d09d71578dd00" compoundref="Enemy_8h" startline="24">hold_down</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a8b523f7220e1176017b23a69c00e2078" compoundref="Enemy_8h" startline="19">patrol</references>
-        <references refid="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" compoundref="Enemy_8h" startline="14">SpawnPoint</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a0632a59c971a28ee472a9ef4973a528e" compoundref="Enemy_8h" startline="25">speed_escape</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6abefce5813b5d96bf651779229ac82f0b" compoundref="Enemy_8h" startline="28">strategic_planning</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6abcce5a6385923057737cd3a716116e14" compoundref="Enemy_8h" startline="27">Surprise_attack</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a3d7eafae0713864f630b0392f94bff55" compoundref="Enemy_8h" startline="38">explore</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a81591446bf1a8ccfc679bbf78b3fcded" compoundref="Enemy_8h" startline="40">fake_attack</references>
+        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="30">Ground</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a57aea6176bc23569162d09d71578dd00" compoundref="Enemy_8h" startline="41">hold_down</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a8b523f7220e1176017b23a69c00e2078" compoundref="Enemy_8h" startline="36">patrol</references>
+        <references refid="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" compoundref="Enemy_8h" startline="31">SpawnPoint</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a0632a59c971a28ee472a9ef4973a528e" compoundref="Enemy_8h" startline="42">speed_escape</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6abefce5813b5d96bf651779229ac82f0b" compoundref="Enemy_8h" startline="45">strategic_planning</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6abcce5a6385923057737cd3a716116e14" compoundref="Enemy_8h" startline="44">Surprise_attack</references>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="241" endline="255">Enemy_movement</referencedby>
+        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="325" endline="339">Enemy_movement</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -221,15 +230,24 @@
         <argsstring>()</argsstring>
         <name>mode_Change</name>
         <briefdescription>
-        </briefdescription>
+<para>Changing mode for the enemy <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="34" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="79" bodyend="93"/>
-        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="11">Current_modetype</references>
-        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="9">HP</references>
-        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">DamageReceived</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="51" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="119" bodyend="133"/>
+        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="28">Current_modetype</references>
+        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="26">HP</references>
+        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">DamageReceived</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1a49c6f489172cdc0d246fdeb08506eacd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structPosition" kindref="compound">Position</ref></type>
@@ -275,16 +293,25 @@
           <declname>X_Displacement</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Updating the enemy position based on their action and speed <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="35" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="257" bodyend="295"/>
-        <references refid="classEnemy_1aa04b1e981e9910935e1a1df8524f5f18" compoundref="Enemy_8cpp" startline="297" endline="359">Collision_Detection</references>
+        <location file="MyGraphics/Source/Enemy.h" line="52" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="350" bodyend="388"/>
+        <references refid="classEnemy_1aa04b1e981e9910935e1a1df8524f5f18" compoundref="Enemy_8cpp" startline="399" endline="461">Collision_Detection</references>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="241" endline="255">Enemy_movement</referencedby>
+        <referencedby refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" compoundref="Enemy_8cpp" startline="325" endline="339">Enemy_movement</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1ab87351b3b0661edb047cc2d0acdc8722" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -305,16 +332,25 @@
           <declname>I</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Full Collision Detection for enemy and enemy <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="36" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="361" bodyend="385"/>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
+        <location file="MyGraphics/Source/Enemy.h" line="53" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="472" bodyend="496"/>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classEnemy_1aa04b1e981e9910935e1a1df8524f5f18" compoundref="Enemy_8cpp" startline="297" endline="359">Collision_Detection</referencedby>
+        <referencedby refid="classEnemy_1aa04b1e981e9910935e1a1df8524f5f18" compoundref="Enemy_8cpp" startline="399" endline="461">Collision_Detection</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -324,19 +360,28 @@
         <argsstring>()</argsstring>
         <name>Enemy</name>
         <briefdescription>
-        </briefdescription>
+<para>Default Constructor <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="39" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="5" bodyend="19"/>
-        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="11">Current_modetype</references>
-        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="13">Ground</references>
-        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="9">HP</references>
-        <references refid="classEnemy_1abef55da80a281833a745f3efd876316f" compoundref="Enemy_8h" startline="10">MeleeDamage</references>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
-        <references refid="classEnemy_1a7810e112cd0aa450590e575f10963829" compoundref="Enemy_8cpp" startline="26" endline="77">Quick_check</references>
-        <references refid="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" compoundref="Enemy_8h" startline="14">SpawnPoint</references>
+        <location file="MyGraphics/Source/Enemy.h" line="56" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="21" bodyend="35"/>
+        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="28">Current_modetype</references>
+        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="30">Ground</references>
+        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="26">HP</references>
+        <references refid="classEnemy_1abef55da80a281833a745f3efd876316f" compoundref="Enemy_8h" startline="27">MeleeDamage</references>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
+        <references refid="classEnemy_1a7810e112cd0aa450590e575f10963829" compoundref="Enemy_8cpp" startline="59" endline="109">Quick_check</references>
+        <references refid="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" compoundref="Enemy_8h" startline="31">SpawnPoint</references>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1ac0eec4755e28c02688065f9657150ac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -344,12 +389,21 @@
         <argsstring>()</argsstring>
         <name>~Enemy</name>
         <briefdescription>
-        </briefdescription>
+<para>Default destructor <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="40" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="22" bodyend="24"/>
+        <location file="MyGraphics/Source/Enemy.h" line="57" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="46" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1a7810e112cd0aa450590e575f10963829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -357,17 +411,26 @@
         <argsstring>()</argsstring>
         <name>Quick_check</name>
         <briefdescription>
-        </briefdescription>
+<para>Collision Detection with map <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="41" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="26" bodyend="77"/>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
+        <location file="MyGraphics/Source/Enemy.h" line="58" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="59" bodyend="109"/>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="95" endline="112">DamageReceived</referencedby>
-        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="5" endline="19">Enemy</referencedby>
+        <referencedby refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" compoundref="Enemy_8cpp" startline="144" endline="161">DamageReceived</referencedby>
+        <referencedby refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" compoundref="Enemy_8cpp" startline="21" endline="35">Enemy</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1a5eebb88922ee4e242d466255b97b39f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -375,13 +438,22 @@
         <argsstring>()</argsstring>
         <name>Return_HP</name>
         <briefdescription>
-        </briefdescription>
+<para>Return enemy HP <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="42" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="236" bodyend="239"/>
-        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="9">HP</references>
+        <location file="MyGraphics/Source/Enemy.h" line="59" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="311" bodyend="314"/>
+        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="26">HP</references>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -423,24 +495,33 @@
           <declname>X_Displacement</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Deciding enemy speed based on their mode <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="43" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="241" bodyend="255"/>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6ab5812cbf9f894e1dc1a7d07110e1b619" compoundref="Enemy_8h" startline="29">charge</references>
-        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="11">Current_modetype</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a81591446bf1a8ccfc679bbf78b3fcded" compoundref="Enemy_8h" startline="23">fake_attack</references>
-        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="13">Ground</references>
-        <references refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="114" endline="228">mode_Action</references>
-        <references refid="classEnemy_1a49c6f489172cdc0d246fdeb08506eacd" compoundref="Enemy_8cpp" startline="257" endline="295">Movement</references>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a0632a59c971a28ee472a9ef4973a528e" compoundref="Enemy_8h" startline="25">speed_escape</references>
-        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6abcce5a6385923057737cd3a716116e14" compoundref="Enemy_8h" startline="27">Surprise_attack</references>
-        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1613" endline="1621">Scene2::Enemy_Updating</referencedby>
-        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1496" endline="1504">SP2::Enemy_Updating</referencedby>
-        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1494" endline="1502">Scene3::Enemy_Updating</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="60" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="325" bodyend="339"/>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6ab5812cbf9f894e1dc1a7d07110e1b619" compoundref="Enemy_8h" startline="46">charge</references>
+        <references refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" compoundref="Enemy_8h" startline="28">Current_modetype</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a81591446bf1a8ccfc679bbf78b3fcded" compoundref="Enemy_8h" startline="40">fake_attack</references>
+        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="30">Ground</references>
+        <references refid="classEnemy_1a5ee4dd60f6ce56952ff5d74e6777efd3" compoundref="Enemy_8cpp" startline="172" endline="286">mode_Action</references>
+        <references refid="classEnemy_1a49c6f489172cdc0d246fdeb08506eacd" compoundref="Enemy_8cpp" startline="350" endline="388">Movement</references>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a0632a59c971a28ee472a9ef4973a528e" compoundref="Enemy_8h" startline="42">speed_escape</references>
+        <references refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6abcce5a6385923057737cd3a716116e14" compoundref="Enemy_8h" startline="44">Surprise_attack</references>
+        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1635" endline="1642">Scene3::Enemy_Updating</referencedby>
+        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1689" endline="1696">Scene2::Enemy_Updating</referencedby>
+        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1676" endline="1683">SP2::Enemy_Updating</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -452,20 +533,29 @@
           <declname>Damage</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Reducing enemy hp based on attack <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="44" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="95" bodyend="112"/>
-        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="13">Ground</references>
-        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="9">HP</references>
-        <references refid="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" compoundref="Enemy_8cpp" startline="79" endline="93">mode_Change</references>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
-        <references refid="classEnemy_1a7810e112cd0aa450590e575f10963829" compoundref="Enemy_8cpp" startline="26" endline="77">Quick_check</references>
-        <references refid="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" compoundref="Enemy_8h" startline="14">SpawnPoint</references>
-        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">Bullet::CollideWithEnemy</referencedby>
-        <referencedby refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" compoundref="CollisionDetector_8cpp" startline="33" endline="49">CollisionDetector::swordCollision</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="61" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="144" bodyend="161"/>
+        <references refid="classEnemy_1a5dbdf20015f93dd099df2ddab345f5db" compoundref="Enemy_8h" startline="30">Ground</references>
+        <references refid="classEnemy_1a49116e0abc9b30f54ec99a903de88089" compoundref="Enemy_8h" startline="26">HP</references>
+        <references refid="classEnemy_1a1e075bc2434b6a3ed91f1c1b0b01cfa2" compoundref="Enemy_8cpp" startline="119" endline="133">mode_Change</references>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
+        <references refid="classEnemy_1a7810e112cd0aa450590e575f10963829" compoundref="Enemy_8cpp" startline="59" endline="109">Quick_check</references>
+        <references refid="classEnemy_1a0e7e6e935c237ec9093abb4d79cd3fcf" compoundref="Enemy_8h" startline="31">SpawnPoint</references>
+        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="138" endline="158">Bullet::CollideWithEnemy</referencedby>
+        <referencedby refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" compoundref="CollisionDetector_8cpp" startline="115" endline="130">CollisionDetector::swordCollision</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1aea4b20d7406b086406339215975eccfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structPosition" kindref="compound">Position</ref></type>
@@ -473,18 +563,27 @@
         <argsstring>()</argsstring>
         <name>Return_Position</name>
         <briefdescription>
-        </briefdescription>
+<para>Return enemy position <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="45" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="230" bodyend="233"/>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
-        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="52" endline="77">Bullet::CollideWithEnemy</referencedby>
-        <referencedby refid="classScene2_1a8baecf53cfcdd00f85113c7c6ba6ec68" compoundref="Scene2_8cpp" startline="1622" endline="1633">Scene2::Enemy_Rendering</referencedby>
-        <referencedby refid="classSP2_1a9bdb8c234fabdb3b8eed38968a299d3c" compoundref="SP2_8cpp" startline="1505" endline="1516">SP2::Enemy_Rendering</referencedby>
-        <referencedby refid="classScene3_1a649e21cf2fcfe323b8d599fce983747e" compoundref="Scene3_8cpp" startline="1503" endline="1514">Scene3::Enemy_Rendering</referencedby>
-        <referencedby refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" compoundref="CollisionDetector_8cpp" startline="33" endline="49">CollisionDetector::swordCollision</referencedby>
+        <location file="MyGraphics/Source/Enemy.h" line="62" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="297" bodyend="300"/>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
+        <referencedby refid="classBullet_1a34a5f24f34cab14f7c538d212f42adf6" compoundref="Bullet_8cpp" startline="138" endline="158">Bullet::CollideWithEnemy</referencedby>
+        <referencedby refid="classScene3_1a649e21cf2fcfe323b8d599fce983747e" compoundref="Scene3_8cpp" startline="1653" endline="1664">Scene3::Enemy_Rendering</referencedby>
+        <referencedby refid="classScene2_1a8baecf53cfcdd00f85113c7c6ba6ec68" compoundref="Scene2_8cpp" startline="1707" endline="1718">Scene2::Enemy_Rendering</referencedby>
+        <referencedby refid="classSP2_1a9bdb8c234fabdb3b8eed38968a299d3c" compoundref="SP2_8cpp" startline="1694" endline="1705">SP2::Enemy_Rendering</referencedby>
+        <referencedby refid="classCollisionDetector_1ab0e66145f256871c8d274bede39d24d7" compoundref="CollisionDetector_8cpp" startline="115" endline="130">CollisionDetector::swordCollision</referencedby>
       </memberdef>
       <memberdef kind="function" id="classEnemy_1aa04b1e981e9910935e1a1df8524f5f18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -527,20 +626,29 @@
           <defval>false</defval>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Full Collision Detection for enemy and player <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="46" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="297" bodyend="359"/>
-        <references refid="classEnemy_1ab87351b3b0661edb047cc2d0acdc8722" compoundref="Enemy_8cpp" startline="361" endline="385">Enemy_Collision</references>
+        <location file="MyGraphics/Source/Enemy.h" line="63" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="399" bodyend="461"/>
+        <references refid="classEnemy_1ab87351b3b0661edb047cc2d0acdc8722" compoundref="Enemy_8cpp" startline="472" endline="496">Enemy_Collision</references>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classEnemy_1a49c6f489172cdc0d246fdeb08506eacd" compoundref="Enemy_8cpp" startline="257" endline="295">Movement</referencedby>
+        <referencedby refid="classEnemy_1a49c6f489172cdc0d246fdeb08506eacd" compoundref="Enemy_8cpp" startline="350" endline="388">Movement</referencedby>
       </memberdef>
-      <memberdef kind="function" id="classEnemy_1a819ee9012f940e2c1c81064b1983c037" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
-        <definition>Camera3 Enemy::enemy_attack</definition>
+      <memberdef kind="function" id="classEnemy_1a890c0d63a3ddc2ec65d8a0f7089e1579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Enemy::enemy_attack</definition>
         <argsstring>(Enemy enemy[5], Position character, Camera3 view)</argsstring>
         <name>enemy_attack</name>
         <param>
@@ -557,59 +665,64 @@
           <declname>view</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Detecting if player is within range for enemy to attack <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>None </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MyGraphics/Source/Enemy.h" line="47" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="387" bodyend="407"/>
-        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="12">position</references>
-        <references refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" compoundref="Camera3_8cpp" startline="139" endline="144">Camera3::Reset</references>
+        <location file="MyGraphics/Source/Enemy.h" line="64" column="1" bodyfile="MyGraphics/Source/Enemy.cpp" bodystart="507" bodyend="528"/>
+        <references refid="classEnemy_1af208804217fd225c2ff8824e81cc2e64" compoundref="Enemy_8h" startline="29">position</references>
         <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
         <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
-        <referencedby refid="classScene2_1a8025538657c7ab07416e743b0b37ca1c" compoundref="Scene2_8cpp" startline="1613" endline="1621">Scene2::Enemy_Updating</referencedby>
-        <referencedby refid="classSP2_1ac885eac4e876ed7f9cb88db71d145dff" compoundref="SP2_8cpp" startline="1496" endline="1504">SP2::Enemy_Updating</referencedby>
-        <referencedby refid="classScene3_1aac398a56324dd09eb3570cfeb8df4a46" compoundref="Scene3_8cpp" startline="1494" endline="1502">Scene3::Enemy_Updating</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Contain all variables and function for enemy <ref refid="classNPC" kindref="compound">NPC</ref>. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Class <ref refid="classEnemy" kindref="compound">Enemy</ref>: </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="687">
+      <node id="676">
         <label>Position</label>
         <link refid="structPosition"/>
-        <childnode refid="686" relation="usage">
+        <childnode refid="675" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>
         </childnode>
       </node>
-      <node id="686">
+      <node id="675">
         <label>float</label>
       </node>
-      <node id="688">
+      <node id="677">
         <label>int</label>
       </node>
-      <node id="685">
+      <node id="674">
         <label>Enemy</label>
         <link refid="classEnemy"/>
-        <childnode refid="686" relation="usage">
+        <childnode refid="675" relation="usage">
           <edgelabel>MeleeDamage</edgelabel>
           <edgelabel>HP</edgelabel>
         </childnode>
-        <childnode refid="687" relation="usage">
+        <childnode refid="676" relation="usage">
           <edgelabel>SpawnPoint</edgelabel>
           <edgelabel>Ground</edgelabel>
           <edgelabel>position</edgelabel>
         </childnode>
-        <childnode refid="688" relation="usage">
+        <childnode refid="677" relation="usage">
           <edgelabel>Current_modetype</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="MyGraphics/Source/Enemy.h" line="8" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="7" bodyend="48"/>
+    <location file="MyGraphics/Source/Enemy.h" line="25" column="1" bodyfile="MyGraphics/Source/Enemy.h" bodystart="24" bodyend="65"/>
     <listofallmembers>
       <member refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a62de6e0a260a989dbc8e32a3da075c11" prot="private" virt="non-virtual"><scope>Enemy</scope><name>assassination</name></member>
       <member refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6ab5812cbf9f894e1dc1a7d07110e1b619" prot="private" virt="non-virtual"><scope>Enemy</scope><name>charge</name></member>
@@ -617,7 +730,7 @@
       <member refid="classEnemy_1a071b6477e20abb99b4285d83f8571ec2" prot="private" virt="non-virtual"><scope>Enemy</scope><name>Current_modetype</name></member>
       <member refid="classEnemy_1a52ec59a19c12a910ea9ba750010c6c4a" prot="public" virt="non-virtual"><scope>Enemy</scope><name>DamageReceived</name></member>
       <member refid="classEnemy_1a94f30d348b6d2840fd71675472ba38dd" prot="public" virt="non-virtual"><scope>Enemy</scope><name>Enemy</name></member>
-      <member refid="classEnemy_1a819ee9012f940e2c1c81064b1983c037" prot="public" virt="non-virtual"><scope>Enemy</scope><name>enemy_attack</name></member>
+      <member refid="classEnemy_1a890c0d63a3ddc2ec65d8a0f7089e1579" prot="public" virt="non-virtual"><scope>Enemy</scope><name>enemy_attack</name></member>
       <member refid="classEnemy_1ab87351b3b0661edb047cc2d0acdc8722" prot="private" virt="non-virtual"><scope>Enemy</scope><name>Enemy_Collision</name></member>
       <member refid="classEnemy_1a13a4b0c7f0300b80cdc924aea52ecaf7" prot="public" virt="non-virtual"><scope>Enemy</scope><name>Enemy_movement</name></member>
       <member refid="classEnemy_1a4c5b882e64aea277a6be0e261364efa6a3d7eafae0713864f630b0392f94bff55" prot="private" virt="non-virtual"><scope>Enemy</scope><name>explore</name></member>

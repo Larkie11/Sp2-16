@@ -1,4 +1,4 @@
 <map id="MyGraphics/Source/StartCutScene.h" name="MyGraphics/Source/StartCutScene.h">
-<area shape="rect" id="node2" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,102,236,129"/>
-<area shape="rect" id="node3" href="$StartCutScene_8cpp.html" title="MyGraphics/Source/StartCut\lScene.cpp" alt="" coords="261,95,450,136"/>
+<area shape="rect" id="node2" href="$Application_8cpp.html" title="Runs the game, with the correct scenes. " alt="" coords="5,102,236,129"/>
+<area shape="rect" id="node3" href="$StartCutScene_8cpp.html" title="Renders the starting cutscene when player presses play. " alt="" coords="261,95,450,136"/>
 </map>

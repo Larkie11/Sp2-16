@@ -497,7 +497,7 @@
         <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="241" endline="328">MeshBuilder::GenerateText</references>
         <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277abfef84dfd586b9175456846aded619b2" compoundref="SceneWin_8h" startline="38">GEO_PATH</references>
         <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a79ac4c6686997bd6c6feb76dd5bc7c71" compoundref="SceneWin_8h" startline="37">GEO_TEXT</references>
-        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="16" endline="40">Camera3::Init</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="56" endline="80">Camera3::Init</references>
         <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
         <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="16" endline="107">LoadShaders</references>
         <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="66">LoadTGA</references>
@@ -548,12 +548,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="MyGraphics/Source/SceneWin.h" line="70" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="115" bodyend="123"/>
-        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="53">SharedData::gameState</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
-        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="41" endline="44">Application::IsKeyPressed</references>
-        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" compoundref="SharedData_8h" startline="35">SharedData::MENU</references>
+        <references refid="classSharedData_1ad8a754a3ec6c4990e0b170173c9d7e2c" compoundref="SharedData_8h" startline="52">SharedData::gameState</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="73" endline="76">Application::IsKeyPressed</references>
+        <references refid="classSharedData_1a82332bc20ab1dfab6d26b2bcf7e2ff5bad4e7657e69149c5a5e76715d23c547ce" compoundref="SharedData_8h" startline="34">SharedData::MENU</references>
         <references refid="classSceneWin_1a50e7ac3e16961d7a4ced7b5bd0ec0628" compoundref="SceneWin_8h" startline="98">sound</references>
-        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="60">SharedData::stateCheck</references>
+        <references refid="classSharedData_1a10d4f68a6965711b0435a8f46990af78" compoundref="SharedData_8h" startline="59">SharedData::stateCheck</references>
         <references refid="classSound_1aaaf67f7ba4482d8a07a122a1ec4ff965" compoundref="Sound_8cpp" startline="64" endline="67">Sound::stopMusic</references>
       </memberdef>
       <memberdef kind="function" id="classSceneWin_1a9b31ed13d4a3859657d7b8ea695ed173" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
@@ -579,10 +579,10 @@
         </inbodydescription>
         <location file="MyGraphics/Source/SceneWin.h" line="71" column="1" bodyfile="MyGraphics/Source/SceneWin.cpp" bodystart="283" bodyend="305"/>
         <references refid="classSceneWin_1a425f450d382279fde98dddab59f7cdde" compoundref="SceneWin_8h" startline="96">camera</references>
-        <references refid="classSharedData_1a212c6461f83b5ab83e44118b34f52154" compoundref="SharedData_8h" startline="69">SharedData::enemycounter</references>
+        <references refid="classSharedData_1a212c6461f83b5ab83e44118b34f52154" compoundref="SharedData_8h" startline="68">SharedData::enemycounter</references>
         <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277abfef84dfd586b9175456846aded619b2" compoundref="SceneWin_8h" startline="38">GEO_PATH</references>
         <references refid="classSceneWin_1a19628d801a2c95da779f8da16f360277a79ac4c6686997bd6c6feb76dd5bc7c71" compoundref="SceneWin_8h" startline="37">GEO_TEXT</references>
-        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="55" endline="59">SharedData::GetInstance</references>
+        <references refid="classSharedData_1ad005c9f90d690bb13e2cf35697380aac" compoundref="SharedData_8h" startline="54" endline="58">SharedData::GetInstance</references>
         <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
         <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
         <references refid="classSceneWin_1ade345e2f4b94cbf34b13a60bbc9995e7" compoundref="SceneWin_8h" startline="84">meshList</references>
@@ -879,136 +879,136 @@
     <detaileddescription>
 <para>Class <ref refid="classSceneWin" kindref="compound">SceneWin</ref>: </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1007">
+      <node id="987">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="1006">
+      <node id="986">
         <label>SceneWin</label>
         <link refid="classSceneWin"/>
-        <childnode refid="1007" relation="public-inheritance">
+        <childnode refid="987" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1022">
+      <node id="1001">
         <label>irrklang::IVirtualRefCounted</label>
         <link refid="classirrklang_1_1IVirtualRefCounted"/>
       </node>
-      <node id="1016">
+      <node id="995">
         <label>stack&lt; Mtx44 &gt;</label>
       </node>
-      <node id="1017">
+      <node id="996">
         <label>Sound</label>
         <link refid="classSound"/>
-        <childnode refid="1018" relation="usage">
+        <childnode refid="997" relation="usage">
           <edgelabel>musicEngine</edgelabel>
         </childnode>
-        <childnode refid="1021" relation="usage">
+        <childnode refid="1000" relation="usage">
           <edgelabel>SoundEffect</edgelabel>
           <edgelabel>Song</edgelabel>
         </childnode>
       </node>
-      <node id="1025">
+      <node id="1004">
         <label>Component</label>
         <link refid="structComponent"/>
-        <childnode refid="1013" relation="usage">
+        <childnode refid="993" relation="usage">
           <edgelabel>g</edgelabel>
           <edgelabel>r</edgelabel>
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="1023">
+      <node id="1002">
         <label>Mesh</label>
         <link refid="classMesh"/>
-        <childnode refid="1024" relation="usage">
+        <childnode refid="1003" relation="usage">
           <edgelabel>material</edgelabel>
         </childnode>
-        <childnode refid="1026" relation="usage">
+        <childnode refid="1005" relation="usage">
           <edgelabel>mode</edgelabel>
         </childnode>
-        <childnode refid="1027" relation="usage">
+        <childnode refid="1006" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="1028" relation="usage">
+        <childnode refid="1007" relation="usage">
           <edgelabel>textureID</edgelabel>
           <edgelabel>indexBuffer</edgelabel>
           <edgelabel>indexSize</edgelabel>
           <edgelabel>vertexBuffer</edgelabel>
         </childnode>
       </node>
-      <node id="1018">
+      <node id="997">
         <label>irrklang::ISoundEngine</label>
         <link refid="classirrklang_1_1ISoundEngine"/>
-        <childnode refid="1019" relation="public-inheritance">
+        <childnode refid="998" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1026">
+      <node id="1005">
         <label>DRAW_MODE</label>
       </node>
-      <node id="1011">
+      <node id="991">
         <label>Camera</label>
         <link refid="classCamera"/>
-        <childnode refid="1012" relation="usage">
+        <childnode refid="992" relation="usage">
           <edgelabel>target</edgelabel>
           <edgelabel>position</edgelabel>
           <edgelabel>up</edgelabel>
         </childnode>
       </node>
-      <node id="1027">
+      <node id="1006">
         <label>string</label>
       </node>
-      <node id="1024">
+      <node id="1003">
         <label>Material</label>
         <link refid="structMaterial"/>
-        <childnode refid="1013" relation="usage">
+        <childnode refid="993" relation="usage">
           <edgelabel>kShininess</edgelabel>
         </childnode>
-        <childnode refid="1025" relation="usage">
+        <childnode refid="1004" relation="usage">
           <edgelabel>kDiffuse</edgelabel>
           <edgelabel>kAmbient</edgelabel>
           <edgelabel>kSpecular</edgelabel>
         </childnode>
       </node>
-      <node id="1013">
+      <node id="993">
         <label>float</label>
       </node>
-      <node id="1015">
+      <node id="994">
         <label>MS</label>
         <link refid="classMS"/>
-        <childnode refid="1016" relation="usage">
+        <childnode refid="995" relation="usage">
           <edgelabel>ms</edgelabel>
         </childnode>
       </node>
-      <node id="1009">
+      <node id="989">
         <label>Scene</label>
         <link refid="classScene"/>
       </node>
-      <node id="1008">
+      <node id="988">
         <label>SceneWin</label>
         <link refid="classSceneWin"/>
-        <childnode refid="1009" relation="public-inheritance">
+        <childnode refid="989" relation="public-inheritance">
         </childnode>
-        <childnode refid="1010" relation="usage">
+        <childnode refid="990" relation="usage">
           <edgelabel>camera</edgelabel>
         </childnode>
-        <childnode refid="1013" relation="usage">
+        <childnode refid="993" relation="usage">
           <edgelabel>moveSkyBoxX</edgelabel>
           <edgelabel>moveSkyBoxZ</edgelabel>
           <edgelabel>LSPEED</edgelabel>
         </childnode>
-        <childnode refid="1015" relation="usage">
+        <childnode refid="994" relation="usage">
           <edgelabel>projectionStack</edgelabel>
           <edgelabel>modelStack</edgelabel>
           <edgelabel>viewStack</edgelabel>
         </childnode>
-        <childnode refid="1017" relation="usage">
+        <childnode refid="996" relation="usage">
           <edgelabel>sound</edgelabel>
         </childnode>
-        <childnode refid="1023" relation="usage">
+        <childnode refid="1002" relation="usage">
           <edgelabel>meshList</edgelabel>
         </childnode>
-        <childnode refid="1028" relation="usage">
+        <childnode refid="1007" relation="usage">
           <edgelabel>m_indexBuffer</edgelabel>
           <edgelabel>m_parameters</edgelabel>
           <edgelabel>m_colorBuffer</edgelabel>
@@ -1017,18 +1017,18 @@
           <edgelabel>m_vertexArrayID</edgelabel>
         </childnode>
       </node>
-      <node id="1021">
+      <node id="1000">
         <label>irrklang::ISound</label>
         <link refid="classirrklang_1_1ISound"/>
-        <childnode refid="1022" relation="public-inheritance">
+        <childnode refid="1001" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1010">
+      <node id="990">
         <label>Camera3</label>
         <link refid="classCamera3"/>
-        <childnode refid="1011" relation="public-inheritance">
+        <childnode refid="991" relation="public-inheritance">
         </childnode>
-        <childnode refid="1013" relation="usage">
+        <childnode refid="993" relation="usage">
           <edgelabel>cameraSpeed</edgelabel>
           <edgelabel>maxCameraX</edgelabel>
           <edgelabel>maxX</edgelabel>
@@ -1036,37 +1036,31 @@
           <edgelabel>maxZ</edgelabel>
           <edgelabel>minZ</edgelabel>
         </childnode>
-        <childnode refid="1012" relation="usage">
+        <childnode refid="992" relation="usage">
           <edgelabel>defaultTarget</edgelabel>
           <edgelabel>defaultPosition</edgelabel>
           <edgelabel>view</edgelabel>
           <edgelabel>defaultUp</edgelabel>
           <edgelabel>cameraRotate</edgelabel>
         </childnode>
-        <childnode refid="1014" relation="usage">
-          <edgelabel>door</edgelabel>
-        </childnode>
       </node>
-      <node id="1020">
+      <node id="999">
         <label>int</label>
       </node>
-      <node id="1019">
+      <node id="998">
         <label>irrklang::IRefCounted</label>
         <link refid="classirrklang_1_1IRefCounted"/>
-        <childnode refid="1020" relation="usage">
+        <childnode refid="999" relation="usage">
           <edgelabel>ReferenceCounter</edgelabel>
         </childnode>
       </node>
-      <node id="1028">
+      <node id="1007">
         <label>unsigned</label>
       </node>
-      <node id="1014">
-        <label>bool</label>
-      </node>
-      <node id="1012">
+      <node id="992">
         <label>Vector3</label>
         <link refid="structVector3"/>
-        <childnode refid="1013" relation="usage">
+        <childnode refid="993" relation="usage">
           <edgelabel>x</edgelabel>
           <edgelabel>y</edgelabel>
           <edgelabel>z</edgelabel>

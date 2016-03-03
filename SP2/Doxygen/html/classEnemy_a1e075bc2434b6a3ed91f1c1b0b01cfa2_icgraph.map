@@ -1,8 +1,8 @@
 <map id="Enemy::mode_Change" name="Enemy::mode_Change">
-<area shape="rect" id="node2" href="$classEnemy.html#a52ec59a19c12a910ea9ba750010c6c4a" title="Enemy::DamageReceived" alt="" coords="208,35,379,61"/>
-<area shape="rect" id="node3" href="$classBullet.html#a34a5f24f34cab14f7c538d212f42adf6" title="Bullet::CollideWithEnemy" alt="" coords="427,5,597,32"/>
-<area shape="rect" id="node4" href="$classCollisionDetector.html#ab0e66145f256871c8d274bede39d24d7" title="CollisionDetector::\lswordCollision" alt="" coords="448,57,576,98"/>
-<area shape="rect" id="node5" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="SP2::Update" alt="" coords="655,13,751,40"/>
-<area shape="rect" id="node6" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="645,64,760,91"/>
-<area shape="rect" id="node7" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Scene3::Update" alt="" coords="645,115,760,141"/>
+<area shape="rect" id="node2" href="$classEnemy.html#a52ec59a19c12a910ea9ba750010c6c4a" title="Reducing enemy hp based on attack " alt="" coords="208,35,379,61"/>
+<area shape="rect" id="node3" href="$classBullet.html#a34a5f24f34cab14f7c538d212f42adf6" title="CollideWithEnemy(Enemy enemy[], vector&lt;Bullet*&gt;bullet_arr, CollisionDetector detectCollision) is a fu..." alt="" coords="427,5,597,32"/>
+<area shape="rect" id="node4" href="$classCollisionDetector.html#ab0e66145f256871c8d274bede39d24d7" title="swordCollision(Enemy enemy[], Vector3 player) is a checker function for player&#39;s melee attack..." alt="" coords="448,57,576,98"/>
+<area shape="rect" id="node5" href="$classScene3.html#ac6aee0665d9f41f4a009fdcb29ac40f1" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="645,13,760,40"/>
+<area shape="rect" id="node6" href="$classSP2.html#a075edf39d3102610bf7f404ae3b8d38c" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="655,64,751,91"/>
+<area shape="rect" id="node7" href="$classScene2.html#a26d9fb1c36b04d8b3dac98740f7f77e6" title="Updates the scene every frame (Animation/booleans/music etc) " alt="" coords="645,115,760,141"/>
 </map>
